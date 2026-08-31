@@ -1,0 +1,3 @@
+res://scripts/ui/main.gd
+res://scenes/entities/physical_box.tscn
+res://scripts/components/physical_box.gd

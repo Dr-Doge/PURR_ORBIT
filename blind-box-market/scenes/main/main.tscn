@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main.gd" id="1_main"]
+
+[sub_resource type="Environment" id="Environment_main"]
+background_mode = 1
+background_color = Color(0.075, 0.09, 0.11, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.74, 0.79, 0.86, 1)
+ambient_light_energy = 0.58
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="Material_desk"]
+albedo_color = Color(0.32, 0.225, 0.15, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="Material_mat"]
+albedo_color = Color(0.075, 0.105, 0.12, 1)
+roughness = 0.72
+
+[sub_resource type="StandardMaterial3D" id="Material_wall"]
+albedo_color = Color(0.17, 0.195, 0.22, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Material_bin"]
+albedo_color = Color(0.12, 0.34, 0.31, 1)
+roughness = 0.75
+
+[sub_resource type="StandardMaterial3D" id="Material_bin_label"]
+albedo_color = Color(0.58, 0.95, 0.77, 1)
+emission_enabled = true
+emission = Color(0.15, 0.45, 0.31, 1)
+
+[sub_resource type="StandardMaterial3D" id="Material_ticker"]
+albedo_color = Color(0.025, 0.045, 0.055, 1)
+emission_enabled = true
+emission = Color(0.02, 0.12, 0.14, 1)
+emission_energy_multiplier = 0.75
+roughness = 0.35
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_main")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_main")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-52, -28, 0)
+light_color = Color(1, 0.88, 0.7, 1)
+light_energy = 1.35
+shadow_enabled = true
+
+[node name="FillLight" type="OmniLight3D" parent="."]
+position = Vector3(3.5, 5.5, 2.5)
+light_color = Color(0.55, 0.73, 1, 1)
+light_energy = 4.0
+omni_range = 12.0
+
+[node name="CameraRig" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 7.5, 9.1)
+current = true
+fov = 52.0
+
+[node name="Room" type="Node3D" parent="."]
+
+[node name="BackWall" type="CSGBox3D" parent="Room"]
+position = Vector3(0, 3.4, -4.5)
+size = Vector3(14, 7, 0.35)
+material = SubResource("Material_wall")
+use_collision = true
+
+[node name="MarketTicker" type="Node3D" parent="Room"]
+position = Vector3(0.65, 3.55, -4.28)
+
+[node name="Display" type="CSGBox3D" parent="Room/MarketTicker"]
+size = Vector3(8.6, 0.78, 0.12)
+material = SubResource("Material_ticker")
+
+[node name="TickerLabel" type="Label3D" parent="Room/MarketTicker"]
+position = Vector3(0, 0, 0.08)
+text = "今日行情载入中……"
+font_size = 42
+modulate = Color(0.39, 0.96, 0.85, 1)
+outline_modulate = Color(0.01, 0.05, 0.06, 1)
+outline_size = 12
+
+[node name="TickerLabelB" type="Label3D" parent="Room/MarketTicker"]
+position = Vector3(6.4, 0, 0.08)
+text = "今日行情载入中……"
+font_size = 42
+modulate = Color(0.39, 0.96, 0.85, 1)
+outline_modulate = Color(0.01, 0.05, 0.06, 1)
+outline_size = 12
+
+[node name="Desk" type="CSGBox3D" parent="Room"]
+position = Vector3(0, -0.35, 0)
+size = Vector3(13, 1.2, 8.5)
+material = SubResource("Material_desk")
+use_collision = true
+
+[node name="DeskMat" type="CSGBox3D" parent="Room"]
+position = Vector3(0.5, 0.28, 0)
+size = Vector3(6.7, 0.06, 4.8)
+material = SubResource("Material_mat")
+
+[node name="Items" type="Node3D" parent="."]
+
+[node name="RecycleNotice" type="Node3D" parent="."]
+position = Vector3(4.65, -0.35, 4.31)
+
+[node name="Board" type="CSGBox3D" parent="RecycleNotice"]
+size = Vector3(3.4, 1.0, 0.1)
+material = SubResource("Material_bin")
+
+[node name="NoticeLabel" type="Label3D" parent="RecycleNotice"]
+position = Vector3(-0.25, 0.1, 0.07)
+text = "空盒推下桌\n自动回收"
+font_size = 48
+modulate = Color(0.7, 1, 0.82, 1)
+outline_size = 12
+
+[node name="ArrowLabel" type="Label3D" parent="RecycleNotice"]
+position = Vector3(1.25, -0.08, 0.07)
+text = "↓"
+font_size = 88
+modulate = Color(1, 0.78, 0.25, 1)
+outline_size = 12
