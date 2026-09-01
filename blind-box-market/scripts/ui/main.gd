@@ -2,6 +2,7 @@ extends Node3D
 
 const BOX_SCENE := preload("res://scenes/entities/physical_box.tscn")
 const PRICE_CHART_SCENE := preload("res://scripts/ui/price_chart.gd")
+const DEVELOPER_CASH := 999999999999
 const RARITIES := ["常见", "少见", "稀有", "史诗", "传说", "隐藏"]
 const LUCK_RARITY_MULTIPLIERS := [0.22, 0.55, 1.25, 2.2, 4.2, 5.5]
 const SERIES_LUCK_MAX := [5, 10, 15, 20, 25]
@@ -260,6 +261,7 @@ func build_ui() -> void:
 	collect_button.pressed.connect(toggle_collection)
 	top_buttons.add_child(collect_button)
 	build_upgrade_panel(canvas)
+	build_developer_panel(canvas)
 
 	detail_panel = PanelContainer.new()
 	detail_panel.position = Vector2(365, 535)
@@ -361,6 +363,55 @@ func build_upgrade_panel(canvas: CanvasLayer) -> void:
 	tear_skill_button.add_theme_font_size_override("font_size", 11)
 	tear_skill_button.pressed.connect(upgrade_tear_skill)
 	col.add_child(tear_skill_button)
+
+func build_developer_panel(canvas: CanvasLayer) -> void:
+	var panel := PanelContainer.new()
+	panel.name = "DeveloperPanel"
+	panel.position = Vector2(1010, 510)
+	panel.size = Vector2(252, 192)
+	panel.add_theme_stylebox_override("panel", style(Color(0.10,0.055,0.07,0.95), 11, Color("#d45f86"), 2))
+	canvas.add_child(panel)
+	var col := VBoxContainer.new()
+	col.add_theme_constant_override("separation", 4)
+	panel.add_child(col)
+	var title := make_label("开发者模式", 14, Color("#ff9ebe"), true)
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	col.add_child(title)
+	var cash_button := button("现金 → ¥999,999,999,999", Color("#8e3f5d"))
+	cash_button.name = "MaxCashButton"
+	cash_button.custom_minimum_size.y = 34
+	cash_button.add_theme_font_size_override("font_size", 12)
+	cash_button.pressed.connect(developer_grant_cash)
+	col.add_child(cash_button)
+	var unlock_button := button("解锁全部盲盒", Color("#77518f"))
+	unlock_button.name = "UnlockAllButton"
+	unlock_button.custom_minimum_size.y = 34
+	unlock_button.add_theme_font_size_override("font_size", 12)
+	unlock_button.pressed.connect(developer_unlock_all_series)
+	col.add_child(unlock_button)
+	var skills_button := button("全部技能满级", Color("#426f86"))
+	skills_button.name = "MaxSkillsButton"
+	skills_button.custom_minimum_size.y = 34
+	skills_button.add_theme_font_size_override("font_size", 12)
+	skills_button.pressed.connect(developer_max_all_skills)
+	col.add_child(skills_button)
+
+func developer_grant_cash() -> void:
+	cash = DEVELOPER_CASH
+	refresh_ui()
+	toast("开发者模式：现金已设为 ¥%s。" % comma(cash))
+
+func developer_unlock_all_series() -> void:
+	earned = maxi(earned, int(SERIES[-1]["unlock"]))
+	refresh_ui()
+	toast("开发者模式：所有盲盒系列已解锁。")
+
+func developer_max_all_skills() -> void:
+	global_luck_level = GLOBAL_LUCK_COSTS.size()
+	shake_upgrade_level = SHAKE_UPGRADE_COSTS.size()
+	tear_skill_level = TEAR_SKILL_UPGRADE_COSTS.size()
+	refresh_ui()
+	toast("开发者模式：幸运、摇盒次数与撕封技巧均已满级。")
 
 func side_panel(canvas: CanvasLayer, title_text: String, height: float) -> PanelContainer:
 	var panel := PanelContainer.new()
