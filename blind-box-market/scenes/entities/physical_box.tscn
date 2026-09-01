@@ -59,9 +59,111 @@ position = Vector3(0, 0.35, -0.48)
 position = Vector3(0, 0, 0.48)
 size = Vector3(1.42, 0.08, 1.02)
 
-[node name="Seal" type="CSGBox3D" parent="."]
-position = Vector3(0, 0.34, 0.505)
-size = Vector3(1.05, 0.16, 0.055)
+[node name="LidPivotB" type="Node3D" parent="."]
+
+[node name="Lid" type="CSGBox3D" parent="LidPivotB"]
+size = Vector3(0.72, 0.08, 1.02)
+
+[node name="BottomLidPivot" type="Node3D" parent="."]
+position = Vector3(0, -0.35, -0.48)
+
+[node name="BottomLid" type="CSGBox3D" parent="BottomLidPivot"]
+position = Vector3(0, 0, 0.48)
+size = Vector3(1.42, 0.08, 1.02)
+
+[node name="BottomLidPivotB" type="Node3D" parent="."]
+
+[node name="BottomLid" type="CSGBox3D" parent="BottomLidPivotB"]
+size = Vector3(0.72, 0.08, 1.02)
+
+[node name="SealRing" type="Node3D" parent="."]
+
+[node name="Ring0Front" type="CSGBox3D" parent="SealRing"]
+position = Vector3(0, 0.34, 0.515)
+size = Vector3(1.42, 0.075, 0.04)
+material = SubResource("Material_seal")
+
+[node name="Ring0Right" type="CSGBox3D" parent="SealRing"]
+position = Vector3(0.71, 0.34, 0)
+size = Vector3(0.04, 0.075, 1.03)
+material = SubResource("Material_seal")
+
+[node name="Ring0Back" type="CSGBox3D" parent="SealRing"]
+position = Vector3(0, 0.34, -0.515)
+size = Vector3(1.42, 0.075, 0.04)
+material = SubResource("Material_seal")
+
+[node name="Ring0Left" type="CSGBox3D" parent="SealRing"]
+position = Vector3(-0.71, 0.34, 0)
+size = Vector3(0.04, 0.075, 1.03)
+material = SubResource("Material_seal")
+
+[node name="Ring1Front" type="CSGBox3D" parent="SealRing"]
+position = Vector3(0, 0.405, 0.52)
+size = Vector3(1.42, 0.055, 0.035)
+material = SubResource("Material_seal")
+
+[node name="Ring1Right" type="CSGBox3D" parent="SealRing"]
+position = Vector3(0.715, 0.405, 0)
+size = Vector3(0.035, 0.055, 1.03)
+material = SubResource("Material_seal")
+
+[node name="Ring1Back" type="CSGBox3D" parent="SealRing"]
+position = Vector3(0, 0.405, -0.52)
+size = Vector3(1.42, 0.055, 0.035)
+material = SubResource("Material_seal")
+
+[node name="Ring1Left" type="CSGBox3D" parent="SealRing"]
+position = Vector3(-0.715, 0.405, 0)
+size = Vector3(0.035, 0.055, 1.03)
+material = SubResource("Material_seal")
+
+[node name="Ring2Front" type="CSGBox3D" parent="SealRing"]
+position = Vector3(0, 0.275, 0.52)
+size = Vector3(1.42, 0.055, 0.035)
+material = SubResource("Material_seal")
+
+[node name="Ring2Right" type="CSGBox3D" parent="SealRing"]
+position = Vector3(0.715, 0.275, 0)
+size = Vector3(0.035, 0.055, 1.03)
+material = SubResource("Material_seal")
+
+[node name="Ring2Back" type="CSGBox3D" parent="SealRing"]
+position = Vector3(0, 0.275, -0.52)
+size = Vector3(1.42, 0.055, 0.035)
+material = SubResource("Material_seal")
+
+[node name="Ring2Left" type="CSGBox3D" parent="SealRing"]
+position = Vector3(-0.715, 0.275, 0)
+size = Vector3(0.035, 0.055, 1.03)
+material = SubResource("Material_seal")
+
+[node name="BottomSealRing" type="Node3D" parent="."]
+
+[node name="BottomFront" type="CSGBox3D" parent="BottomSealRing"]
+position = Vector3(0, -0.34, 0.515)
+size = Vector3(1.42, 0.075, 0.04)
+material = SubResource("Material_seal")
+
+[node name="BottomRight" type="CSGBox3D" parent="BottomSealRing"]
+position = Vector3(0.71, -0.34, 0)
+size = Vector3(0.04, 0.075, 1.03)
+material = SubResource("Material_seal")
+
+[node name="BottomBack" type="CSGBox3D" parent="BottomSealRing"]
+position = Vector3(0, -0.34, -0.515)
+size = Vector3(1.42, 0.075, 0.04)
+material = SubResource("Material_seal")
+
+[node name="BottomLeft" type="CSGBox3D" parent="BottomSealRing"]
+position = Vector3(-0.71, -0.34, 0)
+size = Vector3(0.04, 0.075, 1.03)
+material = SubResource("Material_seal")
+
+[node name="SealGrip" type="CSGSphere3D" parent="."]
+radius = 0.085
+radial_segments = 12
+rings = 6
 material = SubResource("Material_seal")
 
 [node name="SealArea" type="Area3D" parent="."]

@@ -59,7 +59,8 @@ omni_range = 12.0
 [node name="CameraRig" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig"]
-transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 7.5, 9.1)
+position = Vector3(0, 9, 7)
+rotation_degrees = Vector3(-52, 0, 0)
 current = true
 fov = 52.0
 
@@ -72,7 +73,7 @@ material = SubResource("Material_wall")
 use_collision = true
 
 [node name="MarketTicker" type="Node3D" parent="Room"]
-position = Vector3(0.65, 3.55, -4.28)
+position = Vector3(0.65, 2.55, -4.28)
 
 [node name="Display" type="CSGBox3D" parent="Room/MarketTicker"]
 size = Vector3(8.6, 0.78, 0.12)
@@ -107,23 +108,39 @@ material = SubResource("Material_mat")
 
 [node name="Items" type="Node3D" parent="."]
 
-[node name="RecycleNotice" type="Node3D" parent="."]
-position = Vector3(4.65, -0.35, 4.31)
+[node name="SecondhandBin" type="Node3D" parent="."]
+position = Vector3(4.4, 0.64, -2.75)
+scale = Vector3(1.17, 1.17, 1.17)
 
-[node name="Board" type="CSGBox3D" parent="RecycleNotice"]
-size = Vector3(3.4, 1.0, 0.1)
+[node name="Bottom" type="CSGBox3D" parent="SecondhandBin"]
+position = Vector3(0, -0.32, 0)
+rotation_degrees = Vector3(4, 0, 0)
+size = Vector3(2.1, 0.12, 1.575)
 material = SubResource("Material_bin")
+use_collision = true
 
-[node name="NoticeLabel" type="Label3D" parent="RecycleNotice"]
-position = Vector3(-0.25, 0.1, 0.07)
-text = "空盒推下桌\n自动回收"
-font_size = 48
-modulate = Color(0.7, 1, 0.82, 1)
-outline_size = 12
+[node name="LeftWall" type="CSGBox3D" parent="SecondhandBin"]
+position = Vector3(-0.99, 0, 0)
+size = Vector3(0.12, 0.75, 1.575)
+material = SubResource("Material_bin")
+use_collision = true
 
-[node name="ArrowLabel" type="Label3D" parent="RecycleNotice"]
-position = Vector3(1.25, -0.08, 0.07)
-text = "↓"
-font_size = 88
-modulate = Color(1, 0.78, 0.25, 1)
+[node name="RightWall" type="CSGBox3D" parent="SecondhandBin"]
+position = Vector3(0.99, 0, 0)
+size = Vector3(0.12, 0.75, 1.575)
+material = SubResource("Material_bin")
+use_collision = true
+
+[node name="BackWall" type="CSGBox3D" parent="SecondhandBin"]
+position = Vector3(0, 0, -0.7275)
+size = Vector3(2.1, 0.75, 0.12)
+material = SubResource("Material_bin")
+use_collision = true
+
+[node name="MarketLabel" type="Label3D" parent="SecondhandBin"]
+position = Vector3(0, 0.05, -0.655)
+text = "忙鱼二手市场"
+font_size = 30
+modulate = Color(0.72, 1, 0.84, 1)
+outline_modulate = Color(0.02, 0.12, 0.1, 1)
 outline_size = 12
