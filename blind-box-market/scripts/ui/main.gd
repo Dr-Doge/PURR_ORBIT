@@ -3,9 +3,58 @@ extends Node3D
 const BOX_SCENE := preload("res://scenes/entities/physical_box.tscn")
 const PRICE_CHART_SCENE := preload("res://scripts/ui/price_chart.gd")
 const DEVELOPER_CASH := 999999999999
+const AUTO_OPENER_COST := 1000
+const AUTO_OPENER_BASE_TIME := 6.0
+const AUTO_SPEED_BASE_COST := 500
+const AUTO_CAPACITY_BASE_COST := 1000
+const AUTO_UPGRADE_MAX_LEVEL := 20
+const TABLE_DRAG_HEIGHT := 1.85
+const AUTO_GRABBER_COST := 2000
+const AUTO_GRABBER_SPEED_BASE_COST := 1000
+const AUTO_GRABBER_COUNT_BASE_COST := 2000
+const AUTO_INTAKE_HALF_EXTENTS := Vector2(1.55, 1.35)
+const AUTO_INTAKE_LOCAL_CENTER := Vector3(0.0, 0.0, 1.28)
+const AUTO_VACUUM_BASE_SPEED := 1.85
+const AUTO_VACUUM_EFFECT_RADIUS := 6.0
+const LEFT_PANEL_X := 18.0
+const LEFT_PANEL_WIDTH := 182.0
+const LEFT_HUD_Y := 18.0
+const LEFT_HUD_HEIGHT := 200.0
+const LEFT_PANEL_GAP := 6.0
+const LEFT_SHOP_BOTTOM := 702.0
+const UI_PRIMARY := Color("#e60012")
+const UI_SIGNAL := Color("#f68d1f")
+const UI_AMBER := Color("#ecab37")
+const UI_NAV_GOLD := Color("#e48600")
+const UI_CANVAS := Color("#7a8aba")
+const UI_CANVAS_SOFT := Color("#9fbee7")
+const UI_PERIWINKLE := Color("#8ba1d4")
+const UI_CHROME_INDIGO := Color("#3d4f97")
+const UI_MUTED_INDIGO := Color("#60619c")
+const UI_PLATINUM := Color("#dedede")
+const UI_SURFACE := Color("#ffffff")
+const UI_CARBON := Color("#21242e")
+const UI_INK := Color("#21242e")
+const UI_INK_SOFT := Color("#3d4f97")
 const RARITIES := ["常见", "少见", "稀有", "史诗", "传说", "隐藏"]
-const LUCK_RARITY_MULTIPLIERS := [0.22, 0.55, 1.25, 2.2, 4.2, 5.5]
 const SERIES_LUCK_MAX := [5, 10, 15, 20, 25]
+const MAX_LUCK_PEAK_TOTAL := 8000
+const MAX_LUCK_JACKPOT_TOTAL := 1000
+const MAX_LUCK_REMAINING_TOTAL := 1000
+const MAX_LUCK_NO_HIDDEN_REMAINING_TOTAL := 2000
+const LUCK_RARITY_ORDER := [0, 1, 2, 3, 5]
+const LUCK_KEYFRAMES_WITH_HIDDEN := [
+	[6000, 2800, 1090, 100, 10],
+	[2400, 5000, 1900, 600, 100],
+	[600, 1800, 5500, 1600, 500],
+	[167, 333, 500, 8000, 1000],
+]
+const LUCK_KEYFRAMES_NO_HIDDEN := [
+	[6000, 2800, 1100, 100, 0],
+	[2500, 5000, 1900, 600, 0],
+	[800, 2000, 5500, 1700, 0],
+	[333, 667, 1000, 8000, 0],
+]
 const PROFICIENCY_THRESHOLDS := [5, 15, 30, 50, 80]
 const PARCEL_PROFICIENCY_THRESHOLDS := [10, 30, 60, 100, 150]
 const PROFICIENCY_PRICE_BONUS := 0.12
@@ -21,7 +70,8 @@ const SERIES_DETACH_NODES := [
 ]
 const PARCEL_DETACH_CHANCE := 0.58
 const SERIES_DETACH_CHANCES := [0.34, 0.43, 0.52, 0.61, 0.70]
-const TEAR_MIN_DETACH_MULTIPLIER := 0.18
+const PARCEL_MIN_DETACH_MULTIPLIER := 0.18
+const SERIES_MIN_DETACH_CHANCE := 0.01
 const TEAR_MIN_FORCE_MULTIPLIER := 0.50
 const REVEAL_EFFECT_COLORS := [Color("#f2f4f7"), Color("#65e582"), Color("#4e9cff"), Color("#a568ff"), Color("#ffc34d"), Color.WHITE]
 const GLOBAL_LUCK_COSTS := [50,100,1000,5000,10000,25000,50000,100000,250000,500000,1000000,2500000,5000000,10000000,25000000,50000000,100000000,250000000,500000000,1000000000,2500000000,5000000000,10000000000,25000000000,50000000000]
@@ -30,14 +80,37 @@ const SERIES_SHAKE_TRAVEL := [420.0, 520.0, 650.0, 800.0, 980.0]
 const SERIES_SHAKE_REVERSALS := [6, 8, 10, 12, 14]
 const TEAR_SKILL_UPGRADE_COSTS := [50,100,1000,5000,10000,25000,50000,100000,250000,500000,1000000,2500000,5000000,10000000,25000000,50000000,100000000,250000000,500000000,1000000000,2500000000,5000000000,10000000000,25000000000,50000000000]
 const RARITY_COLORS := [Color("#d9e0df"), Color("#65d77d"), Color("#62a8ff"), Color("#b989ff"), Color("#ffb347"), Color("#ff76d8")]
-const SERIES := [
-	{"name":"桌角伙伴", "slogan":"小小桌角，也有大大的陪伴。", "base":10, "unlock":0, "color":Color("#59c7b5"), "items":["线团猫","吐司钟","云朵夹","桌面之王"], "rarities":[0,1,2,3], "weights":[3800,4200,1500,500], "values":[5,15,45,130]},
-	{"name":"LADUDU 精灵怪", "slogan":"坏笑、打盹和恶作剧，都藏在这一盒。", "base":100, "unlock":100, "color":Color("#8d66c7"), "items":["傻笑 LADUDU","打盹 LADUDU","哭哭 LADUDU","金牙 LADUDU","国王 LADUDU"], "rarities":[0,1,2,3,5], "weights":[5000,3000,1100,810,90], "values":[50,100,1000,3000,10000]},
-	{"name":"夜班小队", "slogan":"今晚不打烊，惊喜正在值班。", "base":1000, "unlock":1000, "color":Color("#526cb7"), "items":["咖啡骑士","灯泡幽灵","键盘鼹鼠","打卡树懒","午夜主管","永夜董事"], "rarities":[0,0,1,2,3,5], "weights":[2500,2500,3000,1100,810,90], "values":[500,500,1000,10000,30000,100000]},
-	{"name":"泪包宝贝", "slogan":"把今天的小情绪，装进柔软的眼泪里。", "base":10000, "unlock":10000, "color":Color("#dc759b"), "items":["素面泪包","墨镜泪包","甜梦泪包","委屈泪包","暴雨泪包","天使泪包·左翼","天使泪包·右翼"], "rarities":[0,0,1,2,3,5,5], "weights":[2500,2500,3000,1000,820,90,90], "values":[5000,5000,10000,100000,500000,100000,100000]},
-	{"name":"星港机修铺", "slogan":"穿过星港，把失落核心带回家。", "base":100000, "unlock":100000, "color":Color("#dd7048"), "items":["扳手机器人","货运水母","信标犬","油渍章鱼","零号领航员","机库技师","星港机神·头部","星港机神·躯干","星港机神·腿部"], "rarities":[0,0,1,1,2,3,5,5,5], "weights":[2500,2500,1500,1500,1000,800,67,67,66], "values":[50000,50000,100000,100000,1000000,5000000,1000000,1000000,1000000]}
+const COLLECTIBLE_MODEL_PATHS := [
+	[
+		"res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠常见.fbx",
+		"res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠少见.fbx",
+		"res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠稀有.fbx",
+		"res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠隐藏.fbx",
+	],
+	[
+		"res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/傻笑 LADUDU常见.fbx",
+		"res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/打盹 LADUDU少见.fbx",
+		"res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/哭哭 LADUDU稀有.fbx",
+		"res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/金牙LADUDU史诗.fbx",
+		"res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/国王 LADUDU传说.fbx",
+	],
 ]
-const NEWS := ["桌角萌物进入热榜，入门盒价格温和上涨。","LADUDU 精灵怪引发恶作剧收藏热。","夜班小队开放夜间试销。","泪包宝贝情绪主题成交活跃。","神秘买家寻找隐藏级藏品。","星港机修铺抵达本地。","收藏节成交活跃，市场进入新周期。"]
+const COLLECTIBLE_MODEL_TARGET_SIZE := 1.0
+const COLLECTIBLE_FRONT_AXIS := Vector3.DOWN # 内容物统一使用本地 -Y 作为正面。
+const COLLECTIBLE_UP_AXIS := Vector3.BACK # 与 -Y 正面配套，使用本地 +Z 作为上方。
+const FAT_PARTNER_PRESENTATION_YAW := PI / 4.0
+const SERIES := [
+	{"name":"肥嘟嘟伙伴", "slogan":"肥嘟嘟的伙伴，把好运装进口袋。", "base":10, "unlock":0, "color":Color("#59c7b5"), "items":["袋鼠1","袋鼠2","袋鼠3","袋鼠4"], "rarities":[0,1,2,3], "weights":[6000,2800,1100,100], "values":[1,10,100,1000]},
+	{"name":"LADUDU 精灵怪", "slogan":"坏笑、打盹和恶作剧，都藏在这一盒。", "base":100, "unlock":100, "color":Color("#8d66c7"), "items":["傻笑 LADUDU","打盹 LADUDU","哭哭 LADUDU","金牙 LADUDU","国王 LADUDU"], "rarities":[0,1,2,3,5], "weights":[6000,2800,1090,100,10], "values":[10,100,1000,3000,10000]},
+	{"name":"夜班小队", "slogan":"今晚不打烊，惊喜正在值班。", "base":1000, "unlock":1000, "color":Color("#526cb7"), "items":["咖啡骑士","灯泡幽灵","键盘鼹鼠","打卡树懒","午夜主管","永夜董事"], "rarities":[0,0,1,2,3,5], "weights":[3000,3000,2800,1090,100,10], "values":[100,100,1000,10000,30000,100000]},
+	{"name":"泪包宝贝", "slogan":"把今天的小情绪，装进柔软的眼泪里。", "base":10000, "unlock":10000, "color":Color("#dc759b"), "items":["素面泪包","墨镜泪包","甜梦泪包","委屈泪包","暴雨泪包","天使泪包·左翼","天使泪包·右翼"], "rarities":[0,0,1,2,3,5,5], "weights":[3000,3000,2800,1090,100,5,5], "values":[1000,1000,10000,100000,500000,100000,100000]},
+	{"name":"星港机修铺", "slogan":"穿过星港，把失落核心带回家。", "base":100000, "unlock":100000, "color":Color("#dd7048"), "items":["扳手机器人","货运水母","信标犬","油渍章鱼","零号领航员","机库技师","星港机神·头部","星港机神·躯干","星港机神·腿部"], "rarities":[0,0,1,1,2,3,5,5,5], "weights":[3000,3000,1400,1400,1090,100,4,3,3], "values":[10000,10000,100000,100000,1000000,5000000,1000000,1000000,1000000]}
+]
+const COMBINATION_COLLECTIBLES := [
+	{"id":"angel_complete", "series":3, "name":"天使泪包·合璧", "components":[5, 6], "base_value":1000000, "rarity":5},
+	{"id":"star_mecha_complete", "series":4, "name":"星港机神·合体", "components":[6, 7, 8], "base_value":10000000, "rarity":5}
+]
+const NEWS := ["肥嘟嘟伙伴进入热榜，入门盒价格温和上涨。","LADUDU 精灵怪引发恶作剧收藏热。","夜班小队开放夜间试销。","泪包宝贝情绪主题成交活跃。","神秘买家寻找隐藏级藏品。","星港机修铺抵达本地。","收藏节成交活跃，市场进入新周期。"]
 const FACTORS := [[1.10,1.00,1.00,1.00,1.00],[1.18,1.04,1.00,1.00,1.00],[0.92,1.08,1.05,1.00,1.00],[0.86,1.15,1.12,1.04,1.00],[1.02,1.32,1.18,1.10,1.04],[1.12,1.08,1.25,1.18,1.10],[1.26,1.18,1.35,1.28,1.35]]
 
 @onready var camera: Camera3D = $CameraRig/Camera3D
@@ -77,6 +150,7 @@ var shake_base_rotation := Vector3.ZERO
 var review_item: Node3D
 var review_glow: Node3D
 var pending_item: Dictionary = {}
+var collectible_model_cache: Dictionary = {}
 
 var money_label: Label
 var value_label: Label
@@ -116,6 +190,39 @@ var ticker_source := ""
 var ticker_scroll_x := 0.0
 var opening_sequence := false
 var review_animation_playing := false
+var shop_scroll: ScrollContainer
+var item_shop_scroll: ScrollContainer
+var shop_tab_button: Button
+var item_shop_tab_button: Button
+var auto_opener_card: Dictionary
+var auto_speed_card: Dictionary
+var auto_capacity_card: Dictionary
+var auto_grabber_card: Dictionary
+var auto_grabber_speed_card: Dictionary
+var auto_grabber_count_card: Dictionary
+var auto_opener_owned := false
+var auto_opener_speed_level := 0
+var auto_opener_capacity := 5
+var auto_opener_root: Node3D
+var auto_basket_root: Node3D
+var auto_left_arm: Node3D
+var auto_right_arm: Node3D
+var auto_processing_box: RigidBody3D
+var auto_processing_elapsed := 0.0
+var auto_basket_boxes: Array[RigidBody3D] = []
+var auto_processed_boxes: Array[RigidBody3D] = []
+var auto_settlement_active := false
+var auto_grabber_owned := false
+var auto_grabber_speed_level := 0
+var auto_grabber_count_level := 0
+var auto_grabber_panel_root: Node3D
+var auto_grabber_holding := false
+var auto_vacuum_root: Node3D
+var auto_vacuum_particles: GPUParticles3D
+var developer_panel: PanelContainer
+var developer_toggle_button: Button
+var developer_panel_hidden := false
+var developer_panel_tween: Tween
 
 func _ready() -> void:
 	rng.randomize()
@@ -129,11 +236,13 @@ func _ready() -> void:
 	toast("点击盲盒查看并摇盒；拖动未拆盲盒到桌面右上角的忙鱼回收盒可按市价八折出售。")
 
 func _process(delta: float) -> void:
-	if ticker_source.is_empty(): return
-	ticker_scroll_x -= delta * 0.82
-	if ticker_scroll_x <= -6.4: ticker_scroll_x += 6.4
-	wall_ticker.position.x = ticker_scroll_x
-	wall_ticker_b.position.x = ticker_scroll_x + 6.4
+	if not ticker_source.is_empty():
+		ticker_scroll_x -= delta * 0.82
+		if ticker_scroll_x <= -6.4: ticker_scroll_x += 6.4
+		wall_ticker.position.x = ticker_scroll_x
+		wall_ticker_b.position.x = ticker_scroll_x + 6.4
+	update_auto_opener(delta)
+	update_auto_grabber(delta)
 
 func _physics_process(_delta: float) -> void:
 	for box in boxes.duplicate():
@@ -152,13 +261,15 @@ func build_ui() -> void:
 	# The player status is deliberately outside the shop scroll area so the
 	# important economy information remains visible while browsing every series.
 	var left_hud := PanelContainer.new()
-	left_hud.position = Vector2(18, 18)
-	left_hud.size = Vector2(182, 188)
-	left_hud.add_theme_stylebox_override("panel", style(Color(0.055,0.07,0.085,0.95), 15, Color("#42505d"), 2))
+	left_hud.name = "LeftStatusPanel"
+	left_hud.position = Vector2(LEFT_PANEL_X, LEFT_HUD_Y)
+	left_hud.size = Vector2(LEFT_PANEL_WIDTH, LEFT_HUD_HEIGHT)
+	left_hud.add_theme_stylebox_override("panel", chrome_style(UI_CANVAS))
 	canvas.add_child(left_hud)
 	var hud_column := VBoxContainer.new()
 	hud_column.add_theme_constant_override("separation", 5)
 	left_hud.add_child(hud_column)
+	hud_column.add_child(section_label("PLAYER STATUS / 玩家状态"))
 	var asset_row := HBoxContainer.new()
 	asset_row.add_theme_constant_override("separation", 5)
 	hud_column.add_child(asset_row)
@@ -175,42 +286,65 @@ func build_ui() -> void:
 	var level_block := VBoxContainer.new()
 	level_block.add_theme_constant_override("separation", 2)
 	hud_column.add_child(level_block)
-	player_level_label = make_label("等级", 11, Color("#a8d8ff"), true)
+	player_level_label = make_label("等级", 11, UI_INK, true)
 	level_block.add_child(player_level_label)
 	player_level_bar = ProgressBar.new()
 	player_level_bar.custom_minimum_size.y = 10
 	player_level_bar.max_value = 100
 	player_level_bar.show_percentage = false
+	decorate_progress_bar(player_level_bar, UI_SIGNAL)
 	level_block.add_child(player_level_bar)
-	var end_day := button("结束今天", Color("#a45d43"))
+	var end_day := button("▶ 结束今天", UI_SIGNAL)
 	end_day.pressed.connect(end_day_pressed)
 	hud_column.add_child(end_day)
 
 	var left_shop := PanelContainer.new()
-	left_shop.position = Vector2(18, 216)
-	left_shop.size = Vector2(182, 486)
-	left_shop.add_theme_stylebox_override("panel", style(Color(0.055,0.07,0.085,0.93), 15, Color("#42505d"), 2))
+	left_shop.name = "LeftShopPanel"
+	var left_shop_y := LEFT_HUD_Y + LEFT_HUD_HEIGHT + LEFT_PANEL_GAP
+	left_shop.position = Vector2(LEFT_PANEL_X, left_shop_y)
+	left_shop.size = Vector2(LEFT_PANEL_WIDTH, LEFT_SHOP_BOTTOM - left_shop_y)
+	left_shop.add_theme_stylebox_override("panel", chrome_style(UI_CANVAS))
 	canvas.add_child(left_shop)
-	var left_scroll := ScrollContainer.new()
-	left_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	left_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
-	left_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	left_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	left_shop.add_child(left_scroll)
+	var shop_shell := VBoxContainer.new()
+	shop_shell.add_theme_constant_override("separation", 5)
+	left_shop.add_child(shop_shell)
+	var tab_row := HBoxContainer.new()
+	tab_row.add_theme_constant_override("separation", 4)
+	shop_shell.add_child(tab_row)
+	shop_tab_button = button("◀ 盲盒", UI_CARBON)
+	shop_tab_button.custom_minimum_size = Vector2(72, 32)
+	shop_tab_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	shop_tab_button.add_theme_font_size_override("font_size", 11)
+	shop_tab_button.pressed.connect(show_left_shop_tab.bind(false))
+	shop_tab_button.disabled = true
+	tab_row.add_child(shop_tab_button)
+	item_shop_tab_button = button("道具 ▶", UI_CARBON)
+	item_shop_tab_button.custom_minimum_size = Vector2(72, 32)
+	item_shop_tab_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	item_shop_tab_button.add_theme_font_size_override("font_size", 11)
+	item_shop_tab_button.pressed.connect(show_left_shop_tab.bind(true))
+	tab_row.add_child(item_shop_tab_button)
+	shop_scroll = ScrollContainer.new()
+	shop_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	shop_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	shop_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	shop_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	shop_shell.add_child(shop_scroll)
 	var column := VBoxContainer.new()
 	column.custom_minimum_size.x = 148
 	column.add_theme_constant_override("separation", 5)
-	left_scroll.add_child(column)
+	shop_scroll.add_child(column)
 	var parcel_card := make_shop_card("快递盒", "买入 ¥1 · 压扁即结算 ¥2–3", Color("#a87e55"))
 	parcel_label = parcel_card["detail"]
 	parcel_card["button"].text = "购买  ¥1"
 	parcel_card["button"].pressed.connect(buy_parcel)
-	var parcel_mastery_label := make_label("拆箱熟练 Lv.0/5", 10, Color("#d0b28e"), true)
+	var parcel_mastery_label := make_label("拆箱熟练 Lv.0/5", 10, UI_INK_SOFT, true)
 	parcel_card["column"].add_child(parcel_mastery_label)
 	var parcel_mastery_bar := ProgressBar.new()
 	parcel_mastery_bar.custom_minimum_size.y = 9
 	parcel_mastery_bar.max_value = 100
 	parcel_mastery_bar.show_percentage = false
+	decorate_progress_bar(parcel_mastery_bar, UI_NAV_GOLD)
 	parcel_card["column"].add_child(parcel_mastery_bar)
 	parcel_card["mastery_label"] = parcel_mastery_label
 	parcel_card["mastery_bar"] = parcel_mastery_bar
@@ -220,12 +354,13 @@ func build_ui() -> void:
 		var data: Dictionary = SERIES[i]
 		var card := make_shop_card("盲盒 %d · %s" % [i + 1, data["name"]], "按图鉴逐件公开概率", data["color"])
 		card["button"].pressed.connect(buy_box.bind(i))
-		var mastery_label := make_label("熟练 Lv.0 / 5", 10, Color("#aeb9c5"), true)
+		var mastery_label := make_label("熟练 Lv.0 / 5", 10, UI_INK_SOFT, true)
 		card["column"].add_child(mastery_label)
 		var mastery_bar := ProgressBar.new()
 		mastery_bar.custom_minimum_size.y = 9
 		mastery_bar.max_value = 100
 		mastery_bar.show_percentage = false
+		decorate_progress_bar(mastery_bar, data["color"])
 		card["column"].add_child(mastery_bar)
 		card["mastery_label"] = mastery_label
 		card["mastery_bar"] = mastery_bar
@@ -236,27 +371,60 @@ func build_ui() -> void:
 	column.add_child(spacer)
 	var unknown := PanelContainer.new()
 	unknown.custom_minimum_size.y = 45
-	unknown.add_theme_stylebox_override("panel", style(Color("#20262c"), 10, Color("#4a545e"), 2))
-	var unknown_label := make_label("？  新系列预留栏位", 16, Color("#78838e"), true)
+	unknown.add_theme_stylebox_override("panel", inset_style(UI_MUTED_INDIGO))
+	var unknown_label := make_label("？  新系列预留栏位", 13, UI_CANVAS_SOFT, true)
 	unknown_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	unknown_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	unknown.add_child(unknown_label)
 	column.add_child(unknown)
+
+	item_shop_scroll = ScrollContainer.new()
+	item_shop_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	item_shop_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	item_shop_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	item_shop_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	item_shop_scroll.visible = false
+	shop_shell.add_child(item_shop_scroll)
+	var item_column := VBoxContainer.new()
+	item_column.custom_minimum_size.x = 148
+	item_column.add_theme_constant_override("separation", 6)
+	item_shop_scroll.add_child(item_column)
+	var item_intro := section_label("HARDWARE SHOP / 自动化道具")
+	item_intro.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	item_column.add_child(item_intro)
+	auto_opener_card = make_shop_card("自动开盒机", "容量 5 · 将盲盒投入头顶篮子", Color("#c07b48"))
+	auto_opener_card["button"].pressed.connect(buy_auto_opener)
+	item_column.add_child(auto_opener_card["panel"])
+	auto_speed_card = make_shop_card("开盒机速度", "每级加速 10%", Color("#4c87a4"))
+	auto_speed_card["button"].pressed.connect(upgrade_auto_opener_speed)
+	item_column.add_child(auto_speed_card["panel"])
+	auto_capacity_card = make_shop_card("开盒机容量", "每级增加 5 个待结算位", Color("#6e6aa8"))
+	auto_capacity_card["button"].pressed.connect(upgrade_auto_opener_capacity)
+	item_column.add_child(auto_capacity_card["panel"])
+	auto_grabber_card = make_shop_card("自动吸尘器", "按住桌面红色按钮，将未拆盲盒吸向开盒区", Color("#4a8f77"))
+	auto_grabber_card["button"].pressed.connect(buy_auto_grabber)
+	item_column.add_child(auto_grabber_card["panel"])
+	auto_grabber_speed_card = make_shop_card("吸尘速度", "每级使盲盒移动速度提高 10%", Color("#3f7899"))
+	auto_grabber_speed_card["button"].pressed.connect(upgrade_auto_grabber_speed)
+	item_column.add_child(auto_grabber_speed_card["panel"])
+	auto_grabber_count_card = make_shop_card("吸尘器吸力", "每级提高吸力强度 15%", Color("#7c5793"))
+	auto_grabber_count_card["button"].pressed.connect(upgrade_auto_grabber_count)
+	item_column.add_child(auto_grabber_count_card["panel"])
 
 	var top_buttons := HBoxContainer.new()
 	top_buttons.position = Vector2(890, 18)
 	top_buttons.size = Vector2(372, 48)
 	top_buttons.add_theme_constant_override("separation", 8)
 	canvas.add_child(top_buttons)
-	var market_button := button("行情", Color("#7b6739"))
+	var market_button := button("MARKET 行情", UI_CARBON)
 	market_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	market_button.pressed.connect(toggle_market)
 	top_buttons.add_child(market_button)
-	var inv_button := button("库存", Color("#355d6d"))
+	var inv_button := button("STOCK 库存", UI_CARBON)
 	inv_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	inv_button.pressed.connect(toggle_inventory)
 	top_buttons.add_child(inv_button)
-	var collect_button := button("收藏", Color("#67517c"))
+	var collect_button := button("COLLECT 收藏", UI_CARBON)
 	collect_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	collect_button.pressed.connect(toggle_collection)
 	top_buttons.add_child(collect_button)
@@ -267,39 +435,42 @@ func build_ui() -> void:
 	detail_panel.position = Vector2(365, 535)
 	detail_panel.size = Vector2(580, 155)
 	detail_panel.visible = false
-	detail_panel.add_theme_stylebox_override("panel", style(Color(0.06,0.075,0.09,0.94), 13, Color("#e7b967"), 2))
+	detail_panel.add_theme_stylebox_override("panel", chrome_style(UI_CANVAS_SOFT))
 	canvas.add_child(detail_panel)
 	var detail_col := VBoxContainer.new()
 	detail_col.add_theme_constant_override("separation", 5)
 	detail_panel.add_child(detail_col)
-	detail_title = make_label("", 20, Color("#ffd178"), true)
+	detail_title = make_label("", 20, UI_CHROME_INDIGO, true)
 	detail_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	detail_col.add_child(detail_title)
-	detail_hint = make_label("", 14, Color("#d3dae1"))
+	detail_hint = make_label("", 13, UI_INK)
 	detail_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	detail_col.add_child(detail_hint)
 	seal_bar = ProgressBar.new()
 	seal_bar.max_value = 100
 	seal_bar.show_percentage = false
 	seal_bar.visible = false
+	decorate_progress_bar(seal_bar, UI_SIGNAL)
 	detail_col.add_child(seal_bar)
 	action_row = HBoxContainer.new()
 	action_row.alignment = BoxContainer.ALIGNMENT_CENTER
 	action_row.add_theme_constant_override("separation", 12)
 	action_row.visible = false
 	detail_col.add_child(action_row)
-	sell_button = button("直接出售", Color("#9a6240"))
+	sell_button = button("▶ 直接出售", UI_SIGNAL)
 	sell_button.custom_minimum_size.x = 210
 	sell_button.pressed.connect(resolve_review.bind(true))
 	action_row.add_child(sell_button)
-	var keep_button := button("保留库存", Color("#397568"))
+	var keep_button := button("保留库存", UI_AMBER)
 	keep_button.custom_minimum_size.x = 180
 	keep_button.pressed.connect(resolve_review.bind(false))
 	action_row.add_child(keep_button)
-	toast_label = make_label("点击桌面上的箱子，将它拿到眼前查看。", 15, Color("#f0dfc4"), true)
+	toast_label = make_label("点击桌面上的箱子，将它拿到眼前查看。", 13, UI_INK, true)
 	toast_label.position = Vector2(350, 665)
 	toast_label.size = Vector2(600, 38)
 	toast_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	toast_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	toast_label.add_theme_stylebox_override("normal", chrome_style(UI_SURFACE))
 	canvas.add_child(toast_label)
 
 	inventory_panel = side_panel(canvas, "库存", 411)
@@ -327,74 +498,613 @@ func build_ui() -> void:
 	market_panel = build_market_panel(canvas)
 	loot_preview_panel = build_loot_preview_panel(canvas)
 
+func show_left_shop_tab(show_items: bool) -> void:
+	shop_scroll.visible = not show_items
+	item_shop_scroll.visible = show_items
+	shop_tab_button.disabled = not show_items
+	item_shop_tab_button.disabled = show_items
+	if show_items: refresh_item_shop()
+
+func buy_auto_opener() -> void:
+	if auto_opener_owned:
+		toast("自动开盒机已经安装在桌面左上角。")
+		return
+	if cash < AUTO_OPENER_COST:
+		toast("购买自动开盒机还需要 ¥%s。" % comma(AUTO_OPENER_COST - cash))
+		return
+	cash -= AUTO_OPENER_COST
+	auto_opener_owned = true
+	build_auto_opener_robot()
+	toast("自动开盒机已安装：将未拆盲盒拖进头顶篮子，它才会开始处理。")
+	refresh_ui()
+
+func upgrade_auto_opener_speed() -> void:
+	if not auto_opener_owned:
+		toast("需要先购买自动开盒机。")
+		return
+	if auto_opener_speed_level >= AUTO_UPGRADE_MAX_LEVEL:
+		toast("自动开盒机速度已经满级。")
+		return
+	var cost := auto_speed_upgrade_cost()
+	if cash < cost:
+		toast("升级开盒速度还需要 ¥%s。" % comma(cost - cash))
+		return
+	cash -= cost
+	auto_opener_speed_level += 1
+	toast("自动开盒机速度升至 %d 级，当前加速 %d%%。" % [auto_opener_speed_level, auto_opener_speed_level * 10])
+	refresh_ui()
+
+func upgrade_auto_opener_capacity() -> void:
+	if not auto_opener_owned:
+		toast("需要先购买自动开盒机。")
+		return
+	var capacity_level := (auto_opener_capacity - 5) / 5
+	if capacity_level >= AUTO_UPGRADE_MAX_LEVEL:
+		toast("自动开盒机容量已经满级。")
+		return
+	var cost := auto_capacity_upgrade_cost()
+	if cash < cost:
+		toast("升级开盒容量还需要 ¥%s。" % comma(cost - cash))
+		return
+	cash -= cost
+	auto_opener_capacity += 5
+	toast("自动开盒机容量提升至 %d。" % auto_opener_capacity)
+	refresh_ui()
+
+func buy_auto_grabber() -> void:
+	if auto_grabber_owned:
+		toast("自动吸尘器和红色控制按钮已经安装。")
+		return
+	if not auto_opener_owned:
+		toast("自动吸尘器需要安装在自动开盒机上。")
+		return
+	if cash < AUTO_GRABBER_COST:
+		toast("购买自动吸尘器还需要 ¥%s。" % comma(AUTO_GRABBER_COST - cash))
+		return
+	cash -= AUTO_GRABBER_COST
+	auto_grabber_owned = true
+	build_auto_grabber_panel()
+	build_auto_vacuum_on_opener()
+	toast("吸尘器已安装。按住右下角红色按钮，未拆盲盒会被吸向开盒机感应区。")
+	refresh_ui()
+
+func upgrade_auto_grabber_speed() -> void:
+	if not auto_grabber_owned:
+		toast("需要先购买自动吸尘器。")
+		return
+	if auto_grabber_speed_level >= AUTO_UPGRADE_MAX_LEVEL:
+		toast("吸尘速度已经满级。")
+		return
+	var cost := auto_grabber_speed_upgrade_cost()
+	if cash < cost:
+		toast("升级吸尘速度还需要 ¥%s。" % comma(cost - cash))
+		return
+	cash -= cost
+	auto_grabber_speed_level += 1
+	toast("吸尘速度升至 %d 级，盲盒移动速度提高 %d%%。" % [auto_grabber_speed_level, auto_grabber_speed_level * 10])
+	refresh_ui()
+
+func upgrade_auto_grabber_count() -> void:
+	if not auto_grabber_owned:
+		toast("需要先购买自动吸尘器。")
+		return
+	if auto_grabber_count_level >= AUTO_UPGRADE_MAX_LEVEL:
+		toast("吸尘器吸力已经满级。")
+		return
+	var cost := auto_grabber_count_upgrade_cost()
+	if cash < cost:
+		toast("升级吸尘器吸力还需要 ¥%s。" % comma(cost - cash))
+		return
+	cash -= cost
+	auto_grabber_count_level += 1
+	toast("吸尘器吸力升至 %d 级，当前吸力提高 %d%%。" % [auto_grabber_count_level, auto_grabber_count_level * 15])
+	refresh_ui()
+
+func auto_speed_upgrade_cost() -> int:
+	return int(AUTO_SPEED_BASE_COST * pow(2.0, auto_opener_speed_level))
+
+func auto_capacity_upgrade_cost() -> int:
+	var capacity_level := (auto_opener_capacity - 5) / 5
+	return int(AUTO_CAPACITY_BASE_COST * pow(2.0, capacity_level))
+
+func auto_grabber_speed_upgrade_cost() -> int:
+	return int(AUTO_GRABBER_SPEED_BASE_COST * pow(2.0, auto_grabber_speed_level))
+
+func auto_grabber_count_upgrade_cost() -> int:
+	return int(AUTO_GRABBER_COUNT_BASE_COST * pow(2.0, auto_grabber_count_level))
+
+func refresh_item_shop() -> void:
+	if auto_opener_card.is_empty(): return
+	if auto_opener_owned:
+		auto_opener_card["detail"].text = "篮中 %d/%d · 待结算 %d" % [auto_basket_boxes.size(), auto_opener_capacity, auto_processed_boxes.size()]
+		auto_opener_card["button"].text = "已拥有"
+		auto_opener_card["button"].disabled = true
+	else:
+		auto_opener_card["detail"].text = "初始篮容量 5 · 需手动投入盲盒"
+		auto_opener_card["button"].text = "购买  ¥%s" % comma(AUTO_OPENER_COST)
+		auto_opener_card["button"].disabled = cash < AUTO_OPENER_COST
+	if auto_opener_speed_level >= AUTO_UPGRADE_MAX_LEVEL:
+		auto_speed_card["detail"].text = "速度 Lv.%d · 加速 %d%%" % [auto_opener_speed_level, auto_opener_speed_level * 10]
+		auto_speed_card["button"].text = "已满级"
+		auto_speed_card["button"].disabled = true
+	else:
+		auto_speed_card["detail"].text = "速度 Lv.%d · 当前加速 %d%%" % [auto_opener_speed_level, auto_opener_speed_level * 10]
+		auto_speed_card["button"].text = "加速 10%%  ¥%s" % comma(auto_speed_upgrade_cost())
+		auto_speed_card["button"].disabled = not auto_opener_owned or cash < auto_speed_upgrade_cost()
+	var capacity_level := (auto_opener_capacity - 5) / 5
+	if capacity_level >= AUTO_UPGRADE_MAX_LEVEL:
+		auto_capacity_card["detail"].text = "容量 Lv.%d · 当前 %d" % [capacity_level, auto_opener_capacity]
+		auto_capacity_card["button"].text = "已满级"
+		auto_capacity_card["button"].disabled = true
+	else:
+		auto_capacity_card["detail"].text = "容量 Lv.%d · 当前 %d" % [capacity_level, auto_opener_capacity]
+		auto_capacity_card["button"].text = "+5 容量  ¥%s" % comma(auto_capacity_upgrade_cost())
+		auto_capacity_card["button"].disabled = not auto_opener_owned or cash < auto_capacity_upgrade_cost()
+	if auto_grabber_owned:
+		auto_grabber_card["detail"].text = "已安装 · 按住右下角红色按钮运行"
+		auto_grabber_card["button"].text = "已拥有"
+		auto_grabber_card["button"].disabled = true
+	else:
+		auto_grabber_card["detail"].text = "把桌面盲盒吸向开盒机感应区"
+		auto_grabber_card["button"].text = "购买  ¥%s" % comma(AUTO_GRABBER_COST)
+		auto_grabber_card["button"].disabled = not auto_opener_owned or cash < AUTO_GRABBER_COST
+	if auto_grabber_speed_level >= AUTO_UPGRADE_MAX_LEVEL:
+		auto_grabber_speed_card["detail"].text = "速度 Lv.%d · 加速 %d%%" % [auto_grabber_speed_level, auto_grabber_speed_level * 10]
+		auto_grabber_speed_card["button"].text = "已满级"
+		auto_grabber_speed_card["button"].disabled = true
+	else:
+		auto_grabber_speed_card["detail"].text = "速度 Lv.%d · 加速 %d%%" % [auto_grabber_speed_level, auto_grabber_speed_level * 10]
+		auto_grabber_speed_card["button"].text = "加速 10%%  ¥%s" % comma(auto_grabber_speed_upgrade_cost())
+		auto_grabber_speed_card["button"].disabled = not auto_grabber_owned or cash < auto_grabber_speed_upgrade_cost()
+	if auto_grabber_count_level >= AUTO_UPGRADE_MAX_LEVEL:
+		auto_grabber_count_card["detail"].text = "吸力 Lv.%d · 加成 %d%%" % [auto_grabber_count_level, auto_grabber_count_level * 15]
+		auto_grabber_count_card["button"].text = "已满级"
+		auto_grabber_count_card["button"].disabled = true
+	else:
+		auto_grabber_count_card["detail"].text = "吸力 Lv.%d · 加成 %d%%" % [auto_grabber_count_level, auto_grabber_count_level * 15]
+		auto_grabber_count_card["button"].text = "+15%% 吸力  ¥%s" % comma(auto_grabber_count_upgrade_cost())
+		auto_grabber_count_card["button"].disabled = not auto_grabber_owned or cash < auto_grabber_count_upgrade_cost()
+
+func build_auto_opener_robot() -> void:
+	if is_instance_valid(auto_opener_root): return
+	auto_opener_root = Node3D.new()
+	auto_opener_root.name = "AutoBoxOpener"
+	auto_opener_root.position = Vector3(-4.65, 0.32, -3.25)
+	items_root.add_child(auto_opener_root)
+	var orange := Color("#d07b3e")
+	var dark := Color("#263744")
+	var metal := Color("#91a6ad")
+	add_robot_box(auto_opener_root, Vector3(0, 0.82, 0), Vector3(1.15, 1.15, 0.72), orange)
+	add_robot_box(auto_opener_root, Vector3(0, 1.55, 0.03), Vector3(0.82, 0.42, 0.60), dark)
+	add_robot_box(auto_opener_root, Vector3(-0.31, 1.58, 0.35), Vector3(0.14, 0.12, 0.05), Color("#7df3ff"), true)
+	add_robot_box(auto_opener_root, Vector3(0.31, 1.58, 0.35), Vector3(0.14, 0.12, 0.05), Color("#7df3ff"), true)
+	add_robot_box(auto_opener_root, Vector3(-0.34, 0.12, 0), Vector3(0.28, 0.42, 0.42), dark)
+	add_robot_box(auto_opener_root, Vector3(0.34, 0.12, 0), Vector3(0.28, 0.42, 0.42), dark)
+	auto_left_arm = Node3D.new()
+	auto_left_arm.position = Vector3(-0.72, 1.14, 0.18)
+	auto_opener_root.add_child(auto_left_arm)
+	add_robot_box(auto_left_arm, Vector3(0, 0, 0.53), Vector3(0.22, 0.22, 1.06), metal)
+	add_robot_box(auto_left_arm, Vector3(0, -0.02, 1.08), Vector3(0.40, 0.16, 0.30), dark)
+	auto_right_arm = Node3D.new()
+	auto_right_arm.position = Vector3(0.72, 1.14, 0.18)
+	auto_opener_root.add_child(auto_right_arm)
+	add_robot_box(auto_right_arm, Vector3(0, 0, 0.53), Vector3(0.22, 0.22, 1.06), metal)
+	add_robot_box(auto_right_arm, Vector3(0, -0.02, 1.08), Vector3(0.40, 0.16, 0.30), dark)
+	var label := Label3D.new()
+	label.text = "自动开盒"
+	label.position = Vector3(0, 0.80, 0.385)
+	label.font_size = 24
+	label.modulate = Color("#fff0c7")
+	label.outline_size = 8
+	auto_opener_root.add_child(label)
+	auto_basket_root = Node3D.new()
+	auto_basket_root.name = "InputBasket"
+	auto_basket_root.position = Vector3(0, 2.08, 0.02)
+	auto_opener_root.add_child(auto_basket_root)
+	var basket_color := Color("#c49a58")
+	add_robot_box(auto_basket_root, Vector3(0, 0, 0), Vector3(1.62, 0.10, 1.18), basket_color)
+	add_robot_box(auto_basket_root, Vector3(-0.76, 0.30, 0), Vector3(0.10, 0.62, 1.18), basket_color)
+	add_robot_box(auto_basket_root, Vector3(0.76, 0.30, 0), Vector3(0.10, 0.62, 1.18), basket_color)
+	add_robot_box(auto_basket_root, Vector3(0, 0.30, -0.54), Vector3(1.62, 0.62, 0.10), basket_color)
+	add_robot_box(auto_basket_root, Vector3(0, 0.18, 0.54), Vector3(1.62, 0.36, 0.10), basket_color)
+	var basket_label := Label3D.new()
+	basket_label.text = "投入盲盒"
+	basket_label.position = Vector3(0, 0.34, 0.60)
+	basket_label.font_size = 20
+	basket_label.modulate = Color("#fff1bf")
+	basket_label.outline_size = 7
+	auto_basket_root.add_child(basket_label)
+	build_auto_intake_zone()
+
+func add_robot_box(parent: Node3D, part_position: Vector3, part_size: Vector3, color: Color, glow := false) -> CSGBox3D:
+	var part := CSGBox3D.new()
+	part.position = part_position
+	part.size = part_size
+	var material := StandardMaterial3D.new()
+	material.albedo_color = color
+	material.roughness = 0.55
+	material.metallic = 0.35
+	material.emission_enabled = glow
+	if glow: material.emission = color * 0.7
+	part.material = material
+	parent.add_child(part)
+	return part
+
+func build_auto_intake_zone() -> void:
+	var zone := Node3D.new()
+	zone.name = "AutomaticIntakeZone"
+	zone.position = AUTO_INTAKE_LOCAL_CENTER + Vector3(0, 0.025, 0)
+	auto_opener_root.add_child(zone)
+	var edge_color := Color("#f0a52f")
+	var width := AUTO_INTAKE_HALF_EXTENTS.x * 2.0
+	var depth := AUTO_INTAKE_HALF_EXTENTS.y * 2.0
+	add_robot_box(zone, Vector3(0, 0, -AUTO_INTAKE_HALF_EXTENTS.y), Vector3(width, 0.035, 0.055), edge_color, true)
+	add_robot_box(zone, Vector3(0, 0, AUTO_INTAKE_HALF_EXTENTS.y), Vector3(width, 0.035, 0.055), edge_color, true)
+	add_robot_box(zone, Vector3(-AUTO_INTAKE_HALF_EXTENTS.x, 0, 0), Vector3(0.055, 0.035, depth), edge_color, true)
+	add_robot_box(zone, Vector3(AUTO_INTAKE_HALF_EXTENTS.x, 0, 0), Vector3(0.055, 0.035, depth), edge_color, true)
+	var zone_label := Label3D.new()
+	zone_label.text = "AUTO INTAKE"
+	zone_label.position = Vector3(0, 0.04, AUTO_INTAKE_HALF_EXTENTS.y - 0.12)
+	zone_label.rotation.x = deg_to_rad(-90.0)
+	zone_label.font_size = 18
+	zone_label.modulate = Color("#ffe0a0")
+	zone_label.outline_size = 5
+	zone.add_child(zone_label)
+
+func is_in_auto_intake_zone(world_position: Vector3) -> bool:
+	if not auto_opener_owned or not is_instance_valid(auto_opener_root): return false
+	var local := auto_opener_root.to_local(world_position) - AUTO_INTAKE_LOCAL_CENTER
+	return absf(local.x) <= AUTO_INTAKE_HALF_EXTENTS.x and absf(local.z) <= AUTO_INTAKE_HALF_EXTENTS.y and local.y >= -0.55 and local.y <= 1.8
+
+func update_auto_intake_zone() -> void:
+	if not auto_opener_owned or not is_instance_valid(auto_basket_root): return
+	if auto_basket_boxes.size() >= auto_opener_capacity: return
+	for box in boxes:
+		if auto_basket_boxes.size() >= auto_opener_capacity: break
+		if not is_vacuum_box_candidate(box): continue
+		if is_in_auto_intake_zone(box.global_position): enqueue_auto_opener_box(box, false)
+
+func enqueue_auto_opener_box(box: RigidBody3D, announce := true) -> bool:
+	if not auto_opener_owned or not is_instance_valid(auto_basket_root): return false
+	if auto_basket_boxes.size() >= auto_opener_capacity:
+		toast("自动开盒机的篮子已满（%d/%d），请等待机械臂取走盒子。" % [auto_basket_boxes.size(), auto_opener_capacity])
+		return false
+	box.set_meta("auto_basket", true)
+	box.freeze = true
+	box.linear_velocity = Vector3.ZERO
+	box.angular_velocity = Vector3.ZERO
+	box.scale = Vector3.ONE * 0.28
+	auto_basket_boxes.append(box)
+	restack_auto_basket_boxes()
+	if announce: toast("盲盒进入开盒机感应区，已自动缩小收入篮中。")
+	refresh_item_shop()
+	return true
+
+func restack_auto_basket_boxes() -> void:
+	for index in auto_basket_boxes.size():
+		var box := auto_basket_boxes[index]
+		if not is_instance_valid(box): continue
+		var column := index % 5
+		var row := (index / 5) % 3
+		var layer := index / 15
+		box.global_position = auto_basket_root.to_global(Vector3((column - 2) * 0.28, 0.16 + layer * 0.20, (row - 1) * 0.30))
+		box.rotation = Vector3(0, 0.10 * (column - 2), 0)
+
+func build_auto_grabber_panel() -> void:
+	if is_instance_valid(auto_grabber_panel_root): return
+	auto_grabber_panel_root = Node3D.new()
+	auto_grabber_panel_root.name = "VacuumControlButton"
+	auto_grabber_panel_root.position = Vector3(3.75, 0.42, 3.0)
+	items_root.add_child(auto_grabber_panel_root)
+	var base := add_robot_box(auto_grabber_panel_root, Vector3.ZERO, Vector3(1.55, 0.24, 1.18), Color("#262d3b"))
+	base.rotation.x = deg_to_rad(-8.0)
+	var button_pad := CSGCylinder3D.new()
+	button_pad.radius = 0.52
+	button_pad.height = 0.22
+	button_pad.position = Vector3(0, 0.25, 0.02)
+	button_pad.material = robot_material(Color("#e32628"), true)
+	auto_grabber_panel_root.add_child(button_pad)
+	var label := Label3D.new()
+	label.text = "按住吸尘"
+	label.position = Vector3(0, 0.25, 0.64)
+	label.font_size = 22
+	label.modulate = Color("#ffffff")
+	label.outline_size = 7
+	auto_grabber_panel_root.add_child(label)
+
+func build_auto_vacuum_on_opener() -> void:
+	if not is_instance_valid(auto_opener_root) or is_instance_valid(auto_vacuum_root): return
+	auto_vacuum_root = Node3D.new()
+	auto_vacuum_root.name = "OpenerVacuum"
+	auto_vacuum_root.position = Vector3(0, 1.05, 0.72)
+	auto_opener_root.add_child(auto_vacuum_root)
+	add_robot_box(auto_vacuum_root, Vector3(0, 0, 0), Vector3(0.82, 0.58, 0.62), Color("#33495d"))
+	var nozzle := CSGCylinder3D.new()
+	nozzle.radius = 0.34
+	nozzle.height = 0.82
+	nozzle.rotation.x = deg_to_rad(90.0)
+	nozzle.position = Vector3(0, -0.03, 0.62)
+	nozzle.material = robot_material(Color("#718c9a"))
+	auto_vacuum_root.add_child(nozzle)
+	var nozzle_ring := CSGCylinder3D.new()
+	nozzle_ring.radius = 0.43
+	nozzle_ring.height = 0.12
+	nozzle_ring.rotation.x = deg_to_rad(90.0)
+	nozzle_ring.position = Vector3(0, -0.03, 1.05)
+	nozzle_ring.material = robot_material(Color("#f0a52f"), true)
+	auto_vacuum_root.add_child(nozzle_ring)
+	build_vacuum_particles()
+
+func build_vacuum_particles() -> void:
+	auto_vacuum_particles = GPUParticles3D.new()
+	auto_vacuum_particles.name = "VacuumFlowParticles"
+	# Keep the whole effect in a thin layer above the desk. Particles are born
+	# around a desk-scale ring and expire as they converge on the opener center.
+	auto_vacuum_particles.position = Vector3(0, 0.16, 0)
+	auto_vacuum_particles.amount = 480
+	auto_vacuum_particles.lifetime = 1.7
+	auto_vacuum_particles.randomness = 0.12
+	auto_vacuum_particles.emitting = false
+	auto_vacuum_particles.visibility_aabb = AABB(Vector3(-AUTO_VACUUM_EFFECT_RADIUS - 0.5, -0.2, -AUTO_VACUUM_EFFECT_RADIUS - 0.5), Vector3(AUTO_VACUUM_EFFECT_RADIUS * 2.0 + 1.0, 0.8, AUTO_VACUUM_EFFECT_RADIUS * 2.0 + 1.0))
+	var particle_material := ParticleProcessMaterial.new()
+	particle_material.emission_shape = ParticleProcessMaterial.EMISSION_SHAPE_RING
+	particle_material.emission_ring_axis = Vector3.UP
+	particle_material.emission_ring_height = 0.08
+	particle_material.emission_ring_radius = AUTO_VACUUM_EFFECT_RADIUS
+	particle_material.emission_ring_inner_radius = AUTO_VACUUM_EFFECT_RADIUS - 0.18
+	particle_material.emission_ring_cone_angle = 0.0
+	particle_material.direction = Vector3.RIGHT
+	particle_material.spread = 180.0
+	particle_material.gravity = Vector3.ZERO
+	particle_material.initial_velocity_min = 0.0
+	particle_material.initial_velocity_max = 0.12
+	particle_material.radial_accel_min = -4.2
+	particle_material.radial_accel_max = -4.2
+	particle_material.scale_min = 0.35
+	particle_material.scale_max = 1.0
+	auto_vacuum_particles.process_material = particle_material
+	var particle_quad := QuadMesh.new()
+	particle_quad.size = Vector2(0.075, 0.075)
+	var particle_draw_material := StandardMaterial3D.new()
+	particle_draw_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	particle_draw_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	particle_draw_material.billboard_mode = BaseMaterial3D.BILLBOARD_ENABLED
+	particle_draw_material.albedo_color = Color(0.45, 0.92, 1.0, 0.68)
+	particle_draw_material.emission_enabled = true
+	particle_draw_material.emission = Color("#65dff5")
+	particle_quad.material = particle_draw_material
+	auto_vacuum_particles.draw_pass_1 = particle_quad
+	auto_opener_root.add_child(auto_vacuum_particles)
+
+func robot_material(color: Color, glow := false) -> StandardMaterial3D:
+	var material := StandardMaterial3D.new()
+	material.albedo_color = color
+	material.roughness = 0.52
+	material.metallic = 0.30
+	material.emission_enabled = glow
+	if glow: material.emission = color * 0.65
+	return material
+
+func is_pointer_over_grabber_panel(mouse_pos: Vector2) -> bool:
+	if not auto_grabber_owned or not is_instance_valid(auto_grabber_panel_root): return false
+	var panel_screen := camera.unproject_position(auto_grabber_panel_root.global_position + Vector3(0, 0.25, 0))
+	return mouse_pos.distance_to(panel_screen) <= 88.0
+
+func begin_auto_grabber_hold() -> void:
+	auto_grabber_holding = true
+	pointer_mode = "grabber_hold"
+	if is_instance_valid(auto_vacuum_particles): auto_vacuum_particles.emitting = true
+	toast("吸尘器已开启：保持按住，桌面上的未拆盲盒会持续靠近开盒机。")
+
+func update_auto_grabber(delta: float) -> void:
+	update_auto_intake_zone()
+	if not auto_grabber_holding or not auto_grabber_owned or not is_instance_valid(auto_opener_root):
+		if is_instance_valid(auto_vacuum_particles): auto_vacuum_particles.emitting = false
+		return
+	if is_instance_valid(auto_vacuum_particles): auto_vacuum_particles.emitting = true
+	var target := auto_opener_root.to_global(AUTO_INTAKE_LOCAL_CENTER + Vector3(0, 0.42, 0))
+	var target_speed := AUTO_VACUUM_BASE_SPEED * (1.0 + auto_grabber_speed_level * 0.10)
+	var response := 1.65 * (1.0 + auto_grabber_count_level * 0.15)
+	for box in boxes:
+		if not is_vacuum_box_candidate(box): continue
+		var offset: Vector3 = target - box.global_position
+		offset.y = clampf(offset.y, -0.08, 0.32)
+		if offset.length_squared() <= 0.01: continue
+		box.freeze = false
+		box.sleeping = false
+		var desired_velocity := offset.normalized() * minf(target_speed, 0.65 + offset.length() * 0.38)
+		box.linear_velocity = box.linear_velocity.lerp(desired_velocity, minf(delta * response, 1.0))
+		box.angular_velocity = box.angular_velocity.lerp(Vector3.ZERO, minf(delta * 2.4, 1.0))
+
+func is_vacuum_box_candidate(box: RigidBody3D) -> bool:
+	if not is_instance_valid(box) or box.box_kind != "blind" or box.opened: return false
+	if box == focused_box or box == table_drag_box: return false
+	return not box.get_meta("auto_basket", false) and not box.get_meta("auto_processing", false) and not box.get_meta("auto_processed", false)
+
+func update_auto_opener(delta: float) -> void:
+	if not auto_opener_owned or not is_instance_valid(auto_opener_root): return
+	for index in range(auto_basket_boxes.size() - 1, -1, -1):
+		if not is_instance_valid(auto_basket_boxes[index]): auto_basket_boxes.remove_at(index)
+	for index in range(auto_processed_boxes.size() - 1, -1, -1):
+		if not is_instance_valid(auto_processed_boxes[index]): auto_processed_boxes.remove_at(index)
+	if is_instance_valid(auto_processing_box):
+		auto_processing_elapsed += delta
+		var cycle := auto_processing_elapsed / auto_opener_cycle_time()
+		var arm_swing := sin(cycle * TAU * 4.0) * 0.58
+		auto_left_arm.rotation.x = -0.38 + arm_swing
+		auto_right_arm.rotation.x = -0.38 - arm_swing
+		if auto_processing_elapsed >= auto_opener_cycle_time(): complete_auto_opening()
+		return
+	auto_left_arm.rotation.x = lerpf(auto_left_arm.rotation.x, 0.0, minf(delta * 7.0, 1.0))
+	auto_right_arm.rotation.x = lerpf(auto_right_arm.rotation.x, 0.0, minf(delta * 7.0, 1.0))
+	if auto_basket_boxes.is_empty(): return
+	var next_box: RigidBody3D = auto_basket_boxes.pop_front()
+	restack_auto_basket_boxes()
+	start_auto_opening(next_box)
+
+func auto_opener_cycle_time() -> float:
+	return AUTO_OPENER_BASE_TIME / (1.0 + auto_opener_speed_level * 0.10)
+
+func start_auto_opening(box: RigidBody3D) -> void:
+	auto_processing_box = box
+	auto_processing_elapsed = 0.0
+	box.remove_meta("auto_basket")
+	box.set_meta("auto_processing", true)
+	box.freeze = true
+	box.linear_velocity = Vector3.ZERO
+	box.angular_velocity = Vector3.ZERO
+	var work_position := auto_opener_root.to_global(Vector3(0, 0.62, 1.05))
+	var tween := create_tween().set_parallel(true)
+	tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(box, "global_position", work_position, 0.45)
+	tween.tween_property(box, "rotation", Vector3.ZERO, 0.45)
+	tween.tween_property(box, "scale", Vector3.ONE * 0.72, 0.45)
+	toast("机械臂从头顶篮子取出一个盲盒，正在处理。")
+	refresh_item_shop()
+
+func complete_auto_opening() -> void:
+	if not is_instance_valid(auto_processing_box):
+		auto_processing_box = null
+		return
+	var box := auto_processing_box
+	auto_processing_box = null
+	auto_processing_elapsed = 0.0
+	box.remove_meta("auto_processing")
+	box.set_meta("auto_processed", true)
+	box.tear_seal()
+	box.finish_open_lid()
+	box.mark_empty()
+	box.label_3d.text = "点击结算"
+	box.freeze = true
+	box.scale = Vector3.ONE * 0.48
+	auto_processed_boxes.append(box)
+	restack_auto_processed_boxes()
+	toast("自动开盒完成。点击机器人前方堆叠的盒子查看并结算内容物。")
+	refresh_item_shop()
+
+func restack_auto_processed_boxes() -> void:
+	for index in auto_processed_boxes.size():
+		var box := auto_processed_boxes[index]
+		if not is_instance_valid(box): continue
+		var column := index % 3
+		var layer := index / 3
+		box.global_position = auto_opener_root.to_global(Vector3((column - 1) * 0.48, 0.18 + layer * 0.34, 1.58 - layer * 0.02))
+		box.rotation = Vector3(0, 0.08 * (column - 1), 0)
+
+func settle_auto_processed_box(box: RigidBody3D) -> void:
+	if review_item or focused_box or opening_sequence:
+		toast("请先完成当前查看流程，再结算自动开盒结果。")
+		return
+	auto_processed_boxes.erase(box)
+	auto_processed_boxes.push_front(box)
+	auto_settlement_active = true
+	settle_next_auto_processed_box()
+
+func settle_next_auto_processed_box() -> void:
+	if review_item or focused_box or opening_sequence: return
+	while not auto_processed_boxes.is_empty() and not is_instance_valid(auto_processed_boxes[0]):
+		auto_processed_boxes.pop_front()
+	if auto_processed_boxes.is_empty():
+		auto_settlement_active = false
+		restack_auto_processed_boxes()
+		refresh_item_shop()
+		toast("自动开盒机当前所有完成结果已经结算完毕。")
+		return
+	var box: RigidBody3D = auto_processed_boxes.pop_front()
+	box.remove_meta("auto_processed")
+	restack_auto_processed_boxes()
+	focused_box = box
+	set_focus_depth_of_field(true)
+	begin_content_review()
+	refresh_item_shop()
+
 func build_upgrade_panel(canvas: CanvasLayer) -> void:
 	var panel := PanelContainer.new()
+	panel.name = "UpgradePanel"
 	panel.position = Vector2(1080, 74)
 	panel.size = Vector2(182, 330)
-	panel.add_theme_stylebox_override("panel", style(Color(0.055,0.07,0.085,0.94), 11, Color("#a98143"), 2))
+	panel.add_theme_stylebox_override("panel", command_style())
 	canvas.add_child(panel)
 	var col := VBoxContainer.new()
 	col.custom_minimum_size.x = 148
 	col.add_theme_constant_override("separation", 4)
 	panel.add_child(col)
-	col.add_child(make_label("升级1 · 整体幸运", 13, Color("#ffd27c"), true))
-	luck_level_label = make_label("", 11, Color("#e9edf1"), true)
+	col.add_child(make_label("UPGRADE 01 · 整体幸运", 12, UI_NAV_GOLD, true))
+	luck_level_label = make_label("", 11, UI_CANVAS_SOFT, true)
 	col.add_child(luck_level_label)
-	luck_button = button("整体升级", Color("#8b6a32"))
+	luck_button = button("整体升级 ▶", UI_AMBER)
 	luck_button.custom_minimum_size.y = 32
 	luck_button.add_theme_font_size_override("font_size", 11)
 	luck_button.pressed.connect(upgrade_luck)
 	col.add_child(luck_button)
 	col.add_child(line())
-	col.add_child(make_label("升级2 · 摇盒次数", 13, Color("#88d9ef"), true))
-	shake_level_label = make_label("", 11, Color("#c6e8f0"))
+	col.add_child(make_label("UPGRADE 02 · 摇盒次数", 12, UI_NAV_GOLD, true))
+	shake_level_label = make_label("", 11, UI_CANVAS_SOFT)
 	col.add_child(shake_level_label)
-	shake_button = button("升级摇盒次数", Color("#39758a"))
+	shake_button = button("升级摇盒次数 ▶", UI_AMBER)
 	shake_button.custom_minimum_size.y = 32
 	shake_button.add_theme_font_size_override("font_size", 11)
 	shake_button.pressed.connect(upgrade_shake)
 	col.add_child(shake_button)
 	col.add_child(line())
-	col.add_child(make_label("升级3 · 撕封技巧", 13, Color("#f0aaa0"), true))
-	tear_skill_level_label = make_label("", 11, Color("#efd0cb"))
+	col.add_child(make_label("UPGRADE 03 · 撕封技巧", 12, UI_NAV_GOLD, true))
+	tear_skill_level_label = make_label("", 11, UI_CANVAS_SOFT)
 	col.add_child(tear_skill_level_label)
-	tear_skill_button = button("练习撕封技巧", Color("#8c5149"))
+	tear_skill_button = button("练习撕封技巧 ▶", UI_AMBER)
 	tear_skill_button.custom_minimum_size.y = 32
 	tear_skill_button.add_theme_font_size_override("font_size", 11)
 	tear_skill_button.pressed.connect(upgrade_tear_skill)
 	col.add_child(tear_skill_button)
 
 func build_developer_panel(canvas: CanvasLayer) -> void:
-	var panel := PanelContainer.new()
-	panel.name = "DeveloperPanel"
-	panel.position = Vector2(1010, 510)
-	panel.size = Vector2(252, 192)
-	panel.add_theme_stylebox_override("panel", style(Color(0.10,0.055,0.07,0.95), 11, Color("#d45f86"), 2))
-	canvas.add_child(panel)
+	developer_panel = PanelContainer.new()
+	developer_panel.name = "DeveloperPanel"
+	developer_panel.position = Vector2(1010, 510)
+	developer_panel.size = Vector2(252, 192)
+	developer_panel.add_theme_stylebox_override("panel", command_style(UI_PRIMARY))
+	canvas.add_child(developer_panel)
 	var col := VBoxContainer.new()
 	col.add_theme_constant_override("separation", 4)
-	panel.add_child(col)
-	var title := make_label("开发者模式", 14, Color("#ff9ebe"), true)
+	developer_panel.add_child(col)
+	var title := make_label("DEBUG SYSTEM / 开发者模式", 12, UI_NAV_GOLD, true)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	col.add_child(title)
-	var cash_button := button("现金 → ¥999,999,999,999", Color("#8e3f5d"))
+	var cash_button := button("现金 → ¥%s" % comma(DEVELOPER_CASH), UI_AMBER)
 	cash_button.name = "MaxCashButton"
 	cash_button.custom_minimum_size.y = 34
 	cash_button.add_theme_font_size_override("font_size", 12)
 	cash_button.pressed.connect(developer_grant_cash)
 	col.add_child(cash_button)
-	var unlock_button := button("解锁全部盲盒", Color("#77518f"))
+	var unlock_button := button("解锁全部盲盒 ▶", UI_AMBER)
 	unlock_button.name = "UnlockAllButton"
 	unlock_button.custom_minimum_size.y = 34
 	unlock_button.add_theme_font_size_override("font_size", 12)
 	unlock_button.pressed.connect(developer_unlock_all_series)
 	col.add_child(unlock_button)
-	var skills_button := button("全部技能满级", Color("#426f86"))
+	var skills_button := button("全部技能满级 ▶", UI_AMBER)
 	skills_button.name = "MaxSkillsButton"
 	skills_button.custom_minimum_size.y = 34
 	skills_button.add_theme_font_size_override("font_size", 12)
 	skills_button.pressed.connect(developer_max_all_skills)
 	col.add_child(skills_button)
+	developer_toggle_button = button("▶", UI_SIGNAL)
+	developer_toggle_button.name = "DeveloperToggleButton"
+	developer_toggle_button.position = Vector2(1236, 510)
+	developer_toggle_button.size = Vector2(26, 48)
+	developer_toggle_button.custom_minimum_size = Vector2(26, 48)
+	developer_toggle_button.add_theme_font_size_override("font_size", 16)
+	developer_toggle_button.tooltip_text = "隐藏开发者模式"
+	developer_toggle_button.pressed.connect(toggle_developer_panel)
+	canvas.add_child(developer_toggle_button)
+
+func toggle_developer_panel() -> void:
+	developer_panel_hidden = not developer_panel_hidden
+	if developer_panel_tween and developer_panel_tween.is_valid(): developer_panel_tween.kill()
+	developer_panel_tween = create_tween()
+	developer_panel_tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	developer_panel_tween.tween_property(developer_panel, "position:x", 1288.0 if developer_panel_hidden else 1010.0, 0.30)
+	developer_toggle_button.text = "◀" if developer_panel_hidden else "▶"
+	developer_toggle_button.tooltip_text = "展开开发者模式" if developer_panel_hidden else "隐藏开发者模式"
 
 func developer_grant_cash() -> void:
 	cash = DEVELOPER_CASH
@@ -410,25 +1120,29 @@ func developer_max_all_skills() -> void:
 	global_luck_level = GLOBAL_LUCK_COSTS.size()
 	shake_upgrade_level = SHAKE_UPGRADE_COSTS.size()
 	tear_skill_level = TEAR_SKILL_UPGRADE_COSTS.size()
+	auto_opener_speed_level = AUTO_UPGRADE_MAX_LEVEL
+	auto_opener_capacity = 5 + AUTO_UPGRADE_MAX_LEVEL * 5
+	auto_grabber_speed_level = AUTO_UPGRADE_MAX_LEVEL
+	auto_grabber_count_level = AUTO_UPGRADE_MAX_LEVEL
 	refresh_ui()
-	toast("开发者模式：幸运、摇盒次数与撕封技巧均已满级。")
+	toast("开发者模式：所有基础技能与自动化升级均已满级。")
 
 func side_panel(canvas: CanvasLayer, title_text: String, height: float) -> PanelContainer:
 	var panel := PanelContainer.new()
 	panel.position = Vector2(888, 285)
 	panel.size = Vector2(374, height)
 	panel.visible = false
-	panel.add_theme_stylebox_override("panel", style(Color(0.055,0.07,0.085,0.97), 13, Color("#4a5967"), 2))
+	panel.add_theme_stylebox_override("panel", chrome_style(UI_CANVAS))
 	canvas.add_child(panel)
 	var col := VBoxContainer.new()
 	col.add_theme_constant_override("separation", 10)
 	panel.add_child(col)
 	var head := HBoxContainer.new()
 	col.add_child(head)
-	var title := make_label(title_text, 21, Color("#f4e4c6"), true)
+	var title := make_label(title_text.to_upper(), 18, UI_INK, true)
 	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	head.add_child(title)
-	var close := button("×", Color("#5a4245"))
+	var close := button("×", UI_CARBON)
 	close.custom_minimum_size.x = 42
 	close.pressed.connect(func(): panel.visible = false)
 	head.add_child(close)
@@ -439,17 +1153,17 @@ func build_market_panel(canvas: CanvasLayer) -> PanelContainer:
 	panel.position = Vector2(320, 72)
 	panel.size = Vector2(850, 610)
 	panel.visible = false
-	panel.add_theme_stylebox_override("panel", style(Color(0.045,0.06,0.075,0.98), 14, Color("#8a7446"), 2))
+	panel.add_theme_stylebox_override("panel", chrome_style(UI_CANVAS))
 	canvas.add_child(panel)
 	var col := VBoxContainer.new()
 	col.add_theme_constant_override("separation", 8)
 	panel.add_child(col)
 	var head := HBoxContainer.new()
 	col.add_child(head)
-	var title := make_label("收藏市场行情", 23, Color("#f3d89b"), true)
+	var title := make_label("MARKET DATABASE / 收藏市场行情", 20, UI_INK, true)
 	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	head.add_child(title)
-	var close := button("×", Color("#5a4245"))
+	var close := button("×", UI_CARBON)
 	close.custom_minimum_size.x = 44
 	close.pressed.connect(func(): panel.visible = false)
 	head.add_child(close)
@@ -466,12 +1180,12 @@ func build_market_panel(canvas: CanvasLayer) -> PanelContainer:
 
 func show_market_overview() -> void:
 	clear_children(market_content)
-	var intro := make_label("按系列查看全部内容物。点击任意图标可查看以日期为横轴、市价为纵轴的历史曲线。", 13, Color("#aeb9c5"))
+	var intro := make_label("按系列查看全部内容物。点击任意图标可查看以日期为横轴、市价为纵轴的历史曲线。", 12, UI_INK)
 	intro.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	market_content.add_child(intro)
 	for s in SERIES.size():
 		var group := PanelContainer.new()
-		group.add_theme_stylebox_override("panel", style(Color("#202933"), 10, SERIES[s]["color"], 2))
+		group.add_theme_stylebox_override("panel", inset_style(UI_PLATINUM, SERIES[s]["color"]))
 		market_content.add_child(group)
 		var col := VBoxContainer.new()
 		col.add_theme_constant_override("separation", 6)
@@ -491,14 +1205,14 @@ func show_market_overview() -> void:
 
 func show_price_chart(series_index: int, item_index: int) -> void:
 	clear_children(market_content)
-	var back := button("← 返回系列陈列", Color("#4d5b68"))
+	var back := button("◀ 返回系列陈列", UI_CARBON)
 	back.pressed.connect(show_market_overview)
 	market_content.add_child(back)
 	var rarity: int = SERIES[series_index]["rarities"][item_index]
 	var item_name: String = SERIES[series_index]["items"][item_index]
 	market_content.add_child(make_label("%s · %s · %s" % [SERIES[series_index]["name"], RARITIES[rarity], item_name], 22, RARITY_COLORS[rarity], true))
 	var current_market := market_price_at_day(series_index, item_index, day)
-	market_content.add_child(make_label("第 %d 天市场价：¥%s  ·  熟练度后的实际售价：¥%s" % [day, comma(current_market), comma(collectible_price(series_index, item_index))], 14, Color("#d6dde3")))
+	market_content.add_child(make_label("第 %d 天市场价：¥%s  ·  熟练度后的实际售价：¥%s" % [day, comma(current_market), comma(collectible_price(series_index, item_index))], 13, UI_INK))
 	var prices: Array[float] = []
 	var dates: Array[int] = []
 	for date_index in range(1, day + 1):
@@ -514,7 +1228,7 @@ func build_loot_preview_panel(canvas: CanvasLayer) -> PanelContainer:
 	panel.position = Vector2(900, 78)
 	panel.size = Vector2(362, 470)
 	panel.visible = false
-	panel.add_theme_stylebox_override("panel", style(Color(0.045,0.06,0.075,0.97), 13, Color("#d2aa5f"), 2))
+	panel.add_theme_stylebox_override("panel", command_style())
 	canvas.add_child(panel)
 	var preview_scroll := ScrollContainer.new()
 	preview_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -530,12 +1244,16 @@ func build_loot_preview_panel(canvas: CanvasLayer) -> PanelContainer:
 func populate_loot_preview(series_index: int, inspected_box: RigidBody3D = null) -> void:
 	clear_children(loot_preview_list)
 	loot_preview_list.add_child(make_label(SERIES[series_index]["name"], 22, SERIES[series_index]["color"], true))
-	var slogan := make_label(SERIES[series_index]["slogan"], 13, Color("#d8c9ae"))
+	var slogan := make_label(SERIES[series_index]["slogan"], 12, UI_CANVAS_SOFT)
 	slogan.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	loot_preview_list.add_child(slogan)
+	var catalog_summary := "共 %d 款可开内容物" % SERIES[series_index]["items"].size()
+	if series_index == 4:
+		catalog_summary += " · 可合体隐藏款 3 种：头部／躯干／腿部"
+	loot_preview_list.add_child(make_label(catalog_summary, 11, UI_AMBER, true))
 	if inspected_box:
 		var allowed := shake_limit_for_box(inspected_box)
-		var shake_info := make_label("摇盒机会 %d / %d  ·  每次排除一个错误候选" % [inspected_box.shake_count, allowed], 12, Color("#8fdcef"), true)
+		var shake_info := make_label("摇盒机会 %d / %d  ·  每次排除一个错误候选" % [inspected_box.shake_count, allowed], 11, UI_AMBER, true)
 		shake_info.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		loot_preview_list.add_child(shake_info)
 	loot_preview_list.add_child(line())
@@ -544,12 +1262,12 @@ func populate_loot_preview(series_index: int, inspected_box: RigidBody3D = null)
 		var eliminated: bool = inspected_box != null and item_index in inspected_box.shake_eliminated
 		var row := PanelContainer.new()
 		row.custom_minimum_size.y = 58
-		row.add_theme_stylebox_override("panel", style(Color("#301e22") if eliminated else Color("#202832"), 7, Color("#b9575f") if eliminated else RARITY_COLORS[rarity]))
+		row.add_theme_stylebox_override("panel", inset_style(Color("#e4c9cd") if eliminated else UI_PLATINUM, Color("#b9575f") if eliminated else RARITY_COLORS[rarity]))
 		loot_preview_list.add_child(row)
 		var hbox := HBoxContainer.new()
 		row.add_child(hbox)
 		var prefix := "✕  已排除 · " if eliminated else ""
-		var item_label := make_label("%s%s · %s\n概率 %s  ·  市价 ¥%s" % [prefix, RARITIES[rarity], SERIES[series_index]["items"][item_index], item_probability_text(series_index, item_index), comma(collectible_price(series_index, item_index))], 12, Color("#d46a72") if eliminated else RARITY_COLORS[rarity], true)
+		var item_label := make_label("%s%s · %s\n概率 %s  ·  市价 ¥%s" % [prefix, RARITIES[rarity], SERIES[series_index]["items"][item_index], item_probability_text(series_index, item_index), comma(collectible_price(series_index, item_index))], 12, Color("#9d3441") if eliminated else UI_INK, true)
 		item_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		item_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		hbox.add_child(item_label)
@@ -668,9 +1386,21 @@ func on_pointer_down(mouse_pos: Vector2) -> void:
 		else:
 			toast("请重新按住黄色封条掀起的一端，沿当前纹路继续拖动。")
 		return
+	if is_pointer_over_grabber_panel(mouse_pos):
+		begin_auto_grabber_hold()
+		return
 	var hit := ray_hit(mouse_pos, false)
 	var box := box_from_collider(hit.collider if hit else null)
 	if box:
+		if box.get_meta("auto_processed", false):
+			settle_auto_processed_box(box)
+			return
+		if box.get_meta("auto_basket", false):
+			toast("这个盲盒已经投入自动开盒篮，无法再取出。")
+			return
+		if box.get_meta("auto_processing", false):
+			toast("双机械臂正在处理这个盲盒，请等待它进入待结算盒堆。")
+			return
 		click_candidate = box
 		if box.opened or box.box_kind == "blind":
 			table_drag_box = box
@@ -680,7 +1410,7 @@ func on_pointer_down(mouse_pos: Vector2) -> void:
 
 func on_pointer_move(event: InputEventMouseMotion) -> void:
 	if pointer_mode == "review_rotate" and review_item:
-		review_item.rotate_y(event.relative.x * 0.012)
+		review_item.rotate_object_local(COLLECTIBLE_UP_AXIS, event.relative.x * 0.012)
 		review_item.rotate_object_local(Vector3.RIGHT, event.relative.y * 0.012)
 	elif pointer_mode == "seal_drag" and focused_box:
 		update_seal_drag(event)
@@ -692,10 +1422,16 @@ func on_pointer_move(event: InputEventMouseMotion) -> void:
 		table_drag_moved = true
 		var origin := camera.project_ray_origin(event.position)
 		var direction := camera.project_ray_normal(event.position)
-		var point: Variant = Plane(Vector3.UP, 0.85).intersects_ray(origin, direction)
+		var point: Variant = Plane(Vector3.UP, TABLE_DRAG_HEIGHT).intersects_ray(origin, direction)
 		if point != null: table_drag_box.global_position = point
 
 func on_pointer_up(mouse_pos: Vector2) -> void:
+	if pointer_mode == "grabber_hold":
+		auto_grabber_holding = false
+		if is_instance_valid(auto_vacuum_particles): auto_vacuum_particles.emitting = false
+		pointer_mode = ""
+		toast("红色按钮已松开，吸尘器停止。盲盒保留当前位置和惯性。")
+		return
 	if pointer_mode == "seal_drag":
 		pointer_mode = ""
 		if focused_box and not opening_sequence:
@@ -710,6 +1446,13 @@ func on_pointer_up(mouse_pos: Vector2) -> void:
 		pointer_mode = ""
 		return
 	if pointer_mode == "table_drag" and table_drag_box:
+		if not table_drag_box.opened and table_drag_box.box_kind == "blind" and is_in_auto_intake_zone(table_drag_box.global_position):
+			var box_to_enqueue := table_drag_box
+			table_drag_box = null
+			click_candidate = null
+			pointer_mode = ""
+			if enqueue_auto_opener_box(box_to_enqueue): return
+			table_drag_box = box_to_enqueue
 		if not table_drag_moved and not table_drag_box.opened and mouse_pos.distance_to(pointer_start) < 12.0:
 			var box_to_focus := table_drag_box
 			table_drag_box = null
@@ -766,7 +1509,9 @@ func tear_skill_progress_for_box(box: RigidBody3D) -> float:
 
 func seal_detach_probability(box: RigidBody3D) -> float:
 	var base_chance: float = PARCEL_DETACH_CHANCE if box.box_kind == "parcel" else SERIES_DETACH_CHANCES[box.series_index]
-	return base_chance * lerpf(1.0, TEAR_MIN_DETACH_MULTIPLIER, tear_skill_progress_for_box(box))
+	if box.box_kind == "parcel":
+		return base_chance * lerpf(1.0, PARCEL_MIN_DETACH_MULTIPLIER, tear_skill_progress_for_box(box))
+	return lerpf(base_chance, SERIES_MIN_DETACH_CHANCE, tear_skill_progress_for_box(box))
 
 func seal_drag_force(box: RigidBody3D) -> float:
 	var base_force: float = PARCEL_SEAL_DRAG_FORCE if box.box_kind == "parcel" else SERIES_SEAL_DRAG_FORCE[box.series_index]
@@ -840,11 +1585,12 @@ func update_shake_gesture(event: InputEventMouseMotion) -> void:
 	var limited_motion := total_motion.limit_length(220.0)
 	focused_box.global_position = shake_base_position + camera.global_basis.x * limited_motion.x * 0.004 - camera.global_basis.y * limited_motion.y * 0.004
 	focused_box.rotation = shake_base_rotation + Vector3(-limited_motion.y * 0.0018, limited_motion.x * 0.0011, limited_motion.x * 0.0018)
-	if not shake_result_triggered and shake_distance >= SERIES_SHAKE_TRAVEL[focused_box.series_index] and shake_reversals >= SERIES_SHAKE_REVERSALS[focused_box.series_index]:
+	if focused_box.shake_count < shake_limit_for_box(focused_box) and not shake_result_triggered and shake_distance >= SERIES_SHAKE_TRAVEL[focused_box.series_index] and shake_reversals >= SERIES_SHAKE_REVERSALS[focused_box.series_index]:
 		perform_box_shake()
 
 func perform_box_shake() -> void:
 	if not focused_box or pointer_mode != "shake" or shake_result_triggered: return
+	if focused_box.shake_count >= shake_limit_for_box(focused_box): return
 	shake_result_triggered = true
 	var candidates: Array[int] = []
 	for item_index in SERIES[focused_box.series_index]["items"].size():
@@ -859,7 +1605,14 @@ func perform_box_shake() -> void:
 	play_shake_sound(focused_box)
 	populate_loot_preview(focused_box.series_index, focused_box)
 	update_seal_progress_hud(focused_box)
-	toast("听到一次明确的盒内碰撞声；右侧已划掉 1 个错误候选。可以继续摇，松手后盒体才会回中。")
+	shake_distance = 0.0
+	shake_reversals = 0
+	shake_last_direction = 0
+	shake_result_triggered = false
+	if focused_box.shake_count >= shake_limit_for_box(focused_box):
+		toast("已连续排除一个错误候选；这只盲盒的摇盒次数已经用完，松手后盒体回中。")
+	else:
+		toast("已连续排除一个错误候选；保持按住并继续往返摇动，可直接累计下一次结果。")
 
 func finish_shake_gesture() -> void:
 	if not focused_box: return
@@ -940,7 +1693,7 @@ func focus_box(box: RigidBody3D) -> void:
 	loot_preview_panel.visible = box.box_kind == "blind"
 	if box.box_kind == "blind": populate_loot_preview(box.series_index, box)
 	detail_title.text = "快递盒" if box.box_kind == "parcel" else SERIES[box.series_index]["name"] + "盲盒"
-	detail_title.add_theme_color_override("font_color", Color("#ffd178"))
+	detail_title.add_theme_color_override("font_color", UI_CHROME_INDIGO)
 	if box.seal_detach_points.is_empty() and box.seal_detach_index == 0:
 		configure_seal_detaches(box)
 	update_seal_progress_hud(box)
@@ -1038,7 +1791,7 @@ func finish_parcel_processing() -> void:
 	seal_bar.visible = false
 	box.queue_free()
 	show_income_popup(payout, payout_position)
-	toast("纸箱压扁完成，立即回收结算 +¥%d。" % payout)
+	toast("纸箱压扁完成，立即回收结算 +¥%s。" % comma(payout))
 	refresh_ui()
 
 func begin_content_review() -> void:
@@ -1062,29 +1815,39 @@ func begin_content_review() -> void:
 	var start_position := camera.global_position - camera.global_basis.z * 3.55
 	var impact_position := camera.global_position - camera.global_basis.z * 3.30
 	var screen_pop_position := camera.global_position - camera.global_basis.z * 2.18
-	review_item.global_transform = Transform3D(camera.global_basis, start_position)
+	# 内容物统一以本地 -Y 为正面、本地 +Z 为上方；弹出、回落全过程都沿相机视线移动，
+	# 因此在起点建立一次面向玩家的基矩阵即可始终保持正面朝向。
+	review_item.global_transform = Transform3D(collectible_front_facing_basis(start_position), start_position)
 	review_item.scale = Vector3.ONE * 0.18
 	review_glow = create_reveal_burst(rarity)
 	add_child(review_glow)
 	review_glow.global_transform = Transform3D(camera.global_basis, impact_position - camera.global_basis.z * 0.18)
 	review_glow.visible = false
-	var shape := CSGSphere3D.new()
-	shape.radius = 0.44 + rarity * 0.025
-	shape.radial_segments = 20
-	shape.rings = 10
-	var material := StandardMaterial3D.new()
-	material.albedo_color = Color("#050609")
-	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	material.metallic = 0.15 + rarity * 0.12
-	material.roughness = 0.5
-	shape.material = material
-	review_item.add_child(shape)
-	var accent := CSGTorus3D.new()
-	accent.inner_radius = 0.40
-	accent.outer_radius = 0.49
-	accent.rotation.x = PI / 2.0
-	accent.material = material
-	review_item.add_child(accent)
+	var silhouette_material := StandardMaterial3D.new()
+	silhouette_material.albedo_color = Color("#050609")
+	silhouette_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	silhouette_material.roughness = 0.5
+	var imported_meshes: Array[MeshInstance3D] = []
+	var collectible_model := instantiate_collectible_model(series_index, item_index)
+	if collectible_model:
+		review_item.add_child(collectible_model)
+		for child in collectible_model.find_children("*", "MeshInstance3D", true, false):
+			var mesh_instance := child as MeshInstance3D
+			mesh_instance.material_override = silhouette_material
+			imported_meshes.append(mesh_instance)
+	else:
+		var shape := CSGSphere3D.new()
+		shape.radius = 0.44 + rarity * 0.025
+		shape.radial_segments = 20
+		shape.rings = 10
+		shape.material = silhouette_material
+		review_item.add_child(shape)
+		var accent := CSGTorus3D.new()
+		accent.inner_radius = 0.40
+		accent.outer_radius = 0.49
+		accent.rotation.x = PI / 2.0
+		accent.material = silhouette_material
+		review_item.add_child(accent)
 	var price := collectible_price(series_index, item_index)
 	detail_panel.visible = true
 	detail_title.text = "？？？"
@@ -1115,11 +1878,14 @@ func begin_content_review() -> void:
 	await settle_tween.finished
 
 	# Reveal the real color only after impact, then expand the rarity rays behind it.
-	material.shading_mode = BaseMaterial3D.SHADING_MODE_PER_PIXEL
-	material.albedo_color = RARITY_COLORS[rarity]
-	material.emission_enabled = rarity >= 1
-	var effect_tier := rarity
-	material.emission = REVEAL_EFFECT_COLORS[effect_tier] * (0.20 + effect_tier * 0.09)
+	if imported_meshes.is_empty():
+		silhouette_material.shading_mode = BaseMaterial3D.SHADING_MODE_PER_PIXEL
+		silhouette_material.albedo_color = RARITY_COLORS[rarity]
+		silhouette_material.emission_enabled = rarity >= 1
+		silhouette_material.emission = REVEAL_EFFECT_COLORS[rarity] * (0.20 + rarity * 0.09)
+	else:
+		for mesh_instance in imported_meshes:
+			if is_instance_valid(mesh_instance): mesh_instance.material_override = null
 	review_glow.visible = true
 	review_glow.scale = Vector3.ONE * 0.05
 	var burst_tween := create_tween()
@@ -1134,6 +1900,69 @@ func begin_content_review() -> void:
 	sell_button.disabled = false
 	review_animation_playing = false
 	toast("内容物落定。查看后选择直接出售或保留库存。")
+
+func collectible_front_facing_basis(world_position: Vector3) -> Basis:
+	var front_direction := (camera.global_position - world_position).normalized()
+	if front_direction.is_zero_approx(): front_direction = camera.global_basis.z.normalized()
+	var reference_up := camera.global_basis.y.normalized()
+	if absf(reference_up.dot(front_direction)) > 0.999: reference_up = Vector3.UP
+	var right_direction := reference_up.cross(front_direction).normalized()
+	var up_direction := front_direction.cross(right_direction).normalized()
+	# Basis 第二列是本地 +Y、第三列是本地 +Z：令 -Y 指向玩家、+Z 指向屏幕上方。
+	return Basis(right_direction, -front_direction, up_direction).orthonormalized()
+
+func instantiate_collectible_model(series_index: int, item_index: int) -> Node3D:
+	if series_index < 0 or series_index >= COLLECTIBLE_MODEL_PATHS.size(): return null
+	var series_paths: Array = COLLECTIBLE_MODEL_PATHS[series_index]
+	if item_index < 0 or item_index >= series_paths.size(): return null
+	var path := String(series_paths[item_index])
+	if not collectible_model_cache.has(path):
+		var resource := load(path) as PackedScene
+		if resource == null:
+			push_warning("内容物 FBX 无法加载：%s" % path)
+			return null
+		collectible_model_cache[path] = resource
+	var packed_scene := collectible_model_cache[path] as PackedScene
+	var asset := packed_scene.instantiate() as Node3D
+	if asset == null: return null
+	var display_root := Node3D.new()
+	display_root.name = "CollectibleModel_NegativeYFront"
+	display_root.add_child(asset)
+	var bounds_data := collectible_model_bounds(asset)
+	if not bool(bounds_data["valid"]): return display_root
+	var source_bounds: AABB = bounds_data["bounds"]
+	# 六向渲染实测：FBX 的有脸正面是原始 +Z，头顶方向是原始 +Y。
+	# 绕本地 +X 旋转 +90°，将原始 +Z（脸）映射到统一 -Y 正面，
+	# 同时将原始 +Y（头顶）映射到统一 +Z 上方。
+	var correction_basis := Basis(Vector3.RIGHT, PI / 2.0)
+	if series_index == 0:
+		# 肥嘟嘟伙伴固定以向右45°的三分之四侧面展示；先校正正面，再绕统一+Z上轴偏航。
+		correction_basis = Basis(COLLECTIBLE_UP_AXIS, FAT_PARTNER_PRESENTATION_YAW) * correction_basis
+	var axis_correction := Transform3D(correction_basis, Vector3.ZERO)
+	var corrected_bounds: AABB = axis_correction * source_bounds
+	var largest_dimension := maxf(corrected_bounds.size.x, maxf(corrected_bounds.size.y, corrected_bounds.size.z))
+	var uniform_scale := COLLECTIBLE_MODEL_TARGET_SIZE / maxf(largest_dimension, 0.001)
+	asset.basis = correction_basis.scaled(Vector3.ONE * uniform_scale)
+	asset.position = -corrected_bounds.get_center() * uniform_scale
+	return display_root
+
+func collectible_model_bounds(root: Node) -> Dictionary:
+	var accumulator := {"valid":false, "bounds":AABB()}
+	accumulate_collectible_model_bounds(root, Transform3D.IDENTITY, accumulator)
+	return accumulator
+
+func accumulate_collectible_model_bounds(node: Node, parent_transform: Transform3D, accumulator: Dictionary) -> void:
+	var current_transform := parent_transform
+	if node is Node3D: current_transform = parent_transform * (node as Node3D).transform
+	if node is MeshInstance3D:
+		var mesh_instance := node as MeshInstance3D
+		if mesh_instance.mesh:
+			var transformed_bounds: AABB = current_transform * mesh_instance.mesh.get_aabb()
+			if bool(accumulator["valid"]): accumulator["bounds"] = (accumulator["bounds"] as AABB).merge(transformed_bounds)
+			else:
+				accumulator["bounds"] = transformed_bounds
+				accumulator["valid"] = true
+	for child in node.get_children(): accumulate_collectible_model_bounds(child, current_transform, accumulator)
 
 func create_reveal_burst(rarity: int) -> Node3D:
 	var tier := rarity
@@ -1203,8 +2032,11 @@ func resolve_review(sell_now: bool) -> void:
 		earned += price
 		toast("藏品出售，到账 ¥%s。" % comma(price))
 	else:
-		collectibles.append(pending_item.duplicate(true))
-		toast("藏品已保留在库存。")
+		var completed_combinations := add_collectible_to_inventory(pending_item)
+		if completed_combinations.is_empty():
+			toast("藏品已保留在库存。")
+		else:
+			toast("配对隐藏款已自动合成：%s！" % "、".join(completed_combinations))
 	review_item.queue_free()
 	review_item = null
 	if review_glow:
@@ -1216,6 +2048,53 @@ func resolve_review(sell_now: bool) -> void:
 	action_row.visible = false
 	pointer_mode = ""
 	refresh_ui()
+	if auto_settlement_active:
+		call_deferred("settle_next_auto_processed_box")
+
+func add_collectible_to_inventory(item: Dictionary) -> Array[String]:
+	collectibles.append(item.duplicate(true))
+	return resolve_available_combinations()
+
+func resolve_available_combinations() -> Array[String]:
+	var completed: Array[String] = []
+	for definition in COMBINATION_COLLECTIBLES:
+		while true:
+			var component_indices: Array[int] = []
+			for component_index in definition["components"]:
+				var inventory_index := find_component_in_inventory(int(definition["series"]), int(component_index), component_indices)
+				if inventory_index < 0: break
+				component_indices.append(inventory_index)
+			if component_indices.size() != definition["components"].size(): break
+			component_indices.sort()
+			component_indices.reverse()
+			for inventory_index in component_indices: collectibles.remove_at(inventory_index)
+			var combined_item := {
+				"series":int(definition["series"]),
+				"item_index":-1,
+				"rarity":int(definition["rarity"]),
+				"name":String(definition["name"]),
+				"combination_id":String(definition["id"])
+			}
+			collectibles.append(combined_item)
+			register_combination_discovery(definition)
+			completed.append(String(definition["name"]))
+	return completed
+
+func find_component_in_inventory(series_index: int, item_index: int, excluded_indices: Array[int]) -> int:
+	for inventory_index in collectibles.size():
+		if inventory_index in excluded_indices: continue
+		var item: Dictionary = collectibles[inventory_index]
+		if item.has("combination_id"): continue
+		if int(item["series"]) == series_index and int(item["item_index"]) == item_index: return inventory_index
+	return -1
+
+func register_combination_discovery(definition: Dictionary) -> void:
+	var key := "combo_%s" % String(definition["id"])
+	if discovered.has(key): return
+	discovered[key] = true
+	var bonus := maxi(1, int(SERIES[int(definition["series"])]["base"] * 0.1))
+	cash += bonus
+	earned += bonus
 
 func show_income_popup(amount: int, world_position: Vector3) -> void:
 	var popup := make_label("+ ¥%s" % comma(amount), 30, Color("#7dff9a"), true)
@@ -1244,7 +2123,7 @@ func register_discovery(item: Dictionary) -> void:
 func sell_collectible(index: int) -> void:
 	if index < 0 or index >= collectibles.size(): return
 	var item := collectibles[index]
-	var value := collectible_price(item["series"], item["item_index"])
+	var value := inventory_item_price(item)
 	cash += value
 	earned += value
 	collectibles.remove_at(index)
@@ -1284,6 +2163,7 @@ func refresh_ui() -> void:
 			card["button"].text = "未解锁"
 			card["button"].disabled = true
 		refresh_mastery_card(i, card)
+	refresh_item_shop()
 	refresh_inventory()
 	refresh_collection()
 
@@ -1372,20 +2252,23 @@ func refresh_inventory() -> void:
 	var unopened_count := 0
 	for box in boxes:
 		if is_instance_valid(box) and box.box_kind == "blind" and not box.opened: unopened_count += 1
-	inventory_list.add_child(make_label("桌面未拆盲盒  %d" % unopened_count, 15, Color("#b7c5d0"), true))
-	inventory_list.add_child(make_label("藏品  %d" % collectibles.size(), 17, Color("#f2dfbf"), true))
-	if collectibles.is_empty(): inventory_list.add_child(make_label("拆开盲盒并选择保留后，藏品会进入这里。", 13, Color("#7f8c98")))
+	inventory_list.add_child(section_label("STOCK STATUS / 桌面未拆盲盒 %d" % unopened_count))
+	inventory_list.add_child(make_label("藏品  %d" % collectibles.size(), 17, UI_INK, true))
+	inventory_list.add_child(make_label(combination_progress_text(), 11, UI_INK_SOFT))
+	if collectibles.is_empty(): inventory_list.add_child(make_label("拆开盲盒并选择保留后，藏品会进入这里。", 13, UI_INK_SOFT))
 	for i in collectibles.size():
 		var item := collectibles[i]
 		var row := PanelContainer.new()
-		row.add_theme_stylebox_override("panel", style(Color("#242d35"), 8, RARITY_COLORS[item["rarity"]]))
+		var item_color: Color = UI_NAV_GOLD if item.has("combination_id") else RARITY_COLORS[item["rarity"]]
+		row.add_theme_stylebox_override("panel", inset_style(UI_PLATINUM, item_color))
 		inventory_list.add_child(row)
 		var h := HBoxContainer.new()
 		row.add_child(h)
-		var label := make_label("%s · %s\n¥%s" % [RARITIES[item["rarity"]], item["name"], comma(collectible_price(item["series"], item["item_index"]))], 13, RARITY_COLORS[item["rarity"]], true)
+		var rarity_name: String = "组合款" if item.has("combination_id") else RARITIES[item["rarity"]]
+		var label := make_label("%s · %s\n¥%s" % [rarity_name, item["name"], comma(inventory_item_price(item))], 13, item_color, true)
 		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		h.add_child(label)
-		var sell := button("出售", Color("#8a5e41"))
+		var sell := button("出售 ▶", UI_SIGNAL)
 		sell.pressed.connect(sell_collectible.bind(i))
 		h.add_child(sell)
 
@@ -1397,14 +2280,26 @@ func refresh_collection() -> void:
 			var found := discovered.has("%d_%d" % [s,item_index])
 			var card := PanelContainer.new()
 			card.custom_minimum_size = Vector2(105,86)
-			card.add_theme_stylebox_override("panel", style(Color("#232b33"), 7, RARITY_COLORS[rarity] if found else Color("#46515b")))
+			card.add_theme_stylebox_override("panel", inset_style(UI_PLATINUM if found else UI_CANVAS_SOFT, RARITY_COLORS[rarity] if found else UI_MUTED_INDIGO))
 			collection_grid.add_child(card)
 			var text := "%s\n%s" % [RARITIES[rarity], SERIES[s]["items"][item_index]] if found else "%s\n???" % RARITIES[rarity]
-			var label := make_label(text, 12, RARITY_COLORS[rarity] if found else Color("#66717b"), found)
+			var label := make_label(text, 12, UI_INK if found else UI_MUTED_INDIGO, found)
 			label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 			label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 			label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 			card.add_child(label)
+	for definition in COMBINATION_COLLECTIBLES:
+		var found := discovered.has("combo_%s" % String(definition["id"]))
+		var card := PanelContainer.new()
+		card.custom_minimum_size = Vector2(105,86)
+		card.add_theme_stylebox_override("panel", inset_style(UI_PLATINUM if found else UI_CANVAS_SOFT, UI_NAV_GOLD if found else UI_MUTED_INDIGO))
+		collection_grid.add_child(card)
+		var text := "组合款\n%s" % String(definition["name"]) if found else "组合款\n???"
+		var label := make_label(text, 12, UI_NAV_GOLD if found else UI_MUTED_INDIGO, found)
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		card.add_child(label)
 
 func toggle_inventory() -> void:
 	inventory_panel.visible = not inventory_panel.visible
@@ -1453,6 +2348,22 @@ func collectible_price(series_index: int, item_index: int) -> int:
 	var mastery_multiplier: float = 1.0 + series_levels[series_index] * PROFICIENCY_PRICE_BONUS
 	return max(1, int(round(market_price_at_day(series_index, item_index, day) * mastery_multiplier)))
 
+func inventory_item_price(item: Dictionary) -> int:
+	if not item.has("combination_id"): return collectible_price(int(item["series"]), int(item["item_index"]))
+	var definition := combination_definition(String(item["combination_id"]))
+	if definition.is_empty(): return 0
+	var series_index := int(definition["series"])
+	var rarity := int(definition["rarity"])
+	var market: float = FACTORS[(day - 1) % FACTORS.size()][series_index]
+	var factor: float = 1.0 + (market - 1.0) * (1.0 + rarity * 0.16)
+	var mastery_multiplier: float = 1.0 + series_levels[series_index] * PROFICIENCY_PRICE_BONUS
+	return maxi(1, int(round(float(definition["base_value"]) * factor * mastery_multiplier)))
+
+func combination_definition(combination_id: String) -> Dictionary:
+	for definition in COMBINATION_COLLECTIBLES:
+		if String(definition["id"]) == combination_id: return definition
+	return {}
+
 func market_price_at_day(series_index: int, item_index: int, date_index: int) -> int:
 	var rarity: int = SERIES[series_index]["rarities"][item_index]
 	var market: float = FACTORS[(date_index - 1) % FACTORS.size()][series_index]
@@ -1463,11 +2374,23 @@ func total_inventory_value() -> int:
 	var value := 0
 	for box in boxes:
 		if is_instance_valid(box) and box.box_kind == "blind" and not box.opened: value += int(round(box_price(box.series_index) * 0.9))
-	for item in collectibles: value += collectible_price(item["series"], item["item_index"])
+	for item in collectibles: value += inventory_item_price(item)
 	return value
 
+func combination_progress_text() -> String:
+	var parts: Array[String] = []
+	for definition in COMBINATION_COLLECTIBLES:
+		var owned_components := 0
+		for component_index in definition["components"]:
+			if find_component_in_inventory(int(definition["series"]), int(component_index), []) >= 0: owned_components += 1
+		var short_name := "天使泪包" if String(definition["id"]) == "angel_complete" else "星港机神"
+		parts.append("%s %d/%d" % [short_name, owned_components, definition["components"].size()])
+	return "配对隐藏款自动合成 · %s" % " · ".join(parts)
+
 func roll_content(series_index: int) -> int:
-	var roll := rng.randi_range(1,10000)
+	return content_index_for_roll(series_index, rng.randi_range(1,10000))
+
+func content_index_for_roll(series_index: int, roll: int) -> int:
 	var total := 0
 	var weights := item_weights_for_series(series_index)
 	for i in weights.size():
@@ -1476,23 +2399,99 @@ func roll_content(series_index: int) -> int:
 	return weights.size() - 1
 
 func item_weights_for_series(series_index: int) -> Array[int]:
-	var progress := float(min(global_luck_level, SERIES_LUCK_MAX[series_index])) / float(SERIES_LUCK_MAX[series_index])
-	var raw_weights: Array[float] = []
-	var raw_total := 0.0
-	for item_index in SERIES[series_index]["items"].size():
-		var rarity: int = SERIES[series_index]["rarities"][item_index]
-		var luck_factor: float = lerp(1.0, LUCK_RARITY_MULTIPLIERS[rarity], progress)
-		var raw_weight: float = float(SERIES[series_index]["weights"][item_index]) * luck_factor
-		raw_weights.append(raw_weight)
-		raw_total += raw_weight
+	var maximum_level: int = SERIES_LUCK_MAX[series_index]
+	var progress := float(clampi(global_luck_level, 0, maximum_level)) / float(maximum_level)
+	var keyframe_position := progress * 3.0
+	var left_keyframe := mini(int(floor(keyframe_position)), 2)
+	var segment_progress := keyframe_position - float(left_keyframe)
+	if progress >= 1.0:
+		left_keyframe = 2
+		segment_progress = 1.0
+	var left_weights := luck_keyframe_item_weights(series_index, left_keyframe)
+	var right_weights := luck_keyframe_item_weights(series_index, left_keyframe + 1)
 	var weights: Array[int] = []
 	var used := 0
-	for item_index in raw_weights.size():
-		var weight := int(round(raw_weights[item_index] / raw_total * 10000.0))
+	for item_index in left_weights.size():
+		var weight := int(round(lerpf(float(left_weights[item_index]), float(right_weights[item_index]), segment_progress)))
 		weights.append(weight)
 		used += weight
-	weights[weights.size() - 1] += 10000 - used
+	var peak_rarity := peak_rarity_for_item_weights(series_index, weights)
+	var peak_indices := item_indices_for_rarity(series_index, peak_rarity)
+	var peak_item_index := peak_indices[0]
+	for item_index in peak_indices:
+		if weights[item_index] > weights[peak_item_index]: peak_item_index = item_index
+	weights[peak_item_index] += 10000 - used
 	return weights
+
+func luck_keyframe_item_weights(series_index: int, keyframe_index: int) -> Array[int]:
+	if keyframe_index <= 0:
+		var initial: Array[int] = []
+		for value in SERIES[series_index]["weights"]: initial.append(int(value))
+		return initial
+	if keyframe_index >= 3: return max_luck_item_weights(series_index)
+	var result: Array[int] = []
+	result.resize(SERIES[series_index]["items"].size())
+	result.fill(0)
+	var has_hidden := not item_indices_for_rarity(series_index, 5).is_empty()
+	var keyframes: Array = LUCK_KEYFRAMES_WITH_HIDDEN if has_hidden else LUCK_KEYFRAMES_NO_HIDDEN
+	var rarity_totals: Array = keyframes[keyframe_index]
+	for order_index in LUCK_RARITY_ORDER.size():
+		var indices := item_indices_for_rarity(series_index, LUCK_RARITY_ORDER[order_index])
+		if not indices.is_empty(): assign_weight_total(result, series_index, indices, int(rarity_totals[order_index]))
+	return result
+
+func peak_rarity_for_item_weights(series_index: int, item_weights: Array[int]) -> int:
+	var totals: Dictionary = {}
+	for item_index in item_weights.size():
+		var rarity := int(SERIES[series_index]["rarities"][item_index])
+		totals[rarity] = int(totals.get(rarity, 0)) + item_weights[item_index]
+	var peak_rarity := int(totals.keys()[0])
+	for rarity in totals:
+		if int(totals[rarity]) > int(totals[peak_rarity]): peak_rarity = int(rarity)
+	return peak_rarity
+
+func max_luck_item_weights(series_index: int) -> Array[int]:
+	var result: Array[int] = []
+	result.resize(SERIES[series_index]["items"].size())
+	result.fill(0)
+	var hidden_indices: Array[int] = []
+	var non_hidden_rarities: Array[int] = []
+	for item_index in SERIES[series_index]["items"].size():
+		var rarity := int(SERIES[series_index]["rarities"][item_index])
+		if rarity == 5:
+			hidden_indices.append(item_index)
+		elif rarity not in non_hidden_rarities:
+			non_hidden_rarities.append(rarity)
+	non_hidden_rarities.sort()
+	var peak_rarity: int = non_hidden_rarities.pop_back()
+	var peak_indices := item_indices_for_rarity(series_index, peak_rarity)
+	assign_weight_total(result, series_index, peak_indices, MAX_LUCK_PEAK_TOTAL)
+	var remaining_probability := MAX_LUCK_NO_HIDDEN_REMAINING_TOTAL
+	if not hidden_indices.is_empty():
+		assign_weight_total(result, series_index, hidden_indices, MAX_LUCK_JACKPOT_TOTAL)
+		remaining_probability = MAX_LUCK_REMAINING_TOTAL
+	var rank_total := non_hidden_rarities.size() * (non_hidden_rarities.size() + 1) / 2
+	var remaining_used := 0
+	for rank_index in non_hidden_rarities.size():
+		var group_total := remaining_probability - remaining_used if rank_index == non_hidden_rarities.size() - 1 else int(round(float(remaining_probability) * float(rank_index + 1) / float(rank_total)))
+		remaining_used += group_total
+		assign_weight_total(result, series_index, item_indices_for_rarity(series_index, non_hidden_rarities[rank_index]), group_total)
+	return result
+
+func item_indices_for_rarity(series_index: int, rarity: int) -> Array[int]:
+	var indices: Array[int] = []
+	for item_index in SERIES[series_index]["items"].size():
+		if int(SERIES[series_index]["rarities"][item_index]) == rarity: indices.append(item_index)
+	return indices
+
+func assign_weight_total(result: Array[int], series_index: int, indices: Array[int], total_weight: int) -> void:
+	var base_total := 0
+	for item_index in indices: base_total += int(SERIES[series_index]["weights"][item_index])
+	var used := 0
+	for position in indices.size():
+		var assigned := total_weight - used if position == indices.size() - 1 else int(round(float(total_weight) * float(SERIES[series_index]["weights"][indices[position]]) / float(base_total)))
+		result[indices[position]] = assigned
+		used += assigned
 
 func weights_for_series(series_index: int) -> Array[int]:
 	var rarity_weights: Array[int] = []
@@ -1523,7 +2522,7 @@ func item_probability_text(series_index: int, item_index: int) -> String:
 	return "%.2f%%" % percent if weight % 100 != 0 else "%d%%" % int(percent)
 
 func total_collectible_definitions() -> int:
-	var total := 0
+	var total := COMBINATION_COLLECTIBLES.size()
 	for series in SERIES: total += series["items"].size()
 	return total
 
@@ -1531,69 +2530,111 @@ func toast(text_value: String) -> void: toast_label.text = text_value
 
 func make_shop_card(title_text: String, detail_text: String, color: Color) -> Dictionary:
 	var panel := PanelContainer.new()
-	panel.add_theme_stylebox_override("panel", style(Color("#202831"), 9, color.darkened(0.2), 2))
+	panel.add_theme_stylebox_override("panel", inset_style(UI_PLATINUM, color.darkened(0.18)))
 	var col := VBoxContainer.new()
 	col.add_theme_constant_override("separation", 3)
 	panel.add_child(col)
-	var title := make_label(title_text, 14, color.lightened(0.2), true)
+	var title := make_label(title_text, 13, UI_INK, true)
 	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	col.add_child(title)
-	var detail := make_label(detail_text, 11, Color("#9ba8b3"))
+	var detail := make_label(detail_text, 10, UI_INK_SOFT)
 	detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	col.add_child(detail)
-	var buy := button("购买", color.darkened(0.28))
+	var buy := button("购买 ▶", UI_AMBER)
 	buy.custom_minimum_size.y = 28
 	col.add_child(buy)
 	return {"panel":panel,"detail":detail,"button":buy,"column":col}
 
 func stat_label(title_text: String) -> Label:
-	var label := make_label(title_text, 15, Color("#f5f0e7"), true)
+	var label := make_label(title_text, 13, UI_INK, true)
 	label.custom_minimum_size.y = 36
 	return label
 
-func make_label(text_value: String, font_size := 14, color := Color.WHITE, bold := false) -> Label:
+func section_label(text_value: String) -> Label:
+	var label := make_label(text_value.to_upper(), 10, UI_NAV_GOLD, true)
+	label.custom_minimum_size.y = 18
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.add_theme_stylebox_override("normal", command_style())
+	return label
+
+func make_label(text_value: String, font_size := 14, color := Color.WHITE, _bold := false) -> Label:
 	var label := Label.new()
 	label.text = text_value
 	label.add_theme_font_size_override("font_size", font_size)
 	label.add_theme_color_override("font_color", color)
-	if bold:
-		label.add_theme_color_override("font_shadow_color", Color(0,0,0,0.55))
-		label.add_theme_constant_override("shadow_offset_x", 1)
-		label.add_theme_constant_override("shadow_offset_y", 1)
 	return label
 
 func button(text_value: String, color: Color) -> Button:
 	var result := Button.new()
 	result.text = text_value
 	result.custom_minimum_size.y = 38
-	result.add_theme_font_size_override("font_size", 14)
-	result.add_theme_stylebox_override("normal", style(color, 7, color.lightened(0.12)))
-	result.add_theme_stylebox_override("hover", style(color.lightened(0.1), 7, color.lightened(0.3), 2))
-	result.add_theme_stylebox_override("pressed", style(color.darkened(0.12), 7, color.lightened(0.18)))
-	result.add_theme_stylebox_override("disabled", style(Color("#30373e"), 7, Color("#424b54")))
+	result.add_theme_font_size_override("font_size", 12)
+	var text_color := UI_INK if color.get_luminance() > 0.48 else UI_SURFACE
+	result.add_theme_color_override("font_color", text_color)
+	result.add_theme_color_override("font_hover_color", UI_INK if color != UI_CARBON else UI_NAV_GOLD)
+	result.add_theme_color_override("font_pressed_color", UI_SURFACE if color == UI_SIGNAL else UI_INK)
+	result.add_theme_color_override("font_disabled_color", UI_INK_SOFT)
+	result.add_theme_stylebox_override("normal", raised_style(color))
+	result.add_theme_stylebox_override("hover", raised_style(UI_SIGNAL if color != UI_CARBON else UI_MUTED_INDIGO))
+	result.add_theme_stylebox_override("pressed", raised_style(UI_NAV_GOLD))
+	result.add_theme_stylebox_override("disabled", inset_style(UI_CANVAS_SOFT, UI_MUTED_INDIGO))
 	return result
 
 func style(color: Color, radius := 8, border := Color.TRANSPARENT, width := 1) -> StyleBoxFlat:
 	var result := StyleBoxFlat.new()
 	result.bg_color = color
-	result.corner_radius_top_left = radius
-	result.corner_radius_top_right = radius
-	result.corner_radius_bottom_left = radius
-	result.corner_radius_bottom_right = radius
+	var hard_radius := mini(radius, 4)
+	result.corner_radius_top_left = hard_radius
+	result.corner_radius_top_right = hard_radius
+	result.corner_radius_bottom_left = hard_radius
+	result.corner_radius_bottom_right = hard_radius
 	result.border_width_left = width
 	result.border_width_top = width
 	result.border_width_right = width
 	result.border_width_bottom = width
 	result.border_color = border
-	result.content_margin_left = 10
-	result.content_margin_right = 10
-	result.content_margin_top = 7
-	result.content_margin_bottom = 7
+	result.content_margin_left = 8
+	result.content_margin_right = 8
+	result.content_margin_top = 6
+	result.content_margin_bottom = 6
 	return result
+
+func chrome_style(fill := UI_CANVAS) -> StyleBoxFlat:
+	var result := style(fill, 4, UI_CHROME_INDIGO, 2)
+	result.shadow_color = Color(UI_CHROME_INDIGO, 0.85)
+	result.shadow_size = 2
+	result.shadow_offset = Vector2(0, 2)
+	return result
+
+func command_style(border := UI_CHROME_INDIGO) -> StyleBoxFlat:
+	var result := style(UI_CARBON, 0, border, 2)
+	result.shadow_color = Color(0.05, 0.06, 0.10, 0.9)
+	result.shadow_size = 2
+	result.shadow_offset = Vector2(0, 2)
+	return result
+
+func inset_style(fill := UI_PLATINUM, border := UI_CHROME_INDIGO) -> StyleBoxFlat:
+	var result := style(fill, 3, border, 1)
+	result.shadow_color = Color(UI_CHROME_INDIGO, 0.35)
+	result.shadow_size = 1
+	result.shadow_offset = Vector2(0, -1)
+	return result
+
+func raised_style(fill := UI_AMBER) -> StyleBoxFlat:
+	var result := style(fill, 2, fill.lightened(0.28), 1)
+	result.shadow_color = Color(UI_CHROME_INDIGO, 0.9)
+	result.shadow_size = 2
+	result.shadow_offset = Vector2(0, 2)
+	return result
+
+func decorate_progress_bar(bar: ProgressBar, fill := UI_SIGNAL) -> void:
+	bar.add_theme_stylebox_override("background", inset_style(UI_CARBON, UI_MUTED_INDIGO))
+	bar.add_theme_stylebox_override("fill", raised_style(fill))
 
 func line() -> HSeparator:
 	var result := HSeparator.new()
-	result.modulate = Color("#58636d")
+	result.modulate = UI_MUTED_INDIGO
 	return result
 
 func clear_children(node: Node) -> void:
@@ -1602,9 +2643,23 @@ func clear_children(node: Node) -> void:
 		child.queue_free()
 
 func comma(value: int) -> String:
-	var raw := str(value)
+	var magnitude := absi(value)
+	if magnitude >= 100000000: return compact_unit(value, 100000000.0, "亿")
+	if magnitude >= 1000000: return compact_unit(value, 1000000.0, "百万")
+	if magnitude >= 10000: return compact_unit(value, 10000.0, "万")
+	return comma_integer(value)
+
+func compact_unit(value: int, divisor: float, suffix: String) -> String:
+	var scaled := float(value) / divisor
+	var number := "%.2f" % scaled
+	while number.ends_with("0"): number = number.left(-1)
+	if number.ends_with("."): number = number.left(-1)
+	return "%s%s" % [number, suffix]
+
+func comma_integer(value: int) -> String:
+	var raw := str(absi(value))
 	var result := ""
 	for i in raw.length():
 		if i > 0 and (raw.length() - i) % 3 == 0: result += ","
 		result += raw[i]
-	return result
+	return "-" + result if value < 0 else result

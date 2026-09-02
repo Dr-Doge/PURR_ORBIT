@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene format=3 uid="uid://cqbl1eywr4m8m"]
 
-[ext_resource type="Script" path="res://scripts/ui/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://fwu4qhv8xkpf" path="res://scripts/ui/main.gd" id="1_main"]
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
@@ -10,137 +10,128 @@ ambient_light_color = Color(0.74, 0.79, 0.86, 1)
 ambient_light_energy = 0.58
 tonemap_mode = 2
 
-[sub_resource type="StandardMaterial3D" id="Material_desk"]
-albedo_color = Color(0.32, 0.225, 0.15, 1)
-roughness = 0.9
-
-[sub_resource type="StandardMaterial3D" id="Material_mat"]
-albedo_color = Color(0.075, 0.105, 0.12, 1)
-roughness = 0.72
-
 [sub_resource type="StandardMaterial3D" id="Material_wall"]
 albedo_color = Color(0.17, 0.195, 0.22, 1)
 roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Material_ticker"]
+albedo_color = Color(0.025, 0.045, 0.055, 1)
+roughness = 0.35
+emission_enabled = true
+emission = Color(0.02, 0.12, 0.14, 1)
+emission_energy_multiplier = 0.75
+
+[sub_resource type="StandardMaterial3D" id="Material_desk"]
+albedo_color = Color(0.32, 0.225, 0.15, 1)
+roughness = 0.9
 
 [sub_resource type="StandardMaterial3D" id="Material_bin"]
 albedo_color = Color(0.12, 0.34, 0.31, 1)
 roughness = 0.75
 
-[sub_resource type="StandardMaterial3D" id="Material_bin_label"]
-albedo_color = Color(0.58, 0.95, 0.77, 1)
-emission_enabled = true
-emission = Color(0.15, 0.45, 0.31, 1)
-
-[sub_resource type="StandardMaterial3D" id="Material_ticker"]
-albedo_color = Color(0.025, 0.045, 0.055, 1)
-emission_enabled = true
-emission = Color(0.02, 0.12, 0.14, 1)
-emission_energy_multiplier = 0.75
-roughness = 0.35
-
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" unique_id=1322748869]
 script = ExtResource("1_main")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=790426919]
 environment = SubResource("Environment_main")
 
-[node name="KeyLight" type="DirectionalLight3D" parent="."]
-rotation_degrees = Vector3(-52, -28, 0)
+[node name="KeyLight" type="DirectionalLight3D" parent="." unique_id=217693142]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 light_color = Color(1, 0.88, 0.7, 1)
 light_energy = 1.35
 shadow_enabled = true
 
-[node name="FillLight" type="OmniLight3D" parent="."]
-position = Vector3(3.5, 5.5, 2.5)
+[node name="FillLight" type="OmniLight3D" parent="." unique_id=86919001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.076069, 0)
 light_color = Color(0.55, 0.73, 1, 1)
-light_energy = 4.0
+light_energy = 5.0
+shadow_enabled = true
 omni_range = 12.0
 
-[node name="CameraRig" type="Node3D" parent="."]
+[node name="CameraRig" type="Node3D" parent="." unique_id=427315866]
 
-[node name="Camera3D" type="Camera3D" parent="CameraRig"]
-position = Vector3(0, 9, 7)
-rotation_degrees = Vector3(-52, 0, 0)
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1254041756]
+transform = Transform3D(1, 0, 0, 0, 0.6156615, 0.7880107, 0, -0.7880107, 0.6156615, 0, 9, 7)
 current = true
 fov = 52.0
 
-[node name="Room" type="Node3D" parent="."]
+[node name="Room" type="Node3D" parent="." unique_id=2115963886]
 
-[node name="BackWall" type="CSGBox3D" parent="Room"]
-position = Vector3(0, 3.4, -4.5)
+[node name="BackWall" type="CSGBox3D" parent="Room" unique_id=716946628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, -4.5)
+use_collision = true
 size = Vector3(14, 7, 0.35)
 material = SubResource("Material_wall")
-use_collision = true
 
-[node name="MarketTicker" type="Node3D" parent="Room"]
-position = Vector3(0.65, 2.55, -4.28)
+[node name="MarketTicker" type="Node3D" parent="Room" unique_id=1812875132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65, 2.55, -4.28)
 
-[node name="Display" type="CSGBox3D" parent="Room/MarketTicker"]
-size = Vector3(8.6, 0.78, 0.12)
+[node name="Display" type="CSGBox3D" parent="Room/MarketTicker" unique_id=684618484]
+size = Vector3(6.4, 0.78, 0.12)
 material = SubResource("Material_ticker")
 
-[node name="TickerLabel" type="Label3D" parent="Room/MarketTicker"]
-position = Vector3(0, 0, 0.08)
-text = "今日行情载入中……"
-font_size = 42
+[node name="LeftTextMask" type="CSGBox3D" parent="Room/MarketTicker" unique_id=2002703950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0.11)
+size = Vector3(3.6, 1, 0.08)
+material = SubResource("Material_wall")
+
+[node name="RightTextMask" type="CSGBox3D" parent="Room/MarketTicker" unique_id=1386307636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0.11)
+size = Vector3(3.6, 1, 0.08)
+material = SubResource("Material_wall")
+
+[node name="TickerLabel" type="Label3D" parent="Room/MarketTicker" unique_id=2105041191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08)
 modulate = Color(0.39, 0.96, 0.85, 1)
 outline_modulate = Color(0.01, 0.05, 0.06, 1)
-outline_size = 12
-
-[node name="TickerLabelB" type="Label3D" parent="Room/MarketTicker"]
-position = Vector3(6.4, 0, 0.08)
 text = "今日行情载入中……"
 font_size = 42
+
+[node name="TickerLabelB" type="Label3D" parent="Room/MarketTicker" unique_id=729781585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0, 0.08)
 modulate = Color(0.39, 0.96, 0.85, 1)
 outline_modulate = Color(0.01, 0.05, 0.06, 1)
-outline_size = 12
+text = "今日行情载入中……"
+font_size = 42
 
-[node name="Desk" type="CSGBox3D" parent="Room"]
-position = Vector3(0, -0.35, 0)
+[node name="Desk" type="CSGBox3D" parent="Room" unique_id=1261944666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
+use_collision = true
 size = Vector3(13, 1.2, 8.5)
 material = SubResource("Material_desk")
+
+[node name="Items" type="Node3D" parent="." unique_id=1381103554]
+
+[node name="SecondhandBin" type="Node3D" parent="." unique_id=1664355554]
+transform = Transform3D(1.17, 0, 0, 0, 1.17, 0, 0, 0, 1.17, 4.4, 0.64, -2.75)
+
+[node name="Bottom" type="CSGBox3D" parent="SecondhandBin" unique_id=513426421]
+transform = Transform3D(1, 0, 0, 0, 0.9975641, -0.06975647, 0, 0.06975647, 0.9975641, 0, -0.32, 0)
 use_collision = true
-
-[node name="DeskMat" type="CSGBox3D" parent="Room"]
-position = Vector3(0.5, 0.28, 0)
-size = Vector3(6.7, 0.06, 4.8)
-material = SubResource("Material_mat")
-
-[node name="Items" type="Node3D" parent="."]
-
-[node name="SecondhandBin" type="Node3D" parent="."]
-position = Vector3(4.4, 0.64, -2.75)
-scale = Vector3(1.17, 1.17, 1.17)
-
-[node name="Bottom" type="CSGBox3D" parent="SecondhandBin"]
-position = Vector3(0, -0.32, 0)
-rotation_degrees = Vector3(4, 0, 0)
 size = Vector3(2.1, 0.12, 1.575)
 material = SubResource("Material_bin")
-use_collision = true
 
-[node name="LeftWall" type="CSGBox3D" parent="SecondhandBin"]
-position = Vector3(-0.99, 0, 0)
+[node name="LeftWall" type="CSGBox3D" parent="SecondhandBin" unique_id=2142735479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99, 0, 0)
+use_collision = true
 size = Vector3(0.12, 0.75, 1.575)
 material = SubResource("Material_bin")
-use_collision = true
 
-[node name="RightWall" type="CSGBox3D" parent="SecondhandBin"]
-position = Vector3(0.99, 0, 0)
+[node name="RightWall" type="CSGBox3D" parent="SecondhandBin" unique_id=1250125783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99, 0, 0)
+use_collision = true
 size = Vector3(0.12, 0.75, 1.575)
 material = SubResource("Material_bin")
-use_collision = true
 
-[node name="BackWall" type="CSGBox3D" parent="SecondhandBin"]
-position = Vector3(0, 0, -0.7275)
+[node name="BackWall" type="CSGBox3D" parent="SecondhandBin" unique_id=666404296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7275)
+use_collision = true
 size = Vector3(2.1, 0.75, 0.12)
 material = SubResource("Material_bin")
-use_collision = true
 
-[node name="MarketLabel" type="Label3D" parent="SecondhandBin"]
-position = Vector3(0, 0.05, -0.655)
-text = "忙鱼二手市场"
-font_size = 30
+[node name="MarketLabel" type="Label3D" parent="SecondhandBin" unique_id=1916492243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -0.655)
 modulate = Color(0.72, 1, 0.84, 1)
 outline_modulate = Color(0.02, 0.12, 0.1, 1)
-outline_size = 12
+text = "忙鱼二手市场"
+font_size = 30

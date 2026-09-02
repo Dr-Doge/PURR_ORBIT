@@ -50,6 +50,22 @@ func _draw() -> void:
 	draw_string(font, Vector2(rect.end.x - 30, rect.end.y + 45), "日期", HORIZONTAL_ALIGNMENT_LEFT, 50, 13, Color("#e2c98f"))
 
 func compact_number(value: float) -> String:
-	if value >= 1000000.0: return "%.1fM" % (value / 1000000.0)
-	if value >= 1000.0: return "%.1fK" % (value / 1000.0)
-	return "%.0f" % value
+	var magnitude := absf(value)
+	if magnitude >= 100000000.0: return compact_unit(value, 100000000.0, "亿")
+	if magnitude >= 1000000.0: return compact_unit(value, 1000000.0, "百万")
+	if magnitude >= 10000.0: return compact_unit(value, 10000.0, "万")
+	return comma_integer(int(round(value)))
+
+func compact_unit(value: float, divisor: float, suffix: String) -> String:
+	var number := "%.2f" % (value / divisor)
+	while number.ends_with("0"): number = number.left(-1)
+	if number.ends_with("."): number = number.left(-1)
+	return "%s%s" % [number, suffix]
+
+func comma_integer(value: int) -> String:
+	var raw := str(absi(value))
+	var result := ""
+	for index in raw.length():
+		if index > 0 and (raw.length() - index) % 3 == 0: result += ","
+		result += raw[index]
+	return "-" + result if value < 0 else result
