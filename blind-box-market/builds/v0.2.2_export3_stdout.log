@@ -1,0 +1,249 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started 项目初始化 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | 正在扫描文件结构……[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | 正在加载全局类名……[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | 正在校验 GDExtension……[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 正在创建自动加载脚本……[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | 正在初始化插件……[39m[0m
+
+=== MCP SERVER STARTING ===
+Creating command handler...
+Connecting command handler signals...
+=== MCP SERVER INITIALIZED ===
+
+Command handler initializing...
+[  83% ] [90m[1mfirst_scan_filesystem[22m | 正在启动文件扫描……[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+WebSocket server reference set: @EditorPlugin@19794:<EditorPlugin#1477938583202>
+Command handler initialized and ready to process commands
+[   0% ] [90m[1msavepack[22m | Started 打包中 (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/base_command_processor.gdc[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/debug_commands.gdc[39m[0m
+[   2% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/editor_commands.gdc[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/editor_script_commands.gdc[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/error_commands.gdc[39m[0m
+[   5% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/game_commands.gdc[39m[0m
+[   6% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/node_commands.gdc[39m[0m
+[   7% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/project_commands.gdc[39m[0m
+[   8% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/scene_commands.gdc[39m[0m
+[   9% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/script_commands.gdc[39m[0m
+[  10% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/ui/mcp_panel.gdc[39m[0m
+[  10% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-03dfab4f1d15e435dabb9faf8f037ca7-mcp_panel.scn[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/utils/node_utils.gdc[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/utils/resource_utils.gdc[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/utils/script_utils.gdc[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/command_handler.gdc[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/mcp_server.gdc[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/websocket_server.gdc[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://addons/lens_effects/base_compositor_effect.gdc[39m[0m
+[  18% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/lens_flares.glsl-5de502a9c3176c8d528a90fea62b4581.res[39m[0m
+[  18% ] [90m[1msavepack[22m | 正在保存文件：res://addons/lens_effects/lens_flares.glsl.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 正在保存文件：res://addons/lens_effects/lens_flare_compositor_effect.gdc[39m[0m
+[  19% ] [90m[1msavepack[22m | 正在保存文件：res://addons/lens_effects/plugin.gdc[39m[0m
+[  20% ] [90m[1msavepack[22m | 正在保存文件：res://addons/lens_effects/world_environment.gdc[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/企鹅盲盒1.jpg-cea4d00cd40efd8f858bd8b5961c4b6a.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/企鹅盲盒/企鹅盲盒1.jpg.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/企鹅盲盒2.jpg-5d81bb67cb64130d942713cfe39ec57d.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/企鹅盲盒/企鹅盲盒2.jpg.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/企鹅盲盒3.jpg-ebd6c2efa6faa7bd40f11cf42cbf7959.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/企鹅盲盒/企鹅盲盒3.jpg.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/企鹅盲盒4.jpg-bc772bb264ec3ae4d2021263eb899d68.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/企鹅盲盒/企鹅盲盒4.jpg.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/企鹅盲盒5.jpg-5e2e6c08c727bba88bdda2d120c046c8.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/企鹅盲盒/企鹅盲盒5.jpg.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/企鹅盲盒6.jpg-b38a6cfe0aa27fb4081f672baf0604d9.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/企鹅盲盒/企鹅盲盒6.jpg.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/企鹅盲盒7.jpg-9d7b9eee0dafe3c4f472539d5174edd6.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/企鹅盲盒/企鹅盲盒7.jpg.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/企鹅盲盒包装.jpg-cbcb379d676c017e96da7099611315dd.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/企鹅盲盒/企鹅盲盒包装.jpg.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/粉色海狸1.jpg-f958573f1350b33836fc4d0a6af663d4.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/粉色海狸盲盒/粉色海狸1.jpg.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/粉色海狸2.jpg-b499db420b337e0ec3e3e8d47139f7ec.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/粉色海狸盲盒/粉色海狸2.jpg.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/粉色海狸3.jpg-46d8072119b8ed7c3002a7a0f1b74cd8.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/粉色海狸盲盒/粉色海狸3.jpg.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/粉色海狸4.jpg-56698c9b4aa399ac336839e0f966860f.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/粉色海狸盲盒/粉色海狸4.jpg.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/粉色海狸5.jpg-20e9ce146bb3a741547a6d7f300a458a.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/粉色海狸盲盒/粉色海狸5.jpg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/粉色海狸6.jpg-af3d5b2adf79d1bd3f3ce2864e531abb.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/粉色海狸盲盒/粉色海狸6.jpg.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/粉色海狸7.jpg-f4a1c7c172d0988d772e72bbe11c2486.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/粉色海狸盲盒/粉色海狸7.jpg.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/粉色海狸8.jpg-de994babf1c92ab1d68d12f484010ec5.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/粉色海狸盲盒/粉色海狸8.jpg.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/粉色海狸包装.jpg-36405963b680b40cb025e55cb62c01ce.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/粉色海狸盲盒/粉色海狸包装.jpg.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠少见.fbx-26df40cc12593ed45fb915eb69b9730e.scn[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠少见.fbx.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠少见_0.png-a11697c3d1e20c2ac64992246cad93f6.s3tc.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠少见_0.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠少见_1.png-69eb876ea905800fadd0a6b4dd26d876.s3tc.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠少见_1.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠少见_2.png-48fdd75a57e3bef38cdf596d00c5d9b0.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠少见_2.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠少见_3.png-3ccc94f147485244798df36124d10334.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠少见_3.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠常见.fbx-67c913171d630c68b4b0ab8123ebc01e.scn[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠常见.fbx.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠常见_0.png-cbc396af2f0e1f281adc9feb3afd0957.s3tc.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠常见_0.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠常见_1.png-9339ceb513b48e1a371f099ea83df75f.s3tc.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠常见_1.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠常见_2.png-ec2d0d02fabda7a5f551b4fa6596849f.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠常见_2.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠常见_3.png-fcd941fc7c712f92d940f0e571914da2.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠常见_3.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠稀有.fbx-bcd8506b8a7b4eaa2cf93d69e554d8b7.scn[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠稀有.fbx.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠稀有_0.png-f60b631ba7420888e2c209e303ed50fa.s3tc.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠稀有_0.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠稀有_1.png-603888537bda28ed715b1f750b990aec.s3tc.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠稀有_1.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠稀有_2.png-4c1fae5af616b700ab626a7da404365d.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠稀有_2.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠稀有_3.png-740f4fbc0ca07e8cac8a97bbe01214ed.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠稀有_3.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠隐藏.fbx-907ae06a4477b0b33e9421e6ed2287ff.scn[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠隐藏.fbx.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠隐藏_0.png-6ae87a5f0a662f1356a2339a13292e08.s3tc.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠隐藏_0.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠隐藏_1.png-c370e4e1362acf8d3a6d73c5a7a7c0f6.s3tc.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠隐藏_1.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠隐藏_2.png-d038f191bd3d31fa8efaea287097fdd0.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠隐藏_2.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠隐藏_3.png-36d0264e40199305de9061b746fed541.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠隐藏_3.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠1.jpg-732a55a05c15ea11f31c4749893138b4.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠1.jpg.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠2.jpg-04d1974d31925fc8a0b4a8f68e220832.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠2.jpg.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠3.jpg-6a5ae95e8407c990225d761b531d6cd0.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠3.jpg.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠4.jpg-0fefd52466fe4d8b3fe4e80ef1818059.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠4.jpg.import[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠包装.jpg-828e26728f3bba302e7313c1a5a8d616.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠包装.jpg.import[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠少见.jpg-a3b33c17d19843e95363827d5b2e308e.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠少见.jpg.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠常见.jpg-b3c81796dd17e581458e0c8cb79069ef.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠常见.jpg.import[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠稀有jpg.jpg-ccc59ee33d07a9d3e133d65f576477f8.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠稀有jpg.jpg.import[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠隐藏02.jpg-f77855e67a37488fc1d802534f902770.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠隐藏02.jpg.import[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠隐藏.jpg-89721d3279e418eeeac5edf7aaaad40b.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠隐藏.jpg.import[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/傻笑 LADUDU常见.fbx-8c9b9c4b2f57c472c1bb1746dfee537f.scn[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/傻笑 LADUDU常见.fbx.import[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/傻笑 LADUDU常见_0.png-c7a51875d1482d10a70706ca889e7020.s3tc.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/傻笑 LADUDU常见_0.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/傻笑 LADUDU常见_1.png-df4146c00828712e5e95c15fba180bdf.s3tc.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/傻笑 LADUDU常见_1.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/傻笑 LADUDU常见_2.png-3a17db4f084b43f0bd0ad2b8d3727ad8.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/傻笑 LADUDU常见_2.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/傻笑 LADUDU常见_3.png-3b83a03ba18f287211fc946f201b023f.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/傻笑 LADUDU常见_3.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/哭哭 LADUDU稀有.fbx-06e577c49dfccbb7ce80e4a808145e4c.scn[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/哭哭 LADUDU稀有.fbx.import[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/哭哭 LADUDU稀有_0.png-77d03342f0cac93e7b5a1898c54f8068.s3tc.ctex[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/哭哭 LADUDU稀有_0.png.import[39m[0m
+[  68% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/哭哭 LADUDU稀有_1.png-7c98f13f4e22291849a514e52698001a.s3tc.ctex[39m[0m
+[  68% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/哭哭 LADUDU稀有_1.png.import[39m[0m
+[  69% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/哭哭 LADUDU稀有_2.png-abf05d2b66aed5f563ed9819de2fe575.ctex[39m[0m
+[  69% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/哭哭 LADUDU稀有_2.png.import[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/哭哭 LADUDU稀有_3.png-98d72e9d17499d8acca524b51d3ce3fb.ctex[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/哭哭 LADUDU稀有_3.png.import[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/国王 LADUDU传说.fbx-9ef8c8d970a007d1aab099b3d6a913e3.scn[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/国王 LADUDU传说.fbx.import[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/国王 LADUDU传说_0.png-a56a58d95d308267ebf3f618b42e0b0b.s3tc.ctex[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/国王 LADUDU传说_0.png.import[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/国王 LADUDU传说_1.png-189f62f1e700fd5664f8b6f6f2cf6a32.s3tc.ctex[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/国王 LADUDU传说_1.png.import[39m[0m
+[  73% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/国王 LADUDU传说_2.png-f455871074b8c7f427962f85f6a5c7a3.ctex[39m[0m
+[  73% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/国王 LADUDU传说_2.png.import[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/国王 LADUDU传说_3.png-18cf0b5b9f16a9b98e08af5e9788612d.ctex[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/国王 LADUDU传说_3.png.import[39m[0m
+[  75% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/打盹 LADUDU少见.fbx-f800fd994888fbd3199ea97ee0b6786a.scn[39m[0m
+[  75% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/打盹 LADUDU少见.fbx.import[39m[0m
+[  76% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/打盹 LADUDU少见_0.png-3ea93445043b7eb7f15e58354774b1b0.s3tc.ctex[39m[0m
+[  76% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/打盹 LADUDU少见_0.png.import[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/打盹 LADUDU少见_1.png-100ed6d6eb7c895571ba9a76d5d92a73.s3tc.ctex[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/打盹 LADUDU少见_1.png.import[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/打盹 LADUDU少见_2.png-c2987827ffa79c04360d2b00591d1608.ctex[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/打盹 LADUDU少见_2.png.import[39m[0m
+[  79% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/打盹 LADUDU少见_3.png-d09d581040a66c1e13ac8e0ef7646241.ctex[39m[0m
+[  79% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/打盹 LADUDU少见_3.png.import[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/金牙LADUDU史诗.fbx-aa6788cf2a9097c1731c852d7860dc6c.scn[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/金牙LADUDU史诗.fbx.import[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/金牙LADUDU史诗_0.png-ee01f8e56b687e4967e500400100c434.s3tc.ctex[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/金牙LADUDU史诗_0.png.import[39m[0m
+[  81% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/金牙LADUDU史诗_1.png-8ca4e063003effc82eb698c1ca82098a.s3tc.ctex[39m[0m
+[  81% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/金牙LADUDU史诗_1.png.import[39m[0m
+[  82% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/金牙LADUDU史诗_2.png-c6e82ec6f3e525d152957d714b4b496b.ctex[39m[0m
+[  82% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/金牙LADUDU史诗_2.png.import[39m[0m
+[  83% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/金牙LADUDU史诗_3.png-2f39b40823d77e20e01a0ac28d3ecefb.ctex[39m[0m
+[  83% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/金牙LADUDU史诗_3.png.import[39m[0m
+[  84% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/傻笑 LADUDU常见.jpg-a3924e20eecd63e2b678835434fe1ad3.ctex[39m[0m
+[  84% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/傻笑 LADUDU常见.jpg.import[39m[0m
+[  85% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/哭哭 LADUDU稀有.jpg-2e536a0bd4586ce4b357605d3563bea9.ctex[39m[0m
+[  85% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/哭哭 LADUDU稀有.jpg.import[39m[0m
+[  86% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/国王 LADUDU传说.jpg-b54167a96d58967fe100c11f63af78ef.ctex[39m[0m
+[  86% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/国王 LADUDU传说.jpg.import[39m[0m
+[  87% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/打盹 LADUDU少见.jpg-8fa3eabebc74d42b8e0c952ec381505d.ctex[39m[0m
+[  87% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/打盹 LADUDU少见.jpg.import[39m[0m
+[  88% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/金牙 LADUDU史诗.jpg-b49fceac6cce35daf66e4a27e6d92fe9.ctex[39m[0m
+[  88% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/金牙 LADUDU史诗.jpg.import[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠1.jpg-9cb07dce276cc321393d8683304b67e7.ctex[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/黄色袋鼠盲盒/黄色袋鼠1.jpg.import[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠2.jpg-db6b89a2de52fef015ad3a4094f4735e.ctex[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/黄色袋鼠盲盒/黄色袋鼠2.jpg.import[39m[0m
+[  90% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠3.jpg-f62701049b5a332ad39675022565ce62.ctex[39m[0m
+[  90% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/黄色袋鼠盲盒/黄色袋鼠3.jpg.import[39m[0m
+[  91% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠4.jpg-3a10231c8a07c7693f52909d45cc00a7.ctex[39m[0m
+[  91% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/黄色袋鼠盲盒/黄色袋鼠4.jpg.import[39m[0m
+[  92% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠包装.jpg-a2303485cb1ad55270cd2297e7c6dc0e.ctex[39m[0m
+[  92% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/黄色袋鼠盲盒/黄色袋鼠包装.jpg.import[39m[0m
+[  93% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/黄色袋鼠隐藏.jpg-cd122d7ac982d6a68e5b3814a857e10c.ctex[39m[0m
+[  93% ] [90m[1msavepack[22m | 正在保存文件：res://Bind_Box_Fever美术/黄色袋鼠盲盒/黄色袋鼠隐藏.jpg.import[39m[0m
+[  94% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-9fed27ed27622896715b4d37f1f21a6d-physical_box.scn[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-f39996a6d27a38698d16421ab974097b-main.scn[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/components/physical_box.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/ui/main.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/ui/price_chart.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/base_command_processor.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/debug_commands.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/editor_commands.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/editor_script_commands.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/error_commands.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/game_commands.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/node_commands.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/project_commands.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/scene_commands.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/commands/script_commands.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/ui/mcp_panel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/ui/mcp_panel.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/utils/node_utils.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/utils/resource_utils.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/utils/script_utils.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/command_handler.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/mcp_server.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/godot_mcp/websocket_server.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/lens_effects/base_compositor_effect.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/lens_effects/lens_flare_compositor_effect.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/lens_effects/plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://addons/lens_effects/world_environment.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/entities/physical_box.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/main/main.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/components/physical_box.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/ui/main.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/ui/price_chart.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/global_script_class_cache.cfg[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/uid_cache.bin[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m
+=== MCP SERVER SHUTDOWN ===
