@@ -3,6 +3,7 @@ extends Control
 var prices: Array[float] = []
 var dates: Array[int] = []
 var line_color := Color("#62a8ff")
+var compact := false
 
 func setup(new_prices: Array[float], new_dates: Array[int], color: Color) -> void:
 	prices = new_prices
@@ -11,6 +12,9 @@ func setup(new_prices: Array[float], new_dates: Array[int], color: Color) -> voi
 	queue_redraw()
 
 func _draw() -> void:
+	if compact:
+		_draw_compact_chart()
+		return
 	var font: Font = ThemeDB.fallback_font
 	var rect := Rect2(Vector2(72, 18), size - Vector2(94, 72))
 	draw_rect(rect, Color("#111820"), true)
@@ -48,6 +52,29 @@ func _draw() -> void:
 		draw_string(font, Vector2(x - 22, rect.end.y + 24), "第%d天" % dates[i], HORIZONTAL_ALIGNMENT_CENTER, 44, 11, Color("#aeb9c5"))
 	draw_string(font, Vector2(8, 14), "市价", HORIZONTAL_ALIGNMENT_LEFT, 50, 13, Color("#e2c98f"))
 	draw_string(font, Vector2(rect.end.x - 30, rect.end.y + 45), "日期", HORIZONTAL_ALIGNMENT_LEFT, 50, 13, Color("#e2c98f"))
+
+func _draw_compact_chart() -> void:
+	var rect := Rect2(Vector2(7, 7), size - Vector2(14, 14))
+	draw_rect(rect, Color("#111820"), true)
+	for row in 3:
+		var y: float = lerpf(rect.position.y, rect.end.y, float(row) / 2.0)
+		draw_line(Vector2(rect.position.x, y), Vector2(rect.end.x, y), Color(0.45, 0.52, 0.58, 0.22), 1.0)
+	if prices.is_empty(): return
+	var minimum: float = prices.min()
+	var maximum: float = prices.max()
+	if is_equal_approx(minimum, maximum):
+		minimum -= 1.0
+		maximum += 1.0
+	var points := PackedVector2Array()
+	for index in prices.size():
+		var x_ratio := 0.5 if prices.size() == 1 else float(index) / float(prices.size() - 1)
+		var y_ratio := (prices[index] - minimum) / (maximum - minimum)
+		points.append(Vector2(lerp(rect.position.x, rect.end.x, x_ratio), lerp(rect.end.y, rect.position.y, y_ratio)))
+	if points.size() == 1:
+		draw_circle(points[0], 4.0, line_color)
+	else:
+		draw_polyline(points, line_color, 3.0, true)
+		for point in points: draw_circle(point, 2.5, line_color.lightened(0.18))
 
 func compact_number(value: float) -> String:
 	var magnitude := absf(value)

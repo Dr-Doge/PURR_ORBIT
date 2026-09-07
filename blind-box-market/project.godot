@@ -12,8 +12,12 @@ config_version=5
 
 config/name="blind-box-market"
 config/version="0.2.2"
-run/main_scene="res://scenes/main/main.tscn"
+run/main_scene="res://scenes/frontend/main_menu.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
+
+[autoload]
+
+GameSession="*res://scripts/core/game_session.gd"
 
 [display]
 
@@ -30,4 +34,3 @@ enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
 [rendering]
 
 renderer/rendering_method="mobile"
-renderer/rendering_method.mobile="mobile"

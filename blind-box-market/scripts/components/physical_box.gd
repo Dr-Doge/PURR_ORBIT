@@ -125,7 +125,7 @@ func configure_seal_pattern(pattern_index: int) -> void:
 			points_2d = [Vector2(0, -0.48), Vector2(0, -0.24), Vector2(0, 0), Vector2(0, 0.24), Vector2(0, 0.48)]
 		0: # Desk partners: one clean horizontal pull.
 			points_2d = [Vector2(-0.58, 0), Vector2(-0.29, 0), Vector2(0, 0), Vector2(0.29, 0), Vector2(0.58, 0)]
-		1: # LADUDU: broad zigzag.
+		1: # 高雅企鹅：宽折线封条。
 			points_2d = [Vector2(-0.58, -0.28), Vector2(-0.30, 0.24), Vector2(0, -0.24), Vector2(0.30, 0.24), Vector2(0.58, -0.28)]
 		2: # Night shift: vertical zipper.
 			points_2d = [Vector2(0, -0.48), Vector2(0, -0.25), Vector2(0, 0), Vector2(0, 0.25), Vector2(0, 0.48)]

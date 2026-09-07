@@ -2,6 +2,27 @@ extends Node3D
 
 const BOX_SCENE := preload("res://scenes/entities/physical_box.tscn")
 const PRICE_CHART_SCENE := preload("res://scripts/ui/price_chart.gd")
+const REVEAL_SPRITESHEET_VFX := preload("res://scripts/vfx/reveal_spritesheet_vfx.gd")
+const WORLD_SPRITESHEET_VFX := preload("res://scripts/vfx/spritesheet_vfx_3d.gd")
+const SCREEN_SPRITESHEET_VFX := preload("res://scripts/vfx/spritesheet_vfx_2d.gd")
+const REVEAL_VFX_SCREEN_FRACTION := 1.60
+const REVIEW_MODEL_SCALE_MULTIPLIER := 2.0
+const REVIEW_ITEM_CAMERA_DISTANCE := 2.65
+const REVIEW_VFX_CAMERA_DISTANCE := 3.30
+const REVIEW_VERTICAL_OFFSET := 0.40
+const OPENED_BOX_SHRINK_DURATION := 0.34
+const OPENED_BOX_FINAL_SCALE := 0.002
+const NEW_DISCOVERY_SIDE_VFX_PATH := "res://assets/VFX/屏幕边缘礼花.png"
+const REVEAL_OPEN_VFX_PATHS := {
+	"regular":"res://assets/VFX/开出特效_普通款.png",
+	"small_hidden":"res://assets/VFX/开出特效_小隐藏.png",
+	"big_hidden":"res://assets/VFX/开出特效_大隐藏.png",
+}
+const REVEAL_IDLE_VFX_PATHS := {
+	"regular":"res://assets/VFX/待机背景_普通款.png",
+	"small_hidden":"res://assets/VFX/待机背景_小隐藏.png",
+	"big_hidden":"res://assets/VFX/待机背景_大隐藏.png",
+}
 const DEVELOPER_CASH := 999999999999
 const AUTO_OPENER_COST := 1000
 const AUTO_OPENER_BASE_TIME := 6.0
@@ -36,7 +57,7 @@ const UI_SURFACE := Color("#ffffff")
 const UI_CARBON := Color("#21242e")
 const UI_INK := Color("#21242e")
 const UI_INK_SOFT := Color("#3d4f97")
-const RARITIES := ["常见", "少见", "稀有", "史诗", "传说", "隐藏"]
+const RARITIES := ["常规款", "未使用", "未使用", "未使用", "小隐藏", "大隐藏"]
 const SERIES_LUCK_MAX := [5, 10, 15, 20, 25]
 const MAX_LUCK_PEAK_TOTAL := 8000
 const MAX_LUCK_JACKPOT_TOTAL := 1000
@@ -82,35 +103,90 @@ const TEAR_SKILL_UPGRADE_COSTS := [50,100,1000,5000,10000,25000,50000,100000,250
 const RARITY_COLORS := [Color("#d9e0df"), Color("#65d77d"), Color("#62a8ff"), Color("#b989ff"), Color("#ffb347"), Color("#ff76d8")]
 const COLLECTIBLE_MODEL_PATHS := [
 	[
-		"res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠常见.fbx",
-		"res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠少见.fbx",
-		"res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠稀有.fbx",
-		"res://Bind_Box_Fever美术/系列一：黄色袋鼠盲盒（替换桌角伙伴）/黄色袋鼠盲盒3d资产/黄色袋鼠隐藏.fbx",
+		"res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-冬日暖意.fbx",
+		"res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-度假搭档.fbx",
+		"res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-煎扒厨师.fbx",
+		"res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-骑士.fbx",
+		"res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-人生一串.fbx",
+		"res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-送达.fbx",
+		"res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-外卖侠.fbx",
+		"res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-外卖小哥.fbx",
+		"res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-最爱甜筒.fbx",
+		"res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-国王（小隐藏）.fbx",
 	],
 	[
-		"res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/傻笑 LADUDU常见.fbx",
-		"res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/打盹 LADUDU少见.fbx",
-		"res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/哭哭 LADUDU稀有.fbx",
-		"res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/金牙LADUDU史诗.fbx",
-		"res://Bind_Box_Fever美术/系列二：LADUDU 精灵怪盲盒/LADUDU 精灵怪3d资产/国王 LADUDU传说.fbx",
+		"res://assets/3D assets/高雅企鹅/高雅企鹅-厨子.fbx",
+		"res://assets/3D assets/高雅企鹅/高雅企鹅-钓鱼.fbx",
+		"res://assets/3D assets/高雅企鹅/高雅企鹅-滑板.fbx",
+		"res://assets/3D assets/高雅企鹅/高雅企鹅-卖萌.fbx",
+		"res://assets/3D assets/高雅企鹅/高雅企鹅-迷人.fbx",
+		"res://assets/3D assets/高雅企鹅/高雅企鹅-商务.fbx",
+		"res://assets/3D assets/高雅企鹅/高雅企鹅-摄影.fbx",
+		"res://assets/3D assets/高雅企鹅/高雅企鹅-休憩.fbx",
+		"res://assets/3D assets/高雅企鹅/高雅企鹅-炫技.fbx",
+		"res://assets/3D assets/高雅企鹅/高雅企鹅-国王（小隐藏）.fbx",
+	],
+	[
+		"res://assets/3D assets/奶蛙/奶蛙-子鼠.fbx",
+		"res://assets/3D assets/奶蛙/奶蛙-丑牛.fbx",
+		"res://assets/3D assets/奶蛙/奶蛙-寅虎.fbx",
+		"res://assets/3D assets/奶蛙/奶蛙-卯兔.fbx",
+		"res://assets/3D assets/奶蛙/奶蛙-辰龙.fbx",
+		"res://assets/3D assets/奶蛙/奶蛙-巳蛇.fbx",
+		"res://assets/3D assets/奶蛙/奶蛙-午马.fbx",
+		"res://assets/3D assets/奶蛙/奶蛙-未羊.fbx",
+		"res://assets/3D assets/奶蛙/奶蛙-申猴.fbx",
+		"res://assets/3D assets/奶蛙/奶蛙-酉鸡.fbx",
+		"res://assets/3D assets/奶蛙/奶蛙-戌狗.fbx",
+		"res://assets/3D assets/奶蛙/奶蛙-亥猪.fbx",
+		"res://assets/3D assets/奶蛙/奶蛙-奶蛙.fbx",
+	],
+	[
+		"res://assets/3D assets/牛来/牛来-豹拉.fbx",
+		"res://assets/3D assets/牛来/牛来-大牛来.fbx",
+		"res://assets/3D assets/牛来/牛来-坏狼A.fbx",
+		"res://assets/3D assets/牛来/牛来-坏狼B.fbx",
+		"res://assets/3D assets/牛来/牛来-牛爸爸.fbx",
+		"res://assets/3D assets/牛来/牛来-牛来.fbx",
+		"res://assets/3D assets/牛来/牛来-牛妈妈.fbx",
+		"res://assets/3D assets/牛来/牛来-普通牛.fbx",
+		"res://assets/3D assets/牛来/牛来-小绳头.fbx",
+		"res://assets/3D assets/牛来/牛来-云雀.fbx",
+		"res://assets/3D assets/牛来/牛来-票房王（小隐藏）.fbx",
+		"res://assets/3D assets/牛来/牛来-奥德牛斯（大隐藏）.fbx",
+	],
+	[
+		"res://assets/3D assets/胖企鹅/胖企鹅-Debug.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-花花.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-酷酷.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-困困.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-摸鱼.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-派对.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-取景.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-蛙蛙.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-西部.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-嫌弃.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-音乐.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-宇宙.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-破壳（小隐藏）.fbx",
+		"res://assets/3D assets/胖企鹅/胖企鹅-胖大王（大隐藏） (1).fbx",
 	],
 ]
 const COLLECTIBLE_MODEL_TARGET_SIZE := 1.0
 const COLLECTIBLE_FRONT_AXIS := Vector3.DOWN # 内容物统一使用本地 -Y 作为正面。
 const COLLECTIBLE_UP_AXIS := Vector3.BACK # 与 -Y 正面配套，使用本地 +Z 作为上方。
-const FAT_PARTNER_PRESENTATION_YAW := PI / 4.0
+const FAT_PARTNER_REVIEW_YAW := deg_to_rad(-25.0)
+const REVIEW_TITLE_SMALL_HIDDEN_COLOR := Color("#a85bea")
+const REVIEW_TITLE_BIG_HIDDEN_COLOR := Color("#f28a2e")
 const SERIES := [
-	{"name":"肥嘟嘟伙伴", "slogan":"肥嘟嘟的伙伴，把好运装进口袋。", "base":10, "unlock":0, "color":Color("#59c7b5"), "items":["袋鼠1","袋鼠2","袋鼠3","袋鼠4"], "rarities":[0,1,2,3], "weights":[6000,2800,1100,100], "values":[1,10,100,1000]},
-	{"name":"LADUDU 精灵怪", "slogan":"坏笑、打盹和恶作剧，都藏在这一盒。", "base":100, "unlock":100, "color":Color("#8d66c7"), "items":["傻笑 LADUDU","打盹 LADUDU","哭哭 LADUDU","金牙 LADUDU","国王 LADUDU"], "rarities":[0,1,2,3,5], "weights":[6000,2800,1090,100,10], "values":[10,100,1000,3000,10000]},
-	{"name":"夜班小队", "slogan":"今晚不打烊，惊喜正在值班。", "base":1000, "unlock":1000, "color":Color("#526cb7"), "items":["咖啡骑士","灯泡幽灵","键盘鼹鼠","打卡树懒","午夜主管","永夜董事"], "rarities":[0,0,1,2,3,5], "weights":[3000,3000,2800,1090,100,10], "values":[100,100,1000,10000,30000,100000]},
-	{"name":"泪包宝贝", "slogan":"把今天的小情绪，装进柔软的眼泪里。", "base":10000, "unlock":10000, "color":Color("#dc759b"), "items":["素面泪包","墨镜泪包","甜梦泪包","委屈泪包","暴雨泪包","天使泪包·左翼","天使泪包·右翼"], "rarities":[0,0,1,2,3,5,5], "weights":[3000,3000,2800,1090,100,5,5], "values":[1000,1000,10000,100000,500000,100000,100000]},
-	{"name":"星港机修铺", "slogan":"穿过星港，把失落核心带回家。", "base":100000, "unlock":100000, "color":Color("#dd7048"), "items":["扳手机器人","货运水母","信标犬","油渍章鱼","零号领航员","机库技师","星港机神·头部","星港机神·躯干","星港机神·腿部"], "rarities":[0,0,1,1,2,3,5,5,5], "weights":[3000,3000,1400,1400,1090,100,4,3,3], "values":[10000,10000,100000,100000,1000000,5000000,1000000,1000000,1000000]}
+	{"name":"肥嘟嘟伙伴", "slogan":"9 款常规伙伴，另有 1 款金色小隐藏。", "base":20, "unlock":0, "color":Color("#59c7b5"), "items":["冬日暖意","度假搭档","煎扒厨师","骑士","人生一串","送达","外卖侠","外卖小哥","最爱甜筒","国王"], "rarities":[0,0,0,0,0,0,0,0,0,4], "weights":[95,95,95,95,95,95,95,95,95,45], "values":[30,30,30,30,30,30,30,30,30,150]},
+	{"name":"高雅企鹅", "slogan":"戴着墨镜的高雅企鹅主题系列。", "base":48, "unlock":80, "color":Color("#8d66c7"), "items":["厨子","钓鱼","滑板","卖萌","迷人","商务","摄影","休憩","炫技","国王"], "rarities":[0,0,0,0,0,0,0,0,0,4], "weights":[95,95,95,95,95,95,95,95,95,45], "values":[72,72,72,72,72,72,72,72,72,600]},
+	{"name":"奶蛙-生肖系列", "slogan":"12 款生肖常规款，另有 1 款金色小隐藏。", "base":120, "unlock":300, "color":Color("#526cb7"), "items":["子鼠","丑牛","寅虎","卯兔","辰龙","巳蛇","午马","未羊","申猴","酉鸡","戌狗","亥猪","奶蛙"], "rarities":[0,0,0,0,0,0,0,0,0,0,0,0,4], "weights":[19,19,19,19,19,19,19,19,19,19,19,19,12], "values":[180,180,180,180,180,180,180,180,180,180,180,180,1200]},
+	{"name":"牛来", "slogan":"10 款角色常规款，并包含小隐藏与大隐藏。", "base":260, "unlock":1000, "color":Color("#dc759b"), "items":["豹拉","大牛来","坏狼A","坏狼B","牛爸爸","牛来","牛妈妈","普通牛","小绳头","云雀","票房王","奥德牛斯"], "rarities":[0,0,0,0,0,0,0,0,0,0,4,5], "weights":[94,94,94,94,94,94,94,94,94,94,50,10], "values":[390,390,390,390,390,390,390,390,390,390,2000,10000]},
+	{"name":"胖企鹅系列", "slogan":"12 款红围巾企鹅常规款，并包含小隐藏与大隐藏。", "base":520, "unlock":3000, "color":Color("#dd7048"), "items":["Debug","花花","酷酷","困困","摸鱼","派对","取景","蛙蛙","西部","嫌弃","音乐","宇宙","破壳","胖大王"], "rarities":[0,0,0,0,0,0,0,0,0,0,0,0,4,5], "weights":[47,47,47,47,47,47,47,47,47,47,47,47,30,6], "values":[780,780,780,780,780,780,780,780,780,780,780,780,4000,12000]}
 ]
-const COMBINATION_COLLECTIBLES := [
-	{"id":"angel_complete", "series":3, "name":"天使泪包·合璧", "components":[5, 6], "base_value":1000000, "rarity":5},
-	{"id":"star_mecha_complete", "series":4, "name":"星港机神·合体", "components":[6, 7, 8], "base_value":10000000, "rarity":5}
-]
-const NEWS := ["肥嘟嘟伙伴进入热榜，入门盒价格温和上涨。","LADUDU 精灵怪引发恶作剧收藏热。","夜班小队开放夜间试销。","泪包宝贝情绪主题成交活跃。","神秘买家寻找隐藏级藏品。","星港机修铺抵达本地。","收藏节成交活跃，市场进入新周期。"]
+const COMBINATION_COLLECTIBLES := []
+const NEWS := ["肥嘟嘟伙伴补货到店，九款常规款等概率出货。","高雅企鹅新品在步行街亮相。","奶蛙生肖系列开启预热。","牛来角色系列开放预订。","收藏家正在寻找金色小隐藏。","胖企鹅系列彩虹大隐藏引发讨论。","收藏节成交活跃，市场进入新周期。"]
 const FACTORS := [[1.10,1.00,1.00,1.00,1.00],[1.18,1.04,1.00,1.00,1.00],[0.92,1.08,1.05,1.00,1.00],[0.86,1.15,1.12,1.04,1.00],[1.02,1.32,1.18,1.10,1.04],[1.12,1.08,1.25,1.18,1.10],[1.26,1.18,1.35,1.28,1.35]]
 
 @onready var camera: Camera3D = $CameraRig/Camera3D
@@ -149,6 +225,7 @@ var shake_base_position := Vector3.ZERO
 var shake_base_rotation := Vector3.ZERO
 var review_item: Node3D
 var review_glow: Node3D
+var review_new_badge: Label
 var pending_item: Dictionary = {}
 var collectible_model_cache: Dictionary = {}
 
@@ -164,6 +241,7 @@ var detail_hint: Label
 var seal_bar: ProgressBar
 var action_row: HBoxContainer
 var sell_button: Button
+var keep_button: Button
 var inventory_panel: PanelContainer
 var inventory_list: VBoxContainer
 var collection_panel: PanelContainer
@@ -233,7 +311,7 @@ func _ready() -> void:
 	add_child(shake_audio)
 	build_ui()
 	refresh_ui()
-	toast("点击盲盒查看并摇盒；拖动未拆盲盒到桌面右上角的忙鱼回收盒可按市价八折出售。")
+	toast("点击盲盒查看并摇盒；重复内容物可在手机里的“扭扭”按当前市价六折立即出售。")
 
 func _process(delta: float) -> void:
 	if not ticker_source.is_empty():
@@ -461,7 +539,7 @@ func build_ui() -> void:
 	sell_button.custom_minimum_size.x = 210
 	sell_button.pressed.connect(resolve_review.bind(true))
 	action_row.add_child(sell_button)
-	var keep_button := button("保留库存", UI_AMBER)
+	keep_button = button("计入库存（同款 0）", UI_AMBER)
 	keep_button.custom_minimum_size.x = 180
 	keep_button.pressed.connect(resolve_review.bind(false))
 	action_row.add_child(keep_button)
@@ -1248,8 +1326,6 @@ func populate_loot_preview(series_index: int, inspected_box: RigidBody3D = null)
 	slogan.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	loot_preview_list.add_child(slogan)
 	var catalog_summary := "共 %d 款可开内容物" % SERIES[series_index]["items"].size()
-	if series_index == 4:
-		catalog_summary += " · 可合体隐藏款 3 种：头部／躯干／腿部"
 	loot_preview_list.add_child(make_label(catalog_summary, 11, UI_AMBER, true))
 	if inspected_box:
 		var allowed := shake_limit_for_box(inspected_box)
@@ -1340,7 +1416,7 @@ func buy_box(series_index: int) -> void:
 		return
 	cash -= price
 	spawn_box("blind", series_index, roll_content(series_index), price, rng.randi_range(0, 2))
-	toast("购买成功。点击盲盒可摇盒判断；拖进忙鱼桶可按今日市价八折止损。")
+	toast("购买成功。点击盲盒可摇盒判断；重复内容物可在“扭扭”按当前市价六折处理。")
 	refresh_ui()
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -1662,14 +1738,14 @@ func is_over_secondhand_bin(world_position: Vector3) -> bool:
 
 func sell_box_secondhand(box: RigidBody3D) -> void:
 	if not is_instance_valid(box) or box.opened or box.box_kind != "blind": return
-	var payout := maxi(1, int(round(box_price(box.series_index) * 0.8)))
+	var payout := maxi(1, int(round(box_price(box.series_index) * 0.6)))
 	var sale_position := secondhand_bin.global_position + Vector3(0, 0.7, 0)
 	cash += payout
 	earned += payout
 	boxes.erase(box)
 	box.queue_free()
 	show_income_popup(payout, sale_position)
-	toast("未拆盲盒已卖给忙鱼二手市场，按今日市价八折到账 ¥%s。" % comma(payout))
+	toast("未拆盲盒已卖给扭扭二手市场，按当前市价六折到账 ¥%s。" % comma(payout))
 	refresh_ui()
 
 func focus_box(box: RigidBody3D) -> void:
@@ -1801,6 +1877,8 @@ func begin_content_review() -> void:
 	var rarity: int = box.rarity
 	var item_index: int = box.item_index
 	var item_name: String = SERIES[series_index]["items"][item_index]
+	var discovery_key := "%d_%d" % [series_index, item_index]
+	var is_new_discovery := not discovered.has(discovery_key)
 	pending_item = {"series":series_index, "item_index":item_index, "rarity":rarity, "name":item_name}
 	series_open_counts[series_index] += 1
 	update_proficiency_level(series_index)
@@ -1808,27 +1886,34 @@ func begin_content_review() -> void:
 	boxes.erase(box)
 	focused_box = null
 	loot_preview_panel.visible = false
-	box.queue_free()
+	_shrink_opened_blind_box(box)
 	review_animation_playing = true
 	review_item = Node3D.new()
 	add_child(review_item)
-	var start_position := camera.global_position - camera.global_basis.z * 3.55
-	var impact_position := camera.global_position - camera.global_basis.z * 3.30
-	var screen_pop_position := camera.global_position - camera.global_basis.z * 2.18
+	var box_reveal_position: Vector3 = box.global_position
+	# 摆件从盒体的屏幕上方且更靠近相机的位置起跳，确保盒体不再压在出货层上。
+	var start_position := box_reveal_position + camera.global_basis.y * 0.30 + camera.global_basis.z * 0.24
+	var impact_position := review_layer_position(REVIEW_ITEM_CAMERA_DISTANCE)
+	var screen_pop_position := review_layer_position(2.18)
 	# 内容物统一以本地 -Y 为正面、本地 +Z 为上方；弹出、回落全过程都沿相机视线移动，
 	# 因此在起点建立一次面向玩家的基矩阵即可始终保持正面朝向。
 	review_item.global_transform = Transform3D(collectible_front_facing_basis(start_position), start_position)
-	review_item.scale = Vector3.ONE * 0.18
+	review_item.scale = Vector3.ONE * (0.18 * REVIEW_MODEL_SCALE_MULTIPLIER)
 	review_glow = create_reveal_burst(rarity)
 	add_child(review_glow)
-	review_glow.global_transform = Transform3D(camera.global_basis, impact_position - camera.global_basis.z * 0.18)
-	review_glow.visible = false
+	# VFX 固定在摆件后方的独立景深层，避免放大的模型与 spritesheet 平面穿插。
+	var reveal_vfx_position := review_layer_position(REVIEW_VFX_CAMERA_DISTANCE)
+	review_glow.global_transform = Transform3D(camera.global_basis, reveal_vfx_position)
+	review_glow.visible = true
+	_refresh_review_inventory_count()
+	_clear_new_discovery_badge()
+	if is_new_discovery: _show_new_discovery_feedback()
 	var silhouette_material := StandardMaterial3D.new()
 	silhouette_material.albedo_color = Color("#050609")
 	silhouette_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	silhouette_material.roughness = 0.5
 	var imported_meshes: Array[MeshInstance3D] = []
-	var collectible_model := instantiate_collectible_model(series_index, item_index)
+	var collectible_model := instantiate_collectible_model(series_index, item_index, true)
 	if collectible_model:
 		review_item.add_child(collectible_model)
 		for child in collectible_model.find_children("*", "MeshInstance3D", true, false):
@@ -1863,21 +1948,22 @@ func begin_content_review() -> void:
 	var pop_tween := create_tween().set_parallel(true)
 	pop_tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	pop_tween.tween_property(review_item, "global_position", screen_pop_position, 0.28)
-	pop_tween.tween_property(review_item, "scale", Vector3.ONE * 1.12, 0.28)
+	pop_tween.tween_property(review_item, "scale", Vector3.ONE * (1.12 * REVIEW_MODEL_SCALE_MULTIPLIER), 0.28)
 	await pop_tween.finished
 
 	# Then pull back rapidly and hit the center with a short, weighty rebound.
 	var land_tween := create_tween().set_parallel(true)
 	land_tween.set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
 	land_tween.tween_property(review_item, "global_position", impact_position, 0.40)
-	land_tween.tween_property(review_item, "scale", Vector3.ONE * 0.78, 0.40)
+	land_tween.tween_property(review_item, "scale", Vector3.ONE * (0.78 * REVIEW_MODEL_SCALE_MULTIPLIER), 0.40)
 	await land_tween.finished
 	var settle_tween := create_tween()
 	settle_tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	settle_tween.tween_property(review_item, "scale", Vector3.ONE * 0.84, 0.18)
+	settle_tween.tween_property(review_item, "scale", Vector3.ONE * (0.84 * REVIEW_MODEL_SCALE_MULTIPLIER), 0.18)
 	await settle_tween.finished
 
-	# Reveal the real color only after impact, then expand the rarity rays behind it.
+	# 落定时只恢复模型本色；开出 spritesheet 已在开盒瞬间播放，
+	# 并会自动过渡为逐渐放大、循环播放的待机背景。
 	if imported_meshes.is_empty():
 		silhouette_material.shading_mode = BaseMaterial3D.SHADING_MODE_PER_PIXEL
 		silhouette_material.albedo_color = RARITY_COLORS[rarity]
@@ -1886,20 +1972,81 @@ func begin_content_review() -> void:
 	else:
 		for mesh_instance in imported_meshes:
 			if is_instance_valid(mesh_instance): mesh_instance.material_override = null
-	review_glow.visible = true
-	review_glow.scale = Vector3.ONE * 0.05
-	var burst_tween := create_tween()
-	burst_tween.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-	burst_tween.tween_property(review_glow, "scale", Vector3.ONE, 0.34)
-	await burst_tween.finished
-
 	detail_title.text = "%s · %s" % [RARITIES[rarity], item_name]
-	detail_title.add_theme_color_override("font_color", RARITY_COLORS[rarity])
-	detail_hint.text = "所属：%s  ·  当前概率：%s  ·  当前市价：¥%s\n熟练 Lv.%d（售价 +%d%%）· 按住物品可自由旋转查看" % [SERIES[series_index]["name"], item_probability_text(series_index, item_index), comma(price), series_levels[series_index], int(series_levels[series_index] * PROFICIENCY_PRICE_BONUS * 100.0)]
+	detail_title.add_theme_color_override("font_color", review_title_color(rarity))
+	detail_hint.text = review_detail_text(series_index)
 	action_row.visible = true
 	sell_button.disabled = false
 	review_animation_playing = false
 	toast("内容物落定。查看后选择直接出售或保留库存。")
+
+
+func _shrink_opened_blind_box(box: RigidBody3D) -> void:
+	if not is_instance_valid(box): return
+	box.freeze = true
+	box.collision_layer = 0
+	box.collision_mask = 0
+	var start_scale := box.scale
+	var shrink := create_tween()
+	shrink.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	shrink.tween_property(box, "scale", start_scale * OPENED_BOX_FINAL_SCALE, OPENED_BOX_SHRINK_DURATION)
+	await shrink.finished
+	if is_instance_valid(box): box.queue_free()
+
+
+func inventory_same_item_count(item: Dictionary) -> int:
+	var count := 0
+	for stored_item in collectibles:
+		if stored_item.has("combination_id"): continue
+		if int(stored_item.get("series", -1)) == int(item.get("series", -2)) and int(stored_item.get("item_index", -1)) == int(item.get("item_index", -2)):
+			count += 1
+	return count
+
+
+func _refresh_review_inventory_count() -> void:
+	if keep_button == null: return
+	keep_button.text = "计入库存（同款 %d）" % inventory_same_item_count(pending_item)
+
+
+func _show_new_discovery_feedback() -> void:
+	if not ui_canvas: return
+	var viewport_size := get_viewport().get_visible_rect().size
+	var side_texture := load(NEW_DISCOVERY_SIDE_VFX_PATH) as Texture2D
+	if side_texture:
+		var side_vfx = SCREEN_SPRITESHEET_VFX.new()
+		side_vfx.name = "NewDiscoverySideConfettiVFX"
+		side_vfx.position = viewport_size * 0.5
+		var frame_size := Vector2(float(side_texture.get_width()) / 8.0, float(side_texture.get_height()) / 8.0)
+		# 非等比拉伸到可视窗口的完整宽高，不留黑边或空白区。
+		side_vfx.scale = Vector2(viewport_size.x / frame_size.x, viewport_size.y / frame_size.y)
+		side_vfx.z_index = 500
+		ui_canvas.add_child(side_vfx)
+		side_vfx.configure(side_texture, 48.0, true)
+	review_new_badge = Label.new()
+	review_new_badge.name = "NewDiscoveryBadge"
+	review_new_badge.text = "NEW!"
+	review_new_badge.position = viewport_size * 0.5 + Vector2(105.0, -165.0)
+	review_new_badge.size = Vector2(170.0, 76.0)
+	review_new_badge.pivot_offset = review_new_badge.size * 0.5
+	review_new_badge.rotation = deg_to_rad(-9.0)
+	review_new_badge.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	review_new_badge.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	review_new_badge.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	review_new_badge.z_index = 600
+	review_new_badge.add_theme_font_size_override("font_size", 46)
+	review_new_badge.add_theme_color_override("font_color", Color("#ef2538"))
+	review_new_badge.add_theme_color_override("font_outline_color", Color("#fff7e8"))
+	review_new_badge.add_theme_constant_override("outline_size", 8)
+	review_new_badge.scale = Vector2.ONE * 0.05
+	ui_canvas.add_child(review_new_badge)
+	var badge_pop := create_tween()
+	badge_pop.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	badge_pop.tween_property(review_new_badge, "scale", Vector2.ONE, 0.34)
+
+
+func _clear_new_discovery_badge() -> void:
+	if review_new_badge and is_instance_valid(review_new_badge): review_new_badge.queue_free()
+	review_new_badge = null
 
 func collectible_front_facing_basis(world_position: Vector3) -> Basis:
 	var front_direction := (camera.global_position - world_position).normalized()
@@ -1911,11 +2058,22 @@ func collectible_front_facing_basis(world_position: Vector3) -> Basis:
 	# Basis 第二列是本地 +Y、第三列是本地 +Z：令 -Y 指向玩家、+Z 指向屏幕上方。
 	return Basis(right_direction, -front_direction, up_direction).orthonormalized()
 
-func instantiate_collectible_model(series_index: int, item_index: int) -> Node3D:
+
+func review_title_color(rarity: int) -> Color:
+	if rarity == 4: return REVIEW_TITLE_SMALL_HIDDEN_COLOR
+	if rarity == 5: return REVIEW_TITLE_BIG_HIDDEN_COLOR
+	return UI_INK
+
+
+func review_detail_text(series_index: int) -> String:
+	return "所属：%s\n按住物品可自由旋转查看" % SERIES[series_index]["name"]
+
+func instantiate_collectible_model(series_index: int, item_index: int, focused_preview := false) -> Node3D:
 	if series_index < 0 or series_index >= COLLECTIBLE_MODEL_PATHS.size(): return null
 	var series_paths: Array = COLLECTIBLE_MODEL_PATHS[series_index]
 	if item_index < 0 or item_index >= series_paths.size(): return null
 	var path := String(series_paths[item_index])
+	if path.is_empty(): return null
 	if not collectible_model_cache.has(path):
 		var resource := load(path) as PackedScene
 		if resource == null:
@@ -1935,9 +2093,9 @@ func instantiate_collectible_model(series_index: int, item_index: int) -> Node3D
 	# 绕本地 +X 旋转 +90°，将原始 +Z（脸）映射到统一 -Y 正面，
 	# 同时将原始 +Y（头顶）映射到统一 +Z 上方。
 	var correction_basis := Basis(Vector3.RIGHT, PI / 2.0)
-	if series_index == 0:
-		# 肥嘟嘟伙伴固定以向右45°的三分之四侧面展示；先校正正面，再绕统一+Z上轴偏航。
-		correction_basis = Basis(COLLECTIBLE_UP_AXIS, FAT_PARTNER_PRESENTATION_YAW) * correction_basis
+	if series_index == 0 and focused_preview:
+		# 先让脸部正对镜头，再以“袋鼠-骑士”的正确朝向为基准向左偏转 25°。
+		correction_basis = Basis(COLLECTIBLE_UP_AXIS, FAT_PARTNER_REVIEW_YAW) * correction_basis
 	var axis_correction := Transform3D(correction_basis, Vector3.ZERO)
 	var corrected_bounds: AABB = axis_correction * source_bounds
 	var largest_dimension := maxf(corrected_bounds.size.x, maxf(corrected_bounds.size.y, corrected_bounds.size.z))
@@ -1965,64 +2123,35 @@ func accumulate_collectible_model_bounds(node: Node, parent_transform: Transform
 	for child in node.get_children(): accumulate_collectible_model_bounds(child, current_transform, accumulator)
 
 func create_reveal_burst(rarity: int) -> Node3D:
-	var tier := rarity
-	var burst := Node3D.new()
-	var effect_color: Color = REVEAL_EFFECT_COLORS[tier]
-	var glow_shader := Shader.new()
-	glow_shader.code = """
-shader_type spatial;
-render_mode unshaded, cull_disabled, depth_draw_never, blend_add;
+	var category := "big_hidden" if rarity == 5 else ("small_hidden" if rarity == 4 else "regular")
+	var opening_texture := load(String(REVEAL_OPEN_VFX_PATHS[category])) as Texture2D
+	var standby_texture := load(String(REVEAL_IDLE_VFX_PATHS[category])) as Texture2D
+	var effect := REVEAL_SPRITESHEET_VFX.new()
+	effect.name = "RevealSpritesheetVFX_%s" % category
+	# 开出与待机背景保持同一尺寸；当前为上一版的 2 倍。
+	var target_world_size := 2.0 * 3.5 * tan(deg_to_rad(camera.fov * 0.5)) * REVEAL_VFX_SCREEN_FRACTION
+	effect.configure(opening_texture, standby_texture, target_world_size)
+	return effect
 
-uniform vec4 glow_color : source_color = vec4(1.0);
-uniform float glow_strength = 1.0;
-uniform float rotation_speed = 0.22;
-uniform float spoke_count = 16.0;
-uniform float phase_offset = 0.0;
-uniform float rainbow_mode = 0.0;
 
-vec3 spectrum(float hue) {
-	vec3 rgb = clamp(abs(mod(hue * 6.0 + vec3(0.0, 4.0, 2.0), 6.0) - 3.0) - 1.0, 0.0, 1.0);
-	return rgb * rgb * (3.0 - 2.0 * rgb);
-}
+func review_layer_position(camera_distance: float) -> Vector3:
+	# 纵向位移随景深同比例放大，使摆件和更远处的 VFX 投影到同一个
+	# 屏幕中心；两层整体上移，同时仍保留清晰的前后间距。
+	var depth_scaled_offset := REVIEW_VERTICAL_OFFSET * camera_distance / REVIEW_ITEM_CAMERA_DISTANCE
+	return camera.global_position - camera.global_basis.z * camera_distance + camera.global_basis.y * depth_scaled_offset
 
-void fragment() {
-	vec2 p = (UV - vec2(0.5)) * 2.0;
-	float radius = length(p);
-	float angle = atan(p.y, p.x) + TIME * rotation_speed + phase_offset;
-	float circle_mask = 1.0 - smoothstep(0.76, 1.0, radius);
-	float core_glow = pow(max(1.0 - radius, 0.0), 2.15);
-	float halo_ring = exp(-pow((radius - 0.34) * 5.2, 2.0));
-	float soft_spokes = pow(0.5 + 0.5 * cos(angle * spoke_count), 3.2);
-	float spoke_fade = smoothstep(0.08, 0.26, radius) * (1.0 - smoothstep(0.54, 0.96, radius));
-	float rotating_rays = soft_spokes * spoke_fade;
-	float pulse = 0.66 + 0.34 * sin(TIME * 1.32 + phase_offset);
-	float glow = (core_glow * 0.48 + halo_ring * 0.34 + rotating_rays * 0.55) * circle_mask;
-	vec3 animated_color = glow_color.rgb;
-	if (rainbow_mode > 0.5) {
-		animated_color = spectrum(fract(angle / 6.283185 + radius * 0.32 + TIME * 0.075));
-	}
-	ALBEDO = animated_color;
-	EMISSION = animated_color * glow * glow_strength * (1.35 + pulse * 0.65);
-	ALPHA = glow * glow_color.a * pulse;
-}
-"""
-	var glow_material := ShaderMaterial.new()
-	glow_material.shader = glow_shader
-	glow_material.set_shader_parameter("glow_color", Color(effect_color.r, effect_color.g, effect_color.b, 0.76))
-	glow_material.set_shader_parameter("glow_strength", 0.76 + tier * 0.27)
-	glow_material.set_shader_parameter("rotation_speed", 0.15 + tier * 0.035)
-	glow_material.set_shader_parameter("spoke_count", 10.0 + tier * 1.6)
-	glow_material.set_shader_parameter("phase_offset", float(rarity) * 0.73)
-	glow_material.set_shader_parameter("rainbow_mode", 1.0 if rarity == 5 else 0.0)
-	var glow_size: float = [1.55, 1.75, 1.95, 2.15, 2.35, 2.52][tier]
-	var glow_mesh := QuadMesh.new()
-	glow_mesh.size = Vector2(glow_size, glow_size)
-	var glow := MeshInstance3D.new()
-	glow.mesh = glow_mesh
-	glow.material_override = glow_material
-	glow.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	burst.add_child(glow)
-	return burst
+
+func play_world_spritesheet_vfx(sheet_path: String, world_position: Vector3, screen_fraction := 0.18, fps := 36.0) -> Sprite3D:
+	var texture := load(sheet_path) as Texture2D
+	if texture == null: return null
+	var effect = WORLD_SPRITESHEET_VFX.new()
+	effect.name = "WorldSpritesheetVFX_%s" % sheet_path.get_file().get_basename()
+	add_child(effect)
+	var distance := maxf(camera.global_position.distance_to(world_position), 0.5)
+	var target_world_size := 2.0 * distance * tan(deg_to_rad(camera.fov * 0.5)) * screen_fraction
+	effect.global_transform = Transform3D(camera.global_basis, world_position)
+	effect.configure(texture, target_world_size, fps, false, true)
+	return effect
 
 func resolve_review(sell_now: bool) -> void:
 	if review_animation_playing or not review_item or pending_item.is_empty(): return
@@ -2042,6 +2171,7 @@ func resolve_review(sell_now: bool) -> void:
 	if review_glow:
 		review_glow.queue_free()
 		review_glow = null
+	_clear_new_discovery_badge()
 	pending_item.clear()
 	set_focus_depth_of_field(false)
 	detail_panel.visible = false
@@ -2378,17 +2508,23 @@ func total_inventory_value() -> int:
 	return value
 
 func combination_progress_text() -> String:
+	if COMBINATION_COLLECTIBLES.is_empty():
+		return "常规款等概率 · 小隐藏金色 · 大隐藏彩虹色"
 	var parts: Array[String] = []
 	for definition in COMBINATION_COLLECTIBLES:
 		var owned_components := 0
 		for component_index in definition["components"]:
 			if find_component_in_inventory(int(definition["series"]), int(component_index), []) >= 0: owned_components += 1
-		var short_name := "天使泪包" if String(definition["id"]) == "angel_complete" else "星港机神"
+		var short_name := String(definition["name"])
 		parts.append("%s %d/%d" % [short_name, owned_components, definition["components"].size()])
 	return "配对隐藏款自动合成 · %s" % " · ".join(parts)
 
 func roll_content(series_index: int) -> int:
-	return content_index_for_roll(series_index, rng.randi_range(1,10000))
+	var weights := item_weights_for_series(series_index)
+	var total_weight := 0
+	for weight in weights: total_weight += maxi(0, weight)
+	if total_weight <= 0: return 0
+	return content_index_for_roll(series_index, rng.randi_range(1, total_weight))
 
 func content_index_for_roll(series_index: int, roll: int) -> int:
 	var total := 0
@@ -2399,28 +2535,8 @@ func content_index_for_roll(series_index: int, roll: int) -> int:
 	return weights.size() - 1
 
 func item_weights_for_series(series_index: int) -> Array[int]:
-	var maximum_level: int = SERIES_LUCK_MAX[series_index]
-	var progress := float(clampi(global_luck_level, 0, maximum_level)) / float(maximum_level)
-	var keyframe_position := progress * 3.0
-	var left_keyframe := mini(int(floor(keyframe_position)), 2)
-	var segment_progress := keyframe_position - float(left_keyframe)
-	if progress >= 1.0:
-		left_keyframe = 2
-		segment_progress = 1.0
-	var left_weights := luck_keyframe_item_weights(series_index, left_keyframe)
-	var right_weights := luck_keyframe_item_weights(series_index, left_keyframe + 1)
 	var weights: Array[int] = []
-	var used := 0
-	for item_index in left_weights.size():
-		var weight := int(round(lerpf(float(left_weights[item_index]), float(right_weights[item_index]), segment_progress)))
-		weights.append(weight)
-		used += weight
-	var peak_rarity := peak_rarity_for_item_weights(series_index, weights)
-	var peak_indices := item_indices_for_rarity(series_index, peak_rarity)
-	var peak_item_index := peak_indices[0]
-	for item_index in peak_indices:
-		if weights[item_index] > weights[peak_item_index]: peak_item_index = item_index
-	weights[peak_item_index] += 10000 - used
+	for weight in SERIES[series_index]["weights"]: weights.append(int(weight))
 	return weights
 
 func luck_keyframe_item_weights(series_index: int, keyframe_index: int) -> Array[int]:
@@ -2505,21 +2621,30 @@ func weights_for_series(series_index: int) -> Array[int]:
 
 func probability_summary(series_index: int) -> String:
 	var weights := weights_for_series(series_index)
+	var total_weight := 0
+	for weight in weights: total_weight += weight
 	var parts: Array[String] = []
 	for weight in weights:
-		var percent := float(weight) / 100.0
-		parts.append("%.1f%%" % percent if int(weight) % 100 != 0 else "%d%%" % int(percent))
+		parts.append(probability_text_for_weight(weight, total_weight))
 	return " / ".join(parts)
 
 func rarity_probability_text(series_index: int, rarity: int) -> String:
-	var weight: int = weights_for_series(series_index)[rarity]
-	var percent := float(weight) / 100.0
-	return "%.1f%%" % percent if weight % 100 != 0 else "%d%%" % int(percent)
+	var weights := weights_for_series(series_index)
+	var total_weight := 0
+	for value in weights: total_weight += value
+	return probability_text_for_weight(weights[rarity], total_weight)
 
 func item_probability_text(series_index: int, item_index: int) -> String:
-	var weight: int = item_weights_for_series(series_index)[item_index]
-	var percent := float(weight) / 100.0
-	return "%.2f%%" % percent if weight % 100 != 0 else "%d%%" % int(percent)
+	var weights := item_weights_for_series(series_index)
+	var total_weight := 0
+	for value in weights: total_weight += value
+	return probability_text_for_weight(weights[item_index], total_weight, 2)
+
+func probability_text_for_weight(weight: int, total_weight: int, decimals := 1) -> String:
+	if total_weight <= 0: return "0%"
+	var percent := float(weight) * 100.0 / float(total_weight)
+	if is_equal_approx(percent, round(percent)): return "%d%%" % int(round(percent))
+	return ("%%.%df%%%%" % decimals) % percent
 
 func total_collectible_definitions() -> int:
 	var total := COMBINATION_COLLECTIBLES.size()

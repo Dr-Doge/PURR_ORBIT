@@ -1,0 +1,374 @@
+[gd_scene format=3 uid="uid://dqlltlaw7j1sj"]
+
+[ext_resource type="Script" uid="uid://c5yvekf5n25hn" path="res://scripts/frontend/main_menu.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://d3b8vg005hpwe" path="res://assets/placeholders/story/sky.jpg" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://bvlreijf6j15v" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Dialogue_Title.png" id="3_title"]
+[ext_resource type="Texture2D" uid="uid://cw8aikjdu2poj" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Lists/UI_List_QuestItem_Off.png" id="4_quest_off"]
+[ext_resource type="Texture2D" uid="uid://c4f73jcbn7mgh" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Lists/UI_List_QuestItem_On.png" id="5_quest_on"]
+[ext_resource type="Texture2D" uid="uid://uxcnjmvwnyuu" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Buttons/UI_Button_Choice_Dim.png" id="6_disabled"]
+[ext_resource type="Texture2D" uid="uid://dr7qhkedg8w1r" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Dialogue.png" id="7_dialogue"]
+
+[ext_resource type="Texture2D" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Basic.png" id="menu_title"]
+[ext_resource type="Texture2D" path="res://assets/ui/Pixel Modern UI Bundle/PixelPocketPhoneUI_Resources_v1.0/UI_Elements/Buttons/UI_Btn_Play_Pink_Normal.png" id="menu_0"]
+[ext_resource type="Texture2D" path="res://assets/ui/Pixel Modern UI Bundle/PixelPocketPhoneUI_Resources_v1.0/UI_Elements/Buttons/UI_Btn_Play_Pink_Hover.png" id="menu_1"]
+[ext_resource type="Texture2D" path="res://assets/ui/Pixel Modern UI Bundle/PixelPocketPhoneUI_Resources_v1.0/UI_Elements/Buttons/UI_Btn_Play_Pink_Click.png" id="menu_2"]
+[ext_resource type="Texture2D" path="res://assets/ui/Pixel Modern UI Bundle/PixelPocketPhoneUI_Resources_v1.0/UI_Elements/Buttons/UI_Btn_Play_Gray_Normal.png" id="menu_3"]
+[ext_resource type="Texture2D" path="res://assets/ui/Pixel Modern UI Bundle/PixelPocketPhoneUI_Resources_v1.0/UI_Elements/Buttons/UI_Btn_Play_Gray_Hover.png" id="menu_4"]
+[ext_resource type="Texture2D" path="res://assets/ui/Pixel Modern UI Bundle/PixelPocketPhoneUI_Resources_v1.0/UI_Elements/Buttons/UI_Btn_Play_Gray_Click.png" id="menu_5"]
+[ext_resource type="Texture2D" path="res://assets/ui/Pixel Modern UI Bundle/PixelPocketPhoneUI_Resources_v1.0/UI_Elements/Buttons/UI_Btn_Play_Dim.png" id="menu_6"]
+
+[sub_resource type="StyleBoxTexture" id="Menu_Pink_Normal"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+texture = ExtResource("menu_0")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="Menu_Pink_Hover"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+texture = ExtResource("menu_1")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="Menu_Pink_Click"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+texture = ExtResource("menu_2")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="Menu_Gray_Normal"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+texture = ExtResource("menu_3")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="Menu_Gray_Hover"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+texture = ExtResource("menu_4")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="Menu_Gray_Click"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+texture = ExtResource("menu_5")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="Menu_Dim"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+texture = ExtResource("menu_6")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxTexture" id="Style_quest_off"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+texture = ExtResource("4_quest_off")
+texture_margin_left = 50.0
+texture_margin_top = 52.0
+texture_margin_right = 46.0
+texture_margin_bottom = 42.0
+
+[sub_resource type="StyleBoxTexture" id="Style_quest_pressed"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+texture = ExtResource("4_quest_off")
+texture_margin_left = 50.0
+texture_margin_top = 52.0
+texture_margin_right = 46.0
+texture_margin_bottom = 42.0
+modulate_color = Color(0.82, 0.82, 0.82, 1)
+
+[sub_resource type="StyleBoxTexture" id="Style_quest_dim"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+texture = ExtResource("4_quest_off")
+texture_margin_left = 50.0
+texture_margin_top = 52.0
+texture_margin_right = 46.0
+texture_margin_bottom = 42.0
+modulate_color = Color(0.65, 0.65, 0.65, 0.8)
+
+[sub_resource type="StyleBoxTexture" id="Style_quest_on"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+texture = ExtResource("5_quest_on")
+texture_margin_left = 50.0
+texture_margin_top = 52.0
+texture_margin_right = 46.0
+texture_margin_bottom = 42.0
+
+[sub_resource type="StyleBoxTexture" id="Style_disabled"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+texture = ExtResource("6_disabled")
+texture_margin_left = 18.0
+texture_margin_top = 18.0
+texture_margin_right = 18.0
+texture_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxTexture" id="Style_dialogue"]
+content_margin_left = 28.0
+content_margin_top = 28.0
+content_margin_right = 28.0
+content_margin_bottom = 20.0
+texture = ExtResource("7_dialogue")
+texture_margin_left = 34.0
+texture_margin_top = 34.0
+texture_margin_right = 34.0
+texture_margin_bottom = 34.0
+
+[node name="MainMenu" type="Control" unique_id=448325297]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1320223750]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Shade" type="ColorRect" parent="." unique_id=1997493310]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13, 0.16, 0.22, 0.24)
+
+[node name="MenuContent" type="Control" parent="." unique_id=44980557]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PixelTitlePlate" type="NinePatchRect" parent="MenuContent" unique_id=1988810601]
+texture_filter = 1
+layout_mode = 0
+offset_left = 260.0
+offset_top = 44.0
+offset_right = 1020.0
+offset_bottom = 186.0
+mouse_filter = 2
+texture = ExtResource("menu_title")
+patch_margin_left = 17
+patch_margin_top = 17
+patch_margin_right = 17
+patch_margin_bottom = 17
+
+[node name="Title" type="Label" parent="MenuContent" unique_id=1108060471]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 70.0
+offset_right = 970.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(0.35686275, 0.09019608, 0.15294118, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 30
+text = "为了赚钱配电脑\n我选择在动漫街摆摊卖盲盒"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="MenuContent" unique_id=45616534]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 236.0
+offset_right = 850.0
+offset_bottom = 566.0
+theme_override_constants/separation = 8
+
+[node name="NewGame" type="Button" parent="MenuContent/Buttons" unique_id=338424758]
+custom_minimum_size = Vector2(420, 96)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35686275, 0.09019608, 0.15294118, 1)
+theme_override_colors/font_pressed_color = Color(0.35686275, 0.09019608, 0.15294118, 1)
+theme_override_colors/font_hover_color = Color(0.35686275, 0.09019608, 0.15294118, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("Style_quest_off")
+theme_override_styles/pressed = SubResource("Style_quest_pressed")
+theme_override_styles/hover = SubResource("Style_quest_on")
+theme_override_styles/focus = SubResource("Style_quest_on")
+text = "开始新游戏"
+
+[node name="ContinueGame" type="Button" parent="MenuContent/Buttons" unique_id=489677234]
+custom_minimum_size = Vector2(420, 96)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35686275, 0.09019608, 0.15294118, 1)
+theme_override_colors/font_pressed_color = Color(0.35686275, 0.09019608, 0.15294118, 1)
+theme_override_colors/font_hover_color = Color(0.35686275, 0.09019608, 0.15294118, 1)
+theme_override_colors/font_disabled_color = Color(0.624, 0.537, 0.565, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("Style_quest_off")
+theme_override_styles/pressed = SubResource("Style_quest_pressed")
+theme_override_styles/hover = SubResource("Style_quest_on")
+theme_override_styles/disabled = SubResource("Style_quest_dim")
+theme_override_styles/focus = SubResource("Style_quest_on")
+text = "继续游戏"
+
+[node name="Settings" type="Button" parent="MenuContent/Buttons" unique_id=1727335875]
+custom_minimum_size = Vector2(420, 96)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35686275, 0.09019608, 0.15294118, 1)
+theme_override_colors/font_pressed_color = Color(0.35686275, 0.09019608, 0.15294118, 1)
+theme_override_colors/font_hover_color = Color(0.35686275, 0.09019608, 0.15294118, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("Style_quest_off")
+theme_override_styles/pressed = SubResource("Style_quest_pressed")
+theme_override_styles/hover = SubResource("Style_quest_on")
+theme_override_styles/focus = SubResource("Style_quest_on")
+text = "设置"
+
+[node name="Notice" type="Label" parent="MenuContent" unique_id=1445042846]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 585.0
+offset_right = 970.0
+offset_bottom = 640.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StoryLayer" type="Control" parent="." unique_id=763373932]
+visible = false
+z_index = 20
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+
+[node name="Background" type="TextureRect" parent="StoryLayer" unique_id=1242639981]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CaptionPanel" type="PanelContainer" parent="StoryLayer" unique_id=576698407]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 505.0
+offset_right = 1190.0
+offset_bottom = 690.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Style_dialogue")
+
+[node name="CaptionContent" type="VBoxContainer" parent="StoryLayer/CaptionPanel" unique_id=2042402522]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="StoryText" type="Label" parent="StoryLayer/CaptionPanel/CaptionContent" unique_id=1357827334]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.35686275, 0.09019608, 0.15294118, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "序章字幕"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Progress" type="Label" parent="StoryLayer/CaptionPanel/CaptionContent" unique_id=1940852531]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.35686275, 0.09019608, 0.15294118, 0.78)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 13
+text = "点击继续"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="StorySpeakerPlate" type="TextureRect" parent="StoryLayer" unique_id=2052613905]
+texture_filter = 1
+layout_mode = 0
+offset_left = 146.0
+offset_top = 477.0
+offset_right = 446.0
+offset_bottom = 535.0
+mouse_filter = 2
+texture = ExtResource("3_title")
+expand_mode = 1
+
+[node name="Speaker" type="Label" parent="StoryLayer/StorySpeakerPlate" unique_id=45130307]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.35686275, 0.09019608, 0.15294118, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 19
+text = "我"
+horizontal_alignment = 1
+vertical_alignment = 1
