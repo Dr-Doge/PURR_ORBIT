@@ -1,0 +1,359 @@
+[gd_scene format=3 uid="uid://cvcn47wgi3yp8"]
+
+[ext_resource type="Texture2D" uid="uid://b6iekt706fkpd" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Basic.png" id="1_basic"]
+[ext_resource type="Texture2D" uid="uid://dr7qhkedg8w1r" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Dialogue.png" id="2_dialogue"]
+[ext_resource type="Texture2D" uid="uid://cxjvlxkma48" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Lists/UI_List_Basic.png" id="2_igolg"]
+[ext_resource type="Texture2D" uid="uid://dm68mwojxd0xg" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Popup.png" id="3_popup"]
+[ext_resource type="Texture2D" uid="uid://fadrnv3gjpjs" path="res://assets/ui/Pixel Modern UI Bundle/PixelPocketPhoneUI_Resources_v1.0/UI_Elements/Backgrounds/UI_Image_Mobile.png" id="4_phone"]
+[ext_resource type="Texture2D" uid="uid://d01sllubme7hg" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Buttons/UI_Button_HUD.png" id="5_shortcut"]
+[ext_resource type="Texture2D" uid="uid://hiooynmtyum4" path="res://assets/ui/Pixel Modern UI Bundle/PixelPocketPhoneUI_Resources_v1.0/UI_Elements/Buttons/UI_Btn_Play_Gray_Normal.png" id="6_phone_button"]
+[ext_resource type="Texture2D" uid="uid://gxvlm4520fth" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Pause_BG.png" id="7_pause"]
+[ext_resource type="Texture2D" uid="uid://c4o3by7l6d3np" path="res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Popup_BG.png" id="8_igolg"]
+[ext_resource type="Texture2D" uid="uid://c77ubun3hney5" path="res://assets/ui/Pixel Modern UI Bundle/PixelInventoryDiaryUI_v1.1/Icons/Gadget/UI_Icon_Phone.png" id="9_phone_icon"]
+[ext_resource type="Texture2D" uid="uid://c4ikxspx4odmg" path="res://assets/ui/Pixel Modern UI Bundle/PixelInventoryDiaryUI_v1.1/Icons/Daily/UI_Icon_SchoolBag.png" id="10_bag_icon"]
+
+[node name="UILayoutAuthoring" type="CanvasLayer" unique_id=2089362316]
+editor_description = "编辑器专用UI编排层。运行时会读取每个具名框的Position、Size和面板Texture，然后自动隐藏本层。按场景树分组切换眼睛图标，可分别编辑常驻HUD、收起快捷键、聚焦UI、经营弹窗和暂停菜单。"
+layer = 99
+
+[node name="Slots" type="Control" parent="." unique_id=835953554]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+
+[node name="BaseHUD" type="Control" parent="Slots" unique_id=116410516]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="LeftStatusPanel" type="NinePatchRect" parent="Slots/BaseHUD" unique_id=1779579863]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 248.0
+offset_bottom = 238.0
+texture = ExtResource("1_basic")
+patch_margin_left = 17
+patch_margin_top = 17
+patch_margin_right = 17
+patch_margin_bottom = 17
+
+[node name="GuideLabel" type="Label" parent="Slots/BaseHUD/LeftStatusPanel" unique_id=2085491285]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.357, 0.09, 0.153, 0.65)
+theme_override_font_sizes/font_size = 12
+text = "LeftStatusPanel
+运行时状态内容"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ToastBar" type="NinePatchRect" parent="Slots/BaseHUD" unique_id=422833121]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 686.0
+offset_right = 985.0
+offset_bottom = 714.0
+texture = ExtResource("2_igolg")
+patch_margin_left = 18
+patch_margin_top = 12
+patch_margin_right = 18
+patch_margin_bottom = 12
+
+[node name="Phone" type="TextureRect" parent="Slots/BaseHUD" unique_id=239009158]
+texture_filter = 1
+layout_mode = 0
+offset_left = 928.0
+offset_top = 34.0
+offset_right = 1262.0
+offset_bottom = 686.0
+mouse_filter = 2
+texture = ExtResource("4_phone")
+expand_mode = 1
+
+[node name="PhoneCollapse" type="TextureRect" parent="Slots/BaseHUD" unique_id=1520605277]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1043.0
+offset_top = 681.0
+offset_right = 1147.0
+offset_bottom = 715.0
+mouse_filter = 2
+texture = ExtResource("6_phone_button")
+expand_mode = 1
+
+[node name="GuideLabel" type="Label" parent="Slots/BaseHUD/PhoneCollapse" unique_id=946252670]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.357, 0.09, 0.153, 1)
+theme_override_font_sizes/font_size = 20
+text = "▼"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollapsedShortcuts" type="Control" parent="Slots" unique_id=1429843598]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackpackShortcut" type="TextureRect" parent="Slots/CollapsedShortcuts" unique_id=213490938]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1170.0
+offset_top = 506.0
+offset_right = 1262.0
+offset_bottom = 602.0
+mouse_filter = 2
+texture = ExtResource("5_shortcut")
+expand_mode = 1
+
+[node name="GuideLabel" type="Label" parent="Slots/CollapsedShortcuts/BackpackShortcut" unique_id=1197613017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.357, 0.09, 0.153, 1)
+theme_override_font_sizes/font_size = 13
+text = "背包"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Icon" type="TextureRect" parent="Slots/CollapsedShortcuts/BackpackShortcut" unique_id=1765312014]
+texture_filter = 1
+layout_mode = 0
+offset_left = 7.0
+offset_top = -2.0
+offset_right = 86.0
+offset_bottom = 83.86956
+mouse_filter = 2
+texture = ExtResource("10_bag_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PhoneShortcut" type="TextureRect" parent="Slots/CollapsedShortcuts" unique_id=874324681]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1170.0
+offset_top = 608.0
+offset_right = 1262.0
+offset_bottom = 704.0
+mouse_filter = 2
+texture = ExtResource("5_shortcut")
+expand_mode = 1
+
+[node name="GuideLabel" type="Label" parent="Slots/CollapsedShortcuts/PhoneShortcut" unique_id=628540393]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.357, 0.09, 0.153, 1)
+theme_override_font_sizes/font_size = 13
+text = "手机"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Icon" type="TextureRect" parent="Slots/CollapsedShortcuts/PhoneShortcut" unique_id=857286951]
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 89.0
+offset_bottom = 89.391304
+mouse_filter = 2
+texture = ExtResource("9_phone_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FocusUI" type="Control" parent="Slots" unique_id=489179603]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DetailPanel" type="NinePatchRect" parent="Slots/FocusUI" unique_id=906875394]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 514.0
+offset_right = 980.0
+offset_bottom = 684.0
+texture = ExtResource("8_igolg")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="GuideLabel" type="Label" parent="Slots/FocusUI/DetailPanel" unique_id=1395151041]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.357, 0.09, 0.153, 0.7)
+theme_override_font_sizes/font_size = 13
+text = "DetailPanel
+标题／说明／操作按钮"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LootPreviewPanel" type="NinePatchRect" parent="Slots/FocusUI" unique_id=1633428571]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 78.0
+offset_right = 1262.0
+offset_bottom = 548.0
+texture = ExtResource("8_igolg")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="GuideLabel" type="Label" parent="Slots/FocusUI/LootPreviewPanel" unique_id=1407995566]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.357, 0.09, 0.153, 0.7)
+theme_override_font_sizes/font_size = 13
+text = "LootPreviewPanel
+奖池内容"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BusinessPopups" type="Control" parent="Slots" unique_id=1968662854]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OfferPanel" type="NinePatchRect" parent="Slots/BusinessPopups" unique_id=1820782607]
+layout_mode = 0
+offset_left = 906.0
+offset_top = 18.0
+offset_right = 1260.0
+offset_bottom = 174.0
+texture = ExtResource("2_dialogue")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="BargainPanel" type="NinePatchRect" parent="Slots/BusinessPopups" unique_id=1688538194]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 88.00001
+offset_right = 759.0
+offset_bottom = 642.0
+scale = Vector2(1.28, 0.96)
+texture = ExtResource("8_igolg")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="GuideLabel" type="Label" parent="Slots/BusinessPopups/BargainPanel" unique_id=287297683]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.357, 0.09, 0.153, 0.65)
+theme_override_font_sizes/font_size = 15
+text = "BargainPanel
+讲价内容安全区"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PricePanel" type="NinePatchRect" parent="Slots/BusinessPopups" unique_id=1290757499]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 184.0
+offset_right = 862.0
+offset_bottom = 534.0
+texture = ExtResource("7_pause")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="DayPanel" type="NinePatchRect" parent="Slots/BusinessPopups" unique_id=627778649]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 170.0
+offset_right = 880.0
+offset_bottom = 540.0
+texture = ExtResource("8_igolg")
+patch_margin_left = 34
+patch_margin_top = 34
+patch_margin_right = 34
+patch_margin_bottom = 34
+
+[node name="PausePopup" type="Control" parent="Slots" unique_id=1545494752]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PausePanel" type="NinePatchRect" parent="Slots/PausePopup" unique_id=797946497]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 128.0
+offset_right = 850.0
+offset_bottom = 592.0
+texture = ExtResource("7_pause")
+patch_margin_left = 38
+patch_margin_top = 38
+patch_margin_right = 38
+patch_margin_bottom = 38
+
+[node name="GuideLabel" type="Label" parent="Slots/PausePopup/PausePanel" unique_id=622752045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.357, 0.09, 0.153, 0.7)
+theme_override_font_sizes/font_size = 15
+text = "PausePanel
+暂停菜单"
+horizontal_alignment = 1
+vertical_alignment = 1

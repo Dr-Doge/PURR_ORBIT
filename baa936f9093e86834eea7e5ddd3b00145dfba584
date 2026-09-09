@@ -1,0 +1,63 @@
+# 15｜UI 手工编排指南
+
+## 统一画布
+
+UI 以 `1280×720` 为设计画布，对应 16:9。编辑时先确认 Godot 2D 视图的标尺范围是 `(0,0)～(1280,720)`，不要按照 Windows 截图的物理像素直接填写坐标；游戏会自动把设计画布等比缩放到实际窗口。
+
+## 主菜单与剧情 UI
+
+直接打开：
+
+```text
+scenes/frontend/main_menu.tscn
+```
+
+这里保存的就是运行时最终 UI，脚本不会再创建、移动或重新换肤这些节点。
+
+- `MenuContent/PixelTitlePlate`：游戏标题牌素材、位置和大小。
+- `MenuContent/Title`：标题文字安全区。
+- `MenuContent/Buttons`：三个主菜单按钮的整体位置、宽度与间距。
+- `StoryLayer/CaptionPanel`：剧情正文框。
+- `StoryLayer/StorySpeakerPlate`：说话者名牌。
+
+剧情层默认隐藏。需要编排剧情框时，在场景树中打开 `StoryLayer` 左侧的可见性图标；编辑完后恢复隐藏。选择节点后使用 2D 工具栏的移动／缩放手柄，或在 Inspector 的 `Layout > Transform` 中精确修改 Position 与 Size。按钮贴图位于 `Theme Overrides > Styles`，标题牌和背景贴图位于 `Texture`。
+
+## 经营场景 UI
+
+打开专用编排场景：
+
+```text
+scenes/ui/stall_ui_layout.tscn
+```
+
+该场景是经营 UI 的可视化布局源。它已经实例化到 `stall_demo.tscn` 中；游戏启动时会读取具名框的 Position、Size 和主要面板 Texture，然后自动隐藏编排层，因此不会与真实 UI 重复显示。
+
+场景树按状态分组：
+
+- `BaseHUD`：左上状态、底部提示、展开手机与下箭头。
+- `CollapsedShortcuts`：手机收起后的手机／背包入口。
+- `FocusUI`：拿起盲盒和展示内容物时的详情、奖池面板。
+- `BusinessPopups`：报价气泡、讲价、定价和日结界面。
+- `PausePopup`：Esc 暂停面板。
+
+除 `BaseHUD` 外，各组默认隐藏，避免所有互斥弹窗叠在一起。编辑某一状态时只打开对应分组的眼睛图标。
+
+### 可安全修改的内容
+
+1. 选择具名外框，例如 `BargainPanel` 或 `DetailPanel`。
+2. 在 2D 视图直接拖动，或修改 `Layout > Transform > Position/Size`。
+3. 要替换主要面板资产时，修改该框的 `Texture`；运行时会复制到对应面板。
+4. 保存场景并运行项目即可检查，无需同步修改脚本坐标。
+
+不要重命名 `LeftStatusPanel`、`DetailPanel`、`Phone`、`PhoneCollapse`、`BargainPanel` 等具名框，代码依靠这些稳定名称建立映射。辅助文字 `GuideLabel` 只用于编辑器识别，不会进入游戏。
+
+## 文本安全区原则
+
+- 外框改变大小后，必须给文字保留至少 16 px 左右边距。
+- 三按钮横排时，每个按钮至少 130 px 宽、46 px 高；文字保持单行。
+- 手机内容必须位于机身四周 25 px 的安全区内。
+- `PhoneCollapse` 保持在手机机身正下方，并确保底边不超过 720。
+- 底部提示条和内容物详情框不得重叠。
+- Popup 顶部装饰牌只放标题，顾客台词和商品信息从装饰牌下方开始。
+
+手机 App 内部列表属于运行时数据容器，会根据库存、行情和商店数据动态生成；调整手机整体位置与尺寸使用 `Phone` 布局框，应用内部间距则在 `stall_demo.gd` 的 `_build_phone_ui()` 和 `_add_app_icon()` 中维护。

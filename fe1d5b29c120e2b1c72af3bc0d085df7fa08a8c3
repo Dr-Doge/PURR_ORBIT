@@ -1,0 +1,12 @@
+res://scripts/stall_demo/stall_demo.gd
+res://scripts/ui/main.gd
+res://scripts/frontend/main_menu.gd
+res://scripts/ui/pixel_ui_skin.gd
+res://scenes/frontend/main_menu.tscn
+res://scenes/stall_demo/sky.tres
+res://scenes/stall_demo/skybox.tres
+res://scenes/ui/stall_ui_layout.tscn
+res://tests/city_asset_probe.gd
+res://scenes/stall_demo/stall_demo.tscn
+res://tests/validate_city_presentation.gd
+res://scripts/stall_demo/city_pedestrian.gd
