@@ -3,9 +3,9 @@ extends "res://scripts/ui/main.gd"
 # 摆摊版只替换经营循环。桌面、物理盲盒、封条、镜头、内容物 FBX、
 # 弹出展示及 Nintendo 风格 UI 全部继承自上一版 Main。
 
-const BUSINESS_SECONDS := 300.0
+const BUSINESS_SECONDS := 240.0
 const BUSINESS_START := 10.0
-const BUSINESS_END := 20.0
+const BUSINESS_END := 18.0
 const STALL_BOX_PRICES := [20, 48, 120, 260, 520]
 # 第一个系列默认解锁；其余系列分别要求上一系列达到指定累计开盒数。
 const SERIES_OPEN_REQUIREMENTS := [0, 8, 12, 18, 25]
@@ -14,6 +14,7 @@ const MAIN_MENU_SCENE := "res://scenes/frontend/main_menu.tscn"
 const STALL_PRICE_CHART := preload("res://scripts/ui/price_chart.gd")
 const UI_SPRITESHEET_VFX := preload("res://scripts/vfx/spritesheet_vfx_2d.gd")
 const PIXEL_UI_SKIN := preload("res://scripts/ui/pixel_ui_skin.gd")
+const PHONE_SHOP_GRID := preload("res://scripts/stall_demo/phone_shop_grid.gd")
 const INCOME_LOW_VFX_PATH := "res://assets/VFX/收入_少.png"
 const INCOME_HIGH_VFX_PATH := "res://assets/VFX/收入_多.png"
 const PC_UNLOCK_CENTER_VFX_PATH := "res://assets/VFX/屏幕中央礼花.png"
@@ -94,6 +95,13 @@ const STALL_FIXED_RARITY_WEIGHTS := [
 # 以下路线值均为 CSGAnimePedestrianStreet 的局部坐标，会随美术根节点等比缩放。
 const STREET_SURFACE_Y := -1.04
 const STREET_CUSTOMER_Z := -5.15
+const CUSTOMER_STOP_X := [-0.65, 1.65]
+const CUSTOMER_CAPACITY := 2
+const STREET_MIN_Z := -9.65
+const STREET_MAX_Z := -6.05
+const PEDESTRIAN_CLEARANCE := 1.35
+const AVOIDANCE_LATERAL_DISTANCE := 1.20
+const AVOIDANCE_HOLD_SECONDS := 3.0
 const STREET_PEDESTRIAN_LIMIT := 12
 const CITY_PERSON := preload("res://scripts/stall_demo/city_pedestrian.gd")
 const STALL_VALUES := [
@@ -122,6 +130,7 @@ var stall_daily_sales := 0
 var stall_daily_visitors := 0
 
 var stall_shelf_level := 0
+var item_market := preload("res://scripts/stall_demo/item_market.gd").new()
 var stall_inventory_level := 0
 var stall_location_level := 0
 var stall_showcase_level := 0
@@ -138,6 +147,7 @@ var stall_pedestrian_root: Node3D
 var stall_pedestrians: Array[Dictionary] = []
 var stall_pedestrian_spawn_wait := 0.0
 var stall_customer: Node3D
+var stall_waiting_customers: Array[Dictionary] = []
 var stall_customer_phase := ""
 var stall_customer_lane := -6.15
 var stall_customer_direction := 1.0
@@ -171,7 +181,8 @@ var stall_offer_text: Label
 var stall_offer_button: Button
 var stall_bargain_panel: PanelContainer
 var stall_bargain_content: VBoxContainer
-var stall_bargain_slider: VSlider
+var stall_bargain_slider: HSlider
+var customer_bubble_tail: Polygon2D
 var stall_bargain_amount: Label
 var stall_bargain_round := 0
 
@@ -204,6 +215,7 @@ var ending_text: Label
 var ending_progress: Label
 var ending_index := -1
 var day_one_story: Control
+var inventory_grid: Control
 var day_one_story_seen := false
 
 
@@ -234,18 +246,24 @@ func _process(delta: float) -> void:
 		_fit_game_panels()
 	if ending_overlay and ending_overlay.visible: return
 	super._process(delta)
+	_update_customer_bubble()
 	if not stall_ready or stall_preparing or stall_day_finished:
 		return
-	if focused_box or review_item or stall_price_panel.visible or stall_bargain_panel.visible:
-		return
-	stall_business_elapsed += delta * stall_time_speed
+	# Opening boxes, pricing and bargaining no longer freeze the business day.
+	# World simulation stays live behind those interaction layers.
+	var world_delta := delta * stall_time_speed
+	stall_business_elapsed += world_delta
 	if stall_business_elapsed >= BUSINESS_SECONDS:
 		stall_business_elapsed = BUSINESS_SECONDS
-		_finish_business_day()
-		return
 	_update_stall_clock()
-	_update_pedestrians(delta * stall_time_speed)
-	_update_customer(delta * stall_time_speed)
+	_update_pedestrians(world_delta)
+	_update_customer(world_delta)
+	if stall_business_elapsed >= BUSINESS_SECONDS and not _business_interaction_active():
+		_finish_business_day()
+
+
+func _business_interaction_active() -> bool:
+	return is_instance_valid(focused_box) or is_instance_valid(review_item) or stall_price_panel.visible or stall_bargain_panel.visible or is_instance_valid(stall_customer) or not stall_waiting_customers.is_empty()
 
 
 func build_ui() -> void:
@@ -257,6 +275,8 @@ func build_ui() -> void:
 	_build_stall_day_ui()
 	_build_pause_menu()
 	_build_ending_ui()
+	inventory_grid = preload("res://scenes/stall_demo/inventory_grid.tscn").instantiate()
+	ui_canvas.add_child(inventory_grid)
 	day_one_story = preload("res://scenes/stall_demo/day_one_story.tscn").instantiate()
 	ui_canvas.add_child(day_one_story)
 	day_one_story.completed.connect(_finish_day_one_story)
@@ -294,6 +314,7 @@ func _apply_pixel_ui_assets() -> void:
 	if stall_day_panel: PIXEL_UI_SKIN.apply_panel(stall_day_panel, "popup")
 	if pause_panel: PIXEL_UI_SKIN.apply_panel(pause_panel, "pause")
 	for progress in ui_canvas.find_children("*", "ProgressBar", true, false):
+		if progress.name == "BatteryIcon": continue
 		PIXEL_UI_SKIN.apply_progress(progress as ProgressBar, false)
 	for pause_button in pause_panel.find_children("*", "Button", true, false):
 		PIXEL_UI_SKIN.apply_hud_button(pause_button as Button, true)
@@ -347,13 +368,18 @@ func _build_phone_ui() -> void:
 	stall_phone_frame.name = "PixelPhoneFrame"
 	stall_phone_frame.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	stall_phone_frame.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	var bezel_material := ShaderMaterial.new()
+	bezel_material.shader = preload("res://scripts/ui/phone_bezel.gdshader")
+	stall_phone_frame.material = bezel_material
+	stall_phone_frame.z_index = 10
 	stall_phone.add_child(stall_phone_frame)
 
 	var phone_margin := MarginContainer.new()
-	phone_margin.add_theme_constant_override("margin_left", 25)
-	phone_margin.add_theme_constant_override("margin_right", 25)
-	phone_margin.add_theme_constant_override("margin_top", 25)
-	phone_margin.add_theme_constant_override("margin_bottom", 25)
+	phone_margin.name = "PhoneSafeArea"
+	phone_margin.add_theme_constant_override("margin_left", 32)
+	phone_margin.add_theme_constant_override("margin_right", 32)
+	phone_margin.add_theme_constant_override("margin_top", 29)
+	phone_margin.add_theme_constant_override("margin_bottom", 29)
 	stall_phone.add_child(phone_margin)
 	stall_phone_wallpaper = PIXEL_UI_SKIN.frame_rect(PIXEL_UI_SKIN.PHONE_WALLPAPER)
 	stall_phone_wallpaper.name = "PhoneWallpaper"
@@ -368,18 +394,58 @@ func _build_phone_ui() -> void:
 	stall_phone_screen.add_theme_constant_override("separation", 4)
 	phone_margin.add_child(stall_phone_screen)
 
+	var status_panel := PanelContainer.new()
+	status_panel.name = "PhoneStatusBar"
+	status_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var status_style := StyleBoxFlat.new()
+	status_style.bg_color = Color("#29334b")
+	status_style.content_margin_left = 8
+	status_style.content_margin_right = 8
+	status_style.content_margin_top = 5
+	status_style.content_margin_bottom = 5
+	status_panel.add_theme_stylebox_override("panel", status_style)
+	stall_phone_screen.add_child(status_panel)
 	var status_row := HBoxContainer.new()
-	status_row.custom_minimum_size.y = 28
-	stall_phone_screen.add_child(status_row)
-	stall_phone_clock = make_label("◉  10:00", 12, Color.WHITE, true)
-	stall_phone_clock.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	status_row.custom_minimum_size.y = 22
+	status_row.add_theme_constant_override("separation", 4)
+	status_panel.add_child(status_row)
+	stall_phone_clock = make_label("10:00", 11, Color.WHITE, true)
+	stall_phone_clock.custom_minimum_size.x = 52
+	stall_phone_clock.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	status_row.add_child(stall_phone_clock)
-	stall_phone_signal = make_label("5G  100%", 10, Color.WHITE, true)
+	var model_name := make_label("摊主机 S1", 10, Color("#cbd5e7"))
+	model_name.name = "PhoneModel"
+	model_name.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	model_name.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	model_name.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	status_row.add_child(model_name)
+	stall_phone_signal = make_label("5G  100%", 10, Color.WHITE)
+	stall_phone_signal.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	status_row.add_child(stall_phone_signal)
+	var battery := ProgressBar.new()
+	battery.name = "BatteryIcon"
+	battery.custom_minimum_size = Vector2(18, 9)
+	battery.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	battery.show_percentage = false
+	battery.value = 100
+	battery.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	battery.tooltip_text = "电量100%（界面装饰，不消耗）"
+	var battery_back := StyleBoxFlat.new()
+	battery_back.bg_color = Color("#29334b")
+	battery_back.border_color = Color.WHITE
+	battery_back.set_border_width_all(1)
+	var battery_fill := StyleBoxFlat.new()
+	battery_fill.bg_color = Color("#9ce0b3")
+	battery_fill.border_color = Color.WHITE
+	battery_fill.set_border_width_all(1)
+	battery.add_theme_stylebox_override("background", battery_back)
+	battery.add_theme_stylebox_override("fill", battery_fill)
+	status_row.add_child(battery)
 
 	var screen := PanelContainer.new()
 	screen.name = "PixelPhoneScreen"
 	screen.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	screen.clip_contents = true
 	screen.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
 	stall_phone_screen.add_child(screen)
 	stall_phone_page = VBoxContainer.new()
@@ -488,12 +554,13 @@ func _fit_game_panels() -> void:
 		if is_instance_valid(panel):
 			PIXEL_UI_SKIN.fit_content(panel)
 			var slot: Control = authored_slots.find_child(names[panel_index], true, false) if authored_slots else null
-			if slot:
+			if slot and panel != stall_offer_panel and panel != stall_bargain_panel:
 				panel.size = slot.size
 				panel.position = slot.position
 			if panel.visible:
 				panel.position.y = maxf(12.0, minf(panel.position.y, 674.0 - panel.size.y))
 		panel_index += 1
+	_update_customer_bubble()
 	if stall_current_app != "home" and is_instance_valid(stall_phone_page):
 		PIXEL_UI_SKIN.fit_content(stall_phone_page)
 	if toast_label:
@@ -558,8 +625,8 @@ func _make_hud_shortcut(node_name: String, caption: String, icon_path: String, a
 
 
 func _open_backpack_shortcut() -> void:
-	_set_phone_visible(true)
-	_open_phone_app("inventory")
+	_set_phone_visible(false, true)
+	inventory_grid.open_inventory(self)
 
 
 func _show_phone_home() -> void:
@@ -570,9 +637,6 @@ func _show_phone_home() -> void:
 	stall_phone_signal.add_theme_color_override("font_color", Color.WHITE)
 	if stall_phone_home_button: stall_phone_home_button.disabled = true
 	clear_children(stall_phone_page)
-	var title := make_label("爽开摊主机", 16, Color.WHITE, true)
-	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	stall_phone_page.add_child(title)
 	stall_phone_status = make_label(_phone_status_text(), 9, Color.WHITE, true)
 	stall_phone_status.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	stall_phone_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -597,7 +661,8 @@ func _show_phone_home() -> void:
 func _add_app_icon(parent: Control, title: String, _color: Color, app_id: String) -> void:
 	var tile := VBoxContainer.new()
 	tile.name = "AppTile_%s" % app_id
-	tile.custom_minimum_size = Vector2(91, 104)
+	tile.custom_minimum_size = Vector2(0, 104)
+	tile.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	tile.add_theme_constant_override("separation", 0)
 	var app_button := Button.new()
 	app_button.name = "AppButton_%s" % app_id
@@ -619,7 +684,7 @@ func _add_app_icon(parent: Control, title: String, _color: Color, app_id: String
 		app_button.pressed.connect(_open_phone_app.bind(app_id))
 	tile.add_child(app_button)
 	var label := make_label("🔒 %s" % title if locked else title, 10, PIXEL_UI_SKIN.INK, true)
-	label.custom_minimum_size = Vector2(91, 24)
+	label.custom_minimum_size = Vector2(0, 24)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
@@ -629,13 +694,16 @@ func _add_app_icon(parent: Control, title: String, _color: Color, app_id: String
 
 
 func _open_phone_app(app_id: String) -> void:
+	if app_id == "inventory":
+		_open_backpack_shortcut()
+		return
 	if APP_UNLOCK_RULES.has(app_id) and not _app_unlocked(app_id):
 		toast(_app_unlock_hint(app_id))
 		return
 	stall_current_app = app_id
 	if stall_phone_page_backdrop: stall_phone_page_backdrop.color = Color(1.0, 0.985, 0.975, 0.96)
-	stall_phone_clock.add_theme_color_override("font_color", PIXEL_UI_SKIN.INK)
-	stall_phone_signal.add_theme_color_override("font_color", PIXEL_UI_SKIN.INK)
+	stall_phone_clock.add_theme_color_override("font_color", Color.WHITE)
+	stall_phone_signal.add_theme_color_override("font_color", Color.WHITE)
 	if stall_phone_home_button: stall_phone_home_button.disabled = false
 	clear_children(stall_phone_page)
 	var header := HBoxContainer.new()
@@ -675,9 +743,11 @@ func _skin_phone_page() -> void:
 		var phone_variant: String = "flat" if (phone_button as Button) == stall_phone_home_button else String({"social":"pink", "orders":"gray", "resale":"pink", "business":"gray"}.get(stall_current_app, "yellow"))
 		PIXEL_UI_SKIN.apply_phone_button(phone_button as Button, phone_variant)
 	for phone_panel in stall_phone_page.find_children("*", "PanelContainer", true, false):
+		if phone_panel.has_meta("shopping_card"): continue
 		var variant := "diary" if stall_current_app in ["inventory", "exchange"] else "phone"
 		PIXEL_UI_SKIN.apply_panel(phone_panel as PanelContainer, variant)
 	for phone_progress in stall_phone.find_children("*", "ProgressBar", true, false):
+		if phone_progress.name == "BatteryIcon": continue
 		PIXEL_UI_SKIN.apply_progress(phone_progress as ProgressBar, true)
 	call_deferred("_fit_game_panels")
 
@@ -700,29 +770,34 @@ func _build_social_app(content: VBoxContainer) -> void:
 
 
 func _build_supply_app(content: VBoxContainer) -> void:
-	content.add_child(section_label("盲盒商城 / 到货即落到桌面"))
+	content.add_child(make_label("系列精选 · 到货落在桌面中央", 11, UI_INK_SOFT))
+	var grid := _shopping_grid(content)
 	for series_index in SERIES.size():
-		var progress_text := "初始解锁" if series_index == 0 else "需开上一系列 %d 盒（%d/%d）" % [SERIES_OPEN_REQUIREMENTS[series_index], mini(series_open_counts[series_index - 1], SERIES_OPEN_REQUIREMENTS[series_index]), SERIES_OPEN_REQUIREMENTS[series_index]]
-		var card := make_shop_card(SERIES[series_index]["name"], "%s｜单盒 ¥%s" % [progress_text, comma(box_price(series_index))], SERIES[series_index]["color"])
-		card["button"].text = "购入 1 盒"
-		card["button"].disabled = not series_unlocked(series_index) or cash < box_price(series_index)
-		if not series_unlocked(series_index): card["button"].text = "尚未解锁"
-		card["button"].pressed.connect(_buy_series_count.bind(series_index, 1))
-		var row := HBoxContainer.new()
-		card["column"].add_child(row)
+		var available := series_unlocked(series_index)
+		var progress_text := "%d款可收集\n展示款式仅供参考" % SERIES[series_index]["items"].size() if available else "上一系列开盒\n%d / %d" % [series_open_counts[series_index - 1], SERIES_OPEN_REQUIREMENTS[series_index]]
+		var column: VBoxContainer = grid.add_product(SERIES[series_index]["name"], progress_text, "¥%s / 盒" % comma(box_price(series_index)), "购入1盒" if available else "未解锁", _buy_series_count.bind(series_index, 1), available and cash >= box_price(series_index), series_index)
 		if stall_multi_open_level >= 1:
 			var five := button("购入 5 盒", UI_NAV_GOLD)
-			five.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			five.custom_minimum_size = Vector2(0, 30)
+			five.add_theme_font_size_override("font_size", 11)
 			five.disabled = cash < box_price(series_index) * 5 or not series_unlocked(series_index)
 			five.pressed.connect(_buy_series_count.bind(series_index, 5))
-			row.add_child(five)
+			column.add_child(five)
 		if stall_multi_open_level >= 2:
 			var ten := button("购入 10 盒", UI_SIGNAL)
-			ten.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			ten.custom_minimum_size = Vector2(0, 30)
+			ten.add_theme_font_size_override("font_size", 11)
 			ten.disabled = cash < box_price(series_index) * 10 or not series_unlocked(series_index)
 			ten.pressed.connect(_buy_series_count.bind(series_index, 10))
-			row.add_child(ten)
-		content.add_child(card["panel"])
+			column.add_child(ten)
+	grid.generate_photos()
+
+
+func _shopping_grid(content: VBoxContainer) -> GridContainer:
+	var grid := PHONE_SHOP_GRID.new()
+	grid.setup(self)
+	content.add_child(grid)
+	return grid
 
 
 func _build_inventory_app(content: VBoxContainer) -> void:
@@ -757,6 +832,33 @@ func _build_resale_app(content: VBoxContainer) -> void:
 	sell_all.pressed.connect(_resale_all_inventory)
 	content.add_child(sell_all)
 	content.add_child(make_label("收藏保护已开启：每个款式至少保留 1 件。", 10, UI_INK_SOFT))
+	var grid := _shopping_grid(content)
+	var groups := {}
+	for index in collectibles.size():
+		var item: Dictionary = collectibles[index]
+		var key := _item_price_key(item)
+		if not groups.has(key): groups[key] = {"item":item, "count":0}
+		groups[key]["count"] += 1
+	for key in groups:
+		var item: Dictionary = groups[key]["item"]
+		var count: int = groups[key]["count"]
+		grid.add_product(item["name"], "持有%d件 · 保留1件\n可卖%d件" % [count, maxi(0, count - 1)], "¥%s / 件" % comma(int(round(inventory_item_price(item) * RESALE_MULTIPLIER))), "出售重复款" if count > 1 else "收藏保护", _resale_item_duplicates.bind(key), count > 1, int(item["series"]), int(item["item_index"]))
+	if groups.is_empty(): content.add_child(make_label("暂无库存，先开盒收集摆件吧。", 11, UI_INK_SOFT))
+	grid.generate_photos()
+
+
+func _resale_item_duplicates(key: String) -> void:
+	var indices := _duplicate_resale_indices()
+	indices.reverse()
+	var payout := 0
+	for index in indices:
+		if _item_price_key(collectibles[index]) != key: continue
+		payout += int(round(inventory_item_price(collectibles[index]) * RESALE_MULTIPLIER))
+		collectibles.remove_at(index)
+	cash += payout
+	toast("扭扭回收到账 ¥%s，已保留一件收藏。" % comma(payout))
+	refresh_ui()
+	_open_phone_app("resale")
 
 
 func _build_orders_app(content: VBoxContainer) -> void:
@@ -946,14 +1048,18 @@ func _build_superdog_app(content: VBoxContainer) -> void:
 
 
 func _build_jimi_app(content: VBoxContainer) -> void:
-	content.add_child(section_label("基米百货 / 摊位用品与经营升级"))
-	content.add_child(make_label("白色大头小猫严选：货架、展示柜和摊位服务都在这里购买。", 11, UI_INK_SOFT))
-	_add_upgrade_card(content, "亚克力展示台 Lv.%d" % stall_shelf_level, "增加 2 个桌面陈列位", 160 + stall_shelf_level * 240, _upgrade_shelf)
-	_add_upgrade_card(content, "运动型背包 Lv.%d" % stall_inventory_level, "背包容量 +6", 120 + stall_inventory_level * 180, _upgrade_inventory)
-	_add_upgrade_card(content, "给市场主管买的烟 Lv.%d" % stall_location_level, "将摊位移动到更好的位置，增加客流量。", 250 + stall_location_level * 400, _upgrade_location, stall_reputation >= (stall_location_level + 1) * 4)
-	_add_upgrade_card(content, "特殊展示盒 Lv.%d" % stall_showcase_level, "高价值藏品提高驻足率", 400 + stall_showcase_level * 600, _upgrade_showcase)
-	_add_upgrade_card(content, "十九子作剪刀 Lv.%d" % stall_multi_open_level, "进货批量：1 → 5 → 10", 300 + stall_multi_open_level * 700, _upgrade_multi, stall_multi_open_level < 2 and stall_reputation >= (stall_multi_open_level + 1) * 4)
-	_add_upgrade_card(content, "《演员的自我修养》 Lv.%d" % stall_eloquence_level, "扩大顾客接受报价范围", 180 + stall_eloquence_level * 260, _upgrade_eloquence, stall_reputation >= (stall_eloquence_level + 1) * 3)
+	content.add_child(make_label("小猫严选 · 摊位用品与服务", 11, UI_INK_SOFT))
+	var grid := _shopping_grid(content)
+	_add_product_upgrade(grid, "亚克力展示台", stall_shelf_level, "增加2个陈列位，每台4层，最多3台。", 160 + stall_shelf_level * 240, _upgrade_shelf, stall_shelf_level < 10, "已满级")
+	_add_product_upgrade(grid, "运动型背包", stall_inventory_level, "背包容量 +6", 120 + stall_inventory_level * 180, _upgrade_inventory)
+	_add_product_upgrade(grid, "给市场主管买的烟", stall_location_level, "将摊位移动到更好的位置，增加客流量。需声望%d。" % ((stall_location_level + 1) * 4), 250 + stall_location_level * 400, _upgrade_location, stall_reputation >= (stall_location_level + 1) * 4)
+	_add_product_upgrade(grid, "特殊展示盒", stall_showcase_level, "高价值藏品提高驻足率", 400 + stall_showcase_level * 600, _upgrade_showcase)
+	_add_product_upgrade(grid, "十九子作剪刀", stall_multi_open_level, "进货批量：1→5→10。需声望%d。" % ((stall_multi_open_level + 1) * 4), 300 + stall_multi_open_level * 700, _upgrade_multi, stall_multi_open_level < 2 and stall_reputation >= (stall_multi_open_level + 1) * 4, "已满级" if stall_multi_open_level >= 2 else "声望不足")
+	_add_product_upgrade(grid, "《演员的自我修养》", stall_eloquence_level, "扩大顾客接受报价范围。需声望%d。" % ((stall_eloquence_level + 1) * 3), 180 + stall_eloquence_level * 260, _upgrade_eloquence, stall_reputation >= (stall_eloquence_level + 1) * 3)
+
+
+func _add_product_upgrade(grid: GridContainer, title: String, level: int, detail: String, cost: int, action: Callable, gate := true, blocked := "声望不足") -> void:
+	grid.add_product(title, "Lv.%d · %s" % [level, detail], "¥%s" % comma(cost), ("购买升级" if cash >= cost else "现金不足") if gate else blocked, action, gate and cash >= cost)
 
 
 func _build_business_app(content: VBoxContainer) -> void:
@@ -993,8 +1099,8 @@ func _set_phone_visible(visible: bool, instant := false) -> void:
 
 func _phone_status_text() -> String:
 	if stall_day_finished: return "今日收摊｜等待结算"
-	if stall_preparing: return "第 %d 天｜准备中 10:00｜现金 ¥%s" % [day, comma(cash)]
-	return "第 %d 天｜营业 %s｜声望 %d" % [day, _clock_text(), stall_reputation]
+	if stall_preparing: return "第 %d 天｜营业准备｜现金 ¥%s" % [day, comma(cash)]
+	return "第 %d 天｜营业中｜声望 %d" % [day, stall_reputation]
 
 
 func _update_app_unlocks() -> Array[String]:
@@ -1118,7 +1224,7 @@ func _render_stall_listings() -> void:
 		holder.add_child(listing_body)
 		var model := instantiate_collectible_model(int(item["series"]), int(item["item_index"]))
 		if model:
-			model.scale *= 0.72
+			model.scale *= 1.44
 			holder.add_child(model)
 			var bounds_data := collectible_model_bounds(model)
 			if bounds_data["valid"]:
@@ -1195,6 +1301,14 @@ func _build_stall_offer_ui() -> void:
 	stall_bargain_content = VBoxContainer.new()
 	stall_bargain_content.add_theme_constant_override("separation", 7)
 	bargain_margin.add_child(stall_bargain_content)
+	for side in ["margin_left", "margin_right", "margin_top", "margin_bottom"]:
+		bargain_margin.add_theme_constant_override(side, 4)
+	stall_bargain_panel.z_index = 20
+	customer_bubble_tail = Polygon2D.new()
+	customer_bubble_tail.color = Color("#f8ead0")
+	customer_bubble_tail.z_index = 19
+	customer_bubble_tail.hide()
+	ui_canvas.add_child(customer_bubble_tail)
 
 
 func _build_stall_price_ui() -> void:
@@ -1323,6 +1437,10 @@ func _build_ending_ui() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_instance_valid(inventory_grid) and inventory_grid.visible and event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		inventory_grid.hide()
+		get_viewport().set_input_as_handled()
+		return
 	if ending_overlay and ending_overlay.visible: return
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE:
 		open_pause_menu()
@@ -1442,16 +1560,37 @@ func begin_seal_drag(mouse_pos: Vector2) -> void:
 	toast("抓住封条了。沿黄色纹路持续拖动即可撕开，不会随机脱手。")
 
 
+func _input(event: InputEvent) -> void:
+	# Once grabbed, keep ownership even when the cursor crosses a UI panel.
+	# Handling only unhandled input used to lose motion AND the release event.
+	if pointer_mode != "seal_drag" or not is_instance_valid(focused_box): return
+	if event is InputEventMouseMotion:
+		if event.button_mask & MOUSE_BUTTON_MASK_LEFT:
+			update_seal_drag(event)
+		else:
+			on_pointer_up(event.position)
+		get_viewport().set_input_as_handled()
+	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+		on_pointer_up(event.position)
+		get_viewport().set_input_as_handled()
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT and pointer_mode == "seal_drag":
+		on_pointer_up(Vector2.ZERO)
+
+
 func update_seal_drag(event: InputEventMouseMotion) -> void:
 	if not focused_box or pointer_mode != "seal_drag": return
 	var anchor_screen := camera.unproject_position(focused_box.active_seal_anchor_global())
 	var next_screen := camera.unproject_position(focused_box.next_seal_anchor_global())
 	var expected := (next_screen - anchor_screen).normalized()
-	var motion := event.position - seal_drag_last_position
+	var motion := event.relative
 	seal_drag_last_position = event.position
-	if motion.length() < 0.4 or expected.length() < 0.1: return
-	var aligned_motion := motion.dot(expected)
-	if aligned_motion <= 0.0: return
+	if motion.length() < 0.05: return
+	# Rubbing back and forth is intentional. Corners and foreshortened segments
+	# retain a little progress instead of demanding an abrupt perfect reversal.
+	var aligned_motion := motion.length() if expected.length() < 0.1 else lerpf(motion.length() * 0.35, motion.length(), absf(motion.normalized().dot(expected)))
 	var next_progress: float = focused_box.seal_progress + aligned_motion / seal_drag_force(focused_box)
 	focused_box.set_seal_progress(next_progress)
 	update_seal_progress_hud(focused_box)
@@ -1767,6 +1906,13 @@ func buy_box(series_index: int) -> void:
 	_buy_series_count(series_index, 1)
 
 
+func spawn_box(kind: String, series_index: int, item_index: int, paid: int, slot := 0) -> void:
+	super.spawn_box(kind, series_index, item_index, paid, slot)
+	# Reserve the unobstructed middle of the extended table for deliveries.
+	var box: RigidBody3D = boxes.back()
+	box.position = Vector3(-1.5 + (slot % 5) * 0.75 + rng.randf_range(-0.12, 0.12), 3.8 + slot * 0.32, rng.randf_range(-1.5, 0.8))
+
+
 func _resale_all_inventory() -> void:
 	var resale_indices := _duplicate_resale_indices()
 	var payout := 0
@@ -1820,6 +1966,9 @@ func _deliver_daily_order() -> void:
 
 
 func _upgrade_shelf() -> void:
+	if stall_shelf_level >= 10:
+		toast("已达到3台、每台4层的展示上限。")
+		return
 	var cost := 160 + stall_shelf_level * 240
 	if not _pay_upgrade(cost): return
 	stall_shelf_level += 1
@@ -1926,7 +2075,8 @@ func _update_pedestrians(delta: float) -> void:
 		for step in count: _update_pedestrians(delta / count)
 		return
 	stall_pedestrian_spawn_wait -= delta
-	var arrival_factor := clampf((BUSINESS_SECONDS - stall_business_elapsed) / (BUSINESS_SECONDS / 10.0), 0.0, 1.0)
+	var one_game_hour := BUSINESS_SECONDS / (BUSINESS_END - BUSINESS_START)
+	var arrival_factor := clampf((BUSINESS_SECONDS - stall_business_elapsed) / one_game_hour, 0.0, 1.0)
 	var crowd_limit := int(ceil(mini(22, 3 + stall_location_level * 3) * arrival_factor))
 	if arrival_factor > 0.05 and stall_pedestrian_spawn_wait <= 0.0 and stall_pedestrians.size() < crowd_limit:
 		_spawn_background_pedestrian()
@@ -1939,6 +2089,7 @@ func _update_pedestrians(delta: float) -> void:
 			continue
 		var direction := float(data["direction"])
 		var speed := float(data["speed"])
+		pedestrian.set_meta("travel_direction", direction)
 		_walk_with_avoidance(pedestrian, Vector3(pedestrian.position.x + direction * 2.0, STREET_SURFACE_Y, float(data["lane"])), speed, delta)
 		if pedestrian.position.x * direction > 14.0:
 			pedestrian.queue_free()
@@ -1958,6 +2109,8 @@ func _spawn_background_pedestrian(initial_x: float = INF) -> void:
 	var used: Array = []
 	for entry in stall_pedestrians: used.append(entry["node"].get_meta("model_asset"))
 	if is_instance_valid(stall_customer): used.append(stall_customer.get_meta("model_asset"))
+	for visitor in stall_waiting_customers:
+		if is_instance_valid(visitor.get("node")): used.append(visitor["node"].get_meta("model_asset"))
 	var variants: Array[int] = []
 	for variant in 3:
 		if not CITY_PERSON.MODEL_POOLS[category][variant] in used: variants.append(variant)
@@ -1965,6 +2118,10 @@ func _spawn_background_pedestrian(initial_x: float = INF) -> void:
 	var pedestrian = _create_city_person(category, rng.randf_range(0.90, 1.05), variants[rng.randi_range(0, variants.size() - 1)])
 	pedestrian.position = Vector3(start_x, STREET_SURFACE_Y, lane_z)
 	pedestrian.rotation.y = atan2(direction, 0.0)
+	pedestrian.set_meta("travel_direction", direction)
+	pedestrian.set_meta("avoid_side", -direction)
+	pedestrian.set_meta("avoid_time", 0.0)
+	pedestrian.set_meta("avoid_lane", lane_z)
 	stall_pedestrian_root.add_child(pedestrian)
 	var speed := rng.randf_range(1.05, 1.75)
 	pedestrian.set_walking(true, speed)
@@ -1988,9 +2145,10 @@ func _street_position_clear(actor: Node3D, point: Vector3) -> bool:
 	var others: Array = []
 	for entry in stall_pedestrians: others.append(entry["node"])
 	if is_instance_valid(stall_customer): others.append(stall_customer)
+	for visitor in stall_waiting_customers: others.append(visitor.get("node"))
 	for other in others:
 		if other == actor or not is_instance_valid(other): continue
-		if point.distance_to(other.position) < 1.35: return false
+		if point.distance_to(other.position) < PEDESTRIAN_CLEARANCE: return false
 	return true
 
 
@@ -2000,17 +2158,32 @@ func _walk_with_avoidance(actor: Node3D, target: Vector3, speed: float, delta: f
 		var dt := minf(remaining, 0.04)
 		remaining -= dt
 		var old := actor.position
-		var next := old.move_toward(target, speed * dt)
+		var direct := target - old
+		direct.y = 0.0
+		var travel_direction := float(actor.get_meta("travel_direction", signf(direct.x) if absf(direct.x) > 0.01 else 1.0))
+		var avoid_side := float(actor.get_meta("avoid_side", -travel_direction))
+		var avoid_time := maxf(0.0, float(actor.get_meta("avoid_time", 0.0)) - dt)
+		var avoid_lane := float(actor.get_meta("avoid_lane", target.z))
+		var movement_target := target
+		if avoid_time > 0.0:
+			movement_target.z = avoid_lane
+		var next := old.move_toward(movement_target, speed * dt)
 		if not _street_position_clear(actor, next):
-			# Yield into the central passing lane, or wait if both sides are busy.
-			var preferred := 1.0 if old.z < -7.9 else -1.0
-			for side in [preferred, -preferred]:
-				var detour := old + Vector3(0, 0, side * speed * dt)
-				if detour.z < -9.5 or detour.z > -6.1: continue
-				if _street_position_clear(actor, detour):
-					next = detour
-					break
+			# Every actor keeps to its own right relative to its facing direction.
+			# The held target prevents two oncoming walkers from changing their
+			# minds every frame and oscillating into a deadlock.
+			avoid_lane = clampf(old.z + avoid_side * AVOIDANCE_LATERAL_DISTANCE, STREET_MIN_Z, STREET_MAX_Z)
+			avoid_time = AVOIDANCE_HOLD_SECONDS
+			# First step sideways only. Advancing toward the blocker while starting
+			# the lane change can remain inside the clearance circle forever.
+			var lateral_target := Vector3(old.x, STREET_SURFACE_Y, avoid_lane)
+			var detour := old.move_toward(lateral_target, speed * dt)
+			if _street_position_clear(actor, detour): next = detour
 			if not _street_position_clear(actor, next): next = old
+		actor.set_meta("travel_direction", travel_direction)
+		actor.set_meta("avoid_side", avoid_side)
+		actor.set_meta("avoid_time", avoid_time)
+		actor.set_meta("avoid_lane", avoid_lane)
 		actor.position = next
 		actor.face_direction(next - old, dt)
 		actor.set_walking(next.distance_squared_to(old) > 0.000001, speed)
@@ -2018,21 +2191,34 @@ func _walk_with_avoidance(actor: Node3D, target: Vector3, speed: float, delta: f
 
 
 func _update_customer(delta: float) -> void:
+	_update_waiting_customers(delta)
+	var accepting_new := stall_business_elapsed < BUSINESS_SECONDS
 	if stall_customer == null:
+		if not stall_waiting_customers.is_empty():
+			_promote_waiting_customer()
+		elif accepting_new:
+			stall_spawn_wait -= delta
+			if stall_spawn_wait <= 0.0: _spawn_customer()
+			return
+		else:
+			return
+	elif accepting_new and stall_waiting_customers.size() + 1 < CUSTOMER_CAPACITY:
 		stall_spawn_wait -= delta
 		if stall_spawn_wait <= 0.0: _spawn_customer()
-		return
 	match stall_customer_phase:
 		"approach":
 			# Walk diagonally out of the passing lane, easing into a front-facing stop.
-			if _walk_with_avoidance(stall_customer, Vector3(0.5, STREET_SURFACE_Y, STREET_CUSTOMER_Z), 1.25, delta):
+			if _walk_with_avoidance(stall_customer, Vector3(CUSTOMER_STOP_X[0], STREET_SURFACE_Y, STREET_CUSTOMER_Z), 1.25, delta):
 				stall_customer.set_walking(false)
 				stall_customer_phase = "browse"
 				stall_customer_wait = 2.2
 		"browse", "offer":
 			stall_customer.set_walking(false)
 			stall_customer.face_direction(Vector3(0, 0, 1), delta)
-			stall_customer_wait -= delta
+			# Time and passersby continue while the bargaining UI is open, but the
+			# customer does not abandon a conversation that the player is handling.
+			if stall_customer_phase != "offer" or not stall_bargain_panel.visible:
+				stall_customer_wait -= delta
 			if stall_customer_wait <= 0.0:
 				if stall_customer_phase == "browse":
 					_make_customer_offer()
@@ -2045,13 +2231,47 @@ func _update_customer(delta: float) -> void:
 				# Rejoin the original stream as the exact same actor.
 				var returning := stall_customer
 				returning.reparent(stall_pedestrian_root, true)
+				returning.set_meta("travel_direction", stall_customer_direction)
+				returning.set_meta("avoid_side", -stall_customer_direction)
 				stall_pedestrians.append({"node":returning, "direction":stall_customer_direction, "speed":1.35, "profile":returning.profile_index, "lane":stall_customer_lane})
 				stall_customer = null
-				_clear_customer()
+				_reset_active_customer()
+
+
+func _update_waiting_customers(delta: float) -> void:
+	for index in range(stall_waiting_customers.size() - 1, -1, -1):
+		var data: Dictionary = stall_waiting_customers[index]
+		var visitor: Node3D = data.get("node")
+		if not is_instance_valid(visitor):
+			stall_waiting_customers.remove_at(index)
+			continue
+		var phase := String(data.get("phase", "approach"))
+		if phase == "approach":
+			if _walk_with_avoidance(visitor, Vector3(CUSTOMER_STOP_X[1], STREET_SURFACE_Y, STREET_CUSTOMER_Z), 1.20, delta):
+				data["phase"] = "browse"
+				visitor.set_walking(false)
+		else:
+			visitor.set_walking(false)
+			visitor.face_direction(Vector3(0, 0, 1), delta)
+		stall_waiting_customers[index] = data
+
+
+func _promote_waiting_customer() -> void:
+	if stall_waiting_customers.is_empty() or stall_customer != null: return
+	var data: Dictionary = stall_waiting_customers.pop_front()
+	stall_customer = data["node"]
+	stall_customer_profile = data["profile"]
+	stall_customer_lane = float(data["lane"])
+	stall_customer_direction = float(data["direction"])
+	stall_customer_exit_target = Vector3(CUSTOMER_STOP_X[0] + stall_customer_direction * 2.4, STREET_SURFACE_Y, stall_customer_lane)
+	stall_customer_phase = "approach"
+	stall_spawn_wait = _next_customer_wait()
 
 
 func _spawn_customer() -> void:
 	# Recruit an existing, visible walker; never spawn a sideways-sliding customer.
+	var occupied := (1 if is_instance_valid(stall_customer) else 0) + stall_waiting_customers.size()
+	if occupied >= CUSTOMER_CAPACITY: return
 	var candidates: Array[int] = []
 	for index in stall_pedestrians.size():
 		var data: Dictionary = stall_pedestrians[index]
@@ -2065,15 +2285,23 @@ func _spawn_customer() -> void:
 		return
 	var selected := candidates[rng.randi_range(0, candidates.size() - 1)]
 	var data: Dictionary = stall_pedestrians[selected]
-	stall_customer = data["node"]
-	stall_customer_profile = CUSTOMER_PROFILES[int(data["profile"])]
-	stall_customer_lane = float(data["lane"])
-	stall_customer_direction = float(data["direction"])
-	stall_customer_exit_target = Vector3(0.5 + stall_customer_direction * 2.4, STREET_SURFACE_Y, stall_customer_lane)
+	var recruited: Node3D = data["node"]
+	var profile: Dictionary = CUSTOMER_PROFILES[int(data["profile"])]
+	var lane := float(data["lane"])
+	var direction := float(data["direction"])
 	stall_pedestrians.remove_at(selected)
-	stall_customer.reparent(stall_customer_root, true)
-	stall_customer_phase = "approach"
+	recruited.reparent(stall_customer_root, true)
+	if stall_customer == null:
+		stall_customer = recruited
+		stall_customer_profile = profile
+		stall_customer_lane = lane
+		stall_customer_direction = direction
+		stall_customer_exit_target = Vector3(CUSTOMER_STOP_X[0] + direction * 2.4, STREET_SURFACE_Y, lane)
+		stall_customer_phase = "approach"
+	else:
+		stall_waiting_customers.append({"node":recruited, "profile":profile, "lane":lane, "direction":direction, "phase":"approach"})
 	stall_daily_visitors += 1
+	stall_spawn_wait = _next_customer_wait()
 
 
 func _make_customer_offer() -> void:
@@ -2091,15 +2319,17 @@ func _make_customer_offer() -> void:
 	stall_customer_max = minf(float(listing["price"]) * 1.05, market_value * float(stall_customer_profile["budget"]))
 	if stall_customer_profile["name"] == "普通爱好者":
 		# A normal fan either accepts the tag or asks for a modest 10% discount.
-		stall_offer_price = maxi(1, int(round(int(listing["price"]) * (1.0 if rng.randf() < 0.65 else 0.90))))
-		stall_customer_max = float(listing["price"])
+		var affordable := mini(int(listing["price"]), int(round(market_value * 1.05)))
+		stall_offer_price = maxi(1, int(round(affordable * (1.0 if rng.randf() < 0.65 else 0.90))))
+		stall_customer_max = float(affordable)
 	stall_bargain_round = 0
 	stall_offer_text.text = "%s：\n“%s”\n看中 %s，报价 ¥%s" % [stall_customer_profile["name"], stall_customer_profile["quote"], item["name"], comma(stall_offer_price)]
 	stall_offer_button.text = "查看报价 ¥%s" % comma(stall_offer_price)
-	stall_offer_panel.visible = true
+	stall_offer_panel.visible = false
 	stall_customer_wait = 15.0
 	stall_customer_phase = "offer"
 	_set_phone_visible(false)
+	_open_bargain()
 
 
 func _open_bargain() -> void:
@@ -2123,7 +2353,21 @@ func _open_bargain() -> void:
 		stall_bargain_content.add_child(decline)
 		call_deferred("_fit_game_panels")
 		return
-	_rebuild_bargain("上下拖动滑块，给出你的价格。")
+	_rebuild_bargain("拖动滑块还价，或直接接受。")
+
+
+func _update_customer_bubble() -> void:
+	if not is_instance_valid(customer_bubble_tail): return
+	customer_bubble_tail.visible = stall_bargain_panel.visible and is_instance_valid(stall_customer)
+	if not customer_bubble_tail.visible: return
+	stall_bargain_panel.size = Vector2(390, 0)
+	var head := camera.unproject_position(stall_customer.to_global(Vector3(0, 3.05, 0)))
+	var top := head - Vector2(stall_bargain_panel.size.x * 0.5, stall_bargain_panel.size.y + 12)
+	top.x = clampf(top.x, 12, 1268 - stall_bargain_panel.size.x)
+	top.y = clampf(top.y, 12, 668 - stall_bargain_panel.size.y)
+	stall_bargain_panel.position = top
+	var foot := Vector2(clampf(head.x, top.x + 25, top.x + stall_bargain_panel.size.x - 25), top.y + stall_bargain_panel.size.y - 4)
+	customer_bubble_tail.polygon = PackedVector2Array([foot + Vector2(-10, 0), foot + Vector2(10, 0), head])
 
 
 func _rebuild_bargain(message: String) -> void:
@@ -2131,60 +2375,36 @@ func _rebuild_bargain(message: String) -> void:
 	stall_bargain_content.alignment = BoxContainer.ALIGNMENT_BEGIN
 	var listing: Dictionary = stall_listings[stall_offer_slot]
 	var item: Dictionary = listing["item"]
-	var title := make_label("与 %s 讲价" % stall_customer_profile["name"], 21, UI_CHROME_INDIGO, true)
-	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	title.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	title.custom_minimum_size.y = 36
+	var title := make_label("%s 想购买 %s" % [stall_customer_profile["name"], item["name"]], 16, UI_INK, true)
+	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	stall_bargain_content.add_child(title)
-	var quote := make_label("“%s”" % stall_customer_profile["quote"], 13, UI_SIGNAL, true)
-	quote.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	quote.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	var quote := make_label("“%s”" % stall_customer_profile["quote"], 12, UI_INK_SOFT)
 	quote.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	quote.custom_minimum_size.y = 42
 	stall_bargain_content.add_child(quote)
-	var detail := make_label("%s｜挂牌 ¥%s｜顾客报价 ¥%s" % [item["name"], comma(int(listing["price"])), comma(stall_offer_price)], 11, UI_INK, true)
-	detail.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	detail.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	detail.custom_minimum_size.y = 25
-	stall_bargain_content.add_child(detail)
+	stall_bargain_content.add_child(make_label("挂牌 ¥%s · 顾客报价 ¥%s" % [comma(int(listing["price"])), comma(stall_offer_price)], 12, UI_INK))
 	var status := make_label(message, 11, UI_INK_SOFT)
-	status.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	status.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	status.custom_minimum_size.y = 28
 	stall_bargain_content.add_child(status)
-	var slider_row := HBoxContainer.new()
-	slider_row.alignment = BoxContainer.ALIGNMENT_CENTER
-	stall_bargain_content.add_child(slider_row)
-	stall_bargain_slider = VSlider.new()
-	stall_bargain_slider.custom_minimum_size = Vector2(90, 140)
-	stall_bargain_slider.min_value = maxi(1, int(round(inventory_item_price(item) * 0.55)))
+	stall_bargain_slider = HSlider.new()
+	stall_bargain_slider.custom_minimum_size = Vector2(0, 26)
+	stall_bargain_slider.min_value = mini(stall_offer_price, maxi(1, int(inventory_item_price(item) * 0.55)))
 	stall_bargain_slider.max_value = maxi(int(listing["price"] * 1.15), int(stall_customer_max * 1.18))
 	stall_bargain_slider.step = 1
 	stall_bargain_slider.value = stall_offer_price
 	stall_bargain_slider.value_changed.connect(_on_bargain_changed)
-	slider_row.add_child(stall_bargain_slider)
-	stall_bargain_amount = make_label("你的报价：¥%s" % comma(stall_offer_price), 18, UI_SIGNAL, true)
-	stall_bargain_amount.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	stall_bargain_content.add_child(stall_bargain_slider)
+	stall_bargain_amount = make_label("你的报价：¥%s" % comma(stall_offer_price), 16, UI_SIGNAL)
 	stall_bargain_content.add_child(stall_bargain_amount)
 	var buttons := HBoxContainer.new()
-	buttons.alignment = BoxContainer.ALIGNMENT_CENTER
-	buttons.add_theme_constant_override("separation", 8)
-	var accept := button("接受 ¥%s" % comma(stall_offer_price), Color("#59c7b5"))
-	accept.custom_minimum_size.y = 46
-	accept.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	accept.pressed.connect(_complete_customer_sale.bind(stall_offer_price))
-	stall_bargain_content.add_child(accept)
+	buttons.add_theme_constant_override("separation", 6)
 	stall_bargain_content.add_child(buttons)
-	var counter := button("提交报价", UI_SIGNAL)
-	counter.custom_minimum_size.y = 46
-	counter.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var accept := button("接受报价", UI_AMBER)
+	accept.pressed.connect(_complete_customer_sale.bind(stall_offer_price))
+	buttons.add_child(accept)
+	var counter := button("还价", UI_SIGNAL)
 	counter.pressed.connect(_submit_counter_offer)
 	buttons.add_child(counter)
 	var decline := button("不卖了", UI_CARBON)
-	decline.custom_minimum_size.y = 46
-	decline.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	decline.pressed.connect(_decline_offer)
 	buttons.add_child(decline)
 	call_deferred("_fit_game_panels")
@@ -2284,14 +2504,27 @@ func _decline_offer() -> void:
 	toast("你拒绝了报价，商品继续留在货架。")
 
 
-func _clear_customer() -> void:
-	if stall_customer:
-		stall_customer.queue_free()
+func _next_customer_wait() -> float:
+	return maxf(3.0, rng.randf_range(10.0, 16.0) - stall_location_level * 1.4 - (3.0 if stall_social_boost else 0.0))
+
+
+func _reset_active_customer() -> void:
 	stall_customer = null
 	stall_customer_phase = ""
 	stall_offer_slot = -1
 	stall_offer_panel.visible = false
-	stall_spawn_wait = maxf(3.0, rng.randf_range(10.0, 16.0) - stall_location_level * 1.4 - (3.0 if stall_social_boost else 0.0))
+	stall_bargain_panel.visible = false
+	stall_spawn_wait = _next_customer_wait()
+
+
+func _clear_customer() -> void:
+	if stall_customer:
+		stall_customer.queue_free()
+	for visitor in stall_waiting_customers:
+		var node: Node3D = visitor.get("node")
+		if is_instance_valid(node): node.queue_free()
+	stall_waiting_customers.clear()
+	_reset_active_customer()
 
 
 func refresh_ui() -> void:
@@ -2376,11 +2609,7 @@ func market_price_at_day(series_index: int, item_index: int, date_index: int) ->
 	if series_index < 0 or series_index >= STALL_VALUES.size(): return 1
 	if item_index < 0 or item_index >= STALL_VALUES[series_index].size(): return 1
 	var rarity: int = int(SERIES[series_index]["rarities"][item_index])
-	var market_factor: float = float(FACTORS[(date_index - 1) % FACTORS.size()][series_index])
-	var event: Dictionary = _market_event_for_day(date_index)
-	var event_factor := float(event["modifiers"][series_index])
-	var softened := 1.0 + (market_factor - 1.0) * (0.35 + rarity * 0.06) + (event_factor - 1.0) * (0.72 + rarity * 0.04)
-	return maxi(1, int(round(float(STALL_VALUES[series_index][item_index]) * softened)))
+	return item_market.price(series_index, item_index, date_index, float(STALL_VALUES[series_index][item_index]), box_price(series_index), rarity > 0, func(date: int) -> float: return float(_market_event_for_day(date)["modifiers"][series_index]))
 
 
 func inventory_item_price(item: Dictionary) -> int:
@@ -2437,7 +2666,7 @@ func _apply_save_state(state: Dictionary) -> void:
 	day_one_story_seen = bool(state.get("day_one_story_seen", day > 1))
 	earned = int(state.get("earned", 0))
 	stall_reputation = int(state.get("stall_reputation", 0))
-	stall_shelf_level = int(state.get("stall_shelf_level", 0))
+	stall_shelf_level = clampi(int(state.get("stall_shelf_level", 0)), 0, 10)
 	stall_inventory_level = int(state.get("stall_inventory_level", 0))
 	stall_location_level = int(state.get("stall_location_level", 0))
 	stall_showcase_level = int(state.get("stall_showcase_level", 0))
@@ -2476,6 +2705,10 @@ func _apply_save_state(state: Dictionary) -> void:
 		else:
 			stall_listings.append(null)
 	while stall_listings.size() < 4 + stall_shelf_level * 2: stall_listings.append(null)
+	# Old saves may exceed the new physical cap: return overflow, never delete it.
+	while stall_listings.size() > 24:
+		var overflow = stall_listings.pop_back()
+		if overflow is Dictionary and overflow.has("item"): collectibles.append(overflow["item"])
 	for listing in stall_listings:
 		if listing is Dictionary and listing.has("item") and listing.has("price"):
 			var listed_item := listing["item"] as Dictionary

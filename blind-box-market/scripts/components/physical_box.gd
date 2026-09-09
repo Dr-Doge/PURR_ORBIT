@@ -1,5 +1,7 @@
 extends RigidBody3D
 
+const KANGAROO_BOX_ART := preload("res://scenes/entities/kangaroo_box_art.tscn")
+var uses_kangaroo_art := false
 var box_kind := "parcel"
 var series_index := -1
 var rarity := -1
@@ -80,7 +82,39 @@ func setup(kind: String, box_series: int, box_rarity: int, paid: int, color: Col
 	content_material.emission = color * 0.4
 	content.material = content_material
 	configure_seal_pattern(-1 if kind == "parcel" else box_series)
+	if kind == "blind" and box_series == 0:
+		install_kangaroo_art()
 	set_seal_progress(0.0)
+
+func install_kangaroo_art() -> void:
+	uses_kangaroo_art = true
+	shell.hide()
+	lid.hide()
+	label_3d.hide()
+	var art := KANGAROO_BOX_ART.instantiate()
+	add_child(art)
+	var art_pivot: Node3D = art.get_node("LidPivot")
+	lid_pivot.transform = art_pivot.transform
+	art_pivot.get_node("LidModel").reparent(lid_pivot, false)
+	art_pivot.queue_free()
+	# The art scene owns a shared, double-sided packaging material.
+	body_collision.shape = BoxShape3D.new()
+	(body_collision.shape as BoxShape3D).size = Vector3(0.862, 1.30, 0.952)
+	# A narrow tear strip bridges the lid/body FRONT seam. Leave the printed
+	# face and lid illustration unobstructed; the lifted tab remains easy to hit.
+	top_seal_path.clear()
+	for index in 5:
+		top_seal_path.append(Vector3(-0.395 + index * 0.1975, 0.65, 0.489))
+	top_seal_segment_count = configure_ring_from_path(seal_ring, top_seal_path, seal_base_transforms)
+	for index in top_seal_segment_count:
+		var segment := seal_ring.get_child(index) as CSGBox3D
+		segment.size.y = 0.085
+		segment.size.z = 0.020
+	seal_path_points = top_seal_path.duplicate()
+
+func seal_outward() -> Vector3:
+	if uses_kangaroo_art: return Vector3.BACK
+	return Vector3.DOWN if box_kind == "parcel" and parcel_seal_side == 1 else Vector3.UP
 
 func configure_parcel_cube() -> void:
 	# Equal outer dimensions on all three axes make the delivery carton a true
@@ -174,8 +208,7 @@ func set_seal_progress(progress: float) -> void:
 func update_seal_grip() -> void:
 	if seal_path_points.size() < 2: return
 	seal_grip.visible = seal_progress < 0.995
-	var outward := -0.075 if box_kind == "parcel" and parcel_seal_side == 1 else 0.075
-	seal_grip.position = seal_point_at_progress(seal_progress) + Vector3(0, outward, 0)
+	seal_grip.position = seal_point_at_progress(seal_progress) + seal_outward() * 0.075
 	seal_grip.scale = Vector3.ONE
 
 func set_ring_progress(ring: Node3D, base_transforms: Array[Transform3D], progress: float, active_count: int) -> void:
@@ -197,6 +230,8 @@ func set_ring_progress(ring: Node3D, base_transforms: Array[Transform3D], progre
 		# The free end visibly peels up. When input detaches, this pose remains,
 		# making the next clickable end easy to find.
 		segment.position.y += sin(local_tear * PI * 0.5) * 0.12 * peel_direction
+		if uses_kangaroo_art:
+			segment.position.z += sin(local_tear * PI * 0.5) * 0.12
 		segment.rotation.z += local_tear * 0.48 * peel_direction
 
 func seal_point_at_progress(progress: float) -> Vector3:
@@ -215,12 +250,10 @@ func seal_point_at_progress(progress: float) -> Vector3:
 	return seal_path_points[-1]
 
 func active_seal_anchor_global() -> Vector3:
-	var outward := -0.06 if box_kind == "parcel" and parcel_seal_side == 1 else 0.06
-	return to_global(seal_point_at_progress(seal_progress) + Vector3(0, outward, 0))
+	return to_global(seal_point_at_progress(seal_progress) + seal_outward() * 0.06)
 
 func next_seal_anchor_global(step := 0.025) -> Vector3:
-	var outward := -0.06 if box_kind == "parcel" and parcel_seal_side == 1 else 0.06
-	return to_global(seal_point_at_progress(minf(1.0, seal_progress + step)) + Vector3(0, outward, 0))
+	return to_global(seal_point_at_progress(minf(1.0, seal_progress + step)) + seal_outward() * 0.06)
 
 func tear_seal() -> void:
 	if box_kind == "parcel":
@@ -252,13 +285,14 @@ func finish_open_lid() -> void:
 func play_auto_open() -> void:
 	if box_kind == "blind":
 		if lid_opened: return
-		lid_opened = true
 		lid_area.collision_layer = 0
 		var blind_lid_tween := create_tween()
-		blind_lid_tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-		blind_lid_tween.tween_property(lid_pivot, "rotation:x", -1.9, 0.22)
+		blind_lid_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		blind_lid_tween.tween_property(lid_pivot, "rotation:x", -1.9, 0.85)
 		await blind_lid_tween.finished
-		content.visible = true
+		lid_opened = true
+		# The actual collectible is spawned by the completed opening sequence.
+		content.visible = false
 		return
 	if parcel_seal_side == 0 and not parcel_top_opened:
 		parcel_top_opened = true

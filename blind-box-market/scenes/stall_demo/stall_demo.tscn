@@ -103,6 +103,9 @@ visible = false
 [node name="MarketTicker" parent="Room" parent_id_path=PackedInt32Array(2115963886) index="1" unique_id=1812875132]
 visible = false
 
+[node name="Desk" parent="Room" index="2"]
+size = Vector3(26, 1.2, 8.5)
+
 [node name="SecondhandBin" parent="." index="6" unique_id=1664355554]
 visible = false
 

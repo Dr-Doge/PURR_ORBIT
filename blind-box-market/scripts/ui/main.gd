@@ -1803,13 +1803,10 @@ func complete_drag_opening() -> void:
 	var box := focused_box
 	box.tear_seal()
 	seal_bar.value = 100.0
-	detail_hint.text = "封条完全撕开，盒盖正在弹开……"
-	toast("最后一段封条撕开，盒盖立即弹开！")
+	detail_hint.text = "封条完全撕开，盒盖正在打开……"
+	toast("封条已撕开，等盒盖完全打开后揭晓。")
 	if box.box_kind == "blind":
-		# Begin the reveal the instant the lid moves, instead of waiting for the
-		# lid tween to finish and creating a visible pause.
-		box.play_auto_open()
-		await get_tree().create_timer(0.035).timeout
+		await box.play_auto_open()
 		if is_instance_valid(box) and focused_box == box:
 			seal_bar.visible = false
 			await begin_content_review()

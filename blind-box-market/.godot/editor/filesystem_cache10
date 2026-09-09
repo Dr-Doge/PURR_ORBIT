@@ -163,7 +163,7 @@ world_environment.gd::GDScript::3760847683936585060::1788163781::0::1::::<>World
 牛来-牛来.fbx::PackedScene::6710736863271543330::1788509082::1788509960::1::::<><><>0<>0<>ef3f4a82063d13cdac857a60812f1198<>res://.godot/imported/牛来-牛来.fbx-c3a2189aa425f90a9e6129ded423e6e0.scn::uid://clliwli4xbwvo::::res://assets/3D assets/牛来/牛来-牛来_0.png<>uid://c5maisylrja4::::res://assets/3D assets/牛来/牛来-牛来_1.png
 牛来-牛爸爸.fbx::PackedScene::1655282982731330801::1788509082::1788509950::1::::<><><>0<>0<>d8d3e20b7fd800e719301346b7024f39<>res://.godot/imported/牛来-牛爸爸.fbx-cde8453be7d03164019a138f042fc3d8.scn::uid://dudtu6v3ta4h3::::res://assets/3D assets/牛来/牛来-牛爸爸_0.png<>uid://688ldt5kdjsb::::res://assets/3D assets/牛来/牛来-牛爸爸_1.png
 牛来-豹拉.fbx::PackedScene::4667397378489497045::1788509082::1788509930::1::::<><><>0<>0<>435a10912aafdde6ca5d2c0fbf968b79<>res://.godot/imported/牛来-豹拉.fbx-d6b564f8f2fcf94d6322926f2fe34cc5.scn::uid://bcaqbxdjtfq4k::::res://assets/3D assets/牛来/牛来-豹拉_0.png<>uid://b25pa0mqud46p::::res://assets/3D assets/牛来/牛来-豹拉_1.png
-::res://assets/3D assets/肥嘟嘟袋鼠/::1788514464
+::res://assets/3D assets/肥嘟嘟袋鼠/::1788773476
 袋鼠-骑士_3.png::CompressedTexture2D::1994653863460280634::1788514461::1788514461::1::::<><><>0<>0<>29e3bbdf4f5ae815590e5343cef24a75<>res://.godot/imported/袋鼠-骑士_3.png-f2b4aada27a86c341a7747c522d5ff6d.ctex::
 袋鼠-骑士_2.png::CompressedTexture2D::5756428380018693355::1788514460::1788514460::1::::<><><>0<>0<>c9981d92885a0ffd57712d12ea4cdc4c<>res://.godot/imported/袋鼠-骑士_2.png-dccec7a9a381e832099c906967b82659.ctex::
 袋鼠-骑士_1.png::CompressedTexture2D::3406421184403730638::1788514459::1788514464::1::::<><><>0<>0<>ee076d12e1c9627a629979f3fddf7890<>res://.godot/imported/袋鼠-骑士_1.png-907f31245a8a9cfb6a14f8ac92a09555.s3tc.ctex::
@@ -214,6 +214,10 @@ world_environment.gd::GDScript::3760847683936585060::1788163781::0::1::::<>World
 袋鼠-煎扒厨师.fbx::PackedScene::7946283869866074386::1788505587::1788509892::1::::<><><>0<>0<>112d901d4be38ec5ab8295abc7b0866a<>res://.godot/imported/袋鼠-煎扒厨师.fbx-72147def1a072ed5411dc49c486ecb3d.scn::uid://l0dcrjfnsyv::::res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-煎扒厨师_0.png<>uid://bem6f3s8mtkv3::::res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-煎扒厨师_1.png
 袋鼠-送达.fbx::PackedScene::719203404628485428::1788514310::1788514454::1::::<><><>0<>0<>707a27d9bd6b3b7b1b25172bf2b79068<>res://.godot/imported/袋鼠-送达.fbx-11f4054ec495303926b1eb09036aded5.scn::uid://mhi884llx2ms::::res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-送达_0.png<>uid://cp5p1j2wbdlfj::::res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-送达_1.png
 袋鼠-骑士.fbx::PackedScene::2282864595335020718::1788514310::1788514462::1::::<><><>0<>0<>84ba55c59f8ffb34c088ff6816858b88<>res://.godot/imported/袋鼠-骑士.fbx-9e5ec0e95b79b35710f8ecb618596417.scn::uid://0d652eb5pl5x::::res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-骑士_0.png<>uid://bosdi2wqyjpva::::res://assets/3D assets/肥嘟嘟袋鼠/袋鼠-骑士_1.png
+::res://assets/3D assets/肥嘟嘟袋鼠/盒体/::1788777261
+肥嘟嘟袋鼠盒子.fbx::PackedScene::4974043533655172407::1788773297::1788773574::1::::<><><>0<>0<>08e2f952f079d7d54c9f0b6c107e099e<>res://.godot/imported/肥嘟嘟袋鼠盒子.fbx-d808809c8dc41417aabe3cdcfab6face.scn::
+肥嘟嘟袋鼠盖子.fbx::PackedScene::9125350412173507315::1788773297::1788773575::1::::<><><>0<>0<>5430f3b5971f3fab913c455456b17ac7<>res://.godot/imported/肥嘟嘟袋鼠盖子.fbx-bdff412c0555d51c655f5a8b6e8ce08c.scn::
+肥嘟嘟袋鼠贴图.jpg::CompressedTexture2D::53260170576342903::1788773296::1788777476::1::::<><><>0<>0<>5291423eed1f705c94af9167659a7c70<>res://.godot/imported/肥嘟嘟袋鼠贴图.jpg-22a6bb3519719a4392f460d8b25586d2.ctex::
 ::res://assets/3D assets/胖企鹅/::1788513203
 胖企鹅-Debug_3.png::CompressedTexture2D::7061381820578651667::1788513179::1788513180::1::::<><><>0<>0<>b51cd82942e667a176e15fdb67d4235a<>res://.godot/imported/胖企鹅-Debug_3.png-70df634ed062440394de293600d872b8.ctex::
 胖企鹅-Debug_2.png::CompressedTexture2D::3651032095653345942::1788513179::1788513179::1::::<><><>0<>0<>bbe7e352ab994ce35772dedb99b8f8ac<>res://.godot/imported/胖企鹅-Debug_2.png-dd836cc3c2ee250adb7921b4a3d573e3.ctex::
@@ -8055,7 +8059,7 @@ Sign_39.glb::PackedScene::512056593527618635::1736467140::1788417416::1::::<><><
 Sign_39_Signs 2.png::CompressedTexture2D::1697211422587145859::1787729090::1788417921::1::::<><><>0<>0<>0bcf3f836bdb4433acaf3ff88f9801b3<>res://.godot/imported/Sign_39_Signs 2.png-7c8d10588a285c828b9e28d8b8d56914.s3tc.ctex::
 Sign_40.glb::PackedScene::1033598599732620766::1736467140::1788417416::1::::<><><>0<>0<>ccfac64f81d22fe77e1e4b4d59a65a48<>res://.godot/imported/Sign_40.glb-e132641cca4a6a90a78b5c5ae9760124.scn::uid://bynkctjdorq0n::::res://assets/Cartoon City Massive Megapack/gLTF/Signs/Sign_40_Signs 2.png
 Sign_40_Signs 2.png::CompressedTexture2D::4098401595326724775::1787729092::1788417921::1::::<><><>0<>0<>b1d234544c49775ccee083579f51b688<>res://.godot/imported/Sign_40_Signs 2.png-cabde25821f4cf874f938555295d1b80.s3tc.ctex::
-::res://assets/Cartoon City Massive Megapack/gLTF/Street Props/::1788417951
+::res://assets/Cartoon City Massive Megapack/gLTF/Street Props/::1788763437
 Barier_4_A.glb::PackedScene::1453105242940594498::1736536437::1788417428::1::::<><><>0<>0<>32944f3b2597468b52b8af8e381e68de<>res://.godot/imported/Barier_4_A.glb-ef42286f0608939a5fae5784cb791b3c.scn::uid://bmpwto6ffycei::::res://assets/Cartoon City Massive Megapack/gLTF/Street Props/Barier_4_A_City Atlas Map.png
 Barier_4_A_City Atlas Map.png::CompressedTexture2D::3261022961036085000::1787729094::1788417921::1::::<><><>0<>0<>d4ef664df8e543a7e0a82f1d0979d1a0<>res://.godot/imported/Barier_4_A_City Atlas Map.png-c8f9b3809aedd124a2057f0300adf926.s3tc.ctex::
 Barier_4_B.glb::PackedScene::1412080156716742470::1736536437::1788417428::1::::<><><>0<>0<>920c3614a69a3ed6c848a906b71ed7eb<>res://.godot/imported/Barier_4_B.glb-4809d186e9cbd106901db1097978ba96.scn::uid://c83i4dq3wddbh::::res://assets/Cartoon City Massive Megapack/gLTF/Street Props/Barier_4_B_City Atlas Map.png
@@ -8216,7 +8220,7 @@ LineCh_1_2_City Atlas Map.png::CompressedTexture2D::3495401199081381774::1787729
 NewspaperH.glb::PackedScene::9131348069311250872::1736536436::1788416764::1::::<><><>0<>0<>3fb0108272889cb0a8267cf9261d6e6d<>res://.godot/imported/NewspaperH.glb-01dd2af10f7cbc3f73a1ed56cedd158d.scn::
 NewspaperH_City Atlas Map.png::CompressedTexture2D::8452764684900884478::1787729198::1788416676::1::::<><><>0<>0<>895be300a4985a8fa3e94f77b5a25d98<>res://.godot/imported/NewspaperH_City Atlas Map.png-91fc1021581dc20be0f822a67c91aada.ctex::
 Note_1_1.glb::PackedScene::5876117214820040593::1736536436::1788416829::1::::<><><>0<>0<>aa4ccc97110d53f7828582539e4b160d<>res://.godot/imported/Note_1_1.glb-323b4e111eeda8dab0edb4c90ef8155a.scn::
-Note_1_1_City Atlas Map.png::CompressedTexture2D::6933214740801855126::1787729199::1788416676::1::::<><><>0<>0<>4024eb3ee42d6a22b814436c24124fdf<>res://.godot/imported/Note_1_1_City Atlas Map.png-c2addfae2ba564801b75dce0e173267a.ctex::
+Note_1_1_City Atlas Map.png::CompressedTexture2D::6933214740801855126::1787729199::1788763437::1::::<><><>0<>0<>6b679272f5a6ab00b2492a924fc57aa5<>res://.godot/imported/Note_1_1_City Atlas Map.png-c2addfae2ba564801b75dce0e173267a.s3tc.ctex::
 Note_1_2.glb::PackedScene::8778567585951223986::1736536436::1788416798::1::::<><><>0<>0<>3bd32fc8d469df26865100c47f308112<>res://.godot/imported/Note_1_2.glb-fee54e282281c2f043e54fcd09a03519.scn::
 Note_1_2_City Atlas Map.png::CompressedTexture2D::6536522214521537338::1787729200::1788416676::1::::<><><>0<>0<>9c75ec05e8cefbf88de821ae37ba5175<>res://.godot/imported/Note_1_2_City Atlas Map.png-db9da07255250ee674ac3a9ef7d2e7b1.ctex::
 Note_1_3.glb::PackedScene::9123823385986927826::1736536436::1788416806::1::::<><><>0<>0<>f90d70ec2eee3657a9f300a778aff9be<>res://.godot/imported/Note_1_3.glb-919073baee71282bfa842adc903e2128.scn::
@@ -10179,15 +10183,17 @@ README.md::TextFile::-1::1788419625::0::1::::<><><>0<>0<><>::
 00_总索引.md::TextFile::-1::1788747845::0::1::::<><><>0<>0<><>::
 01_产品定位与设计支柱.md::TextFile::-1::1788419686::0::1::::<><><>0<>0<><>::
 12_浅主线与八阶段装机目标.md::TextFile::-1::1788445975::0::1::::<><><>0<>0<><>::
-::res://docs/《摆摊卖盲盒》/01_核心循环/::1788419587
+::res://docs/《摆摊卖盲盒》/01_核心循环/::1788754304
 02_核心循环与五分钟营业日.md::TextFile::-1::1788445424::0::1::::<><><>0<>0<><>::
 10_讲价与连开机制.md::TextFile::-1::1788419753::0::1::::<><><>0<>0<><>::
+第一天闭店剧情.md::TextFile::-1::1788754304::0::1::::<><><>0<>0<><>::
 ::res://docs/《摆摊卖盲盒》/02_开盒与收藏/::1788419625
 04_盲盒供货与收藏系统.md::TextFile::-1::1788498258::0::1::::<><><>0<>0<><>::
 11_盲盒系列与稀有度结构.md::TextFile::-1::1788515204::0::1::::<><><>0<>0<><>::
-::res://docs/《摆摊卖盲盒》/03_摆摊经营/::1788419587
-03_摊位陈列与顾客系统.md::TextFile::-1::1788498258::0::1::::<><><>0<>0<><>::
+::res://docs/《摆摊卖盲盒》/03_摆摊经营/::1788769167
+03_摊位陈列与顾客系统.md::TextFile::-1::1788754304::0::1::::<><><>0<>0<><>::
 05_经济成长与升级框架.md::TextFile::-1::1788445786::0::1::::<><><>0<>0<><>::
+行情与展示库存更新.md::TextFile::-1::1788769167::0::1::::<><><>0<>0<><>::
 ::res://docs/《摆摊卖盲盒》/04_手机与外部系统/::1788419587
 06_手机UI与桌面交互.md::TextFile::-1::1788498258::0::1::::<><><>0<>0<><>::
 09_手机应用与悬赏订单.md::TextFile::-1::1788445700::0::1::::<><><>0<>0<><>::
@@ -10196,9 +10202,10 @@ README.md::TextFile::-1::1788419625::0::1::::<><><>0<>0<><>::
 13_VFX_Spritesheet接入规范.md::TextFile::-1::1788522187::0::1::::<><><>0<>0<><>::
 14_Pixel Modern UI接入规范.md::TextFile::-1::1788747788::0::1::::<><><>0<>0<><>::
 16_步行街建筑与角色接入.md::TextFile::-1::1788747788::0::1::::<><><>0<>0<><>::
-::res://docs/《摆摊卖盲盒》/06_开发与验证/::1788517228
+::res://docs/《摆摊卖盲盒》/06_开发与验证/::1788774660
 08_MVP范围与验证计划.md::TextFile::-1::1788498258::0::1::::<><><>0<>0<><>::
 15_UI手工编排指南.md::TextFile::-1::1788517228::0::1::::<><><>0<>0<><>::
+手机商城与袋鼠包装接入.md::TextFile::-1::1788777462::0::1::::<><><>0<>0<><>::
 ::res://docs/策划案/::1788160640
 00_索引.md::TextFile::-1::1788333236::0::1::::<><><>0<>0<><>::
 01_产品定位与设计支柱.md::TextFile::-1::1788333236::0::1::::<><><>0<>0<><>::
@@ -10215,42 +10222,54 @@ README.md::TextFile::-1::1788419625::0::1::::<><><>0<>0<><>::
 12_七天开发计划与验收.md::TextFile::-1::1788333236::0::1::::<><><>0<>0<><>::
 13_盲盒系列图鉴.md::TextFile::-1::1788335761::0::1::::<><><>0<>0<><>::
 ::res://scenes/::1788426540
-::res://scenes/entities/::1788160640
+::res://scenes/entities/::1788774053
+kangaroo_box_art.tscn::PackedScene::-1::1788777414::0::1::::<><><>0<>0<><>::
 physical_box.tscn::PackedScene::-1::1788235086::0::1::::<><><>0<>0<><>::res://scripts/components/physical_box.gd
 ::res://scenes/frontend/::1788522025
 main_menu.tscn::PackedScene::8305694100386681053::1788749393::0::1::::<><><>0<>0<><>::uid://c5yvekf5n25hn::::res://scripts/frontend/main_menu.gd<>uid://d3b8vg005hpwe::::res://assets/placeholders/story/sky.jpg<>uid://bvlreijf6j15v::::res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Dialogue_Title.png<>uid://cw8aikjdu2poj::::res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Lists/UI_List_QuestItem_Off.png<>uid://c4f73jcbn7mgh::::res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Lists/UI_List_QuestItem_On.png<>uid://uxcnjmvwnyuu::::res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Buttons/UI_Button_Choice_Dim.png<>uid://dr7qhkedg8w1r::::res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Dialogue.png
 ::res://scenes/levels/::1787890204
 ::res://scenes/main/::1788332382
 main.tscn::PackedScene::5898641809102896854::1788332382::0::1::::<><><>0<>0<><>::uid://fwu4qhv8xkpf::::res://scripts/ui/main.gd
-::res://scenes/stall_demo/::1788748656
+::res://scenes/stall_demo/::1788768870
+day_one_story.tscn::PackedScene::-1::1788754070::0::1::::<><><>0<>0<><>::
+inventory_grid.tscn::PackedScene::-1::1788768870::0::1::::<><><>0<>0<><>::
 sky.tres::VisualShader::3686801764339219430::1788748515::0::1::::<><><>0<>0<><>::
 skybox.tres::VisualShader::4655730623714816108::1788520704::0::1::::<><><>0<>0<><>::
-stall_demo.tscn::PackedScene::4068128375338683373::1788748656::0::1::::<><><>0<>0<><>::uid://cqbl1eywr4m8m::::res://scenes/main/main.tscn<>uid://d65tdrrwcfpg::::res://scripts/stall_demo/stall_demo.gd<>uid://bsr6c65jbr8uc::::res://scenes/stall_demo/sky.tres<>uid://cvcn47wgi3yp8::::res://scenes/ui/stall_ui_layout.tscn<>uid://dx3x78u0w67d5::::res://assets/Cartoon City Massive Megapack/gLTF/Roads/ParkingRoad_B_7.glb<>uid://siyi2x303x42::::res://assets/Cartoon City Massive Megapack/gLTF/Signs/Bilboard_1_A.glb<>uid://okjpmc5hyl3e::::res://assets/Cartoon City Massive Megapack/gLTF/Signs/BilboardPlaceholder_1_D.glb<>uid://dprinj68ohr42::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 4/Building_4_F.glb<>uid://27jj56h34nrb::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 5/Building_5_1_G.glb<>uid://cruu885oirlpf::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 7/Building_7_1_E.glb<>uid://jcgup2jubrkx::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 14/Building_14_A.glb<>uid://dn3utidgfi73k::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 10/Building_10_A.glb<>uid://pah4ky4ppu03::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 12/Building_12_A.glb<>uid://vr3ebl5qxsp5::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 6/Building_6_A.glb
+stall_demo.tscn::PackedScene::4068128375338683373::1788773993::0::1::::<><><>0<>0<><>::uid://cqbl1eywr4m8m::::res://scenes/main/main.tscn<>uid://d65tdrrwcfpg::::res://scripts/stall_demo/stall_demo.gd<>uid://bsr6c65jbr8uc::::res://scenes/stall_demo/sky.tres<>uid://cvcn47wgi3yp8::::res://scenes/ui/stall_ui_layout.tscn<>uid://dx3x78u0w67d5::::res://assets/Cartoon City Massive Megapack/gLTF/Roads/ParkingRoad_B_7.glb<>uid://siyi2x303x42::::res://assets/Cartoon City Massive Megapack/gLTF/Signs/Bilboard_1_A.glb<>uid://okjpmc5hyl3e::::res://assets/Cartoon City Massive Megapack/gLTF/Signs/BilboardPlaceholder_1_D.glb<>uid://dprinj68ohr42::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 4/Building_4_F.glb<>uid://27jj56h34nrb::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 5/Building_5_1_G.glb<>uid://cruu885oirlpf::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 7/Building_7_1_E.glb<>uid://jcgup2jubrkx::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 14/Building_14_A.glb<>uid://dn3utidgfi73k::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 10/Building_10_A.glb<>uid://pah4ky4ppu03::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 12/Building_12_A.glb<>uid://vr3ebl5qxsp5::::res://assets/Cartoon City Massive Megapack/gLTF/Buildings/Building 6/Building_6_A.glb
 ::res://scenes/ui/::1788748920
 stall_ui_layout.tscn::PackedScene::6251778663239541535::1788749393::0::1::::<><><>0<>0<><>::uid://b6iekt706fkpd::::res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Basic.png<>uid://dr7qhkedg8w1r::::res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Dialogue.png<>uid://cxjvlxkma48::::res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Lists/UI_List_Basic.png<>uid://dm68mwojxd0xg::::res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Popup.png<>uid://fadrnv3gjpjs::::res://assets/ui/Pixel Modern UI Bundle/PixelPocketPhoneUI_Resources_v1.0/UI_Elements/Backgrounds/UI_Image_Mobile.png<>uid://d01sllubme7hg::::res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Buttons/UI_Button_HUD.png<>uid://hiooynmtyum4::::res://assets/ui/Pixel Modern UI Bundle/PixelPocketPhoneUI_Resources_v1.0/UI_Elements/Buttons/UI_Btn_Play_Gray_Normal.png<>uid://gxvlm4520fth::::res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Pause_BG.png<>uid://c4o3by7l6d3np::::res://assets/ui/Pixel Modern UI Bundle/PixelHudDialogueUI_Resource_v1.0/UI Elements/Panel/UI_Panel_Popup_BG.png<>uid://c77ubun3hney5::::res://assets/ui/Pixel Modern UI Bundle/PixelInventoryDiaryUI_v1.1/Icons/Gadget/UI_Icon_Phone.png<>uid://c4ikxspx4odmg::::res://assets/ui/Pixel Modern UI Bundle/PixelInventoryDiaryUI_v1.1/Icons/Daily/UI_Icon_SchoolBag.png
 ::res://scripts/::1788494451
 ::res://scripts/autoload/::1787890204
-::res://scripts/components/::1788160640
-physical_box.gd::GDScript::4755490458537346891::1788419793::0::1::::<>RigidBody3D<><>0<>0<><>::
+::res://scripts/components/::1788777261
+kangaroo_box_art.gd::GDScript::6068939227458624427::1788777251::0::1::::<>Node3D<><>0<>1<><>::
+physical_box.gd::GDScript::4755490458537346891::1788777372::0::1::::<>RigidBody3D<><>0<>0<><>::
 ::res://scripts/core/::1788427017
 game_session.gd::GDScript::3907891308501090815::1788426535::0::1::::<>Node<><>0<>0<><>::
 ::res://scripts/debug/::1787908796
 ::res://scripts/frontend/::1788427017
 main_menu.gd::GDScript::6929334476987378331::1788516684::0::1::::<>Control<><>0<>0<><>::
-::res://scripts/stall_demo/::1788747798
-city_pedestrian.gd::GDScript::300910347153531266::1788747788::0::1::::<>Node3D<><>0<>0<><>::
-stall_demo.gd::GDScript::276417865790749160::1788749486::0::1::::<>Node3D<><>0<>0<><>::
+::res://scripts/stall_demo/::1788774228
+acrylic_display.gd::GDScript::6854207376848660073::1788774469::0::1::::<>Node3D<><>0<>1<><>::
+city_pedestrian.gd::GDScript::300910347153531266::1788754304::0::1::::<>Node3D<><>0<>0<><>::
+day_one_story.gd::GDScript::3148961153390276835::1788754070::0::1::::<>Control<><>0<>0<><>::
+inventory_grid.gd::GDScript::3689107955208332367::1788769049::0::1::::<>Control<><>0<>0<><>::
+item_market.gd::GDScript::8487383793993378150::1788768776::0::1::::<>RefCounted<><>0<>0<><>::
+phone_shop_grid.gd::GDScript::4441328545120387921::1788774660::0::1::::<>GridContainer<><>0<>0<><>::
+stall_demo.gd::GDScript::276417865790749160::1788774660::0::1::::<>Node3D<><>0<>0<><>::
 ::res://scripts/systems/::1787890204
 ::res://scripts/ui/::1788503465
-main.gd::GDScript::397627508844440531::1788523055::0::1::::<>Node3D<><>0<>0<><>::
-pixel_ui_skin.gd::GDScript::1818528589135247612::1788749486::0::1::::<>RefCounted<><>0<>0<><>::
+main.gd::GDScript::397627508844440531::1788773993::0::1::::<>Node3D<><>0<>0<><>::
+pixel_ui_skin.gd::GDScript::1818528589135247612::1788749558::0::1::::<>RefCounted<><>0<>0<><>::
 price_chart.gd::GDScript::7530319698204461273::1788445336::0::1::::<>Control<><>0<>0<><>::
 ::res://scripts/vfx/::1788494783
 reveal_spritesheet_vfx.gd::GDScript::4380858247352593090::1788494701::0::1::::<>Node3D<><>0<>0<><>::
 spritesheet_vfx_2d.gd::GDScript::8892343805466135408::1788494451::0::1::::<>Sprite2D<><>0<>0<><>::
 spritesheet_vfx_3d.gd::GDScript::6895509356153553760::1788494451::0::1::::<>Sprite3D<><>0<>0<><>::
-::res://tests/::1788747874
+::res://tests/::1788777414
 validate_campaign_flow.gd::GDScript::2702497902953267012::1788522916::0::1::::<>SceneTree<><>0<>0<><>::
-validate_city_presentation.gd::GDScript::1949656673030194722::1788749486::0::1::::<>SceneTree<><>0<>0<><>::
+validate_city_presentation.gd::GDScript::1949656673030194722::1788769111::0::1::::<>SceneTree<><>0<>0<><>::
+validate_crowd_story.gd::GDScript::1646882109367452486::1788754339::0::1::::<>SceneTree<><>0<>0<><>::
+validate_market_inventory.gd::GDScript::4974984983664789238::1788769111::0::1::::<>SceneTree<><>0<>0<><>::
+validate_phone_shopping_opening.gd::GDScript::3159409940639443987::1788777292::0::1::::<>SceneTree<><>0<>0<><>::
 validate_series_data.gd::GDScript::7769738067617085754::1788523055::0::1::::<>SceneTree<><>0<>0<><>::
 validate_stall_scale.gd::GDScript::5380498433085421169::1788421842::0::1::::<>SceneTree<><>0<>0<><>::

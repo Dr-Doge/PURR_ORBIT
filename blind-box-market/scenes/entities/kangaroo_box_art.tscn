@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/3D assets/肥嘟嘟袋鼠/盒体/肥嘟嘟袋鼠盒子.fbx" id="1_body"]
+[ext_resource type="PackedScene" path="res://assets/3D assets/肥嘟嘟袋鼠/盒体/肥嘟嘟袋鼠盖子.fbx" id="2_lid"]
+[ext_resource type="Texture2D" path="res://assets/3D assets/肥嘟嘟袋鼠/盒体/肥嘟嘟袋鼠贴图.jpg" id="3_texture"]
+[ext_resource type="Script" path="res://scripts/components/kangaroo_box_art.gd" id="4_script"]
+
+[sub_resource type="StandardMaterial3D" id="PackagingMaterial"]
+albedo_texture = ExtResource("3_texture")
+roughness = 0.8
+cull_mode = 2
+texture_filter = 5
+
+[node name="KangarooBoxArt" type="Node3D"]
+script = ExtResource("4_script")
+packaging_material = SubResource("PackagingMaterial")
+
+[node name="BodyModel" parent="." instance=ExtResource("1_body")]
+position = Vector3(-1.7279165, 0, 0)
+rotation = Vector3(0, 3.1415927, 0)
+scale = Vector3(0.65, 0.65, 0.65)
+
+[node name="LidPivot" type="Node3D" parent="."]
+position = Vector3(0, 0.65, -0.476043)
+
+[node name="LidModel" parent="LidPivot" instance=ExtResource("2_lid")]
+position = Vector3(-1.7279165, -0.9319635, 0.476043)
+rotation = Vector3(0, 3.1415927, 0)
+scale = Vector3(0.65, 0.65, 0.65)

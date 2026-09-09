@@ -94,11 +94,12 @@ func run() -> void:
 	stall._clear_pedestrians()
 	assert(stall.stall_pedestrians.is_empty())
 	stall.stall_customer_profile = stall.CUSTOMER_PROFILES[1]
+	var affordable: int = mini(45, int(round(stall.inventory_item_price(stall.stall_listings[0]["item"]) * 1.05)))
 	var full_price_count := 0
 	for attempt in 100:
 		stall._make_customer_offer()
-		assert(stall.stall_offer_price in [41, 45], "Ordinary fans only ask about 10% off or pay the tag")
-		if stall.stall_offer_price == 45: full_price_count += 1
+		assert(stall.stall_offer_price in [int(round(affordable * 0.90)), affordable], "Ordinary fans respect the market budget")
+		if stall.stall_offer_price == affordable: full_price_count += 1
 	assert(full_price_count > 45 and full_price_count < 85)
 	stall.stall_offer_price = 45
 	stall._open_bargain()
