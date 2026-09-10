@@ -96,8 +96,11 @@ func _button(parent:Node,value:String,rect:Rect2,callback:Callable)->Button:
 	b.add_theme_color_override("font_color",INK)
 	b.pressed.connect(callback); parent.add_child(b); return b
 
+func _create_board() -> Control:
+	return Board.new()
+
 func _build()->void:
-	board=Board.new(); board.model=model; board.position=Vector2(4,14); board.size=C.WORLD; add_child(board)
+	board=_create_board(); board.model=model; board.position=Vector2(4,14); board.size=C.WORLD; add_child(board)
 	var side:=_panel(self,Rect2(1110,14,248,822),Color("102125"))
 	_text(side,"地球盲盒考古 / v0.3",Rect2(14,12,222,26),16,ACCENT)
 	_text(side,"废料",Rect2(14,45,100,20),12,MUTED)
@@ -511,7 +514,7 @@ func _new_game_confirmation()->void:
 	_clear_body()
 	_text(page_body,"新游戏会覆盖当前新版Demo存档。",Rect2(100,170,900,50),25)
 	_button(page_body,"确认新游戏",Rect2(190,260,300,50),func():
-		if save_enabled and FileAccess.file_exists("user://ea_save.dat"): DirAccess.remove_absolute("user://ea_save.dat")
+		if save_enabled and FileAccess.file_exists(save_path): DirAccess.remove_absolute(save_path)
 		get_tree().reload_current_scene())
 	_button(page_body,"取消",Rect2(560,260,300,50),_render_page)
 

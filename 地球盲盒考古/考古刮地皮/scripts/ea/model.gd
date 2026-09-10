@@ -257,6 +257,9 @@ func footprint_clear(layer: Dictionary,find: Dictionary) -> bool:
 			if layer.mask[y*WIDTH+x]!=0: return false
 	return true
 
+func scrap_reward(layer: Dictionary, find: Dictionary) -> RefCounted:
+	return amount(layer.scale).times(int(find.value))
+
 func scan_exposed_finds() -> void:
 	for layer in layers:
 		if float(layer.cleared)/PIXELS>=C.FINISH:
@@ -271,7 +274,7 @@ func scan_exposed_finds() -> void:
 			find.collected=true
 			if find.kind=="scrap":
 				var before := wallet.floor_value()
-				var reward: RefCounted = amount(layer.scale).times(int(find.value))
+				var reward: RefCounted = scrap_reward(layer,find)
 				wallet=wallet.plus(reward)
 				earned=earned.plus(reward)
 				var visible_gain: RefCounted = wallet.floor_value().minus(before)
@@ -485,6 +488,9 @@ func load_preset(slot: int) -> void:
 	for i in range(6): machines[i].enabled=presets[slot].enabled[i]
 	touch()
 
+func extra_save_state() -> Dictionary:
+	return {}
+
 func save_to(path: String = "user://ea_save.dat") -> Error:
 	var state := {"version":3,"analyzer":analyzer,"queue_priority":queue_priority,"wallet":wallet.data(),"earned":earned.data(),"layers":layers,"rng":rng.state,
 		"base_depth":base_depth,"next_id":next_id,"elapsed":elapsed,"started":started,"levels":levels,
@@ -492,6 +498,7 @@ func save_to(path: String = "user://ea_save.dat") -> Error:
 		"draws":draws,"duplicate_streak":duplicate_streak,"machines":machines,"robots":robots,
 		"knowledge":knowledge,"awarded_sets":awarded_sets,"talents":talents,"auto_sell":auto_sell,
 		"priority_series":priority_series,"presets":presets,"reduce_fx":reduce_fx,"skip_repeat":skip_repeat}
+	state.merge(extra_save_state())
 	var file := FileAccess.open(path+".tmp",FileAccess.WRITE)
 	if file==null: return FileAccess.get_open_error()
 	file.store_var(state)

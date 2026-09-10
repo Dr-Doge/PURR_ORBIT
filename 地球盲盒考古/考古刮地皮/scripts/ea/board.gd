@@ -170,8 +170,9 @@ func _draw_overlay(canvas: Control) -> void:
 		var color: Color = particle.color
 		color.a = minf(1.0, particle.life / 0.35)
 		var font := get_theme_default_font()
-		canvas.draw_string_outline(font, particle.p, particle.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 18, 4, Color(0.02,0.03,0.03,color.a))
-		canvas.draw_string(font, particle.p, particle.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 18, color)
+		var font_size: int = particle.get("font_size",18)
+		canvas.draw_string_outline(font, particle.p, particle.text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, 4, Color(0.02,0.03,0.03,color.a))
+		canvas.draw_string(font, particle.p, particle.text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, color)
 	if model.auto_enabled and model.started:
 		for i in range(model.levels.auto):
 			var p: Vector2 = model.auto_points[i]

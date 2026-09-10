@@ -1,6 +1,6 @@
 # 考古刮地皮 · v0.3 Demo
 
-使用 Godot 4.6.2 或当前安装的兼容版本打开本目录 `project.godot`，按 **F5**。默认场景为 `scenes/ea_demo.tscn`；旧三分钟原型保留在 `scenes/main.tscn`。
+使用 Godot 4.7.1 打开本目录 `project.godot`，按 **F5**。Jomin 分支默认场景为 `scenes/shovel_demo.tscn`（[自动铲子玩法说明](SHOVEL_MODE.md)）。原 v0.3 刮地玩法保留在 `scenes/ea_demo.tscn`，旧三分钟原型保留在 `scenes/main.tscn`；打开对应场景按 **F6** 即可独立运行。
 
 ## 本版操作
 
