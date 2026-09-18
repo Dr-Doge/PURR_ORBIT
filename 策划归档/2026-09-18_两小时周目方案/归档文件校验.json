@@ -1,0 +1,86 @@
+[
+  {
+    "path": "摸猫增量策划案/00_索引.md",
+    "sha256": "c8bdf9d9c85d8c62388bc5a12aa8a1bcf047bded6c934072f65c77f0bba4d6e7"
+  },
+  {
+    "path": "摸猫增量策划案/01_定位与核心循环.md",
+    "sha256": "ebe2a4a0e5686b95d25cfe25517b59576965be4496a0724f9d9fc9475dff3996"
+  },
+  {
+    "path": "摸猫增量策划案/02_产毛叠层与收割.md",
+    "sha256": "ec0a4632e1049288a9aec71dbdabd9bb9ef7d696a1676e1e368e35323c9293ac"
+  },
+  {
+    "path": "摸猫增量策划案/03_猫咪种类与转化.md",
+    "sha256": "8b7183b37e0d4bb01f292b9bdb7e278df6c28210afdcaa3a99d215d392a2f8ff"
+  },
+  {
+    "path": "摸猫增量策划案/04_设施与使用流程.md",
+    "sha256": "7221c7f6df44186df1e986c21d26d074f4bafe6ce06bf02b6e6208fc064a7b6b"
+  },
+  {
+    "path": "摸猫增量策划案/05_新需求与设施联动.md",
+    "sha256": "ecd6ceed802b5072656d5bd0d798eb337a194865c7e17343f6f2b0dc1d3cdeb6"
+  },
+  {
+    "path": "摸猫增量策划案/06_工人与职责分配.md",
+    "sha256": "dec399719d6269b532f6d36120c377aa7962298e869bd93ae4b4d87b4250d0af"
+  },
+  {
+    "path": "摸猫增量策划案/07_升级树与解锁规划.md",
+    "sha256": "3c379a087910be8228cc6fb779c836b9c66402c2f6fb8fc18ca9c9f6bb553fd8"
+  },
+  {
+    "path": "摸猫增量策划案/08_资源经济与数值框架.md",
+    "sha256": "8f2d107e0fb163bb352192b1f22620a8b506bbdd6979f70c9442a081eb9a170a"
+  },
+  {
+    "path": "摸猫增量策划案/09_界面交互与反馈.md",
+    "sha256": "e921e9876ec689748397421249c28c1c79efa5d6cd81261ae2453eafa5e6622d"
+  },
+  {
+    "path": "摸猫增量策划案/10_游玩流程与引导.md",
+    "sha256": "ddbd8e8383da78012d01d4f7b20d3fb545213049ba569f2851261b7c5f858e6a"
+  },
+  {
+    "path": "摸猫增量策划案/11_验证范围与拓展.md",
+    "sha256": "a0204c68d5e9ed49249c834211294c5d3eb4d4ff239105791e5b7f04ccf004f8"
+  },
+  {
+    "path": "摸猫增量策划案/12_待定决策与变更.md",
+    "sha256": "fcebf8a067f5c506ad9944b282f5eac631aa149c17d76147cc1fa24fdad6ed0b"
+  },
+  {
+    "path": "摸猫增量策划案/13_神秘扭蛋与系列收藏.md",
+    "sha256": "9cc6e98c84198300a6706090a3052d07cfe93154c78bb915f8a0d5888b6ba965"
+  },
+  {
+    "path": "摸猫增量策划案/14_周目循环与继承.md",
+    "sha256": "7397d1152ca315f6fc3385b6da05195b2fff975a34d9be5f1495a5bc1ee62f63"
+  },
+  {
+    "path": "摸猫增量策划案/15_多猫饲养_荒诞需求与增量拓展.md",
+    "sha256": "1ebc48134cf13566c24080b38a1b3955ebf255c60297d663b67281a8a1bd7a30"
+  },
+  {
+    "path": "摸猫增量策划案/16_两小时Demo数值与周目节奏分析.md",
+    "sha256": "7286a9957e9996a04b1a741e9a5b34470228d4e6200607a331a98af37e3bdcc2"
+  },
+  {
+    "path": "AGENTS.md",
+    "sha256": "9632e5ae00571f4c0483dc1aa6585a37c5c1636bc8443fc7daefdadb09730848"
+  },
+  {
+    "path": "README.md",
+    "sha256": "f964c8d6a92c78e969aed1a389d22c726304ff841a06840066f488cfcdaa31de"
+  },
+  {
+    "path": "毛球满屋/README.md",
+    "sha256": "d8f9546f8c4cf89b454d4f0f5b302d92d4d8a8b4af6bbe17f154396bdeeaa5f4"
+  },
+  {
+    "path": "毛球满屋/DEMO_RULES.md",
+    "sha256": "18753d1c75e1f7097d62515dd68515089885331f89de86037def8ca4b55b0a16"
+  }
+]

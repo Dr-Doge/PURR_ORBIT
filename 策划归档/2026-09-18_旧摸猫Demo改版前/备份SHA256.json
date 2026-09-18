@@ -1,0 +1,18 @@
+{
+  "active-game.json": "17fb64779421221639c23b472cb45beae9842f9f3c7e6764fea285cddc69ae26",
+  "project.godot": "8cac43ba9c966356f14d3b63d7370030c8a388f4afee91ae5b18daff4746ff2b",
+  "README.md": "23be80d8504892a5f2e2c03c5b923226fc29da576d24372fc636bd690fb51072",
+  "scenes/main.tscn": "6dbe545ecf0c470928c734c90c462f1ee1216b9e153c4686d4ce9fb9e6d591c3",
+  "scripts/data.gd": "0cb20514abc493aa2d824aea0076aeec4d10662634d965a790d842e4d83b3011",
+  "scripts/data.gd.uid": "f270403409d3881c715e3e173533bc3c2020d3751ba576bd7218e2ec9ed0ecc2",
+  "scripts/main.gd": "be34fc4d53ebf6dc511ae2268e778e43727eb921acc03e56df199674c153344a",
+  "scripts/main.gd.uid": "7f322dc85ee0bd9067ec7175131e6e4a7d6f039decd1da4c31a20fc6d5422a8e",
+  "scripts/model.gd": "ab76933a6d66bd40803cae84fbdeb2c7cdfc0312d3b17bd1c340195d6886a0dc",
+  "scripts/model.gd.uid": "6ede67fc24e01c1b6557b448c13f42c2161d1763eb1e157092313a06345d3172",
+  "scripts/room.gd": "7e8def545a2aa0d1faa1a13ebf541e004537112fd8b0f7a3840bf0e81324620c",
+  "scripts/room.gd.uid": "91135751ffa683bc992f7fee39e952282e93bb44ff7bb59a8ac80752b5c689f0",
+  "tests/render_demo.gd": "18777ce95dfb5adba5e53b69f4ef2cd894367aa06b195b67a71c6df192b1b7f6",
+  "tests/render_demo.gd.uid": "a3d3f06e3a463def92cccfa8d72f9b678312905d4bfe6d1dd374771718540238",
+  "tests/test_demo.gd": "1f7a87ceaeb2b0b78d0293820a6f02138f081f07cfd86f90067c7fc0bc6aa178",
+  "tests/test_demo.gd.uid": "3125735f8f1c063428d4f47d7eb9bc470bccdc693bdc56410a41238af78ae52b"
+}
