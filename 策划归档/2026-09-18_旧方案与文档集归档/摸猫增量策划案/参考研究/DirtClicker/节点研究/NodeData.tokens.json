@@ -1,0 +1,5802 @@
+[
+  {
+    "line": 1,
+    "type": 56,
+    "text": "class_name"
+  },
+  {
+    "line": 1,
+    "type": 2,
+    "text": "NodeData"
+  },
+  {
+    "line": 1,
+    "type": 59,
+    "text": "extends"
+  },
+  {
+    "line": 1,
+    "type": 2,
+    "text": "RefCounted"
+  },
+  {
+    "line": 4,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 4,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 4,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 4,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 4,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 4,
+    "type": 3,
+    "text": "\"NULL\""
+  },
+  {
+    "line": 5,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 5,
+    "type": 2,
+    "text": "name"
+  },
+  {
+    "line": 5,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 5,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 6,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 6,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 6,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 6,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 6,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 6,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 6,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 6,
+    "type": 2,
+    "text": "Array"
+  },
+  {
+    "line": 6,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 7,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 7,
+    "type": 2,
+    "text": "pos_world"
+  },
+  {
+    "line": 7,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 7,
+    "type": 2,
+    "text": "Array"
+  },
+  {
+    "line": 7,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 7,
+    "type": 2,
+    "text": "Vector2"
+  },
+  {
+    "line": 7,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 8,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 8,
+    "type": 2,
+    "text": "ps_node_world"
+  },
+  {
+    "line": 8,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 8,
+    "type": 2,
+    "text": "PackedScene"
+  },
+  {
+    "line": 9,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 9,
+    "type": 2,
+    "text": "icon_frame"
+  },
+  {
+    "line": 9,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 9,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 10,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 10,
+    "type": 2,
+    "text": "is_shop"
+  },
+  {
+    "line": 10,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 10,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 11,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 11,
+    "type": 2,
+    "text": "metadata_loaded"
+  },
+  {
+    "line": 11,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 11,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 11,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 11,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 11,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 11,
+    "type": 2,
+    "text": "Variant"
+  },
+  {
+    "line": 11,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 12,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 12,
+    "type": 2,
+    "text": "description"
+  },
+  {
+    "line": 12,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 12,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 13,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 13,
+    "type": 2,
+    "text": "color_main"
+  },
+  {
+    "line": 13,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 13,
+    "type": 2,
+    "text": "Color"
+  },
+  {
+    "line": 14,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 14,
+    "type": 2,
+    "text": "is_tool"
+  },
+  {
+    "line": 14,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 14,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 15,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 15,
+    "type": 2,
+    "text": "is_pal"
+  },
+  {
+    "line": 15,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 15,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 16,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 16,
+    "type": 2,
+    "text": "hat_frame"
+  },
+  {
+    "line": 16,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 16,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 17,
+    "type": 66,
+    "text": "signal"
+  },
+  {
+    "line": 17,
+    "type": 2,
+    "text": "on_stat_level_change"
+  },
+  {
+    "line": 17,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 17,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 17,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 17,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 17,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 22,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 22,
+    "type": 2,
+    "text": "_init"
+  },
+  {
+    "line": 22,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 22,
+    "type": 2,
+    "text": "_key"
+  },
+  {
+    "line": 22,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 22,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 22,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 22,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 22,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 22,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 23,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "_key"
+  },
+  {
+    "line": 26,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 26,
+    "type": 2,
+    "text": "clear"
+  },
+  {
+    "line": 26,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 26,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 26,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 26,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 26,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 27,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 27,
+    "type": 2,
+    "text": "stat_key"
+  },
+  {
+    "line": 27,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 27,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 27,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 27,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 27,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 28,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 28,
+    "type": 2,
+    "text": "s"
+  },
+  {
+    "line": 28,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 28,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 28,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 28,
+    "type": 2,
+    "text": "stat_key"
+  },
+  {
+    "line": 28,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 28,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 29,
+    "type": 2,
+    "text": "s"
+  },
+  {
+    "line": 29,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 29,
+    "type": 2,
+    "text": "clear"
+  },
+  {
+    "line": 29,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 29,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 30,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 30,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 30,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 30,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 31,
+    "type": 2,
+    "text": "metadata_loaded"
+  },
+  {
+    "line": 31,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 31,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 31,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 34,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "stat_create"
+  },
+  {
+    "line": 34,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 34,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 34,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 34,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 34,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 34,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 34,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 35,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 35,
+    "type": 15,
+    "text": "!"
+  },
+  {
+    "line": 35,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 35,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 35,
+    "type": 2,
+    "text": "has"
+  },
+  {
+    "line": 35,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 35,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 35,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 35,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 36,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 36,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 36,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 36,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 36,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 36,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 36,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 37,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 37,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 37,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 37,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 37,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 37,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 37,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 37,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 37,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 37,
+    "type": 5,
+    "text": "<="
+  },
+  {
+    "line": 37,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 37,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 38,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "array_insert"
+  },
+  {
+    "line": 38,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 38,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 38,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 38,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 38,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 38,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "new"
+  },
+  {
+    "line": 38,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 38,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 38,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 38,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 38,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 39,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 39,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 39,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 39,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 39,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "on_level_change"
+  },
+  {
+    "line": 39,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "connect"
+  },
+  {
+    "line": 39,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "on_stat_level_change"
+  },
+  {
+    "line": 39,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "emit"
+  },
+  {
+    "line": 39,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "bind"
+  },
+  {
+    "line": 39,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 39,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 39,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 39,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 39,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 39,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 39,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "unbind"
+  },
+  {
+    "line": 39,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 39,
+    "type": 3,
+    "text": "1"
+  },
+  {
+    "line": 39,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 39,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 40,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 40,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 40,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 40,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 40,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 40,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 40,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 40,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 43,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "stat_set_level"
+  },
+  {
+    "line": 43,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 43,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 43,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "_stat_level"
+  },
+  {
+    "line": 43,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 43,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 43,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 43,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 43,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 43,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 43,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 44,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 44,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 44,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 44,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 44,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 44,
+    "type": 2,
+    "text": "stat_get"
+  },
+  {
+    "line": 44,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 44,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 44,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 44,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 44,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 45,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 45,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 45,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 46,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 46,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 46,
+    "type": 2,
+    "text": "set_level"
+  },
+  {
+    "line": 46,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 46,
+    "type": 2,
+    "text": "_stat_level"
+  },
+  {
+    "line": 46,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 49,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 49,
+    "type": 2,
+    "text": "stat_exists"
+  },
+  {
+    "line": 49,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 49,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 49,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 49,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 49,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 49,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 49,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 49,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 49,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 49,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 49,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 49,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 49,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 49,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 50,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 50,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 50,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 50,
+    "type": 2,
+    "text": "has"
+  },
+  {
+    "line": 50,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 50,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 50,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 50,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 50,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 50,
+    "type": 4,
+    "text": "<"
+  },
+  {
+    "line": 50,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 50,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 50,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 50,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 50,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 50,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 50,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 50,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 53,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 53,
+    "type": 2,
+    "text": "stat_get"
+  },
+  {
+    "line": 53,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 53,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 53,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 53,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 53,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 53,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 53,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 53,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 53,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 53,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 53,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 53,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 53,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 53,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 54,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 54,
+    "type": 2,
+    "text": "stat_exists"
+  },
+  {
+    "line": 54,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 54,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 54,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 54,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 54,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 54,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 55,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 55,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 55,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 55,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 55,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 55,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 55,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 55,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 56,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 56,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 57,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 57,
+    "type": 3,
+    "text": "null"
+  },
+  {
+    "line": 60,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 60,
+    "type": 2,
+    "text": "stat_get_value"
+  },
+  {
+    "line": 60,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 60,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 60,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 60,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 60,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 60,
+    "type": 2,
+    "text": "default_return"
+  },
+  {
+    "line": 60,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 60,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 60,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 60,
+    "type": 3,
+    "text": "0.0"
+  },
+  {
+    "line": 60,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 60,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 60,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 60,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 62,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 62,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 62,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 62,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 62,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 62,
+    "type": 3,
+    "text": "0.0"
+  },
+  {
+    "line": 63,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 63,
+    "type": 2,
+    "text": "count"
+  },
+  {
+    "line": 63,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 63,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 63,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 63,
+    "type": 2,
+    "text": "stats_count"
+  },
+  {
+    "line": 63,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 63,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 63,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 64,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 64,
+    "type": 2,
+    "text": "count"
+  },
+  {
+    "line": 64,
+    "type": 6,
+    "text": ">"
+  },
+  {
+    "line": 64,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 64,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 65,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 65,
+    "type": 2,
+    "text": "count"
+  },
+  {
+    "line": 65,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 65,
+    "type": 3,
+    "text": "1"
+  },
+  {
+    "line": 65,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 66,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 66,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 66,
+    "type": 2,
+    "text": "stat_get"
+  },
+  {
+    "line": 66,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 66,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 66,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 66,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 66,
+    "type": 2,
+    "text": "get_value"
+  },
+  {
+    "line": 66,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 66,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 67,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 67,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 68,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 68,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 68,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 68,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 68,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 68,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 68,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 68,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 68,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 68,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 68,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 68,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 68,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 68,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 69,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 69,
+    "type": 29,
+    "text": "+="
+  },
+  {
+    "line": 69,
+    "type": 2,
+    "text": "stat_get"
+  },
+  {
+    "line": 69,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 69,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 69,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 69,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 69,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 69,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 69,
+    "type": 2,
+    "text": "get_value"
+  },
+  {
+    "line": 69,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 69,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 70,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 70,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 71,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 71,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 71,
+    "type": 2,
+    "text": "default_return"
+  },
+  {
+    "line": 72,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 72,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 75,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 75,
+    "type": 2,
+    "text": "stat_get_value_last"
+  },
+  {
+    "line": 75,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 75,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 75,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 75,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 75,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 75,
+    "type": 2,
+    "text": "default_return"
+  },
+  {
+    "line": 75,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 75,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 75,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 75,
+    "type": 3,
+    "text": "0.0"
+  },
+  {
+    "line": 75,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 75,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 75,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 75,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 77,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 77,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 77,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 77,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 77,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 77,
+    "type": 3,
+    "text": "0.0"
+  },
+  {
+    "line": 78,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 78,
+    "type": 2,
+    "text": "count"
+  },
+  {
+    "line": 78,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 78,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 78,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 78,
+    "type": 2,
+    "text": "stats_count"
+  },
+  {
+    "line": 78,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 78,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 78,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 79,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 79,
+    "type": 2,
+    "text": "count"
+  },
+  {
+    "line": 79,
+    "type": 6,
+    "text": ">"
+  },
+  {
+    "line": 79,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 79,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 80,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 80,
+    "type": 2,
+    "text": "count"
+  },
+  {
+    "line": 80,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 80,
+    "type": 3,
+    "text": "1"
+  },
+  {
+    "line": 80,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 81,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 81,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 81,
+    "type": 2,
+    "text": "stat_get"
+  },
+  {
+    "line": 81,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 81,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 81,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 81,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 81,
+    "type": 2,
+    "text": "get_value_last"
+  },
+  {
+    "line": 81,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 81,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 82,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 82,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 83,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 83,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 83,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 83,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 83,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 83,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 83,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 83,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 83,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 83,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 83,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 83,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 83,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 83,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 84,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 84,
+    "type": 29,
+    "text": "+="
+  },
+  {
+    "line": 84,
+    "type": 2,
+    "text": "stat_get"
+  },
+  {
+    "line": 84,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 84,
+    "type": 2,
+    "text": "_stat_key"
+  },
+  {
+    "line": 84,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 84,
+    "type": 2,
+    "text": "_stat_id"
+  },
+  {
+    "line": 84,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 84,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 84,
+    "type": 2,
+    "text": "get_value_last"
+  },
+  {
+    "line": 84,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 84,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 85,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 85,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 86,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 86,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 86,
+    "type": 2,
+    "text": "default_return"
+  },
+  {
+    "line": 87,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 87,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 99,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 99,
+    "type": 2,
+    "text": "stats_count"
+  },
+  {
+    "line": 99,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 99,
+    "type": 2,
+    "text": "_key_stat"
+  },
+  {
+    "line": 99,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 99,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 99,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 99,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 99,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 99,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 100,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 100,
+    "type": 2,
+    "text": "stat_exists"
+  },
+  {
+    "line": 100,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 100,
+    "type": 2,
+    "text": "_key_stat"
+  },
+  {
+    "line": 100,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 100,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 101,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 101,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 101,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 101,
+    "type": 2,
+    "text": "_key_stat"
+  },
+  {
+    "line": 101,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 101,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 101,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 101,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 101,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 102,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 102,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 103,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 103,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 106,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "stat_value_str"
+  },
+  {
+    "line": 106,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 106,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 106,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "stat_id_offset"
+  },
+  {
+    "line": 106,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 106,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 106,
+    "type": 3,
+    "text": "-1"
+  },
+  {
+    "line": 106,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "level_offset"
+  },
+  {
+    "line": 106,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 106,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 106,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 106,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "add_amount"
+  },
+  {
+    "line": 106,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 106,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 106,
+    "type": 3,
+    "text": "0.0"
+  },
+  {
+    "line": 106,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "mult"
+  },
+  {
+    "line": 106,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 106,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 106,
+    "type": 3,
+    "text": "1.0"
+  },
+  {
+    "line": 106,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 106,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 106,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 107,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 107,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 107,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 107,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 107,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 107,
+    "type": 3,
+    "text": "\"\""
+  },
+  {
+    "line": 108,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 108,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 108,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 108,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 108,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 108,
+    "type": 2,
+    "text": "add_amount"
+  },
+  {
+    "line": 109,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 109,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 109,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 109,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 109,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 109,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 109,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 109,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 109,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 109,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 109,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 109,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 109,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 109,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 110,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 110,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 110,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 110,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 110,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 110,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 110,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 110,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 110,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 110,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 110,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 110,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 111,
+    "type": 29,
+    "text": "+="
+  },
+  {
+    "line": 111,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 111,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "get_value"
+  },
+  {
+    "line": 111,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 111,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "level"
+  },
+  {
+    "line": 111,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 111,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "level_offset"
+  },
+  {
+    "line": 111,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "stat_id_offset"
+  },
+  {
+    "line": 111,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 111,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 111,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 111,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 111,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 111,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 112,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 112,
+    "type": 31,
+    "text": "*="
+  },
+  {
+    "line": 112,
+    "type": 2,
+    "text": "mult"
+  },
+  {
+    "line": 114,
+    "type": 49,
+    "text": "match"
+  },
+  {
+    "line": 114,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 114,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 114,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 114,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 114,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 114,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 114,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 114,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 114,
+    "type": 2,
+    "text": "value_type"
+  },
+  {
+    "line": 114,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 115,
+    "type": 3,
+    "text": "\"DEFAULT\""
+  },
+  {
+    "line": 115,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 116,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 116,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 116,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 116,
+    "type": 3,
+    "text": "\"%.1f\""
+  },
+  {
+    "line": 116,
+    "type": 27,
+    "text": "%"
+  },
+  {
+    "line": 116,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 116,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 116,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 116,
+    "type": 2,
+    "text": "trim_suffix"
+  },
+  {
+    "line": 116,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 116,
+    "type": 3,
+    "text": "\".0\""
+  },
+  {
+    "line": 116,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 117,
+    "type": 3,
+    "text": "\"PERCENTAGE\""
+  },
+  {
+    "line": 117,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 118,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 118,
+    "type": 2,
+    "text": "perc"
+  },
+  {
+    "line": 118,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 118,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 118,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 118,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 118,
+    "type": 24,
+    "text": "*"
+  },
+  {
+    "line": 118,
+    "type": 3,
+    "text": "100.0"
+  },
+  {
+    "line": 119,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 119,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 119,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 119,
+    "type": 3,
+    "text": "\"%.1f\""
+  },
+  {
+    "line": 119,
+    "type": 27,
+    "text": "%"
+  },
+  {
+    "line": 119,
+    "type": 2,
+    "text": "perc"
+  },
+  {
+    "line": 119,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 119,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 119,
+    "type": 2,
+    "text": "trim_suffix"
+  },
+  {
+    "line": 119,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 119,
+    "type": 3,
+    "text": "\".0\""
+  },
+  {
+    "line": 119,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 119,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 119,
+    "type": 3,
+    "text": "\"%\""
+  },
+  {
+    "line": 120,
+    "type": 3,
+    "text": "\"LOCK\""
+  },
+  {
+    "line": 120,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 121,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 121,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 121,
+    "type": 2,
+    "text": "tr"
+  },
+  {
+    "line": 121,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 121,
+    "type": 3,
+    "text": "\"UI_LOCKED\""
+  },
+  {
+    "line": 121,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 121,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 121,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 121,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 121,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 121,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 121,
+    "type": 2,
+    "text": "tr"
+  },
+  {
+    "line": 121,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 121,
+    "type": 3,
+    "text": "\"UI_UNLOCKED\""
+  },
+  {
+    "line": 121,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 122,
+    "type": 3,
+    "text": "\"SECONDS\""
+  },
+  {
+    "line": 122,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 123,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 123,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 123,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 123,
+    "type": 3,
+    "text": "\"%.1f sec\""
+  },
+  {
+    "line": 123,
+    "type": 27,
+    "text": "%"
+  },
+  {
+    "line": 123,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 123,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 123,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 123,
+    "type": 2,
+    "text": "trim_suffix"
+  },
+  {
+    "line": 123,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 123,
+    "type": 3,
+    "text": "\".0\""
+  },
+  {
+    "line": 123,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 124,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 124,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 127,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 127,
+    "type": 2,
+    "text": "stat_value_str_added"
+  },
+  {
+    "line": 127,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 127,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 127,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 127,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 127,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 127,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 127,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 127,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 127,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 127,
+    "type": 3,
+    "text": "-1"
+  },
+  {
+    "line": 127,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 127,
+    "type": 2,
+    "text": "level_offset"
+  },
+  {
+    "line": 127,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 127,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 127,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 127,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 127,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 127,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 127,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 127,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 128,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 128,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 128,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 128,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 128,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 128,
+    "type": 3,
+    "text": "\"\""
+  },
+  {
+    "line": 129,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 129,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 129,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 129,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 129,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 129,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 129,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 130,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 130,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 130,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 130,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "get_value_added"
+  },
+  {
+    "line": 130,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 130,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "level"
+  },
+  {
+    "line": 130,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "level_offset"
+  },
+  {
+    "line": 130,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 131,
+    "type": 49,
+    "text": "match"
+  },
+  {
+    "line": 131,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 131,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 131,
+    "type": 2,
+    "text": "value_type"
+  },
+  {
+    "line": 131,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 132,
+    "type": 3,
+    "text": "\"DEFAULT\""
+  },
+  {
+    "line": 132,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 133,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 133,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 133,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 133,
+    "type": 3,
+    "text": "\"%.1f\""
+  },
+  {
+    "line": 133,
+    "type": 27,
+    "text": "%"
+  },
+  {
+    "line": 133,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 133,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 133,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 133,
+    "type": 2,
+    "text": "trim_suffix"
+  },
+  {
+    "line": 133,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 133,
+    "type": 3,
+    "text": "\".0\""
+  },
+  {
+    "line": 133,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 134,
+    "type": 3,
+    "text": "\"PERCENTAGE\""
+  },
+  {
+    "line": 134,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 135,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "perc"
+  },
+  {
+    "line": 135,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 135,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 135,
+    "type": 24,
+    "text": "*"
+  },
+  {
+    "line": 135,
+    "type": 3,
+    "text": "100.0"
+  },
+  {
+    "line": 136,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 136,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 136,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 136,
+    "type": 3,
+    "text": "\"%.1f\""
+  },
+  {
+    "line": 136,
+    "type": 27,
+    "text": "%"
+  },
+  {
+    "line": 136,
+    "type": 2,
+    "text": "perc"
+  },
+  {
+    "line": 136,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 136,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 136,
+    "type": 2,
+    "text": "trim_suffix"
+  },
+  {
+    "line": 136,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 136,
+    "type": 3,
+    "text": "\".0\""
+  },
+  {
+    "line": 136,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 136,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 136,
+    "type": 3,
+    "text": "\"%\""
+  },
+  {
+    "line": 137,
+    "type": 3,
+    "text": "\"LOCK\""
+  },
+  {
+    "line": 137,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 138,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 138,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 138,
+    "type": 2,
+    "text": "tr"
+  },
+  {
+    "line": 138,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 138,
+    "type": 3,
+    "text": "\"UI_LOCKED\""
+  },
+  {
+    "line": 138,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 138,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 138,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 138,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 138,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 138,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 138,
+    "type": 2,
+    "text": "tr"
+  },
+  {
+    "line": 138,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 138,
+    "type": 3,
+    "text": "\"UI_UNLOCKED\""
+  },
+  {
+    "line": 138,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 139,
+    "type": 3,
+    "text": "\"SECONDS\""
+  },
+  {
+    "line": 139,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 140,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 140,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 140,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 140,
+    "type": 3,
+    "text": "\"%.1f sec\""
+  },
+  {
+    "line": 140,
+    "type": 27,
+    "text": "%"
+  },
+  {
+    "line": 140,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 140,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 140,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 140,
+    "type": 2,
+    "text": "trim_suffix"
+  },
+  {
+    "line": 140,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 140,
+    "type": 3,
+    "text": "\".0\""
+  },
+  {
+    "line": 140,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 141,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 141,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 144,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 144,
+    "type": 2,
+    "text": "stat_is_negative"
+  },
+  {
+    "line": 144,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 144,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 144,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 144,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 144,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 144,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 144,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 144,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 144,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 144,
+    "type": 3,
+    "text": "-1"
+  },
+  {
+    "line": 144,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 144,
+    "type": 2,
+    "text": "level_offset"
+  },
+  {
+    "line": 144,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 144,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 144,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 144,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 144,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 144,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 144,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 144,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 145,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 145,
+    "type": 2,
+    "text": "stat_exists"
+  },
+  {
+    "line": 145,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 145,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 145,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 145,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 145,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 145,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 146,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 146,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 146,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 146,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 146,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 146,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 146,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 146,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 146,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 146,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 146,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 146,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 147,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 147,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 147,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 147,
+    "type": 2,
+    "text": "get_value_added"
+  },
+  {
+    "line": 147,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 147,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 147,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 147,
+    "type": 2,
+    "text": "level"
+  },
+  {
+    "line": 147,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 147,
+    "type": 2,
+    "text": "level_offset"
+  },
+  {
+    "line": 147,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 147,
+    "type": 4,
+    "text": "<"
+  },
+  {
+    "line": 147,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 148,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 148,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 149,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 149,
+    "type": 3,
+    "text": "false"
+  },
+  {
+    "line": 153,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 153,
+    "type": 2,
+    "text": "stat_id_value_str"
+  },
+  {
+    "line": 153,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 153,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 153,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 153,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 153,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 153,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 153,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 153,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 153,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 153,
+    "type": 2,
+    "text": "level_offset"
+  },
+  {
+    "line": 153,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 153,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 153,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 153,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 153,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 153,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 153,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 153,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 154,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 154,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 154,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 154,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 154,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 154,
+    "type": 3,
+    "text": "\"\""
+  },
+  {
+    "line": 155,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 155,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 155,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 155,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 155,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 155,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 156,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 156,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 156,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 156,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 156,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 156,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 156,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 156,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 156,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 156,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 156,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 156,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 157,
+    "type": 29,
+    "text": "+="
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 157,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "get_value"
+  },
+  {
+    "line": 157,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 157,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "level"
+  },
+  {
+    "line": 157,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "level_offset"
+  },
+  {
+    "line": 157,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 158,
+    "type": 49,
+    "text": "match"
+  },
+  {
+    "line": 158,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 158,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 158,
+    "type": 2,
+    "text": "value_type"
+  },
+  {
+    "line": 158,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 159,
+    "type": 3,
+    "text": "\"DEFAULT\""
+  },
+  {
+    "line": 159,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 160,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 160,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 160,
+    "type": 2,
+    "text": "str"
+  },
+  {
+    "line": 160,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 160,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 160,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 160,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 160,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 160,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 160,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 160,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 160,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 160,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 160,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 160,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 160,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 160,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 160,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 161,
+    "type": 3,
+    "text": "\"PERCENTAGE\""
+  },
+  {
+    "line": 161,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 162,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 162,
+    "type": 2,
+    "text": "perc"
+  },
+  {
+    "line": 162,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 162,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 162,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 162,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 162,
+    "type": 24,
+    "text": "*"
+  },
+  {
+    "line": 162,
+    "type": 3,
+    "text": "100.0"
+  },
+  {
+    "line": 163,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 163,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 163,
+    "type": 2,
+    "text": "str"
+  },
+  {
+    "line": 163,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 163,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 163,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 163,
+    "type": 2,
+    "text": "perc"
+  },
+  {
+    "line": 163,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 163,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 163,
+    "type": 2,
+    "text": "perc"
+  },
+  {
+    "line": 163,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 163,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 163,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 163,
+    "type": 2,
+    "text": "perc"
+  },
+  {
+    "line": 163,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 163,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 163,
+    "type": 2,
+    "text": "perc"
+  },
+  {
+    "line": 163,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 163,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 163,
+    "type": 3,
+    "text": "\"%\""
+  },
+  {
+    "line": 164,
+    "type": 3,
+    "text": "\"LOCK\""
+  },
+  {
+    "line": 164,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 165,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 165,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 165,
+    "type": 2,
+    "text": "tr"
+  },
+  {
+    "line": 165,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 165,
+    "type": 3,
+    "text": "\"UI_LOCKED\""
+  },
+  {
+    "line": 165,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 165,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 165,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 165,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 165,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 165,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 165,
+    "type": 2,
+    "text": "tr"
+  },
+  {
+    "line": 165,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 165,
+    "type": 3,
+    "text": "\"UI_UNLOCKED\""
+  },
+  {
+    "line": 165,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 166,
+    "type": 3,
+    "text": "\"SECONDS\""
+  },
+  {
+    "line": 166,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 167,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 167,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 167,
+    "type": 2,
+    "text": "str"
+  },
+  {
+    "line": 167,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 167,
+    "type": 2,
+    "text": "v"
+  },
+  {
+    "line": 167,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 167,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 167,
+    "type": 3,
+    "text": "\" sec\""
+  },
+  {
+    "line": 168,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 168,
+    "type": 2,
+    "text": "r"
+  },
+  {
+    "line": 171,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 171,
+    "type": 2,
+    "text": "get_world_pos"
+  },
+  {
+    "line": 171,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 171,
+    "type": 2,
+    "text": "id"
+  },
+  {
+    "line": 171,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 171,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 171,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 171,
+    "type": 2,
+    "text": "default_pos"
+  },
+  {
+    "line": 171,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 171,
+    "type": 2,
+    "text": "Vector2"
+  },
+  {
+    "line": 171,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 171,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 171,
+    "type": 2,
+    "text": "Vector2"
+  },
+  {
+    "line": 171,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 172,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 172,
+    "type": 2,
+    "text": "default_pos"
+  },
+  {
+    "line": 172,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 172,
+    "type": 2,
+    "text": "id"
+  },
+  {
+    "line": 172,
+    "type": 4,
+    "text": "<"
+  },
+  {
+    "line": 172,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 172,
+    "type": 14,
+    "text": "||"
+  },
+  {
+    "line": 172,
+    "type": 2,
+    "text": "id"
+  },
+  {
+    "line": 172,
+    "type": 7,
+    "text": ">="
+  },
+  {
+    "line": 172,
+    "type": 2,
+    "text": "pos_world"
+  },
+  {
+    "line": 172,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 172,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 172,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 172,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 172,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 172,
+    "type": 2,
+    "text": "pos_world"
+  },
+  {
+    "line": 172,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 172,
+    "type": 2,
+    "text": "id"
+  },
+  {
+    "line": 172,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 175,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 175,
+    "type": 2,
+    "text": "is_stat_count_max"
+  },
+  {
+    "line": 175,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 175,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 175,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 175,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 175,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 176,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 176,
+    "type": 2,
+    "text": "off"
+  },
+  {
+    "line": 176,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 176,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 176,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 176,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 176,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 176,
+    "type": 2,
+    "text": "stat_get_value_last"
+  },
+  {
+    "line": 176,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 176,
+    "type": 3,
+    "text": "\"COUNT_ADD\""
+  },
+  {
+    "line": 176,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 176,
+    "type": 23,
+    "text": "-"
+  },
+  {
+    "line": 176,
+    "type": 2,
+    "text": "stat_get_value"
+  },
+  {
+    "line": 176,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 176,
+    "type": 3,
+    "text": "\"COUNT_ADD\""
+  },
+  {
+    "line": 176,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 176,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 177,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 177,
+    "type": 2,
+    "text": "stat_count"
+  },
+  {
+    "line": 177,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 177,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 177,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 177,
+    "type": 2,
+    "text": "stat_get"
+  },
+  {
+    "line": 177,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 177,
+    "type": 3,
+    "text": "\"COUNT\""
+  },
+  {
+    "line": 177,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 178,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 178,
+    "type": 2,
+    "text": "stat_count"
+  },
+  {
+    "line": 178,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 178,
+    "type": 2,
+    "text": "is_max_level"
+  },
+  {
+    "line": 178,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 178,
+    "type": 2,
+    "text": "off"
+  },
+  {
+    "line": 178,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 181,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 181,
+    "type": 2,
+    "text": "stat_count_max"
+  },
+  {
+    "line": 181,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 181,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 181,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 181,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 181,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 182,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 182,
+    "type": 2,
+    "text": "off"
+  },
+  {
+    "line": 182,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 182,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 182,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 182,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 182,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 182,
+    "type": 2,
+    "text": "stat_get_value_last"
+  },
+  {
+    "line": 182,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 182,
+    "type": 3,
+    "text": "\"COUNT_ADD\""
+  },
+  {
+    "line": 182,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 182,
+    "type": 23,
+    "text": "-"
+  },
+  {
+    "line": 182,
+    "type": 2,
+    "text": "stat_get_value"
+  },
+  {
+    "line": 182,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 182,
+    "type": 3,
+    "text": "\"COUNT_ADD\""
+  },
+  {
+    "line": 182,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 182,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 183,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 183,
+    "type": 2,
+    "text": "stat_get"
+  },
+  {
+    "line": 183,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 183,
+    "type": 3,
+    "text": "\"COUNT\""
+  },
+  {
+    "line": 183,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 183,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 183,
+    "type": 2,
+    "text": "levels"
+  },
+  {
+    "line": 183,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 183,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 183,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 183,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 183,
+    "type": 23,
+    "text": "-"
+  },
+  {
+    "line": 183,
+    "type": 3,
+    "text": "1"
+  },
+  {
+    "line": 183,
+    "type": 23,
+    "text": "-"
+  },
+  {
+    "line": 183,
+    "type": 2,
+    "text": "off"
+  }
+]

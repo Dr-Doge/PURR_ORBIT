@@ -1,0 +1,2107 @@
+[
+  {
+    "line": 1,
+    "type": 56,
+    "text": "class_name"
+  },
+  {
+    "line": 1,
+    "type": 2,
+    "text": "UpgradesCon"
+  },
+  {
+    "line": 1,
+    "type": 59,
+    "text": "extends"
+  },
+  {
+    "line": 1,
+    "type": 2,
+    "text": "Node"
+  },
+  {
+    "line": 3,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 3,
+    "type": 2,
+    "text": "has_skill_tree"
+  },
+  {
+    "line": 3,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 3,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 4,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 4,
+    "type": 2,
+    "text": "has_inv"
+  },
+  {
+    "line": 4,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 4,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 5,
+    "type": 66,
+    "text": "signal"
+  },
+  {
+    "line": 5,
+    "type": 2,
+    "text": "on_upgrade_complete"
+  },
+  {
+    "line": 5,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 5,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 5,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 5,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 5,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 5,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 5,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 5,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 5,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 5,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 5,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 5,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 5,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 6,
+    "type": 66,
+    "text": "signal"
+  },
+  {
+    "line": 6,
+    "type": 2,
+    "text": "on_upgrade_complete_skill_tree"
+  },
+  {
+    "line": 7,
+    "type": 66,
+    "text": "signal"
+  },
+  {
+    "line": 7,
+    "type": 2,
+    "text": "on_upgrade_complete_max_skill_tree"
+  },
+  {
+    "line": 8,
+    "type": 66,
+    "text": "signal"
+  },
+  {
+    "line": 8,
+    "type": 2,
+    "text": "on_upgrade_complete_shop"
+  },
+  {
+    "line": 9,
+    "type": 66,
+    "text": "signal"
+  },
+  {
+    "line": 9,
+    "type": 2,
+    "text": "on_upgrade_stat"
+  },
+  {
+    "line": 9,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 9,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 9,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 9,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 9,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 10,
+    "type": 66,
+    "text": "signal"
+  },
+  {
+    "line": 10,
+    "type": 2,
+    "text": "on_upgrade"
+  },
+  {
+    "line": 11,
+    "type": 66,
+    "text": "signal"
+  },
+  {
+    "line": 11,
+    "type": 2,
+    "text": "on_hat_buy"
+  },
+  {
+    "line": 11,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 11,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 11,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 11,
+    "type": 2,
+    "text": "NodeData"
+  },
+  {
+    "line": 11,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 12,
+    "type": 66,
+    "text": "signal"
+  },
+  {
+    "line": 12,
+    "type": 2,
+    "text": "on_user_unlocked_skill_tree"
+  },
+  {
+    "line": 13,
+    "type": 66,
+    "text": "signal"
+  },
+  {
+    "line": 13,
+    "type": 2,
+    "text": "on_user_unlocked_inv"
+  },
+  {
+    "line": 14,
+    "type": 66,
+    "text": "signal"
+  },
+  {
+    "line": 14,
+    "type": 2,
+    "text": "on_shop_out_of_stock"
+  },
+  {
+    "line": 16,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 16,
+    "type": 2,
+    "text": "_ready"
+  },
+  {
+    "line": 16,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 16,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 16,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 16,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 16,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 17,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 17,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 17,
+    "type": 2,
+    "text": "upgrades"
+  },
+  {
+    "line": 17,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 17,
+    "type": 65,
+    "text": "self"
+  },
+  {
+    "line": 18,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 18,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 18,
+    "type": 2,
+    "text": "on_game_init"
+  },
+  {
+    "line": 18,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 18,
+    "type": 2,
+    "text": "connect"
+  },
+  {
+    "line": 18,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 18,
+    "type": 2,
+    "text": "_on_game_init"
+  },
+  {
+    "line": 18,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 19,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 19,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 19,
+    "type": 2,
+    "text": "on_data_loaded"
+  },
+  {
+    "line": 19,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 19,
+    "type": 2,
+    "text": "connect"
+  },
+  {
+    "line": 19,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 19,
+    "type": 2,
+    "text": "_on_data_loaded"
+  },
+  {
+    "line": 19,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 22,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 22,
+    "type": 2,
+    "text": "_on_game_init"
+  },
+  {
+    "line": 22,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 22,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 22,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 22,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 22,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 23,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "ui"
+  },
+  {
+    "line": 23,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "shop"
+  },
+  {
+    "line": 23,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "on_purchase_request"
+  },
+  {
+    "line": 23,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "connect"
+  },
+  {
+    "line": 23,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "_on_purchase_request"
+  },
+  {
+    "line": 23,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "bind"
+  },
+  {
+    "line": 23,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 23,
+    "type": 3,
+    "text": "\"COUNT\""
+  },
+  {
+    "line": 23,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 23,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 23,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 23,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 24,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 24,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 24,
+    "type": 2,
+    "text": "ui"
+  },
+  {
+    "line": 24,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 24,
+    "type": 2,
+    "text": "skill_tree"
+  },
+  {
+    "line": 24,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 24,
+    "type": 2,
+    "text": "on_purchase_request"
+  },
+  {
+    "line": 24,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 24,
+    "type": 2,
+    "text": "connect"
+  },
+  {
+    "line": 24,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 24,
+    "type": 2,
+    "text": "_on_purchase_request"
+  },
+  {
+    "line": 24,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 27,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 27,
+    "type": 2,
+    "text": "_on_data_loaded"
+  },
+  {
+    "line": 27,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 27,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 27,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 27,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 27,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 28,
+    "type": 2,
+    "text": "has_skill_tree"
+  },
+  {
+    "line": 28,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 28,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 28,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 28,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 28,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 28,
+    "type": 2,
+    "text": "node_stat_value"
+  },
+  {
+    "line": 28,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 28,
+    "type": 3,
+    "text": "\"SKILL_TREE\""
+  },
+  {
+    "line": 28,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 28,
+    "type": 3,
+    "text": "\"COUNT\""
+  },
+  {
+    "line": 28,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 28,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 28,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 28,
+    "type": 6,
+    "text": ">"
+  },
+  {
+    "line": 28,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 29,
+    "type": 2,
+    "text": "has_inv"
+  },
+  {
+    "line": 29,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 29,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 29,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 29,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 29,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 29,
+    "type": 2,
+    "text": "node_stat_value"
+  },
+  {
+    "line": 29,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 29,
+    "type": 3,
+    "text": "\"INVENTORY\""
+  },
+  {
+    "line": 29,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 29,
+    "type": 3,
+    "text": "\"SHOP_UNLOCK\""
+  },
+  {
+    "line": 29,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 29,
+    "type": 3,
+    "text": "false"
+  },
+  {
+    "line": 29,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 32,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 32,
+    "type": 2,
+    "text": "_on_purchase_request"
+  },
+  {
+    "line": 32,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 32,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 32,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 32,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 32,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 32,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 32,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 32,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 32,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 32,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 32,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 32,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 32,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 32,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 32,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 32,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 34,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 34,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "NodeData"
+  },
+  {
+    "line": 34,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 34,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 34,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "node_data_get"
+  },
+  {
+    "line": 34,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 34,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 35,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 35,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 35,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 35,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 35,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 35,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 35,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 35,
+    "type": 2,
+    "text": "stat_get"
+  },
+  {
+    "line": 35,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 35,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 35,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 35,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 35,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 36,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 36,
+    "type": 2,
+    "text": "cost_key"
+  },
+  {
+    "line": 36,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 36,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 36,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 36,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 36,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 36,
+    "type": 2,
+    "text": "get_cost_key"
+  },
+  {
+    "line": 36,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 36,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 37,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 37,
+    "type": 2,
+    "text": "cost_amount"
+  },
+  {
+    "line": 37,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 37,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 37,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 37,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 37,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 37,
+    "type": 2,
+    "text": "get_cost"
+  },
+  {
+    "line": 37,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 37,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 38,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 38,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 38,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 38,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "get_value"
+  },
+  {
+    "line": 38,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 38,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 39,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "purchase_made"
+  },
+  {
+    "line": 39,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 39,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 39,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "level_up_request"
+  },
+  {
+    "line": 39,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 39,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "player"
+  },
+  {
+    "line": 39,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "dirt"
+  },
+  {
+    "line": 39,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 40,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 40,
+    "type": 2,
+    "text": "purchase_made"
+  },
+  {
+    "line": 40,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 41,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 41,
+    "type": 2,
+    "text": "is_shop"
+  },
+  {
+    "line": 41,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 41,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 41,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 41,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 41,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 41,
+    "type": 3,
+    "text": "\"COUNT\""
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 43,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "player"
+  },
+  {
+    "line": 43,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "currency_update"
+  },
+  {
+    "line": 43,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "cost_key"
+  },
+  {
+    "line": 43,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 43,
+    "type": 23,
+    "text": "-"
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "cost_amount"
+  },
+  {
+    "line": 43,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 45,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 45,
+    "type": 2,
+    "text": "is_shop"
+  },
+  {
+    "line": 45,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 46,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 46,
+    "type": 2,
+    "text": "count_inc"
+  },
+  {
+    "line": 46,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 46,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 46,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 46,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 46,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 46,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 46,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 46,
+    "type": 2,
+    "text": "get_value"
+  },
+  {
+    "line": 46,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 46,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 46,
+    "type": 23,
+    "text": "-"
+  },
+  {
+    "line": 46,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 46,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 47,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 47,
+    "type": 2,
+    "text": "i"
+  },
+  {
+    "line": 47,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 47,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 47,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 47,
+    "type": 2,
+    "text": "count_inc"
+  },
+  {
+    "line": 47,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 48,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 48,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 48,
+    "type": 2,
+    "text": "world"
+  },
+  {
+    "line": 48,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 48,
+    "type": 2,
+    "text": "create_node"
+  },
+  {
+    "line": 48,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 48,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 48,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 48,
+    "type": 3,
+    "text": "true"
+  },
+  {
+    "line": 48,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 50,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 50,
+    "type": 2,
+    "text": "is_shop"
+  },
+  {
+    "line": 50,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 51,
+    "type": 2,
+    "text": "on_upgrade_complete_shop"
+  },
+  {
+    "line": 51,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 51,
+    "type": 2,
+    "text": "emit"
+  },
+  {
+    "line": 51,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 51,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 52,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 52,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 52,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 52,
+    "type": 2,
+    "text": "hat_frame"
+  },
+  {
+    "line": 52,
+    "type": 6,
+    "text": ">"
+  },
+  {
+    "line": 52,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 52,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 53,
+    "type": 2,
+    "text": "on_hat_buy"
+  },
+  {
+    "line": 53,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 53,
+    "type": 2,
+    "text": "emit"
+  },
+  {
+    "line": 53,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 53,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 53,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 54,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 54,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 55,
+    "type": 2,
+    "text": "on_upgrade_complete_skill_tree"
+  },
+  {
+    "line": 55,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 55,
+    "type": 2,
+    "text": "emit"
+  },
+  {
+    "line": 55,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 55,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 56,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 56,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 56,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 56,
+    "type": 2,
+    "text": "is_max_level"
+  },
+  {
+    "line": 56,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 56,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 56,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 57,
+    "type": 2,
+    "text": "on_upgrade_complete_max_skill_tree"
+  },
+  {
+    "line": 57,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 57,
+    "type": 2,
+    "text": "emit"
+  },
+  {
+    "line": 57,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 57,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 59,
+    "type": 2,
+    "text": "on_upgrade_complete"
+  },
+  {
+    "line": 59,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 59,
+    "type": 2,
+    "text": "emit"
+  },
+  {
+    "line": 59,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 59,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 59,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 59,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 59,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 59,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 59,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 60,
+    "type": 2,
+    "text": "on_upgrade_stat"
+  },
+  {
+    "line": 60,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 60,
+    "type": 2,
+    "text": "emit"
+  },
+  {
+    "line": 60,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 60,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 60,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 62,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 62,
+    "type": 15,
+    "text": "!"
+  },
+  {
+    "line": 62,
+    "type": 2,
+    "text": "has_skill_tree"
+  },
+  {
+    "line": 62,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 62,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 62,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 62,
+    "type": 3,
+    "text": "\"SKILL_TREE\""
+  },
+  {
+    "line": 62,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 62,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 62,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 62,
+    "type": 3,
+    "text": "\"COUNT\""
+  },
+  {
+    "line": 62,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 62,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 62,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 62,
+    "type": 2,
+    "text": "get_value"
+  },
+  {
+    "line": 62,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 62,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 62,
+    "type": 6,
+    "text": ">"
+  },
+  {
+    "line": 62,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 62,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 63,
+    "type": 2,
+    "text": "has_skill_tree"
+  },
+  {
+    "line": 63,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 63,
+    "type": 3,
+    "text": "true"
+  },
+  {
+    "line": 64,
+    "type": 2,
+    "text": "on_user_unlocked_skill_tree"
+  },
+  {
+    "line": 64,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 64,
+    "type": 2,
+    "text": "emit"
+  },
+  {
+    "line": 64,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 64,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 66,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 66,
+    "type": 15,
+    "text": "!"
+  },
+  {
+    "line": 66,
+    "type": 2,
+    "text": "has_inv"
+  },
+  {
+    "line": 66,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 66,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 66,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 66,
+    "type": 3,
+    "text": "\"INVENTORY\""
+  },
+  {
+    "line": 66,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 66,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 66,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 66,
+    "type": 3,
+    "text": "\"SHOP_UNLOCK\""
+  },
+  {
+    "line": 66,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 66,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 66,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 66,
+    "type": 2,
+    "text": "get_value"
+  },
+  {
+    "line": 66,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 66,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 66,
+    "type": 6,
+    "text": ">"
+  },
+  {
+    "line": 66,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 66,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 67,
+    "type": 2,
+    "text": "has_inv"
+  },
+  {
+    "line": 67,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 67,
+    "type": 3,
+    "text": "true"
+  },
+  {
+    "line": 68,
+    "type": 2,
+    "text": "on_user_unlocked_inv"
+  },
+  {
+    "line": 68,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 68,
+    "type": 2,
+    "text": "emit"
+  },
+  {
+    "line": 68,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 68,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 70,
+    "type": 2,
+    "text": "on_upgrade"
+  },
+  {
+    "line": 70,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 70,
+    "type": 2,
+    "text": "emit"
+  },
+  {
+    "line": 70,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 70,
+    "type": 78,
+    "text": ")"
+  }
+]

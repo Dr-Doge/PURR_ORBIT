@@ -1,0 +1,19 @@
+{
+  "scene_objects": 147,
+  "buttons": 131,
+  "edges": 130,
+  "roots": [
+    "D001"
+  ],
+  "statuses": {
+    "无Demo锁阻挡": 80,
+    "受前置Demo锁阻挡": 46,
+    "Demo直接锁": 5
+  },
+  "max_level_edges": 14,
+  "config_records": 168,
+  "not_instanced_records": 37,
+  "all_parents_resolved": true,
+  "acyclic": true,
+  "pck_sha256": "45a73b21653847bb17868f0384cc8cd4b1a8b04993cf0405c5c499b47d20832e"
+}

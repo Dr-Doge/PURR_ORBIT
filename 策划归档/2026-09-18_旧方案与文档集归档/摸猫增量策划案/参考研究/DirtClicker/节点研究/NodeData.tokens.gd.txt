@@ -1,0 +1,184 @@
+# Reconstructed token text for research; not original source formatting.
+class_name NodeData extends RefCounted
+
+
+var key : String = "NULL"
+var name : String
+var stats : Dictionary [ String , Array ]
+var pos_world : Array [ Vector2 ]
+var ps_node_world : PackedScene
+var icon_frame : int
+var is_shop : bool
+var metadata_loaded : Dictionary [ String , Variant ]
+var description : String
+var color_main : Color
+var is_tool : bool
+var is_pal : bool
+var hat_frame : int
+signal on_stat_level_change ( stat : StatData )
+
+
+
+
+func _init ( _key : String ) -> void :
+    key = _key
+
+
+func clear ( ) -> void :
+    for stat_key : String in stats :
+        for s in stats [ stat_key ] :
+            s . clear ( )
+    stats = { }
+    metadata_loaded = { }
+
+
+func stat_create ( _stat_key : String , _stat_id : int ) -> StatData :
+    if ! stats . has ( _stat_key ) :
+        stats [ _stat_key ] = [ ]
+    if stats [ _stat_key ] . size ( ) <= _stat_id :
+        Mads . array_insert ( stats [ _stat_key ] , _stat_id , StatData . new ( key , _stat_key , _stat_id ) )
+    stats [ _stat_key ] [ _stat_id ] . on_level_change . connect ( on_stat_level_change . emit . bind ( stats [ _stat_key ] [ _stat_id ] ) . unbind ( 1 ) )
+    return stats [ _stat_key ] [ _stat_id ]
+
+
+func stat_set_level ( _stat_key : String , _stat_level : int , _stat_id : int ) -> void :
+    var stat : StatData = stat_get ( _stat_key , _stat_id )
+    if stat :
+        stat . set_level ( _stat_level )
+
+
+func stat_exists ( _stat_key : String , _stat_id : int = 0 ) -> bool :
+    return stats . has ( _stat_key ) && _stat_id < stats [ _stat_key ] . size ( )
+
+
+func stat_get ( _stat_key : String , _stat_id : int = 0 ) -> StatData :
+    if stat_exists ( _stat_key , _stat_id ) :
+        return stats [ _stat_key ] [ _stat_id ]
+    else :
+        return null
+
+
+func stat_get_value ( _stat_key : String , default_return : float = 0.0 ) -> float :
+
+    var v : float = 0.0
+    var count : int = stats_count ( _stat_key )
+    if count > 0 :
+        if count == 1 :
+            v = stat_get ( _stat_key ) . get_value ( )
+        else :
+            for _stat_id : int in stats [ _stat_key ] . size ( ) :
+                v += stat_get ( _stat_key , _stat_id ) . get_value ( )
+    else :
+        v = default_return
+    return v
+
+
+func stat_get_value_last ( _stat_key : String , default_return : float = 0.0 ) -> float :
+
+    var v : float = 0.0
+    var count : int = stats_count ( _stat_key )
+    if count > 0 :
+        if count == 1 :
+            v = stat_get ( _stat_key ) . get_value_last ( )
+        else :
+            for _stat_id : int in stats [ _stat_key ] . size ( ) :
+                v += stat_get ( _stat_key , _stat_id ) . get_value_last ( )
+    else :
+        v = default_return
+    return v
+
+
+
+
+
+
+
+
+
+
+
+func stats_count ( _key_stat : String ) -> int :
+    if stat_exists ( _key_stat ) :
+        return stats [ _key_stat ] . size ( )
+    else :
+        return 0
+
+
+func stat_value_str ( key_stat : String , stat_id_offset : int = -1 , level_offset : int = 0 , add_amount : float = 0.0 , mult : float = 1.0 ) -> String :
+    var r : String = ""
+    var v : float = add_amount
+    for stat_id : int in stats [ key_stat ] . size ( ) :
+        var stat : StatData = stats [ key_stat ] [ stat_id ]
+        v += ( stat . get_value ( stat . level + ( level_offset if stat_id_offset == stat_id else 0 ) ) )
+    v *= mult
+
+    match stats [ key_stat ] [ 0 ] . value_type :
+        "DEFAULT" :
+            r = ( "%.1f" % v ) . trim_suffix ( ".0" )
+        "PERCENTAGE" :
+            var perc : float = v * 100.0
+            r = ( "%.1f" % perc ) . trim_suffix ( ".0" ) + "%"
+        "LOCK" :
+            r = tr ( "UI_LOCKED" ) if v == 0 else tr ( "UI_UNLOCKED" )
+        "SECONDS" :
+            r = ( "%.1f sec" % v ) . trim_suffix ( ".0" )
+    return r
+
+
+func stat_value_str_added ( key_stat : String , stat_id : int = -1 , level_offset : int = 0 ) -> String :
+    var r : String = ""
+    var stat : StatData = stats [ key_stat ] [ stat_id ]
+    var v : float = stat . get_value_added ( stat . level + level_offset )
+    match stat . value_type :
+        "DEFAULT" :
+            r = ( "%.1f" % v ) . trim_suffix ( ".0" )
+        "PERCENTAGE" :
+            var perc : float = v * 100.0
+            r = ( "%.1f" % perc ) . trim_suffix ( ".0" ) + "%"
+        "LOCK" :
+            r = tr ( "UI_LOCKED" ) if v == 0 else tr ( "UI_UNLOCKED" )
+        "SECONDS" :
+            r = ( "%.1f sec" % v ) . trim_suffix ( ".0" )
+    return r
+
+
+func stat_is_negative ( key_stat : String , stat_id : int = -1 , level_offset : int = 0 ) -> bool :
+    if stat_exists ( key_stat , stat_id ) :
+        var stat : StatData = stats [ key_stat ] [ stat_id ]
+        return stat . get_value_added ( stat . level + level_offset ) < 0
+    else :
+        return false
+
+
+
+func stat_id_value_str ( key_stat : String , stat_id : int , level_offset : int = 0 ) -> String :
+    var r : String = ""
+    var v : float = 0
+    var stat : StatData = stats [ key_stat ] [ stat_id ]
+    v += stat . get_value ( stat . level + level_offset )
+    match stat . value_type :
+        "DEFAULT" :
+            r = str ( int ( v ) if v == int ( v ) else v )
+        "PERCENTAGE" :
+            var perc : float = v * 100.0
+            r = str ( int ( perc ) if perc == int ( perc ) else perc ) + "%"
+        "LOCK" :
+            r = tr ( "UI_LOCKED" ) if v == 0 else tr ( "UI_UNLOCKED" )
+        "SECONDS" :
+            r = str ( v ) + " sec"
+    return r
+
+
+func get_world_pos ( id : int , default_pos : Vector2 ) -> Vector2 :
+    return default_pos if id < 0 || id >= pos_world . size ( ) else pos_world [ id ]
+
+
+func is_stat_count_max ( ) -> bool :
+    var off : int = int ( stat_get_value_last ( "COUNT_ADD" ) - stat_get_value ( "COUNT_ADD" ) )
+    var stat_count : StatData = stat_get ( "COUNT" )
+    return stat_count . is_max_level ( off )
+
+
+func stat_count_max ( ) -> int :
+    var off : int = int ( stat_get_value_last ( "COUNT_ADD" ) - stat_get_value ( "COUNT_ADD" ) )
+    return stat_get ( "COUNT" ) . levels . size ( ) - 1 - off

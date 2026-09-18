@@ -1,0 +1,12747 @@
+[
+  {
+    "line": 1,
+    "type": 56,
+    "text": "class_name"
+  },
+  {
+    "line": 1,
+    "type": 2,
+    "text": "DataController"
+  },
+  {
+    "line": 1,
+    "type": 59,
+    "text": "extends"
+  },
+  {
+    "line": 1,
+    "type": 2,
+    "text": "Node"
+  },
+  {
+    "line": 3,
+    "type": 57,
+    "text": "const"
+  },
+  {
+    "line": 3,
+    "type": 2,
+    "text": "PATH_EXPORT_JSON"
+  },
+  {
+    "line": 3,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 3,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 3,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 3,
+    "type": 3,
+    "text": "\"res://resouces/data/sheets/sheets.json\""
+  },
+  {
+    "line": 4,
+    "type": 57,
+    "text": "const"
+  },
+  {
+    "line": 4,
+    "type": 2,
+    "text": "ENCRYPT_KEY"
+  },
+  {
+    "line": 4,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 4,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 4,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 4,
+    "type": 3,
+    "text": "\"%SBG#\""
+  },
+  {
+    "line": 7,
+    "type": 67,
+    "text": "static"
+  },
+  {
+    "line": 7,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 7,
+    "type": 2,
+    "text": "GetJson"
+  },
+  {
+    "line": 7,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 7,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 7,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 7,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 7,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 8,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 8,
+    "type": 2,
+    "text": "DataCache"
+  },
+  {
+    "line": 8,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 8,
+    "type": 2,
+    "text": "get_sheet_json"
+  },
+  {
+    "line": 8,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 8,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 8,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 8,
+    "type": 2,
+    "text": "Engine"
+  },
+  {
+    "line": 8,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 8,
+    "type": 2,
+    "text": "is_editor_hint"
+  },
+  {
+    "line": 8,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 8,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 8,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 8,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 8,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 8,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 8,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 8,
+    "type": 2,
+    "text": "raw_data"
+  },
+  {
+    "line": 11,
+    "type": 1,
+    "text": "@onready"
+  },
+  {
+    "line": 11,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 11,
+    "type": 2,
+    "text": "autosave_timer"
+  },
+  {
+    "line": 11,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 11,
+    "type": 2,
+    "text": "Timer"
+  },
+  {
+    "line": 11,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 11,
+    "type": 85,
+    "text": "$"
+  },
+  {
+    "line": 11,
+    "type": 2,
+    "text": "TimerAutoSave"
+  },
+  {
+    "line": 13,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 13,
+    "type": 2,
+    "text": "user_data"
+  },
+  {
+    "line": 13,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 13,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 15,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 15,
+    "type": 2,
+    "text": "raw_data"
+  },
+  {
+    "line": 15,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 15,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 16,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 16,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 16,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 16,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 17,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 17,
+    "type": 2,
+    "text": "raw_data_stats"
+  },
+  {
+    "line": 17,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 17,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 18,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 18,
+    "type": 2,
+    "text": "raw_data_items"
+  },
+  {
+    "line": 18,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 18,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 19,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 19,
+    "type": 2,
+    "text": "raw_data_badges"
+  },
+  {
+    "line": 19,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 19,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 21,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 21,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 21,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 21,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 23,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 23,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 23,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 23,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 23,
+    "type": 2,
+    "text": "NodeData"
+  },
+  {
+    "line": 23,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 24,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 24,
+    "type": 2,
+    "text": "items_data"
+  },
+  {
+    "line": 24,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 24,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 24,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 24,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 24,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 24,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 24,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 25,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 25,
+    "type": 2,
+    "text": "badges_data"
+  },
+  {
+    "line": 25,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 25,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 25,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 25,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 25,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 25,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 25,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 30,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 30,
+    "type": 2,
+    "text": "_ready"
+  },
+  {
+    "line": 30,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 30,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 30,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 30,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 30,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 32,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 32,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 32,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 32,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 32,
+    "type": 65,
+    "text": "self"
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "autosave_timer"
+  },
+  {
+    "line": 34,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "timeout"
+  },
+  {
+    "line": 34,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "connect"
+  },
+  {
+    "line": 34,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 34,
+    "type": 2,
+    "text": "json_save_all"
+  },
+  {
+    "line": 34,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 36,
+    "type": 2,
+    "text": "raw_data"
+  },
+  {
+    "line": 36,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 36,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 36,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 36,
+    "type": 2,
+    "text": "json_load"
+  },
+  {
+    "line": 36,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 36,
+    "type": 2,
+    "text": "PATH_EXPORT_JSON"
+  },
+  {
+    "line": 36,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 37,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 37,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 37,
+    "type": 2,
+    "text": "raw_data"
+  },
+  {
+    "line": 37,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 37,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 37,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "raw_data_stats"
+  },
+  {
+    "line": 38,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 38,
+    "type": 2,
+    "text": "raw_data"
+  },
+  {
+    "line": 38,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 38,
+    "type": 3,
+    "text": "\"STATS\""
+  },
+  {
+    "line": 38,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "raw_data_items"
+  },
+  {
+    "line": 39,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 39,
+    "type": 2,
+    "text": "raw_data"
+  },
+  {
+    "line": 39,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 39,
+    "type": 3,
+    "text": "\"ITEMS\""
+  },
+  {
+    "line": 39,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 40,
+    "type": 2,
+    "text": "raw_data_badges"
+  },
+  {
+    "line": 40,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 40,
+    "type": 2,
+    "text": "raw_data"
+  },
+  {
+    "line": 40,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 40,
+    "type": 3,
+    "text": "\"BADGES\""
+  },
+  {
+    "line": 40,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 42,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 42,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 42,
+    "type": 2,
+    "text": "on_game_init"
+  },
+  {
+    "line": 42,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 42,
+    "type": 2,
+    "text": "connect"
+  },
+  {
+    "line": 42,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 42,
+    "type": 2,
+    "text": "_on_game_init"
+  },
+  {
+    "line": 42,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 43,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "on_world_loaded"
+  },
+  {
+    "line": 43,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "connect"
+  },
+  {
+    "line": 43,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 43,
+    "type": 2,
+    "text": "_on_world_loaded"
+  },
+  {
+    "line": 43,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 44,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 44,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 44,
+    "type": 2,
+    "text": "on_world_deleted"
+  },
+  {
+    "line": 44,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 44,
+    "type": 2,
+    "text": "connect"
+  },
+  {
+    "line": 44,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 44,
+    "type": 2,
+    "text": "_on_world_deleted"
+  },
+  {
+    "line": 44,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 47,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 47,
+    "type": 2,
+    "text": "_on_game_init"
+  },
+  {
+    "line": 47,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 47,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 47,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 47,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 47,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 48,
+    "type": 2,
+    "text": "user_data_load"
+  },
+  {
+    "line": 48,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 48,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 49,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 49,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 49,
+    "type": 2,
+    "text": "ui"
+  },
+  {
+    "line": 49,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 49,
+    "type": 2,
+    "text": "options"
+  },
+  {
+    "line": 49,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 49,
+    "type": 2,
+    "text": "on_toggle_off"
+  },
+  {
+    "line": 49,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 49,
+    "type": 2,
+    "text": "connect"
+  },
+  {
+    "line": 49,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 49,
+    "type": 2,
+    "text": "user_data_save"
+  },
+  {
+    "line": 49,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 52,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 52,
+    "type": 2,
+    "text": "_on_world_loaded"
+  },
+  {
+    "line": 52,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 52,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 52,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 52,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 52,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 54,
+    "type": 2,
+    "text": "setup_nodes_data"
+  },
+  {
+    "line": 54,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 54,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 56,
+    "type": 2,
+    "text": "setup_badges_data"
+  },
+  {
+    "line": 56,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 56,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 58,
+    "type": 2,
+    "text": "setup_items_data"
+  },
+  {
+    "line": 58,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 58,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 60,
+    "type": 2,
+    "text": "json_load_all"
+  },
+  {
+    "line": 60,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 60,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 62,
+    "type": 2,
+    "text": "autosave_start"
+  },
+  {
+    "line": 62,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 62,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 65,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 65,
+    "type": 2,
+    "text": "_on_world_deleted"
+  },
+  {
+    "line": 65,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 65,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 65,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 65,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 65,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 66,
+    "type": 2,
+    "text": "autosave_stop"
+  },
+  {
+    "line": 66,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 66,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 68,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 68,
+    "type": 2,
+    "text": "node_key"
+  },
+  {
+    "line": 68,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 68,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 68,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 68,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 68,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 69,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 69,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 69,
+    "type": 2,
+    "text": "node_key"
+  },
+  {
+    "line": 69,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 69,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 69,
+    "type": 2,
+    "text": "clear"
+  },
+  {
+    "line": 69,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 69,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 70,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 70,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 70,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 70,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 71,
+    "type": 2,
+    "text": "items_data"
+  },
+  {
+    "line": 71,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 71,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 71,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 72,
+    "type": 2,
+    "text": "badges_data"
+  },
+  {
+    "line": 72,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 72,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 72,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 76,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 76,
+    "type": 2,
+    "text": "setup_nodes_data"
+  },
+  {
+    "line": 76,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 76,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 76,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 76,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 76,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 78,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 78,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 78,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 78,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 78,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 78,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 78,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 79,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 79,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 79,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 79,
+    "type": 3,
+    "text": "\"NULL\""
+  },
+  {
+    "line": 79,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 79,
+    "type": 46,
+    "text": "continue"
+  },
+  {
+    "line": 80,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 80,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 80,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 80,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 80,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 80,
+    "type": 2,
+    "text": "NodeData"
+  },
+  {
+    "line": 80,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 80,
+    "type": 2,
+    "text": "new"
+  },
+  {
+    "line": 80,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 80,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 80,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 81,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 81,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 81,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 81,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 81,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 81,
+    "type": 2,
+    "text": "name"
+  },
+  {
+    "line": 81,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 81,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 81,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 81,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 81,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 81,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 81,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 81,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 81,
+    "type": 3,
+    "text": "\"NAME\""
+  },
+  {
+    "line": 81,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 81,
+    "type": 3,
+    "text": "\"NULL\""
+  },
+  {
+    "line": 81,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 82,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 82,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 82,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 82,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 82,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 82,
+    "type": 2,
+    "text": "ps_node_world"
+  },
+  {
+    "line": 82,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 82,
+    "type": 3,
+    "text": "null"
+  },
+  {
+    "line": 82,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 82,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 82,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 82,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 82,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 82,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 82,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 82,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 82,
+    "type": 3,
+    "text": "\"PS_NODE_WORLD_PATH\""
+  },
+  {
+    "line": 82,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 82,
+    "type": 3,
+    "text": "\"\""
+  },
+  {
+    "line": 82,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 82,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 82,
+    "type": 2,
+    "text": "is_empty"
+  },
+  {
+    "line": 82,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 82,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 82,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 82,
+    "type": 2,
+    "text": "load"
+  },
+  {
+    "line": 82,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 82,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 82,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 82,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 82,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 82,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 82,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 82,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 82,
+    "type": 3,
+    "text": "\"PS_NODE_WORLD_PATH\""
+  },
+  {
+    "line": 82,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 82,
+    "type": 3,
+    "text": "\"\""
+  },
+  {
+    "line": 82,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 82,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 83,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 83,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 83,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 83,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 83,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 83,
+    "type": 2,
+    "text": "icon_frame"
+  },
+  {
+    "line": 83,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 83,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 83,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 83,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 83,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 83,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 83,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 83,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 83,
+    "type": 3,
+    "text": "\"ICON_FRAME\""
+  },
+  {
+    "line": 83,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 83,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 83,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 84,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 84,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 84,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 84,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 84,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 84,
+    "type": 2,
+    "text": "is_shop"
+  },
+  {
+    "line": 84,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 84,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 84,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 84,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 84,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 84,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 84,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 84,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 84,
+    "type": 3,
+    "text": "\"IS_SHOP\""
+  },
+  {
+    "line": 84,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 84,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 84,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 84,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 84,
+    "type": 3,
+    "text": "1.0"
+  },
+  {
+    "line": 85,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 85,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 85,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 85,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 85,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 85,
+    "type": 2,
+    "text": "description"
+  },
+  {
+    "line": 85,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 85,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 85,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 85,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 85,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 85,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 85,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 85,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 85,
+    "type": 3,
+    "text": "\"DESCRIPTION\""
+  },
+  {
+    "line": 85,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 85,
+    "type": 3,
+    "text": "\"PASS\""
+  },
+  {
+    "line": 85,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 86,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 86,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 86,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 86,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 86,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 86,
+    "type": 2,
+    "text": "color_main"
+  },
+  {
+    "line": 86,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 86,
+    "type": 2,
+    "text": "Color"
+  },
+  {
+    "line": 86,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 86,
+    "type": 2,
+    "text": "html"
+  },
+  {
+    "line": 86,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 86,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 86,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 86,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 86,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 86,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 86,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 86,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 86,
+    "type": 3,
+    "text": "\"COLOR_MAIN\""
+  },
+  {
+    "line": 86,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 86,
+    "type": 3,
+    "text": "\"ffffff\""
+  },
+  {
+    "line": 86,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 86,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 87,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 87,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 87,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 87,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 87,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 87,
+    "type": 2,
+    "text": "is_tool"
+  },
+  {
+    "line": 87,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 87,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 87,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 87,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 87,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 87,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 87,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 87,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 87,
+    "type": 3,
+    "text": "\"IS_TOOL\""
+  },
+  {
+    "line": 87,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 87,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 87,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 87,
+    "type": 6,
+    "text": ">"
+  },
+  {
+    "line": 87,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 88,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 88,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 88,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 88,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 88,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 88,
+    "type": 2,
+    "text": "is_pal"
+  },
+  {
+    "line": 88,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 88,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 88,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 88,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 88,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 88,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 88,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 88,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 88,
+    "type": 3,
+    "text": "\"IS_PAL\""
+  },
+  {
+    "line": 88,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 88,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 88,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 88,
+    "type": 6,
+    "text": ">"
+  },
+  {
+    "line": 88,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 89,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 89,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 89,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 89,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 89,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 89,
+    "type": 2,
+    "text": "hat_frame"
+  },
+  {
+    "line": 89,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 89,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 89,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 89,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 89,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 89,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 89,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 89,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 89,
+    "type": 3,
+    "text": "\"HAT_FRAME\""
+  },
+  {
+    "line": 89,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 89,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 89,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 90,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 90,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 90,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 90,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 90,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 90,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 90,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 90,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 90,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 90,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 91,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 91,
+    "type": 2,
+    "text": "typeof"
+  },
+  {
+    "line": 91,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 91,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 91,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 91,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 91,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 91,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 91,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 91,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 91,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 91,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 91,
+    "type": 2,
+    "text": "TYPE_ARRAY"
+  },
+  {
+    "line": 91,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 92,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 92,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 92,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 92,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 92,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 92,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 92,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 92,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 92,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 92,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 92,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 92,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 92,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 92,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 92,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 92,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 92,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 94,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 94,
+    "type": 2,
+    "text": "_stat"
+  },
+  {
+    "line": 94,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 94,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 94,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 94,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 94,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 94,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 94,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 94,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 94,
+    "type": 2,
+    "text": "stat_create"
+  },
+  {
+    "line": 94,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 94,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 94,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 94,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 94,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 96,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 96,
+    "type": 2,
+    "text": "_demo_lock"
+  },
+  {
+    "line": 96,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 96,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 96,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 96,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 96,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 96,
+    "type": 2,
+    "text": "nested"
+  },
+  {
+    "line": 96,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 96,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 96,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 96,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 96,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 96,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 96,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 96,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 96,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 96,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 96,
+    "type": 3,
+    "text": "\"DEMO_LOCK\""
+  },
+  {
+    "line": 96,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 96,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 96,
+    "type": 3,
+    "text": "0.0"
+  },
+  {
+    "line": 96,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 96,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 96,
+    "type": 3,
+    "text": "1.0"
+  },
+  {
+    "line": 97,
+    "type": 2,
+    "text": "_stat"
+  },
+  {
+    "line": 97,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 97,
+    "type": 2,
+    "text": "set_demo_lock"
+  },
+  {
+    "line": 97,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 97,
+    "type": 2,
+    "text": "_demo_lock"
+  },
+  {
+    "line": 97,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 99,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 99,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 99,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 99,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 99,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 99,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 99,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 99,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 99,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 99,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 99,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 99,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 99,
+    "type": 2,
+    "text": "has"
+  },
+  {
+    "line": 99,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 99,
+    "type": 3,
+    "text": "\"LEVELS\""
+  },
+  {
+    "line": 99,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 99,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 100,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 100,
+    "type": 2,
+    "text": "value_init"
+  },
+  {
+    "line": 100,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 100,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 100,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 100,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 100,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 100,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 100,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 100,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 100,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 100,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 100,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 100,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 100,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 100,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 100,
+    "type": 3,
+    "text": "\"VALUE_INIT\""
+  },
+  {
+    "line": 100,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 101,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 101,
+    "type": 2,
+    "text": "value_inc"
+  },
+  {
+    "line": 101,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 101,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 101,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 101,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 101,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 101,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 101,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 101,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 101,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 101,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 101,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 101,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 101,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 101,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 101,
+    "type": 3,
+    "text": "\"VALUE_INC\""
+  },
+  {
+    "line": 101,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 102,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 102,
+    "type": 2,
+    "text": "cost_dirt_base"
+  },
+  {
+    "line": 102,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 102,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 102,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 102,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 102,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 102,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 102,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 102,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 102,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 102,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 102,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 102,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 102,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 102,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 102,
+    "type": 3,
+    "text": "\"DIRT_BASE\""
+  },
+  {
+    "line": 102,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 103,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 103,
+    "type": 2,
+    "text": "dirt_growth"
+  },
+  {
+    "line": 103,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 103,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 103,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 103,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 103,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 103,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 103,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 103,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 103,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 103,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 103,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 103,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 103,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 103,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 103,
+    "type": 3,
+    "text": "\"DIRT_GROWTH\""
+  },
+  {
+    "line": 103,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 104,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 104,
+    "type": 2,
+    "text": "i"
+  },
+  {
+    "line": 104,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 104,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 104,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 104,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 104,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 104,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 104,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 104,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 104,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 104,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 104,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 104,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 104,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 104,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 104,
+    "type": 3,
+    "text": "\"LEVELS\""
+  },
+  {
+    "line": 104,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 104,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 104,
+    "type": 3,
+    "text": "1"
+  },
+  {
+    "line": 104,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 105,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 105,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 105,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 105,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 105,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 105,
+    "type": 2,
+    "text": "value_init"
+  },
+  {
+    "line": 105,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 105,
+    "type": 2,
+    "text": "value_inc"
+  },
+  {
+    "line": 105,
+    "type": 24,
+    "text": "*"
+  },
+  {
+    "line": 105,
+    "type": 2,
+    "text": "i"
+  },
+  {
+    "line": 106,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "cost_dirt"
+  },
+  {
+    "line": 106,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 106,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "roundi"
+  },
+  {
+    "line": 106,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "cost_dirt_base"
+  },
+  {
+    "line": 106,
+    "type": 24,
+    "text": "*"
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "pow"
+  },
+  {
+    "line": 106,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "dirt_growth"
+  },
+  {
+    "line": 106,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 106,
+    "type": 2,
+    "text": "i"
+  },
+  {
+    "line": 106,
+    "type": 23,
+    "text": "-"
+  },
+  {
+    "line": 106,
+    "type": 3,
+    "text": "1"
+  },
+  {
+    "line": 106,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 106,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 107,
+    "type": 2,
+    "text": "_stat"
+  },
+  {
+    "line": 107,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 107,
+    "type": 2,
+    "text": "add"
+  },
+  {
+    "line": 107,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 107,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 107,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 107,
+    "type": 2,
+    "text": "cost_dirt"
+  },
+  {
+    "line": 107,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 109,
+    "type": 2,
+    "text": "_stat"
+  },
+  {
+    "line": 109,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 109,
+    "type": 2,
+    "text": "name"
+  },
+  {
+    "line": 109,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 109,
+    "type": 2,
+    "text": "raw_data_stats"
+  },
+  {
+    "line": 109,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 109,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 109,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 109,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 109,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 109,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 109,
+    "type": 3,
+    "text": "\"NAME\""
+  },
+  {
+    "line": 109,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 109,
+    "type": 3,
+    "text": "\"NULL\""
+  },
+  {
+    "line": 109,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 110,
+    "type": 2,
+    "text": "_stat"
+  },
+  {
+    "line": 110,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 110,
+    "type": 2,
+    "text": "value_type"
+  },
+  {
+    "line": 110,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 110,
+    "type": 2,
+    "text": "raw_data_stats"
+  },
+  {
+    "line": 110,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 110,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 110,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 110,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 110,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 110,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 110,
+    "type": 3,
+    "text": "\"VALUE_TYPE\""
+  },
+  {
+    "line": 110,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 110,
+    "type": 3,
+    "text": "\"DEFAULT\""
+  },
+  {
+    "line": 110,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "_stat"
+  },
+  {
+    "line": 111,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "icon_frame"
+  },
+  {
+    "line": 111,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "raw_data_stats"
+  },
+  {
+    "line": 111,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 111,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 111,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 111,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 111,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 111,
+    "type": 3,
+    "text": "\"ICON_FRAME\""
+  },
+  {
+    "line": 111,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 111,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 111,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 112,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 112,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 112,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 112,
+    "type": 3,
+    "text": "\"SHOP_UNLOCK\""
+  },
+  {
+    "line": 112,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 113,
+    "type": 2,
+    "text": "_stat"
+  },
+  {
+    "line": 113,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 113,
+    "type": 2,
+    "text": "info_buy"
+  },
+  {
+    "line": 113,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 113,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 113,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 113,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 113,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 113,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 113,
+    "type": 2,
+    "text": "description"
+  },
+  {
+    "line": 114,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 114,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 115,
+    "type": 2,
+    "text": "_stat"
+  },
+  {
+    "line": 115,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 115,
+    "type": 2,
+    "text": "info_buy"
+  },
+  {
+    "line": 115,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 115,
+    "type": 2,
+    "text": "raw_data_stats"
+  },
+  {
+    "line": 115,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 115,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 115,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 115,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 115,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 115,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 115,
+    "type": 3,
+    "text": "\"TEXT_BUY\""
+  },
+  {
+    "line": 115,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 115,
+    "type": 3,
+    "text": "\"\""
+  },
+  {
+    "line": 115,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 116,
+    "type": 2,
+    "text": "_stat"
+  },
+  {
+    "line": 116,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 116,
+    "type": 2,
+    "text": "set_level"
+  },
+  {
+    "line": 116,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 116,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 116,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 116,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 116,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 116,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 116,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 116,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 116,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 116,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 116,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 116,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 116,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 116,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 116,
+    "type": 3,
+    "text": "\"LEVEL_START\""
+  },
+  {
+    "line": 116,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 116,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 116,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 116,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 118,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 118,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 118,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 118,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 118,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 118,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 118,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 119,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 119,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 119,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 119,
+    "type": 3,
+    "text": "\"NULL\""
+  },
+  {
+    "line": 119,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 119,
+    "type": 46,
+    "text": "continue"
+  },
+  {
+    "line": 120,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 120,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 120,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 120,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 120,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 120,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 120,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 120,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 120,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 120,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 121,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 121,
+    "type": 2,
+    "text": "typeof"
+  },
+  {
+    "line": 121,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 121,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 121,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 121,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 121,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 121,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 121,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 121,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 121,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 121,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 121,
+    "type": 2,
+    "text": "TYPE_ARRAY"
+  },
+  {
+    "line": 121,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 122,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 122,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 122,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 122,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 122,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 122,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 122,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 122,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 122,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 122,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 122,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 122,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 122,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 122,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 122,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 122,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 122,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 124,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 124,
+    "type": 2,
+    "text": "level_up_by_badge"
+  },
+  {
+    "line": 124,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 124,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 124,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 124,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 124,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 124,
+    "type": 2,
+    "text": "nested"
+  },
+  {
+    "line": 124,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 124,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 124,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 124,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 124,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 124,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 124,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 124,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 124,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 124,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 124,
+    "type": 3,
+    "text": "\"LEVEL_UP_BY_BADGE\""
+  },
+  {
+    "line": 124,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 124,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 124,
+    "type": 3,
+    "text": "\"\""
+  },
+  {
+    "line": 124,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 125,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 125,
+    "type": 15,
+    "text": "!"
+  },
+  {
+    "line": 125,
+    "type": 2,
+    "text": "level_up_by_badge"
+  },
+  {
+    "line": 125,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 125,
+    "type": 2,
+    "text": "is_empty"
+  },
+  {
+    "line": 125,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 125,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 125,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 126,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 126,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 126,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 126,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 126,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 126,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 126,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 126,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 126,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 126,
+    "type": 2,
+    "text": "set_level_up_by_badge"
+  },
+  {
+    "line": 126,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 126,
+    "type": 2,
+    "text": "call_deferred"
+  },
+  {
+    "line": 126,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 126,
+    "type": 2,
+    "text": "level_up_by_badge"
+  },
+  {
+    "line": 126,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 128,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 128,
+    "type": 2,
+    "text": "lock_by_key_node"
+  },
+  {
+    "line": 128,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 128,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 128,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 128,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 128,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 128,
+    "type": 2,
+    "text": "nested"
+  },
+  {
+    "line": 128,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 128,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 128,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 128,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 128,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 128,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 128,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 128,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 128,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 128,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 128,
+    "type": 3,
+    "text": "\"LOCK_BY_KEY_NODE\""
+  },
+  {
+    "line": 128,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 128,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 128,
+    "type": 3,
+    "text": "\"NULL\""
+  },
+  {
+    "line": 128,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 129,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "lock_by_key_stat"
+  },
+  {
+    "line": 129,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 129,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 129,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "nested"
+  },
+  {
+    "line": 129,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 129,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 129,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 129,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 129,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 129,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 129,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 129,
+    "type": 3,
+    "text": "\"LOCK_BY_KEY_STAT\""
+  },
+  {
+    "line": 129,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 129,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 129,
+    "type": 3,
+    "text": "\"NULL\""
+  },
+  {
+    "line": 129,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 130,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "lock_by_stat_id"
+  },
+  {
+    "line": 130,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 130,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 130,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "nested"
+  },
+  {
+    "line": 130,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 130,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 130,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 130,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 130,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 130,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 130,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 130,
+    "type": 3,
+    "text": "\"LOCK_BY_STAT_ID\""
+  },
+  {
+    "line": 130,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 130,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 130,
+    "type": 3,
+    "text": "-1"
+  },
+  {
+    "line": 130,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 131,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 131,
+    "type": 2,
+    "text": "lock_by_level"
+  },
+  {
+    "line": 131,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 131,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 131,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 131,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 131,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 131,
+    "type": 2,
+    "text": "nested"
+  },
+  {
+    "line": 131,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 131,
+    "type": 2,
+    "text": "raw_data_nodes"
+  },
+  {
+    "line": 131,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 131,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 131,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 131,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 131,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 131,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 131,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 131,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 131,
+    "type": 3,
+    "text": "\"LOCK_BY_LEVEL\""
+  },
+  {
+    "line": 131,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 131,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 131,
+    "type": 3,
+    "text": "-1"
+  },
+  {
+    "line": 131,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 132,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 132,
+    "type": 2,
+    "text": "lock_by_key_node"
+  },
+  {
+    "line": 132,
+    "type": 9,
+    "text": "!="
+  },
+  {
+    "line": 132,
+    "type": 3,
+    "text": "\"NULL\""
+  },
+  {
+    "line": 132,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 132,
+    "type": 2,
+    "text": "lock_by_key_stat"
+  },
+  {
+    "line": 132,
+    "type": 9,
+    "text": "!="
+  },
+  {
+    "line": 132,
+    "type": 3,
+    "text": "\"NULL\""
+  },
+  {
+    "line": 132,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 132,
+    "type": 2,
+    "text": "lock_by_stat_id"
+  },
+  {
+    "line": 132,
+    "type": 6,
+    "text": ">"
+  },
+  {
+    "line": 132,
+    "type": 3,
+    "text": "-1"
+  },
+  {
+    "line": 132,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 132,
+    "type": 2,
+    "text": "lock_by_level"
+  },
+  {
+    "line": 132,
+    "type": 6,
+    "text": ">"
+  },
+  {
+    "line": 132,
+    "type": 3,
+    "text": "-1"
+  },
+  {
+    "line": 132,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 133,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 133,
+    "type": 2,
+    "text": "lock_by_level"
+  },
+  {
+    "line": 133,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 133,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 133,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 134,
+    "type": 2,
+    "text": "lock_by_level"
+  },
+  {
+    "line": 134,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 134,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 134,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 134,
+    "type": 2,
+    "text": "lock_by_key_node"
+  },
+  {
+    "line": 134,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 134,
+    "type": 2,
+    "text": "lock_by_key_stat"
+  },
+  {
+    "line": 134,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 134,
+    "type": 2,
+    "text": "lock_by_stat_id"
+  },
+  {
+    "line": 134,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 134,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 134,
+    "type": 2,
+    "text": "get_level_last"
+  },
+  {
+    "line": 134,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 134,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 135,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 135,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 135,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 135,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 135,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "set_lock"
+  },
+  {
+    "line": 135,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "call"
+  },
+  {
+    "line": 135,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 135,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "lock_by_key_node"
+  },
+  {
+    "line": 135,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "lock_by_key_stat"
+  },
+  {
+    "line": 135,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "lock_by_stat_id"
+  },
+  {
+    "line": 135,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 135,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 135,
+    "type": 2,
+    "text": "lock_by_level"
+  },
+  {
+    "line": 135,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 138,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 138,
+    "type": 2,
+    "text": "setup_items_data"
+  },
+  {
+    "line": 138,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 138,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 138,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 138,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 138,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 140,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 140,
+    "type": 2,
+    "text": "key_item"
+  },
+  {
+    "line": 140,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 140,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 140,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 140,
+    "type": 2,
+    "text": "raw_data_items"
+  },
+  {
+    "line": 140,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 141,
+    "type": 2,
+    "text": "items_data"
+  },
+  {
+    "line": 141,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 141,
+    "type": 2,
+    "text": "key_item"
+  },
+  {
+    "line": 141,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 141,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 141,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 142,
+    "type": 3,
+    "text": "\"KEY\""
+  },
+  {
+    "line": 142,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 142,
+    "type": 2,
+    "text": "key_item"
+  },
+  {
+    "line": 142,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 143,
+    "type": 3,
+    "text": "\"AMOUNT\""
+  },
+  {
+    "line": 143,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 143,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 143,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 144,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 147,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 147,
+    "type": 2,
+    "text": "setup_badges_data"
+  },
+  {
+    "line": 147,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 147,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 147,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 147,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 147,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 149,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 149,
+    "type": 2,
+    "text": "badge_key"
+  },
+  {
+    "line": 149,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 149,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 149,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 149,
+    "type": 2,
+    "text": "raw_data_badges"
+  },
+  {
+    "line": 149,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 150,
+    "type": 2,
+    "text": "badges_data"
+  },
+  {
+    "line": 150,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 150,
+    "type": 2,
+    "text": "badge_key"
+  },
+  {
+    "line": 150,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 150,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 150,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 151,
+    "type": 3,
+    "text": "\"UNLOCKED\""
+  },
+  {
+    "line": 151,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 151,
+    "type": 3,
+    "text": "false"
+  },
+  {
+    "line": 151,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 152,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 154,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 154,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 154,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 154,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 154,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 154,
+    "type": 2,
+    "text": "raw_data_badges"
+  },
+  {
+    "line": 154,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 154,
+    "type": 2,
+    "text": "badge_key"
+  },
+  {
+    "line": 154,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 155,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 155,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 155,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 155,
+    "type": 3,
+    "text": "\"KEY_NODE\""
+  },
+  {
+    "line": 155,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 155,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 155,
+    "type": 3,
+    "text": "\"NULL\""
+  },
+  {
+    "line": 155,
+    "type": 14,
+    "text": "||"
+  },
+  {
+    "line": 155,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 155,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 155,
+    "type": 3,
+    "text": "\"KEY_STAT\""
+  },
+  {
+    "line": 155,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 155,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 155,
+    "type": 3,
+    "text": "\"NULL\""
+  },
+  {
+    "line": 155,
+    "type": 14,
+    "text": "||"
+  },
+  {
+    "line": 155,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 155,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 155,
+    "type": 3,
+    "text": "\"STAT_ID\""
+  },
+  {
+    "line": 155,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 155,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 155,
+    "type": 3,
+    "text": "-1"
+  },
+  {
+    "line": 155,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 156,
+    "type": 46,
+    "text": "continue"
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 157,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 157,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 157,
+    "type": 3,
+    "text": "\"KEY_NODE\""
+  },
+  {
+    "line": 157,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 157,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 157,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 157,
+    "type": 3,
+    "text": "\"KEY_STAT\""
+  },
+  {
+    "line": 157,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 157,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 157,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 157,
+    "type": 3,
+    "text": "\"STAT_ID\""
+  },
+  {
+    "line": 157,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 157,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 157,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "set_level_up_by_badge"
+  },
+  {
+    "line": 157,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "call_deferred"
+  },
+  {
+    "line": 157,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 157,
+    "type": 2,
+    "text": "badge_key"
+  },
+  {
+    "line": 157,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 165,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 165,
+    "type": 2,
+    "text": "autosave_get_sec"
+  },
+  {
+    "line": 165,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 165,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 165,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 165,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 165,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 166,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 166,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 166,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 166,
+    "type": 2,
+    "text": "float"
+  },
+  {
+    "line": 166,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 166,
+    "type": 2,
+    "text": "user_data"
+  },
+  {
+    "line": 166,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 166,
+    "type": 2,
+    "text": "get"
+  },
+  {
+    "line": 166,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 166,
+    "type": 3,
+    "text": "\"autosave\""
+  },
+  {
+    "line": 166,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 166,
+    "type": 3,
+    "text": "0.0"
+  },
+  {
+    "line": 166,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 167,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 167,
+    "type": 3,
+    "text": "30"
+  },
+  {
+    "line": 167,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 167,
+    "type": 2,
+    "text": "floori"
+  },
+  {
+    "line": 167,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 167,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 167,
+    "type": 24,
+    "text": "*"
+  },
+  {
+    "line": 167,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 167,
+    "type": 3,
+    "text": "60"
+  },
+  {
+    "line": 167,
+    "type": 24,
+    "text": "*"
+  },
+  {
+    "line": 167,
+    "type": 3,
+    "text": "4"
+  },
+  {
+    "line": 167,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 167,
+    "type": 3,
+    "text": "30"
+  },
+  {
+    "line": 167,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 167,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 170,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 170,
+    "type": 2,
+    "text": "autosave_start"
+  },
+  {
+    "line": 170,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 170,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 170,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 170,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 170,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 171,
+    "type": 2,
+    "text": "autosave_timer"
+  },
+  {
+    "line": 171,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 171,
+    "type": 2,
+    "text": "start"
+  },
+  {
+    "line": 171,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 171,
+    "type": 2,
+    "text": "autosave_get_sec"
+  },
+  {
+    "line": 171,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 171,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 171,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 174,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 174,
+    "type": 2,
+    "text": "autosave_stop"
+  },
+  {
+    "line": 174,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 174,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 174,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 174,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 174,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 175,
+    "type": 2,
+    "text": "autosave_timer"
+  },
+  {
+    "line": 175,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 175,
+    "type": 2,
+    "text": "stop"
+  },
+  {
+    "line": 175,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 175,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 183,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 183,
+    "type": 2,
+    "text": "node_data_exists"
+  },
+  {
+    "line": 183,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 183,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 183,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 183,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 183,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 183,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 183,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 183,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 184,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 184,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 184,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 184,
+    "type": 2,
+    "text": "has"
+  },
+  {
+    "line": 184,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 184,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 184,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 187,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 187,
+    "type": 2,
+    "text": "node_data_get"
+  },
+  {
+    "line": 187,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 187,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 187,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 187,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 187,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 187,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 187,
+    "type": 2,
+    "text": "NodeData"
+  },
+  {
+    "line": 187,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 188,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 188,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 188,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 188,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 188,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 191,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 191,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 191,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 191,
+    "type": 2,
+    "text": "node_data_key"
+  },
+  {
+    "line": 191,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 191,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 191,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 191,
+    "type": 2,
+    "text": "stat_data_key"
+  },
+  {
+    "line": 191,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 191,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 191,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 191,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 191,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 191,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 191,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 191,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 191,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 191,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 191,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 191,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 192,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 192,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 192,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 192,
+    "type": 2,
+    "text": "node_data_key"
+  },
+  {
+    "line": 192,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 192,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 192,
+    "type": 2,
+    "text": "stat_get"
+  },
+  {
+    "line": 192,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 192,
+    "type": 2,
+    "text": "stat_data_key"
+  },
+  {
+    "line": 192,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 192,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 192,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 195,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 195,
+    "type": 2,
+    "text": "node_stat_value"
+  },
+  {
+    "line": 195,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 195,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 195,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 195,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 195,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 195,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 195,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 195,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 195,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 195,
+    "type": 2,
+    "text": "default_value"
+  },
+  {
+    "line": 195,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 195,
+    "type": 2,
+    "text": "Variant"
+  },
+  {
+    "line": 195,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 195,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 195,
+    "type": 2,
+    "text": "Variant"
+  },
+  {
+    "line": 195,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 196,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 196,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 196,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 196,
+    "type": 2,
+    "text": "is_empty"
+  },
+  {
+    "line": 196,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 196,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 196,
+    "type": 14,
+    "text": "||"
+  },
+  {
+    "line": 196,
+    "type": 15,
+    "text": "!"
+  },
+  {
+    "line": 196,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 196,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 196,
+    "type": 2,
+    "text": "has"
+  },
+  {
+    "line": 196,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 196,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 196,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 196,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 197,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 197,
+    "type": 2,
+    "text": "default_value"
+  },
+  {
+    "line": 198,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 198,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 199,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 199,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 199,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 199,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 199,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 199,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 199,
+    "type": 2,
+    "text": "stat_get_value"
+  },
+  {
+    "line": 199,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 199,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 199,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 199,
+    "type": 2,
+    "text": "default_value"
+  },
+  {
+    "line": 199,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 202,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 202,
+    "type": 2,
+    "text": "node_data_stat_value"
+  },
+  {
+    "line": 202,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 202,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 202,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 202,
+    "type": 2,
+    "text": "NodeData"
+  },
+  {
+    "line": 202,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 202,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 202,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 202,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 202,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 202,
+    "type": 2,
+    "text": "default_value"
+  },
+  {
+    "line": 202,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 202,
+    "type": 2,
+    "text": "Variant"
+  },
+  {
+    "line": 202,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 202,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 202,
+    "type": 2,
+    "text": "Variant"
+  },
+  {
+    "line": 202,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 203,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 203,
+    "type": 15,
+    "text": "!"
+  },
+  {
+    "line": 203,
+    "type": 2,
+    "text": "is_instance_valid"
+  },
+  {
+    "line": 203,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 203,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 203,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 203,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 204,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 204,
+    "type": 2,
+    "text": "default_value"
+  },
+  {
+    "line": 205,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 205,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 206,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 206,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 206,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 206,
+    "type": 2,
+    "text": "stat_get_value"
+  },
+  {
+    "line": 206,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 206,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 206,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 206,
+    "type": 2,
+    "text": "default_value"
+  },
+  {
+    "line": 206,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 209,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 209,
+    "type": 2,
+    "text": "json_value"
+  },
+  {
+    "line": 209,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 209,
+    "type": 2,
+    "text": "path"
+  },
+  {
+    "line": 209,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 209,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 209,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 209,
+    "type": 2,
+    "text": "default_value"
+  },
+  {
+    "line": 209,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 209,
+    "type": 2,
+    "text": "Variant"
+  },
+  {
+    "line": 209,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 209,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 209,
+    "type": 2,
+    "text": "Variant"
+  },
+  {
+    "line": 209,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 210,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 210,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 210,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 210,
+    "type": 2,
+    "text": "nested_dic"
+  },
+  {
+    "line": 210,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 210,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 210,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 210,
+    "type": 2,
+    "text": "path"
+  },
+  {
+    "line": 210,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 210,
+    "type": 2,
+    "text": "default_value"
+  },
+  {
+    "line": 210,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 213,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 213,
+    "type": 2,
+    "text": "raw_data_value"
+  },
+  {
+    "line": 213,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 213,
+    "type": 2,
+    "text": "path"
+  },
+  {
+    "line": 213,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 213,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 213,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 213,
+    "type": 2,
+    "text": "default_value"
+  },
+  {
+    "line": 213,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 213,
+    "type": 2,
+    "text": "Variant"
+  },
+  {
+    "line": 213,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 213,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 213,
+    "type": 2,
+    "text": "Variant"
+  },
+  {
+    "line": 213,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 214,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 214,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 214,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 214,
+    "type": 2,
+    "text": "nested_dic"
+  },
+  {
+    "line": 214,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 214,
+    "type": 2,
+    "text": "raw_data"
+  },
+  {
+    "line": 214,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 214,
+    "type": 2,
+    "text": "path"
+  },
+  {
+    "line": 214,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 214,
+    "type": 2,
+    "text": "default_value"
+  },
+  {
+    "line": 214,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 236,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 236,
+    "type": 2,
+    "text": "json_save_all"
+  },
+  {
+    "line": 236,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 236,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 236,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 236,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 236,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 237,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 237,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 237,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 237,
+    "type": 2,
+    "text": "playing"
+  },
+  {
+    "line": 237,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 237,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 237,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 237,
+    "type": 2,
+    "text": "game_id"
+  },
+  {
+    "line": 237,
+    "type": 7,
+    "text": ">="
+  },
+  {
+    "line": 237,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 237,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 239,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 239,
+    "type": 2,
+    "text": "json_basic"
+  },
+  {
+    "line": 239,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 239,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 239,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 239,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 240,
+    "type": 3,
+    "text": "\"DIRT\""
+  },
+  {
+    "line": 240,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 240,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 240,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 240,
+    "type": 2,
+    "text": "player"
+  },
+  {
+    "line": 240,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 240,
+    "type": 2,
+    "text": "dirt"
+  },
+  {
+    "line": 240,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 241,
+    "type": 3,
+    "text": "\"DIRT_OVERALL\""
+  },
+  {
+    "line": 241,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 241,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 241,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 241,
+    "type": 2,
+    "text": "player"
+  },
+  {
+    "line": 241,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 241,
+    "type": 2,
+    "text": "dirt_overall"
+  },
+  {
+    "line": 241,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 242,
+    "type": 3,
+    "text": "\"TIME_PLAY_SEC\""
+  },
+  {
+    "line": 242,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 242,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 242,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 242,
+    "type": 2,
+    "text": "time"
+  },
+  {
+    "line": 242,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 242,
+    "type": 2,
+    "text": "current_sec_float"
+  },
+  {
+    "line": 242,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 243,
+    "type": 3,
+    "text": "\"QUIZ_CURSOR_STYLE_ID\""
+  },
+  {
+    "line": 243,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 243,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 243,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 243,
+    "type": 2,
+    "text": "ui"
+  },
+  {
+    "line": 243,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 243,
+    "type": 2,
+    "text": "top"
+  },
+  {
+    "line": 243,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 243,
+    "type": 2,
+    "text": "quiz"
+  },
+  {
+    "line": 243,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 243,
+    "type": 2,
+    "text": "cursor_style_id"
+  },
+  {
+    "line": 243,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 244,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 245,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 245,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 245,
+    "type": 2,
+    "text": "json_save"
+  },
+  {
+    "line": 245,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 245,
+    "type": 2,
+    "text": "json_basic"
+  },
+  {
+    "line": 245,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 245,
+    "type": 2,
+    "text": "file_path"
+  },
+  {
+    "line": 245,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 245,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 245,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 245,
+    "type": 2,
+    "text": "game_id"
+  },
+  {
+    "line": 245,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 245,
+    "type": 3,
+    "text": "\"basic\""
+  },
+  {
+    "line": 245,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 245,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 245,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 245,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 245,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 245,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 245,
+    "type": 2,
+    "text": "ENCRYPT_KEY"
+  },
+  {
+    "line": 245,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 249,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 249,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 249,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 249,
+    "type": 2,
+    "text": "Dictionary"
+  },
+  {
+    "line": 249,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 249,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 250,
+    "type": 3,
+    "text": "\"OTHER\""
+  },
+  {
+    "line": 250,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 250,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 250,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 250,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 251,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 251,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 251,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 251,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 251,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 252,
+    "type": 3,
+    "text": "\"ITEMS\""
+  },
+  {
+    "line": 252,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 252,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 252,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 252,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 253,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 255,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 255,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 255,
+    "type": 3,
+    "text": "\"OTHER\""
+  },
+  {
+    "line": 255,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 255,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 255,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 256,
+    "type": 3,
+    "text": "\"DIRT\""
+  },
+  {
+    "line": 256,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 256,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 256,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 256,
+    "type": 2,
+    "text": "player"
+  },
+  {
+    "line": 256,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 256,
+    "type": 2,
+    "text": "dirt"
+  },
+  {
+    "line": 256,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 257,
+    "type": 3,
+    "text": "\"DIRT_OVERALL\""
+  },
+  {
+    "line": 257,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 257,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 257,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 257,
+    "type": 2,
+    "text": "player"
+  },
+  {
+    "line": 257,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 257,
+    "type": 2,
+    "text": "dirt_overall"
+  },
+  {
+    "line": 257,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 258,
+    "type": 3,
+    "text": "\"GAME_SEED\""
+  },
+  {
+    "line": 258,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 258,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 258,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 258,
+    "type": 2,
+    "text": "game_seed"
+  },
+  {
+    "line": 258,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 259,
+    "type": 3,
+    "text": "\"TIME_PLAY_SEC\""
+  },
+  {
+    "line": 259,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 259,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 259,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 259,
+    "type": 2,
+    "text": "time"
+  },
+  {
+    "line": 259,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 259,
+    "type": 2,
+    "text": "current_sec_float"
+  },
+  {
+    "line": 259,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 260,
+    "type": 3,
+    "text": "\"LEADERBOARD_GLOBAL_RANK\""
+  },
+  {
+    "line": 260,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 260,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 260,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 260,
+    "type": 2,
+    "text": "leaderboard_global_rank"
+  },
+  {
+    "line": 260,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 261,
+    "type": 3,
+    "text": "\"ITEM_DIG_OUT_FIRST\""
+  },
+  {
+    "line": 261,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 261,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 261,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 261,
+    "type": 2,
+    "text": "inv"
+  },
+  {
+    "line": 261,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 261,
+    "type": 2,
+    "text": "item_dig_out_first"
+  },
+  {
+    "line": 261,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 262,
+    "type": 3,
+    "text": "\"ITEM_DIG_OUT_FIRST_TS\""
+  },
+  {
+    "line": 262,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 262,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 262,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 262,
+    "type": 2,
+    "text": "inv"
+  },
+  {
+    "line": 262,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 262,
+    "type": 2,
+    "text": "item_dig_out_first_ts"
+  },
+  {
+    "line": 262,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 263,
+    "type": 3,
+    "text": "\"HATS_QUE\""
+  },
+  {
+    "line": 263,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 263,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 263,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 263,
+    "type": 2,
+    "text": "hat"
+  },
+  {
+    "line": 263,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 263,
+    "type": 2,
+    "text": "hats_que"
+  },
+  {
+    "line": 263,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 264,
+    "type": 3,
+    "text": "\"CHESTS\""
+  },
+  {
+    "line": 264,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 264,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 264,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 264,
+    "type": 2,
+    "text": "chest"
+  },
+  {
+    "line": 264,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 264,
+    "type": 2,
+    "text": "data_raw"
+  },
+  {
+    "line": 264,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 265,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 267,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 267,
+    "type": 2,
+    "text": "is_instance_valid"
+  },
+  {
+    "line": 267,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 267,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 267,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 267,
+    "type": 2,
+    "text": "world"
+  },
+  {
+    "line": 267,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 267,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 268,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 268,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 268,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 268,
+    "type": 2,
+    "text": "NodeData"
+  },
+  {
+    "line": 268,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 268,
+    "type": 2,
+    "text": "nodes_data"
+  },
+  {
+    "line": 268,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 268,
+    "type": 2,
+    "text": "values"
+  },
+  {
+    "line": 268,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 268,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 268,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 269,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 269,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 269,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 269,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 269,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 269,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 269,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 269,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 269,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 269,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 269,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 269,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 271,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 271,
+    "type": 2,
+    "text": "stat_key"
+  },
+  {
+    "line": 271,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 271,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 271,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 271,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 271,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 271,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 271,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 271,
+    "type": 2,
+    "text": "keys"
+  },
+  {
+    "line": 271,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 271,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 271,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 272,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 272,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 272,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 272,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 272,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 272,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 272,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 272,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 272,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 272,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 272,
+    "type": 2,
+    "text": "stat_key"
+  },
+  {
+    "line": 272,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 272,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 272,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 272,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 273,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 273,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 273,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 273,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 273,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 273,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 273,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 273,
+    "type": 2,
+    "text": "stats"
+  },
+  {
+    "line": 273,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 273,
+    "type": 2,
+    "text": "stat_key"
+  },
+  {
+    "line": 273,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 273,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 273,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 273,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 273,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 273,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 274,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 274,
+    "type": 2,
+    "text": "_stat"
+  },
+  {
+    "line": 274,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 274,
+    "type": 2,
+    "text": "StatData"
+  },
+  {
+    "line": 274,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 274,
+    "type": 2,
+    "text": "stat"
+  },
+  {
+    "line": 274,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 274,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 274,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 274,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 274,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 274,
+    "type": 2,
+    "text": "stat_key"
+  },
+  {
+    "line": 274,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 274,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 274,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 275,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 275,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 275,
+    "type": 2,
+    "text": "array_insert"
+  },
+  {
+    "line": 275,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 275,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 275,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 275,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 275,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 275,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 275,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 275,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 275,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 275,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 275,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 275,
+    "type": 2,
+    "text": "stat_key"
+  },
+  {
+    "line": 275,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 275,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 275,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 275,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 275,
+    "type": 2,
+    "text": "_stat"
+  },
+  {
+    "line": 275,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 275,
+    "type": 2,
+    "text": "level"
+  },
+  {
+    "line": 275,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 277,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 277,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 277,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 277,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 277,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 277,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 277,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 277,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 277,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 277,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 277,
+    "type": 3,
+    "text": "\"POS_WORLD\""
+  },
+  {
+    "line": 277,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 277,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 277,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 277,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 278,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 278,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 278,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 278,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 278,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 278,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 278,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 278,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 278,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 278,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 278,
+    "type": 3,
+    "text": "\"OTHER\""
+  },
+  {
+    "line": 278,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 278,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 278,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 278,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 279,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 279,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 279,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 279,
+    "type": 2,
+    "text": "world"
+  },
+  {
+    "line": 279,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 279,
+    "type": 2,
+    "text": "key_to_nodes"
+  },
+  {
+    "line": 279,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 279,
+    "type": 2,
+    "text": "has"
+  },
+  {
+    "line": 279,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 279,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 279,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 279,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 279,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 279,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 280,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 280,
+    "type": 2,
+    "text": "node_world"
+  },
+  {
+    "line": 280,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 280,
+    "type": 2,
+    "text": "NodeWorld"
+  },
+  {
+    "line": 280,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 280,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 280,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 280,
+    "type": 2,
+    "text": "world"
+  },
+  {
+    "line": 280,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 280,
+    "type": 2,
+    "text": "key_to_nodes"
+  },
+  {
+    "line": 280,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 280,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 280,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 280,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 280,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 280,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 281,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 281,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 281,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 281,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 281,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 281,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 281,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 281,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 281,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 281,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 281,
+    "type": 3,
+    "text": "\"POS_WORLD\""
+  },
+  {
+    "line": 281,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 281,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 281,
+    "type": 2,
+    "text": "append"
+  },
+  {
+    "line": 281,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 281,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 281,
+    "type": 2,
+    "text": "node_world"
+  },
+  {
+    "line": 281,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 281,
+    "type": 2,
+    "text": "global_position"
+  },
+  {
+    "line": 281,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 281,
+    "type": 2,
+    "text": "x"
+  },
+  {
+    "line": 281,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 281,
+    "type": 2,
+    "text": "node_world"
+  },
+  {
+    "line": 281,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 281,
+    "type": 2,
+    "text": "global_position"
+  },
+  {
+    "line": 281,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 281,
+    "type": 2,
+    "text": "y"
+  },
+  {
+    "line": 281,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 281,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 282,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 282,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 282,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 282,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 282,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 282,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 282,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 282,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 282,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 282,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 282,
+    "type": 3,
+    "text": "\"OTHER\""
+  },
+  {
+    "line": 282,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 282,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 282,
+    "type": 2,
+    "text": "append"
+  },
+  {
+    "line": 282,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 282,
+    "type": 75,
+    "text": "{"
+  },
+  {
+    "line": 283,
+    "type": 3,
+    "text": "\"HAT_KEY\""
+  },
+  {
+    "line": 283,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 283,
+    "type": 2,
+    "text": "node_world"
+  },
+  {
+    "line": 283,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 283,
+    "type": 2,
+    "text": "hat_node_data_key"
+  },
+  {
+    "line": 283,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 284,
+    "type": 3,
+    "text": "\"NAMETAG\""
+  },
+  {
+    "line": 284,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 284,
+    "type": 2,
+    "text": "node_world"
+  },
+  {
+    "line": 284,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 284,
+    "type": 2,
+    "text": "nametag"
+  },
+  {
+    "line": 284,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 285,
+    "type": 76,
+    "text": "}"
+  },
+  {
+    "line": 285,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 287,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 287,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 287,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 287,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 287,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 287,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 287,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 287,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "has"
+  },
+  {
+    "line": 287,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 287,
+    "type": 3,
+    "text": "\"SPELL_STACKS\""
+  },
+  {
+    "line": 287,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 287,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 287,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "world"
+  },
+  {
+    "line": 287,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "key_to_nodes"
+  },
+  {
+    "line": 287,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "has"
+  },
+  {
+    "line": 287,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 287,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 287,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 287,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 287,
+    "type": 15,
+    "text": "!"
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 287,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "world"
+  },
+  {
+    "line": 287,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "key_to_nodes"
+  },
+  {
+    "line": 287,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 287,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 287,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 287,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 287,
+    "type": 2,
+    "text": "is_empty"
+  },
+  {
+    "line": 287,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 287,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 287,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 288,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 288,
+    "type": 2,
+    "text": "spell"
+  },
+  {
+    "line": 288,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 288,
+    "type": 2,
+    "text": "SpellNodeWorld"
+  },
+  {
+    "line": 288,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 288,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 288,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 288,
+    "type": 2,
+    "text": "world"
+  },
+  {
+    "line": 288,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 288,
+    "type": 2,
+    "text": "key_to_nodes"
+  },
+  {
+    "line": 288,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 288,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 288,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 288,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 288,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 288,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 288,
+    "type": 2,
+    "text": "back"
+  },
+  {
+    "line": 288,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 288,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 289,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 289,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 289,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 289,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 289,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 289,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 289,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 289,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 289,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 289,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 289,
+    "type": 3,
+    "text": "\"CURRENT_SPELL_STACKS\""
+  },
+  {
+    "line": 289,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 289,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 289,
+    "type": 2,
+    "text": "spell"
+  },
+  {
+    "line": 289,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 289,
+    "type": 2,
+    "text": "current_stacks"
+  },
+  {
+    "line": 290,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 290,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 290,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 290,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 290,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 290,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 290,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 290,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 290,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 290,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 290,
+    "type": 3,
+    "text": "\"CURRENT_SPELL_DIGS\""
+  },
+  {
+    "line": 290,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 290,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 290,
+    "type": 2,
+    "text": "spell"
+  },
+  {
+    "line": 290,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 290,
+    "type": 2,
+    "text": "current_digs"
+  },
+  {
+    "line": 292,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 292,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 292,
+    "type": 3,
+    "text": "\"ITEMS\""
+  },
+  {
+    "line": 292,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 292,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 292,
+    "type": 2,
+    "text": "items_data"
+  },
+  {
+    "line": 292,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 292,
+    "type": 2,
+    "text": "duplicate"
+  },
+  {
+    "line": 292,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 292,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 294,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 294,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 294,
+    "type": 3,
+    "text": "\"BADGES\""
+  },
+  {
+    "line": 294,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 294,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 294,
+    "type": 2,
+    "text": "badges_data"
+  },
+  {
+    "line": 294,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 294,
+    "type": 2,
+    "text": "duplicate"
+  },
+  {
+    "line": 294,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 294,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 296,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 296,
+    "type": 2,
+    "text": "is_instance_valid"
+  },
+  {
+    "line": 296,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 296,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 296,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 296,
+    "type": 2,
+    "text": "world"
+  },
+  {
+    "line": 296,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 296,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 296,
+    "type": 2,
+    "text": "is_instance_valid"
+  },
+  {
+    "line": 296,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 296,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 296,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 296,
+    "type": 2,
+    "text": "world"
+  },
+  {
+    "line": 296,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 296,
+    "type": 2,
+    "text": "depth_layers"
+  },
+  {
+    "line": 296,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 296,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 297,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 297,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 297,
+    "type": 3,
+    "text": "\"DESTRUCTION\""
+  },
+  {
+    "line": 297,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 297,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 297,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 297,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 297,
+    "type": 2,
+    "text": "world"
+  },
+  {
+    "line": 297,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 297,
+    "type": 2,
+    "text": "depth_layers"
+  },
+  {
+    "line": 297,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 297,
+    "type": 2,
+    "text": "grid_break_data"
+  },
+  {
+    "line": 299,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 299,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 299,
+    "type": 2,
+    "text": "json_save"
+  },
+  {
+    "line": 299,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 299,
+    "type": 2,
+    "text": "json"
+  },
+  {
+    "line": 299,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 299,
+    "type": 2,
+    "text": "file_path"
+  },
+  {
+    "line": 299,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 299,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 299,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 299,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 299,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 299,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 299,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 299,
+    "type": 2,
+    "text": "ENCRYPT_KEY"
+  },
+  {
+    "line": 299,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 300,
+    "type": 2,
+    "text": "print"
+  },
+  {
+    "line": 300,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 300,
+    "type": 3,
+    "text": "\"data saved!\""
+  },
+  {
+    "line": 300,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 303,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 303,
+    "type": 2,
+    "text": "json_load_all"
+  },
+  {
+    "line": 303,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 303,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 303,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 303,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 303,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 305,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 305,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 305,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 305,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 305,
+    "type": 2,
+    "text": "json_load"
+  },
+  {
+    "line": 305,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 305,
+    "type": 2,
+    "text": "file_path"
+  },
+  {
+    "line": 305,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 305,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 305,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 305,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 305,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 305,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 305,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 305,
+    "type": 2,
+    "text": "ENCRYPT_KEY"
+  },
+  {
+    "line": 305,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 307,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 307,
+    "type": 15,
+    "text": "!"
+  },
+  {
+    "line": 307,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 307,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 307,
+    "type": 2,
+    "text": "is_empty"
+  },
+  {
+    "line": 307,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 307,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 307,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 309,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 309,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 309,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 309,
+    "type": 2,
+    "text": "has"
+  },
+  {
+    "line": 309,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 309,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 309,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 309,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 310,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 310,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 310,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 310,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 310,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 310,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 310,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 310,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 310,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 310,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 310,
+    "type": 2,
+    "text": "keys"
+  },
+  {
+    "line": 310,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 310,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 310,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 311,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 311,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 311,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 311,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 311,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 311,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 311,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 311,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 311,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 311,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 311,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 311,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 311,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 311,
+    "type": 2,
+    "text": "keys"
+  },
+  {
+    "line": 311,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 311,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 311,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 312,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 312,
+    "type": 2,
+    "text": "node_data_exists"
+  },
+  {
+    "line": 312,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 312,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 312,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 312,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 313,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 313,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 313,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 313,
+    "type": 2,
+    "text": "NodeData"
+  },
+  {
+    "line": 313,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 313,
+    "type": 2,
+    "text": "node_data_get"
+  },
+  {
+    "line": 313,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 313,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 313,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 314,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 314,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 314,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 314,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 314,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 314,
+    "type": 3,
+    "text": "\"NODES\""
+  },
+  {
+    "line": 314,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 314,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 314,
+    "type": 2,
+    "text": "key_node"
+  },
+  {
+    "line": 314,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 314,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 314,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 314,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 315,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 315,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 315,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 315,
+    "type": 3,
+    "text": "\"POS_WORLD\""
+  },
+  {
+    "line": 315,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 316,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 316,
+    "type": 2,
+    "text": "pos_array"
+  },
+  {
+    "line": 316,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 316,
+    "type": 2,
+    "text": "Array"
+  },
+  {
+    "line": 316,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 316,
+    "type": 2,
+    "text": "Vector2"
+  },
+  {
+    "line": 316,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 317,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 317,
+    "type": 2,
+    "text": "i"
+  },
+  {
+    "line": 317,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 317,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 317,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 317,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 317,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 317,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 317,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 317,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 317,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 318,
+    "type": 2,
+    "text": "pos_array"
+  },
+  {
+    "line": 318,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 318,
+    "type": 2,
+    "text": "append"
+  },
+  {
+    "line": 318,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 318,
+    "type": 2,
+    "text": "Vector2"
+  },
+  {
+    "line": 318,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 318,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 318,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 318,
+    "type": 2,
+    "text": "i"
+  },
+  {
+    "line": 318,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 318,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 318,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 318,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 318,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 318,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 318,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 318,
+    "type": 2,
+    "text": "i"
+  },
+  {
+    "line": 318,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 318,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 318,
+    "type": 3,
+    "text": "1"
+  },
+  {
+    "line": 318,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 318,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 318,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 319,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 319,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 319,
+    "type": 2,
+    "text": "pos_world"
+  },
+  {
+    "line": 319,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 319,
+    "type": 2,
+    "text": "pos_array"
+  },
+  {
+    "line": 320,
+    "type": 41,
+    "text": "elif"
+  },
+  {
+    "line": 320,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 320,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 320,
+    "type": 3,
+    "text": "\"CURRENT_SPELL_STACKS\""
+  },
+  {
+    "line": 320,
+    "type": 14,
+    "text": "||"
+  },
+  {
+    "line": 320,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 320,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 320,
+    "type": 3,
+    "text": "\"CURRENT_SPELL_DIGS\""
+  },
+  {
+    "line": 320,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 321,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 321,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 321,
+    "type": 2,
+    "text": "metadata_loaded"
+  },
+  {
+    "line": 321,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 321,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 321,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 321,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 321,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 322,
+    "type": 41,
+    "text": "elif"
+  },
+  {
+    "line": 322,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 322,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 322,
+    "type": 3,
+    "text": "\"OTHER\""
+  },
+  {
+    "line": 322,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 322,
+    "type": 2,
+    "text": "typeof"
+  },
+  {
+    "line": 322,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 322,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 322,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 322,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 322,
+    "type": 2,
+    "text": "TYPE_ARRAY"
+  },
+  {
+    "line": 322,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 323,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 323,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 323,
+    "type": 2,
+    "text": "metadata_loaded"
+  },
+  {
+    "line": 323,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 323,
+    "type": 3,
+    "text": "\"OTHER\""
+  },
+  {
+    "line": 323,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 323,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 323,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 323,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 324,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 324,
+    "type": 2,
+    "text": "i"
+  },
+  {
+    "line": 324,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 324,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 324,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 324,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 324,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 324,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 324,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 324,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 324,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 325,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 325,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 325,
+    "type": 2,
+    "text": "metadata_loaded"
+  },
+  {
+    "line": 325,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 325,
+    "type": 3,
+    "text": "\"OTHER\""
+  },
+  {
+    "line": 325,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 325,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 325,
+    "type": 2,
+    "text": "append"
+  },
+  {
+    "line": 325,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 325,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 325,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 325,
+    "type": 2,
+    "text": "i"
+  },
+  {
+    "line": 325,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 325,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 327,
+    "type": 41,
+    "text": "elif"
+  },
+  {
+    "line": 327,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 327,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 327,
+    "type": 2,
+    "text": "stat_exists"
+  },
+  {
+    "line": 327,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 327,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 327,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 327,
+    "type": 13,
+    "text": "&&"
+  },
+  {
+    "line": 327,
+    "type": 2,
+    "text": "typeof"
+  },
+  {
+    "line": 327,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 327,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 327,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 327,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 327,
+    "type": 2,
+    "text": "TYPE_ARRAY"
+  },
+  {
+    "line": 327,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 328,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 328,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 328,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 328,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 328,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 328,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 328,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 328,
+    "type": 2,
+    "text": "size"
+  },
+  {
+    "line": 328,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 328,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 328,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 329,
+    "type": 2,
+    "text": "node_data"
+  },
+  {
+    "line": 329,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 329,
+    "type": 2,
+    "text": "stat_set_level"
+  },
+  {
+    "line": 329,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 329,
+    "type": 2,
+    "text": "key_stat"
+  },
+  {
+    "line": 329,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 329,
+    "type": 2,
+    "text": "value"
+  },
+  {
+    "line": 329,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 329,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 329,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 329,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 329,
+    "type": 2,
+    "text": "stat_id"
+  },
+  {
+    "line": 329,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 331,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 331,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 331,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 331,
+    "type": 2,
+    "text": "has"
+  },
+  {
+    "line": 331,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 331,
+    "type": 3,
+    "text": "\"ITEMS\""
+  },
+  {
+    "line": 331,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 331,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 332,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 332,
+    "type": 2,
+    "text": "key_item"
+  },
+  {
+    "line": 332,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 332,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 332,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 332,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 332,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 332,
+    "type": 3,
+    "text": "\"ITEMS\""
+  },
+  {
+    "line": 332,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 332,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 333,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 333,
+    "type": 15,
+    "text": "!"
+  },
+  {
+    "line": 333,
+    "type": 2,
+    "text": "raw_data_items"
+  },
+  {
+    "line": 333,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 333,
+    "type": 2,
+    "text": "has"
+  },
+  {
+    "line": 333,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 333,
+    "type": 2,
+    "text": "key_item"
+  },
+  {
+    "line": 333,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 333,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 333,
+    "type": 46,
+    "text": "continue"
+  },
+  {
+    "line": 334,
+    "type": 2,
+    "text": "items_data"
+  },
+  {
+    "line": 334,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 334,
+    "type": 2,
+    "text": "key_item"
+  },
+  {
+    "line": 334,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 334,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 334,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 334,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 334,
+    "type": 3,
+    "text": "\"ITEMS\""
+  },
+  {
+    "line": 334,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 334,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 334,
+    "type": 2,
+    "text": "key_item"
+  },
+  {
+    "line": 334,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 336,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 336,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 336,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 336,
+    "type": 2,
+    "text": "has"
+  },
+  {
+    "line": 336,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 336,
+    "type": 3,
+    "text": "\"BADGES\""
+  },
+  {
+    "line": 336,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 336,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 337,
+    "type": 43,
+    "text": "for"
+  },
+  {
+    "line": 337,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 337,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 337,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 337,
+    "type": 61,
+    "text": "in"
+  },
+  {
+    "line": 337,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 337,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 337,
+    "type": 3,
+    "text": "\"BADGES\""
+  },
+  {
+    "line": 337,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 337,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 338,
+    "type": 2,
+    "text": "badges_data"
+  },
+  {
+    "line": 338,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 338,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 338,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 338,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 338,
+    "type": 2,
+    "text": "json_loaded"
+  },
+  {
+    "line": 338,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 338,
+    "type": 3,
+    "text": "\"BADGES\""
+  },
+  {
+    "line": 338,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 338,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 338,
+    "type": 2,
+    "text": "key"
+  },
+  {
+    "line": 338,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 341,
+    "type": 2,
+    "text": "print"
+  },
+  {
+    "line": 341,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 341,
+    "type": 3,
+    "text": "\"data loaded!\""
+  },
+  {
+    "line": 341,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 342,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 342,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 342,
+    "type": 2,
+    "text": "on_data_loaded"
+  },
+  {
+    "line": 342,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 342,
+    "type": 2,
+    "text": "emit"
+  },
+  {
+    "line": 342,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 342,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 345,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 345,
+    "type": 2,
+    "text": "json_exists"
+  },
+  {
+    "line": 345,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 345,
+    "type": 2,
+    "text": "_game_id"
+  },
+  {
+    "line": 345,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 345,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 345,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 345,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 345,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 345,
+    "type": 2,
+    "text": "game_id"
+  },
+  {
+    "line": 345,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 345,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 345,
+    "type": 2,
+    "text": "bool"
+  },
+  {
+    "line": 345,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 346,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 346,
+    "type": 2,
+    "text": "FileAccess"
+  },
+  {
+    "line": 346,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 346,
+    "type": 2,
+    "text": "file_exists"
+  },
+  {
+    "line": 346,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 346,
+    "type": 2,
+    "text": "file_path"
+  },
+  {
+    "line": 346,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 346,
+    "type": 2,
+    "text": "_game_id"
+  },
+  {
+    "line": 346,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 346,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 349,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 349,
+    "type": 2,
+    "text": "json_delete"
+  },
+  {
+    "line": 349,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 349,
+    "type": 2,
+    "text": "_game_id"
+  },
+  {
+    "line": 349,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 349,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 349,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 349,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 349,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 349,
+    "type": 2,
+    "text": "game_id"
+  },
+  {
+    "line": 349,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 349,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 349,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 349,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 350,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 350,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 350,
+    "type": 2,
+    "text": "delete_file"
+  },
+  {
+    "line": 350,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 350,
+    "type": 2,
+    "text": "file_path"
+  },
+  {
+    "line": 350,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 350,
+    "type": 2,
+    "text": "_game_id"
+  },
+  {
+    "line": 350,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 350,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 351,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 351,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 351,
+    "type": 2,
+    "text": "delete_file"
+  },
+  {
+    "line": 351,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 351,
+    "type": 2,
+    "text": "file_path"
+  },
+  {
+    "line": 351,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 351,
+    "type": 2,
+    "text": "_game_id"
+  },
+  {
+    "line": 351,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 351,
+    "type": 3,
+    "text": "\"basic\""
+  },
+  {
+    "line": 351,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 351,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 354,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 354,
+    "type": 2,
+    "text": "file_path"
+  },
+  {
+    "line": 354,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 354,
+    "type": 2,
+    "text": "_game_id"
+  },
+  {
+    "line": 354,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 354,
+    "type": 2,
+    "text": "int"
+  },
+  {
+    "line": 354,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 354,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 354,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 354,
+    "type": 2,
+    "text": "game_id"
+  },
+  {
+    "line": 354,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 354,
+    "type": 2,
+    "text": "data_name"
+  },
+  {
+    "line": 354,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 354,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 354,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 354,
+    "type": 3,
+    "text": "\"data\""
+  },
+  {
+    "line": 354,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 354,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 354,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 354,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 355,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 355,
+    "type": 2,
+    "text": "user_id"
+  },
+  {
+    "line": 355,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 355,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 355,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 355,
+    "type": 3,
+    "text": "\"default\""
+  },
+  {
+    "line": 355,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 355,
+    "type": 2,
+    "text": "Steamworks"
+  },
+  {
+    "line": 355,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 355,
+    "type": 2,
+    "text": "user_id"
+  },
+  {
+    "line": 355,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 355,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 355,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 355,
+    "type": 2,
+    "text": "str"
+  },
+  {
+    "line": 355,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 355,
+    "type": 2,
+    "text": "Steamworks"
+  },
+  {
+    "line": 355,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 355,
+    "type": 2,
+    "text": "user_id"
+  },
+  {
+    "line": 355,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 356,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 356,
+    "type": 2,
+    "text": "slot_id"
+  },
+  {
+    "line": 356,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 356,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 356,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 356,
+    "type": 3,
+    "text": "\"game_slot_\""
+  },
+  {
+    "line": 356,
+    "type": 22,
+    "text": "+"
+  },
+  {
+    "line": 356,
+    "type": 2,
+    "text": "str"
+  },
+  {
+    "line": 356,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 356,
+    "type": 2,
+    "text": "_game_id"
+  },
+  {
+    "line": 356,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 357,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 357,
+    "type": 3,
+    "text": "\"user://data/%s/%s/%s.json\""
+  },
+  {
+    "line": 357,
+    "type": 27,
+    "text": "%"
+  },
+  {
+    "line": 357,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 357,
+    "type": 2,
+    "text": "user_id"
+  },
+  {
+    "line": 357,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 357,
+    "type": 2,
+    "text": "slot_id"
+  },
+  {
+    "line": 357,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 357,
+    "type": 2,
+    "text": "data_name"
+  },
+  {
+    "line": 357,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 366,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 366,
+    "type": 2,
+    "text": "user_data_file_path"
+  },
+  {
+    "line": 366,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 366,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 366,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 366,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 366,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 367,
+    "type": 70,
+    "text": "var"
+  },
+  {
+    "line": 367,
+    "type": 2,
+    "text": "user_id"
+  },
+  {
+    "line": 367,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 367,
+    "type": 2,
+    "text": "String"
+  },
+  {
+    "line": 367,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 367,
+    "type": 3,
+    "text": "\"default\""
+  },
+  {
+    "line": 367,
+    "type": 40,
+    "text": "if"
+  },
+  {
+    "line": 367,
+    "type": 2,
+    "text": "Steamworks"
+  },
+  {
+    "line": 367,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 367,
+    "type": 2,
+    "text": "user_id"
+  },
+  {
+    "line": 367,
+    "type": 8,
+    "text": "=="
+  },
+  {
+    "line": 367,
+    "type": 3,
+    "text": "0"
+  },
+  {
+    "line": 367,
+    "type": 42,
+    "text": "else"
+  },
+  {
+    "line": 367,
+    "type": 2,
+    "text": "str"
+  },
+  {
+    "line": 367,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 367,
+    "type": 2,
+    "text": "Steamworks"
+  },
+  {
+    "line": 367,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 367,
+    "type": 2,
+    "text": "user_id"
+  },
+  {
+    "line": 367,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 368,
+    "type": 48,
+    "text": "return"
+  },
+  {
+    "line": 368,
+    "type": 3,
+    "text": "\"user://data/%s/user_data.json\""
+  },
+  {
+    "line": 368,
+    "type": 27,
+    "text": "%"
+  },
+  {
+    "line": 368,
+    "type": 73,
+    "text": "["
+  },
+  {
+    "line": 368,
+    "type": 2,
+    "text": "user_id"
+  },
+  {
+    "line": 368,
+    "type": 74,
+    "text": "]"
+  },
+  {
+    "line": 371,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 371,
+    "type": 2,
+    "text": "user_data_save"
+  },
+  {
+    "line": 371,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 371,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 371,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 371,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 371,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 372,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 372,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 372,
+    "type": 2,
+    "text": "json_save"
+  },
+  {
+    "line": 372,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 372,
+    "type": 2,
+    "text": "user_data"
+  },
+  {
+    "line": 372,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 372,
+    "type": 2,
+    "text": "user_data_file_path"
+  },
+  {
+    "line": 372,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 372,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 372,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 372,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 372,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 372,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 372,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 372,
+    "type": 2,
+    "text": "ENCRYPT_KEY"
+  },
+  {
+    "line": 372,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 375,
+    "type": 60,
+    "text": "func"
+  },
+  {
+    "line": 375,
+    "type": 2,
+    "text": "user_data_load"
+  },
+  {
+    "line": 375,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 375,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 375,
+    "type": 86,
+    "text": "->"
+  },
+  {
+    "line": 375,
+    "type": 71,
+    "text": "void"
+  },
+  {
+    "line": 375,
+    "type": 84,
+    "text": ":"
+  },
+  {
+    "line": 376,
+    "type": 2,
+    "text": "user_data"
+  },
+  {
+    "line": 376,
+    "type": 28,
+    "text": "="
+  },
+  {
+    "line": 376,
+    "type": 2,
+    "text": "Mads"
+  },
+  {
+    "line": 376,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 376,
+    "type": 2,
+    "text": "json_load"
+  },
+  {
+    "line": 376,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 376,
+    "type": 2,
+    "text": "user_data_file_path"
+  },
+  {
+    "line": 376,
+    "type": 77,
+    "text": "("
+  },
+  {
+    "line": 376,
+    "type": 78,
+    "text": ")"
+  },
+  {
+    "line": 376,
+    "type": 79,
+    "text": ","
+  },
+  {
+    "line": 376,
+    "type": 2,
+    "text": "GM"
+  },
+  {
+    "line": 376,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 376,
+    "type": 2,
+    "text": "data"
+  },
+  {
+    "line": 376,
+    "type": 81,
+    "text": "."
+  },
+  {
+    "line": 376,
+    "type": 2,
+    "text": "ENCRYPT_KEY"
+  },
+  {
+    "line": 376,
+    "type": 78,
+    "text": ")"
+  }
+]

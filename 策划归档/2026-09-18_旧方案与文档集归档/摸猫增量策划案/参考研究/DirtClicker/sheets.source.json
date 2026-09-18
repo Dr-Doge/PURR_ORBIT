@@ -1,0 +1,4489 @@
+{
+	"NODES": {
+		"NULL": {
+			"ICON_FRAME": 0,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "PASS",
+			"IS_SHOP": 0,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_NULL",
+			"DESCRIPTION": "UI_DE_NULL"
+		},
+		"SPOON": {
+			"ICON_FRAME": 19,
+			"IS_TOOL": 1,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/tools/spoon/spoon.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#83769c",
+			"HAT_FRAME": 0,
+			"NAME": "UI_SPOON",
+			"DESCRIPTION": "UI_DE_SPOON",
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 1,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 35,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 3,
+					"DIRT_GROWTH": 1.33,
+					"FINAL_COST": 48761,
+					"ALL_COST": 1706652,
+					"VALUE_FINAL": 35
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPOON",
+					"LOCK_BY_KEY_STAT": "DIRT_GAIN",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.03,
+					"DIRT_BASE": 35,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 85,
+					"ALL_COST": 427,
+					"VALUE_FINAL": 1.15
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPOON",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 1,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.03,
+					"DIRT_BASE": 300,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 3181,
+					"ALL_COST": 31813,
+					"VALUE_FINAL": 0.3
+				}
+			],
+			"DIRT_GAIN_CRIT_CHANCE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPOON",
+					"LOCK_BY_KEY_STAT": "DIRT_GAIN",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 50,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 122,
+					"ALL_COST": 610,
+					"VALUE_FINAL": 0.05
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPOON",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 1,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 300,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 3181,
+					"ALL_COST": 31813,
+					"VALUE_FINAL": 0.1
+				}
+			],
+			"DIRT_GAIN": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 4,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 50,
+					"DIRT_GROWTH": 1.6,
+					"FINAL_COST": 205,
+					"ALL_COST": 819,
+					"VALUE_FINAL": 5
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPOON",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 1,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 500,
+					"DIRT_GROWTH": 2,
+					"FINAL_COST": 8000,
+					"ALL_COST": 40000,
+					"VALUE_FINAL": 5
+				}
+			],
+			"COUNT_ADD": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "CURSOR",
+					"LOCK_BY_KEY_STAT": "RADIUS",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 10,
+					"DIRT_BASE": 3000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 3000,
+					"ALL_COST": 3000,
+					"VALUE_FINAL": 10
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPOON",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 10,
+					"DIRT_BASE": 500,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 500,
+					"ALL_COST": 500,
+					"VALUE_FINAL": 10
+				}
+			],
+			"LUCK_ITEM_DROP": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "INVENTORY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 100,
+					"DIRT_GROWTH": 1.65,
+					"FINAL_COST": 741,
+					"ALL_COST": 3706,
+					"VALUE_FINAL": 0.05
+				}
+			],
+			"LUCK_ITEM_RARITY": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPOON",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 1500,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 7594,
+					"ALL_COST": 37969,
+					"VALUE_FINAL": 0.05
+				}
+			]
+		},
+		"SHOVEL": {
+			"ICON_FRAME": 1,
+			"IS_TOOL": 1,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/tools/shovel/shovel.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#ff5000",
+			"HAT_FRAME": 0,
+			"NAME": "UI_SHOVEL",
+			"DESCRIPTION": "UI_DE_SHOVEL",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "INVENTORY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 1500,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 1500,
+					"ALL_COST": 1500,
+					"VALUE_FINAL": 1
+				}
+			],
+			"DIRT_GAIN": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SHOVEL",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 30,
+					"VALUE_INC": 10,
+					"DIRT_BASE": 1000,
+					"DIRT_GROWTH": 1.65,
+					"FINAL_COST": 90647,
+					"ALL_COST": 906474,
+					"VALUE_FINAL": 130
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SHOVEL",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 15,
+					"DIRT_BASE": 15000,
+					"DIRT_GROWTH": 1.6,
+					"FINAL_COST": 1030792,
+					"ALL_COST": 10307922,
+					"VALUE_FINAL": 150
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SHOVEL",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 500,
+					"DIRT_GROWTH": 1.6,
+					"FINAL_COST": 34360,
+					"ALL_COST": 343597,
+					"VALUE_FINAL": 1.25
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SHOVEL",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 10000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 384434,
+					"ALL_COST": 3844336,
+					"VALUE_FINAL": 0.25
+				}
+			],
+			"DIRT_GAIN_CRIT_CHANCE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SHOVEL",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 500,
+					"DIRT_GROWTH": 1.6,
+					"FINAL_COST": 34360,
+					"ALL_COST": 343597,
+					"VALUE_FINAL": 0.1
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SHOVEL",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 10000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 384434,
+					"ALL_COST": 3844336,
+					"VALUE_FINAL": 0.1
+				}
+			],
+			"LUCK_ITEM_DROP": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SHOVEL",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 1000,
+					"DIRT_GROWTH": 1.6,
+					"FINAL_COST": 6554,
+					"ALL_COST": 32768,
+					"VALUE_FINAL": 0.05
+				}
+			],
+			"LUCK_ITEM_RARITY": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SHOVEL",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 5000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 25313,
+					"ALL_COST": 126563,
+					"VALUE_FINAL": 0.05
+				}
+			],
+			"COUNT_ADD": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 15,
+					"DIRT_BASE": 50000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 50000,
+					"ALL_COST": 50000,
+					"VALUE_FINAL": 15
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 30,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 320,
+					"DIRT_GROWTH": 1.32,
+					"FINAL_COST": 1004139,
+					"ALL_COST": 30124180,
+					"VALUE_FINAL": 30
+				}
+			]
+		},
+		"PICKAXE": {
+			"ICON_FRAME": 2,
+			"IS_TOOL": 1,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/tools/pickaxe/pickaxe.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#db3ffd",
+			"HAT_FRAME": 0,
+			"NAME": "UI_PICKAXE",
+			"DESCRIPTION": "UI_DE_PICKAXE",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "FROG_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 250000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 250000,
+					"ALL_COST": 250000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"DIRT_GAIN": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PICKAXE",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 100,
+					"VALUE_INC": 100,
+					"DIRT_BASE": 150000,
+					"DIRT_GROWTH": 1.4,
+					"FINAL_COST": 3099157,
+					"ALL_COST": 30991570,
+					"VALUE_FINAL": 1100
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PICKAXE",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 250,
+					"DIRT_BASE": 3000000,
+					"DIRT_GROWTH": 1.2,
+					"FINAL_COST": 15479341,
+					"ALL_COST": 154793411,
+					"VALUE_FINAL": 2500
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PICKAXE",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 40000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 1537734,
+					"ALL_COST": 15377344,
+					"VALUE_FINAL": 1.25
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PICKAXE",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 1000000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 7450581,
+					"ALL_COST": 74505806,
+					"VALUE_FINAL": 0.25
+				}
+			],
+			"DIRT_GAIN_CRIT_CHANCE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PICKAXE",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0.1,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 40000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 1537734,
+					"ALL_COST": 15377344,
+					"VALUE_FINAL": 0.35
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PICKAXE",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.05,
+					"DIRT_BASE": 1000000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 7450581,
+					"ALL_COST": 74505806,
+					"VALUE_FINAL": 0.5
+				}
+			],
+			"LUCK_ITEM_DROP": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PICKAXE",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0.1,
+					"VALUE_INC": 0.05,
+					"DIRT_BASE": 50000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 1922168,
+					"ALL_COST": 19221680,
+					"VALUE_FINAL": 0.6
+				}
+			],
+			"LUCK_ITEM_RARITY": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PICKAXE",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0.1,
+					"VALUE_INC": 0.05,
+					"DIRT_BASE": 110000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 4228770,
+					"ALL_COST": 42287695,
+					"VALUE_FINAL": 0.6
+				}
+			],
+			"COUNT_ADD": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "FROG_GUY",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 15,
+					"DIRT_BASE": 10000000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 10000000,
+					"ALL_COST": 10000000,
+					"VALUE_FINAL": 15
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 30,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 10000,
+					"DIRT_GROWTH": 1.26,
+					"FINAL_COST": 8142276,
+					"ALL_COST": 244268274,
+					"VALUE_FINAL": 30
+				}
+			]
+		},
+		"TRIDENT": {
+			"ICON_FRAME": 18,
+			"IS_TOOL": 1,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/tools/trident/trident.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#ff9400",
+			"HAT_FRAME": 0,
+			"NAME": "UI_TRIDENT",
+			"DESCRIPTION": "UI_DE_TRIDENT",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SHOVEL",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 25000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 25000,
+					"ALL_COST": 25000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"DIRT_GAIN": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 50,
+					"VALUE_INC": 50,
+					"DIRT_BASE": 15000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 576650,
+					"ALL_COST": 5766504,
+					"VALUE_FINAL": 550
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 50,
+					"DIRT_BASE": 100000,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 1060450,
+					"ALL_COST": 10604499,
+					"VALUE_FINAL": 500
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 5000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 192217,
+					"ALL_COST": 1922168,
+					"VALUE_FINAL": 1.25
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 50000,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 530225,
+					"ALL_COST": 5302250,
+					"VALUE_FINAL": 0.25
+				}
+			],
+			"DIRT_GAIN_CRIT_CHANCE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 5000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 192217,
+					"ALL_COST": 1922168,
+					"VALUE_FINAL": 0.1
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 70000,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 742315,
+					"ALL_COST": 7423150,
+					"VALUE_FINAL": 0.1
+				}
+			],
+			"ZAP_CHANCE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0.05,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 5000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 192217,
+					"ALL_COST": 1922168,
+					"VALUE_FINAL": 0.3
+				}
+			],
+			"ZAP_CRIT_CHANCE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "ZAP_CHANCE",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 15000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 576650,
+					"ALL_COST": 5766504,
+					"VALUE_FINAL": 0.25
+				}
+			],
+			"COUNT_ADD": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPELL_ZAPS",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 15,
+					"DIRT_BASE": 450000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 450000,
+					"ALL_COST": 450000,
+					"VALUE_FINAL": 15
+				}
+			],
+			"LUCK_ITEM_DROP": [
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 9,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 150000,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 1223596,
+					"ALL_COST": 11012365,
+					"VALUE_FINAL": 0.225
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 9,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 150000,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 1223596,
+					"ALL_COST": 11012365,
+					"VALUE_FINAL": 0.225
+				}
+			],
+			"LUCK_ITEM_RARITY": [
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 1,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 9,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 200000,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 1631461,
+					"ALL_COST": 14683153,
+					"VALUE_FINAL": 0.225
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 1,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 9,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 200000,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 1631461,
+					"ALL_COST": 14683153,
+					"VALUE_FINAL": 0.225
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 30,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 3000,
+					"DIRT_GROWTH": 1.29,
+					"FINAL_COST": 4833067,
+					"ALL_COST": 144992023,
+					"VALUE_FINAL": 30
+				}
+			]
+		},
+		"MUSHROOM_GUY": {
+			"ICON_FRAME": 3,
+			"IS_TOOL": 0,
+			"IS_PAL": 1,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/guy/mushroom_guy/mushroom_guy.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_MUSHROOM_PAL",
+			"DESCRIPTION": "UI_DE_MUSHROOM_PAL",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPOON",
+					"LOCK_BY_KEY_STAT": "DIRT_GAIN",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 200,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 200,
+					"ALL_COST": 200,
+					"VALUE_FINAL": 1
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 30,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 100,
+					"DIRT_GROWTH": 1.35,
+					"FINAL_COST": 602115,
+					"ALL_COST": 18063443,
+					"VALUE_FINAL": 30
+				}
+			],
+			"IDLE_TIME": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MUSHROOM_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 3,
+					"VALUE_INC": -0.1,
+					"DIRT_BASE": 200,
+					"DIRT_GROWTH": 1.15,
+					"FINAL_COST": 704,
+					"ALL_COST": 7036,
+					"VALUE_FINAL": 2
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MUSHROOM_GUY",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 1,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": -0.1,
+					"DIRT_BASE": 1000,
+					"DIRT_GROWTH": 1.65,
+					"FINAL_COST": 90647,
+					"ALL_COST": 906474,
+					"VALUE_FINAL": -1
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MUSHROOM_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 200,
+					"DIRT_GROWTH": 1.15,
+					"FINAL_COST": 704,
+					"ALL_COST": 7036,
+					"VALUE_FINAL": 1.25
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MUSHROOM_GUY",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 1,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 1000,
+					"DIRT_GROWTH": 3.8,
+					"FINAL_COST": 208514,
+					"ALL_COST": 1042568,
+					"VALUE_FINAL": 0.5
+				}
+			],
+			"COUNT_ADD": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "CURSOR",
+					"LOCK_BY_KEY_STAT": "RADIUS",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 10,
+					"DIRT_BASE": 5000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 5000,
+					"ALL_COST": 5000,
+					"VALUE_FINAL": 10
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SHOVEL",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 10,
+					"DIRT_BASE": 10000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 10000,
+					"ALL_COST": 10000,
+					"VALUE_FINAL": 10
+				}
+			],
+			"LUCK_ITEM_DROP": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MUSHROOM_GUY",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 1000,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 10604,
+					"ALL_COST": 106045,
+					"VALUE_FINAL": 0.1
+				}
+			],
+			"LUCK_ITEM_RARITY": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MUSHROOM_GUY",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 2000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 76887,
+					"ALL_COST": 768867,
+					"VALUE_FINAL": 0.1
+				}
+			],
+			"DIRT_MULTIPLY": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MUSHROOM_GUY",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 4,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 5000,
+					"DIRT_GROWTH": 4,
+					"FINAL_COST": 320000,
+					"ALL_COST": 1280000,
+					"VALUE_FINAL": 5
+				}
+			]
+		},
+		"FROG_GUY": {
+			"ICON_FRAME": 4,
+			"IS_TOOL": 0,
+			"IS_PAL": 1,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/guy/frog_guy/frog_guy.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_FROG_PAL",
+			"DESCRIPTION": "UI_DE_FROG_PAL",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPOON",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 10000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 10000,
+					"ALL_COST": 10000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 30,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 3000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 1938705,
+					"ALL_COST": 58161137,
+					"VALUE_FINAL": 30
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "FROG_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 1500,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 57665,
+					"ALL_COST": 576650,
+					"VALUE_FINAL": 1.25
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "FROG_GUY",
+					"LOCK_BY_KEY_STAT": "IDLE_TIME",
+					"LOCK_BY_STAT_ID": 1,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 30000,
+					"DIRT_GROWTH": 3.5,
+					"FINAL_COST": 4501875,
+					"ALL_COST": 22509375,
+					"VALUE_FINAL": 0.5
+				}
+			],
+			"IDLE_TIME": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "FROG_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 3,
+					"VALUE_INC": -0.1,
+					"DIRT_BASE": 1500,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 57665,
+					"ALL_COST": 576650,
+					"VALUE_FINAL": 2
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "FROG_GUY",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": -0.1,
+					"DIRT_BASE": 30000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 1153301,
+					"ALL_COST": 11533008,
+					"VALUE_FINAL": -1
+				}
+			],
+			"STOMP_RAD": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "FROG_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 12,
+					"VALUE_INIT": 16,
+					"VALUE_INC": 2,
+					"DIRT_BASE": 3500,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 302741,
+					"ALL_COST": 3632897,
+					"VALUE_FINAL": 40
+				}
+			],
+			"LUCK_ITEM_DROP": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "FROG_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 5000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 192217,
+					"ALL_COST": 1922168,
+					"VALUE_FINAL": 0.1
+				}
+			],
+			"LUCK_ITEM_RARITY": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "FROG_GUY",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 10000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 384434,
+					"ALL_COST": 3844336,
+					"VALUE_FINAL": 0.1
+				}
+			],
+			"COUNT_ADD": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PICKAXE",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 15,
+					"DIRT_BASE": 250000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 250000,
+					"ALL_COST": 250000,
+					"VALUE_FINAL": 15
+				}
+			],
+			"DIRT_MULTIPLY": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "FROG_GUY",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.2,
+					"DIRT_BASE": 950000,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 10074274,
+					"ALL_COST": 100742744,
+					"VALUE_FINAL": 3
+				}
+			]
+		},
+		"CURSOR": {
+			"ICON_FRAME": 5,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/cursor/cursor_world_node.tscn",
+			"IS_SHOP": 0,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_CURSOR",
+			"DESCRIPTION": "UI_DE_CURSOR",
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 1,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 1
+				}
+			],
+			"RADIUS": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "INVENTORY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 8,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 2,
+					"DIRT_BASE": 500,
+					"DIRT_GROWTH": 1.15,
+					"FINAL_COST": 1330,
+					"ALL_COST": 10640,
+					"VALUE_FINAL": 16
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SHOVEL",
+					"LOCK_BY_KEY_STAT": "COUNT_ADD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 8,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 10000,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 62749,
+					"ALL_COST": 501988,
+					"VALUE_FINAL": 8
+				},
+				{
+					"STAT_ID": 2,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "FROG_GUY",
+					"LOCK_BY_KEY_STAT": "STOMP_RAD",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 8,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 10000,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 62749,
+					"ALL_COST": 501988,
+					"VALUE_FINAL": 8
+				}
+			]
+		},
+		"PASSIVE": {
+			"ICON_FRAME": 6,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/passive/passive_node_world.tscn",
+			"IS_SHOP": 0,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_OVERALL",
+			"DESCRIPTION": "UI_DE_OVERALL",
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 1,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 0,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 1
+				}
+			],
+			"DIRT_GAIN": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "CURSOR",
+					"LOCK_BY_KEY_STAT": "RADIUS",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 1000,
+					"DIRT_GROWTH": 2,
+					"FINAL_COST": 16000,
+					"ALL_COST": 80000,
+					"VALUE_FINAL": 5
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PASSIVE",
+					"LOCK_BY_KEY_STAT": "DIRT_GAIN",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 3,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 10,
+					"DIRT_BASE": 100000,
+					"DIRT_GROWTH": 2,
+					"FINAL_COST": 400000,
+					"ALL_COST": 1200000,
+					"VALUE_FINAL": 30
+				},
+				{
+					"STAT_ID": 2,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PASSIVE",
+					"LOCK_BY_KEY_STAT": "DIRT_GAIN",
+					"LOCK_BY_STAT_ID": 1,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 3,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 100,
+					"DIRT_BASE": 1000000,
+					"DIRT_GROWTH": 3,
+					"FINAL_COST": 9000000,
+					"ALL_COST": 27000000,
+					"VALUE_FINAL": 300
+				}
+			],
+			"SELL_ITEMS_DIRT": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PASSIVE",
+					"LOCK_BY_KEY_STAT": "DIRT_GAIN",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 50000,
+					"DIRT_GROWTH": 1.3,
+					"FINAL_COST": 530225,
+					"ALL_COST": 5302250,
+					"VALUE_FINAL": 2
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PASSIVE",
+					"LOCK_BY_KEY_STAT": "SELL_ITEMS_DIRT",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.2,
+					"DIRT_BASE": 1000000,
+					"DIRT_GROWTH": 1.35,
+					"FINAL_COST": 3321506,
+					"ALL_COST": 16607531,
+					"VALUE_FINAL": 1
+				},
+				{
+					"STAT_ID": 2,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 0,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 0.1
+				}
+			],
+			"DIRT_GAIN_CRIT_CHANCE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PASSIVE",
+					"LOCK_BY_KEY_STAT": "DIRT_GAIN",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 1000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 38443,
+					"ALL_COST": 384434,
+					"VALUE_FINAL": 0.1
+				},
+				{
+					"STAT_ID": 1,
+					"LEVELS": 3,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 0,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 0.3
+				}
+			],
+			"LUCK_ITEM_DROP": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PASSIVE",
+					"LOCK_BY_KEY_STAT": "DIRT_GAIN",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 5000,
+					"DIRT_GROWTH": 1.4,
+					"FINAL_COST": 103305,
+					"ALL_COST": 1033052,
+					"VALUE_FINAL": 0.25
+				}
+			],
+			"LUCK_ITEM_RARITY": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PASSIVE",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.025,
+					"DIRT_BASE": 60000,
+					"DIRT_GROWTH": 1.4,
+					"FINAL_COST": 1239663,
+					"ALL_COST": 12396628,
+					"VALUE_FINAL": 0.25
+				},
+				{
+					"STAT_ID": 1,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PASSIVE",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_RARITY",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 1000000,
+					"DIRT_GROWTH": 1.6,
+					"FINAL_COST": 6553600,
+					"ALL_COST": 32768000,
+					"VALUE_FINAL": 0.5
+				},
+				{
+					"STAT_ID": 2,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.05,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 0,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 0.05
+				}
+			],
+			"DIRT_MULTIPLY": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 3,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.05,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 0,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 1.15
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.05,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 0,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 1.05
+				}
+			]
+		},
+		"SPELL_ZAPS": {
+			"ICON_FRAME": 7,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/spell/spell_node_world.tscn",
+			"IS_SHOP": 0,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_SPELL_JOLT",
+			"DESCRIPTION": "UI_DE_SPELL_JOLT",
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 1,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 0,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 1
+				}
+			],
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 1000000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 1000000,
+					"ALL_COST": 1000000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"SPELL_STACKS": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPELL_ZAPS",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 2500000,
+					"DIRT_GROWTH": 1.4,
+					"FINAL_COST": 2500000,
+					"ALL_COST": 2500000,
+					"VALUE_FINAL": 2
+				}
+			],
+			"SPELL_DIGS": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPELL_ZAPS",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 5000,
+					"VALUE_INC": -500,
+					"DIRT_BASE": 700000,
+					"DIRT_GROWTH": 1.4,
+					"FINAL_COST": 2689120,
+					"ALL_COST": 13445600,
+					"VALUE_FINAL": 2500
+				}
+			],
+			"SPELL_DURATION": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPELL_ZAPS",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 3,
+					"VALUE_INIT": 5,
+					"VALUE_INC": 5,
+					"DIRT_BASE": 2500000,
+					"DIRT_GROWTH": 1.4,
+					"FINAL_COST": 4900000,
+					"ALL_COST": 14700000,
+					"VALUE_FINAL": 20
+				}
+			]
+		},
+		"SPELL_RAIN": {
+			"ICON_FRAME": 8,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/spell/spell_node_world.tscn",
+			"IS_SHOP": 0,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_SPELL_RAIN_OF_HASTE",
+			"DESCRIPTION": "UI_DE_SPELL_RAIN_OF_HASTE",
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 1,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 0,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 1
+				}
+			],
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 1000000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 1000000,
+					"ALL_COST": 1000000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"SPELL_STACKS": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPELL_RAIN",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 4,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 550000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 1856250,
+					"ALL_COST": 7425000,
+					"VALUE_FINAL": 5
+				}
+			],
+			"SPELL_DIGS": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPELL_RAIN",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 2500,
+					"VALUE_INC": -200,
+					"DIRT_BASE": 250000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 1862645,
+					"ALL_COST": 18626451,
+					"VALUE_FINAL": 500
+				}
+			],
+			"SPELL_DURATION": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPELL_RAIN",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 4,
+					"VALUE_INIT": 10,
+					"VALUE_INC": 5,
+					"DIRT_BASE": 550000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 1856250,
+					"ALL_COST": 7425000,
+					"VALUE_FINAL": 30
+				}
+			]
+		},
+		"SPELL_GOLDRUSH": {
+			"ICON_FRAME": 9,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/spell/spell_node_world.tscn",
+			"IS_SHOP": 0,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_SPELL_DIRT_RUSH",
+			"DESCRIPTION": "UI_DE_SPELL_DIRT_RUSH",
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 1,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 0,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 0,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 1
+				}
+			],
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_STAFF",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 10000000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 10000000,
+					"ALL_COST": 10000000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"SPELL_STACKS": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPELL_GOLDRUSH",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 4,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 1000000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 3375000,
+					"ALL_COST": 13500000,
+					"VALUE_FINAL": 5
+				}
+			],
+			"SPELL_DIGS": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPELL_GOLDRUSH",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 3000,
+					"VALUE_INC": -250,
+					"DIRT_BASE": 1000000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 7450581,
+					"ALL_COST": 74505806,
+					"VALUE_FINAL": 500
+				}
+			],
+			"SPELL_DURATION": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPELL_GOLDRUSH",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 4,
+					"VALUE_INIT": 10,
+					"VALUE_INC": 5,
+					"DIRT_BASE": 1000000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 3375000,
+					"ALL_COST": 13500000,
+					"VALUE_FINAL": 30
+				}
+			]
+		},
+		"SLEDGEHAMMER": {
+			"ICON_FRAME": 10,
+			"IS_TOOL": 1,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/tools/sledgehammer/sledgehammer.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#0098dc",
+			"HAT_FRAME": 0,
+			"NAME": "UI_SLEDGEHAMMER",
+			"DESCRIPTION": "UI_DE_SLEDGEHAMMER",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SHOVEL",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 1,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 10000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 10000,
+					"ALL_COST": 10000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"DIRT_GAIN": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SLEDGEHAMMER",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 9,
+					"VALUE_INIT": 25,
+					"VALUE_INC": 5,
+					"DIRT_BASE": 3000,
+					"DIRT_GROWTH": 1.75,
+					"FINAL_COST": 263892,
+					"ALL_COST": 2375025,
+					"VALUE_FINAL": 70
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SLEDGEHAMMER",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 5000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 192217,
+					"ALL_COST": 1922168,
+					"VALUE_FINAL": 1.1
+				}
+			],
+			"STOMP_RAD": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SLEDGEHAMMER",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 10,
+					"VALUE_INC": 2,
+					"DIRT_BASE": 6000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 230660,
+					"ALL_COST": 2306602,
+					"VALUE_FINAL": 30
+				}
+			],
+			"DIRT_GAIN_CRIT_CHANCE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SLEDGEHAMMER",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 5000,
+					"DIRT_GROWTH": 1.4,
+					"FINAL_COST": 103305,
+					"ALL_COST": 1033052,
+					"VALUE_FINAL": 11
+				}
+			],
+			"LUCK_ITEM_DROP": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SLEDGEHAMMER",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0
+				}
+			],
+			"LUCK_ITEM_RARITY": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SLEDGEHAMMER",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 1000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 38443,
+					"ALL_COST": 384434,
+					"VALUE_FINAL": 10
+				}
+			]
+		},
+		"MOLE_GUY": {
+			"ICON_FRAME": 11,
+			"IS_TOOL": 0,
+			"IS_PAL": 1,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/guy/mole_guy/mole_guy.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#99e65f",
+			"HAT_FRAME": 0,
+			"NAME": "UI_MOLE_PAL",
+			"DESCRIPTION": "UI_DE_MOLE_PAL",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "TRIDENT",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 1,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 35000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 35000,
+					"ALL_COST": 35000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"DIRT_GAIN": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MOLE_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 9,
+					"VALUE_INIT": 10,
+					"VALUE_INC": 10,
+					"DIRT_BASE": 1000,
+					"DIRT_GROWTH": 1.75,
+					"FINAL_COST": 87964,
+					"ALL_COST": 791675,
+					"VALUE_FINAL": 100
+				}
+			],
+			"DIRT_GAIN_CRIT_CHANCE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MOLE_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 7000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 52154,
+					"ALL_COST": 521541,
+					"VALUE_FINAL": 0.1
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MOLE_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 7000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 269104,
+					"ALL_COST": 2691035,
+					"VALUE_FINAL": 1.1
+				}
+			],
+			"IDLE_TIME": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MOLE_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 4,
+					"VALUE_INC": -0.1,
+					"DIRT_BASE": 5000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 37253,
+					"ALL_COST": 372529,
+					"VALUE_FINAL": 3
+				}
+			],
+			"LUCK_ITEM_DROP": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MOLE_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 15000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 111759,
+					"ALL_COST": 1117587,
+					"VALUE_FINAL": 0.1
+				}
+			],
+			"LUCK_ITEM_RARITY": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MOLE_GUY",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 20000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 149012,
+					"ALL_COST": 1490116,
+					"VALUE_FINAL": 0.1
+				}
+			],
+			"DIG_COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MOLE_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 9,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 10000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 256289,
+					"ALL_COST": 2306602,
+					"VALUE_FINAL": 10
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 2500,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 96108,
+					"ALL_COST": 961084,
+					"VALUE_FINAL": 10
+				}
+			]
+		},
+		"GOLEM_GUY": {
+			"ICON_FRAME": 12,
+			"IS_TOOL": 0,
+			"IS_PAL": 1,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/guy/golem_guy/golem_guy.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#33984b",
+			"HAT_FRAME": 0,
+			"NAME": "UI_DIRT_GOLEM",
+			"DESCRIPTION": "UI_DE_DIRT_GOLEM",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MOLE_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 3000000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 3000000,
+					"ALL_COST": 3000000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"DIRT_GAIN": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "GOLEM_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 100,
+					"VALUE_INC": 100,
+					"DIRT_BASE": 250000,
+					"DIRT_GROWTH": 1.4,
+					"FINAL_COST": 5165262,
+					"ALL_COST": 51652617,
+					"VALUE_FINAL": 1100
+				}
+			],
+			"DIRT_GAIN_CRIT_CHANCE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "GOLEM_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 150000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 1117587,
+					"ALL_COST": 11175871,
+					"VALUE_FINAL": 11
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "GOLEM_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 200000,
+					"DIRT_GROWTH": 1.35,
+					"FINAL_COST": 2978749,
+					"ALL_COST": 29787490,
+					"VALUE_FINAL": 1.1
+				}
+			],
+			"IDLE_TIME": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "GOLEM_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 20,
+					"VALUE_INIT": 5,
+					"VALUE_INC": -0.1,
+					"DIRT_BASE": 100000,
+					"DIRT_GROWTH": 1.2,
+					"FINAL_COST": 3194800,
+					"ALL_COST": 63896000,
+					"VALUE_FINAL": 3
+				}
+			],
+			"LUCK_ITEM_DROP": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "GOLEM_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 500000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 3725290,
+					"ALL_COST": 37252903,
+					"VALUE_FINAL": 1
+				}
+			],
+			"LUCK_ITEM_RARITY": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "GOLEM_GUY",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 750000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 5587935,
+					"ALL_COST": 55879354,
+					"VALUE_FINAL": 1
+				}
+			],
+			"DIG_COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "GOLEM_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 7,
+					"VALUE_INIT": 3,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 550000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 6264844,
+					"ALL_COST": 43853906,
+					"VALUE_FINAL": 10
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 110000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 4228770,
+					"ALL_COST": 42287695,
+					"VALUE_FINAL": 10
+				}
+			]
+		},
+		"DRUID_STAFF": {
+			"ICON_FRAME": 13,
+			"IS_TOOL": 1,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/tools/druid_staff/druid_staff.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#7a09fa",
+			"HAT_FRAME": 0,
+			"NAME": "UI_DRUID_STAFF",
+			"DESCRIPTION": "UI_DE_DRUID_STAFF",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PICKAXE",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 1,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 150000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 150000,
+					"ALL_COST": 150000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"STOMP_RAD": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_STAFF",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 14,
+					"VALUE_INIT": 16,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 45000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 818545,
+					"ALL_COST": 11459633,
+					"VALUE_FINAL": 30
+				}
+			],
+			"DIRT_GAIN": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_STAFF",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 9,
+					"VALUE_INIT": 75,
+					"VALUE_INC": 25,
+					"DIRT_BASE": 25000,
+					"DIRT_GROWTH": 1.75,
+					"FINAL_COST": 2199097,
+					"ALL_COST": 19791874,
+					"VALUE_FINAL": 300
+				}
+			],
+			"DIRT_GAIN_CRIT_CHANCE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_STAFF",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 19,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 15000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 832667,
+					"ALL_COST": 15820678,
+					"VALUE_FINAL": 1.9
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_STAFF",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 40000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 1537734,
+					"ALL_COST": 15377344,
+					"VALUE_FINAL": 1.1
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 20000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 768867,
+					"ALL_COST": 7688672,
+					"VALUE_FINAL": 10
+				}
+			]
+		},
+		"BUFF_DIRT_MULTIPLY": {
+			"ICON_FRAME": 14,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "",
+			"IS_SHOP": 0,
+			"COLOR_MAIN": "#ffc825",
+			"HAT_FRAME": 0,
+			"NAME": "UI_BUFF_DIRT_GLORY",
+			"DESCRIPTION": "UI_DE_BUFF_DIRT_GLORY",
+			"BUFF_TIME": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_STAFF",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 2,
+					"VALUE_INC": 0.3,
+					"DIRT_BASE": 30000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 1153301,
+					"ALL_COST": 11533008,
+					"VALUE_FINAL": 5
+				}
+			],
+			"BUFF_VALUE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_STAFF",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 9,
+					"VALUE_INIT": 0.1,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 50000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 1281445,
+					"ALL_COST": 11533008,
+					"VALUE_FINAL": 1
+				}
+			]
+		},
+		"BUFF_SPEED": {
+			"ICON_FRAME": 15,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "",
+			"IS_SHOP": 0,
+			"COLOR_MAIN": "#0098dc",
+			"HAT_FRAME": 0,
+			"NAME": "UI_BUFF_HASTE",
+			"DESCRIPTION": "UI_DE_BUFF_HASTE",
+			"BUFF_TIME": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 2,
+					"VALUE_INC": 0.3,
+					"DIRT_BASE": 15000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 576650,
+					"ALL_COST": 5766504,
+					"VALUE_FINAL": 5
+				}
+			],
+			"BUFF_VALUE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 9,
+					"VALUE_INIT": 0.1,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 25000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 640723,
+					"ALL_COST": 5766504,
+					"VALUE_FINAL": 1
+				}
+			]
+		},
+		"DRUID_GUY": {
+			"ICON_FRAME": 16,
+			"IS_TOOL": 0,
+			"IS_PAL": 1,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/guy/druid_guy/druid_guy.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_DRUID_PAL",
+			"DESCRIPTION": "UI_DE_DRUID_PAL",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "FROG_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 1,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 90000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 90000,
+					"ALL_COST": 90000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"STOMP_RAD": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 14,
+					"VALUE_INIT": 16,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 30000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 545697,
+					"ALL_COST": 7639755,
+					"VALUE_FINAL": 30
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 25000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 961084,
+					"ALL_COST": 9610840,
+					"VALUE_FINAL": 1.1
+				}
+			],
+			"IDLE_TIME": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "DRUID_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 4,
+					"VALUE_INC": -0.1,
+					"DIRT_BASE": 28000,
+					"DIRT_GROWTH": 1.15,
+					"FINAL_COST": 98501,
+					"ALL_COST": 985005,
+					"VALUE_FINAL": 3
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 10000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 384434,
+					"ALL_COST": 3844336,
+					"VALUE_FINAL": 10
+				}
+			]
+		},
+		"GHOST_GUY": {
+			"ICON_FRAME": 17,
+			"IS_TOOL": 0,
+			"IS_PAL": 1,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/guy/ghost_guy/ghost_guy.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_GHOST_PAL",
+			"DESCRIPTION": "UI_DE_GHOST_PAL",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "SPELL_ZAPS",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 1,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 50000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 50000,
+					"ALL_COST": 50000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"IDLE_TIME": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "GHOST_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 19,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 7500,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 416334,
+					"ALL_COST": 7910339,
+					"VALUE_FINAL": 1.9
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "GHOST_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 15000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 576650,
+					"ALL_COST": 5766504,
+					"VALUE_FINAL": 1.1
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 4000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 153773,
+					"ALL_COST": 1537734,
+					"VALUE_FINAL": 10
+				}
+			]
+		},
+		"JACKHAMMER": {
+			"ICON_FRAME": 20,
+			"IS_TOOL": 1,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "res://game/world/node/tools/jackhammer/jackhammer.tscn",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#ffeb57",
+			"HAT_FRAME": 0,
+			"NAME": "UI_JACKHAMMER",
+			"DESCRIPTION": "UI_DE_JACKHAMMER",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "GHOST_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 500000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 500000,
+					"ALL_COST": 500000,
+					"VALUE_FINAL": 1
+				}
+			],
+			"DIRT_GAIN": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "JACKHAMMER",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 9,
+					"VALUE_INIT": 100,
+					"VALUE_INC": 50,
+					"DIRT_BASE": 50000,
+					"DIRT_GROWTH": 1.75,
+					"FINAL_COST": 4398194,
+					"ALL_COST": 39583747,
+					"VALUE_FINAL": 550
+				}
+			],
+			"ANIMATION_SCALE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "JACKHAMMER",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 1,
+					"VALUE_INC": 0.01,
+					"DIRT_BASE": 70000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 2691035,
+					"ALL_COST": 26910352,
+					"VALUE_FINAL": 1.1
+				}
+			],
+			"DIRT_GAIN_CRIT_CHANCE": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "JACKHAMMER",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 19,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 30000,
+					"DIRT_GROWTH": 1.25,
+					"FINAL_COST": 1665335,
+					"ALL_COST": 31641356,
+					"VALUE_FINAL": 1.9
+				}
+			],
+			"LUCK_ITEM_DROP": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "JACKHAMMER",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 4,
+					"VALUE_INIT": 0.1,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 250000,
+					"DIRT_GROWTH": 2,
+					"FINAL_COST": 2000000,
+					"ALL_COST": 8000000,
+					"VALUE_FINAL": 0.5
+				}
+			],
+			"LUCK_ITEM_RARITY": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "JACKHAMMER",
+					"LOCK_BY_KEY_STAT": "LUCK_ITEM_DROP",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 4,
+					"VALUE_INIT": 0.1,
+					"VALUE_INC": 0.1,
+					"DIRT_BASE": 500000,
+					"DIRT_GROWTH": 2,
+					"FINAL_COST": 4000000,
+					"ALL_COST": 16000000,
+					"VALUE_FINAL": 0.5
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 10,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 30000,
+					"DIRT_GROWTH": 1.5,
+					"FINAL_COST": 1153301,
+					"ALL_COST": 11533008,
+					"VALUE_FINAL": 10
+				}
+			]
+		},
+		"DESCENT": {
+			"ICON_FRAME": 21,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "",
+			"IS_SHOP": 0,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_DESCENT",
+			"DESCRIPTION": "UI_DE_DESCENT",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "PASSIVE",
+					"LOCK_BY_KEY_STAT": "SELL_ITEMS_DIRT",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 100000000,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 100000000,
+					"ALL_COST": 100000000,
+					"VALUE_FINAL": 1
+				}
+			]
+		},
+		"SKILL_TREE": {
+			"ICON_FRAME": 22,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_SKILL_TREE",
+			"DESCRIPTION": "UI_DE_SKILL_TREE",
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 50,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 50,
+					"ALL_COST": 50,
+					"VALUE_FINAL": 1
+				}
+			]
+		},
+		"INVENTORY": {
+			"ICON_FRAME": 23,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "",
+			"IS_SHOP": 0,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 0,
+			"NAME": "UI_INV",
+			"DESCRIPTION": "UI_DE_INV",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "MUSHROOM_GUY",
+					"LOCK_BY_KEY_STAT": "SHOP_UNLOCK",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 500,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 500,
+					"ALL_COST": 500,
+					"VALUE_FINAL": 1
+				}
+			]
+		},
+		"HAT_IDLE_REDUCE": {
+			"ICON_FRAME": 24,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 12,
+			"NAME": "UI_HAT_IDLE_REDUCE",
+			"DESCRIPTION": "UI_DE_HAT_IDLE_REDUCE",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "HAT_IDLE_REDUCE",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 1
+				}
+			],
+			"IDLE_TIME": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 100,
+					"VALUE_INC": 0,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 100
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 500,
+					"DIRT_GROWTH": 4,
+					"FINAL_COST": 128000,
+					"ALL_COST": 640000,
+					"VALUE_FINAL": 5
+				}
+			]
+		},
+		"HAT_LUCK": {
+			"ICON_FRAME": 25,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 10,
+			"NAME": "UI_HAT_LUCK",
+			"DESCRIPTION": "UI_DE_HAT_LUCK",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "HAT_LUCK",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 1
+				}
+			],
+			"LUCK_ITEM_DROP": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 100,
+					"VALUE_INC": 0,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 100
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 10000,
+					"DIRT_GROWTH": 3,
+					"FINAL_COST": 810000,
+					"ALL_COST": 4050000,
+					"VALUE_FINAL": 5
+				}
+			]
+		},
+		"HAT_DIRT_MULTIPLY": {
+			"ICON_FRAME": 26,
+			"IS_TOOL": 0,
+			"IS_PAL": 0,
+			"PS_NODE_WORLD_PATH": "",
+			"IS_SHOP": 1,
+			"COLOR_MAIN": "#ffffff",
+			"HAT_FRAME": 11,
+			"NAME": "UI_HAT_DIRT_MULTIPLY",
+			"DESCRIPTION": "UI_DE_HAT_DIRT_MULTIPLY",
+			"SHOP_UNLOCK": [
+				{
+					"STAT_ID": 0,
+					"LEVEL_START": 0,
+					"LOCK_BY_KEY_NODE": "NULL",
+					"LOCK_BY_KEY_STAT": "NULL",
+					"LOCK_BY_STAT_ID": 0,
+					"LOCK_BY_LEVEL": 1,
+					"LEVEL_UP_BY_BADGE": "HAT_DIRT_MULTIPLY",
+					"DEMO_LOCK": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 1
+				}
+			],
+			"DIRT_MULTIPLY": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 1,
+					"VALUE_INIT": 5,
+					"VALUE_INC": 0,
+					"DIRT_BASE": 0,
+					"DIRT_GROWTH": 1,
+					"FINAL_COST": 0,
+					"ALL_COST": 0,
+					"VALUE_FINAL": 5
+				}
+			],
+			"COUNT": [
+				{
+					"STAT_ID": 0,
+					"LEVELS": 5,
+					"VALUE_INIT": 0,
+					"VALUE_INC": 1,
+					"DIRT_BASE": 500000,
+					"DIRT_GROWTH": 1.8,
+					"FINAL_COST": 5248800,
+					"ALL_COST": 26244000,
+					"VALUE_FINAL": 5
+				}
+			]
+		}
+	},
+	"STATS": {
+		"COUNT": {
+			"VALUE_TYPE": "DEFAULT",
+			"ICON_FRAME": 0,
+			"NAME": "PASS",
+			"TEXT_BUY": "PASS"
+		},
+		"DIRT_GAIN": {
+			"VALUE_TYPE": "DEFAULT",
+			"ICON_FRAME": 1,
+			"NAME": "UI_DIRT_GAIN",
+			"TEXT_BUY": "UI_DE_DIRT_GAIN"
+		},
+		"ANIMATION_SCALE": {
+			"VALUE_TYPE": "PERCENTAGE",
+			"ICON_FRAME": 2,
+			"NAME": "UI_ANIMATION_SCALE",
+			"TEXT_BUY": "UI_DE_ANIMATION_SCALE"
+		},
+		"DIRT_GAIN_CRIT_CHANCE": {
+			"VALUE_TYPE": "PERCENTAGE",
+			"ICON_FRAME": 3,
+			"NAME": "UI_DIRT_GAIN_CRIT_CHANCE",
+			"TEXT_BUY": "UI_DE_DIRT_GAIN_CRIT_CHANCE"
+		},
+		"IDLE_TIME": {
+			"VALUE_TYPE": "SECONDS",
+			"ICON_FRAME": 4,
+			"NAME": "UI_IDLE_TIME",
+			"TEXT_BUY": "UI_DE_IDLE_TIME"
+		},
+		"STOMP_RAD": {
+			"VALUE_TYPE": "DEFAULT",
+			"ICON_FRAME": 6,
+			"NAME": "UI_STOMP_RAD",
+			"TEXT_BUY": "UI_DE_STOMP_RAD"
+		},
+		"SHOP_UNLOCK": {
+			"VALUE_TYPE": "LOCK",
+			"ICON_FRAME": 5,
+			"NAME": "UI_SHOP_UNLOCK",
+			"TEXT_BUY": "UI_DE_SHOP_UNLOCK"
+		},
+		"USE_SHOVEL": {
+			"VALUE_TYPE": "LOCK",
+			"ICON_FRAME": 21,
+			"NAME": "UI_USE_SHOVEL",
+			"TEXT_BUY": "UI_DE_USE_SHOVEL"
+		},
+		"USE_PICKAXE": {
+			"VALUE_TYPE": "LOCK",
+			"ICON_FRAME": 22,
+			"NAME": "UI_USE_PICKAXE",
+			"TEXT_BUY": "UI_DE_USE_PICKAXE"
+		},
+		"LUCK_ITEM_DROP": {
+			"VALUE_TYPE": "PERCENTAGE",
+			"ICON_FRAME": 7,
+			"NAME": "UI_LUCK_ITEM_DROP",
+			"TEXT_BUY": "UI_DE_LUCK_ITEM_DROP"
+		},
+		"LUCK_ITEM_RARITY": {
+			"VALUE_TYPE": "PERCENTAGE",
+			"ICON_FRAME": 8,
+			"NAME": "UI_LUCK_ITEM_RARITY",
+			"TEXT_BUY": "UI_DE_LUCK_ITEM_RARITY"
+		},
+		"RADIUS": {
+			"VALUE_TYPE": "DEFAULT",
+			"ICON_FRAME": 9,
+			"NAME": "UI_RADIUS",
+			"TEXT_BUY": "UI_DE_RADIUS"
+		},
+		"SELL_ITEMS_DIRT": {
+			"VALUE_TYPE": "PERCENTAGE",
+			"ICON_FRAME": 15,
+			"NAME": "UI_SELL_ITEMS_DIRT",
+			"TEXT_BUY": "UI_DE_SELL_ITEMS_DIRT"
+		},
+		"ZAP_CHANCE": {
+			"VALUE_TYPE": "PERCENTAGE",
+			"ICON_FRAME": 16,
+			"NAME": "UI_ZAP_CHANCE",
+			"TEXT_BUY": "UI_DE_ZAP_CHANCE"
+		},
+		"ZAP_CRIT_CHANCE": {
+			"VALUE_TYPE": "PERCENTAGE",
+			"ICON_FRAME": 17,
+			"NAME": "UI_ZAP_CRIT_CHANCE",
+			"TEXT_BUY": "UI_DE_ZAP_CRIT_CHANCE"
+		},
+		"SPELL_STACKS": {
+			"VALUE_TYPE": "DEFAULT",
+			"ICON_FRAME": 18,
+			"NAME": "UI_SPELL_STACKS",
+			"TEXT_BUY": "UI_DE_SPELL_STACKS"
+		},
+		"SPELL_DIGS": {
+			"VALUE_TYPE": "DEFAULT",
+			"ICON_FRAME": 19,
+			"NAME": "UI_SPELL_DIGS",
+			"TEXT_BUY": "UI_DE_SPELL_DIGS"
+		},
+		"SPELL_DURATION": {
+			"VALUE_TYPE": "SECONDS",
+			"ICON_FRAME": 4,
+			"NAME": "UI_SPELL_DURATION",
+			"TEXT_BUY": "UI_DE_SPELL_DURATION"
+		},
+		"DIG_COUNT": {
+			"VALUE_TYPE": "DEFAULT",
+			"ICON_FRAME": 31,
+			"NAME": "UI_DIG_COUNT",
+			"TEXT_BUY": "UI_DE_DIG_COUNT"
+		},
+		"BUFF_TIME": {
+			"VALUE_TYPE": "SECONDS",
+			"ICON_FRAME": 4,
+			"NAME": "UI_BUFF_TIME",
+			"TEXT_BUY": "UI_DE_BUFF_TIME"
+		},
+		"BUFF_VALUE": {
+			"VALUE_TYPE": "PERCENTAGE",
+			"ICON_FRAME": 32,
+			"NAME": "UI_BUFF_VALUE",
+			"TEXT_BUY": "UI_DE_BUFF_VALUE"
+		},
+		"COUNT_ADD": {
+			"VALUE_TYPE": "DEFAULT",
+			"ICON_FRAME": 33,
+			"NAME": "UI_COUNT_ADD",
+			"TEXT_BUY": "UI_DE_COUNT_ADD"
+		},
+		"DIRT_MULTIPLY": {
+			"VALUE_TYPE": "PERCENTAGE",
+			"ICON_FRAME": 34,
+			"NAME": "UI_DIRT_MULTIPLY",
+			"TEXT_BUY": "UI_DE_DIRT_MULTIPLY"
+		}
+	},
+	"ITEMS": {
+		"BONE": {
+			"NAME": "UI_BONE",
+			"RARITY": "COMMON",
+			"ICON_FRAME": 0,
+			"VALUE_DIRT": 50,
+			"DESCRIPTION": "Not a human bone.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"SKULL": {
+			"NAME": "UI_SKULL",
+			"RARITY": "COMMON",
+			"ICON_FRAME": 1,
+			"VALUE_DIRT": 50,
+			"DESCRIPTION": "Not a human skull.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"EMPTY_BOTTLE": {
+			"NAME": "UI_EMPTY_BOTTLE",
+			"RARITY": "COMMON",
+			"ICON_FRAME": 2,
+			"VALUE_DIRT": 50,
+			"DESCRIPTION": "No message in this bottle.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"LOG": {
+			"NAME": "UI_LOG",
+			"RARITY": "COMMON",
+			"ICON_FRAME": 3,
+			"VALUE_DIRT": 50,
+			"DESCRIPTION": "Just a simple log.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"GREEN_PLANT": {
+			"NAME": "UI_GREEN_PLANT",
+			"RARITY": "COMMON",
+			"ICON_FRAME": 4,
+			"VALUE_DIRT": 50,
+			"DESCRIPTION": "Can't make tea out of it.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"ORANGE_LEAF": {
+			"NAME": "UI_ORANGE_LEAF",
+			"RARITY": "COMMON",
+			"ICON_FRAME": 5,
+			"VALUE_DIRT": 50,
+			"DESCRIPTION": "Simple leaf.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"OLD_BOOT": {
+			"NAME": "UI_OLD_BOOT",
+			"RARITY": "COMMON",
+			"ICON_FRAME": 6,
+			"VALUE_DIRT": 50,
+			"DESCRIPTION": "Stinks pretty bad.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"STONE_BLOCK": {
+			"NAME": "UI_STONE_BLOCK",
+			"RARITY": "COMMON",
+			"ICON_FRAME": 7,
+			"VALUE_DIRT": 50,
+			"DESCRIPTION": "Perfectly cube of stone, pretty cool.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"CANDY": {
+			"NAME": "UI_CANDY",
+			"RARITY": "COMMON",
+			"ICON_FRAME": 8,
+			"VALUE_DIRT": 50,
+			"DESCRIPTION": "Don't eat it.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"OLD_CHEESE": {
+			"NAME": "UI_OLD_CHEESE",
+			"RARITY": "COMMON",
+			"ICON_FRAME": 9,
+			"VALUE_DIRT": 50,
+			"DESCRIPTION": "Stinks worse than an old boot.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"GARLIC": {
+			"NAME": "UI_GARLIC",
+			"RARITY": "UNCOMMON",
+			"ICON_FRAME": 0,
+			"VALUE_DIRT": 400,
+			"DESCRIPTION": "Great protection from vampires.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"CARROT": {
+			"NAME": "UI_CARROT",
+			"RARITY": "UNCOMMON",
+			"ICON_FRAME": 1,
+			"VALUE_DIRT": 400,
+			"DESCRIPTION": "Good for your eyes.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"MUSHROOM": {
+			"NAME": "UI_MUSHROOM",
+			"RARITY": "UNCOMMON",
+			"ICON_FRAME": 2,
+			"VALUE_DIRT": 400,
+			"DESCRIPTION": "Unfortunately some people are allergic to this.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"BROCCOLI": {
+			"NAME": "UI_BROCCOLI",
+			"RARITY": "UNCOMMON",
+			"ICON_FRAME": 3,
+			"VALUE_DIRT": 400,
+			"DESCRIPTION": "",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"POT_WITH_PLANT": {
+			"NAME": "UI_POT_WITH_PLANT",
+			"RARITY": "UNCOMMON",
+			"ICON_FRAME": 4,
+			"VALUE_DIRT": 400,
+			"DESCRIPTION": "Pretty pot with a healthy plant.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"TULIP_BULB": {
+			"NAME": "UI_TULIP_BULB",
+			"RARITY": "UNCOMMON",
+			"ICON_FRAME": 5,
+			"VALUE_DIRT": 400,
+			"DESCRIPTION": "This doesn't quite look like a tulip bulb...",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"AXE": {
+			"NAME": "UI_AXE",
+			"RARITY": "RARE",
+			"ICON_FRAME": 0,
+			"VALUE_DIRT": 2000,
+			"DESCRIPTION": "Can chop wood and foes.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"SPYGLASS": {
+			"NAME": "UI_SPYGLASS",
+			"RARITY": "RARE",
+			"ICON_FRAME": 1,
+			"VALUE_DIRT": 2000,
+			"DESCRIPTION": "Can see far with this thing.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"WARRIOR_BOOTS": {
+			"NAME": "UI_WARRIOR_BOOTS",
+			"RARITY": "RARE",
+			"ICON_FRAME": 2,
+			"VALUE_DIRT": 2000,
+			"DESCRIPTION": "Sturdy and durable.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"ARCHER_GLOVES": {
+			"NAME": "UI_ARCHER_GLOVES",
+			"RARITY": "RARE",
+			"ICON_FRAME": 3,
+			"VALUE_DIRT": 2000,
+			"DESCRIPTION": "Thin and agile.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"WARRIOR_HELMET": {
+			"NAME": "UI_WARRIOR_HELMET",
+			"RARITY": "RARE",
+			"ICON_FRAME": 4,
+			"VALUE_DIRT": 2000,
+			"DESCRIPTION": "Can't fit on a head that is not a warrior.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"PALADIN_CHEST": {
+			"NAME": "UI_PALADIN_CHEST",
+			"RARITY": "RARE",
+			"ICON_FRAME": 5,
+			"VALUE_DIRT": 2000,
+			"DESCRIPTION": "Holy armor.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"MONK_NECKLACA": {
+			"NAME": "UI_MONK_NECKLACA",
+			"RARITY": "EPIC",
+			"ICON_FRAME": 0,
+			"VALUE_DIRT": 10000,
+			"DESCRIPTION": "Gives the user great power, also very expensive.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"MAGIC_POTION": {
+			"NAME": "UI_MAGIC_POTION",
+			"RARITY": "EPIC",
+			"ICON_FRAME": 1,
+			"VALUE_DIRT": 10000,
+			"DESCRIPTION": "When drank it will grant you the power of invisible pinkies.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"DEEP_SEA_SCALES": {
+			"NAME": "UI_DEEP_SEA_SCALES",
+			"RARITY": "EPIC",
+			"ICON_FRAME": 2,
+			"VALUE_DIRT": 10000,
+			"DESCRIPTION": "This creature died and now is very expensive product.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"NORSE_BLOWING_HORN": {
+			"NAME": "UI_NORSE_BLOWING_HORN",
+			"RARITY": "EPIC",
+			"ICON_FRAME": 3,
+			"VALUE_DIRT": 10000,
+			"DESCRIPTION": "Blow, do not suck.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"FOSSIL": {
+			"NAME": "UI_FOSSIL",
+			"RARITY": "EPIC",
+			"ICON_FRAME": 4,
+			"VALUE_DIRT": 10000,
+			"DESCRIPTION": "Lived ten million years ago, how cool.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"HOURGLASS": {
+			"NAME": "UI_HOURGLASS",
+			"RARITY": "EPIC",
+			"ICON_FRAME": 5,
+			"VALUE_DIRT": 10000,
+			"DESCRIPTION": "When it runs out it will make a strange sound.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"THE_RING": {
+			"NAME": "UI_THE_RING",
+			"RARITY": "LEGENDARY",
+			"ICON_FRAME": 0,
+			"VALUE_DIRT": 50000,
+			"DESCRIPTION": "It's precious.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"THE_NECKLACE": {
+			"NAME": "UI_THE_NECKLACE",
+			"RARITY": "LEGENDARY",
+			"ICON_FRAME": 1,
+			"VALUE_DIRT": 50000,
+			"DESCRIPTION": "Wear at your risk.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"THE_GREAT_AXE": {
+			"NAME": "UI_THE_GREAT_AXE",
+			"RARITY": "LEGENDARY",
+			"ICON_FRAME": 2,
+			"VALUE_DIRT": 50000,
+			"DESCRIPTION": "Used to chop down dragons.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"FIRE_EMBLEM": {
+			"NAME": "UI_FIRE_EMBLEM",
+			"RARITY": "LEGENDARY",
+			"ICON_FRAME": 3,
+			"VALUE_DIRT": 50000,
+			"DESCRIPTION": "If you have three of these it makes you the fire guy.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"EVIL_BOOK": {
+			"NAME": "UI_EVIL_BOOK",
+			"RARITY": "LEGENDARY",
+			"ICON_FRAME": 4,
+			"VALUE_DIRT": 50000,
+			"DESCRIPTION": "Written in a forgotten language.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"SCROLL_OF_DEATH": {
+			"NAME": "UI_SCROLL_OF_DEATH",
+			"RARITY": "LEGENDARY",
+			"ICON_FRAME": 5,
+			"VALUE_DIRT": 50000,
+			"DESCRIPTION": "Do not write your own name in it.",
+			"BADGE_KEY": "",
+			"MINI_GAME_KEY": ""
+		},
+		"RECORD": {
+			"NAME": "UI_RECORD_LP",
+			"RARITY": "RELIC",
+			"ICON_FRAME": 0,
+			"VALUE_DIRT": 0,
+			"DESCRIPTION": "? ? ?",
+			"BADGE_KEY": "RECORD",
+			"MINI_GAME_KEY": ""
+		},
+		"COOKIE_CLICKER": {
+			"NAME": "UI_COOKIE_CLICKER",
+			"RARITY": "RELIC",
+			"ICON_FRAME": 1,
+			"VALUE_DIRT": 0,
+			"DESCRIPTION": "? ? ?",
+			"BADGE_KEY": "COOKIE_CLICKER",
+			"MINI_GAME_KEY": ""
+		},
+		"BOTTLE_MESSAGE": {
+			"NAME": "UI_BOTTLE_MESSAGE",
+			"RARITY": "RELIC",
+			"ICON_FRAME": 2,
+			"VALUE_DIRT": 0,
+			"DESCRIPTION": "? ? ?",
+			"BADGE_KEY": "BOTTLE_MESSAGE",
+			"MINI_GAME_KEY": ""
+		},
+		"JAR_DIRT": {
+			"NAME": "UI_JAR_DIRT",
+			"RARITY": "RELIC",
+			"ICON_FRAME": 3,
+			"VALUE_DIRT": 0,
+			"DESCRIPTION": "? ? ?",
+			"BADGE_KEY": "JAR_DIRT",
+			"MINI_GAME_KEY": ""
+		},
+		"CRAFTS_BEAR": {
+			"NAME": "UI_CRAFTS_BEAR",
+			"RARITY": "RELIC",
+			"ICON_FRAME": 4,
+			"VALUE_DIRT": 0,
+			"DESCRIPTION": "? ? ?",
+			"BADGE_KEY": "CRAFTS_BEAR",
+			"MINI_GAME_KEY": ""
+		},
+		"HOUSE_BLUEPRINT": {
+			"NAME": "UI_HOUSE_BLUEPRINT",
+			"RARITY": "RELIC",
+			"ICON_FRAME": 5,
+			"VALUE_DIRT": 0,
+			"DESCRIPTION": "? ? ?",
+			"BADGE_KEY": "HOUSE_BLUEPRINT",
+			"MINI_GAME_KEY": ""
+		},
+		"FLASHLIGHT_GAME": {
+			"NAME": "UI_FLASHLIGHT_GAME",
+			"RARITY": "RELIC",
+			"ICON_FRAME": 6,
+			"VALUE_DIRT": 0,
+			"DESCRIPTION": "? ? ?",
+			"BADGE_KEY": "FLASHLIGHT_GAME",
+			"MINI_GAME_KEY": "DARKNESS"
+		},
+		"DICE_GAME": {
+			"NAME": "UI_DICE_GAME",
+			"RARITY": "RELIC",
+			"ICON_FRAME": 7,
+			"VALUE_DIRT": 0,
+			"DESCRIPTION": "? ? ?",
+			"BADGE_KEY": "DICE_GAME",
+			"MINI_GAME_KEY": "DICE"
+		},
+		"HANGMAN_GAME": {
+			"NAME": "UI_HANGMAN_GAME",
+			"RARITY": "RELIC",
+			"ICON_FRAME": 8,
+			"VALUE_DIRT": 0,
+			"DESCRIPTION": "? ? ?",
+			"BADGE_KEY": "HANGMAN_GAME",
+			"MINI_GAME_KEY": "HANGMAN"
+		},
+		"CHEST_KEY_IRON": {
+			"NAME": "UI_CHEST_KEY_IRON",
+			"RARITY": "RELIC",
+			"ICON_FRAME": 12,
+			"VALUE_DIRT": 0,
+			"DESCRIPTION": "? ? ?",
+			"BADGE_KEY": "CHEST_KEY_IRON",
+			"MINI_GAME_KEY": ""
+		},
+		"CHEST_KEY_GOLDEN": {
+			"NAME": "U_CHEST_KEY_GOLDEN",
+			"RARITY": "RELIC",
+			"ICON_FRAME": 13,
+			"VALUE_DIRT": 0,
+			"DESCRIPTION": "? ? ?",
+			"BADGE_KEY": "CHEST_KEY_GOLDEN",
+			"MINI_GAME_KEY": ""
+		},
+		"CHEST_KEY_EVIL": {
+			"NAME": "UI_CHEST_KEY_EVIL",
+			"RARITY": "RELIC",
+			"ICON_FRAME": 14,
+			"VALUE_DIRT": 0,
+			"DESCRIPTION": "? ? ?",
+			"BADGE_KEY": "CHEST_KEY_EVIL",
+			"MINI_GAME_KEY": ""
+		}
+	},
+	"BADGES": {
+		"RECORD": {
+			"NAME": "UI_RECORD_LP",
+			"DESCRIPTION": "UI_DE_RECORD_LP",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 1,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "PASSIVE",
+			"KEY_STAT": "ANIMATION_SCALE",
+			"STAT_ID": 0
+		},
+		"COOKIE_CLICKER": {
+			"NAME": "UI_COOKIE_CLICKER",
+			"DESCRIPTION": "UI_DE_COOKIE_CLICKER",
+			"ICON_FRAME": 1,
+			"SECRET": 1,
+			"IS_RELIC": 1,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "PASSIVE",
+			"KEY_STAT": "DIRT_MULTIPLY",
+			"STAT_ID": 0
+		},
+		"BOTTLE_MESSAGE": {
+			"NAME": "UI_BOTTLE_MESSAGE",
+			"DESCRIPTION": "UI_DE_BOTTLE_MESSAGE",
+			"ICON_FRAME": 2,
+			"SECRET": 1,
+			"IS_RELIC": 1,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "PASSIVE",
+			"KEY_STAT": "DIRT_GAIN_CRIT_CHANCE",
+			"STAT_ID": 1
+		},
+		"JAR_DIRT": {
+			"NAME": "UI_JAR_DIRT",
+			"DESCRIPTION": "UI_DE_JAR_DIRT",
+			"ICON_FRAME": 3,
+			"SECRET": 1,
+			"IS_RELIC": 1,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "PASSIVE",
+			"KEY_STAT": "DIRT_MULTIPLY",
+			"STAT_ID": 0
+		},
+		"CRAFTS_BEAR": {
+			"NAME": "UI_CRAFTS_BEAR",
+			"DESCRIPTION": "UI_DE_CRAFTS_BEAR",
+			"ICON_FRAME": 4,
+			"SECRET": 1,
+			"IS_RELIC": 1,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "PASSIVE",
+			"KEY_STAT": "DIRT_GAIN_CRIT_CHANCE",
+			"STAT_ID": 1
+		},
+		"HOUSE_BLUEPRINT": {
+			"NAME": "UI_HOUSE_BLUEPRINT",
+			"DESCRIPTION": "UI_DE_HOUSE_BLUEPRINT",
+			"ICON_FRAME": 5,
+			"SECRET": 1,
+			"IS_RELIC": 1,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "PASSIVE",
+			"KEY_STAT": "DIRT_GAIN_CRIT_CHANCE",
+			"STAT_ID": 1
+		},
+		"CHEST_KEY_IRON": {
+			"NAME": "UI_CHEST_KEY_IRON",
+			"DESCRIPTION": "UI_DE_CHEST_KEY_IRON",
+			"ICON_FRAME": 12,
+			"SECRET": 1,
+			"IS_RELIC": 1,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "IRON",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"CHEST_KEY_GOLDEN": {
+			"NAME": "UI_CHEST_KEY_GOLDEN",
+			"DESCRIPTION": "UI_DE_CHEST_KEY_GOLDEN",
+			"ICON_FRAME": 13,
+			"SECRET": 1,
+			"IS_RELIC": 1,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "GOLDEN",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"CHEST_KEY_EVIL": {
+			"NAME": "UI_CHEST_KEY_EVIL",
+			"DESCRIPTION": "UI_DE_CHEST_KEY_EVIL",
+			"ICON_FRAME": 14,
+			"SECRET": 1,
+			"IS_RELIC": 1,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "EVIL",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"HAT_IDLE_REDUCE": {
+			"NAME": "UI_HAT_IDLE_REDUCE",
+			"DESCRIPTION": "UI_DE_HAT_IDLE_REDUCE",
+			"ICON_FRAME": 15,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"HAT_LUCK": {
+			"NAME": "UI_HAT_LUCK",
+			"DESCRIPTION": "UI_DE_HAT_LUCK",
+			"ICON_FRAME": 16,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"HAT_DIRT_MULTIPLY": {
+			"NAME": "UI_HAT_DIRT_MULTIPLY",
+			"DESCRIPTION": "UI_DE_HAT_DIRT_MULTIPLY",
+			"ICON_FRAME": 17,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"FLASHLIGHT_GAME": {
+			"NAME": "UI_FLASHLIGHT_GAME",
+			"DESCRIPTION": "UI_DE_FLASHLIGHT_GAME",
+			"ICON_FRAME": 6,
+			"SECRET": 1,
+			"IS_RELIC": 1,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "PASSIVE",
+			"KEY_STAT": "LUCK_ITEM_RARITY",
+			"STAT_ID": 2
+		},
+		"DICE_GAME": {
+			"NAME": "UI_DICE_GAME",
+			"DESCRIPTION": "UI_DE_DICE_GAME",
+			"ICON_FRAME": 7,
+			"SECRET": 1,
+			"IS_RELIC": 1,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "PASSIVE",
+			"KEY_STAT": "SELL_ITEMS_DIRT",
+			"STAT_ID": 2
+		},
+		"HANGMAN_GAME": {
+			"NAME": "UI_HANGMAN_GAME",
+			"DESCRIPTION": "UI_DE_HANGMAN_GAME",
+			"ICON_FRAME": 8,
+			"SECRET": 1,
+			"IS_RELIC": 1,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "PASSIVE",
+			"KEY_STAT": "DIRT_MULTIPLY",
+			"STAT_ID": 0
+		},
+		"SURFACE_FLAG": {
+			"NAME": "UI_SURFACE_FLAG",
+			"DESCRIPTION": "UI_DE_SURFACE_FLAG",
+			"ICON_FRAME": 9,
+			"SECRET": 0,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"SPOONING": {
+			"NAME": "UI_SPOONING",
+			"DESCRIPTION": "UI_DE_SPOONING",
+			"ICON_FRAME": 10,
+			"SECRET": 0,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"EXPENSIVE_SUIT": {
+			"NAME": "UI_EXPENSIVE_SUIT",
+			"DESCRIPTION": "UI_DE_EXPENSIVE_SUIT",
+			"ICON_FRAME": 11,
+			"SECRET": 0,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 0,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T0": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T1": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T2": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T3": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T4": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T5": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T6": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T7": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T8": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T9": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T10": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T11": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T12": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T13": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T14": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T15": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T16": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T17": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T18": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T19": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		},
+		"T20": {
+			"NAME": "??",
+			"DESCRIPTION": "TEST",
+			"ICON_FRAME": 0,
+			"SECRET": 1,
+			"IS_RELIC": 0,
+			"DEMO_LOCK": 1,
+			"KEY_CHEST": "",
+			"KEY_NODE": "NULL",
+			"KEY_STAT": "NULL",
+			"STAT_ID": 0
+		}
+	},
+	"CHESTS": {
+		"IRON": {
+			"KEY_BADGE_REWARD": "HAT_IDLE_REDUCE",
+			"SPAWN_TIME_MIN": 1,
+			"SPAWN_TIME_MAX": 1,
+			"POS_PERC_X": 0.7,
+			"POS_PERC_Y": 0.4
+		},
+		"GOLDEN": {
+			"KEY_BADGE_REWARD": "HAT_LUCK",
+			"SPAWN_TIME_MIN": 9,
+			"SPAWN_TIME_MAX": 10,
+			"POS_PERC_X": 0.25,
+			"POS_PERC_Y": 0.6
+		},
+		"EVIL": {
+			"KEY_BADGE_REWARD": "HAT_DIRT_MULTIPLY",
+			"SPAWN_TIME_MIN": 45,
+			"SPAWN_TIME_MAX": 50,
+			"POS_PERC_X": 0.5,
+			"POS_PERC_Y": 0.9
+		}
+	}
+}

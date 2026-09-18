@@ -1,0 +1,27 @@
+# Reconstructed token text for research; not original source formatting.
+class_name UISkillTree extends Control
+
+@onready var zoom_con : UIZoomContainer = $ ZoomContainer
+signal on_purchase_request ( key_node : String , key_stat : String , stat_id : int )
+
+
+func _ready ( ) -> void :
+    visible = false
+    GM . on_game_init . connect ( _on_game_init )
+
+
+func _on_game_init ( ) -> void :
+    for btn : UIBtnSkillTree in $ ZoomContainer / Main / Buttons . get_children ( ) :
+        btn . on_pressed_buy . connect ( on_purchase_request . emit . bind ( btn . key_node , btn . key_stat , btn . stat_id ) )
+    GM . on_world_loaded . connect ( _on_world_loaded )
+    GM . on_world_deleted . connect ( _on_world_deleted )
+
+
+func _on_world_loaded ( ) -> void :
+    visible = false
+    zoom_con . reset ( )
+
+
+func _on_world_deleted ( ) -> void :
+    visible = false
+    zoom_con . reset ( )

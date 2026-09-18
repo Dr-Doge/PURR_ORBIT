@@ -1,0 +1,3745 @@
+[
+  {
+    "index": 0,
+    "parent": -1,
+    "type": "Control",
+    "name": "SkillTree",
+    "instance": -1,
+    "properties": {
+      "layout_mode": 3,
+      "anchors_preset": 15,
+      "anchor_right": 1.0,
+      "anchor_bottom": 1.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "theme": {
+        "resource": "external",
+        "index": 0
+      },
+      "script": {
+        "resource": "external",
+        "index": 1
+      }
+    }
+  },
+  {
+    "index": 1,
+    "parent": 0,
+    "type": "Control",
+    "name": "ZoomContainer",
+    "instance": -1,
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 15,
+      "anchor_right": 1.0,
+      "anchor_bottom": 1.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "mouse_filter": 1,
+      "script": {
+        "resource": "external",
+        "index": 2
+      },
+      "zoom_enable": true,
+      "content": {
+        "nodepath": "Main"
+      },
+      "metadata/_edit_lock_": true
+    }
+  },
+  {
+    "index": 2,
+    "parent": 1,
+    "type": "TextureRect",
+    "name": "BG",
+    "instance": -1,
+    "properties": {
+      "material": {
+        "resource": "internal",
+        "index": 0
+      },
+      "layout_mode": 1,
+      "anchors_preset": 15,
+      "anchor_right": 1.0,
+      "anchor_bottom": 1.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "texture": {
+        "resource": "external",
+        "index": 4
+      },
+      "stretch_mode": 1,
+      "metadata/_edit_lock_": true,
+      "metadata/CURSOR_OPEN": true
+    }
+  },
+  {
+    "index": 3,
+    "parent": 2,
+    "type": "ReferenceRect",
+    "name": "Border",
+    "instance": -1,
+    "properties": {
+      "visible": false,
+      "layout_mode": 1,
+      "anchors_preset": 15,
+      "anchor_right": 1.0,
+      "anchor_bottom": 1.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "mouse_filter": 2,
+      "border_color": [
+        1.0,
+        1.0,
+        1.0,
+        0.3294117748737335
+      ],
+      "border_width": 2.0,
+      "editor_only": false,
+      "metadata/_edit_lock_": true
+    }
+  },
+  {
+    "index": 4,
+    "parent": 1,
+    "type": "Control",
+    "name": "Main",
+    "instance": -1,
+    "properties": {
+      "custom_minimum_size": [
+        8000.0,
+        8000.0
+      ],
+      "anchors_preset": 0,
+      "offset_left": -3237.0,
+      "offset_top": -6431.0,
+      "offset_right": 4763.0,
+      "offset_bottom": 1569.0,
+      "size_flags_horizontal": 2,
+      "size_flags_vertical": 2,
+      "mouse_filter": 2,
+      "metadata/_edit_lock_": true
+    }
+  },
+  {
+    "index": 5,
+    "parent": 4,
+    "type": "TextureRect",
+    "name": "BG",
+    "instance": -1,
+    "properties": {
+      "visible": false,
+      "material": {
+        "resource": "internal",
+        "index": 0
+      },
+      "layout_mode": 1,
+      "anchors_preset": 15,
+      "anchor_right": 1.0,
+      "anchor_bottom": 1.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "texture": {
+        "resource": "external",
+        "index": 4
+      },
+      "stretch_mode": 1,
+      "metadata/_edit_lock_": true,
+      "metadata/CURSOR_OPEN": true
+    }
+  },
+  {
+    "index": 6,
+    "parent": 5,
+    "type": "ReferenceRect",
+    "name": "Border",
+    "instance": -1,
+    "properties": {
+      "visible": false,
+      "layout_mode": 1,
+      "anchors_preset": 15,
+      "anchor_right": 1.0,
+      "anchor_bottom": 1.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "mouse_filter": 2,
+      "border_color": [
+        1.0,
+        1.0,
+        1.0,
+        0.3294117748737335
+      ],
+      "border_width": 2.0,
+      "editor_only": false,
+      "metadata/_edit_lock_": true
+    }
+  },
+  {
+    "index": 7,
+    "parent": 4,
+    "type": "Control",
+    "name": "Buttons",
+    "instance": -1,
+    "properties": {
+      "z_index": 1,
+      "anchors_preset": 0,
+      "metadata/_edit_lock_": true
+    }
+  },
+  {
+    "index": 8,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Spoon[DirtGain]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3877.0,
+      "offset_top": 6751.0,
+      "offset_right": 3941.0,
+      "offset_bottom": 6815.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPOON",
+      "key_stat": "DIRT_GAIN"
+    }
+  },
+  {
+    "index": 9,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Spoon[DirtGain1]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3493.0,
+      "offset_top": 6111.0,
+      "offset_right": 3557.0,
+      "offset_bottom": 6175.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPOON",
+      "key_stat": "DIRT_GAIN",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 10,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Spoon[CountAdd]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3685.0,
+      "offset_top": 5407.0,
+      "offset_right": 3749.0,
+      "offset_bottom": 5471.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPOON",
+      "key_stat": "COUNT_ADD"
+    }
+  },
+  {
+    "index": 11,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Spoon[CountAdd1]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3621.0,
+      "offset_top": 6111.0,
+      "offset_right": 3685.0,
+      "offset_bottom": 6175.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPOON",
+      "key_stat": "COUNT_ADD",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 12,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Spoon[AnimScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4005.0,
+      "offset_top": 6751.0,
+      "offset_right": 4069.0,
+      "offset_bottom": 6815.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPOON",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 13,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Spoon[AnimScale]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3557.0,
+      "offset_top": 5983.0,
+      "offset_right": 3621.0,
+      "offset_bottom": 6047.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPOON",
+      "key_stat": "ANIMATION_SCALE",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 14,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Spoon[CritChance]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3749.0,
+      "offset_top": 6751.0,
+      "offset_right": 3813.0,
+      "offset_bottom": 6815.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPOON",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE"
+    }
+  },
+  {
+    "index": 15,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Spoon[CritChance]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3557.0,
+      "offset_top": 6239.0,
+      "offset_right": 3621.0,
+      "offset_bottom": 6303.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPOON",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 16,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Spoon[LuckItemDrop]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3749.0,
+      "offset_top": 6111.0,
+      "offset_right": 3813.0,
+      "offset_bottom": 6175.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPOON",
+      "key_stat": "LUCK_ITEM_DROP"
+    }
+  },
+  {
+    "index": 17,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Spoon[LuckItemDrop]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3749.0,
+      "offset_top": 5983.0,
+      "offset_right": 3813.0,
+      "offset_bottom": 6047.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPOON",
+      "key_stat": "LUCK_ITEM_RARITY"
+    }
+  },
+  {
+    "index": 18,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[ShopUnlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4581.0,
+      "offset_top": 5663.0,
+      "offset_right": 4645.0,
+      "offset_bottom": 5727.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SHOVEL",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 19,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[DirtGain]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4773.0,
+      "offset_top": 5663.0,
+      "offset_right": 4837.0,
+      "offset_bottom": 5727.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SHOVEL",
+      "key_stat": "DIRT_GAIN"
+    }
+  },
+  {
+    "index": 20,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[DirtGain]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4197.0,
+      "offset_top": 4191.0,
+      "offset_right": 4261.0,
+      "offset_bottom": 4255.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SHOVEL",
+      "key_stat": "DIRT_GAIN",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 21,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[DirtGain]3",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4325.0,
+      "offset_top": 4319.0,
+      "offset_right": 4389.0,
+      "offset_bottom": 4383.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SHOVEL",
+      "key_stat": "COUNT_ADD"
+    }
+  },
+  {
+    "index": 22,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[DirtGain]4",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3237.0,
+      "offset_top": 3487.0,
+      "offset_right": 3301.0,
+      "offset_bottom": 3551.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PICKAXE",
+      "key_stat": "COUNT_ADD"
+    }
+  },
+  {
+    "index": 23,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[DirtGain]6",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4325.0,
+      "offset_top": 3167.0,
+      "offset_right": 4389.0,
+      "offset_bottom": 3231.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "TRIDENT",
+      "key_stat": "COUNT_ADD"
+    }
+  },
+  {
+    "index": 24,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[DirtGain]5",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3237.0,
+      "offset_top": 3871.0,
+      "offset_right": 3301.0,
+      "offset_bottom": 3935.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "FROG_GUY",
+      "key_stat": "COUNT_ADD"
+    }
+  },
+  {
+    "index": 25,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[AnimScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4581.0,
+      "offset_top": 5855.0,
+      "offset_right": 4645.0,
+      "offset_bottom": 5919.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SHOVEL",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 26,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[AnimScale]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4133.0,
+      "offset_top": 4319.0,
+      "offset_right": 4197.0,
+      "offset_bottom": 4383.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SHOVEL",
+      "key_stat": "ANIMATION_SCALE",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 27,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[DirtGainCritChance]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4709.0,
+      "offset_top": 5791.0,
+      "offset_right": 4773.0,
+      "offset_bottom": 5855.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SHOVEL",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE"
+    }
+  },
+  {
+    "index": 28,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[DirtGainCritChance]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4453.0,
+      "offset_top": 4191.0,
+      "offset_right": 4517.0,
+      "offset_bottom": 4255.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SHOVEL",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 29,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[LuckItemDrop]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4389.0,
+      "offset_top": 5663.0,
+      "offset_right": 4453.0,
+      "offset_bottom": 5727.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SHOVEL",
+      "key_stat": "LUCK_ITEM_DROP"
+    }
+  },
+  {
+    "index": 30,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Shovel[LuckItemRarity]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4261.0,
+      "offset_top": 5535.0,
+      "offset_right": 4325.0,
+      "offset_bottom": 5599.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SHOVEL",
+      "key_stat": "LUCK_ITEM_RARITY"
+    }
+  },
+  {
+    "index": 31,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Inventory[Unlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3877.0,
+      "offset_top": 6239.0,
+      "offset_right": 3941.0,
+      "offset_bottom": 6303.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "INVENTORY",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 32,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Cursor[Radius]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3877.0,
+      "offset_top": 5599.0,
+      "offset_right": 3941.0,
+      "offset_bottom": 5663.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "CURSOR",
+      "key_stat": "RADIUS"
+    }
+  },
+  {
+    "index": 33,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Cursor[Radius]3",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3493.0,
+      "offset_top": 4703.0,
+      "offset_right": 3557.0,
+      "offset_bottom": 4767.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "CURSOR",
+      "key_stat": "RADIUS",
+      "stat_id": 2
+    }
+  },
+  {
+    "index": 34,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Cursor[Radius]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4325.0,
+      "offset_top": 3935.0,
+      "offset_right": 4389.0,
+      "offset_bottom": 3999.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "CURSOR",
+      "key_stat": "RADIUS",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 35,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Passive[DirtGain]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3877.0,
+      "offset_top": 5215.0,
+      "offset_right": 3941.0,
+      "offset_bottom": 5279.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PASSIVE",
+      "key_stat": "DIRT_GAIN"
+    }
+  },
+  {
+    "index": 36,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Passive[DirtGain]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3749.0,
+      "offset_top": 5087.0,
+      "offset_right": 3813.0,
+      "offset_bottom": 5151.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PASSIVE",
+      "key_stat": "DIRT_GAIN",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 37,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Passive[DirtGain]3",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3621.0,
+      "offset_top": 4959.0,
+      "offset_right": 3685.0,
+      "offset_bottom": 5023.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PASSIVE",
+      "key_stat": "DIRT_GAIN",
+      "stat_id": 2
+    }
+  },
+  {
+    "index": 38,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Passive[DirtGainCritChance]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3685.0,
+      "offset_top": 5215.0,
+      "offset_right": 3749.0,
+      "offset_bottom": 5279.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PASSIVE",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE"
+    }
+  },
+  {
+    "index": 39,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Passive[SellItemsDirt]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3877.0,
+      "offset_top": 5023.0,
+      "offset_right": 3941.0,
+      "offset_bottom": 5087.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PASSIVE",
+      "key_stat": "SELL_ITEMS_DIRT"
+    }
+  },
+  {
+    "index": 40,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Passive[SellItemsDirt]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4005.0,
+      "offset_top": 4895.0,
+      "offset_right": 4069.0,
+      "offset_bottom": 4959.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PASSIVE",
+      "key_stat": "SELL_ITEMS_DIRT",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 41,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Passive[LuckItemDrop]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4005.0,
+      "offset_top": 5087.0,
+      "offset_right": 4069.0,
+      "offset_bottom": 5151.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PASSIVE",
+      "key_stat": "LUCK_ITEM_DROP"
+    }
+  },
+  {
+    "index": 42,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Passive[LuckItemRarity]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4133.0,
+      "offset_top": 4959.0,
+      "offset_right": 4197.0,
+      "offset_bottom": 5023.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PASSIVE",
+      "key_stat": "LUCK_ITEM_RARITY"
+    }
+  },
+  {
+    "index": 43,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Passive[LuckItemRarity]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4133.0,
+      "offset_top": 4767.0,
+      "offset_right": 4197.0,
+      "offset_bottom": 4831.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PASSIVE",
+      "key_stat": "LUCK_ITEM_RARITY",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 44,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Pickaxe[ShopUnlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3237.0,
+      "offset_top": 4319.0,
+      "offset_right": 3301.0,
+      "offset_bottom": 4383.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PICKAXE",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 45,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Pickaxe[LuckItemDrop]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3429.0,
+      "offset_top": 4319.0,
+      "offset_right": 3493.0,
+      "offset_bottom": 4383.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PICKAXE",
+      "key_stat": "LUCK_ITEM_DROP"
+    }
+  },
+  {
+    "index": 46,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Pickaxe[LuckItemRarity]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3557.0,
+      "offset_top": 4319.0,
+      "offset_right": 3621.0,
+      "offset_bottom": 4383.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PICKAXE",
+      "key_stat": "LUCK_ITEM_RARITY"
+    }
+  },
+  {
+    "index": 47,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Pickaxe[DirtGain]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3109.0,
+      "offset_top": 4319.0,
+      "offset_right": 3173.0,
+      "offset_bottom": 4383.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PICKAXE",
+      "key_stat": "DIRT_GAIN"
+    }
+  },
+  {
+    "index": 48,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Pickaxe[DirtGain]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3237.0,
+      "offset_top": 3231.0,
+      "offset_right": 3301.0,
+      "offset_bottom": 3295.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PICKAXE",
+      "key_stat": "DIRT_GAIN",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 49,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Pickaxe[AnimScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3365.0,
+      "offset_top": 4191.0,
+      "offset_right": 3429.0,
+      "offset_bottom": 4255.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PICKAXE",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 50,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Pickaxe[AnimScale]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3109.0,
+      "offset_top": 3359.0,
+      "offset_right": 3173.0,
+      "offset_bottom": 3423.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PICKAXE",
+      "key_stat": "ANIMATION_SCALE",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 51,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Pickaxe[DirtGainCritChance]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3365.0,
+      "offset_top": 4447.0,
+      "offset_right": 3429.0,
+      "offset_bottom": 4511.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PICKAXE",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE"
+    }
+  },
+  {
+    "index": 52,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Pickaxe[DirtGainCritChance]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3365.0,
+      "offset_top": 3359.0,
+      "offset_right": 3429.0,
+      "offset_bottom": 3423.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "PICKAXE",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 53,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Trident[ShopUnlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4581.0,
+      "offset_top": 4703.0,
+      "offset_right": 4645.0,
+      "offset_bottom": 4767.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "TRIDENT",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 54,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Trident[ZapChance]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4389.0,
+      "offset_top": 4703.0,
+      "offset_right": 4453.0,
+      "offset_bottom": 4767.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "TRIDENT",
+      "key_stat": "ZAP_CHANCE"
+    }
+  },
+  {
+    "index": 55,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Trident[ZapChance]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4325.0,
+      "offset_top": 2975.0,
+      "offset_right": 4389.0,
+      "offset_bottom": 3039.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "TRIDENT",
+      "key_stat": "LUCK_ITEM_DROP",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 56,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Trident[ZapCritChance]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4261.0,
+      "offset_top": 4575.0,
+      "offset_right": 4325.0,
+      "offset_bottom": 4639.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "TRIDENT",
+      "key_stat": "ZAP_CRIT_CHANCE"
+    }
+  },
+  {
+    "index": 57,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Trident[ZapCritChance]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4325.0,
+      "offset_top": 2783.0,
+      "offset_right": 4389.0,
+      "offset_bottom": 2847.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "TRIDENT",
+      "key_stat": "LUCK_ITEM_RARITY",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 58,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Trident[DirtGain]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4773.0,
+      "offset_top": 4703.0,
+      "offset_right": 4837.0,
+      "offset_bottom": 4767.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "TRIDENT",
+      "key_stat": "DIRT_GAIN"
+    }
+  },
+  {
+    "index": 59,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Trident[DirtGain]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4133.0,
+      "offset_top": 3167.0,
+      "offset_right": 4197.0,
+      "offset_bottom": 3231.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "TRIDENT",
+      "key_stat": "DIRT_GAIN",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 60,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Trident[DirtCrit]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4453.0,
+      "offset_top": 4831.0,
+      "offset_right": 4517.0,
+      "offset_bottom": 4895.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "TRIDENT",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE"
+    }
+  },
+  {
+    "index": 61,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Trident[DirtCrit]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4453.0,
+      "offset_top": 3039.0,
+      "offset_right": 4517.0,
+      "offset_bottom": 3103.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "TRIDENT",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 62,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Trident[AnimScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4709.0,
+      "offset_top": 4831.0,
+      "offset_right": 4773.0,
+      "offset_bottom": 4895.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "TRIDENT",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 63,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Trident[AnimScale]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4197.0,
+      "offset_top": 3039.0,
+      "offset_right": 4261.0,
+      "offset_bottom": 3103.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "TRIDENT",
+      "key_stat": "ANIMATION_SCALE",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 64,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "SpellZaps[Unlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4581.0,
+      "offset_top": 3423.0,
+      "offset_right": 4645.0,
+      "offset_bottom": 3487.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPELL_ZAPS",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 65,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "SpellZaps[SpellStacks]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4709.0,
+      "offset_top": 3295.0,
+      "offset_right": 4773.0,
+      "offset_bottom": 3359.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPELL_ZAPS",
+      "key_stat": "SPELL_STACKS"
+    }
+  },
+  {
+    "index": 66,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "SpellZaps[SpellDigs]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4773.0,
+      "offset_top": 3423.0,
+      "offset_right": 4837.0,
+      "offset_bottom": 3487.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPELL_ZAPS",
+      "key_stat": "SPELL_DIGS"
+    }
+  },
+  {
+    "index": 67,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "SpellZaps[SpellDuration]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4709.0,
+      "offset_top": 3551.0,
+      "offset_right": 4773.0,
+      "offset_bottom": 3615.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPELL_ZAPS",
+      "key_stat": "SPELL_DURATION"
+    }
+  },
+  {
+    "index": 68,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "SpellGoldrush[Unlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2341.0,
+      "offset_top": 3551.0,
+      "offset_right": 2405.0,
+      "offset_bottom": 3615.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPELL_GOLDRUSH",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 69,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "SpellGoldrush[SpellStacks]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2213.0,
+      "offset_top": 3551.0,
+      "offset_right": 2277.0,
+      "offset_bottom": 3615.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPELL_GOLDRUSH",
+      "key_stat": "SPELL_STACKS"
+    }
+  },
+  {
+    "index": 70,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "SpellGoldrush[SpellDigs]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2277.0,
+      "offset_top": 3423.0,
+      "offset_right": 2341.0,
+      "offset_bottom": 3487.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPELL_GOLDRUSH",
+      "key_stat": "SPELL_DIGS"
+    }
+  },
+  {
+    "index": 71,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "SpellGoldrush[SpellDuration]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2405.0,
+      "offset_top": 3423.0,
+      "offset_right": 2469.0,
+      "offset_bottom": 3487.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPELL_GOLDRUSH",
+      "key_stat": "SPELL_DURATION"
+    }
+  },
+  {
+    "index": 72,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "SpellRain[Unlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2277.0,
+      "offset_top": 3999.0,
+      "offset_right": 2341.0,
+      "offset_bottom": 4063.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPELL_RAIN",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 73,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "SpellRain[SpellStacks]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2405.0,
+      "offset_top": 3871.0,
+      "offset_right": 2469.0,
+      "offset_bottom": 3935.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPELL_RAIN",
+      "key_stat": "SPELL_STACKS"
+    }
+  },
+  {
+    "index": 74,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "SpellRain[SpellDigs]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2149.0,
+      "offset_top": 3871.0,
+      "offset_right": 2213.0,
+      "offset_bottom": 3935.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPELL_RAIN",
+      "key_stat": "SPELL_DIGS"
+    }
+  },
+  {
+    "index": 75,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "SpellRain[SpellDuration]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2277.0,
+      "offset_top": 3807.0,
+      "offset_right": 2341.0,
+      "offset_bottom": 3871.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SPELL_RAIN",
+      "key_stat": "SPELL_DURATION"
+    }
+  },
+  {
+    "index": 76,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MushroomGuy[ShopUnlocked]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3877.0,
+      "offset_top": 6495.0,
+      "offset_right": 3941.0,
+      "offset_bottom": 6559.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MUSHROOM_GUY",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 77,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MushroomGuy[ShopUnlocked]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4069.0,
+      "offset_top": 5407.0,
+      "offset_right": 4133.0,
+      "offset_bottom": 5471.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MUSHROOM_GUY",
+      "key_stat": "COUNT_ADD"
+    }
+  },
+  {
+    "index": 78,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MushroomGuy[IdleTime]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3749.0,
+      "offset_top": 6495.0,
+      "offset_right": 3813.0,
+      "offset_bottom": 6559.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MUSHROOM_GUY",
+      "key_stat": "IDLE_TIME"
+    }
+  },
+  {
+    "index": 79,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MushroomGuy[AnimScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4005.0,
+      "offset_top": 6495.0,
+      "offset_right": 4069.0,
+      "offset_bottom": 6559.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MUSHROOM_GUY",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 80,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MushroomGuy[IdleTime]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4325.0,
+      "offset_top": 5151.0,
+      "offset_right": 4389.0,
+      "offset_bottom": 5215.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MUSHROOM_GUY",
+      "key_stat": "IDLE_TIME",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 81,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MushroomGuy[IdleTime]3",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4389.0,
+      "offset_top": 5279.0,
+      "offset_right": 4453.0,
+      "offset_bottom": 5343.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MUSHROOM_GUY",
+      "key_stat": "COUNT_ADD",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 82,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MushroomGuy[AnimScale]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4453.0,
+      "offset_top": 5151.0,
+      "offset_right": 4517.0,
+      "offset_bottom": 5215.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MUSHROOM_GUY",
+      "key_stat": "ANIMATION_SCALE",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 83,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MushroomGuy[LuckItemDrop]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4133.0,
+      "offset_top": 5279.0,
+      "offset_right": 4197.0,
+      "offset_bottom": 5343.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MUSHROOM_GUY",
+      "key_stat": "LUCK_ITEM_DROP"
+    }
+  },
+  {
+    "index": 84,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MushroomGuy[LuckItemRarity]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4133.0,
+      "offset_top": 5151.0,
+      "offset_right": 4197.0,
+      "offset_bottom": 5215.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MUSHROOM_GUY",
+      "key_stat": "LUCK_ITEM_RARITY"
+    }
+  },
+  {
+    "index": 85,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MushroomGuy[LuckItemRarity]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4005.0,
+      "offset_top": 5279.0,
+      "offset_right": 4069.0,
+      "offset_bottom": 5343.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MUSHROOM_GUY",
+      "key_stat": "DIRT_MULTIPLY"
+    }
+  },
+  {
+    "index": 86,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MushroomGuy[LuckItemRarity]3",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3109.0,
+      "offset_top": 3743.0,
+      "offset_right": 3173.0,
+      "offset_bottom": 3807.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "FROG_GUY",
+      "key_stat": "DIRT_MULTIPLY"
+    }
+  },
+  {
+    "index": 87,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "FrogGuy[ShopUnlocked]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3237.0,
+      "offset_top": 4959.0,
+      "offset_right": 3301.0,
+      "offset_bottom": 5023.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "FROG_GUY",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 88,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "FrogGuy[AnimScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3109.0,
+      "offset_top": 5087.0,
+      "offset_right": 3173.0,
+      "offset_bottom": 5151.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "FROG_GUY",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 89,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "FrogGuy[AnimScale]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3493.0,
+      "offset_top": 3615.0,
+      "offset_right": 3557.0,
+      "offset_bottom": 3679.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "FROG_GUY",
+      "key_stat": "ANIMATION_SCALE",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 90,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "FrogGuy[IdleTime]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3237.0,
+      "offset_top": 5151.0,
+      "offset_right": 3301.0,
+      "offset_bottom": 5215.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "FROG_GUY",
+      "key_stat": "IDLE_TIME"
+    }
+  },
+  {
+    "index": 91,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "FrogGuy[IdleTime]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3365.0,
+      "offset_top": 3743.0,
+      "offset_right": 3429.0,
+      "offset_bottom": 3807.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "FROG_GUY",
+      "key_stat": "IDLE_TIME",
+      "stat_id": 1
+    }
+  },
+  {
+    "index": 92,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "FrogGuy[StompRad]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3365.0,
+      "offset_top": 4831.0,
+      "offset_right": 3429.0,
+      "offset_bottom": 4895.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "FROG_GUY",
+      "key_stat": "STOMP_RAD"
+    }
+  },
+  {
+    "index": 93,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "FrogGuy[LuckItemDrop]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3045.0,
+      "offset_top": 4959.0,
+      "offset_right": 3109.0,
+      "offset_bottom": 5023.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "FROG_GUY",
+      "key_stat": "LUCK_ITEM_DROP"
+    }
+  },
+  {
+    "index": 94,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "FrogGuy[LuckItemRarity]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2917.0,
+      "offset_top": 4959.0,
+      "offset_right": 2981.0,
+      "offset_bottom": 5023.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "FROG_GUY",
+      "key_stat": "LUCK_ITEM_RARITY"
+    }
+  },
+  {
+    "index": 95,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Sledgehammer[ShopUnlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5029.0,
+      "offset_top": 5023.0,
+      "offset_right": 5093.0,
+      "offset_bottom": 5087.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SLEDGEHAMMER",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 96,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Sledgehammer[DirtGain]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5029.0,
+      "offset_top": 4831.0,
+      "offset_right": 5093.0,
+      "offset_bottom": 4895.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SLEDGEHAMMER",
+      "key_stat": "DIRT_GAIN"
+    }
+  },
+  {
+    "index": 97,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Sledgehammer[DirtGain]2",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5221.0,
+      "offset_top": 5023.0,
+      "offset_right": 5285.0,
+      "offset_bottom": 5087.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SLEDGEHAMMER",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE"
+    }
+  },
+  {
+    "index": 98,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Sledgehammer[AnimScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4901.0,
+      "offset_top": 4895.0,
+      "offset_right": 4965.0,
+      "offset_bottom": 4959.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SLEDGEHAMMER",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 99,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Sledgehammer[StompRad]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5157.0,
+      "offset_top": 4895.0,
+      "offset_right": 5221.0,
+      "offset_bottom": 4959.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "SLEDGEHAMMER",
+      "key_stat": "STOMP_RAD"
+    }
+  },
+  {
+    "index": 100,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MoleGuy[ShopUnlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4837.0,
+      "offset_top": 4319.0,
+      "offset_right": 4901.0,
+      "offset_bottom": 4383.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MOLE_GUY",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 101,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MoleGuy[IdleTime]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4837.0,
+      "offset_top": 4511.0,
+      "offset_right": 4901.0,
+      "offset_bottom": 4575.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MOLE_GUY",
+      "key_stat": "IDLE_TIME"
+    }
+  },
+  {
+    "index": 102,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MoleGuy[DirtGain]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4709.0,
+      "offset_top": 4191.0,
+      "offset_right": 4773.0,
+      "offset_bottom": 4255.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MOLE_GUY",
+      "key_stat": "DIRT_GAIN"
+    }
+  },
+  {
+    "index": 103,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MoleGuy[AnimScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5029.0,
+      "offset_top": 4191.0,
+      "offset_right": 5093.0,
+      "offset_bottom": 4255.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MOLE_GUY",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 104,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MoleGuy[LuckItemDrop]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4837.0,
+      "offset_top": 4127.0,
+      "offset_right": 4901.0,
+      "offset_bottom": 4191.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MOLE_GUY",
+      "key_stat": "LUCK_ITEM_DROP"
+    }
+  },
+  {
+    "index": 105,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MoleGuy[LuckItemRarity]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4837.0,
+      "offset_top": 3999.0,
+      "offset_right": 4901.0,
+      "offset_bottom": 4063.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MOLE_GUY",
+      "key_stat": "LUCK_ITEM_RARITY"
+    }
+  },
+  {
+    "index": 106,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MoleGuy[DirtGainCritChance]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5029.0,
+      "offset_top": 4319.0,
+      "offset_right": 5093.0,
+      "offset_bottom": 4383.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MOLE_GUY",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE"
+    }
+  },
+  {
+    "index": 107,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "MoleGuy[DigCount]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4965.0,
+      "offset_top": 4447.0,
+      "offset_right": 5029.0,
+      "offset_bottom": 4511.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "MOLE_GUY",
+      "key_stat": "DIG_COUNT"
+    }
+  },
+  {
+    "index": 108,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "GolemGuy[ShopUnlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5477.0,
+      "offset_top": 3423.0,
+      "offset_right": 5541.0,
+      "offset_bottom": 3487.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "GOLEM_GUY",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 109,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "GolemGuy[IdleTime]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5541.0,
+      "offset_top": 3551.0,
+      "offset_right": 5605.0,
+      "offset_bottom": 3615.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "GOLEM_GUY",
+      "key_stat": "IDLE_TIME"
+    }
+  },
+  {
+    "index": 110,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "GolemGuy[DirtGain]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5605.0,
+      "offset_top": 3295.0,
+      "offset_right": 5669.0,
+      "offset_bottom": 3359.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "GOLEM_GUY",
+      "key_stat": "DIRT_GAIN"
+    }
+  },
+  {
+    "index": 111,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "GolemGuy[AnimScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5605.0,
+      "offset_top": 3423.0,
+      "offset_right": 5669.0,
+      "offset_bottom": 3487.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "GOLEM_GUY",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 112,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "GolemGuy[LuckItemDrop]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5477.0,
+      "offset_top": 3231.0,
+      "offset_right": 5541.0,
+      "offset_bottom": 3295.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "GOLEM_GUY",
+      "key_stat": "LUCK_ITEM_DROP"
+    }
+  },
+  {
+    "index": 113,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "GolemGuy[LuckItemRarity]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5477.0,
+      "offset_top": 3103.0,
+      "offset_right": 5541.0,
+      "offset_bottom": 3167.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "GOLEM_GUY",
+      "key_stat": "LUCK_ITEM_RARITY"
+    }
+  },
+  {
+    "index": 114,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "GolemGuy[DirtGainCritChance]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 5349.0,
+      "offset_top": 3423.0,
+      "offset_right": 5413.0,
+      "offset_bottom": 3487.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "GOLEM_GUY",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE"
+    }
+  },
+  {
+    "index": 115,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "GolemGuy[DigCount]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "offset_left": 5349.0,
+      "offset_top": 3551.0,
+      "offset_right": 5413.0,
+      "offset_bottom": 3615.0,
+      "key_node": "GOLEM_GUY",
+      "key_stat": "DIG_COUNT"
+    }
+  },
+  {
+    "index": 116,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "DruidStaff[ShopUnlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2725.0,
+      "offset_top": 3551.0,
+      "offset_right": 2789.0,
+      "offset_bottom": 3615.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "DRUID_STAFF",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 117,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "DruidStaff[StompRad]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2725.0,
+      "offset_top": 3359.0,
+      "offset_right": 2789.0,
+      "offset_bottom": 3423.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "DRUID_STAFF",
+      "key_stat": "STOMP_RAD"
+    }
+  },
+  {
+    "index": 118,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "DruidStaff[DirtGain]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2917.0,
+      "offset_top": 3551.0,
+      "offset_right": 2981.0,
+      "offset_bottom": 3615.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "DRUID_STAFF",
+      "key_stat": "DIRT_GAIN"
+    }
+  },
+  {
+    "index": 119,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "DruidStaff[DirtCrit]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2597.0,
+      "offset_top": 3423.0,
+      "offset_right": 2661.0,
+      "offset_bottom": 3487.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "DRUID_STAFF",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE"
+    }
+  },
+  {
+    "index": 120,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "DruidStaff[AninScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2853.0,
+      "offset_top": 3423.0,
+      "offset_right": 2917.0,
+      "offset_bottom": 3487.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "DRUID_STAFF",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 121,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "BuffDirtMultiply[BuffTime]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2725.0,
+      "offset_top": 3743.0,
+      "offset_right": 2789.0,
+      "offset_bottom": 3807.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "BUFF_DIRT_MULTIPLY",
+      "key_stat": "BUFF_TIME"
+    }
+  },
+  {
+    "index": 122,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "BuffDirtMultiply[BuffValue]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2597.0,
+      "offset_top": 3679.0,
+      "offset_right": 2661.0,
+      "offset_bottom": 3743.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "BUFF_DIRT_MULTIPLY",
+      "key_stat": "BUFF_VALUE"
+    }
+  },
+  {
+    "index": 123,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "DruidGuy[ShopUnlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2661.0,
+      "offset_top": 4383.0,
+      "offset_right": 2725.0,
+      "offset_bottom": 4447.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "DRUID_GUY",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 124,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "GhostGuy[ShopUnlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4581.0,
+      "offset_top": 2719.0,
+      "offset_right": 4645.0,
+      "offset_bottom": 2783.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "GHOST_GUY",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 125,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "GhostGuy[IdleTime]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4453.0,
+      "offset_top": 2719.0,
+      "offset_right": 4517.0,
+      "offset_bottom": 2783.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "GHOST_GUY",
+      "key_stat": "IDLE_TIME"
+    }
+  },
+  {
+    "index": 126,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "GhostGuy[AnimScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4709.0,
+      "offset_top": 2719.0,
+      "offset_right": 4773.0,
+      "offset_bottom": 2783.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "GHOST_GUY",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 127,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "DruidGuy[StompRad]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2789.0,
+      "offset_top": 4255.0,
+      "offset_right": 2853.0,
+      "offset_bottom": 4319.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "DRUID_GUY",
+      "key_stat": "STOMP_RAD"
+    }
+  },
+  {
+    "index": 128,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "DruidGuy[IdleTime]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2661.0,
+      "offset_top": 4191.0,
+      "offset_right": 2725.0,
+      "offset_bottom": 4255.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "DRUID_GUY",
+      "key_stat": "IDLE_TIME"
+    }
+  },
+  {
+    "index": 129,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "DruidGuy[AnimScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2469.0,
+      "offset_top": 4383.0,
+      "offset_right": 2533.0,
+      "offset_bottom": 4447.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "DRUID_GUY",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 130,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "BuffSpeed[BuffTime]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2533.0,
+      "offset_top": 4511.0,
+      "offset_right": 2597.0,
+      "offset_bottom": 4575.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "BUFF_SPEED",
+      "key_stat": "BUFF_TIME"
+    }
+  },
+  {
+    "index": 131,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "BuffSpeed[BuffValue]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 2661.0,
+      "offset_top": 4575.0,
+      "offset_right": 2725.0,
+      "offset_bottom": 4639.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "BUFF_SPEED",
+      "key_stat": "BUFF_VALUE"
+    }
+  },
+  {
+    "index": 132,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Jackhammer[ShopUnlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4581.0,
+      "offset_top": 2527.0,
+      "offset_right": 4645.0,
+      "offset_bottom": 2591.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "JACKHAMMER",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 133,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Jackhammer[DirtGain]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4581.0,
+      "offset_top": 2399.0,
+      "offset_right": 4645.0,
+      "offset_bottom": 2463.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "JACKHAMMER",
+      "key_stat": "DIRT_GAIN"
+    }
+  },
+  {
+    "index": 134,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Jackhammer[AnimScale]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4709.0,
+      "offset_top": 2399.0,
+      "offset_right": 4773.0,
+      "offset_bottom": 2463.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "JACKHAMMER",
+      "key_stat": "ANIMATION_SCALE"
+    }
+  },
+  {
+    "index": 135,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Jackhammer[DirtGainCritChance]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4709.0,
+      "offset_top": 2527.0,
+      "offset_right": 4773.0,
+      "offset_bottom": 2591.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "JACKHAMMER",
+      "key_stat": "DIRT_GAIN_CRIT_CHANCE"
+    }
+  },
+  {
+    "index": 136,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Jackhammer[LuckItemDrop]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4453.0,
+      "offset_top": 2399.0,
+      "offset_right": 4517.0,
+      "offset_bottom": 2463.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "JACKHAMMER",
+      "key_stat": "LUCK_ITEM_DROP"
+    }
+  },
+  {
+    "index": 137,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Jackhammer[LuckItemRarity]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 4325.0,
+      "offset_top": 2399.0,
+      "offset_right": 4389.0,
+      "offset_bottom": 2463.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "JACKHAMMER",
+      "key_stat": "LUCK_ITEM_RARITY"
+    }
+  },
+  {
+    "index": 138,
+    "parent": 7,
+    "type": 2147483647,
+    "name": "Descent[ShopUnlock]",
+    "instance": {
+      "resource": "external",
+      "index": 5
+    },
+    "properties": {
+      "layout_mode": 1,
+      "anchors_preset": 8,
+      "anchor_left": 0.5,
+      "anchor_top": 0.5,
+      "anchor_right": 0.5,
+      "anchor_bottom": 0.5,
+      "offset_left": 3877.0,
+      "offset_top": 4511.0,
+      "offset_right": 3941.0,
+      "offset_bottom": 4575.0,
+      "grow_horizontal": 2,
+      "grow_vertical": 2,
+      "key_node": "DESCENT",
+      "key_stat": "SHOP_UNLOCK"
+    }
+  },
+  {
+    "index": 139,
+    "parent": 0,
+    "type": "MarginContainer",
+    "name": "Help",
+    "instance": -1,
+    "properties": {
+      "modulate": [
+        1.0,
+        1.0,
+        1.0,
+        0.7843137383460999
+      ],
+      "layout_mode": 1,
+      "anchors_preset": 3,
+      "anchor_left": 1.0,
+      "anchor_top": 1.0,
+      "anchor_right": 1.0,
+      "anchor_bottom": 1.0,
+      "offset_left": -166.0,
+      "offset_top": -78.0,
+      "grow_horizontal": 0,
+      "grow_vertical": 0,
+      "mouse_filter": 2,
+      "theme_override_constants/margin_right": 4,
+      "theme_override_constants/margin_bottom": 4
+    }
+  },
+  {
+    "index": 140,
+    "parent": 139,
+    "type": "VBoxContainer",
+    "name": "V",
+    "instance": -1,
+    "properties": {
+      "layout_mode": 2,
+      "mouse_filter": 2
+    }
+  },
+  {
+    "index": 141,
+    "parent": 140,
+    "type": "HBoxContainer",
+    "name": "Drag",
+    "instance": -1,
+    "properties": {
+      "custom_minimum_size": [
+        0.0,
+        40.0
+      ],
+      "layout_mode": 2,
+      "mouse_filter": 2
+    }
+  },
+  {
+    "index": 142,
+    "parent": 141,
+    "type": "Label",
+    "name": "Label",
+    "instance": -1,
+    "properties": {
+      "layout_mode": 2,
+      "size_flags_horizontal": 3,
+      "theme_override_font_sizes/font_size": 28,
+      "text": "UI_MOUSE_DRAG",
+      "horizontal_alignment": 2,
+      "vertical_alignment": 1
+    }
+  },
+  {
+    "index": 143,
+    "parent": 141,
+    "type": "TextureRect",
+    "name": "Icon",
+    "instance": -1,
+    "properties": {
+      "layout_mode": 2,
+      "mouse_filter": 2,
+      "texture": {
+        "resource": "external",
+        "index": 6
+      },
+      "expand_mode": 2
+    }
+  },
+  {
+    "index": 144,
+    "parent": 140,
+    "type": "HBoxContainer",
+    "name": "Zoom",
+    "instance": -1,
+    "properties": {
+      "custom_minimum_size": [
+        0.0,
+        40.0
+      ],
+      "layout_mode": 2,
+      "mouse_filter": 2
+    }
+  },
+  {
+    "index": 145,
+    "parent": 144,
+    "type": "Label",
+    "name": "Label",
+    "instance": -1,
+    "properties": {
+      "layout_mode": 2,
+      "size_flags_horizontal": 3,
+      "theme_override_font_sizes/font_size": 28,
+      "text": "UI_MOUSE_ZOOM",
+      "horizontal_alignment": 2,
+      "vertical_alignment": 1
+    }
+  },
+  {
+    "index": 146,
+    "parent": 144,
+    "type": "TextureRect",
+    "name": "Icon",
+    "instance": -1,
+    "properties": {
+      "layout_mode": 2,
+      "mouse_filter": 2,
+      "texture": {
+        "resource": "external",
+        "index": 7
+      },
+      "expand_mode": 2
+    }
+  }
+]

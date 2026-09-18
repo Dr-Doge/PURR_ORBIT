@@ -1,0 +1,334 @@
+# Reconstructed token text for research; not original source formatting.
+@tool
+class_name UIBtnSkillTree extends Button
+
+static var All : Array [ UIBtnSkillTree ]
+static var AllDic : Dictionary [ String , UIBtnSkillTree ]
+
+@export_enum (
+    "NULL" , "SHOVEL" , "PICKAXE" , "MUSHROOM_GUY" , "FROG_GUY" , "CURSOR" , "PASSIVE" , "SPELL_ZAPS" , "SPELL_RAIN" , "SPELL_GOLDRUSH" , "SLEDGEHAMMER" ,
+    "MOLE_GUY" , "GOLEM_GUY" , "DRUID_STAFF" , "BUFF_DIRT_MULTIPLY" , "BUFF_SPEED" , "DRUID_GUY" , "GHOST_GUY" , "TRIDENT" , "SPOON" , "JACKHAMMER" , "DESCENT" , "INVENTORY" )
+var key_node : String :
+    set ( v ) :
+        key_node = v
+        _ui_setup ( )
+@export_enum (
+    "NULL" , "SHOP_UNLOCK" , "DIRT_GAIN" , "ANIMATION_SCALE" , "DIRT_GAIN_CRIT_CHANCE" , "IDLE_TIME" , "USE_SHOVEL" , "USE_PICKAXE" , "STOMP_RAD" ,
+    "LUCK_ITEM_DROP" , "LUCK_ITEM_RARITY" , "RADIUS" , "SELL_ITEMS_DIRT" , "ZAP_CHANCE" , "ZAP_CRIT_CHANCE" , "SPELL_STACKS" , "SPELL_DIGS" , "SPELL_DURATION" , "DIG_COUNT" ,
+    "BUFF_TIME" , "BUFF_VALUE" , "COUNT_ADD" , "DIRT_MULTIPLY" )
+var key_stat : String :
+    set ( v ) :
+        key_stat = v
+        _ui_setup ( )
+@export
+var stat_id : int :
+    set ( v ) :
+        stat_id = v
+        _ui_setup ( )
+@onready var outline : Control = $ Outline
+var selected : bool :
+    set ( v ) :
+        selected = v
+        outline . visible = selected
+@onready var hover_info : HoverInfo = $ HoverInfo
+@onready var label_count : Label = $ LabelCount
+@onready var line_lock : Line2D = $ LineLocked
+@onready var body : Control = $ Body
+@onready var glow : Control = $ Glow
+@onready var glow_texture : Control = $ Glow / TextureRect
+@onready var bg : Node2D = $ Body / BG
+@onready var border : Node2D = $ Body / Border
+@onready var icons : Control = $ Body / Icon
+@onready var spr_lock : Sprite2D = $ Lock
+@onready var cost_con : Control = $ Cost
+@onready var cost_label : Label = $ Cost / Label
+var node_data : NodeData
+var stat_data : StatData
+var dirt_cost : float
+var has_lock : bool
+var lock_by_btn : UIBtnSkillTree
+signal on_pressed_buy
+
+
+
+
+func _ready ( ) -> void :
+    All . append ( self )
+    if Engine . is_editor_hint ( ) :
+        _ui_setup ( )
+        draw . connect ( _line_pos_update )
+    else :
+
+        GM . on_game_init . connect ( _on_game_init )
+        GM . on_data_loaded . connect ( _on_data_loaded )
+        GM . on_world_deleted . connect ( _on_world_deleted )
+
+        var tween_rot : Tween = Mads . tween_create ( self )
+        tween_rot . tween_property ( glow_texture , "rotation" , PI * 2.0 , 12.0 ) . from ( 0.0 )
+        tween_rot . set_loops ( 0 )
+        var tween_scale : Tween = Mads . tween_create ( self )
+        tween_scale . tween_property ( glow_texture , "scale" , Vector2 . ONE * 1.5 , 2.0 )
+        tween_scale . tween_property ( glow_texture , "scale" , Vector2 . ONE * 1.0 , 2.0 )
+        tween_scale . set_loops ( 0 )
+
+
+
+func _exit_tree ( ) -> void :
+    All . erase ( self )
+    AllDic . erase ( "%s.%s.%s" % [ key_node , key_stat , stat_id ] )
+
+
+func _on_game_init ( ) -> void :
+    mouse_entered . connect ( toggle_select . bind ( true ) )
+    mouse_exited . connect ( toggle_select . bind ( false ) )
+    pressed . connect ( _on_pressed )
+
+
+func _on_data_loaded ( ) -> void :
+    node_data = GM . data . node_data_get ( key_node )
+    stat_data = node_data . stat_get ( key_stat , stat_id )
+    if ! stat_data . is_demo_lock :
+        Mads . connect_safe ( GM . on_currency_update_frame , _on_currency_update_frame )
+        Mads . connect_safe ( GM . upgrades . on_upgrade , _on_upgrade_any )
+    if stat_data . is_locked :
+        Mads . connect_safe ( stat_data . lock_by_stat . on_unlocked , _ui_update )
+    Mads . connect_safe ( stat_data . on_unlocked , _ui_update )
+    _ui_setup ( )
+
+
+
+
+func _on_world_deleted ( ) -> void :
+    if ! stat_data . is_demo_lock :
+        Mads . disconnect_safe ( GM . on_currency_update_frame , _on_currency_update_frame )
+        Mads . disconnect_safe ( GM . upgrades . on_upgrade , _on_upgrade_any )
+    if stat_data . is_locked :
+        Mads . disconnect_safe ( stat_data . lock_by_stat . on_unlocked , _ui_update )
+    Mads . disconnect_safe ( stat_data . on_unlocked , _ui_update )
+    node_data = null
+    stat_data = null
+
+
+func toggle_select ( enable : bool ) -> void :
+    selected = enable
+
+
+func _on_pressed ( ) -> void :
+    $ AP . seek ( 0.0 )
+    $ AP . play ( "CLICK" )
+    on_pressed_buy . emit ( )
+
+
+func _ui_setup ( ) -> void :
+    if is_node_ready ( ) :
+
+        var sheet : Dictionary = DataController . GetJson ( )
+
+        var _key : String = "%s.%s.%s" % [ key_node , key_stat , stat_id ]
+        AllDic [ _key ] = self
+        $ Body / Icon / Node . frame = int ( Mads . nested ( sheet , [ "NODES" , key_node , "ICON_FRAME" ] , 0 ) )
+        $ Body / Icon / Stat . frame = int ( Mads . nested ( sheet , [ "STATS" , key_stat , "ICON_FRAME" ] , 0 ) )
+        $ Body / StatID . visible = Engine . is_editor_hint ( )
+        $ Body / StatID . text = "ID: " + str ( stat_id )
+        _sheet_setup_lock . call_deferred ( sheet [ "NODES" ] )
+        if ! Engine . is_editor_hint ( ) :
+            _ui_update ( )
+            Mads . connect_safe ( GM . loc . on_translate , _ui_update )
+        else :
+
+            cost_label . text = Mads . format_int_str_commas ( Mads . nested ( sheet , [ "NODES" , key_node , key_stat , stat_id , "DIRT_BASE" ] , 0 ) )
+            label_count . text = "0/" + str ( floori ( Mads . nested ( sheet , [ "NODES" , key_node , key_stat , stat_id , "LEVELS" ] , 0 ) ) )
+
+
+func _sheet_setup_lock ( sheet : Dictionary ) -> void :
+    if is_inside_tree ( ) :
+
+        var lock_key_node : String = Mads . nested ( sheet , [ key_node , key_stat , stat_id , "LOCK_BY_KEY_NODE" ] , "NULL" )
+        var lock_key_stat : String = Mads . nested ( sheet , [ key_node , key_stat , stat_id , "LOCK_BY_KEY_STAT" ] , "NULL" )
+        var lock_stat_id : int = Mads . nested ( sheet , [ key_node , key_stat , stat_id , "LOCK_BY_STAT_ID" ] , -1 )
+
+        has_lock = lock_key_node != "NULL" && lock_key_stat != "NULL" && lock_stat_id > -1
+        var _key_self : String = "%s.%s.%s" % [ key_node , key_stat , stat_id ]
+        var _key_locked : String = "%s.%s.%s" % [ lock_key_node , lock_key_stat , lock_stat_id ]
+
+        if AllDic . has ( _key_locked ) :
+            lock_by_btn = AllDic [ _key_locked ] if has_lock else null
+            line_lock . visible = has_lock
+            _line_pos_update ( )
+            if Engine . is_editor_hint ( ) && has_lock && is_instance_valid ( lock_by_btn ) :
+                Mads . connect_safe ( lock_by_btn . draw , _line_pos_update )
+
+
+func _line_pos_update ( ) -> void :
+    if has_lock && is_instance_valid ( lock_by_btn ) :
+        line_lock . set_point_position ( 1 , lock_by_btn . global_position - global_position + Vector2 ( 32 , 32 ) )
+
+
+
+
+
+
+
+
+func _on_currency_update_frame ( ) -> void :
+    if dirt_cost && ! stat_data . is_locked :
+        if ( GM . player . dirt >= dirt_cost && GM . player . dirt_frame_prev < dirt_cost ) || ( GM . player . dirt < dirt_cost && GM . player . dirt_frame_prev >= dirt_cost ) :
+            _ui_update ( )
+
+
+func _on_upgrade_any ( ) -> void :
+    if dirt_cost && ! stat_data . is_locked :
+        _ui_update ( )
+
+
+func _ui_update ( ) -> void :
+    if ! GM . playing : return
+
+
+    if stat_data . is_demo_lock && ! stat_data . is_locked :
+        visible = true
+        glow . visible = false
+        bg . frame = 1
+        bg . modulate = Color . DARK_SLATE_GRAY
+        border . modulate = Color . DIM_GRAY
+        icons . modulate = Color . DARK_SLATE_GRAY
+        label_count . modulate = Color . LIGHT_GRAY
+        label_count . text = "???"
+        hover_info . text = "[font_size=24]" + tr ( node_data . name ) . capitalize ( ) + "[/font_size]\n[color=orange]" + tr ( "UI_DEMO_LOCKED" ) + "[/color]"
+        spr_lock . visible = true
+        label_count . visible = false
+        disabled = true
+        cost_con . visible = false
+        line_lock . default_color = Color ( Color . DARK_SLATE_GRAY , 1.0 )
+        line_lock . texture_mode = Line2D . LINE_TEXTURE_NONE
+        mouse_filter = Control . MOUSE_FILTER_STOP
+        return
+
+    var is_max_level : bool = stat_data . is_max_level ( )
+    dirt_cost = stat_data . get_cost ( )
+
+    var cost_amount_str : String = Mads . format_int_str_commas ( floori ( dirt_cost ) )
+    var cost_key : String = stat_data . get_cost_key ( )
+    var can_afford : bool = dirt_cost == 0 || GM . player . currency_amount ( cost_key ) >= dirt_cost
+    var t : String
+    if is_max_level :
+        t = "[color=gray]%s[/color]" % [ node_data . stat_value_str ( stat_data . key ) ]
+    else :
+        if stat_data . key == "SHOP_UNLOCK" :
+            t = "[font_size=25]%s[/font_size]" % [ tr ( "UI_UNLOCK" ) ]
+        else :
+            var add_sign : String = "" if node_data . stat_is_negative ( stat_data . key , stat_id , 1 ) else "+"
+            t = "[font_size=25]%s%s[/font_size] [color=gray](%s)[/color]" % [ add_sign , node_data . stat_value_str_added ( stat_data . key , stat_id , 1 ) , node_data . stat_value_str ( stat_data . key , stat_id ) ]
+
+    label_count . text = "%s/%s" % [ int ( stat_data . get_level_current ( ) ) , int ( stat_data . get_level_last ( ) ) ]
+
+    hover_info . text = "[font_size=24]" + tr ( node_data . name ) . capitalize ( ) + "[/font_size]\n" +
+"[font_size=12][color=gray]" + str ( stat_data . level ) + "/" + str ( stat_data . levels . size ( ) - 1 ) + "[/color][/font_size]\n" +
+tr ( stat_data . get_info_rich_buy ( ) ) + "\n" +
+t + "\n" +
+
+( ( "[color=yellow]" + tr ( "UI_MAX" ) + "[/color]" ) if is_max_level else ( "[color=" + ( "GREEN" if can_afford else "RED" ) + "]" + tr ( "UI_BUY" ) + "[img]" + GM . player . currency_img_path ( cost_key ) + "[/img]" + cost_amount_str ) )
+
+    cost_label . text = cost_amount_str
+
+    if stat_data . is_locked && ! stat_data . lock_by_stat . is_locked && ! stat_data . lock_by_stat . is_demo_lock :
+        visible = true
+        disabled = true
+        glow . visible = false
+        glow . modulate = Color . DARK_SLATE_GRAY
+        glow . scale = Vector2 . ONE * 0.4
+        border . modulate = Color ( 0 , 0 , 0 , 0 )
+        bg . modulate = Color . DARK_SLATE_GRAY
+        icons . modulate = Color ( 0 , 0 , 0 , 0 )
+        label_count . modulate = Color ( 0 , 0 , 0 , 0 )
+        cost_con . visible = false
+        mouse_filter = Control . MOUSE_FILTER_IGNORE
+
+
+
+
+        line_lock . default_color = Color ( Color . DARK_SLATE_GRAY , 1.0 )
+        line_lock . width = 5
+        line_lock . texture_mode = Line2D . LINE_TEXTURE_TILE
+        bg . frame = 2
+
+    elif stat_data . is_locked :
+        visible = false
+        disabled = true
+        glow . visible = false
+        border . modulate = Color . WHITE
+        bg . modulate = Color . WHITE
+        icons . modulate = Color . WHITE
+        label_count . modulate = Color . WHITE
+        cost_con . visible = true
+        mouse_filter = Control . MOUSE_FILTER_STOP
+
+
+
+
+        line_lock . width = 10
+        line_lock . default_color = Color ( Color . DARK_SLATE_GRAY , 1.0 )
+        line_lock . texture_mode = Line2D . LINE_TEXTURE_NONE
+        bg . frame = 1
+
+    elif is_max_level :
+        visible = true
+        disabled = true
+        glow . visible = true
+        glow . scale = Vector2 . ONE
+        glow . modulate = Color . ORANGE
+        border . modulate = Color . YELLOW
+        bg . modulate = Color . DARK_ORANGE
+        icons . modulate = Color . YELLOW
+        label_count . modulate = Color . YELLOW
+        label_count . text = "UI_MAX"
+        cost_con . visible = false
+        mouse_filter = Control . MOUSE_FILTER_STOP
+
+
+
+
+        line_lock . width = 10
+        line_lock . default_color = Color ( Color . DARK_SLATE_GRAY , 1.0 )
+        line_lock . texture_mode = Line2D . LINE_TEXTURE_NONE
+        bg . frame = 1
+
+    elif dirt_cost > GM . player . currency_amount ( cost_key ) :
+        visible = true
+        disabled = true
+        glow . visible = false
+        border . modulate = Color . DIM_GRAY
+        bg . modulate = Color . DARK_SLATE_GRAY
+        icons . modulate = Color . DARK_SLATE_GRAY
+        label_count . modulate = Color . LIGHT_GRAY
+        cost_con . visible = true
+        cost_label . set ( "theme_override_colors/font_color" , Color . RED )
+        mouse_filter = Control . MOUSE_FILTER_STOP
+
+
+
+
+        line_lock . width = 10
+        line_lock . default_color = Color ( Color . DARK_SLATE_GRAY , 1.0 )
+        line_lock . texture_mode = Line2D . LINE_TEXTURE_NONE
+        bg . frame = 1
+
+    elif dirt_cost <= GM . player . currency_amount ( cost_key ) :
+        visible = true
+        disabled = false
+        glow . visible = false
+        border . modulate = Color . WHITE
+        bg . modulate = Color . LIGHT_GRAY
+        icons . modulate = Color . WHITE
+        label_count . modulate = Color . WHITE
+        cost_con . visible = true
+        cost_label . set ( "theme_override_colors/font_color" , Color . GREEN )
+        mouse_filter = Control . MOUSE_FILTER_STOP
+
+
+
+
+        line_lock . width = 10
+        line_lock . default_color = Color ( Color . DARK_SLATE_GRAY , 1.0 )
+        line_lock . texture_mode = Line2D . LINE_TEXTURE_NONE
+        bg . frame = 1

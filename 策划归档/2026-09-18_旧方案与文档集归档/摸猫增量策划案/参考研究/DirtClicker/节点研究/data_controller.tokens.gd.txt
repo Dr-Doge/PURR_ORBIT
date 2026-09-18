@@ -1,0 +1,377 @@
+# Reconstructed token text for research; not original source formatting.
+class_name DataController extends Node
+
+const PATH_EXPORT_JSON : String = "res://resouces/data/sheets/sheets.json"
+const ENCRYPT_KEY : String = "%SBG#"
+
+
+static func GetJson ( ) -> Dictionary :
+    return DataCache . get_sheet_json ( ) if Engine . is_editor_hint ( ) else GM . data . raw_data
+
+
+@onready var autosave_timer : Timer = $ TimerAutoSave
+
+var user_data : Dictionary
+
+var raw_data : Dictionary
+var raw_data_nodes : Dictionary
+var raw_data_stats : Dictionary
+var raw_data_items : Dictionary
+var raw_data_badges : Dictionary
+
+var json_loaded : Dictionary
+
+var nodes_data : Dictionary [ String , NodeData ]
+var items_data : Dictionary [ String , Dictionary ]
+var badges_data : Dictionary [ String , Dictionary ]
+
+
+
+
+func _ready ( ) -> void :
+
+    GM . data = self
+
+    autosave_timer . timeout . connect ( json_save_all )
+
+    raw_data = Mads . json_load ( PATH_EXPORT_JSON )
+    raw_data_nodes = raw_data [ "NODES" ]
+    raw_data_stats = raw_data [ "STATS" ]
+    raw_data_items = raw_data [ "ITEMS" ]
+    raw_data_badges = raw_data [ "BADGES" ]
+
+    GM . on_game_init . connect ( _on_game_init )
+    GM . on_world_loaded . connect ( _on_world_loaded )
+    GM . on_world_deleted . connect ( _on_world_deleted )
+
+
+func _on_game_init ( ) -> void :
+    user_data_load ( )
+    GM . ui . options . on_toggle_off . connect ( user_data_save )
+
+
+func _on_world_loaded ( ) -> void :
+
+    setup_nodes_data ( )
+
+    setup_badges_data ( )
+
+    setup_items_data ( )
+
+    json_load_all ( )
+
+    autosave_start ( )
+
+
+func _on_world_deleted ( ) -> void :
+    autosave_stop ( )
+
+    for node_key : String in nodes_data :
+        nodes_data [ node_key ] . clear ( )
+    nodes_data = { }
+    items_data = { }
+    badges_data = { }
+
+
+
+func setup_nodes_data ( ) -> void :
+
+    for key_node : String in raw_data_nodes :
+        if key_node == "NULL" : continue
+        nodes_data [ key_node ] = NodeData . new ( key_node )
+        nodes_data [ key_node ] . name = raw_data_nodes [ key_node ] . get ( "NAME" , "NULL" )
+        nodes_data [ key_node ] . ps_node_world = null if raw_data_nodes [ key_node ] . get ( "PS_NODE_WORLD_PATH" , "" ) . is_empty ( ) else load ( raw_data_nodes [ key_node ] . get ( "PS_NODE_WORLD_PATH" , "" ) )
+        nodes_data [ key_node ] . icon_frame = raw_data_nodes [ key_node ] . get ( "ICON_FRAME" , 0 )
+        nodes_data [ key_node ] . is_shop = raw_data_nodes [ key_node ] . get ( "IS_SHOP" , 0 ) == 1.0
+        nodes_data [ key_node ] . description = raw_data_nodes [ key_node ] . get ( "DESCRIPTION" , "PASS" )
+        nodes_data [ key_node ] . color_main = Color . html ( raw_data_nodes [ key_node ] . get ( "COLOR_MAIN" , "ffffff" ) )
+        nodes_data [ key_node ] . is_tool = raw_data_nodes [ key_node ] . get ( "IS_TOOL" , 0 ) > 0
+        nodes_data [ key_node ] . is_pal = raw_data_nodes [ key_node ] . get ( "IS_PAL" , 0 ) > 0
+        nodes_data [ key_node ] . hat_frame = raw_data_nodes [ key_node ] . get ( "HAT_FRAME" , 0 )
+        for key_stat : String in raw_data_nodes [ key_node ] :
+            if typeof ( raw_data_nodes [ key_node ] [ key_stat ] ) == TYPE_ARRAY :
+                for stat_id : int in raw_data_nodes [ key_node ] [ key_stat ] . size ( ) :
+
+                    var _stat : StatData = nodes_data [ key_node ] . stat_create ( key_stat , stat_id )
+
+                    var _demo_lock : bool = Mads . nested ( raw_data_nodes , [ key_node , key_stat , stat_id , "DEMO_LOCK" ] , 0.0 ) == 1.0
+                    _stat . set_demo_lock ( _demo_lock )
+
+                    if raw_data_nodes [ key_node ] [ key_stat ] [ stat_id ] . has ( "LEVELS" ) :
+                        var value_init : float = raw_data_nodes [ key_node ] [ key_stat ] [ stat_id ] [ "VALUE_INIT" ]
+                        var value_inc : float = raw_data_nodes [ key_node ] [ key_stat ] [ stat_id ] [ "VALUE_INC" ]
+                        var cost_dirt_base : int = raw_data_nodes [ key_node ] [ key_stat ] [ stat_id ] [ "DIRT_BASE" ]
+                        var dirt_growth : float = raw_data_nodes [ key_node ] [ key_stat ] [ stat_id ] [ "DIRT_GROWTH" ]
+                        for i : int in raw_data_nodes [ key_node ] [ key_stat ] [ stat_id ] [ "LEVELS" ] + 1 :
+                            var value : float = value_init + value_inc * i
+                            var cost_dirt : int = roundi ( cost_dirt_base * pow ( dirt_growth , i - 1 ) )
+                            _stat . add ( value , cost_dirt )
+
+                    _stat . name = raw_data_stats [ key_stat ] . get ( "NAME" , "NULL" )
+                    _stat . value_type = raw_data_stats [ key_stat ] . get ( "VALUE_TYPE" , "DEFAULT" )
+                    _stat . icon_frame = raw_data_stats [ key_stat ] . get ( "ICON_FRAME" , 0 )
+                    if key_stat == "SHOP_UNLOCK" :
+                        _stat . info_buy = nodes_data [ key_node ] . description
+                    else :
+                        _stat . info_buy = raw_data_stats [ key_stat ] . get ( "TEXT_BUY" , "" )
+                    _stat . set_level ( raw_data_nodes [ key_node ] [ key_stat ] [ stat_id ] . get ( "LEVEL_START" , 0 ) )
+
+    for key_node : String in raw_data_nodes :
+        if key_node == "NULL" : continue
+        for key_stat : String in raw_data_nodes [ key_node ] :
+            if typeof ( raw_data_nodes [ key_node ] [ key_stat ] ) == TYPE_ARRAY :
+                for stat_id : int in raw_data_nodes [ key_node ] [ key_stat ] . size ( ) :
+
+                    var level_up_by_badge : String = Mads . nested ( raw_data_nodes , [ key_node , key_stat , stat_id , "LEVEL_UP_BY_BADGE" ] , "" )
+                    if ! level_up_by_badge . is_empty ( ) :
+                        stat ( key_node , key_stat , stat_id ) . set_level_up_by_badge . call_deferred ( level_up_by_badge )
+
+                    var lock_by_key_node : String = Mads . nested ( raw_data_nodes , [ key_node , key_stat , stat_id , "LOCK_BY_KEY_NODE" ] , "NULL" )
+                    var lock_by_key_stat : String = Mads . nested ( raw_data_nodes , [ key_node , key_stat , stat_id , "LOCK_BY_KEY_STAT" ] , "NULL" )
+                    var lock_by_stat_id : int = Mads . nested ( raw_data_nodes , [ key_node , key_stat , stat_id , "LOCK_BY_STAT_ID" ] , -1 )
+                    var lock_by_level : int = Mads . nested ( raw_data_nodes , [ key_node , key_stat , stat_id , "LOCK_BY_LEVEL" ] , -1 )
+                    if lock_by_key_node != "NULL" && lock_by_key_stat != "NULL" && lock_by_stat_id > -1 && lock_by_level > -1 :
+                        if lock_by_level == 0 :
+                            lock_by_level = stat ( lock_by_key_node , lock_by_key_stat , lock_by_stat_id ) . get_level_last ( )
+                        stat ( key_node , key_stat , stat_id ) . set_lock . call ( stat ( lock_by_key_node , lock_by_key_stat , lock_by_stat_id ) , lock_by_level )
+
+
+func setup_items_data ( ) -> void :
+
+    for key_item : String in raw_data_items :
+        items_data [ key_item ] = {
+            "KEY" : key_item ,
+            "AMOUNT" : 0 ,
+        }
+
+
+func setup_badges_data ( ) -> void :
+
+    for badge_key : String in raw_data_badges :
+        badges_data [ badge_key ] = {
+            "UNLOCKED" : false ,
+        }
+
+        var data : Dictionary = raw_data_badges [ badge_key ]
+        if data [ "KEY_NODE" ] == "NULL" || data [ "KEY_STAT" ] == "NULL" || data [ "STAT_ID" ] == -1 :
+            continue
+        stat ( data [ "KEY_NODE" ] , data [ "KEY_STAT" ] , data [ "STAT_ID" ] ) . set_level_up_by_badge . call_deferred ( badge_key )
+
+
+
+
+
+
+
+func autosave_get_sec ( ) -> int :
+    var value : float = user_data . get ( "autosave" , 0.0 )
+    return 30 + floori ( value * ( 60 * 4 + 30 ) )
+
+
+func autosave_start ( ) -> void :
+    autosave_timer . start ( autosave_get_sec ( ) )
+
+
+func autosave_stop ( ) -> void :
+    autosave_timer . stop ( )
+
+
+
+
+
+
+
+func node_data_exists ( key : String ) -> bool :
+    return nodes_data . has ( key )
+
+
+func node_data_get ( key : String ) -> NodeData :
+    return nodes_data [ key ]
+
+
+func stat ( node_data_key : String , stat_data_key : String , stat_id : int = 0 ) -> StatData :
+    return nodes_data [ node_data_key ] . stat_get ( stat_data_key , stat_id )
+
+
+func node_stat_value ( key_node : String , key_stat : String , default_value : Variant ) -> Variant :
+    if key_node . is_empty ( ) || ! nodes_data . has ( key_node ) :
+        return default_value
+    else :
+        return nodes_data [ key_node ] . stat_get_value ( key_stat , default_value )
+
+
+func node_data_stat_value ( node_data : NodeData , key_stat : String , default_value : Variant ) -> Variant :
+    if ! is_instance_valid ( node_data ) :
+        return default_value
+    else :
+        return node_data . stat_get_value ( key_stat , default_value )
+
+
+func json_value ( path : String , default_value : Variant ) -> Variant :
+    return Mads . nested_dic ( json_loaded , path , default_value )
+
+
+func raw_data_value ( path : String , default_value : Variant ) -> Variant :
+    return Mads . nested_dic ( raw_data , path , default_value )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+func json_save_all ( ) -> void :
+    if GM . playing && GM . game_id >= 0 :
+
+        var json_basic : Dictionary = {
+            "DIRT" : GM . player . dirt ,
+            "DIRT_OVERALL" : GM . player . dirt_overall ,
+            "TIME_PLAY_SEC" : GM . time . current_sec_float ,
+            "QUIZ_CURSOR_STYLE_ID" : GM . ui . top . quiz . cursor_style_id ,
+        }
+        Mads . json_save ( json_basic , file_path ( GM . game_id , "basic" ) , GM . data . ENCRYPT_KEY )
+
+
+
+        var json : Dictionary = {
+            "OTHER" : { } ,
+            "NODES" : { } ,
+            "ITEMS" : { } ,
+        }
+
+        json [ "OTHER" ] = {
+            "DIRT" : GM . player . dirt ,
+            "DIRT_OVERALL" : GM . player . dirt_overall ,
+            "GAME_SEED" : GM . game_seed ,
+            "TIME_PLAY_SEC" : GM . time . current_sec_float ,
+            "LEADERBOARD_GLOBAL_RANK" : GM . leaderboard_global_rank ,
+            "ITEM_DIG_OUT_FIRST" : GM . inv . item_dig_out_first ,
+            "ITEM_DIG_OUT_FIRST_TS" : GM . inv . item_dig_out_first_ts ,
+            "HATS_QUE" : GM . hat . hats_que ,
+            "CHESTS" : GM . chest . data_raw ,
+        }
+
+        if is_instance_valid ( GM . world ) :
+            for node_data : NodeData in nodes_data . values ( ) :
+                json [ "NODES" ] [ node_data . key ] = { }
+
+                for stat_key : String in node_data . stats . keys ( ) :
+                    json [ "NODES" ] [ node_data . key ] [ stat_key ] = [ ]
+                    for stat_id : int in node_data . stats [ stat_key ] . size ( ) :
+                        var _stat : StatData = stat ( node_data . key , stat_key , stat_id )
+                        Mads . array_insert ( json [ "NODES" ] [ node_data . key ] [ stat_key ] , stat_id , _stat . level )
+
+                json [ "NODES" ] [ node_data . key ] [ "POS_WORLD" ] = [ ]
+                json [ "NODES" ] [ node_data . key ] [ "OTHER" ] = [ ]
+                if GM . world . key_to_nodes . has ( node_data . key ) :
+                    for node_world : NodeWorld in GM . world . key_to_nodes [ node_data . key ] :
+                        json [ "NODES" ] [ node_data . key ] [ "POS_WORLD" ] . append ( [ node_world . global_position . x , node_world . global_position . y ] )
+                        json [ "NODES" ] [ node_data . key ] [ "OTHER" ] . append ( {
+                            "HAT_KEY" : node_world . hat_node_data_key ,
+                            "NAMETAG" : node_world . nametag ,
+                        } )
+
+                if json [ "NODES" ] [ node_data . key ] . has ( "SPELL_STACKS" ) && GM . world . key_to_nodes . has ( node_data . key ) && ! GM . world . key_to_nodes [ node_data . key ] . is_empty ( ) :
+                    var spell : SpellNodeWorld = GM . world . key_to_nodes [ node_data . key ] . back ( )
+                    json [ "NODES" ] [ node_data . key ] [ "CURRENT_SPELL_STACKS" ] = spell . current_stacks
+                    json [ "NODES" ] [ node_data . key ] [ "CURRENT_SPELL_DIGS" ] = spell . current_digs
+
+        json [ "ITEMS" ] = items_data . duplicate ( )
+
+        json [ "BADGES" ] = badges_data . duplicate ( )
+
+        if is_instance_valid ( GM . world ) && is_instance_valid ( GM . world . depth_layers ) :
+            json [ "DESTRUCTION" ] = GM . world . depth_layers . grid_break_data
+
+        Mads . json_save ( json , file_path ( ) , GM . data . ENCRYPT_KEY )
+        print ( "data saved!" )
+
+
+func json_load_all ( ) -> void :
+
+    json_loaded = Mads . json_load ( file_path ( ) , GM . data . ENCRYPT_KEY )
+
+    if ! json_loaded . is_empty ( ) :
+
+        if json_loaded . has ( "NODES" ) :
+            for key_node : String in json_loaded [ "NODES" ] . keys ( ) :
+                for key_stat : String in json_loaded [ "NODES" ] [ key_node ] . keys ( ) :
+                    if node_data_exists ( key_node ) :
+                        var node_data : NodeData = node_data_get ( key_node )
+                        var value = json_loaded [ "NODES" ] [ key_node ] [ key_stat ]
+                        if key_stat == "POS_WORLD" :
+                            var pos_array : Array [ Vector2 ]
+                            for i : int in value . size ( ) :
+                                pos_array . append ( Vector2 ( value [ i ] [ 0 ] , value [ i ] [ 1 ] ) )
+                            node_data . pos_world = pos_array
+                        elif key_stat == "CURRENT_SPELL_STACKS" || key_stat == "CURRENT_SPELL_DIGS" :
+                            node_data . metadata_loaded [ key_stat ] = value
+                        elif key_stat == "OTHER" && typeof ( value ) == TYPE_ARRAY :
+                            node_data . metadata_loaded [ "OTHER" ] = [ ]
+                            for i : int in value . size ( ) :
+                                node_data . metadata_loaded [ "OTHER" ] . append ( value [ i ] )
+
+                        elif node_data . stat_exists ( key_stat ) && typeof ( value ) == TYPE_ARRAY :
+                            for stat_id : int in value . size ( ) :
+                                node_data . stat_set_level ( key_stat , value [ stat_id ] , stat_id )
+
+        if json_loaded . has ( "ITEMS" ) :
+            for key_item : String in json_loaded [ "ITEMS" ] :
+                if ! raw_data_items . has ( key_item ) : continue
+                items_data [ key_item ] = json_loaded [ "ITEMS" ] [ key_item ]
+
+        if json_loaded . has ( "BADGES" ) :
+            for key : String in json_loaded [ "BADGES" ] :
+                badges_data [ key ] = json_loaded [ "BADGES" ] [ key ]
+
+
+    print ( "data loaded!" )
+    GM . on_data_loaded . emit ( )
+
+
+func json_exists ( _game_id : int = GM . game_id ) -> bool :
+    return FileAccess . file_exists ( file_path ( _game_id ) )
+
+
+func json_delete ( _game_id : int = GM . game_id ) -> void :
+    Mads . delete_file ( file_path ( _game_id ) )
+    Mads . delete_file ( file_path ( _game_id , "basic" ) )
+
+
+func file_path ( _game_id : int = GM . game_id , data_name : String = "data" ) -> String :
+    var user_id : String = "default" if Steamworks . user_id == 0 else str ( Steamworks . user_id )
+    var slot_id : String = "game_slot_" + str ( _game_id )
+    return "user://data/%s/%s/%s.json" % [ user_id , slot_id , data_name ]
+
+
+
+
+
+
+
+
+func user_data_file_path ( ) -> String :
+    var user_id : String = "default" if Steamworks . user_id == 0 else str ( Steamworks . user_id )
+    return "user://data/%s/user_data.json" % [ user_id ]
+
+
+func user_data_save ( ) -> void :
+    Mads . json_save ( user_data , user_data_file_path ( ) , GM . data . ENCRYPT_KEY )
+
+
+func user_data_load ( ) -> void :
+    user_data = Mads . json_load ( user_data_file_path ( ) , GM . data . ENCRYPT_KEY )

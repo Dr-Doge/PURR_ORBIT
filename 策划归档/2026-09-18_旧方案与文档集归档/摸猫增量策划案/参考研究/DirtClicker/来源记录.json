@@ -1,0 +1,22 @@
+{
+  "source": "摸猫增量策划案\\Dirt Clicker Demo\\Dirt Clicker Demo.pck",
+  "sha256": "45a73b21653847bb17868f0384cc8cd4b1a8b04993cf0405c5c499b47d20832e",
+  "header": [
+    1129333831,
+    3,
+    4,
+    6,
+    1,
+    2
+  ],
+  "file_base": 112,
+  "directory_offset": 12408112,
+  "entries": 772,
+  "extracted": {
+    "path": "resouces/data/sheets/sheets.json",
+    "offset": 7033072,
+    "size": 99438,
+    "md5": "acb1516053529fc9e5f55b9e70ecf6d2",
+    "flags": 0
+  }
+}

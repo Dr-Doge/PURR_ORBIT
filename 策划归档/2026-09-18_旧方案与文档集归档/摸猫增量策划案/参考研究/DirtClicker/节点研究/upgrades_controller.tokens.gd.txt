@@ -1,0 +1,71 @@
+# Reconstructed token text for research; not original source formatting.
+class_name UpgradesCon extends Node
+
+var has_skill_tree : bool
+var has_inv : bool
+signal on_upgrade_complete ( key_node : String , key_stat : String , stat_id : int )
+signal on_upgrade_complete_skill_tree
+signal on_upgrade_complete_max_skill_tree
+signal on_upgrade_complete_shop
+signal on_upgrade_stat ( stat : StatData )
+signal on_upgrade
+signal on_hat_buy ( node_data : NodeData )
+signal on_user_unlocked_skill_tree
+signal on_user_unlocked_inv
+signal on_shop_out_of_stock
+
+func _ready ( ) -> void :
+    GM . upgrades = self
+    GM . on_game_init . connect ( _on_game_init )
+    GM . on_data_loaded . connect ( _on_data_loaded )
+
+
+func _on_game_init ( ) -> void :
+    GM . ui . shop . on_purchase_request . connect ( _on_purchase_request . bind ( "COUNT" , 0 ) )
+    GM . ui . skill_tree . on_purchase_request . connect ( _on_purchase_request )
+
+
+func _on_data_loaded ( ) -> void :
+    has_skill_tree = GM . data . node_stat_value ( "SKILL_TREE" , "COUNT" , 0 ) > 0
+    has_inv = GM . data . node_stat_value ( "INVENTORY" , "SHOP_UNLOCK" , false )
+
+
+func _on_purchase_request ( key_node : String , key_stat : String , stat_id : int ) -> void :
+
+    var node_data : NodeData = GM . data . node_data_get ( key_node )
+    var stat : StatData = node_data . stat_get ( key_stat , stat_id )
+    var cost_key : String = stat . get_cost_key ( )
+    var cost_amount : int = stat . get_cost ( )
+    var value : float = stat . get_value ( )
+    var purchase_made : bool = stat . level_up_request ( GM . player . dirt )
+    if purchase_made :
+        var is_shop : bool = key_stat == "COUNT"
+
+        GM . player . currency_update ( cost_key , - cost_amount )
+
+        if is_shop :
+            var count_inc : int = int ( stat . get_value ( ) - value )
+            for i : int in count_inc :
+                GM . world . create_node ( key_node , true )
+
+        if is_shop :
+            on_upgrade_complete_shop . emit ( )
+            if node_data . hat_frame > 0 :
+                on_hat_buy . emit ( node_data )
+        else :
+            on_upgrade_complete_skill_tree . emit ( )
+            if stat . is_max_level ( ) :
+                on_upgrade_complete_max_skill_tree . emit ( )
+
+        on_upgrade_complete . emit ( key_node , key_stat , stat_id )
+        on_upgrade_stat . emit ( stat )
+
+        if ! has_skill_tree && key_node == "SKILL_TREE" && key_stat == "COUNT" && stat . get_value ( ) > 0 :
+            has_skill_tree = true
+            on_user_unlocked_skill_tree . emit ( )
+
+        if ! has_inv && key_node == "INVENTORY" && key_stat == "SHOP_UNLOCK" && stat . get_value ( ) > 0 :
+            has_inv = true
+            on_user_unlocked_inv . emit ( )
+
+        on_upgrade . emit ( )

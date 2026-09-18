@@ -1,0 +1,199 @@
+# Reconstructed token text for research; not original source formatting.
+class_name StatData extends RefCounted
+
+var key : String
+var id : int
+var name : String
+var value_type : String
+var levels : Array [ float ]
+var cost_dirt : Array [ int ]
+var level : int :
+    set ( v ) :
+        level = mini ( v , levels . size ( ) - 1 )
+        on_level_change . emit ( level )
+var key_owner : String
+var info_buy : String
+var icon_frame : int
+var state : String
+var is_demo_lock : bool
+var badges_needed_level_up : Array [ String ]
+signal on_level_change ( new_level : int )
+
+
+
+
+func _init ( _key_owner : String , _key_stat : String , _stat_id : int ) -> void :
+    key = _key_stat
+    id = _stat_id
+    key_owner = _key_owner
+    state = "HIDDEN"
+
+
+
+
+
+
+func clear ( ) -> void :
+    Mads . disconnect_safe ( GM . badges . on_unlock , _on_badge_unlock )
+
+
+func set_demo_lock ( enable : bool ) -> void :
+    is_demo_lock = enable
+
+
+func add ( value : float , _cost_dirt : int ) -> StatData :
+    levels . append ( value )
+    cost_dirt . append ( _cost_dirt )
+    return self
+
+
+func get_value ( _level : int = level ) -> float :
+    if levels . is_empty ( ) || _level >= levels . size ( ) :
+        return 0.0
+    else :
+        return levels [ _level ]
+
+
+func get_value_last ( ) -> float :
+    return levels . back ( )
+
+
+func get_value_added ( _level : int = level ) -> float :
+    if levels . is_empty ( ) || _level >= levels . size ( ) :
+        return 0.0
+    else :
+        return levels [ _level ] - levels [ _level - 1 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+func get_cost ( _level : int = level ) -> int :
+    if is_max_level ( ) :
+        return 0
+    else :
+        return cost_dirt [ _level + 1 ]
+
+
+func get_cost_key ( _level : int = level ) -> String :
+    return "DIRT"
+
+
+func level_up_request ( current_dirt : int ) -> bool :
+    if ! is_max_level ( ) && current_dirt >= get_cost ( ) :
+        level_up ( )
+        return true
+    return false
+
+
+func set_icon_frame ( frame : int ) -> StatData :
+    icon_frame = frame
+    return self
+
+
+func set_info_buy ( _text : String ) -> StatData :
+    info_buy = _text
+    return self
+
+
+func get_info_rich_buy ( ) -> String :
+
+
+
+
+    return info_buy . replace ( "[level]" , str ( level ) )
+. replace ( "[node]" , "%s" % ( GM . data . node_data_get ( key_owner ) . name ) )
+. replace ( "[of]" , "%s/%s" % [ level , levels . size ( ) - 1 ] )
+. replace ( "[cost]" , "[color=orange]%s %s[/color]" % [ get_cost ( ) , get_cost_key ( ) ] )
+. replace ( "[c]" , "[color=orange]" ) . replace ( "[/c]" , "[/color]" )
+
+
+
+var is_locked : bool
+var lock_by_stat : StatData
+var lock_by_level : int
+signal on_unlocked
+
+
+func set_lock ( _other_stat : StatData , _other_level : int = 1 ) -> StatData :
+
+    if ! _other_stat . is_level_possible ( _other_level ) :
+        return self
+    is_locked = true
+    lock_by_stat = _other_stat
+    lock_by_level = _other_level
+    lock_by_stat . on_level_change . connect ( _on_lock_by_stat_level_change )
+
+    return self
+
+
+func _on_lock_by_stat_level_change ( new_level : int ) -> void :
+    is_locked = lock_by_level > new_level
+    if ! is_locked :
+        lock_by_stat . on_level_change . disconnect ( _on_lock_by_stat_level_change )
+        on_unlocked . emit ( )
+
+
+
+func set_level_up_by_badge ( badge_key : String ) -> StatData :
+    if GM . badges . badge_is_unlocked ( badge_key ) :
+        pass
+    else :
+        if badges_needed_level_up . is_empty ( ) :
+            Mads . connect_safe ( GM . badges . on_unlock , _on_badge_unlock )
+        badges_needed_level_up . append ( badge_key )
+    return self
+
+
+func _on_badge_unlock ( badge_unlocked : String ) -> void :
+    if badges_needed_level_up . has ( badge_unlocked ) :
+        badges_needed_level_up . erase ( badge_unlocked )
+        if badges_needed_level_up . is_empty ( ) :
+            Mads . disconnect_safe ( GM . badges . on_unlock , _on_badge_unlock )
+        level_up ( )
+
+
+
+
+
+
+func set_level ( _level : int ) -> StatData :
+    if _level < 0 : return self
+    level = mini ( _level , levels . size ( ) - 1 )
+    return self
+
+
+func get_level_current ( ) -> int :
+    return level
+
+
+func get_level_last ( ) -> int :
+    return levels . size ( ) - 1
+
+
+func level_up ( ) -> void :
+    level += 1
+
+
+func is_max_level ( level_offset : int = 0 ) -> bool :
+    return level + level_offset >= levels . size ( ) - 1
+
+
+func is_level_possible ( _level : int ) -> bool :
+    return _level >= 0 && _level <= levels . size ( ) - 1
