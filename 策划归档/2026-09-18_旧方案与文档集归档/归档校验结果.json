@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-18",
+  "archived_files": 1846,
+  "archived_bytes": 2248097690.0,
+  "verification": "All archived file sizes and SHA256 hashes match originals.",
+  "startup_configuration": "Unchanged",
+  "current_documents": 14,
+  "migration": [
+    {
+      "original": "摸猫增量策划案",
+      "archived": "策划归档\\2026-09-18_旧方案与文档集归档\\摸猫增量策划案"
+    },
+    {
+      "original": "地球盲盒考古",
+      "archived": "策划归档\\2026-09-18_旧方案与文档集归档\\地球盲盒考古"
+    },
+    {
+      "original": "blind-box-market\\docs",
+      "archived": "策划归档\\2026-09-18_旧方案与文档集归档\\blind-box-market\\docs"
+    },
+    {
+      "original": "毛球满屋\\README.md",
+      "archived": "策划归档\\2026-09-18_旧方案与文档集归档\\旧原型说明\\毛球满屋\\README.md"
+    },
+    {
+      "original": "blind-box-market\\README.md",
+      "archived": "策划归档\\2026-09-18_旧方案与文档集归档\\旧原型说明\\blind-box-market\\README.md"
+    }
+  ]
+}
