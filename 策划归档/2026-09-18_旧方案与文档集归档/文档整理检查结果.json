@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-18",
+  "current_documents": 14,
+  "markdown_links_checked": 72,
+  "tables": "passed",
+  "index_coverage": "all current documents",
+  "summary_tables": 4,
+  "core_mechanics_coverage": "passed",
+  "archived_files_present": 1846,
+  "archive_sha256_result": "All archived file sizes and SHA256 hashes match originals.",
+  "old_directories_isolated": true,
+  "game_execution": "not run; documentation-only task"
+}

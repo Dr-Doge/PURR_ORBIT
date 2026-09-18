@@ -1,0 +1,95 @@
+{
+  "scope": "v0.5参数静态算例；非试玩或完整经济仿真；v0.6尚未修改这些收益初值",
+  "assumptions": {
+    "move_seconds": 0.8,
+    "manual_rate": 40,
+    "ordinary_spirit_rate": 20,
+    "ordinary_cd": 1,
+    "exclude": [
+      "收藏保底",
+      "收藏收入（单独算例除外）",
+      "代币",
+      "额外寻路",
+      "非指定升级与buff"
+    ]
+  },
+  "manual_income": [
+    {
+      "cat": "短毛",
+      "base_yield": 1,
+      "satisfaction": 100,
+      "per_second_unupgraded": 0.30303030303030304,
+      "per_second_hand_yield_level5": 1.8181818181818183
+    },
+    {
+      "cat": "长毛",
+      "base_yield": 3,
+      "satisfaction": 180,
+      "per_second_unupgraded": 0.5660377358490566,
+      "per_second_hand_yield_level5": 1.509433962264151
+    },
+    {
+      "cat": "招财",
+      "base_yield": 5,
+      "satisfaction": 240,
+      "per_second_unupgraded": 0.7352941176470589,
+      "per_second_hand_yield_level5": 1.4705882352941178
+    }
+  ],
+  "ordinary_spirit": {
+    "base_cycle": 6,
+    "first_cd_cycle": 5.833333333333333,
+    "first_cd_income_gain": 0.028571428571428692,
+    "second_cd_cycle": 5.8,
+    "first_pet_speed_cycle": 5.0,
+    "first_pet_speed_income_gain": 0.19999999999999996
+  },
+  "static_cat_cluster": {
+    "assumption": "N只静电猫各由一只普通精灵持续照料，全部互在范围，每7秒完成一轮；无递归",
+    "formula": "2*N*N/7",
+    "n1": 0.2857142857142857,
+    "n3": 2.5714285714285716,
+    "n6": 10.285714285714286
+  },
+  "static_spirit": {
+    "six_short_cats_one_spirit_per_second": 0.75,
+    "six_short_cats_four_spirits_per_second": 3.0,
+    "six_ordinary_spirits_six_short_cats_per_second": 1.0
+  },
+  "wand": {
+    "assumption": "一只猫每6秒实际触发一次，不含额外步行绕路",
+    "base_income_per_second": 0.03333333333333333,
+    "research_plus_first_purchase": 20,
+    "simple_payback_seconds": 600.0
+  },
+  "item_quality": [
+    {
+      "q": 0,
+      "mean_base_sale_value": 1.85
+    },
+    {
+      "q": 1,
+      "mean_base_sale_value": 2.0186915887850465
+    },
+    {
+      "q": 5,
+      "mean_base_sale_value": 2.5185185185185186
+    },
+    {
+      "q": 10,
+      "mean_base_sale_value": 2.911764705882353
+    }
+  ],
+  "first_global_sale_upgrade": {
+    "price": 16,
+    "extra_per_item": 0.37000000000000005,
+    "break_even_items": 43.243243243243235,
+    "note": "未计保底与品质、现有库存；只能估算所需出售件数，不能据此断言实际等待时间"
+  },
+  "max_existing_item_rate_percent": 22,
+  "merged_dc_example": {
+    "note": "仅示意候选指数价，不是核实的dc实际价格；把两段价格错误从起点重算的后果",
+    "original_segments_unrounded_total": 15962.8,
+    "naive_nine_levels_unrounded_total": 5643.2897280000025
+  }
+}
