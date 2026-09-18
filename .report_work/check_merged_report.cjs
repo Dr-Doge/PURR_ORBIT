@@ -1,0 +1,25 @@
+const {chromium}=require('C:/Users/ruohaojing/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const {pathToFileURL}=require('url');
+(async()=>{
+const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});
+const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto(pathToFileURL('C:/Users/ruohaojing/Desktop/爽开/地球盲盒考古/报告/GPT6_Astra综合报告_新版建模与游戏开发.html').href,{waitUntil:'load',timeout:120000});
+await page.screenshot({path:'.report_work/merged_top.png'});
+await page.locator('#s05').scrollIntoViewIfNeeded();
+await page.screenshot({path:'.report_work/merged_s05.png'});
+await page.locator('#s06').scrollIntoViewIfNeeded();
+await page.screenshot({path:'.report_work/merged_s06.png'});
+await page.locator('#s06 button.zoom').first().click();
+const svgZoom=await page.locator('#report-zoom').evaluate(n=>n.open);
+await page.keyboard.press('Escape');
+await page.locator('figure img').first().click();
+const imgZoom=await page.locator('#report-zoom').evaluate(n=>n.open);
+await page.keyboard.press('Escape');
+const imageResult=await page.evaluate(async()=>{const imgs=[...document.querySelectorAll('img[src]')].filter(n=>!n.closest('dialog'));imgs.forEach(i=>i.loading='eager');await Promise.all(imgs.map(i=>i.decode().catch(()=>{})));return {count:imgs.length,broken:imgs.filter(i=>!i.naturalWidth).length}});
+await page.setViewportSize({width:390,height:844});
+await page.evaluate(()=>scrollTo(0,0));
+const mobile=await page.evaluate(()=>({width:innerWidth,document:document.documentElement.scrollWidth}));
+console.log(JSON.stringify({errors,svgZoom,imgZoom,imageResult,mobile}));
+await browser.close();
+})();

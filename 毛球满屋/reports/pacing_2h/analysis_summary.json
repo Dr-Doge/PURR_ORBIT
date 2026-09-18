@@ -1,0 +1,374 @@
+{
+  "simulation_summary": [
+    {
+      "plan": "full_route_true_end",
+      "round_medians_seconds": [
+        98.0,
+        142.0,
+        207.0
+      ],
+      "total_median_minutes": 7.42,
+      "total_min_minutes": 7.38,
+      "total_max_minutes": 7.47
+    },
+    {
+      "plan": "old_showcase_test",
+      "round_medians_seconds": [
+        98.0,
+        142.0,
+        207.0
+      ],
+      "total_median_minutes": 7.42,
+      "total_min_minutes": 7.38,
+      "total_max_minutes": 7.47
+    },
+    {
+      "plan": "no_purchases",
+      "round_medians_seconds": [
+        182.0,
+        327.0,
+        465.0
+      ],
+      "total_median_minutes": 16.23,
+      "total_min_minutes": 16.2,
+      "total_max_minutes": 16.43
+    },
+    {
+      "plan": "only_buy_cats",
+      "round_medians_seconds": [
+        76.0,
+        82.0,
+        109.0
+      ],
+      "total_median_minutes": 4.42,
+      "total_min_minutes": 4.37,
+      "total_max_minutes": 4.47
+    },
+    {
+      "plan": "all_prices_x16",
+      "round_medians_seconds": [
+        182.0,
+        224.0,
+        239.0
+      ],
+      "total_median_minutes": 10.9,
+      "total_min_minutes": 10.52,
+      "total_max_minutes": 10.92
+    },
+    {
+      "plan": "eight_layer_harvest",
+      "round_medians_seconds": [
+        128.0,
+        174.0,
+        231.0
+      ],
+      "total_median_minutes": 8.88,
+      "total_min_minutes": 8.75,
+      "total_max_minutes": 8.97
+    }
+  ],
+  "dc_static": {
+    "scope": "Static supplied demo, not all releases or measured play time",
+    "source_sha256": "d33ea7682b24a6b55c4fcefac053d2d8db88c706b4aac74308dddefe40fc96fb",
+    "tree_nodes": 131,
+    "not_demo_blocked_nodes": 80,
+    "level_purchases_theoretical": 543,
+    "price_examples": [
+      {
+        "id": "D001",
+        "key": "SPOON.DIRT_GAIN.0",
+        "cost_base": 50,
+        "cost_growth": 1.6,
+        "levels": 4,
+        "value_init": 1,
+        "value_inc": 1
+      },
+      {
+        "id": "D005",
+        "key": "SPOON.ANIMATION_SCALE.0",
+        "cost_base": 35,
+        "cost_growth": 1.25,
+        "levels": 5,
+        "value_init": 1,
+        "value_inc": 0.03
+      },
+      {
+        "id": "D071",
+        "key": "MUSHROOM_GUY.IDLE_TIME.0",
+        "cost_base": 200,
+        "cost_growth": 1.15,
+        "levels": 10,
+        "value_init": 3,
+        "value_inc": -0.1
+      },
+      {
+        "id": "D078",
+        "key": "MUSHROOM_GUY.DIRT_MULTIPLY.0",
+        "cost_base": 5000,
+        "cost_growth": 4,
+        "levels": 4,
+        "value_init": 1,
+        "value_inc": 1
+      }
+    ]
+  },
+  "design_budgets": [
+    {
+      "round": 1,
+      "target_minutes": 30,
+      "new_series": 2,
+      "items_per_series": 5,
+      "gross_rate_profile": [
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          3,
+          8,
+          4
+        ],
+        [
+          8,
+          15,
+          10
+        ],
+        [
+          15,
+          23,
+          24
+        ],
+        [
+          23,
+          30,
+          40
+        ]
+      ],
+      "draw_moments_minutes": [
+        1,
+        4,
+        7,
+        10,
+        13,
+        16,
+        19,
+        22,
+        26,
+        30
+      ],
+      "cumulative_contribution_thresholds": [
+        120,
+        600,
+        1320,
+        2760,
+        4560,
+        7200,
+        11520,
+        15840,
+        24480,
+        34080
+      ],
+      "incremental_thresholds": [
+        120,
+        480,
+        720,
+        1440,
+        1800,
+        2640,
+        4320,
+        4320,
+        8640,
+        9600
+      ],
+      "warning": "Reverse budget from target income/time; not validated, not applied to gameplay"
+    },
+    {
+      "round": 2,
+      "target_minutes": 40,
+      "new_series": 3,
+      "items_per_series": 5,
+      "gross_rate_profile": [
+        [
+          0,
+          5,
+          8
+        ],
+        [
+          5,
+          12,
+          25
+        ],
+        [
+          12,
+          22,
+          60
+        ],
+        [
+          22,
+          32,
+          120
+        ],
+        [
+          32,
+          40,
+          200
+        ]
+      ],
+      "draw_moments_minutes": [
+        1,
+        4.0,
+        6.769,
+        9.538,
+        12.308,
+        15.077,
+        17.846,
+        20.615,
+        23.385,
+        26.154,
+        28.923,
+        31.692,
+        34.462,
+        37.231,
+        40.0
+      ],
+      "cumulative_contribution_thresholds": [
+        480,
+        1920,
+        5054,
+        9207,
+        14009,
+        23977,
+        33946,
+        43914,
+        58872,
+        78809,
+        98746,
+        118682,
+        150444,
+        183672,
+        216900
+      ],
+      "incremental_thresholds": [
+        480,
+        1440,
+        3134,
+        4153,
+        4802,
+        9968,
+        9969,
+        9968,
+        14958,
+        19937,
+        19937,
+        19936,
+        31762,
+        33228,
+        33228
+      ],
+      "warning": "Reverse budget from target income/time; not validated, not applied to gameplay"
+    },
+    {
+      "round": 3,
+      "target_minutes": 50,
+      "new_series": 4,
+      "items_per_series": 5,
+      "gross_rate_profile": [
+        [
+          0,
+          6,
+          20
+        ],
+        [
+          6,
+          14,
+          70
+        ],
+        [
+          14,
+          25,
+          180
+        ],
+        [
+          25,
+          38,
+          380
+        ],
+        [
+          38,
+          50,
+          700
+        ]
+      ],
+      "draw_moments_minutes": [
+        1,
+        4.0,
+        6.556,
+        9.111,
+        11.667,
+        14.222,
+        16.778,
+        19.333,
+        21.889,
+        24.444,
+        27.0,
+        29.556,
+        32.111,
+        34.667,
+        37.222,
+        39.778,
+        42.333,
+        44.889,
+        47.444,
+        50.0
+      ],
+      "cumulative_contribution_thresholds": [
+        1200,
+        4800,
+        9535,
+        20266,
+        31001,
+        43198,
+        70802,
+        98396,
+        126001,
+        153595,
+        205200,
+        263477,
+        321731,
+        380008,
+        438262,
+        530676,
+        637986,
+        745338,
+        852648,
+        960000
+      ],
+      "incremental_thresholds": [
+        1200,
+        3600,
+        4735,
+        10731,
+        10735,
+        12197,
+        27604,
+        27594,
+        27605,
+        27594,
+        51605,
+        58277,
+        58254,
+        58277,
+        58254,
+        92414,
+        107310,
+        107352,
+        107310,
+        107352
+      ],
+      "warning": "Reverse budget from target income/time; not validated, not applied to gameplay"
+    }
+  ],
+  "target_total_minutes": 120,
+  "current_gameplay_modified": false
+}

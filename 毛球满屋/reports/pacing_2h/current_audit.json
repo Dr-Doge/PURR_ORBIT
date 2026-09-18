@@ -1,0 +1,1427 @@
+{
+  "engine": "4.7.1-stable (official)",
+  "method": "One manual harvest per second, simulated decisions, no user saves. Models are diagnostic, not human-play timings.",
+  "results": [
+    {
+      "plan": {
+        "cat_target": 6,
+        "cost": 1.0,
+        "layers": 3,
+        "mode": "full",
+        "name": "full_route_true_end",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 520.5,
+          "cats": 6,
+          "completed": true,
+          "earned": 820.5,
+          "marks": {
+            "first_feeder": 51.0,
+            "first_sun": 62.0,
+            "first_token": 13.0,
+            "first_worker": 18.0,
+            "pool_empty": 98.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun"
+          ],
+          "round": 1,
+          "seconds": 98.0,
+          "spent": 300.0,
+          "workers": 3
+        },
+        {
+          "balance": 2519.0,
+          "cats": 6,
+          "completed": true,
+          "earned": 3033.0,
+          "marks": {
+            "first_arcade": 41.0,
+            "first_bug": 68.0,
+            "first_feeder": 28.0,
+            "first_sun": 30.0,
+            "first_token": 9.0,
+            "first_worker": 10.0,
+            "hats": 36.0,
+            "pool_empty": 145.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade"
+          ],
+          "round": 2,
+          "seconds": 145.0,
+          "spent": 514.0,
+          "workers": 3
+        },
+        {
+          "balance": 7055.7,
+          "cats": 6,
+          "completed": true,
+          "earned": 7974.7,
+          "marks": {
+            "first_altar": 31.0,
+            "first_arcade": 29.0,
+            "first_blackscreen": 63.0,
+            "first_bug": 64.0,
+            "first_feeder": 24.0,
+            "first_sun": 26.0,
+            "first_token": 9.0,
+            "first_worker": 10.0,
+            "hats": 27.0,
+            "maintenance": 37.0,
+            "pool_empty": 202.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade",
+            "altar",
+            "maint"
+          ],
+          "round": 3,
+          "seconds": 202.0,
+          "spent": 919.0,
+          "workers": 3
+        }
+      ],
+      "seed": 81926
+    },
+    {
+      "plan": {
+        "cat_target": 6,
+        "cost": 1.0,
+        "layers": 3,
+        "mode": "full",
+        "name": "full_route_true_end",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 628.0,
+          "cats": 6,
+          "completed": true,
+          "earned": 922.0,
+          "marks": {
+            "first_feeder": 51.0,
+            "first_sun": 62.0,
+            "first_token": 13.0,
+            "first_worker": 18.0,
+            "pool_empty": 99.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun"
+          ],
+          "round": 1,
+          "seconds": 99.0,
+          "spent": 294.0,
+          "workers": 3
+        },
+        {
+          "balance": 2538.0,
+          "cats": 6,
+          "completed": true,
+          "earned": 3052.0,
+          "marks": {
+            "first_arcade": 39.0,
+            "first_bug": 68.0,
+            "first_feeder": 28.0,
+            "first_sun": 30.0,
+            "first_token": 9.0,
+            "first_worker": 10.0,
+            "hats": 36.0,
+            "pool_empty": 142.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade"
+          ],
+          "round": 2,
+          "seconds": 142.0,
+          "spent": 514.0,
+          "workers": 3
+        },
+        {
+          "balance": 7726.8,
+          "cats": 6,
+          "completed": true,
+          "earned": 8645.8,
+          "marks": {
+            "first_altar": 31.0,
+            "first_arcade": 29.0,
+            "first_blackscreen": 63.0,
+            "first_bug": 64.0,
+            "first_feeder": 24.0,
+            "first_sun": 26.0,
+            "first_token": 9.0,
+            "first_worker": 10.0,
+            "hats": 27.0,
+            "maintenance": 37.0,
+            "pool_empty": 207.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade",
+            "altar",
+            "maint"
+          ],
+          "round": 3,
+          "seconds": 207.0,
+          "spent": 919.0,
+          "workers": 3
+        }
+      ],
+      "seed": 2718
+    },
+    {
+      "plan": {
+        "cat_target": 6,
+        "cost": 1.0,
+        "layers": 3,
+        "mode": "full",
+        "name": "full_route_true_end",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 397.8,
+          "cats": 6,
+          "completed": true,
+          "earned": 697.8,
+          "marks": {
+            "first_feeder": 51.0,
+            "first_sun": 62.0,
+            "first_token": 13.0,
+            "first_worker": 18.0,
+            "pool_empty": 92.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun"
+          ],
+          "round": 1,
+          "seconds": 92.0,
+          "spent": 300.0,
+          "workers": 3
+        },
+        {
+          "balance": 3263.6,
+          "cats": 6,
+          "completed": true,
+          "earned": 3777.6,
+          "marks": {
+            "first_arcade": 32.0,
+            "first_bug": 67.0,
+            "first_feeder": 27.0,
+            "first_sun": 29.0,
+            "first_token": 9.0,
+            "first_worker": 10.0,
+            "hats": 30.0,
+            "pool_empty": 142.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade"
+          ],
+          "round": 2,
+          "seconds": 142.0,
+          "spent": 514.0,
+          "workers": 3
+        },
+        {
+          "balance": 6240.9,
+          "cats": 6,
+          "completed": true,
+          "earned": 7159.9,
+          "marks": {
+            "first_altar": 41.0,
+            "first_arcade": 30.0,
+            "first_blackscreen": 73.0,
+            "first_bug": 64.0,
+            "first_feeder": 24.0,
+            "first_sun": 26.0,
+            "first_token": 9.0,
+            "first_worker": 10.0,
+            "hats": 27.0,
+            "maintenance": 42.0,
+            "pool_empty": 209.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade",
+            "altar",
+            "maint"
+          ],
+          "round": 3,
+          "seconds": 209.0,
+          "spent": 919.0,
+          "workers": 3
+        }
+      ],
+      "seed": 42
+    },
+    {
+      "plan": {
+        "cat_target": 6,
+        "cost": 1.0,
+        "layers": 3,
+        "mode": "full",
+        "name": "old_showcase_test",
+        "showcase": true
+      },
+      "runs": [
+        {
+          "balance": 520.5,
+          "cats": 6,
+          "completed": true,
+          "earned": 820.5,
+          "marks": {
+            "first_feeder": 51.0,
+            "first_sun": 62.0,
+            "first_token": 13.0,
+            "first_worker": 18.0,
+            "pool_empty": 98.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun"
+          ],
+          "round": 1,
+          "seconds": 98.0,
+          "spent": 300.0,
+          "workers": 3
+        },
+        {
+          "balance": 2519.0,
+          "cats": 6,
+          "completed": true,
+          "earned": 3033.0,
+          "marks": {
+            "first_arcade": 41.0,
+            "first_bug": 68.0,
+            "first_feeder": 28.0,
+            "first_sun": 30.0,
+            "first_token": 9.0,
+            "first_worker": 10.0,
+            "hats": 36.0,
+            "pool_empty": 145.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade"
+          ],
+          "round": 2,
+          "seconds": 145.0,
+          "spent": 514.0,
+          "workers": 3
+        },
+        {
+          "balance": 7055.7,
+          "cats": 6,
+          "completed": true,
+          "earned": 7974.7,
+          "marks": {
+            "first_altar": 31.0,
+            "first_arcade": 29.0,
+            "first_blackscreen": 63.0,
+            "first_bug": 64.0,
+            "first_feeder": 24.0,
+            "first_sun": 26.0,
+            "first_token": 9.0,
+            "first_worker": 10.0,
+            "hats": 27.0,
+            "maintenance": 37.0,
+            "pool_empty": 202.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade",
+            "altar",
+            "maint"
+          ],
+          "round": 3,
+          "seconds": 202.0,
+          "spent": 919.0,
+          "workers": 3
+        }
+      ],
+      "seed": 81926
+    },
+    {
+      "plan": {
+        "cat_target": 6,
+        "cost": 1.0,
+        "layers": 3,
+        "mode": "full",
+        "name": "old_showcase_test",
+        "showcase": true
+      },
+      "runs": [
+        {
+          "balance": 628.0,
+          "cats": 6,
+          "completed": true,
+          "earned": 922.0,
+          "marks": {
+            "first_feeder": 51.0,
+            "first_sun": 62.0,
+            "first_token": 13.0,
+            "first_worker": 18.0,
+            "pool_empty": 99.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun"
+          ],
+          "round": 1,
+          "seconds": 99.0,
+          "spent": 294.0,
+          "workers": 3
+        },
+        {
+          "balance": 2538.0,
+          "cats": 6,
+          "completed": true,
+          "earned": 3052.0,
+          "marks": {
+            "first_arcade": 39.0,
+            "first_bug": 68.0,
+            "first_feeder": 28.0,
+            "first_sun": 30.0,
+            "first_token": 9.0,
+            "first_worker": 10.0,
+            "hats": 36.0,
+            "pool_empty": 142.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade"
+          ],
+          "round": 2,
+          "seconds": 142.0,
+          "spent": 514.0,
+          "workers": 3
+        },
+        {
+          "balance": 7726.8,
+          "cats": 6,
+          "completed": true,
+          "earned": 8645.8,
+          "marks": {
+            "first_altar": 31.0,
+            "first_arcade": 29.0,
+            "first_blackscreen": 63.0,
+            "first_bug": 64.0,
+            "first_feeder": 24.0,
+            "first_sun": 26.0,
+            "first_token": 9.0,
+            "first_worker": 10.0,
+            "hats": 27.0,
+            "maintenance": 37.0,
+            "pool_empty": 207.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade",
+            "altar",
+            "maint"
+          ],
+          "round": 3,
+          "seconds": 207.0,
+          "spent": 919.0,
+          "workers": 3
+        }
+      ],
+      "seed": 2718
+    },
+    {
+      "plan": {
+        "cat_target": 6,
+        "cost": 1.0,
+        "layers": 3,
+        "mode": "full",
+        "name": "old_showcase_test",
+        "showcase": true
+      },
+      "runs": [
+        {
+          "balance": 397.8,
+          "cats": 6,
+          "completed": true,
+          "earned": 697.8,
+          "marks": {
+            "first_feeder": 51.0,
+            "first_sun": 62.0,
+            "first_token": 13.0,
+            "first_worker": 18.0,
+            "pool_empty": 92.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun"
+          ],
+          "round": 1,
+          "seconds": 92.0,
+          "spent": 300.0,
+          "workers": 3
+        },
+        {
+          "balance": 3263.6,
+          "cats": 6,
+          "completed": true,
+          "earned": 3777.6,
+          "marks": {
+            "first_arcade": 32.0,
+            "first_bug": 67.0,
+            "first_feeder": 27.0,
+            "first_sun": 29.0,
+            "first_token": 9.0,
+            "first_worker": 10.0,
+            "hats": 30.0,
+            "pool_empty": 142.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade"
+          ],
+          "round": 2,
+          "seconds": 142.0,
+          "spent": 514.0,
+          "workers": 3
+        },
+        {
+          "balance": 6240.9,
+          "cats": 6,
+          "completed": true,
+          "earned": 7159.9,
+          "marks": {
+            "first_altar": 41.0,
+            "first_arcade": 30.0,
+            "first_blackscreen": 73.0,
+            "first_bug": 64.0,
+            "first_feeder": 24.0,
+            "first_sun": 26.0,
+            "first_token": 9.0,
+            "first_worker": 10.0,
+            "hats": 27.0,
+            "maintenance": 42.0,
+            "pool_empty": 209.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade",
+            "altar",
+            "maint"
+          ],
+          "round": 3,
+          "seconds": 209.0,
+          "spent": 919.0,
+          "workers": 3
+        }
+      ],
+      "seed": 42
+    },
+    {
+      "plan": {
+        "cat_target": 2,
+        "cost": 1.0,
+        "layers": 3,
+        "mode": "none",
+        "name": "no_purchases",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 544.5,
+          "cats": 2,
+          "completed": true,
+          "earned": 544.5,
+          "marks": {
+            "first_token": 13.0,
+            "pool_empty": 182.0
+          },
+          "research": [],
+          "round": 1,
+          "seconds": 182.0,
+          "spent": 0.0,
+          "workers": 0
+        },
+        {
+          "balance": 2067.3,
+          "cats": 2,
+          "completed": true,
+          "earned": 2067.3,
+          "marks": {
+            "first_token": 9.0,
+            "pool_empty": 327.0
+          },
+          "research": [],
+          "round": 2,
+          "seconds": 327.0,
+          "spent": 0.0,
+          "workers": 0
+        },
+        {
+          "balance": 5003.1,
+          "cats": 2,
+          "completed": true,
+          "earned": 5003.1,
+          "marks": {
+            "first_token": 9.0,
+            "pool_empty": 465.0
+          },
+          "research": [],
+          "round": 3,
+          "seconds": 465.0,
+          "spent": 0.0,
+          "workers": 0
+        }
+      ],
+      "seed": 81926
+    },
+    {
+      "plan": {
+        "cat_target": 2,
+        "cost": 1.0,
+        "layers": 3,
+        "mode": "none",
+        "name": "no_purchases",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 544.5,
+          "cats": 2,
+          "completed": true,
+          "earned": 544.5,
+          "marks": {
+            "first_token": 13.0,
+            "pool_empty": 182.0
+          },
+          "research": [],
+          "round": 1,
+          "seconds": 182.0,
+          "spent": 0.0,
+          "workers": 0
+        },
+        {
+          "balance": 2067.3,
+          "cats": 2,
+          "completed": true,
+          "earned": 2067.3,
+          "marks": {
+            "first_token": 9.0,
+            "pool_empty": 327.0
+          },
+          "research": [],
+          "round": 2,
+          "seconds": 327.0,
+          "spent": 0.0,
+          "workers": 0
+        },
+        {
+          "balance": 5229.9,
+          "cats": 2,
+          "completed": true,
+          "earned": 5229.9,
+          "marks": {
+            "first_token": 9.0,
+            "pool_empty": 463.0
+          },
+          "research": [],
+          "round": 3,
+          "seconds": 463.0,
+          "spent": 0.0,
+          "workers": 0
+        }
+      ],
+      "seed": 2718
+    },
+    {
+      "plan": {
+        "cat_target": 2,
+        "cost": 1.0,
+        "layers": 3,
+        "mode": "none",
+        "name": "no_purchases",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 632.7,
+          "cats": 2,
+          "completed": true,
+          "earned": 632.7,
+          "marks": {
+            "first_token": 13.0,
+            "pool_empty": 191.0
+          },
+          "research": [],
+          "round": 1,
+          "seconds": 191.0,
+          "spent": 0.0,
+          "workers": 0
+        },
+        {
+          "balance": 2099.7,
+          "cats": 2,
+          "completed": true,
+          "earned": 2099.7,
+          "marks": {
+            "first_token": 9.0,
+            "pool_empty": 327.0
+          },
+          "research": [],
+          "round": 2,
+          "seconds": 327.0,
+          "spent": 0.0,
+          "workers": 0
+        },
+        {
+          "balance": 5645.7,
+          "cats": 2,
+          "completed": true,
+          "earned": 5645.7,
+          "marks": {
+            "first_token": 9.0,
+            "pool_empty": 468.0
+          },
+          "research": [],
+          "round": 3,
+          "seconds": 468.0,
+          "spent": 0.0,
+          "workers": 0
+        }
+      ],
+      "seed": 42
+    },
+    {
+      "plan": {
+        "cat_target": 12,
+        "cost": 1.0,
+        "layers": 3,
+        "mode": "cats",
+        "name": "only_buy_cats",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 252.9,
+          "cats": 12,
+          "completed": true,
+          "earned": 720.9,
+          "marks": {
+            "first_token": 13.0,
+            "pool_empty": 77.0
+          },
+          "research": [],
+          "round": 1,
+          "seconds": 77.0,
+          "spent": 468.0,
+          "workers": 0
+        },
+        {
+          "balance": 1808.1,
+          "cats": 12,
+          "completed": true,
+          "earned": 2276.1,
+          "marks": {
+            "first_token": 9.0,
+            "pool_empty": 82.0
+          },
+          "research": [],
+          "round": 2,
+          "seconds": 82.0,
+          "spent": 468.0,
+          "workers": 0
+        },
+        {
+          "balance": 5172.4,
+          "cats": 12,
+          "completed": true,
+          "earned": 5640.4,
+          "marks": {
+            "first_token": 9.0,
+            "pool_empty": 103.0
+          },
+          "research": [],
+          "round": 3,
+          "seconds": 103.0,
+          "spent": 468.0,
+          "workers": 0
+        }
+      ],
+      "seed": 81926
+    },
+    {
+      "plan": {
+        "cat_target": 12,
+        "cost": 1.0,
+        "layers": 3,
+        "mode": "cats",
+        "name": "only_buy_cats",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 164.7,
+          "cats": 12,
+          "completed": true,
+          "earned": 632.7,
+          "marks": {
+            "first_token": 13.0,
+            "pool_empty": 75.0
+          },
+          "research": [],
+          "round": 1,
+          "seconds": 75.0,
+          "spent": 468.0,
+          "workers": 0
+        },
+        {
+          "balance": 1873.3,
+          "cats": 12,
+          "completed": true,
+          "earned": 2341.3,
+          "marks": {
+            "first_token": 9.0,
+            "pool_empty": 81.0
+          },
+          "research": [],
+          "round": 2,
+          "seconds": 81.0,
+          "spent": 468.0,
+          "workers": 0
+        },
+        {
+          "balance": 4745.4,
+          "cats": 12,
+          "completed": true,
+          "earned": 5213.4,
+          "marks": {
+            "first_token": 9.0,
+            "pool_empty": 109.0
+          },
+          "research": [],
+          "round": 3,
+          "seconds": 109.0,
+          "spent": 468.0,
+          "workers": 0
+        }
+      ],
+      "seed": 2718
+    },
+    {
+      "plan": {
+        "cat_target": 12,
+        "cost": 1.0,
+        "layers": 3,
+        "mode": "cats",
+        "name": "only_buy_cats",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 189.9,
+          "cats": 12,
+          "completed": true,
+          "earned": 657.9,
+          "marks": {
+            "first_token": 13.0,
+            "pool_empty": 76.0
+          },
+          "research": [],
+          "round": 1,
+          "seconds": 76.0,
+          "spent": 468.0,
+          "workers": 0
+        },
+        {
+          "balance": 2022.3,
+          "cats": 12,
+          "completed": true,
+          "earned": 2490.3,
+          "marks": {
+            "first_token": 9.0,
+            "pool_empty": 82.0
+          },
+          "research": [],
+          "round": 2,
+          "seconds": 82.0,
+          "spent": 468.0,
+          "workers": 0
+        },
+        {
+          "balance": 4789.5,
+          "cats": 12,
+          "completed": true,
+          "earned": 5257.5,
+          "marks": {
+            "first_token": 9.0,
+            "pool_empty": 110.0
+          },
+          "research": [],
+          "round": 3,
+          "seconds": 110.0,
+          "spent": 468.0,
+          "workers": 0
+        }
+      ],
+      "seed": 42
+    },
+    {
+      "plan": {
+        "cat_target": 6,
+        "cost": 16.0,
+        "layers": 3,
+        "mode": "full",
+        "name": "all_prices_x16",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 96.5,
+          "cats": 2,
+          "completed": true,
+          "earned": 544.5,
+          "marks": {
+            "first_token": 13.0,
+            "first_worker": 159.0,
+            "pool_empty": 182.0
+          },
+          "research": [
+            "worker"
+          ],
+          "round": 1,
+          "seconds": 182.0,
+          "spent": 448.0,
+          "workers": 1
+        },
+        {
+          "balance": 147.3,
+          "cats": 6,
+          "completed": true,
+          "earned": 2067.3,
+          "marks": {
+            "first_token": 9.0,
+            "first_worker": 89.0,
+            "pool_empty": 224.0
+          },
+          "research": [
+            "worker",
+            "feeder"
+          ],
+          "round": 2,
+          "seconds": 224.0,
+          "spent": 1920.0,
+          "workers": 1
+        },
+        {
+          "balance": 133.1,
+          "cats": 6,
+          "completed": true,
+          "earned": 6469.1,
+          "marks": {
+            "first_bug": 222.0,
+            "first_feeder": 160.0,
+            "first_sun": 184.0,
+            "first_token": 9.0,
+            "first_worker": 62.0,
+            "hats": 201.0,
+            "pool_empty": 225.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade"
+          ],
+          "round": 3,
+          "seconds": 225.0,
+          "spent": 6336.0,
+          "workers": 1
+        }
+      ],
+      "seed": 81926
+    },
+    {
+      "plan": {
+        "cat_target": 6,
+        "cost": 16.0,
+        "layers": 3,
+        "mode": "full",
+        "name": "all_prices_x16",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 96.5,
+          "cats": 2,
+          "completed": true,
+          "earned": 544.5,
+          "marks": {
+            "first_token": 13.0,
+            "first_worker": 159.0,
+            "pool_empty": 182.0
+          },
+          "research": [
+            "worker"
+          ],
+          "round": 1,
+          "seconds": 182.0,
+          "spent": 448.0,
+          "workers": 1
+        },
+        {
+          "balance": 179.7,
+          "cats": 6,
+          "completed": true,
+          "earned": 2099.7,
+          "marks": {
+            "first_token": 9.0,
+            "first_worker": 89.0,
+            "pool_empty": 221.0
+          },
+          "research": [
+            "worker",
+            "feeder"
+          ],
+          "round": 2,
+          "seconds": 221.0,
+          "spent": 1920.0,
+          "workers": 1
+        },
+        {
+          "balance": 925.4,
+          "cats": 6,
+          "completed": true,
+          "earned": 5741.4,
+          "marks": {
+            "first_bug": 247.0,
+            "first_feeder": 173.0,
+            "first_sun": 209.0,
+            "first_token": 9.0,
+            "first_worker": 62.0,
+            "hats": 235.0,
+            "pool_empty": 252.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats"
+          ],
+          "round": 3,
+          "seconds": 252.0,
+          "spent": 4816.0,
+          "workers": 1
+        }
+      ],
+      "seed": 2718
+    },
+    {
+      "plan": {
+        "cat_target": 6,
+        "cost": 16.0,
+        "layers": 3,
+        "mode": "full",
+        "name": "all_prices_x16",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 184.7,
+          "cats": 2,
+          "completed": true,
+          "earned": 632.7,
+          "marks": {
+            "first_token": 13.0,
+            "first_worker": 151.0,
+            "pool_empty": 191.0
+          },
+          "research": [
+            "worker"
+          ],
+          "round": 1,
+          "seconds": 191.0,
+          "spent": 448.0,
+          "workers": 1
+        },
+        {
+          "balance": 147.3,
+          "cats": 6,
+          "completed": true,
+          "earned": 2067.3,
+          "marks": {
+            "first_token": 9.0,
+            "first_worker": 89.0,
+            "pool_empty": 224.0
+          },
+          "research": [
+            "worker",
+            "feeder"
+          ],
+          "round": 2,
+          "seconds": 224.0,
+          "spent": 1920.0,
+          "workers": 1
+        },
+        {
+          "balance": 666.1,
+          "cats": 6,
+          "completed": true,
+          "earned": 7098.1,
+          "marks": {
+            "first_bug": 222.0,
+            "first_feeder": 159.0,
+            "first_sun": 184.0,
+            "first_token": 9.0,
+            "first_worker": 62.0,
+            "hats": 205.0,
+            "pool_empty": 239.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade"
+          ],
+          "round": 3,
+          "seconds": 239.0,
+          "spent": 6432.0,
+          "workers": 1
+        }
+      ],
+      "seed": 42
+    },
+    {
+      "plan": {
+        "cat_target": 6,
+        "cost": 1.0,
+        "layers": 8,
+        "mode": "full",
+        "name": "eight_layer_harvest",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 2903.7,
+          "cats": 6,
+          "completed": true,
+          "earned": 3209.7,
+          "marks": {
+            "first_feeder": 50.0,
+            "first_sun": 52.0,
+            "first_token": 43.0,
+            "first_worker": 44.0,
+            "pool_empty": 130.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun"
+          ],
+          "round": 1,
+          "seconds": 130.0,
+          "spent": 306.0,
+          "workers": 3
+        },
+        {
+          "balance": 6734.6,
+          "cats": 6,
+          "completed": true,
+          "earned": 7260.6,
+          "marks": {
+            "first_arcade": 67.0,
+            "first_bug": 78.0,
+            "first_feeder": 38.0,
+            "first_sun": 40.0,
+            "first_token": 31.0,
+            "first_worker": 32.0,
+            "hats": 41.0,
+            "pool_empty": 174.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade"
+          ],
+          "round": 2,
+          "seconds": 174.0,
+          "spent": 526.0,
+          "workers": 3
+        },
+        {
+          "balance": 16305.4,
+          "cats": 6,
+          "completed": true,
+          "earned": 17230.4,
+          "marks": {
+            "first_altar": 65.0,
+            "first_arcade": 43.0,
+            "first_blackscreen": 97.0,
+            "first_bug": 78.0,
+            "first_feeder": 38.0,
+            "first_sun": 40.0,
+            "first_token": 31.0,
+            "first_worker": 32.0,
+            "hats": 41.0,
+            "maintenance": 66.0,
+            "pool_empty": 221.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade",
+            "altar",
+            "maint"
+          ],
+          "round": 3,
+          "seconds": 221.0,
+          "spent": 925.0,
+          "workers": 3
+        }
+      ],
+      "seed": 81926
+    },
+    {
+      "plan": {
+        "cat_target": 6,
+        "cost": 1.0,
+        "layers": 8,
+        "mode": "full",
+        "name": "eight_layer_harvest",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 2937.4,
+          "cats": 6,
+          "completed": true,
+          "earned": 3249.4,
+          "marks": {
+            "first_feeder": 50.0,
+            "first_sun": 85.0,
+            "first_token": 43.0,
+            "first_worker": 44.0,
+            "pool_empty": 125.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun"
+          ],
+          "round": 1,
+          "seconds": 125.0,
+          "spent": 312.0,
+          "workers": 3
+        },
+        {
+          "balance": 6890.1,
+          "cats": 6,
+          "completed": true,
+          "earned": 7416.1,
+          "marks": {
+            "first_arcade": 43.0,
+            "first_bug": 78.0,
+            "first_feeder": 38.0,
+            "first_sun": 40.0,
+            "first_token": 31.0,
+            "first_worker": 32.0,
+            "hats": 41.0,
+            "pool_empty": 177.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade"
+          ],
+          "round": 2,
+          "seconds": 177.0,
+          "spent": 526.0,
+          "workers": 3
+        },
+        {
+          "balance": 13961.4,
+          "cats": 6,
+          "completed": true,
+          "earned": 14886.4,
+          "marks": {
+            "first_altar": 69.0,
+            "first_arcade": 43.0,
+            "first_blackscreen": 101.0,
+            "first_bug": 78.0,
+            "first_feeder": 38.0,
+            "first_sun": 40.0,
+            "first_token": 31.0,
+            "first_worker": 32.0,
+            "hats": 41.0,
+            "maintenance": 70.0,
+            "pool_empty": 236.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade",
+            "altar",
+            "maint"
+          ],
+          "round": 3,
+          "seconds": 236.0,
+          "spent": 925.0,
+          "workers": 3
+        }
+      ],
+      "seed": 2718
+    },
+    {
+      "plan": {
+        "cat_target": 6,
+        "cost": 1.0,
+        "layers": 8,
+        "mode": "full",
+        "name": "eight_layer_harvest",
+        "showcase": false
+      },
+      "runs": [
+        {
+          "balance": 3767.2,
+          "cats": 6,
+          "completed": true,
+          "earned": 4079.2,
+          "marks": {
+            "first_feeder": 50.0,
+            "first_sun": 85.0,
+            "first_token": 43.0,
+            "first_worker": 44.0,
+            "pool_empty": 128.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun"
+          ],
+          "round": 1,
+          "seconds": 128.0,
+          "spent": 312.0,
+          "workers": 3
+        },
+        {
+          "balance": 6309.8,
+          "cats": 6,
+          "completed": true,
+          "earned": 6835.8,
+          "marks": {
+            "first_arcade": 67.0,
+            "first_bug": 78.0,
+            "first_feeder": 38.0,
+            "first_sun": 40.0,
+            "first_token": 31.0,
+            "first_worker": 32.0,
+            "hats": 41.0,
+            "pool_empty": 174.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade"
+          ],
+          "round": 2,
+          "seconds": 174.0,
+          "spent": 526.0,
+          "workers": 3
+        },
+        {
+          "balance": 16421.2,
+          "cats": 6,
+          "completed": true,
+          "earned": 17346.2,
+          "marks": {
+            "first_altar": 65.0,
+            "first_arcade": 43.0,
+            "first_blackscreen": 97.0,
+            "first_bug": 78.0,
+            "first_feeder": 38.0,
+            "first_sun": 40.0,
+            "first_token": 31.0,
+            "first_worker": 32.0,
+            "hats": 41.0,
+            "maintenance": 66.0,
+            "pool_empty": 231.0
+          },
+          "research": [
+            "worker",
+            "feeder",
+            "sun",
+            "hats",
+            "arcade",
+            "altar",
+            "maint"
+          ],
+          "round": 3,
+          "seconds": 231.0,
+          "spent": 925.0,
+          "workers": 3
+        }
+      ],
+      "seed": 42
+    }
+  ]
+}
