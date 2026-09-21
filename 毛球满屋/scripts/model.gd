@@ -205,9 +205,9 @@ func pet(id: int,distance: float) -> void:
  c.pet += clampf(distance,0,45)
  c.wander = 2.0; c.dest = c.pos
  if c.pet >= D.PET_DISTANCE: harvest(id)
-func money(amount: float,at: Vector2) -> void:
+func money(amount: float,at: Vector2,fur_count: int = 0,cat_kind: String = "") -> void:
  wallet += amount
- events.append({"kind":"money","pos":at,"text":"+%.1f" % amount})
+ events.append({"kind":"money","pos":at,"text":"+%.1f" % amount,"fur_count":fur_count,"cat_kind":cat_kind})
 func prize(c: Dictionary,value: float) -> void:
  var item: Dictionary = {"id":uid(),"name":D.ITEMS[rng.randi_range(0,D.ITEMS.size()-1)],"value":value}
  inventory.append(item)
@@ -221,11 +221,13 @@ func harvest(id: int) -> bool:
  var c: Dictionary = cat(id)
  if c.is_empty() or c.station != -1 or c.layers <= 0: return false
  var n: int = c.layers
- money(harvest_value(c),c.pos)
+ money(harvest_value(c),c.pos,n,c.kind)
  c.layers = 0; c.pet = 0.0; c.pop = 0.8; harvests += 1
+ c.produce_left = 1.1 # Hold position for the 11-frame, 10 FPS harvest animation.
  token_progress += n
  if not first_token and token_progress >= 3:
   token_progress -= 3; tokens += 1; first_token = true
+  events.append({"kind":"token","pos":c.pos,"text":"+1 神秘代币"})
   notify("猫咪留下了一枚陌生的代币。远处传来一个信号……")
  elif first_token:
   var need: int = 14+4*(round_no-1)
@@ -303,6 +305,9 @@ func tick(dt: float) -> void:
   while c.growth >= D.LAYER_CD:
    c.growth -= D.LAYER_CD; layer(c)
   c.wander -= dt
+  if float(c.get("produce_left",0.0))>0.0:
+   c.produce_left=maxf(0.0,float(c.produce_left)-dt)
+   continue # Growth and harvest rewards above remain unchanged; only walking waits.
   if c.wander <= 0:
    c.dest = clamp_position(c.pos+Vector2(rng.randf_range(-65,65),rng.randf_range(-40,40)))
    c.wander = rng.randf_range(7,12)

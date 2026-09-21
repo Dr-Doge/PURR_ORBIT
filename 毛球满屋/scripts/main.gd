@@ -10,6 +10,8 @@ var paused: bool = true
 var testing: bool = false
 var modal: String = ""
 var overlay: PanelContainer
+var hud
+var modal_margin: MarginContainer
 var body: VBoxContainer
 var header_label: Label
 var hint_label: Label
@@ -45,31 +47,40 @@ func live(l: Label,callback: Callable) -> void:
  bindings.append({"node":l,"fn":callback}); l.text = callback.call()
 func _ready() -> void:
  get_tree().auto_accept_quit = false
+ add_child(preload("res://scripts/game_cursor.gd").new())
  var font := SystemFont.new(); font.font_names = PackedStringArray(["Microsoft YaHei","Segoe UI"])
  var skin := Theme.new(); skin.default_font = font; skin.default_font_size = 16
  for state in ["normal","hover","pressed","disabled","focus"]:
-  skin.set_stylebox(state,"Button",style({"normal":"294856","hover":"3b646c","pressed":"486f68","disabled":"23313e","focus":"294856"}[state],"526f7e"))
+  skin.set_stylebox(state,"Button",style({"normal":"453a36","hover":"526b70","pressed":"304f56","disabled":"3b3330","focus":"526b70"}[state],"88b2b5"))
  skin.set_color("font_color","Button",Color("e0eeee")); skin.set_color("font_disabled_color","Button",Color("718896")); theme = skin
  room = Room.new(); room.model = model; room.set_anchors_and_offsets_preset(PRESET_FULL_RECT); add_child(room)
  room.facility_selected.connect(show_facility); room.worker_selected.connect(show_worker); room.gacha_selected.connect(show_gacha)
  room.notice.connect(message); room.build_requested.connect(func(key: String,at: Vector2): transact(func(): return model.buy(key,at)))
- var top := PanelContainer.new(); top.set_anchors_and_offsets_preset(PRESET_TOP_WIDE); top.offset_left=24;top.offset_right=-24;top.offset_top=16;top.offset_bottom=88;top.add_theme_stylebox_override("panel",style("152737"));add_child(top)
- var top_row := row(top); var title := label("PURR / ORBIT",23,"a9e4d0"); top_row.add_child(title)
- header_label=label("",19);header_label.size_flags_horizontal=SIZE_EXPAND_FILL;header_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;top_row.add_child(header_label)
- button("帮助",show_help,top_row);button("暂停 · Esc",show_pause,top_row)
- var bottom := PanelContainer.new();bottom.set_anchors_and_offsets_preset(PRESET_BOTTOM_WIDE);bottom.offset_left=24;bottom.offset_right=-24;bottom.offset_top=-112;bottom.offset_bottom=-16;bottom.add_theme_stylebox_override("panel",style("152737"));add_child(bottom)
- var bottom_col := column(bottom);var actions := row(bottom_col)
- button("＋ 猫咪与设施",show_shop,actions);button("成长树 ↑",func():show_tree(),actions);button("工人分工",show_workers,actions);button("库存 / 换金",show_inventory,actions);button("神秘收藏",show_gacha,actions)
- hint_label=label("",15,"9ac5c2");hint_label.size_flags_horizontal=SIZE_EXPAND_FILL;actions.add_child(hint_label)
- notice_label=label("在猫身上来回移动鼠标收割；按住拖动可以搬猫。",15,"b4c7d1");bottom_col.add_child(notice_label)
- overlay=PanelContainer.new();overlay.set_anchors_and_offsets_preset(PRESET_FULL_RECT);overlay.add_theme_stylebox_override("panel",style("101d2cee","101d2c",0));add_child(overlay)
- var margin := MarginContainer.new();margin.add_theme_constant_override("margin_left",64);margin.add_theme_constant_override("margin_right",64);margin.add_theme_constant_override("margin_top",110);margin.add_theme_constant_override("margin_bottom",125);overlay.add_child(margin)
- var card := PanelContainer.new();card.add_theme_stylebox_override("panel",style("1a2d3e","607c87",14));margin.add_child(card)
- body=column(card)
+ hud=preload("res://scripts/station_hud.gd").new();hud.game=self;add_child(hud)
+ overlay=PanelContainer.new();overlay.add_theme_stylebox_override("panel",style("1e1a19ed","85c9d0",12));add_child(overlay)
+ modal_margin=MarginContainer.new()
+ for side in ["left","right","top","bottom"]:modal_margin.add_theme_constant_override("margin_"+side,20)
+ overlay.add_child(modal_margin)
+ body=column(modal_margin)
+ resized.connect(layout_presentation)
+ layout_presentation()
  refresh();show_start()
+func layout_presentation() -> void:
+ if hud == null or overlay == null:return
+ var factor: float=room.stage_scale()
+ var origin: Vector2=room.stage_origin()
+ hud.position=origin;hud.size=Room.Backdrop.DESIGN_SIZE;hud.scale=Vector2.ONE*factor
+ var title_screen: bool=modal=="start"
+ hud.show_title(title_screen)
+ var box := Rect2(24,24,1392,Room.Backdrop.DESIGN_SIZE.y-48)
+ if title_screen:box=Rect2(510,567,420,202)
+ overlay.position=origin+box.position*factor
+ overlay.scale=Vector2.ONE*factor
+ overlay.size=box.size
 func screen(title: String,description: String,kind: String,freeze: bool = false) -> VBoxContainer:
  room.reset_pointer();room.interactive=false;room.placing="";room.moving_id=-1
  modal=kind;paused=freeze;overlay.show();bindings.clear();clear(body)
+ layout_presentation()
  var title_row := row(body);var h := label(title,28,"dfc794");h.size_flags_horizontal=SIZE_EXPAND_FILL;title_row.add_child(h)
  if active: button("返回舱室 ×",close_modal,title_row)
  paragraph(description,body,16)
@@ -80,11 +91,11 @@ func close_modal() -> void:
  if not active: show_start();return
  if modal == "contact": model.accept_contact();save_game()
  modal="";paused=false;bindings.clear();overlay.hide();room.interactive=true;room.reset_pointer();refresh()
+ layout_presentation()
 func show_start() -> void:
  var content := screen("喵星驻留站", "一群奇妙的室友，一台来自未知文明的仪器。", "start",true)
- paragraph("在猫身上来回移动鼠标，收下柔软的毛球。
-给它们一点时间，多攒几层会收获更多。
-然后把重复的工作交给毛球精灵，去追踪那个陌生的信号。",content,24)
+ clear(body)
+ content=column(body)
  button("开始第一次停留",new_game_prompt,content)
  var load_button := button("继续上一次的驻留",func():
   if model.load_from(SAVE): room.model=model;active=true;close_modal()
@@ -94,9 +105,6 @@ func show_start() -> void:
   button("从自动备份继续",func():
    if model.load_from(SAVE+".bak"):room.model=model;active=true;close_modal()
    else:paragraph("备份也无法读取；原文件已保留。",content),content)
- paragraph("Godot 4.7.1 · 三周目可玩原型
-鼠标移动抚摸 / 按住拖动搬猫 / 点击设施操作 / Esc 暂停
-第一频段：基础经营与日光浴；第二频段：虫害与娱乐；第三频段：祭坛与干扰。",content,16)
 func new_game_prompt() -> void:
  if FileAccess.file_exists(SAVE):
   var content := screen("开始新的驻留？","会重置本Demo的当前进度与永久收藏。旧版摸猫存档不受影响。","new_confirm",true)
@@ -112,7 +120,7 @@ func transact(action: Callable) -> bool:
  else: save_game()
  refresh();return result
 func refresh() -> void:
- header_label.text="第 %d 周目    %s 毛球    ◇ %d 代币    猫 %d · 工人 %d" % [model.round_no,format_money(model.wallet),model.tokens,model.cats.size(),model.workers.size()]
+ header_label.text="第 %d 周目  ·  驻留中\n%s 毛球    ◇ %d 代币\n猫咪 %d    工人 %d" % [model.round_no,format_money(model.wallet),model.tokens,model.cats.size(),model.workers.size()]
  hint_label.text="产毛 ×%.2f   生长 ×%.2f" % [model.effect("yield"),model.effect("speed")]
  for entry in bindings:
   if is_instance_valid(entry.node): entry.node.text=entry.fn.call()
@@ -352,6 +360,19 @@ func save_game() -> bool:
  if result!=OK:message("存档写入失败，请检查磁盘空间；当前游戏仍在运行。")
  return result==OK
 func _unhandled_key_input(event: InputEvent) -> void:
+ if event is InputEventKey and event.pressed and not event.echo and active and not paused and modal=="":
+  if not event.ctrl_pressed and not event.alt_pressed and not event.meta_pressed and not event.shift_pressed:
+   var keys: Array = [KEY_1,KEY_2,KEY_3,KEY_4,KEY_5]
+   var index: int = keys.find(event.keycode)
+   if index >= 0:
+    var at := Vector2(model.rng.randf_range(D.FLOOR.position.x+60,D.FLOOR.end.x-60),model.rng.randf_range(D.FLOOR.position.y+60,D.FLOOR.end.y-60))
+    var cat: Dictionary = model.add_cat(model.clamp_position(at))
+    cat.kind = ["short","giant","static","lucky","alien"][index]
+    message("已添加一只"+D.title(cat.kind))
+    room.step(0.0)
+    save_game()
+    get_viewport().set_input_as_handled()
+    return
  if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_ESCAPE:
   if modal=="":show_pause()
   elif active:close_modal()

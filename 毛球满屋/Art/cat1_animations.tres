@@ -1,0 +1,124 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://Art/Cat1idle/001.png" id="idle_001"]
+[ext_resource type="Texture2D" path="res://Art/Cat1idle/003.png" id="idle_003"]
+[ext_resource type="Texture2D" path="res://Art/Cat1idle/005.png" id="idle_005"]
+[ext_resource type="Texture2D" path="res://Art/Cat1idle/007.png" id="idle_007"]
+[ext_resource type="Texture2D" path="res://Art/Cat1idle/009.png" id="idle_009"]
+[ext_resource type="Texture2D" path="res://Art/Cat1idle/011.png" id="idle_011"]
+[ext_resource type="Texture2D" path="res://Art/Cat1idle/013.png" id="idle_013"]
+[ext_resource type="Texture2D" path="res://Art/Cat1idle/015.png" id="idle_015"]
+[ext_resource type="Texture2D" path="res://Art/Cat1idle/017.png" id="idle_017"]
+[ext_resource type="Texture2D" path="res://Art/Cat1idle/019.png" id="idle_019"]
+[ext_resource type="Texture2D" path="res://Art/Cat1produce/001.png" id="produce_001"]
+[ext_resource type="Texture2D" path="res://Art/Cat1produce/003.png" id="produce_003"]
+[ext_resource type="Texture2D" path="res://Art/Cat1produce/005.png" id="produce_005"]
+[ext_resource type="Texture2D" path="res://Art/Cat1produce/007.png" id="produce_007"]
+[ext_resource type="Texture2D" path="res://Art/Cat1produce/009.png" id="produce_009"]
+[ext_resource type="Texture2D" path="res://Art/Cat1produce/011.png" id="produce_011"]
+[ext_resource type="Texture2D" path="res://Art/Cat1Walk/001.png" id="walk_001"]
+[ext_resource type="Texture2D" path="res://Art/Cat1Walk/002.png" id="walk_002"]
+[ext_resource type="Texture2D" path="res://Art/Cat1Walk/003.png" id="walk_003"]
+[ext_resource type="Texture2D" path="res://Art/Cat1Walk/004.png" id="walk_004"]
+[ext_resource type="Texture2D" path="res://Art/Cat1Walk/005.png" id="walk_005"]
+[ext_resource type="Texture2D" path="res://Art/Cat1Walk/006.png" id="walk_006"]
+[ext_resource type="Texture2D" path="res://Art/Cat1Walk/007.png" id="walk_007"]
+[ext_resource type="Texture2D" path="res://Art/Cat1Walk/008.png" id="walk_008"]
+[ext_resource type="Texture2D" path="res://Art/Cat1Walk/009.png" id="walk_009"]
+[ext_resource type="Texture2D" path="res://Art/Cat1Walk/010.png" id="walk_010"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("idle_001")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_003")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_005")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_007")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_009")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_011")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_013")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_015")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_017")
+}, {
+"duration": 1.0,
+"texture": ExtResource("idle_019")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("produce_001")
+}, {
+"duration": 1.0,
+"texture": ExtResource("produce_003")
+}, {
+"duration": 1.0,
+"texture": ExtResource("produce_005")
+}, {
+"duration": 1.0,
+"texture": ExtResource("produce_007")
+}, {
+"duration": 1.0,
+"texture": ExtResource("produce_009")
+}, {
+"duration": 1.0,
+"texture": ExtResource("produce_011")
+}],
+"loop": 0,
+"name": &"produce",
+"speed": 5.454545454545454
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("walk_001")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_002")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_003")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_004")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_005")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_006")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_007")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_008")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_009")
+}, {
+"duration": 1.0,
+"texture": ExtResource("walk_010")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
