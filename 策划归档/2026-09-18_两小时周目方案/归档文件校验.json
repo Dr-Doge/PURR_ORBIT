@@ -72,8 +72,9 @@
     "sha256": "9632e5ae00571f4c0483dc1aa6585a37c5c1636bc8443fc7daefdadb09730848"
   },
   {
-    "path": "README.md",
-    "sha256": "f964c8d6a92c78e969aed1a389d22c726304ff841a06840066f488cfcdaa31de"
+    "path": "原工作空间README.md",
+    "sha256": "f964c8d6a92c78e969aed1a389d22c726304ff841a06840066f488cfcdaa31de",
+    "original_path": "README.md"
   },
   {
     "path": "毛球满屋/README.md",

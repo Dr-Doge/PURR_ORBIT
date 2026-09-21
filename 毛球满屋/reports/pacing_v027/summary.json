@@ -1,0 +1,126 @@
+{
+  "engine": "4.7.1-stable (official)",
+  "strategy_summary": {
+    "full": {
+      "label": "完整经营",
+      "completed": 3,
+      "min_minutes": 57.37,
+      "median_minutes": 64.65,
+      "max_minutes": 65.73,
+      "median_marks_minutes": {
+        "arcade": 34.83,
+        "complete": 64.65,
+        "feeder": 2.83,
+        "first_bug": 25.12,
+        "first_token": 0.2,
+        "first_worker": 1.0,
+        "hats": 23.67,
+        "restock": 23.6,
+        "sun": 10.17
+      }
+    },
+    "cats": {
+      "label": "只买猫",
+      "completed": 3,
+      "min_minutes": 102.8,
+      "median_minutes": 104.85,
+      "max_minutes": 108.45,
+      "median_marks_minutes": {
+        "complete": 104.85,
+        "first_token": 0.2,
+        "restock": 20.35
+      }
+    },
+    "workers": {
+      "label": "优先工人",
+      "completed": 3,
+      "min_minutes": 63.88,
+      "median_minutes": 64.2,
+      "max_minutes": 66.05,
+      "median_marks_minutes": {
+        "arcade": 35.33,
+        "complete": 64.2,
+        "feeder": 2.83,
+        "first_bug": 25.87,
+        "first_token": 0.2,
+        "first_worker": 1.0,
+        "hats": 24.5,
+        "restock": 24.35,
+        "sun": 11.0
+      }
+    },
+    "arcade": {
+      "label": "增加娱乐设施",
+      "completed": 3,
+      "min_minutes": 59.77,
+      "median_minutes": 67.52,
+      "max_minutes": 69.45,
+      "median_marks_minutes": {
+        "arcade": 34.83,
+        "complete": 67.52,
+        "feeder": 2.83,
+        "first_bug": 25.12,
+        "first_token": 0.2,
+        "first_worker": 1.0,
+        "hats": 23.67,
+        "restock": 23.6,
+        "sun": 10.17
+      }
+    },
+    "layers": {
+      "label": "攒8层",
+      "completed": 3,
+      "min_minutes": 50.07,
+      "median_minutes": 52.58,
+      "max_minutes": 52.9,
+      "median_marks_minutes": {
+        "arcade": 26.33,
+        "complete": 52.58,
+        "feeder": 2.5,
+        "first_bug": 18.95,
+        "first_token": 0.2,
+        "first_worker": 1.17,
+        "hats": 17.5,
+        "restock": 17.43,
+        "sun": 8.0
+      }
+    },
+    "single": {
+      "label": "只收1层",
+      "completed": 3,
+      "min_minutes": 90.87,
+      "median_minutes": 91.7,
+      "max_minutes": 101.17,
+      "median_marks_minutes": {
+        "arcade": 60.33,
+        "complete": 91.7,
+        "feeder": 5.83,
+        "first_bug": 56.87,
+        "first_token": 0.2,
+        "first_worker": 1.33,
+        "hats": 55.5,
+        "restock": 55.35,
+        "sun": 23.5
+      }
+    },
+    "none": {
+      "label": "不购买",
+      "completed": 0,
+      "min_minutes": 120.0,
+      "median_minutes": 120.0,
+      "max_minutes": 120.0,
+      "median_marks_minutes": {
+        "first_token": 0.2,
+        "restock": 101.9
+      }
+    }
+  },
+  "source_sha256": {
+    "balance.gd": "fde269bb8740ab513d86abdd11c3613b0fdbd0591430e4a77a93c912aa7dac2f",
+    "data.gd": "6d183232ddc27bd624bf9182b282a61cc33bb63c84f734ddd910bd32a55d8065",
+    "main.gd": "d7340ea17960712188d84f9a3d0360bfefb07de0da19d3231f9a43e4e102c57a",
+    "model.gd": "33751571b4da2da00a9a8815e8e6b1184b5b8a434d0e7dc6e5844fce40f0cc6f",
+    "room.gd": "a641729b4c266bbe3b891801ebb47da82dc21e292ae043e1ea1706c35701a124"
+  },
+  "limitation": "Simulated strategies, not human playtime. Failed-to-finish routes are right-censored at 120 minutes."
+}

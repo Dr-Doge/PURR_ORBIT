@@ -40,6 +40,10 @@ func ellipse(at: Vector2,radius: Vector2,color: Color) -> void:
  for i in range(32): pts.append(at+Vector2(cos(TAU*i/32),sin(TAU*i/32))*radius)
  draw_colored_polygon(pts,color)
 func consume_event(e: Dictionary) -> void:
+ if e.kind=="money":
+  for old in effects:
+   if old.kind=="money" and old.age<0.35 and old.pos.distance_to(e.pos)<55:
+    old.text="+%.1f" % (float(old.text)+float(e.text));return
  var item: Dictionary = e.duplicate(true)
  item.age = 0.0
  effects.append(item)
@@ -60,6 +64,7 @@ func cat_at(at: Vector2) -> int:
  var nearest: float = 42
  var found: int = -1
  for c in model.cats:
+  if c.station < -1: continue
   var distance: float = c.pos.distance_to(at)
   if distance < nearest: found = c.id; nearest = distance
  return found
@@ -132,9 +137,9 @@ func _draw() -> void:
  ellipse(Vector2(1118,186),Vector2(53,24),Color("387582"))
  draw_arc(Vector2(1130,200),101,-0.15,2.7,40,Color("7193a3"),3)
  for x in [315,715,1035]: draw_rect(Rect2(x,99,12,176),Color("273c4f"))
- text(Vector2(91,154),"喵 星 驻 留 站",27)
- text(Vector2(93,180),"P U R R   /   O R B I T A L   H A B I T A T",13,Color("7392a9"))
- text(Vector2(93,234),["01  /  初次停留","02  /  不速之客","03  /  猫咪的密语"][model.round_no-1],18,MINT)
+ text(Vector2(91,148),"一小片属于猫咪的宇宙",25)
+ text(Vector2(93,184),"给宇宙一点呼噜声。",17,Color("92b0b6"))
+ text(Vector2(93,234),["初次停留  /  慢慢熟悉彼此","新的回声  /  更多奇妙的日常"][model.round_no-1],18,MINT)
  panel(Rect2(48,283,1344,479),Color("233445"),Color("43576a"),16)
  for y in range(300,748,48):
   for x in range(66,1380,64):
@@ -144,7 +149,7 @@ func _draw() -> void:
   for y in range(308,738,40): draw_rect(Rect2(x,y,4,18),Color("577080"))
  panel(Rect2(354,358,645,312),Color("34575d"),Color("608781"),12)
  for y in range(376,657,20): draw_line(Vector2(372,y),Vector2(983,y),Color(0.53,0.74,0.69,0.06),1)
- text(Vector2(389,640),"HABITAT  /  请善待你的奇妙室友",12,Color("7baba6"))
+
  # Station furniture lives inside the same full-screen world.
  for i in range(4):
   var at := Vector2(110+i*100,719)
@@ -191,8 +196,11 @@ func _draw() -> void:
    panel(Rect2(520,752,470,32),Color("101f2b"),Color("52796e"))
    text(Vector2(535,774),desc,16,MINT)
 func draw_cat(c: Dictionary) -> void:
- var at: Vector2 = c.pos-Vector2(0,sin(minf(1,c.pop)*PI)*10)
- var px: float = 4.0*(1.35 if c.kind=="giant" else 1.0)*(1+minf(c.layers,8)*0.026)
+ var base_px: float = 4.0*(1.35 if c.kind=="giant" else 1.0)*(1+minf(c.layers,D.MAX_LAYERS)*D.CAT_LAYER_SIZE_STEP)
+ var pulse: float = sin(PI*clampf(c.pop/D.CAT_PULSE_DURATION,0.0,1.0))
+ var px: float = base_px*(1.0+D.CAT_PULSE_AMOUNT*pulse)
+ # Keep the feet planted while the body expands; persistent fur size is separate.
+ var at: Vector2 = c.pos+Vector2(0,6.0*(base_px-px))
  var color: Color = [Color("edbd8b"),Color("e5e5d3"),Color("baa0ce")][int(c.color)]
  if c.kind == "alien": color = Color("8cdf8e")
  if c.kind == "lucky": color = Color("f6e6b8")
@@ -219,7 +227,7 @@ func draw_cat(c: Dictionary) -> void:
   draw_rect(Rect2(at+Vector2(-13,15),Vector2(26,7)),Color("c86865"))
   draw_circle(at+Vector2(0,22),5,GOLD)
   draw_rect(Rect2(at+Vector2(31,-21),Vector2(8,22)),color)
- if c.layers > 0:
+ if c.layers > 0 and (c.id==hover or c.layers>=model.harvest_target):
   panel(Rect2(c.pos+Vector2(18,-43),Vector2(29,23)),GOLD if c.layers>=model.harvest_target else Color("65887c"),Color.TRANSPARENT,4)
   text(c.pos+Vector2(24,-26),str(c.layers),14,Color("173432"))
  if c.id == hover:
@@ -231,13 +239,13 @@ func draw_facility(f: Dictionary) -> void:
  var at: Vector2 = f.pos
  ellipse(at+Vector2(0,40),Vector2(64,15),Color(0.01,0.05,0.09,0.3))
  if f.kind == "feeder":
-  draw_circle(at,200,Color(0.63,0.82,0.57,0.035))
+  if pointer.distance_to(at)<70:draw_circle(at,200,Color(0.63,0.82,0.57,0.055))
   panel(Rect2(at-Vector2(40,46),Vector2(80,76)),Color("8aa18b"),Color("bad4ba"))
   panel(Rect2(at-Vector2(25,34),Vector2(50,35)),Color("304b45"))
-  draw_rect(Rect2(at+Vector2(-20,-29),Vector2(40*float(f.grain)/40,25)),GOLD)
+  draw_rect(Rect2(at+Vector2(-20,-29),Vector2(40*float(f.grain)/model.feed_capacity(),25)),GOLD)
   panel(Rect2(at+Vector2(-46,16),Vector2(92,24)),Color("556d6b"),Color("8fa997"))
   text(at+Vector2(-27,11),"FEED",13,Color("203c39"))
-  text(at+Vector2(-47,70),"猫粮 %d/40" % f.grain,13,GOLD)
+  text(at+Vector2(-47,70),"猫粮 %d/%d" % [f.grain,model.feed_capacity()],13,GOLD)
   if f.bugs > 0:
    panel(Rect2(at+Vector2(23,-57),Vector2(36,27)),Color("c96f78"))
    text(at+Vector2(29,-37),"虫！",14)
@@ -290,4 +298,4 @@ func draw_worker(w: Dictionary) -> void:
  if w.role != "general":
   draw_rect(Rect2(at+Vector2(-15,-18),Vector2(30,5)),GOLD)
   draw_rect(Rect2(at+Vector2(-10,-27),Vector2(20,10)),GOLD)
- text(at+Vector2(-25,39),w.status,11,Color("a1b8c7"))
+ if pointer.distance_to(at)<45:text(at+Vector2(-25,39),w.status,13,Color("bdd2d4"))
