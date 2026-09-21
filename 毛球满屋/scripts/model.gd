@@ -215,9 +215,9 @@ func pet(id: int,distance: float) -> void:
  if c.is_empty() or c.station != -1 or c.layers <= 0 or c.dragging: return
  c.pet += clampf(distance,0,45)
  if c.pet >= D.PET_DISTANCE: harvest(id)
-func money(amount: float,at: Vector2) -> void:
+func money(amount: float,at: Vector2,fur_count: int = 0,cat_kind: String = "") -> void:
  wallet += amount
- events.append({"kind":"money","pos":at,"text":"+%.1f" % amount})
+ events.append({"kind":"money","pos":at,"text":"+%.1f" % amount,"fur_count":fur_count,"cat_kind":cat_kind})
 func prize(c: Dictionary,value: float) -> void:
  var item: Dictionary = {"id":uid(),"name":D.ITEMS[rng.randi_range(0,D.ITEMS.size()-1)],"value":value}
  inventory.append(item)
@@ -232,7 +232,7 @@ func harvest(id: int) -> bool:
  if c.is_empty() or c.station != -1 or c.layers <= 0: return false
  var n: int = c.layers
  var output: float = harvest_value(c)
- money(output,c.pos)
+ money(output,c.pos,n,c.kind)
  c.layers = 0; c.pet = 0.0; c.pop = D.CAT_PULSE_DURATION; harvests += 1
  token_progress += n
  contribute(output,c.pos)
@@ -250,6 +250,7 @@ func contribute(amount: float,at: Vector2 = Vector2.ZERO) -> void:
  production += amount
  if not first_token and token_progress >= B.FIRST_TOKEN_LAYERS:
   first_token = true; minted = 1; tokens += 1
+  events.append({"kind":"token","pos":at,"text":"+1 神秘代币"})
   notify("猫咪留下了一枚陌生的代币。远处传来一个信号……")
  if not first_token: return
  while minted < B.TOKEN_THRESHOLDS.size() and production >= B.TOKEN_THRESHOLDS[minted]:

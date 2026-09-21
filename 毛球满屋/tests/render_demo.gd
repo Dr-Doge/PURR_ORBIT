@@ -10,7 +10,7 @@ func frames(count: int=4) -> void:
  for i in range(count):await process_frame
 func capture(name: String) -> void:
  await frames(5);await RenderingServer.frame_post_draw
- check(root.get_texture().get_image().save_png(ProjectSettings.globalize_path("res://reports/v027/"+name+".png"))==OK,"Capture "+name)
+ check(root.get_texture().get_image().save_png(ProjectSettings.globalize_path("res://reports/art_merge/"+name+".png"))==OK,"Capture "+name)
  check(game.card.get_global_rect().end.x<=game.size.x+1 and game.card.get_global_rect().end.y<=game.size.y+1,"Panel within viewport: "+name)
 func move(at: Vector2) -> void:
  var e:=InputEventMouseMotion.new();e.position=at;root.push_input(e)
@@ -27,25 +27,25 @@ func press(text: String) -> void:
  if b==null:return
  click(b.global_position+b.size/2,true);click(b.global_position+b.size/2,false);await frames()
 func run() -> void:
- DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/v027"))
+ DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/art_merge"))
  game=Main.instantiate();game.testing=true;root.add_child(game)
  await capture("01_start");await press("开始游戏")
  if not game.active:game.start_game()
  await frames()
  var c: Dictionary=game.model.cats[0];var at: Vector2=c.pos
- for i in range(8):move(at+Vector2(-18 if i%2 else 18,0));await process_frame
+ for i in range(8):move(game.room.screen_position(at+Vector2(-18 if i%2 else 18,0)));await process_frame
  check(game.model.wallet>=3,"Real mouse hover harvest")
  await capture("02_room")
  game.model.wallet=50000
  for key in ["worker","feeder","sun"]:game.model.research(key)
  game.model.buy("feeder",Vector2(330,470));game.model.buy("sun",Vector2(850,465))
  var sun: Dictionary=game.model.facilities[1]
- game.model.move_cat(c.id,Vector2(550,470));move(c.pos);click(c.pos,true);await process_frame
- move(sun.pos);click(sun.pos,false);await process_frame
+ game.model.move_cat(c.id,Vector2(550,470));move(game.room.screen_position(c.pos));click(game.room.screen_position(c.pos),true);await process_frame
+ move(game.room.screen_position(sun.pos));click(game.room.screen_position(sun.pos),false);await process_frame
  check(c.station==sun.id,"Real mouse drag assigns sun")
  game.show_tree("sun");await capture("03_tree")
  game.model.move_cat(c.id,Vector2(550,470));c.layers=3;var before: float=game.model.wallet
- for i in range(8):move(c.pos+Vector2(-18 if i%2 else 18,0));await process_frame
+ for i in range(8):move(game.room.screen_position(c.pos+Vector2(-18 if i%2 else 18,0)));await process_frame
  check(game.model.wallet==before,"Modal blocks scene input")
  game.show_shop();await capture("04_shop");await press("购买 · 45 毛球")
  check(game.model.workers.size()==1,"Real shop button buys worker")
