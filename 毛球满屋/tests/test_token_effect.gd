@@ -1,4 +1,5 @@
 extends SceneTree
+const H=preload("res://tests/harvest_fixture.gd")
 const Main=preload("res://scenes/main.tscn")
 var failures: int=0
 func check(ok: bool,message: String) -> void:
@@ -12,7 +13,7 @@ func run() -> void:
  root.size=Vector2i(1440,900)
  var game=Main.instantiate();game.testing=true;root.add_child(game);game.set_process(false);game.start_game()
  var c: Dictionary=game.model.cats[0];c.layers=3
- game.model.harvest(c.id)
+ H.settle(game.model,c.id)
  var token_events: int=0
  for event in game.model.events:
   if event.kind=="token":token_events+=1;game.room.consume_event(event)
@@ -33,8 +34,9 @@ func run() -> void:
  var target: Vector2=game.room.stage_origin()+Vector2(1250,137)*game.room.stage_scale()
  check(arrived.position.distance_to(target)<0.01,"Token reaches UI")
  game.room.step(0.3);check(game.room.effects.is_empty(),"Effect cleans up")
+ H.wait_ready(game.model,c)
  game.model.events.clear();game.model.production=game.model.B.TOKEN_THRESHOLDS[1]-3;c.layers=1
- game.model.harvest(c.id)
+ H.settle(game.model,c.id)
  token_events=0
  for event in game.model.events:
   if event.kind=="token":token_events+=1

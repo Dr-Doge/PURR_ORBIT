@@ -1,4 +1,5 @@
 extends SceneTree
+const H=preload("res://tests/harvest_fixture.gd")
 const Main = preload("res://scripts/main.gd")
 const Visuals = preload("res://scripts/cat_visuals.gd")
 var failures: int = 0
@@ -41,11 +42,12 @@ func run() -> void:
  check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("walk",0),"Lucky walk bound")
  lucky.layers=1
  visuals.step(app.model,0)
- app.model.harvest(lucky.id)
+ H.settle(app.model,lucky.id)
  visuals.step(app.model,0)
  check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",0),"Lucky harvest bound")
- visuals.step(app.model,1.05)
+ app.model.tick(1.05);visuals.step(app.model,1.05)
  check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",7),"Last produce frame plays before hold ends")
+ app.model.tick(0.06);lucky.pos=visuals.states[lucky.id].pos
  visuals.step(app.model,0.06)
  check(visuals.states[lucky.id].animation=="idle","Produce completes")
  app.queue_free()

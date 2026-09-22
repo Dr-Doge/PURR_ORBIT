@@ -1,4 +1,5 @@
 extends SceneTree
+const H=preload("res://tests/harvest_fixture.gd")
 const M=preload("res://scripts/model.gd")
 const D=preload("res://scripts/data.gd")
 const B=preload("res://scripts/balance.gd")
@@ -19,20 +20,20 @@ func restock(m) -> void:
  for i in range(12):m.draw_capsule()
 func run() -> void:
  var m=M.new();m.rng.seed=1
- m.cats[0].layers=0;sim(m,6.1)
- check(m.cats[0].layers==1 and m.cats[1].layers==1,"Equal layer CDs")
+ m.cats[0].layers=1;sim(m,10.1)
+ check(m.cats[0].layers==2 and m.cats[1].layers==2,"Equal layer CDs")
  check(m.wallet==0,"Growth is not automatic harvest")
- sim(m,12);var c: Dictionary=m.cats[0]
- check(c.layers==3 and m.harvest_value(c)==18,"Stack formula: 3 layers = 18")
- var partial: float=c.growth;m.harvest(c.id)
- check(c.layers==0 and c.growth==partial,"Harvest preserves partial growth")
- check(m.first_token and m.tokens==1 and m.production==18,"First contact after 3 harvested layers")
+ sim(m,20);var c: Dictionary=m.cats[0]
+ check(c.layers==4 and m.harvest_value(c)==30,"Stack formula: 4 layers = 30")
+ var partial: float=c.growth;H.settle(m,c.id)
+ check(c.layers==1 and c.growth==partial,"Harvest preserves partial growth")
+ check(m.first_token and m.tokens==1 and m.production==30,"First contact after 3 harvested layers")
  var value: float=m.production;check(not m.harvest(c.id) and m.production==value,"No empty harvest rewards")
  c.layers=2;c.dragging=true;m.pet(c.id,1000);check(c.layers==2,"Drag does not harvest")
  c.dragging=false
- for i in range(3):m.pet(c.id,45)
- check(c.layers==0,"Hover movement completes harvest")
- sim(m,60);check(c.layers==8,"Fur cap")
+ H.rub(m,c.id)
+ check(c.layers==1,"Hover movement completes harvest")
+ sim(m,80);check(c.layers==8,"Fur cap")
  m=funded();check(not m.research("arcade") and not m.buy("arcade"),"Money cannot bypass stage gates")
  check(not m.research("altar") and not m.buy("altar") and not m.buy("alien"),"Future content unavailable")
  check(m.has("sun") and m.lv("feeder","food")==0,"Branches not mandatory")
@@ -40,10 +41,10 @@ func run() -> void:
  m.refill(f.id);check(f.grain==20 and m.food[0]==0,"Refill conserves grain")
  m.buy("sun",Vector2(950,500));var sun: Dictionary=m.facilities[1]
  c=m.cats[0];m.move_cat(c.id,f.pos);c.layers=2;var before: float=m.harvest_value(c)
- sim(m,0.1);check(m.harvest_value(c)>before,"Feeding improves output")
+ sim(m,3.5);check(m.harvest_value(c)>before,"Actual arrival and eating improves output")
  f.neglect=999;sim(m,1);check(f.bugs==0,"No stage-one pests")
- c.layers=0;m.assign(c.id,sun.id);sim(m,2.5)
- check(c.layers==1 and c.station==-1,"Sun adds a layer and releases cat")
+ c.layers=1;m.assign(c.id,sun.id);sim(m,2.5)
+ check(c.layers==2 and c.station==-1,"Sun adds a layer and releases cat")
  m.buy("worker");m.workers[0].job={"kind":"harvest","target":c.id,"cat":c.id};m.workers[0].clock=0.3
  var snap: Dictionary=m.snapshot();restock(m)
  check(m.round_no==2 and m.owned.size()==12 and m.pool().size()==24,"12th draw adds 24 new items")
@@ -67,11 +68,12 @@ func run() -> void:
  check(not arcade.broken and not m.research("maint"),"No interference or maintenance")
  m.move_cat(c.id,Vector2(600,500));c.kind="static";c.layers=1
  var other: Dictionary=m.cats[1];other.pos=c.pos+Vector2(30,0);other.layers=5
- before=m.production;value=m.harvest_value(c);m.harvest(c.id)
+ before=m.production;value=m.harvest_value(c);H.settle(m,c.id)
  check(is_equal_approx(m.production-before,value) and other.layers==5,"Static bonus does not duplicate contribution or consume neighbour fur")
  c.kind="lucky";var heads: int=0;var tails: int=0
  for i in range(50):
-  c.layers=1;before=m.wallet;var count: int=m.inventory.size();value=m.production;var primary: float=m.harvest_value(c);m.harvest(c.id)
+  H.wait_ready(m,c)
+  c.layers=1;before=m.wallet;var count: int=m.inventory.size();value=m.production;var primary: float=m.harvest_value(c);H.settle(m,c.id)
   if m.inventory.size()>count:heads+=1
   else:tails+=1
   check(m.wallet>before and is_equal_approx(m.production-value,primary),"Coin keeps base rewards without double credit")
@@ -88,8 +90,8 @@ func run() -> void:
  invalid=saved.duplicate(true);invalid.wallet=-1.0;check(not restored.restore(invalid),"Negative wallet rejected")
  invalid=saved.duplicate(true);invalid.owned.append(invalid.owned[0]);check(not restored.restore(invalid),"Duplicate collection rejected")
  invalid=saved.duplicate(true);invalid.production=NAN;check(not restored.restore(invalid),"NaN rejected")
- m=funded();m.harvest_target=3;m.buy("worker",Vector2(550,500));c=m.cats[0];m.move_cat(c.id,Vector2(550,500));c.layers=3;m.cats[1].layers=0
- sim(m,1.5);check(m.harvests==1,"Worker independently harvests")
+ m=funded();m.levels["worker:harvest_layers"]=2;m.buy("worker",Vector2(550,500));c=m.cats[0];m.move_cat(c.id,Vector2(550,500));c.layers=3;m.cats[1].layers=1
+ sim(m,4.5);check(m.harvests==1,"Worker independently harvests")
  var speed: float=m.work_speed();m.upgrade("worker","efficiency");check(m.work_speed()>speed,"Efficiency branch affects work")
  check(m.feed_capacity()==80,"Initial feeder capacity");m.upgrade("feeder","capacity");check(m.feed_capacity()==120,"Capacity branch")
  var balance: float=m.wallet;var grain: int=m.food[0]

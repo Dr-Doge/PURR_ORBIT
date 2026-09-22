@@ -27,10 +27,10 @@ func run() -> void:
  check(game.room._get_cursor_shape(mapped)==Control.CURSOR_CROSS,"Hovering a pettable cat selects glove")
  check(game.room._get_cursor_shape(game.room.screen_position(Vector2(180,680)))==Control.CURSOR_ARROW,"Empty floor selects mouse")
  check(game.room.world(mapped).distance_to(cat.pos)<0.001,"Input mapping inverts presentation coordinates")
- for i in range(8):
+ for i in range(48):
   var motion:=InputEventMouseMotion.new()
   motion.position=game.room.screen_position(cat.pos+Vector2(-18 if i%2 else 18,0))
-  root.push_input(motion);await process_frame
+  root.push_input(motion);game.model.tick(0.05);await process_frame
  check(game.model.harvests>0,"Real mouse petting works on remapped cats")
  game.room.step(0)
  game.room.backdrop.elapsed=0;game.room.backdrop.step(0)

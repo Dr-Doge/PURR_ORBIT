@@ -19,6 +19,8 @@ func decisions(m, mode: String, second: int) -> void:
  if not m.has("worker"): m.research("worker"); return
  if m.workers.size()<1: m.buy("worker"); return
  if m.cats.size()<4: m.buy("short",Vector2(500+(m.cats.size()%3)*80,480)); return
+ if mode!="single" and m.lv("worker","harvest_layers")<(7 if mode=="layers" else 5):
+  if m.upgrade("worker","harvest_layers"):return
  if not m.has("feeder"): m.research("feeder"); return
  if m.count("feeder")==0: m.buy("feeder",Vector2(600,480)); return
  if m.food[0]<20: m.buy_food(0); return
@@ -36,7 +38,7 @@ func decisions(m, mode: String, second: int) -> void:
  for subject in D.BRANCHES:
   if not m.has(subject):continue
   for key in D.BRANCHES[subject]:
-   if key in ["food","transform"]:continue
+   if key in ["food","transform","harvest_layers"]:continue
    var cost: int=m.upgrade_price(subject,key)
    if cost>0:options.append({"s":subject,"k":key,"price":cost})
  options.sort_custom(func(a,b):return a.price<b.price)
@@ -49,10 +51,18 @@ func scenario(mode: String, seed: int, calibration: bool = false) -> Dictionary:
  var marks: Dictionary={};var sampled: Array=[9.0];var draw_times: Array=[];var decisions_log: Array=[]
  var targets: Array=[120,240,360,480,600,750,900,1050,1200,1350,1500]
  for i in range(1,25):targets.append(1500+roundi(i*87.5))
+ var manual_id: int=-1;var manual_revision: int=0
  var max_seconds: int=3600 if calibration else 7200
  for second in range(1,max_seconds+1):
-  m.harvest_target=8 if mode=="layers" else (1 if mode=="single" else 6)
-  for step in range(10):m.tick(0.1)
+  var manual_goal: int=8 if mode=="layers" else (1 if mode=="single" else 6)
+  for step in range(10):
+   var hover_target: Dictionary=m.cat(manual_id)
+   m.set_hovered_cat(manual_id if not hover_target.is_empty() and m.c_revision(hover_target)==manual_revision else -1)
+   m.tick(0.1)
+   if manual_id>=0:
+    var target: Dictionary=m.cat(manual_id)
+    if target.is_empty() or target.station!=-1 or m.c_revision(target)!=manual_revision:manual_id=-1
+    else:m.pet(manual_id,20)
   for f in m.facilities:
    mark(m,marks,"first_bug",f.bugs>0)
    if second%3==0 and f.bugs>0:m.clean(f.id)
@@ -60,13 +70,14 @@ func scenario(mode: String, seed: int, calibration: bool = false) -> Dictionary:
    if f.kind=="arcade" and m.occupants(f.id).is_empty():
     for c in m.cats:
      if c.station==-1 and c.kind!="giant":m.assign(c.id,f.id);break
-  if second%3==0:
+  if second%3==0 and manual_id<0:
    for c in m.cats:
-    if c.station==-1 and c.layers >= (1 if not m.first_token else m.harvest_target):m.harvest(c.id);break
+    if c.station==-1 and c.layers >= (1 if not m.first_token else manual_goal):
+     manual_id=c.id;manual_revision=m.c_revision(c);m.set_hovered_cat(c.id);m.pet(c.id,20);break
   if second%10==0:
    m.sell_all()
    var before: float=m.wallet
-   decisions(m,"full" if mode in ["layers","single"] else mode,second)
+   decisions(m,mode,second)
    if m.wallet<before:decisions_log.append(second)
   mark(m,marks,"first_token",m.first_token)
   if m.first_token and not m.gacha_ready:m.accept_contact()
@@ -91,9 +102,9 @@ func run() -> void:
     var result: Dictionary=scenario(mode,seed)
     results.append(result)
     print(mode," / ",seed," : ",snappedf(result.seconds/60,0.1)," min; ",result.collection," items; ",result.marks)
- var folder: String="res://reports/pacing_v027"
+ var folder: String="res://reports/pacing_hover_008"
  DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(folder))
  var f:=FileAccess.open(folder+("/calibration.json" if calibrate else "/scenarios.json"),FileAccess.WRITE)
- f.store_string(JSON.stringify({"engine":Engine.get_version_info().string,"method":"Simulation only, 0.1-second model steps: at most one manual harvest per 3 seconds, one investment per 10 seconds, sales every 10 seconds. No human time claim; no user saves. Calibration uses an offline reference schedule; shipped model only reads fixed production thresholds.","results":results},"  "));f.close()
+ f.store_string(JSON.stringify({"engine":Engine.get_version_info().string,"method":"Simulation only, 0.1-second model steps: start at most one manual interaction per 3 seconds, 20 effective motion pixels per 0.1 seconds, saturating distance threshold, hover held during each manual gesture and released after settlement, paid worker thresholds, one investment per 10 seconds, sales every 10 seconds. No human time claim; no user saves. Calibration uses an offline reference schedule; shipped model only reads fixed production thresholds.","results":results},"  "));f.close()
  print("PACING FINISHED")
  quit()
