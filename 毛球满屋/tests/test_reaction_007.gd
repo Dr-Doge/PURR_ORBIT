@@ -27,7 +27,7 @@ func run() -> void:
   v.states.clear();v.step(m,8)
   check(c.reaction_left==duration and v.states[c.id].age==0,"Visual rebuild or visual-only elapsed cannot clear cooldown: "+kind)
   m.tick(duration-0.01);v.step(m,0)
-  check(m.reacting(c) and v.states[c.id].animation=="produce" and v.texture(c.id)==A.frames_for(kind).get_frame_texture("produce",A.frames_for(kind).get_frame_count("produce")-1),"Last frame and lock stay aligned: "+kind)
+  check(m.reacting(c) and v.states[c.id].animation=="produce" and v.texture(c.id)==v.states[c.id].frames.get_frame_texture("produce",v.states[c.id].frames.get_frame_count("produce")-1),"Last frame and lock stay aligned: "+kind)
   rub(m,c);check(m.harvests==count and c.pet==0,"No queued gesture near cooldown end: "+kind)
   m.tick(0.011);v.step(m,0)
   check(not m.reacting(c) and v.states[c.id].animation!="produce" and m.harvests==count,"End unlocks without automatic payout: "+kind)

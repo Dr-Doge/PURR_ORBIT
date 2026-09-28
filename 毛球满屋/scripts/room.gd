@@ -300,6 +300,7 @@ func cat_extent(c: Dictionary, animate: bool = true) -> float:
  return extent
 func cat_rect(c: Dictionary) -> Rect2:
  var extent: float=cat_extent(c)
+ if cat_visuals.states.get(c.id,{}).get("frames")==cat_visuals.Short.FRAMES:extent*=0.8
  # Anchor the opaque foot pixels, including during the growth pulse.
  return Rect2(c.pos+cat_visuals.visual_offset(c.id)+Vector2(-extent/2.0,26.0-extent*cat_visuals.foot_anchor(c.id)),Vector2.ONE*extent)
 func draw_cat(c: Dictionary) -> void:

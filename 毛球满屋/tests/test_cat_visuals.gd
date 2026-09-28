@@ -19,7 +19,7 @@ func run() -> void:
  var before: PackedByteArray = var_to_bytes(model.cats)
  visuals.step(model,0.25)
  check(var_to_bytes(model.cats) == before,"Visual update does not mutate cats")
- check(visuals.texture(c.id) == Visuals.FRAMES.get_frame_texture("idle",2),"Idle advances frames")
+ check(visuals.texture(c.id) == Visuals.Short.FRAMES.get_frame_texture("idle",2),"Idle advances frames")
  c.pos.x += 1.0
  visuals.step(model,0.1)
  check(visuals.states[c.id].animation == "walk" and visuals.flipped(c.id),"Right movement walks and faces right")

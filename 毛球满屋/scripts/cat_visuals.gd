@@ -1,5 +1,6 @@
 extends RefCounted
 ## Presentation-only animation state; never writes to the simulation or saves.
+const Short = preload("res://scripts/short_cat_visuals.gd")
 const Alien = preload("res://scripts/alien_cat_visuals.gd")
 const A = preload("res://scripts/cat_animation_data.gd")
 const FRAMES = A.FRAMES
@@ -20,6 +21,7 @@ func step(model, dt: float) -> void:
    states[c.id] = {"pos":c.pos,"layers":c.layers,"revision":c.get("harvest_revision",0),"animation":"idle","age":0.0,"flip":false,"motion_tick":-1,"displaced":false}
   var state: Dictionary = states[c.id]
   var visual_kind: String = c.get("reaction_kind",c.kind) if model.reacting(c) else c.kind
+  if visual_kind != "short":state.erase("clip")
   if visual_kind != "alien":
    state.frames = A.frames_for(visual_kind)
    state.float_y = 0.0
@@ -34,7 +36,9 @@ func step(model, dt: float) -> void:
   if walking and absf(movement.x)>0.001: state.flip = movement.x>0
   state.age += dt
   # Simulation owns this clock, including pause/load/offscreen and animation interruption.
-  if visual_kind == "alien":
+  if visual_kind == "short":
+   Short.step(state,model,c,movement if movement!=Vector2.ZERO else tick_motion,walking,dt)
+  elif visual_kind == "alien":
    if model.reacting(c):
     if state.get("frames") != Alien.FRAMES: Alien.step(state,false,false)
     if state.animation != "produce": Alien.begin(state,"produce")
@@ -64,7 +68,7 @@ func duration(animation: String, frames: SpriteFrames = FRAMES) -> float:
 
 func texture(id: int) -> Texture2D:
  var state: Dictionary = states.get(id,{"animation":"idle","age":0.0})
- var animation: String = state.animation
+ var animation: String = state.get("clip",state.animation)
  var frames: SpriteFrames = state.get("frames",FRAMES)
  var frame: int = A.frame_at(animation,frames,state.age)
  return frames.get_frame_texture(animation,frame)
