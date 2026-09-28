@@ -36,3 +36,13 @@ main.gd绑定静态HUD／菜单；room.gd同步模型与Cats／Facilities／Work
 
 
 2026-09-28第二次同步：short_cat的Animation与room_3d的两个初始Sprite3D均绑定新版图集。短毛资源包含idle/walk上下方向、pet、groom、produce，256×256切片；旧cat1_animations仍作为1.1秒模型冷却基准保留，不是当前短毛显示素材。预览与运行核对见reports/merge_cat1new_928。
+
+## 独立“测试场景”（004）
+
+打开`测试场景.tscn`按F6；F5仍是正式3D入口。展开Room / WhiteboxViewport / World3D / WhiteboxRoom / ActorLighting，或直接打开`test_actors.tscn`，可查看12猫、7设施、2工人和仪器的22个保存Sprite3D。`test_whitebox.tscn`独立网格／材质，`ui/test_hud.tscn`独立UI样式；共有美术原件保持引用。
+
+真实模型的位置、猫种与毛层来自根下TestSetup的Marker2D与元数据。直接移动ActorLighting卡片只改静态预览，运行时会按模型同步；要改变实际预置，请改TestSetup。新模型由lab_model.configure构造，不受正式场景只读取两只初始猫的限制。
+
+改TestSetup后需要刷新静态预览时，仅用本次`tests/refresh_lab_preview.gd`：先带`-- --textures`生成占位PNG，经编辑器导入后再带`-- --actors`保存test_actors。这是仅针对测试场景的预览工具，不运行冻结的历史bake、不覆盖room_3d或whitebox_room。正式与测试的屏幕投影和动画仍共用运行逻辑。
+
+人设／存档／操作及343项验证见`../reports/lab_004/README.md`。

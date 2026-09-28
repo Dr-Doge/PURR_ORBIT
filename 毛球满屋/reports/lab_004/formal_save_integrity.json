@@ -1,0 +1,19 @@
+{
+  "before": {
+    "space_cats_v27.save": "E46BA29720CE5A3A0C22307CD407871AE96A33DB345D572F19CA9979C3F1BBE2",
+    "space_cats_v27.save.bak": "B127AE9264DC41F5E07E7E78F9A331B5BA3BFADF8BFCCCCCBCE543960A0934E3"
+  },
+  "unchanged": false,
+  "externalGames": [
+    {
+      "ProcessId": 50004,
+      "Name": "Godot_v4.7.1-stable_win64.exe",
+      "CreationDate": "2026-09-28T17:34:43.307157+08:00"
+    }
+  ],
+  "status": "inconclusive_external_game_running",
+  "after": {
+    "space_cats_v27.save": "F12059F65ABCDBD451B61113E8798C5BF691F8A22F756126EE31CD65BA3EE2FF",
+    "space_cats_v27.save.bak": "E46BA29720CE5A3A0C22307CD407871AE96A33DB345D572F19CA9979C3F1BBE2"
+  }
+}

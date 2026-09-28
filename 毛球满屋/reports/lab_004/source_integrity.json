@@ -1,0 +1,24 @@
+{
+  "source": "404099a50031d72e50b4da82d891bae8dddddc41",
+  "protected_paths": [
+    "毛球满屋/project.godot",
+    "毛球满屋/scripts/model.gd",
+    "毛球满屋/scripts/balance.gd",
+    "毛球满屋/scripts/data.gd",
+    "毛球满屋/scripts/tree_specs.gd",
+    "毛球满屋/scripts/build_rules.gd",
+    "毛球满屋/scripts/cat_space.gd",
+    "毛球满屋/scripts/cat_visuals.gd",
+    "毛球满屋/scripts/cat_animation_data.gd",
+    "毛球满屋/scripts/main.gd",
+    "毛球满屋/scripts/room_3d.gd",
+    "毛球满屋/scripts/scene_3d.gd",
+    "毛球满屋/scenes/3D scene.tscn",
+    "毛球满屋/scenes/room_3d.tscn",
+    "毛球满屋/scenes/whitebox_room.tscn",
+    "毛球满屋/scenes/ui/hud_3d.tscn",
+    "毛球满屋/Art"
+  ],
+  "changed_protected_paths": [],
+  "unchanged": true
+}

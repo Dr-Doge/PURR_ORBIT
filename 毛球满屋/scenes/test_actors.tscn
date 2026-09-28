@@ -1,0 +1,486 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/actor_lighting_3d.gd" id="1_ktouw"]
+[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-侧面 · 待机.png" id="2_lmntd"]
+[ext_resource type="Texture2D" path="res://Art/Cat5idle/001.png" id="3_vqe3d"]
+[ext_resource type="Texture2D" path="res://Art/Cat8idle/001.png" id="4_83su1"]
+[ext_resource type="Texture2D" path="res://Art/Cat10idle/001.png" id="5_fq32b"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Walk/001.png" id="6_l7dmw"]
+[ext_resource type="Texture2D" path="res://Art/Feed.png" id="7_y0mii"]
+[ext_resource type="Texture2D" path="res://Art/Light.png" id="8_flyte"]
+[ext_resource type="Texture2D" path="res://data/lab_previews/Facility_17.png" id="9_sces3"]
+[ext_resource type="Texture2D" path="res://data/lab_previews/Facility_18.png" id="10_e3igm"]
+[ext_resource type="Texture2D" path="res://data/lab_previews/Facility_19.png" id="11_obehp"]
+[ext_resource type="Texture2D" path="res://data/lab_previews/Worker_20.png" id="12_gpr2w"]
+[ext_resource type="Texture2D" path="res://data/lab_previews/Worker_21.png" id="13_tmqkk"]
+[ext_resource type="Texture2D" path="res://Art/Gachapon.png" id="14_xy5t0"]
+
+[sub_resource type="AtlasTexture" id="idle_0"]
+atlas = ExtResource("2_lmntd")
+region = Rect2(0, 0, 256, 256)
+filter_clip = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktouw"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = SubResource("idle_0")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lmntd"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = SubResource("idle_0")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqe3d"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = SubResource("idle_0")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83su1"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = SubResource("idle_0")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fq32b"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = SubResource("idle_0")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7dmw"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = SubResource("idle_0")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0mii"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("3_vqe3d")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flyte"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("3_vqe3d")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sces3"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("4_83su1")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3igm"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("4_83su1")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obehp"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("5_fq32b")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpr2w"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("6_l7dmw")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmqkk"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("7_y0mii")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xy5t0"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("7_y0mii")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctxf6"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("8_flyte")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pg1sy"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("8_flyte")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3nhb"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("9_sces3")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlxjs"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("10_e3igm")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4idlf"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("11_obehp")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fq4yh"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("12_gpr2w")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvb7n"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("13_tmqkk")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pkip"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("14_xy5t0")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[node name="ActorLighting" type="Node3D" unique_id=993389391]
+script = ExtResource("1_ktouw")
+
+[node name="Cat_1" type="Sprite3D" parent="." unique_id=1194911306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73458, 0.33484268, -2.4537048)
+material_override = SubResource("StandardMaterial3D_ktouw")
+cast_shadow = 2
+pixel_size = 0.0027903528
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = SubResource("idle_0")
+
+[node name="Cat_2" type="Sprite3D" parent="." unique_id=1488460094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4531064, 0.34332657, -2.4537048)
+material_override = SubResource("StandardMaterial3D_lmntd")
+cast_shadow = 2
+pixel_size = 0.0028610637
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = SubResource("idle_0")
+
+[node name="Cat_3" type="Sprite3D" parent="." unique_id=119814978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1716324, 0.36029816, -2.4537048)
+material_override = SubResource("StandardMaterial3D_vqe3d")
+cast_shadow = 2
+pixel_size = 0.0030024848
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = SubResource("idle_0")
+
+[node name="Cat_4" type="Sprite3D" parent="." unique_id=1509660659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10984091, 0.37726974, -2.4537048)
+material_override = SubResource("StandardMaterial3D_83su1")
+cast_shadow = 2
+pixel_size = 0.0031439064
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = SubResource("idle_0")
+
+[node name="Cat_5" type="Sprite3D" parent="." unique_id=635656546]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.391316, 0.33478165, -2.1199646)
+material_override = SubResource("StandardMaterial3D_fq32b")
+cast_shadow = 2
+pixel_size = 0.002789845
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = SubResource("idle_0")
+
+[node name="Cat_6" type="Sprite3D" parent="." unique_id=342111371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.636184, 0.35157776, -1.2411652)
+material_override = SubResource("StandardMaterial3D_l7dmw")
+cast_shadow = 2
+pixel_size = 0.002929835
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = SubResource("idle_0")
+
+[node name="Cat_7" type="Sprite3D" parent="." unique_id=844651543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18306674, 0.3712082, -4.505867)
+material_override = SubResource("StandardMaterial3D_y0mii")
+cast_shadow = 2
+pixel_size = 0.0012889198
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("3_vqe3d")
+
+[node name="Cat_8" type="Sprite3D" parent="." unique_id=1206204958]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.951963, 0.39749146, 1.198143)
+material_override = SubResource("StandardMaterial3D_flyte")
+cast_shadow = 2
+pixel_size = 0.0013801834
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("3_vqe3d")
+
+[node name="Cat_9" type="Sprite3D" parent="." unique_id=1002468814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47598088, 0.274765, 1.198143)
+material_override = SubResource("StandardMaterial3D_sces3")
+cast_shadow = 2
+pixel_size = 0.00092826487
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("4_83su1")
+
+[node name="Cat_10" type="Sprite3D" parent="." unique_id=1983405041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9039255, 0.2956543, 1.198143)
+material_override = SubResource("StandardMaterial3D_e3igm")
+cast_shadow = 2
+pixel_size = 0.0009988348
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("4_83su1")
+
+[node name="Cat_11" type="Sprite3D" parent="." unique_id=1300887829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6980097, 0.26626205, 1.3013763)
+material_override = SubResource("StandardMaterial3D_obehp")
+cast_shadow = 2
+pixel_size = 0.0023356145
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("5_fq32b")
+
+[node name="Cat_12" type="Sprite3D" parent="." unique_id=1115224474]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2220287, 0.24982071, 1.4043732)
+material_override = SubResource("StandardMaterial3D_gpr2w")
+cast_shadow = 2
+pixel_size = 0.001189601
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("6_l7dmw")
+
+[node name="Facility_13" type="Sprite3D" parent="." unique_id=371430391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6500714, 0.54745483, -5.02256)
+material_override = SubResource("StandardMaterial3D_tmqkk")
+cast_shadow = 2
+pixel_size = 0.0013238245
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("7_y0mii")
+
+[node name="Facility_14" type="Sprite3D" parent="." unique_id=1820715276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9710388, 0.54745483, -5.02256)
+material_override = SubResource("StandardMaterial3D_xy5t0")
+cast_shadow = 2
+pixel_size = 0.0013238245
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("7_y0mii")
+
+[node name="Facility_15" type="Sprite3D" parent="." unique_id=111096853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18250346, 0.4344864, -5.02256)
+material_override = SubResource("StandardMaterial3D_ctxf6")
+cast_shadow = 2
+pixel_size = 0.0016972108
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("8_flyte")
+
+[node name="Facility_16" type="Sprite3D" parent="." unique_id=1018697986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6060313, 0.4344864, -5.02256)
+material_override = SubResource("StandardMaterial3D_pg1sy")
+cast_shadow = 2
+pixel_size = 0.0016972108
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("8_flyte")
+
+[node name="Facility_17" type="Sprite3D" parent="." unique_id=652891864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6866772, 0.51971054, 0.8600235)
+material_override = SubResource("StandardMaterial3D_w3nhb")
+cast_shadow = 2
+pixel_size = 0.008661876
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("9_sces3")
+
+[node name="Facility_18" type="Sprite3D" parent="." unique_id=716858892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.971095, 0.51971054, 0.8600235)
+material_override = SubResource("StandardMaterial3D_tlxjs")
+cast_shadow = 2
+pixel_size = 0.008661876
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("10_e3igm")
+
+[node name="Facility_19" type="Sprite3D" parent="." unique_id=1446531873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2121563, 0.51968384, 0.9643097)
+material_override = SubResource("StandardMaterial3D_4idlf")
+cast_shadow = 2
+pixel_size = 0.008661382
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("11_obehp")
+
+[node name="Worker_20" type="Sprite3D" parent="." unique_id=481979627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0076053, 0.33106995, -1.4087982)
+material_override = SubResource("StandardMaterial3D_fq4yh")
+cast_shadow = 2
+pixel_size = 0.008712406
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("12_gpr2w")
+
+[node name="Worker_21" type="Sprite3D" parent="." unique_id=1187352263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14671303, 0.33089447, -0.43737793)
+material_override = SubResource("StandardMaterial3D_bvb7n")
+cast_shadow = 2
+pixel_size = 0.008707787
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("13_tmqkk")
+
+[node name="Gacha" type="Sprite3D" parent="." unique_id=1432157513]
+transform = Transform3D(1, 0, 0, 0, 0.8991477, 0, 0, 0, 1, 3.4087007, 0.8060684, -1.8626251)
+material_override = SubResource("StandardMaterial3D_3pkip")
+cast_shadow = 2
+pixel_size = 0.001975662
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.35
+texture_filter = 0
+texture = ExtResource("14_xy5t0")
