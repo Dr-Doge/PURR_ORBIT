@@ -1,5 +1,5 @@
 extends SceneTree
-const Main=preload("res://scenes/main.tscn")
+var Main = load("res://scenes/3D scene.tscn" if "--3d" in OS.get_cmdline_user_args() else "res://scenes/main.tscn")
 const M=preload("res://scripts/model.gd")
 var game
 var checks: int=0
@@ -105,9 +105,9 @@ func run() -> void:
  check(not m.hovered(c) and c.station==-99 and c.pos==p,"Carried cat cannot be captured by hover")
  c.station=-1;c.dragging=false;m.set_hovered_cat(-1)
  walking(c,Vector2(600,500));room.step(0);motion(room.screen_position(c.pos));room.refresh_hover();game.refresh()
- DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/editor_928"))
+ DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/merge_3d_928"))
  await process_frame;await RenderingServer.frame_post_draw
- root.get_texture().get_image().save_png(ProjectSettings.globalize_path("res://reports/editor_928/20_hover_idle.png"))
+ root.get_texture().get_image().save_png(ProjectSettings.globalize_path("res://reports/merge_3d_928/20_hover_idle.png"))
  game.queue_free();await process_frame
  print("HOVER 008: ",checks," checks, ",failures," failures")
  quit(0 if failures==0 else 1)

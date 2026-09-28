@@ -1,0 +1,36 @@
+[gd_resource type="SpriteFrames" load_steps=27 format=3]
+
+[ext_resource type="Texture2D" path="res://Art/Cat14Walk/001.png" id="Walk_1"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Walk/002.png" id="Walk_2"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Walk/003.png" id="Walk_3"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Walk/004.png" id="Walk_4"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Walk/005.png" id="Walk_5"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Walk/006.png" id="Walk_6"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Walk/007.png" id="Walk_7"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Walk/008.png" id="Walk_8"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Walk/009.png" id="Walk_9"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/001.png" id="Produce_1"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/002.png" id="Produce_2"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/003.png" id="Produce_3"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/004.png" id="Produce_4"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/005.png" id="Produce_5"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/006.png" id="Produce_6"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/007.png" id="Produce_7"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/008.png" id="Produce_8"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/009.png" id="Produce_9"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/010.png" id="Produce_10"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/011.png" id="Produce_11"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/012.png" id="Produce_12"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/013.png" id="Produce_13"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/014.png" id="Produce_14"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/015.png" id="Produce_15"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/016.png" id="Produce_16"]
+[ext_resource type="Texture2D" path="res://Art/Cat14Produce/017.png" id="Produce_17"]
+
+[resource]
+animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("Walk_1")}], "loop": true, "name": &"idle", "speed": 10.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("Walk_1")},{"duration": 1.0, "texture": ExtResource("Walk_2")},{"duration": 1.0, "texture": ExtResource("Walk_3")},{"duration": 1.0, "texture": ExtResource("Walk_4")}], "loop": false, "name": &"lift", "speed": 10.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("Walk_5")}], "loop": true, "name": &"hover", "speed": 10.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("Walk_6")},{"duration": 1.0, "texture": ExtResource("Walk_7")},{"duration": 1.0, "texture": ExtResource("Walk_8")},{"duration": 1.0, "texture": ExtResource("Walk_9")}], "loop": false, "name": &"land", "speed": 10.0},
+{"frames": [{"duration": 1.0, "texture": ExtResource("Produce_1")},{"duration": 1.0, "texture": ExtResource("Produce_2")},{"duration": 1.0, "texture": ExtResource("Produce_3")},{"duration": 1.0, "texture": ExtResource("Produce_4")},{"duration": 1.0, "texture": ExtResource("Produce_5")},{"duration": 1.0, "texture": ExtResource("Produce_6")},{"duration": 1.0, "texture": ExtResource("Produce_7")},{"duration": 1.0, "texture": ExtResource("Produce_8")},{"duration": 1.0, "texture": ExtResource("Produce_9")},{"duration": 1.0, "texture": ExtResource("Produce_10")},{"duration": 1.0, "texture": ExtResource("Produce_11")},{"duration": 1.0, "texture": ExtResource("Produce_12")},{"duration": 1.0, "texture": ExtResource("Produce_13")},{"duration": 1.0, "texture": ExtResource("Produce_14")},{"duration": 1.0, "texture": ExtResource("Produce_15")},{"duration": 1.0, "texture": ExtResource("Produce_16")},{"duration": 1.0, "texture": ExtResource("Produce_17")}], "loop": false, "name": &"produce", "speed": 10.0}]
+

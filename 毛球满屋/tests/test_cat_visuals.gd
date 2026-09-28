@@ -19,7 +19,7 @@ func run() -> void:
  var before: PackedByteArray = var_to_bytes(model.cats)
  visuals.step(model,0.25)
  check(var_to_bytes(model.cats) == before,"Visual update does not mutate cats")
- check(visuals.texture(c.id) == Visuals.FRAMES.get_frame_texture("idle",1),"Idle advances reduced frames")
+ check(visuals.texture(c.id) == Visuals.FRAMES.get_frame_texture("idle",2),"Idle advances frames")
  c.pos.x += 1.0
  visuals.step(model,0.1)
  check(visuals.states[c.id].animation == "walk" and visuals.flipped(c.id),"Right movement walks and faces right")
@@ -71,7 +71,7 @@ func run() -> void:
  giant.layers=2;visuals.step(fresh,0.1);H.settle(fresh,giant.id);visuals.step(fresh,0.0)
  check(visuals.texture(giant.id)==Visuals.GIANT_FRAMES.get_frame_texture("produce",0),"Giant uses Cat5 produce")
  fresh.tick(1.05);visuals.step(fresh,1.05)
- check(visuals.texture(giant.id)==Visuals.GIANT_FRAMES.get_frame_texture("produce",6),"Reduced produce frames fit the existing hold")
+ check(visuals.texture(giant.id)==Visuals.GIANT_FRAMES.get_frame_texture("produce",13),"All produce frames fit the existing hold")
  fresh.tick(0.06)
  for cat in fresh.cats:
   cat.pos=visuals.states.get(cat.id,{"pos":cat.pos}).pos
@@ -79,7 +79,7 @@ func run() -> void:
  fresh.tick(0.001)
  visuals.step(fresh,0.06)
  check(visuals.states[giant.id].animation=="idle","Giant produce finishes with existing timing")
- check(Visuals.GIANT_FRAMES.get_frame_count("idle")==10 and Visuals.GIANT_FRAMES.get_frame_count("walk")==10,"Cat5 idle halved; walk retains all frames")
+ check(Visuals.GIANT_FRAMES.get_frame_count("idle")==20 and Visuals.GIANT_FRAMES.get_frame_count("walk")==10,"All Cat5 loop frames loaded")
  var electric: Dictionary=fresh.add_cat(Vector2(950,505))
  electric.kind="static";visuals.step(fresh,0)
  check(visuals.texture(electric.id).resource_path.begins_with("res://Art/Cat8idle/"),"Static cat selects Cat8 idle")
@@ -88,7 +88,7 @@ func run() -> void:
  electric.layers=1;visuals.step(fresh,0.1);H.settle(fresh,electric.id);visuals.step(fresh,0)
  check(visuals.texture(electric.id).resource_path.begins_with("res://Art/Cat8Produce/"),"Static cat selects Cat8 produce")
  fresh.tick(1.05);visuals.step(fresh,1.05)
- check(visuals.texture(electric.id)==Visuals.STATIC_FRAMES.get_frame_texture("produce",6),"Reduced Cat8 produce frames play")
+ check(visuals.texture(electric.id)==Visuals.STATIC_FRAMES.get_frame_texture("produce",13),"All Cat8 produce frames play")
  fresh.tick(0.06)
  for cat in fresh.cats:
   cat.pos=visuals.states.get(cat.id,{"pos":cat.pos}).pos
@@ -97,7 +97,7 @@ func run() -> void:
  visuals.step(fresh,0.06)
  check(visuals.states[electric.id].animation=="idle","Static cat returns to idle")
  for animation in ["idle","walk","produce"]:
-  var expected: int = {"idle":10,"walk":10,"produce":6}[animation]
+  var expected: int = {"idle":20,"walk":10,"produce":11}[animation]
   check(Visuals.FRAMES.get_frame_count(animation)==expected,"All frames loaded: "+animation)
   for frame in range(expected):
    var texture: Texture2D = Visuals.FRAMES.get_frame_texture(animation,frame)

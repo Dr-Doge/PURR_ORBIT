@@ -1,0 +1,16 @@
+{
+  "version": "0.27.0.14",
+  "date": "2026-09-28",
+  "engine": "4.7.1.stable.official.a13da4feb",
+  "entry_scene": "res://scenes/3D scene.tscn",
+  "merge_sources": [
+    "8356e74",
+    "40e566cb"
+  ],
+  "filename": "PurrOrbit.exe",
+  "bytes": 145419648,
+  "sha256": "99a03018a55f8e794cf2bfa9324ebc7d80bc3cebd95aeeba8622809fd3ccdf44",
+  "embedded_pck": true,
+  "assertions_passed": 500,
+  "test_report": "../../毛球满屋/reports/merge_3d_928/README.md"
+}

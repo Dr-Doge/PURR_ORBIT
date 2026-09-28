@@ -1,0 +1,208 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/hud_3d.gd" id="1_xeuvv"]
+[ext_resource type="Texture2D" path="res://Art/title.jpg" id="2_w7ihb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4n4w7"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.14901961, 0.24705882, 0.28235295, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8039216, 0.6509804, 0.49019608, 1)
+corner_radius_top_left = 36
+corner_radius_top_right = 36
+corner_radius_bottom_right = 36
+corner_radius_bottom_left = 36
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22ov0"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.09411765, 0.14901961, 0.1882353, 0.92941177)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.30588236, 0.38431373, 0.41960785, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qj2ku"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.09411765, 0.14901961, 0.1882353, 0.92941177)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.30588236, 0.38431373, 0.41960785, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="HUD" type="Control" unique_id=1921898091]
+anchors_preset = 0
+offset_right = 1440.0
+offset_bottom = 810.0
+mouse_filter = 2
+script = ExtResource("1_xeuvv")
+
+[node name="TitleArt" type="TextureRect" parent="." unique_id=598339100]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("2_w7ihb")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Nameplate" type="PanelContainer" parent="TitleArt" unique_id=1149306046]
+layout_mode = 0
+offset_left = 400.5
+offset_top = 58.5
+offset_right = 1110.5
+offset_bottom = 276.5
+scale = Vector2(0.9, 0.9)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4n4w7")
+
+[node name="Titles" type="VBoxContainer" parent="TitleArt/Nameplate" unique_id=918715798]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="EnglishTitle" type="Label" parent="TitleArt/Nameplate/Titles" unique_id=739849243]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96862745, 0.827451, 0.58431375, 1)
+theme_override_font_sizes/font_size = 40
+text = "P U R R  O R B I T"
+horizontal_alignment = 1
+
+[node name="ChineseTitle" type="Label" parent="TitleArt/Nameplate/Titles" unique_id=1769001455]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9137255, 0.9411765, 0.8745098, 1)
+theme_override_font_sizes/font_size = 55
+text = "毛 球 计 划"
+horizontal_alignment = 1
+
+[node name="Status" type="PanelContainer" parent="." unique_id=993594700]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 4.0
+offset_right = 394.0
+offset_bottom = 56.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_22ov0")
+
+[node name="Header" type="Label" parent="Status" unique_id=80686735]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.93333334, 0.94509804, 1)
+theme_override_font_sizes/font_size = 14
+text = "0 毛球    ◇ 0
+收藏批次 1 · 猫 2 · 帮手 0"
+
+[node name="MenuToggle" type="Button" parent="." unique_id=1969577388]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 0
+offset_left = 1236.0
+offset_top = 22.0
+offset_right = 1416.0
+offset_bottom = 70.0
+mouse_default_cursor_shape = 2
+text = "☰  舱室功能"
+
+[node name="Drawer" type="PanelContainer" parent="." unique_id=1564227239]
+custom_minimum_size = Vector2(290, 0)
+layout_mode = 0
+offset_left = 1126.0
+offset_top = 84.0
+offset_right = 1416.0
+offset_bottom = 588.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qj2ku")
+
+[node name="Content" type="VBoxContainer" parent="Drawer" unique_id=1660306024]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Heading" type="Label" parent="Drawer/Content" unique_id=1901506695]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.93333334, 0.94509804, 1)
+theme_override_font_sizes/font_size = 20
+text = "毛球计划 · 舱室功能"
+
+[node name="Shop" type="Button" parent="Drawer/Content" unique_id=1075451536]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "补给"
+
+[node name="Tree" type="Button" parent="Drawer/Content" unique_id=238883053]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "成长"
+
+[node name="Workers" type="Button" parent="Drawer/Content" unique_id=1079005136]
+visible = false
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "小帮手"
+
+[node name="Inventory" type="Button" parent="Drawer/Content" unique_id=93746935]
+visible = false
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "仓库"
+
+[node name="Gacha" type="Button" parent="Drawer/Content" unique_id=752181232]
+visible = false
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "未知信号"
+
+[node name="Pause" type="Button" parent="Drawer/Content" unique_id=790098125]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "暂停 · Esc"
+
+[node name="Help" type="Button" parent="Drawer/Content" unique_id=1410341069]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "操作帮助"
+
+[node name="Info" type="VBoxContainer" parent="Drawer/Content" unique_id=1589229299]
+layout_mode = 2
+
+[node name="Hint" type="Label" parent="Drawer/Content/Info" unique_id=403161034]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8352941, 0.8745098, 0.8901961, 1)
+theme_override_font_sizes/font_size = 14
+text = "下一枚代币  0%"
+
+[node name="Signal" type="ProgressBar" parent="Drawer/Content/Info" unique_id=1930972892]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+show_percentage = false
+
+[node name="Notice" type="Label" parent="Drawer/Content/Info" unique_id=1361569734]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.93333334, 0.94509804, 1)
+theme_override_font_sizes/font_size = 15
+autowrap_mode = 3

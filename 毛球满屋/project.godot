@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Purr Orbit / 毛球计划"
 config/description="Purr Orbit / 毛球计划 · Godot 4.7.1 demo"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/3D scene.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="PurrOrbitDemo"
 config/features=PackedStringArray("4.7", "GL Compatibility")

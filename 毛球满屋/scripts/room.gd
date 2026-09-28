@@ -36,6 +36,7 @@ const INK = Color("e3efef")
 const MINT = Color("91e2c6")
 const GOLD = Color("f3ca86")
 const GACHA_POS = Vector2(1362,300)
+var gacha_position: Vector2=GACHA_POS
 var cat_visuals = preload("res://scripts/cat_visuals.gd").new()
 const CAT_SCENES={"short":preload("res://scenes/cats/short_cat.tscn"),"giant":preload("res://scenes/cats/giant_cat.tscn"),"static":preload("res://scenes/cats/static_cat.tscn"),"lucky":preload("res://scenes/cats/lucky_cat.tscn"),"alien":preload("res://scenes/cats/alien_cat.tscn")}
 var cat_nodes: Dictionary={}
@@ -119,7 +120,7 @@ func cat_at_screen(at: Vector2) -> int:
  for c in ordered:
   if c.station!=-1 or c.dragging:continue
   var rect: Rect2=cat_rect(c)
-  var factor: float=stage_scale()*0.9
+  var factor: float=object_scale(c.pos)
   var hit:=Rect2(screen_position(c.pos)+(rect.position-c.pos)*factor,rect.size*factor)
   if hit.has_point(at):return c.id
  return -1
@@ -160,8 +161,12 @@ func project(at: Vector2) -> Vector2:
 func screen_position(at: Vector2) -> Vector2:
  return stage_origin()+project(at)*stage_scale()
 func object_transform(at: Vector2) -> void:
- var scale_factor: float = stage_scale()*0.9
+ var scale_factor: float = object_scale(at)
  draw_set_transform(screen_position(at)-at*scale_factor,0,Vector2.ONE*scale_factor)
+func object_scale(_at: Vector2) -> float:
+ return stage_scale()*0.9
+func reward_target(token: bool=false) -> Vector2:
+ return stage_origin()+Vector2(1250 if token else 1140,137)*stage_scale()
 func stage_transform() -> void:
  draw_set_transform(stage_origin(),0,Vector2.ONE*stage_scale())
 func world(at: Vector2) -> Vector2:
@@ -267,7 +272,7 @@ func _gui_input(event: InputEvent) -> void:
     if w.pos.distance_to(pointer) < 25: worker_selected.emit(w.id); accept_event(); return
    var fid: int = station_at(pointer)
    if fid >= 0: facility_selected.emit(fid); accept_event(); return
-   if model.gacha_ready and pointer.distance_to(GACHA_POS) < 64: gacha_selected.emit(); accept_event(); return
+   if model.gacha_ready and pointer.distance_to(gacha_position) < 64: gacha_selected.emit(); accept_event(); return
   elif dragging >= 0:
    var id: int = dragging; dragging = -1
    var fid: int = station_at(pointer)
@@ -278,14 +283,16 @@ func _gui_input(event: InputEvent) -> void:
      if not model.assign(id,fid): notice.emit(model.error)
    accept_event()
  queue_redraw()
-func _draw() -> void:
- if model == null or size.x <= 0: return
+func draw_entities() -> void:
  if model.gacha_ready:
-  object_transform(GACHA_POS); draw_gacha()
+  object_transform(gacha_position); draw_gacha()
  var ordered: Array = model.cats.duplicate()
  ordered.sort_custom(func(a: Dictionary,b: Dictionary): return a.pos.y < b.pos.y)
  for c in ordered:
   object_transform(c.pos); draw_cat(c)
+func _draw() -> void:
+ if model == null or size.x <= 0:return
+ draw_entities()
  if interactive and model.harvests<2 and not model.cats.is_empty():
   object_transform(model.cats[0].pos)
   var at: Vector2=model.cats[0].pos+Vector2(0,-80)
@@ -327,6 +334,7 @@ func _draw() -> void:
 func cat_extent(c: Dictionary, animate: bool = true) -> float:
  var extent: float=100.0*(1.35 if c.kind=="giant" else 1.0)*(1+minf(c.layers,D.MAX_LAYERS)*D.CAT_LAYER_SIZE_STEP)
  if c.kind=="lucky":extent*=1.342
+ if c.kind=="alien":extent*=1.25
  if animate:extent*=1.0+D.CAT_PULSE_AMOUNT*sin(PI*clampf(c.pop/D.CAT_PULSE_DURATION,0.0,1.0))
  return extent
 func cat_rect(c: Dictionary) -> Rect2:
@@ -337,17 +345,11 @@ func cat_rect(c: Dictionary) -> Rect2:
  var touch: float=sin(clock*(10+variant*2))*0.025 if model.elapsed-c.get("pet_stamp",-10.0)<0.15 else 0.0
  var squeeze: float=progress*(0.07+variant*0.018)+touch if not model.reacting(c) else sin(clampf(1.0-c.reaction_left/1.1,0,1)*PI)*(0.07+variant*0.02)
  var dimensions: Vector2=Vector2(extent*(1+squeeze),extent*(1-squeeze))
- return Rect2(c.pos+Vector2(-dimensions.x/2.0,26.0-dimensions.y*cat_visuals.foot_anchor(c.id)),dimensions)
+ return Rect2(c.pos+cat_visuals.visual_offset(c.id)+Vector2(-dimensions.x/2.0,26.0-dimensions.y*cat_visuals.foot_anchor(c.id)),dimensions)
 func draw_cat(c: Dictionary) -> void:
- var at: Vector2=c.pos
- var px: float=4.0*cat_extent(c)/100.0
- var color:=Color("8cdf8e") if c.kind=="alien" else Color.WHITE
  ellipse(c.pos+Vector2(0,26),Vector2(31*cat_extent(c,false)/100.0,10),Color(0.02,0.08,0.13,0.25))
- if c.kind == "alien":
-  for side in [-1,1]:
-   draw_line(at+Vector2(side*18,-22),at+Vector2(side*25,-45),color,3)
-   draw_circle(at+Vector2(side*25,-46),5,color)
-   draw_circle(at+Vector2(side*13,-9),7,Color("071e1e"))
+ draw_cat_feedback(c)
+func draw_cat_feedback(c: Dictionary) -> void:
  var progress: float=model.pet_progress(c)
  if progress>0 or c.id==hover:
   var bar: Rect2=Rect2(c.pos+Vector2(-26,37),Vector2(52,5))
@@ -357,6 +359,6 @@ func draw_cat(c: Dictionary) -> void:
  if not c.get("charges",[]).is_empty():text(c.pos+Vector2(-20,72),"蓄养 %d" % c.charges.size(),11,MINT)
  if c.station >= 0: text(c.pos+Vector2(-25,47),"设施使用中",11,Color("8dadaf"))
 func draw_gacha() -> void:
- var at := GACHA_POS
+ var at := gacha_position
  draw_arc(at,73,0,TAU,60,Color(GOLD,0.16+0.08*sin(clock)),2)
  text(at+Vector2(-66,80),"未知文明的仪器",14,GOLD)

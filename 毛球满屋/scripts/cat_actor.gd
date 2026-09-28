@@ -10,9 +10,9 @@ func apply(room,c: Dictionary) -> void:
  sprite.animation=state.animation
  sprite.frame=room.cat_visuals.A.frame_at(state.animation,state.frames,state.age)
  sprite.flip_h=room.cat_visuals.flipped(c.id)
- sprite.modulate=Color("8cdf8e") if c.kind=="alien" else Color.WHITE
+ sprite.modulate=Color.WHITE
  var rect: Rect2=room.cat_rect(c)
- var factor: float=room.stage_scale()*0.9
+ var factor: float=room.object_scale(c.pos)
  position=room.screen_position(c.pos)
  sprite.position=(rect.position-c.pos)*factor
  var texture: Texture2D=room.cat_visuals.texture(c.id)
