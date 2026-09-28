@@ -1,0 +1,9 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 610.88 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3060
+
+SCRIPT ERROR: Parse Error: Could not preload resource script "res://scripts/room_3d.gd".
+   at: GDScript::reload (res://scripts/scene_3d.gd:4)
+SCRIPT ERROR: Parse Error: Could not resolve script "res://scripts/room_3d.gd".
+   at: GDScript::reload (res://scripts/scene_3d.gd:4)
+ERROR: Failed to load script "res://scripts/scene_3d.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

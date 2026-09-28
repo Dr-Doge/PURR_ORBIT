@@ -26,6 +26,10 @@ var graph: GraphEdit
 var detail: VBoxContainer
 var capsule_busy: bool = false
 var tree_selected: String = "worker"
+func create_room():
+ return Room.new()
+func create_hud():
+ return preload("res://scripts/station_hud.gd").new()
 func style(color: String,border: String = "3d586b",radius: int = 8) -> StyleBoxFlat:
  var palette: Dictionary={"152737":"182c38ee","1a2d3e":"f3f0e6","203b4a":"e4e9de","243b4c":"e4e9de","294856":"d9e5d5","3b646c":"c8ddc6","486f68":"b0d0b3","23313e":"e1e3dc","607c87":"bac8b9","526f7e":"b3c7b6","3d586b":"c6d1c1","14282f":"e8dfd2"}
  var s := StyleBoxFlat.new(); s.bg_color = Color(palette.get(color,color)); s.border_color = Color(palette.get(border,border))
@@ -57,10 +61,10 @@ func _ready() -> void:
   skin.set_stylebox(state,"Button",style({"normal":"294856","hover":"3b646c","pressed":"486f68","disabled":"23313e","focus":"294856"}[state],"526f7e"))
  skin.set_color("font_color","Label",Color("334b49"));skin.set_color("font_color","CheckButton",Color("334b49"))
  skin.set_color("font_color","Button",Color("304b43")); skin.set_color("font_disabled_color","Button",Color("8c988d")); theme = skin
- room = Room.new(); room.model = model; room.set_anchors_and_offsets_preset(PRESET_FULL_RECT); add_child(room)
+ room = create_room(); room.model = model; room.set_anchors_and_offsets_preset(PRESET_FULL_RECT); add_child(room)
  room.facility_selected.connect(show_facility); room.worker_selected.connect(show_worker); room.gacha_selected.connect(show_gacha)
  room.notice.connect(message); room.build_requested.connect(func(key: String,at: Vector2): transact(func(): return model.buy(key,at)))
- hud=preload("res://scripts/station_hud.gd").new();hud.game=self;add_child(hud)
+ hud=create_hud();hud.game=self;add_child(hud)
  overlay=PanelContainer.new();overlay.set_anchors_and_offsets_preset(PRESET_FULL_RECT);overlay.add_theme_stylebox_override("panel",style("0a1823bb","0a182300",0));add_child(overlay)
  var center:=CenterContainer.new();overlay.add_child(center)
  card=PanelContainer.new();card.custom_minimum_size=Vector2(820,580);card.add_theme_stylebox_override("panel",style("1a2d3e","607c87",22));center.add_child(card)
@@ -391,6 +395,18 @@ func save_game() -> bool:
  if result!=OK:message("存档写入失败，请检查磁盘空间；当前游戏仍在运行。")
  return result==OK
 func _unhandled_key_input(event: InputEvent) -> void:
+ if event is InputEventKey and event.pressed and not event.echo and active and not paused and modal=="":
+  if not event.ctrl_pressed and not event.alt_pressed and not event.meta_pressed and not event.shift_pressed:
+   var index: int = [KEY_1,KEY_2,KEY_3,KEY_4,KEY_5].find(event.keycode)
+   if index >= 0:
+    var at := Vector2(model.rng.randf_range(D.FLOOR.position.x+60,D.FLOOR.end.x-60),model.rng.randf_range(D.FLOOR.position.y+60,D.FLOOR.end.y-60))
+    var cat: Dictionary = model.add_cat(model.clamp_position(at))
+    cat.kind = ["short","giant","static","lucky","alien"][index]
+    message("已添加一只"+D.title(cat.kind))
+    room.step(0.0)
+    save_game()
+    get_viewport().set_input_as_handled()
+    return
  if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_ESCAPE:
   if modal=="":show_pause()
   elif active:close_modal()

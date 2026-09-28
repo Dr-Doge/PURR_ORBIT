@@ -30,6 +30,7 @@ const INK = Color("e3efef")
 const MINT = Color("91e2c6")
 const GOLD = Color("f3ca86")
 const GACHA_POS = Vector2(1190,352)
+var gacha_position: Vector2 = GACHA_POS
 var cat_visuals = preload("res://scripts/cat_visuals.gd").new()
 func _ready() -> void:
  font.font_names = PackedStringArray(["Microsoft YaHei","Segoe UI"])
@@ -59,8 +60,12 @@ func project(at: Vector2) -> Vector2:
 func screen_position(at: Vector2) -> Vector2:
  return stage_origin()+project(at)*stage_scale()
 func object_transform(at: Vector2) -> void:
- var scale_factor: float = stage_scale()*0.9
+ var scale_factor: float = object_scale(at)
  draw_set_transform(screen_position(at)-at*scale_factor,0,Vector2.ONE*scale_factor)
+func object_scale(_at: Vector2) -> float:
+ return stage_scale()*0.9
+func reward_target(token: bool = false) -> Vector2:
+ return stage_origin()+Vector2(1250 if token else 1140,137)*stage_scale()
 func stage_transform() -> void:
  draw_set_transform(stage_origin(),0,Vector2.ONE*stage_scale())
 func world(at: Vector2) -> Vector2:
@@ -159,7 +164,7 @@ func _gui_input(event: InputEvent) -> void:
     if w.pos.distance_to(pointer) < 25: worker_selected.emit(w.id); accept_event(); return
    var fid: int = station_at(pointer)
    if fid >= 0: facility_selected.emit(fid); accept_event(); return
-   if model.gacha_ready and pointer.distance_to(GACHA_POS) < 64: gacha_selected.emit(); accept_event(); return
+   if model.gacha_ready and pointer.distance_to(gacha_position) < 64: gacha_selected.emit(); accept_event(); return
   elif dragging >= 0:
    var id: int = dragging; dragging = -1
    var fid: int = station_at(pointer)
@@ -170,18 +175,20 @@ func _gui_input(event: InputEvent) -> void:
      if not model.assign(id,fid): notice.emit(model.error)
    accept_event()
  queue_redraw()
-func _draw() -> void:
- if model == null or size.x <= 0: return
+func draw_entities() -> void:
  for f in model.facilities:
   object_transform(f.pos); draw_facility(f)
  if model.gacha_ready:
-  object_transform(GACHA_POS); draw_gacha()
+  object_transform(gacha_position); draw_gacha()
  var ordered: Array = model.cats.duplicate()
  ordered.sort_custom(func(a: Dictionary,b: Dictionary): return a.pos.y < b.pos.y)
  for c in ordered:
   object_transform(c.pos); draw_cat(c)
  for w in model.workers:
   object_transform(w.pos); draw_worker(w)
+func _draw() -> void:
+ if model == null or size.x <= 0: return
+ draw_entities()
  if interactive and model.harvests<2 and not model.cats.is_empty():
   object_transform(model.cats[0].pos)
   var at: Vector2=model.cats[0].pos+Vector2(0,-80)
@@ -220,26 +227,22 @@ func _draw() -> void:
 func cat_extent(c: Dictionary, animate: bool = true) -> float:
  var extent: float=100.0*(1.35 if c.kind=="giant" else 1.0)*(1+minf(c.layers,D.MAX_LAYERS)*D.CAT_LAYER_SIZE_STEP)
  if c.kind=="lucky":extent*=1.342
+ if c.kind=="alien":extent*=1.25
  if animate:extent*=1.0+D.CAT_PULSE_AMOUNT*sin(PI*clampf(c.pop/D.CAT_PULSE_DURATION,0.0,1.0))
  return extent
 func cat_rect(c: Dictionary) -> Rect2:
  var extent: float=cat_extent(c)
  # Anchor the opaque foot pixels, including during the growth pulse.
- return Rect2(c.pos+Vector2(-extent/2.0,26.0-extent*cat_visuals.foot_anchor(c.id)),Vector2.ONE*extent)
+ return Rect2(c.pos+cat_visuals.visual_offset(c.id)+Vector2(-extent/2.0,26.0-extent*cat_visuals.foot_anchor(c.id)),Vector2.ONE*extent)
 func draw_cat(c: Dictionary) -> void:
  var at: Vector2=c.pos
  var px: float=4.0*cat_extent(c)/100.0
- var color:=Color("8cdf8e") if c.kind=="alien" else Color.WHITE
+ var color:=Color.WHITE
  ellipse(c.pos+Vector2(0,26),Vector2(31*cat_extent(c,false)/100.0,10),Color(0.02,0.08,0.13,0.25))
  var image: Texture2D=cat_visuals.texture(c.id)
  var rect: Rect2=cat_rect(c)
  if cat_visuals.flipped(c.id):rect.size.x=-rect.size.x
  draw_texture_rect(image,rect,false,color)
- if c.kind == "alien":
-  for side in [-1,1]:
-   draw_line(at+Vector2(side*18,-22),at+Vector2(side*25,-45),color,3)
-   draw_circle(at+Vector2(side*25,-46),5,color)
-   draw_circle(at+Vector2(side*13,-9),7,Color("071e1e"))
  if c.id == hover:
   draw_arc(c.pos,43*px/4,0,TAU,32,MINT,2)
   if c.pet > 0: draw_arc(c.pos,47*px/4,-PI/2,-PI/2+TAU*minf(1,c.pet/D.PET_DISTANCE),32,GOLD,3)
@@ -290,7 +293,7 @@ func draw_facility(f: Dictionary) -> void:
  if pointer.distance_to(at) < 70 and interactive:
   draw_arc(at,85,0,TAU,40,Color(MINT,0.65),2)
 func draw_gacha() -> void:
- var at := GACHA_POS
+ var at := gacha_position
  draw_arc(at,73,0,TAU,60,Color(GOLD,0.16+0.08*sin(clock)),2)
  text(at+Vector2(-66,80),"未知文明的仪器",14,GOLD)
 func draw_worker(w: Dictionary) -> void:

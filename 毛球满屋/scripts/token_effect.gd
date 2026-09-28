@@ -6,7 +6,7 @@ func pose(event: Dictionary) -> Dictionary:
  var age: float=event.age
  var factor: float=room.stage_scale()
  var origin: Vector2=room.screen_position(event.pos)+Vector2(0,-68)*factor
- var destination: Vector2=room.stage_origin()+Vector2(1250,137)*factor
+ var destination: Vector2=room.reward_target(true)
  var travel: float=smoothstep(0.85,1.85,age)
  var position: Vector2=origin.lerp(destination,travel)+Vector2(0,-sin(travel*PI)*75)*factor
  var diameter: float=lerpf(12.0,62.0,1.0-pow(1.0-clampf(age/0.35,0,1),3.0))

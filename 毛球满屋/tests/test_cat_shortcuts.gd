@@ -24,15 +24,16 @@ func run() -> void:
  app.start_game()
  var wallet: float = app.model.wallet
  var owned: Array = app.model.owned.duplicate(true)
- for i in range(5):key(app,KEY_1+i)
- check(app.model.cats.size()==2,"Production demo ignores free-spawn shortcuts")
- check(app.model.wallet==wallet and app.model.owned==owned,"Spawn keys cannot bypass economy")
+ for i in range(5):
+  key(app,KEY_1+i)
+  check(app.model.cats.size()==3+i,"One cat per press")
+  check(app.model.cats.back().kind==["short","giant","static","lucky","alien"][i],"Correct species")
+ check(app.model.wallet==wallet and app.model.owned==owned,"Free shortcuts preserve balances")
  key(app,KEY_1,true);key(app,KEY_1,false,true)
  app.show_pause();key(app,KEY_1)
- check(app.model.cats.size()==2,"Repeat, modifier and pause ignored")
+ check(app.model.cats.size()==7,"Repeat, modifier and pause ignored")
  app.close_modal()
- # Explicit test fixture covers the imported lucky-cat artwork without a gameplay cheat.
- var lucky: Dictionary=app.model.add_cat(Vector2(700,500));lucky.kind="lucky"
+ var lucky: Dictionary=app.model.cats[5]
  var visuals = Visuals.new()
  visuals.step(app.model,0)
  check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("idle",0),"Lucky idle bound")
@@ -45,7 +46,7 @@ func run() -> void:
  visuals.step(app.model,0)
  check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",0),"Lucky harvest bound")
  visuals.step(app.model,1.05)
- check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",7),"Last produce frame plays before hold ends")
+ check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",14),"Last produce frame plays before hold ends")
  visuals.step(app.model,0.06)
  check(visuals.states[lucky.id].animation=="idle","Produce completes")
  app.queue_free()

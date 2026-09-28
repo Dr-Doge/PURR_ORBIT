@@ -4,6 +4,7 @@ const FRAMES = preload("res://Art/cat1_animations.tres")
 const GIANT_FRAMES = preload("res://Art/cat5_animations.tres")
 const STATIC_FRAMES = preload("res://Art/cat8_animations.tres")
 const LUCKY_FRAMES = preload("res://Art/cat10_animations.tres")
+const Alien = preload("res://scripts/alien_cat_visuals.gd")
 var states: Dictionary = {}
 var source_model
 
@@ -17,7 +18,7 @@ func step(model, dt: float) -> void:
   if not states.has(c.id):
    states[c.id] = {"pos":c.pos,"layers":c.layers,"animation":"idle","age":0.0,"flip":false}
   var state: Dictionary = states[c.id]
-  state.frames = GIANT_FRAMES if c.kind == "giant" else FRAMES
+  if c.kind != "alien": state.frames = GIANT_FRAMES if c.kind == "giant" else FRAMES
   if c.kind == "static":state.frames = STATIC_FRAMES
   if c.kind == "lucky":state.frames = LUCKY_FRAMES
   var movement: Vector2 = c.pos-state.pos
@@ -25,7 +26,9 @@ func step(model, dt: float) -> void:
   if walking and absf(movement.x)>0.001: state.flip = movement.x>0
   state.age += dt
   # A completed harvest clears stored layers. Growth alone must not play produce.
-  if state.layers>0 and c.layers==0 and c.pop>0:
+  if c.kind == "alien":
+   Alien.step(state,walking,state.layers>0 and c.layers==0 and c.pop>0)
+  elif state.layers>0 and c.layers==0 and c.pop>0:
    state.animation = "produce"
    state.age = 0.0
   elif state.animation != "produce" or state.age>=duration("produce",state.frames):
@@ -56,7 +59,12 @@ func flipped(id: int) -> bool:
 var foot_anchors: Dictionary = {}
 func foot_anchor(id: int) -> float:
  var frame: Texture2D=texture(id)
+ if states.get(id,{}).get("frames") == Alien.FRAMES:
+  frame = Alien.FRAMES.get_frame_texture("idle",0)
  if not foot_anchors.has(frame):
   var bounds: Rect2i=frame.get_image().get_used_rect()
   foot_anchors[frame]=float(bounds.end.y)/frame.get_height()
  return foot_anchors[frame]
+
+func visual_offset(id: int) -> Vector2:
+ return Vector2(0.0,states.get(id,{}).get("float_y",0.0))

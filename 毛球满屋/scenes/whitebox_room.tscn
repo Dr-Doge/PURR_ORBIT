@@ -1,0 +1,128 @@
+[gd_scene load_steps=20 format=3]
+
+[ext_resource type="Shader" path="res://Art/whitebox_window.gdshader" id="1"]
+[ext_resource type="Texture2D" path="res://Art/universe.jpg" id="2"]
+[ext_resource type="Texture2D" path="res://Art/Ground1.png" id="3"]
+[ext_resource type="Texture2D" path="res://Art/Wall.jpg" id="4"]
+[ext_resource type="Texture2D" path="res://Art/Window1.jpg" id="5"]
+[ext_resource type="Shader" path="res://Art/whitebox_side.gdshader" id="6"]
+[ext_resource type="Texture2D" path="res://Art/Frame.png" id="7"]
+[ext_resource type="Shader" path="res://Art/frame_cutout.gdshader" id="8"]
+[ext_resource type="Shader" path="res://Art/floor_contact.gdshader" id="9"]
+
+[sub_resource type="ShaderMaterial" id="GroundMaterial"]
+shader = ExtResource("9")
+shader_parameter/floor_texture = ExtResource("3")
+
+[sub_resource type="ShaderMaterial" id="White"]
+shader = ExtResource("6")
+shader_parameter/wall_texture = ExtResource("4")
+
+[sub_resource type="ShaderMaterial" id="FrameLeft"]
+shader = ExtResource("8")
+shader_parameter/frame_texture = ExtResource("7")
+
+[sub_resource type="ShaderMaterial" id="FrameRight"]
+shader = ExtResource("8")
+shader_parameter/frame_texture = ExtResource("7")
+shader_parameter/mirrored = true
+
+[sub_resource type="QuadMesh" id="FramePlane"]
+size = Vector2(0.632, 6.8)
+
+[sub_resource type="ShaderMaterial" id="Window"]
+shader = ExtResource("1")
+shader_parameter/universe = ExtResource("2")
+shader_parameter/wall_texture = ExtResource("5")
+
+[sub_resource type="PlaneMesh" id="Floor"]
+size = Vector2(8.727273, 10.008339)
+
+[sub_resource type="QuadMesh" id="Back"]
+size = Vector2(8.727273, 6)
+
+[sub_resource type="QuadMesh" id="Side"]
+size = Vector2(10.008339, 6)
+
+[sub_resource type="Environment" id="Environment"]
+background_mode = 1
+background_color = Color(0.045, 0.057, 0.078, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.73, 0.81, 0.94, 1)
+ambient_light_energy = 0.25
+tonemap_mode = 0
+
+[node name="WhiteboxRoom" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+position = Vector3(0, 0, -1.9132605)
+mesh = SubResource("Floor")
+material_override = SubResource("GroundMaterial")
+
+[node name="BackWall" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+position = Vector3(0, 3, -6.91743)
+mesh = SubResource("Back")
+material_override = SubResource("Window")
+
+[node name="LeftWall" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+position = Vector3(-4.3636365, 3, -1.9132605)
+rotation = Vector3(0, 1.5707963, 0)
+mesh = SubResource("Side")
+material_override = SubResource("White")
+
+[node name="RightWall" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+position = Vector3(4.3636365, 3, -1.9132605)
+rotation = Vector3(0, -1.5707963, 0)
+mesh = SubResource("Side")
+material_override = SubResource("White")
+
+[node name="Frames" type="Node3D" parent="."]
+
+[node name="Left" type="MeshInstance3D" parent="Frames"]
+position = Vector3(-4.3636365, 3.4, -3.4)
+mesh = SubResource("FramePlane")
+material_override = SubResource("FrameLeft")
+
+[node name="Right" type="MeshInstance3D" parent="Frames"]
+position = Vector3(4.3636365, 3.4, -3.4)
+mesh = SubResource("FramePlane")
+material_override = SubResource("FrameRight")
+
+[node name="LeftFront" type="MeshInstance3D" parent="Frames"]
+position = Vector3(-4.3636365, 3.4, 0.9)
+mesh = SubResource("FramePlane")
+material_override = SubResource("FrameLeft")
+
+[node name="RightFront" type="MeshInstance3D" parent="Frames"]
+position = Vector3(4.3636365, 3.4, 0.9)
+mesh = SubResource("FramePlane")
+material_override = SubResource("FrameRight")
+
+[node name="Camera" type="Camera3D" parent="."]
+position = Vector3(0, 39.6, 94)
+projection = 2
+size = 0.06
+frustum_offset = Vector2(0, -0.4056)
+current = true
+fov = 32.0
+near = 1.0
+far = 200.0
+
+[node name="Environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment")
+
+[node name="MainLamp" type="OmniLight3D" parent="."]
+position = Vector3(0, 5, 2.8)
+light_color = Color(1, 0.86, 0.68, 1)
+light_energy = 1.1
+shadow_enabled = true
+shadow_bias = 0.1
+shadow_normal_bias = 1.0
+shadow_blur = 0.35
+light_size = 0.02
+omni_range = 18.0
+omni_attenuation = 0.6

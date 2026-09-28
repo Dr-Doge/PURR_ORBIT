@@ -14,7 +14,7 @@ func update_outlines(room) -> void:
   sprite.texture=room.cat_visuals.texture(c.id)
   sprite.flip_h=room.cat_visuals.flipped(c.id)
   var rect: Rect2=room.cat_rect(c)
-  var factor: float=room.stage_scale()*0.9
+  var factor: float=room.object_scale(c.pos)
   sprite.position=room.screen_position(c.pos)+(rect.position-c.pos)*factor
   sprite.scale=Vector2.ONE*rect.size.x/sprite.texture.get_width()*factor
   # Soft periodic flashes, with a brighter peak during the produce animation.
