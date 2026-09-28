@@ -184,3 +184,5 @@ lab_model执行收割专职，独立树126位置，N11/N12移除、S10/S20帽维
 ## 2026-09-28最新cat1new2整合（005）
 
 远端983468c4合并本地27e82e94；短毛显示现在cat1new2，旧cat1new/cat1new1远端已删。正式room_3d与独立test_room/test_actors同步。上行idle／walk均×0.88，produce视觉约0.733秒末帧保持至模型1.1秒；压缩Atlas在计算脚底前解压CPU副本。经济与004模型／人设不变，497项验证reports/merge_cat1new2_928，参数17第25节。未重跑长期节奏／未导出EXE，发布状态见18同ID与Git。
+
+005发布确认：91a4524b已push至origin/main，包含27e82e94本地测试场景；497项验证代码不变，18同ID标已完成。
