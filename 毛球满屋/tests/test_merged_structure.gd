@@ -42,7 +42,7 @@ func run() -> void:
  game.room.step(0);await frames();index=0
  for c in m.cats:
   var sprite=game.room.actor_lighting.sprites["Cat_%d"%c.id]
-  check((sprite.texture is AtlasTexture and sprite.texture.atlas.resource_path.begins_with("res://Art/cat1new1/")) if c.kind=="short" else sprite.texture.resource_path.contains(prefixes[index]),"Independent original art: "+c.kind)
+  check((sprite.texture is AtlasTexture and sprite.texture.atlas.resource_path.begins_with("res://Art/cat1new2/")) if c.kind=="short" else sprite.texture.resource_path.contains(prefixes[index]),"Independent original art: "+c.kind)
   check(sprite.modulate==Color.WHITE and sprite.material_override.albedo_color==Color.WHITE,"No tint on original art: "+c.kind)
   c.reaction_kind=c.kind;c.reaction_left=game.room.cat_visuals.A.reaction_duration(c.kind);game.room.step(0)
   check((sprite.texture is AtlasTexture and sprite.texture.atlas.resource_path.ends_with("侧面 · 产毛.png")) if c.kind=="short" else sprite.texture.resource_path.to_lower().contains(prefixes[index].to_lower()+"produce"),"Original produce art: "+c.kind)

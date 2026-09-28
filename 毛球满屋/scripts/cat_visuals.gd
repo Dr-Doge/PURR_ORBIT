@@ -92,7 +92,14 @@ func foot_anchor(id: int) -> float:
  var frames: SpriteFrames=states.get(id,{}).get("frames",FRAMES)
  if not foot_anchors.has(frames):
   var frame: Texture2D=frames.get_frame_texture("idle",0)
-  var bounds: Rect2i=frame.get_image().get_used_rect()
+  # AtlasTexture.get_image crops before decompression; GPU-compressed atlases
+  # cannot be cropped that way. Decompress the CPU copy first, once per set.
+  var atlas: AtlasTexture=frame as AtlasTexture
+  var pixels: Image=atlas.atlas.get_image() if atlas!=null else frame.get_image()
+  if pixels.is_compressed():
+   if pixels.decompress()!=OK:return 1.0
+  if atlas!=null:pixels=pixels.get_region(Rect2i(atlas.region))
+  var bounds: Rect2i=pixels.get_used_rect()
   foot_anchors[frames]=float(bounds.end.y)/frame.get_height()
  return foot_anchors[frames]
 

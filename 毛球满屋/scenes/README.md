@@ -18,7 +18,7 @@
 
 | 游戏猫种 | 场景 | 原始动画 |
 | --- | --- | --- |
-| short短毛 | cats/short_cat.tscn | Art/cat1new_animations.tres → Art/cat1new1/九张图集 |
+| short短毛 | cats/short_cat.tscn | Art/cat1new_animations.tres → Art/cat1new2/九张图集 |
 | giant巨型 | cats/giant_cat.tscn | Art/cat5_animations.tres |
 | static静电 | cats/static_cat.tscn | Art/cat8_animations.tres |
 | lucky招财 | cats/lucky_cat.tscn | Art/cat10_animations.tres |
@@ -46,3 +46,5 @@ main.gd绑定静态HUD／菜单；room.gd同步模型与Cats／Facilities／Work
 改TestSetup后需要刷新静态预览时，仅用本次`tests/refresh_lab_preview.gd`：先带`-- --textures`生成占位PNG，经编辑器导入后再带`-- --actors`保存test_actors。这是仅针对测试场景的预览工具，不运行冻结的历史bake、不覆盖room_3d或whitebox_room。正式与测试的屏幕投影和动画仍共用运行逻辑。
 
 人设／存档／操作及343项验证见`../reports/lab_004/README.md`。
+
+2026-09-28第三次同步（005）：正式room_3d与独立test_room/test_actors均已改引用cat1new2；静态卡片重新刷新。图集压缩时先解压CPU副本再裁切，保持固定脚底锚点。旧cat1new/cat1new1已由组员删除，历史Git中可追溯；不得恢复活动资源对它们的引用。

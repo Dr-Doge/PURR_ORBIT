@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" path="res://scenes/whitebox_room.tscn" id="2_gwxsr"]
 [ext_resource type="Texture2D" path="res://Art/universe.jpg" id="6_ssy4c"]
 [ext_resource type="Script" path="res://scripts/actor_lighting_3d.gd" id="12_gaeys"]
-[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-侧面 · 待机.png" id="13_fkfji"]
+[ext_resource type="Texture2D" path="res://Art/cat1new2/三花猫 1-侧面 · 待机.png" id="13_fkfji"]
 [ext_resource type="Shader" path="res://Art/station_windows.gdshader" id="14_6nnlf"]
 [ext_resource type="Texture2D" path="res://Art/mask.jpg" id="15_omf8v"]
 [ext_resource type="Texture2D" path="res://Art/Scene.jpg" id="16_q2hcn"]

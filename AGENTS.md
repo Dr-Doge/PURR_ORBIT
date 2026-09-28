@@ -180,3 +180,7 @@ IMP-20260928-003：整合81cd50e6（2e3718a1）与本地bc6b681d，六项本地3
 `毛球满屋/scenes/测试场景.tscn`按404099a5构建，可F6运行；12猫、2收割工人、完整设施、有限121毛球与2币，参数唯一入口17第24.1。test_room／test_whitebox／test_hud／test_actors独立，TestSetup为模型布置来源；新增对象不仅是精灵。正式入口不改。
 
 lab_model执行收割专职，独立树126位置，N11/N12移除、S10/S20帽维护依赖改N10，原ABC与收割升级保留。cat_personas＋data/cat_personas.json为六类条件抽样离线AI缓存，12份原创档案、冲突／格式检查、稳定身份和回退；不声称在线AI／人工审核已接入。测试手动存档space_cats_lab_004.save，自动保存纯内存，拒绝正式档；正式岗位／退款／身份迁移待定。343项验证见reports/lab_004，复现tests/run_lab_004.ps1；未验证新节奏、未build、未提交／push。
+
+## 2026-09-28最新cat1new2整合（005）
+
+远端983468c4合并本地27e82e94；短毛显示现在cat1new2，旧cat1new/cat1new1远端已删。正式room_3d与独立test_room/test_actors同步。上行idle／walk均×0.88，produce视觉约0.733秒末帧保持至模型1.1秒；压缩Atlas在计算脚底前解压CPU副本。经济与004模型／人设不变，497项验证reports/merge_cat1new2_928，参数17第25节。未重跑长期节奏／未导出EXE，发布状态见18同ID与Git。
