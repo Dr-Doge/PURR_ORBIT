@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkh340auk863"
-path="res://.godot/imported/三花猫 1-上方 · 待机.png-a51bd58c516db18aed6d765876bf05fc.ctex"
+uid="uid://1ua6o32xwvp4"
+path="res://.godot/imported/三花猫 1-上方 · 前进.png-5db362cd4d7ae887013eacccddee6958.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/cat1new1/三花猫 1-上方 · 待机.png"
-dest_files=["res://.godot/imported/三花猫 1-上方 · 待机.png-a51bd58c516db18aed6d765876bf05fc.ctex"]
+source_file="res://Art/cat1new2/三花猫 1-上方 · 前进.png"
+dest_files=["res://.godot/imported/三花猫 1-上方 · 前进.png-5db362cd4d7ae887013eacccddee6958.ctex"]
 
 [params]
 

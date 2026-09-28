@@ -1,22 +1,22 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-侧面 · 前进.png" id="0"]
+[ext_resource type="Texture2D" path="res://Art/cat1new2/三花猫 1-侧面 · 前进.png" id="0"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-侧面 · 待机.png" id="1"]
+[ext_resource type="Texture2D" path="res://Art/cat1new2/三花猫 1-侧面 · 待机.png" id="1"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-上方 · 前进.png" id="2"]
+[ext_resource type="Texture2D" path="res://Art/cat1new2/三花猫 1-上方 · 前进.png" id="2"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-上方 · 待机.png" id="3"]
+[ext_resource type="Texture2D" path="res://Art/cat1new2/三花猫 1-上方 · 待机.png" id="3"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-下方 · 前进.png" id="4"]
+[ext_resource type="Texture2D" path="res://Art/cat1new2/三花猫 1-下方 · 前进.png" id="4"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-下方 · 待机.png" id="5"]
+[ext_resource type="Texture2D" path="res://Art/cat1new2/三花猫 1-下方 · 待机.png" id="5"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-侧面 · 坐下舔爪.png" id="6"]
+[ext_resource type="Texture2D" path="res://Art/cat1new2/三花猫 1-侧面 · 坐下舔爪.png" id="6"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-侧面 · 被抚摸.png" id="7"]
+[ext_resource type="Texture2D" path="res://Art/cat1new2/三花猫 1-侧面 · 被抚摸.png" id="7"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-侧面 · 产毛.png" id="8"]
+[ext_resource type="Texture2D" path="res://Art/cat1new2/三花猫 1-侧面 · 产毛.png" id="8"]
 
 [sub_resource type="AtlasTexture" id="walk_0"]
 atlas = ExtResource("0")
@@ -402,4 +402,4 @@ animations = [{"frames": [{"duration": 1.0, "texture": SubResource("walk_0")}, {
 {"frames": [{"duration": 1.0, "texture": SubResource("idle_down_0")}, {"duration": 1.0, "texture": SubResource("idle_down_1")}, {"duration": 1.0, "texture": SubResource("idle_down_2")}, {"duration": 1.0, "texture": SubResource("idle_down_3")}, {"duration": 1.0, "texture": SubResource("idle_down_4")}, {"duration": 1.0, "texture": SubResource("idle_down_5")}, {"duration": 1.0, "texture": SubResource("idle_down_6")}, {"duration": 1.0, "texture": SubResource("idle_down_7")}, {"duration": 1.0, "texture": SubResource("idle_down_8")}, {"duration": 1.0, "texture": SubResource("idle_down_9")}], "loop": true, "name": &"idle_down", "speed": 8},
 {"frames": [{"duration": 1.0, "texture": SubResource("groom_0")}, {"duration": 1.0, "texture": SubResource("groom_1")}, {"duration": 1.0, "texture": SubResource("groom_2")}, {"duration": 1.0, "texture": SubResource("groom_3")}, {"duration": 1.0, "texture": SubResource("groom_4")}, {"duration": 1.0, "texture": SubResource("groom_5")}, {"duration": 1.0, "texture": SubResource("groom_6")}, {"duration": 1.0, "texture": SubResource("groom_7")}, {"duration": 1.0, "texture": SubResource("groom_8")}, {"duration": 1.0, "texture": SubResource("groom_9")}, {"duration": 1.0, "texture": SubResource("groom_10")}, {"duration": 1.0, "texture": SubResource("groom_11")}, {"duration": 1.0, "texture": SubResource("groom_12")}, {"duration": 1.0, "texture": SubResource("groom_13")}, {"duration": 1.0, "texture": SubResource("groom_14")}, {"duration": 1.0, "texture": SubResource("groom_15")}, {"duration": 1.0, "texture": SubResource("groom_16")}, {"duration": 1.0, "texture": SubResource("groom_17")}, {"duration": 1.0, "texture": SubResource("groom_18")}, {"duration": 1.0, "texture": SubResource("groom_19")}], "loop": false, "name": &"groom", "speed": 8},
 {"frames": [{"duration": 1.0, "texture": SubResource("pet_0")}, {"duration": 1.0, "texture": SubResource("pet_1")}, {"duration": 1.0, "texture": SubResource("pet_2")}, {"duration": 1.0, "texture": SubResource("pet_3")}, {"duration": 1.0, "texture": SubResource("pet_4")}], "loop": true, "name": &"pet", "speed": 8},
-{"frames": [{"duration": 1.0, "texture": SubResource("produce_0")}, {"duration": 1.0, "texture": SubResource("produce_1")}, {"duration": 1.0, "texture": SubResource("produce_2")}, {"duration": 1.0, "texture": SubResource("produce_3")}, {"duration": 1.0, "texture": SubResource("produce_4")}], "loop": false, "name": &"produce", "speed": 4.545454545454545}]
+{"frames": [{"duration": 1.0, "texture": SubResource("produce_0")}, {"duration": 1.0, "texture": SubResource("produce_1")}, {"duration": 1.0, "texture": SubResource("produce_2")}, {"duration": 1.0, "texture": SubResource("produce_3")}, {"duration": 1.0, "texture": SubResource("produce_4")}], "loop": false, "name": &"produce", "speed": 6.818181818181818}]

@@ -41,4 +41,5 @@ static func step(state: Dictionary, model, c: Dictionary, motion: Vector2, walki
  state.clip=clip;state.frames=FRAMES
  state.flip=state.side_flip if state.facing=="side" or clip in ["pet","groom","produce"] else false
  if model.reacting(c):
-  state.age=maxf(0.0,A.duration("produce",FRAMES)-c.reaction_left)
+  # Advance from the original model clock; faster art holds its last frame until unlock.
+  state.age=maxf(0.0,A.reaction_duration(c.get("reaction_kind",c.kind))-c.reaction_left)

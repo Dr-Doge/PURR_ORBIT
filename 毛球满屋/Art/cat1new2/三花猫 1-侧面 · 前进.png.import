@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7rmmidwi442r"
-path="res://.godot/imported/三花猫 1-侧面 · 产毛.png-545eb00b751e50451e650c78f8a87218.ctex"
+uid="uid://uhmugnk5d3fr"
+path="res://.godot/imported/三花猫 1-侧面 · 前进.png-a4a923ea79558063545becfa0e043f8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/cat1new1/三花猫 1-侧面 · 产毛.png"
-dest_files=["res://.godot/imported/三花猫 1-侧面 · 产毛.png-545eb00b751e50451e650c78f8a87218.ctex"]
+source_file="res://Art/cat1new2/三花猫 1-侧面 · 前进.png"
+dest_files=["res://.godot/imported/三花猫 1-侧面 · 前进.png-a4a923ea79558063545becfa0e043f8f.ctex"]
 
 [params]
 

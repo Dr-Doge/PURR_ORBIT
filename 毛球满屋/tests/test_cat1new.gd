@@ -26,7 +26,7 @@ func run() -> void:
  preload("res://tests/harvest_fixture.gd").settle(m,c.id);v.step(m,0)
  check(v.states[c.id].clip=="produce" and is_equal_approx(c.reaction_left,1.1),"Produce overrides pet without changing cooldown")
  m.tick(0.55);v.step(m,0)
- check(v.texture(c.id)==V.Short.FRAMES.get_frame_texture("produce",2),"Produce follows model clock")
+ check(v.texture(c.id)==V.Short.FRAMES.get_frame_texture("produce",3),"Produce advances at 1.5x on model clock")
  var snapshot=var_to_bytes(m.cats);v.step(m,0.2)
  check(snapshot==var_to_bytes(m.cats),"Visuals never mutate simulation")
  for kind in ["giant","static","lucky","alien"]:
@@ -38,13 +38,15 @@ func run() -> void:
  var room=preload("res://scenes/room.tscn").instantiate();room.model=m;room.cat_visuals=v
  v.states[c.id].clip="walk";var side_size: Vector2=room.cat_rect(c).size
  v.states[c.id].clip="walk_up";var up_size: Vector2=room.cat_rect(c).size
- check(up_size.is_equal_approx(side_size*0.88),"Only upward walking is 12 percent smaller")
- for clip in ["idle_up","walk_down","idle","produce","pet","groom"]:
+ check(up_size.is_equal_approx(side_size*0.88),"Upward walking is 12 percent smaller")
+ v.states[c.id].clip="idle_up"
+ check(room.cat_rect(c).size.is_equal_approx(up_size),"Upward idle matches walking size")
+ for clip in ["walk_down","idle","produce","pet","groom"]:
   v.states[c.id].clip=clip
   check(room.cat_rect(c).size.is_equal_approx(side_size),"Other clip retains size: "+clip)
  for clip in V.Short.FRAMES.get_animation_names():
   var sheet: AtlasTexture=V.Short.FRAMES.get_frame_texture(clip,0)
-  check(sheet.atlas.resource_path.begins_with("res://Art/cat1new1/"),"Latest sheet: "+clip)
+  check(sheet.atlas.resource_path.begins_with("res://Art/cat1new2/"),"Latest sheet: "+clip)
  room.free()
  print("CAT1NEW: ",checks," checks, ",failures," failures")
  quit(0 if failures==0 else 1)
