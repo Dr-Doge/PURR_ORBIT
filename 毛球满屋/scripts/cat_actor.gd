@@ -7,8 +7,8 @@ func apply(room,c: Dictionary) -> void:
  var state: Dictionary=room.cat_visuals.states[c.id]
  kind=c.kind
  sprite.sprite_frames=state.frames
- sprite.animation=state.animation
- sprite.frame=room.cat_visuals.A.frame_at(state.animation,state.frames,state.age)
+ sprite.animation=state.get("clip",state.animation)
+ sprite.frame=room.cat_visuals.A.frame_at(sprite.animation,state.frames,state.age)
  sprite.flip_h=room.cat_visuals.flipped(c.id)
  sprite.modulate=Color.WHITE
  var rect: Rect2=room.cat_rect(c)

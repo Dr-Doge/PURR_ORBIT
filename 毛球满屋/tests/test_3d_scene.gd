@@ -36,7 +36,7 @@ func capture(file: String) -> void:
  await process_frame;await process_frame
  await RenderingServer.frame_post_draw
  var picture: Image=root.get_texture().get_image()
- picture.save_png(ProjectSettings.globalize_path("res://reports/merge_3d_928/"+file+".png"))
+ picture.save_png(ProjectSettings.globalize_path("res://reports/merge_cat1new_928/"+file+".png"))
  var covered: bool=true
  for i in range(11):
   var x: int=roundi((picture.get_width()-1)*i/10.0)
@@ -46,7 +46,7 @@ func capture(file: String) -> void:
    if not room_covers(canvas_point):covered=false
  check(covered,"No black exterior at canvas edges: "+file)
 func run() -> void:
- DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/merge_3d_928"))
+ DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/merge_cat1new_928"))
  game=load("res://scenes/3D scene.tscn").instantiate();game.testing=true;root.add_child(game)
  await process_frame;await process_frame
  check(game.modal=="start","Start screen available")

@@ -1,0 +1,94 @@
+{
+  "gameplay_baseline": "bc6b681d",
+  "art_source": "81cd50e6",
+  "local_import_settings_commit": "efd493a",
+  "unchanged_core_files": [
+    "毛球满屋/scripts/model.gd",
+    "毛球满屋/scripts/balance.gd",
+    "毛球满屋/scripts/data.gd",
+    "毛球满屋/scripts/build_rules.gd",
+    "毛球满屋/scripts/tree_specs.gd",
+    "毛球满屋/scripts/cat_space.gd",
+    "毛球满屋/scripts/cat_animation_data.gd"
+  ],
+  "new_art_and_whitebox_match_source": true,
+  "checks": 710,
+  "results": [
+    {
+      "test": "test_3d_scene",
+      "checks": 54,
+      "failures": 0
+    },
+    {
+      "test": "test_alien_visuals",
+      "checks": 51,
+      "failures": 0
+    },
+    {
+      "test": "test_cat1new",
+      "checks": 36,
+      "failures": 0
+    },
+    {
+      "test": "test_cat_visuals",
+      "checks": 112,
+      "failures": 0
+    },
+    {
+      "test": "test_demo",
+      "checks": 125,
+      "failures": 0
+    },
+    {
+      "test": "test_developer_004",
+      "checks": 28,
+      "failures": 0
+    },
+    {
+      "test": "test_editor_928",
+      "checks": 42,
+      "failures": 0
+    },
+    {
+      "test": "test_hover_008",
+      "checks": 39,
+      "failures": 0
+    },
+    {
+      "test": "test_idle_009",
+      "checks": 17,
+      "failures": 0
+    },
+    {
+      "test": "test_lighting_3d",
+      "checks": 10,
+      "failures": 0
+    },
+    {
+      "test": "test_merged_structure",
+      "checks": 38,
+      "failures": 0
+    },
+    {
+      "test": "test_overlap_924",
+      "checks": 19,
+      "failures": 0
+    },
+    {
+      "test": "test_overlap_ui_924",
+      "checks": 7,
+      "failures": 0
+    },
+    {
+      "test": "test_reaction_007",
+      "checks": 58,
+      "failures": 0
+    },
+    {
+      "test": "test_september23",
+      "checks": 74,
+      "failures": 0
+    }
+  ],
+  "long_pacing_rerun": false
+}

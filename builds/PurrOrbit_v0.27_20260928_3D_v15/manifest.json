@@ -1,0 +1,16 @@
+{
+  "version": "0.27.0.15",
+  "engine": "4.7.1.stable.official.a13da4feb",
+  "sources": [
+    "bc6b681d",
+    "efd493a",
+    "81cd50e6"
+  ],
+  "entry_scene": "res://scenes/3D scene.tscn",
+  "filename": "PurrOrbit.exe",
+  "bytes": 151252136,
+  "sha256": "f3527f21895a8e1bfc1c79c88851421992017b10a195afcad6ac6755a44a27e5",
+  "embedded_pck": true,
+  "assertions_passed": 710,
+  "smoke_exit_code": 0
+}

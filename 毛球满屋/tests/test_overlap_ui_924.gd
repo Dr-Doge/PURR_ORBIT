@@ -36,6 +36,6 @@ func run() -> void:
  for i in range(240):game._process(0.05)
  check(not m.Space.overlaps(a,b),"Actual game loop completes soft separation")
  await process_frame;await RenderingServer.frame_post_draw
- root.get_texture().get_image().save_png("res://reports/merge_3d_928/drag_release.png")
+ root.get_texture().get_image().save_png("res://reports/merge_cat1new_928/drag_release.png")
  print("OVERLAP UI: ",checks," checks, ",failures," failures")
  quit(0 if failures==0 else 1)

@@ -162,3 +162,8 @@ IMP-20260928-001已完成。打开毛球满屋/scenes/main.tscn查看实际主�
 ## 2026-09-28当前3D总版本
 
 IMP-20260928-002：本地8356e74与组员40e566cb整合，默认scenes/3D scene.tscn。room_3d、ui/hud_3d及whitebox实例节点持久化；2Dmain保留回归，勿再说它是启动场景。Art和组员whitebox原件完整保留，五猫分别Cat1／5／8／10／14，外星不再复用短毛。3D Sprite3D受光投影，模型与经济保持本地；Cat14动画压到原1.1秒反应时钟。数字1—9仍资源／设施开发工具，不恢复远端预览生成猫快捷键。500项验证见reports/merge_3d_928；17第22节、18同ID记录，未改正式存档、未重跑长期节奏。当前Windows执行文件builds/PurrOrbit_v0.27_20260928_3D/PurrOrbit.exe（0.27.0.14）。
+
+
+## 2026-09-28最新四向三花猫总版本
+
+IMP-20260928-003：整合81cd50e6（2e3718a1）与本地bc6b681d，六项本地3D纹理导入设置由efd493a保留。短毛显示改cat1new_animations→cat1new1九图集，四向／抚摸／舔爪；旧cat1仅留模型1.1秒时钟，不能误判它仍是显示素材。short_cat、room_3d初始Sprite3D与art_library均同步。核心玩法／经济不变，710项验证见reports/merge_cat1new_928；17第23节、18同ID维护。当前执行文件builds/PurrOrbit_v0.27_20260928_3D_v15/PurrOrbit.exe（0.27.0.15），未改正式档、未重跑长期节奏。

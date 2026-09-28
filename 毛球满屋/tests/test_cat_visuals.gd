@@ -4,7 +4,9 @@ const Model = preload("res://scripts/model.gd")
 const Visuals = preload("res://scripts/cat_visuals.gd")
 const Room = preload("res://scripts/room.gd")
 var failures: int = 0
+var checks: int = 0
 func check(ok: bool, message: String) -> void:
+ checks+=1
  if not ok:
   failures += 1
   push_error(message)
@@ -19,11 +21,11 @@ func run() -> void:
  var before: PackedByteArray = var_to_bytes(model.cats)
  visuals.step(model,0.25)
  check(var_to_bytes(model.cats) == before,"Visual update does not mutate cats")
- check(visuals.texture(c.id) == Visuals.FRAMES.get_frame_texture("idle",2),"Idle advances frames")
- c.pos.x += 1.0
+ check(visuals.texture(c.id) == Visuals.Short.FRAMES.get_frame_texture("idle",2),"Idle advances frames")
+ c.pos.x += 4.0
  visuals.step(model,0.1)
  check(visuals.states[c.id].animation == "walk" and visuals.flipped(c.id),"Right movement walks and faces right")
- c.pos.x -= 1.0
+ c.pos.x -= 4.0
  visuals.step(model,0.1)
  check(not visuals.flipped(c.id),"Left movement faces left")
  model.reset_activity(c);c.idle_left=1;model.tick(0.01)
@@ -102,7 +104,9 @@ func run() -> void:
   for frame in range(expected):
    var texture: Texture2D = Visuals.FRAMES.get_frame_texture(animation,frame)
    check(texture != null and texture.get_width()>0,"Texture loaded")
-   check(texture.get_image().get_pixel(0,0).a<0.01,"Frame background transparent")
+   var frame_image: Image=texture.get_image()
+   if frame_image.is_compressed():frame_image.decompress()
+   check(frame_image.get_pixel(0,0).a<0.01,"Frame background transparent")
  if "--capture" in OS.get_cmdline_user_args():
   root.size = Vector2i(1440,900)
   var room = load("res://scenes/room.tscn").instantiate();room.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
@@ -123,5 +127,5 @@ func run() -> void:
   print("PREVIEW: ",output)
   room.queue_free()
   await process_frame
- print("CAT ANIMATION CHECKS: ",failures," failures")
+ print("CAT ANIMATION: ",checks," checks, ",failures," failures")
  quit(0 if failures == 0 else 1)

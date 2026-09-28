@@ -27,7 +27,7 @@ func run() -> void:
   v.states.clear();v.step(m,8)
   check(c.reaction_left==duration and v.states[c.id].age==0,"Visual rebuild or visual-only elapsed cannot clear cooldown: "+kind)
   m.tick(duration-0.01);v.step(m,0)
-  check(m.reacting(c) and v.states[c.id].animation=="produce" and v.texture(c.id)==A.frames_for(kind).get_frame_texture("produce",A.frames_for(kind).get_frame_count("produce")-1),"Last frame and lock stay aligned: "+kind)
+  check(m.reacting(c) and v.states[c.id].animation=="produce" and v.texture(c.id)==v.states[c.id].frames.get_frame_texture("produce",v.states[c.id].frames.get_frame_count("produce")-1),"Last frame and lock stay aligned: "+kind)
   rub(m,c);check(m.harvests==count and c.pet==0,"No queued gesture near cooldown end: "+kind)
   m.tick(0.011);v.step(m,0)
   check(not m.reacting(c) and v.states[c.id].animation!="produce" and m.harvests==count,"End unlocks without automatic payout: "+kind)
@@ -90,9 +90,9 @@ func run() -> void:
  check(not game.model.reacting(c) and c.pet==0 and game.model.harvests==1,"Unpause ends reaction without cached gesture")
  for i in range(12):motion(game,c,i)
  check(game.model.harvests==2,"New actual motion works after reaction")
- DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/merge_3d_928"))
+ DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/merge_cat1new_928"))
  game.room.step(0);await process_frame;await RenderingServer.frame_post_draw
- root.get_texture().get_image().save_png(ProjectSettings.globalize_path("res://reports/merge_3d_928/20_reaction.png"))
+ root.get_texture().get_image().save_png(ProjectSettings.globalize_path("res://reports/merge_cat1new_928/20_reaction.png"))
  game.queue_free();await process_frame
  print("REACTION 007: ",checks," checks, ",failures," failures")
  quit(0 if failures==0 else 1)

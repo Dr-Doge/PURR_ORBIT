@@ -18,7 +18,7 @@
 
 | 游戏猫种 | 场景 | 原始动画 |
 | --- | --- | --- |
-| short短毛 | cats/short_cat.tscn | Art/cat1_animations.tres |
+| short短毛 | cats/short_cat.tscn | Art/cat1new_animations.tres → Art/cat1new1/九张图集 |
 | giant巨型 | cats/giant_cat.tscn | Art/cat5_animations.tres |
 | static静电 | cats/static_cat.tscn | Art/cat8_animations.tres |
 | lucky招财 | cats/lucky_cat.tscn | Art/cat10_animations.tres |
@@ -33,3 +33,6 @@ main.gd绑定静态HUD／菜单；room.gd同步模型与Cats／Facilities／Work
 库存、商店、升级图的列表项及数量变化的游戏对象继续由数据驱动；运行时在“远程”场景树检查。主场景本地树代表初始布局，不能显示尚未加载的玩家存档。新猫数量由经济模型决定，复制初始猫节点不会额外赠送猫；当前读取前两只初始猫的布局与种类。
 
 不要重新运行历史bake/extract脚本覆盖场景，它们已冻结。新增测试需instantiate room.tscn，不能再Room.new()；独立测试窗口需自行设置尺寸锚点，修改模型后调用room.step(0)同步精灵。
+
+
+2026-09-28第二次同步：short_cat的Animation与room_3d的两个初始Sprite3D均绑定新版图集。短毛资源包含idle/walk上下方向、pet、groom、produce，256×256切片；旧cat1_animations仍作为1.1秒模型冷却基准保留，不是当前短毛显示素材。预览与运行核对见reports/merge_cat1new_928。

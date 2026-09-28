@@ -339,6 +339,9 @@ func cat_extent(c: Dictionary, animate: bool = true) -> float:
  return extent
 func cat_rect(c: Dictionary) -> Rect2:
  var extent: float=cat_extent(c)
+ if cat_visuals.states.get(c.id,{}).get("frames")==cat_visuals.Short.FRAMES:
+  extent*=0.8
+  if cat_visuals.states[c.id].get("clip","")=="walk_up":extent*=0.88
  # Anchor the opaque foot pixels, including during the growth pulse.
  var variant: int=int(c.get("variant",c.id%4))
  var progress: float=model.pet_progress(c)
