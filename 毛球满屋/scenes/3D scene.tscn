@@ -1,12 +1,184 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/scene_3d.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/game_cursor.gd" id="2_jkv2x"]
+[ext_resource type="PackedScene" path="res://scenes/room_3d.tscn" id="room_scene"]
 
-[node name="3D scene" type="Control"]
+[ext_resource type="PackedScene" path="res://scenes/ui/start_menu.tscn" id="start_menu"]
+
+[ext_resource type="PackedScene" path="res://scenes/ui/hud_3d.tscn" id="hud_scene"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yq6so"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.88235295, 0.8901961, 0.8627451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7019608, 0.78039217, 0.7137255, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv21b"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.8509804, 0.8980392, 0.8352941, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7019608, 0.78039217, 0.7137255, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tel4y"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.78431374, 0.8666667, 0.7764706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7019608, 0.78039217, 0.7137255, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkpxi"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.8509804, 0.8980392, 0.8352941, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7019608, 0.78039217, 0.7137255, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q0nq"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6901961, 0.8156863, 0.7019608, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7019608, 0.78039217, 0.7137255, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="SystemFont" id="SystemFont_dgi5k"]
+font_names = PackedStringArray("Microsoft YaHei", "Segoe UI")
+
+[sub_resource type="Theme" id="Theme_j8jky"]
+default_font = SubResource("SystemFont_dgi5k")
+default_font_size = 16
+Button/colors/font_color = Color(0.1882353, 0.29411766, 0.2627451, 1)
+Button/colors/font_disabled_color = Color(0.54901963, 0.59607846, 0.5529412, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_yq6so")
+Button/styles/focus = SubResource("StyleBoxFlat_fv21b")
+Button/styles/hover = SubResource("StyleBoxFlat_tel4y")
+Button/styles/normal = SubResource("StyleBoxFlat_qkpxi")
+Button/styles/pressed = SubResource("StyleBoxFlat_5q0nq")
+CheckButton/colors/font_color = Color(0.2, 0.29411766, 0.28627452, 1)
+Label/colors/font_color = Color(0.2, 0.29411766, 0.28627452, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6pm6"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.039215688, 0.09411765, 0.13725491, 0.73333335)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.039215688, 0.09411765, 0.13725491, 0)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5he1u"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+bg_color = Color(0.9529412, 0.9411765, 0.9019608, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.7294118, 0.78431374, 0.7254902, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[node name="PurrOrbit" type="Control" unique_id=34013823]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_j8jky")
 script = ExtResource("1")
+
+[node name="Cursor" type="Node" parent="." unique_id=1202132492]
+script = ExtResource("2_jkv2x")
+
+[node name="Room" parent="." instance=ExtResource("room_scene")]
+
+[node name="HUD" parent="." instance=ExtResource("hud_scene")]
+
+[node name="Overlay" type="PanelContainer" parent="." unique_id=332454451]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 510.0
+offset_top = 505.0
+offset_right = -510.0
+offset_bottom = -20.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c6pm6")
+
+[node name="Center" type="CenterContainer" parent="Overlay" unique_id=644719741]
+layout_mode = 2
+
+[node name="Card" type="PanelContainer" parent="Overlay/Center" unique_id=1233477872]
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5he1u")
+
+[node name="Body" type="VBoxContainer" parent="Overlay/Center/Card" unique_id=1297684432]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="StartMenu" parent="Overlay/Center/Card/Body" instance=ExtResource("start_menu")]
+
+[editable path="Room"]
+[editable path="Overlay/Center/Card/Body/StartMenu"]
+[editable path="HUD"]

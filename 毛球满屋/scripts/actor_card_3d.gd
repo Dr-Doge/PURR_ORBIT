@@ -1,9 +1,8 @@
-extends "res://scripts/room.gd"
+extends "res://scripts/facility_view.gd"
 ## Reuse procedural worker/device artwork as transparent, lit 3D cards.
 var entity: Dictionary={}
 var actor_kind: String=""
 func _ready() -> void:
- mouse_filter=Control.MOUSE_FILTER_IGNORE
  pointer=Vector2(-10000,-10000)
 func _draw() -> void:
  if entity.is_empty():return

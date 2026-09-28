@@ -10,7 +10,7 @@ func frames(count: int=4) -> void:
  for i in range(count):await process_frame
 func capture(name: String) -> void:
  await frames(5);await RenderingServer.frame_post_draw
- check(root.get_texture().get_image().save_png(ProjectSettings.globalize_path("res://reports/display_16_9/"+name+".png"))==OK,"Capture "+name)
+ check(root.get_texture().get_image().save_png(ProjectSettings.globalize_path("res://reports/editor_928/"+name+".png"))==OK,"Capture "+name)
  check(game.room.stage_origin().is_equal_approx(Vector2.ZERO),"No stage letterboxing: "+name)
  check(game.room.backdrop.size.is_equal_approx(game.room.size),"Backdrop fills viewport: "+name)
  check(game.card.get_global_rect().end.x<=game.size.x+1 and game.card.get_global_rect().end.y<=game.size.y+1,"Panel within viewport: "+name)
@@ -35,7 +35,7 @@ func rub_cat(c: Dictionary) -> void:
   game._process(0.05);await process_frame
   if game.model.c_revision(c)!=revision:return
 func run() -> void:
- DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/display_16_9"))
+ DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/editor_928"))
  game=Main.instantiate();game.testing=true;root.add_child(game);game.set_process(false)
  await capture("01_start");await press("开始游戏")
  if not game.active:game.start_game()
@@ -55,7 +55,7 @@ func run() -> void:
  game.model.move_cat(c.id,Vector2(550,470));c.layers=3;var before: float=game.model.wallet
  for i in range(8):move(game.room.screen_position(c.pos+Vector2(-18 if i%2 else 18,0)));await process_frame
  check(game.model.wallet==before,"Modal blocks scene input")
- game.show_shop();await capture("04_shop");await press("购买 · 45 毛球")
+ game.show_shop();await capture("04_shop");await press("购买 · 12 毛球")
  check(game.model.workers.size()==1,"Real shop button buys worker")
  game.close_modal();await rub_cat(c);await frames();check(game.modal=="contact","First contact")
  await capture("05_contact");game.model.accept_contact();game.show_gacha();game.pull_capsule();await capture("06_capsule")
@@ -84,9 +84,9 @@ func run() -> void:
  game.model.wallet=100000;game.refresh();check(not cat_button.disabled,"Affordability updates while panel stays open")
  game.model.workers[0].cooldown=2.5;game.show_workers();await frames()
  check(game.model.workers[0].cooldown==2.5,"Opening worker panel preserves cooldown")
- game.show_tree("worker");await frames();await press("积攒层数收割 0/7 · 120毛球")
+ game.show_tree("U12-L1");await frames();await press("购买 · 30 毛球")
  check(game.model.worker_target()==2,"Real upgrade button buys exactly one target layer")
- await press("收割CD缩减 0/6 · 180毛球")
+ game.show_tree("U13-L1");await frames();await press("购买 · 45 毛球")
  check(game.model.worker_cooldown()<3.0 and game.model.workers[0].cooldown==2.5,"Real CD upgrade changes future CD without resetting current one")
  await capture("14_worker_upgrades");game.show_workers();await capture("15_worker_cd")
  print("UI CHECKS: ",failures," failures");quit(0 if failures==0 else 1)

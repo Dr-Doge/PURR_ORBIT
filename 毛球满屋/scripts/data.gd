@@ -21,17 +21,18 @@ const RESEARCH = {
  "sun":{"round":1,"price":6000,"pre":["feeder"],"pos":Vector2(260,750),"desc":"将CD中的猫拖进日光浴，快速长出新毛层。"},
  "hats":{"round":2,"price":900,"pre":["worker"],"pos":Vector2(1050,1100),"desc":"把固定工作交给固定工人。"},
  "arcade":{"round":2,"price":16000,"pre":["feeder"],"pos":Vector2(1900,1200),"desc":"猫暂停长毛，按轮次赢取换金道具。"},
- "altar":{"round":3,"price":200,"pre":["arcade"],"pos":Vector2(1900,400),"desc":"指派猫提高全局生产速度，也会干扰娱乐设备。"},
- "maint":{"round":3,"price":95,"pre":["hats","altar"],"pos":Vector2(1050,180),"desc":"解锁工人维修黑屏设备的能力。"}}
-const PRICES = {"short":30,"worker":45,"feeder":300,"sun":3000,"arcade":12000}
+ "altar":{"round":1,"price":24000,"pre":["arcade"],"pos":Vector2(1900,400),"desc":"指派猫提高全局生产速度，也会干扰娱乐设备。"},
+ "maint":{"round":1,"price":6000,"pre":["hats","altar"],"pos":Vector2(1050,180),"desc":"解锁工人维修黑屏设备的能力。"}}
+const PRICES = {"short":30,"worker":45,"feeder":300,"sun":3000,"arcade":12000,"altar":18000}
 const BRANCHES = {
  "worker":{"efficiency":["轻快步伐",160,6],"harvest_layers":["积攒层数收割",120,7],"cooldown":["收割CD缩减",180,6]},
  "feeder":{"food":["高级猫粮",500,2],"transform":["巨型猫转化",650,4],"capacity":["扩充料仓",450,4]},
- "sun":{"time":["日光浴速度",1600,4],"capacity":["日光浴容量",1200,4],"transform":["静电猫转化",1800,4]},
- "arcade":{"win":["获奖概率",3500,4],"time":["轮次速度",4000,4],"value":["奖品价值",4500,4],"transform":["招财猫转化",3000,4]}}
+ "sun":{"time":["日光浴速度",1600,4],"transform":["静电猫转化",1800,4]},
+ "arcade":{"win":["获奖概率",3500,4],"time":["轮次速度",4000,4],"value":["奖品价值",4500,4],"transform":["招财猫转化",3000,4]},
+ "altar":{"speed":["共鸣强度",5000,4],"transform":["外星猫转化",4500,4]}}
 const FOOD_NAMES = ["标准猫条","高能冻干","星尘鱼罐头"]
 const FOOD_PRICES = [6,12,18]
-const ROLES = {"general":"自由照料","harvest":"抚摸收割","refill":"补充猫粮","sun":"日光浴搬运","clean":"清除蟑螂","arcade":"娱乐设施安排"}
+const ROLES = {"general":"自由照料","harvest":"抚摸收割","refill":"补充猫粮","sun":"日光浴搬运","clean":"清除蟑螂","arcade":"娱乐设施安排","altar":"祭坛安排","repair":"设备维护"}
 const ITEMS = ["不存在的鱼骨","猫形黑洞门票","反重力纸箱","宇宙的逗猫棒","第九条尾巴"]
 # Six collections; full-set strength is split across six pieces, never copied per piece.
 const SERIES = [
@@ -44,7 +45,7 @@ const SERIES = [
 static func title(key: String) -> String:
  return NAMES.get(key,key)
 static func gate(key: String) -> int:
- return int(RESEARCH.get(key,{}).get("round",1))
+ return 1 # Collection batches no longer gate facilities/mechanics.
 static func collectible_name(key: String) -> String:
  for s in SERIES:
   for i in range(SERIES_SIZE):
@@ -59,7 +60,7 @@ static func branch_effect(subject: String,key: String,level: int) -> String:
   "feeder:capacity": return "料仓 %d 份" % (B.FEED_CAPACITY+level*B.FEED_CAPACITY_STEP)
   "feeder:food": return FOOD_NAMES[level]
   "sun:time": return "处理速度 +%d%%" % (level*30)
-  "sun:capacity": return "%d 个位置" % (2+level)
+  "altar:speed": return "单猫全局加速 +%d%%（全局上限90%%）" % roundi((B.ALTAR_SPEED_BASE+B.ALTAR_SPEED_STEP*level)*100)
   "arcade:win": return "中奖率 %d%%" % (55+level*8)
   "arcade:time": return "每轮 %.1f 秒" % (B.ENT_TIME/(1+level*B.ENT_SPEED_STEP))
   "arcade:value": return "奖品基础价值 %d" % (B.ENT_VALUE*(1+level*B.ENT_VALUE_STEP))

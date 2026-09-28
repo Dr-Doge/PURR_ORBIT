@@ -27,6 +27,7 @@ var pointer_known: bool = false
 
 var pointer := Vector2.ZERO
 var previous := Vector2.ZERO
+var progress_style: StyleBoxFlat = StyleBoxFlat.new()
 var clock: float = 0.0
 var effects: Array = []
 var reduced: bool = false
@@ -35,24 +36,64 @@ const INK = Color("e3efef")
 const MINT = Color("91e2c6")
 const GOLD = Color("f3ca86")
 const GACHA_POS = Vector2(1362,300)
-var gacha_position: Vector2 = GACHA_POS
+var gacha_position: Vector2=GACHA_POS
 var cat_visuals = preload("res://scripts/cat_visuals.gd").new()
+const CAT_SCENES={"short":preload("res://scenes/cats/short_cat.tscn"),"giant":preload("res://scenes/cats/giant_cat.tscn"),"static":preload("res://scenes/cats/static_cat.tscn"),"lucky":preload("res://scenes/cats/lucky_cat.tscn"),"alien":preload("res://scenes/cats/alien_cat.tscn")}
+var cat_nodes: Dictionary={}
+var facility_nodes: Dictionary={}
+var worker_nodes: Dictionary={}
+var initial_cats: Array=[]
+var actors_model
+func apply_initial_layout(target_model) -> void:
+ for i in range(mini(initial_cats.size(),target_model.cats.size())):
+  target_model.cats[i].pos=initial_cats[i].pos
+  target_model.cats[i].dest=initial_cats[i].pos
+  target_model.cats[i].kind=initial_cats[i].kind
+func sync_actors() -> void:
+ if actors_model!=model:
+  cat_nodes.clear();facility_nodes.clear();worker_nodes.clear();actors_model=model
+  for layer in [$Cats,$Facilities,$Workers]:
+   for node in layer.get_children():layer.remove_child(node);node.queue_free()
+ var alive: Dictionary={}
+ var ordered: Array=model.cats.duplicate()
+ ordered.sort_custom(func(a,b):return a.pos.y<b.pos.y)
+ for c in ordered:
+  alive[c.id]=true
+  if cat_nodes.has(c.id) and cat_nodes[c.id].kind!=c.kind:
+   var previous_actor=cat_nodes[c.id]
+   $Cats.remove_child(previous_actor);previous_actor.queue_free();cat_nodes.erase(c.id)
+  if not cat_nodes.has(c.id):
+   var actor=CAT_SCENES[c.kind].instantiate();actor.name="Cat_%d_%s" % [c.id,c.kind]
+   $Cats.add_child(actor);cat_nodes[c.id]=actor
+  var actor=cat_nodes[c.id];actor.apply(self,c);$Cats.move_child(actor,$Cats.get_child_count()-1)
+ for id in cat_nodes.keys():
+  if not alive.has(id):cat_nodes[id].queue_free();cat_nodes.erase(id)
+ sync_entities(model.facilities,facility_nodes,$Facilities,false)
+ sync_entities(model.workers,worker_nodes,$Workers,true)
+func sync_entities(items: Array,views: Dictionary,layer: Node,workers: bool) -> void:
+ var alive: Dictionary={}
+ for item in items:
+  alive[item.id]=true
+  if not views.has(item.id):
+   var path: String="res://scenes/facilities/"+("worker" if workers else item.kind)+".tscn"
+   var view=load(path).instantiate();view.name=("Worker" if workers else item.kind.capitalize())+"_"+str(item.id)
+   layer.add_child(view);views[item.id]=view
+  views[item.id].apply(self,item)
+ for id in views.keys():
+  if not alive.has(id):views[id].queue_free();views.erase(id)
 func _ready() -> void:
+ for actor in $Cats.get_children():
+  var simulation_pos: Vector2=D.FLOOR.position+(actor.position-ART_FLOOR.position)*D.FLOOR.size/ART_FLOOR.size
+  initial_cats.append({"pos":simulation_pos,"kind":actor.kind})
+ progress_style.bg_color=Color("243b4c");progress_style.set_corner_radius_all(2)
  font.font_names = PackedStringArray(["Microsoft YaHei","Segoe UI"])
  clip_contents = true
- backdrop = Backdrop.new()
- backdrop.show_behind_parent = true
- backdrop.z_index=-2
- add_child(backdrop)
- static_outlines=preload("res://scripts/static_cat_outline.gd").new()
- static_outlines.show_behind_parent=true
- add_child(static_outlines)
+ backdrop=$Backdrop
+ static_outlines=$StaticOutlines
+ harvest_art=$HarvestEffects
+ token_effect=$TokenLayer/TokenEffect;token_effect.room=self
  resized.connect(layout_backdrop)
  layout_backdrop()
- harvest_art=preload("res://scripts/harvest_art.gd").new()
- add_child(harvest_art)
- var token_layer:=CanvasLayer.new();token_layer.layer=20;add_child(token_layer)
- token_effect=preload("res://scripts/token_effect.gd").new();token_effect.room=self;token_layer.add_child(token_effect)
  mouse_exited.connect(clear_hover)
  get_window().focus_exited.connect(lose_pointer_focus)
  get_window().focus_entered.connect(gain_pointer_focus)
@@ -124,7 +165,7 @@ func object_transform(at: Vector2) -> void:
  draw_set_transform(screen_position(at)-at*scale_factor,0,Vector2.ONE*scale_factor)
 func object_scale(_at: Vector2) -> float:
  return stage_scale()*0.9
-func reward_target(token: bool = false) -> Vector2:
+func reward_target(token: bool=false) -> Vector2:
  return stage_origin()+Vector2(1250 if token else 1140,137)*stage_scale()
 func stage_transform() -> void:
  draw_set_transform(stage_origin(),0,Vector2.ONE*stage_scale())
@@ -151,7 +192,9 @@ func step(dt: float) -> void:
  refresh_hover()
  clock += dt
  if backdrop != null: backdrop.step(dt)
- if model != null: cat_visuals.step(model,dt)
+ if model != null:
+  cat_visuals.step(model,dt)
+  sync_actors()
  if static_outlines != null and model != null:static_outlines.update_outlines(self)
  for e in effects.duplicate():
   e.age += dt
@@ -162,7 +205,7 @@ func step(dt: float) -> void:
  queue_redraw()
 func reset_pointer() -> void:
  if model!=null:
-  for c in model.cats:model.cancel_pet(c)
+  pass # Leaving the room/UI keeps progress until model-time grace expires.
  clear_hover()
  if dragging >= 0:
   var c: Dictionary = model.cat(dragging)
@@ -241,18 +284,14 @@ func _gui_input(event: InputEvent) -> void:
    accept_event()
  queue_redraw()
 func draw_entities() -> void:
- for f in model.facilities:
-  object_transform(f.pos); draw_facility(f)
  if model.gacha_ready:
   object_transform(gacha_position); draw_gacha()
  var ordered: Array = model.cats.duplicate()
  ordered.sort_custom(func(a: Dictionary,b: Dictionary): return a.pos.y < b.pos.y)
  for c in ordered:
   object_transform(c.pos); draw_cat(c)
- for w in model.workers:
-  object_transform(w.pos); draw_worker(w)
 func _draw() -> void:
- if model == null or size.x <= 0: return
+ if model == null or size.x <= 0:return
  draw_entities()
  if interactive and model.harvests<2 and not model.cats.is_empty():
   object_transform(model.cats[0].pos)
@@ -300,81 +339,29 @@ func cat_extent(c: Dictionary, animate: bool = true) -> float:
  return extent
 func cat_rect(c: Dictionary) -> Rect2:
  var extent: float=cat_extent(c)
- if cat_visuals.states.get(c.id,{}).get("frames")==cat_visuals.Short.FRAMES:extent*=0.8
+ if cat_visuals.states.get(c.id,{}).get("frames")==cat_visuals.Short.FRAMES:
+  extent*=0.8
+  if cat_visuals.states[c.id].get("clip","")=="walk_up":extent*=0.88
  # Anchor the opaque foot pixels, including during the growth pulse.
- return Rect2(c.pos+cat_visuals.visual_offset(c.id)+Vector2(-extent/2.0,26.0-extent*cat_visuals.foot_anchor(c.id)),Vector2.ONE*extent)
+ var variant: int=int(c.get("variant",c.id%4))
+ var progress: float=model.pet_progress(c)
+ var touch: float=sin(clock*(10+variant*2))*0.025 if model.elapsed-c.get("pet_stamp",-10.0)<0.15 else 0.0
+ var squeeze: float=progress*(0.07+variant*0.018)+touch if not model.reacting(c) else sin(clampf(1.0-c.reaction_left/1.1,0,1)*PI)*(0.07+variant*0.02)
+ var dimensions: Vector2=Vector2(extent*(1+squeeze),extent*(1-squeeze))
+ return Rect2(c.pos+cat_visuals.visual_offset(c.id)+Vector2(-dimensions.x/2.0,26.0-dimensions.y*cat_visuals.foot_anchor(c.id)),dimensions)
 func draw_cat(c: Dictionary) -> void:
- var at: Vector2=c.pos
- var px: float=4.0*cat_extent(c)/100.0
- var color:=Color.WHITE
  ellipse(c.pos+Vector2(0,26),Vector2(31*cat_extent(c,false)/100.0,10),Color(0.02,0.08,0.13,0.25))
- var image: Texture2D=cat_visuals.texture(c.id)
- var rect: Rect2=cat_rect(c)
- if cat_visuals.flipped(c.id):rect.size.x=-rect.size.x
- draw_texture_rect(image,rect,false,color)
- if c.id == hover:
-  draw_arc(c.pos,43*px/4,0,TAU,32,MINT,2)
-  if c.pet > 0: draw_arc(c.pos,47*px/4,-PI/2,-PI/2+TAU*model.pet_progress(c),32,GOLD,3)
-  if c.kind == "alien": draw_arc(c.pos,180,0,TAU,50,Color(MINT,0.25),1)
+ draw_cat_feedback(c)
+func draw_cat_feedback(c: Dictionary) -> void:
+ var progress: float=model.pet_progress(c)
+ if progress>0 or c.id==hover:
+  var bar: Rect2=Rect2(c.pos+Vector2(-26,37),Vector2(52,5))
+  draw_style_box(progress_style,bar)
+  if progress>0:draw_rect(Rect2(bar.position,Vector2(52*progress,5)),GOLD)
+  if c.id==hover:text(c.pos+Vector2(-21,57),"%d%%" % roundi(progress*100),11,GOLD)
+ if not c.get("charges",[]).is_empty():text(c.pos+Vector2(-20,72),"蓄养 %d" % c.charges.size(),11,MINT)
  if c.station >= 0: text(c.pos+Vector2(-25,47),"设施使用中",11,Color("8dadaf"))
-func draw_facility(f: Dictionary) -> void:
- var at: Vector2 = f.pos
- ellipse(at+Vector2(0,40),Vector2(64,15),Color(0.01,0.05,0.09,0.3))
- if f.kind == "feeder":
-
-  draw_texture_rect(FEED_TEXTURE,Rect2(at-Vector2(78,101),Vector2(156,156)),false)
-  text(at+Vector2(-47,70),"猫粮 %d/%d" % [f.grain,model.feed_capacity()],13,GOLD)
-  if f.bugs > 0:
-   panel(Rect2(at+Vector2(23,-57),Vector2(36,27)),Color("c96f78"))
-   text(at+Vector2(29,-37),"虫！",14)
- elif f.kind == "sun":
-  draw_texture_rect(LIGHT_TEXTURE,Rect2(at-Vector2(100,110),Vector2(200,200)),false)
-  for side in [-1,1]:
-   # New 1024px artwork: apertures at (306,165)/(718,165), platform center near (512,620).
-   var bulb: Vector2=at+Vector2(side*40.234375,-77.7734375)
-   var mouth:=Vector2(8.5,-side*1.8)
-   var landing: Vector2=at+Vector2(side*16,11.09375)
-   for spread in [1.25,1.0,0.75]:
-    var points:=PackedVector2Array([bulb-mouth,bulb+mouth,landing+Vector2(24*spread,0),landing-Vector2(24*spread,0)])
-    var colors:=PackedColorArray([Color(1.0,0.90,0.58,0.16),Color(1.0,0.90,0.58,0.16),Color(1.0,0.88,0.53,0.015),Color(1.0,0.88,0.53,0.015)])
-    draw_polygon(points,colors)
-   ellipse(landing,Vector2(26,15),Color(1.0,0.88,0.53,0.18))
-   draw_line(bulb-mouth,bulb+mouth,Color(1.0,0.96,0.75,0.4),2.5)
-  text(at+Vector2(-62,82),"日光浴  %d/%d" % [model.occupants(f.id).size(),model.capacity(f)],14,GOLD)
- elif f.kind == "arcade":
-  panel(Rect2(at-Vector2(42,65),Vector2(84,111)),Color("766a9c"),Color("b7a5da"))
-  panel(Rect2(at-Vector2(31,53),Vector2(62,51)),Color("101522") if f.broken else Color("32586a"))
-  if not f.broken:
-   text(at+Vector2(-23,-20),"=^.^=",17,MINT)
-   draw_circle(at+Vector2(sin(clock)*15,-40),3,GOLD)
-  draw_line(at+Vector2(17,23),at+Vector2(30,4),Color("c5cad6"),5)
-  draw_circle(at+Vector2(30,4),7,Color("dc999b"))
-  text(at+Vector2(-40,70),"黑屏 · 捶打" if f.broken else "猫用娱乐",14,Color("ee9da1") if f.broken else INK)
- elif f.kind == "altar":
-  ellipse(at+Vector2(0,16),Vector2(80,45),Color("596780"))
-  draw_arc(at,79,0,TAU,45,Color("b6a2e7"),3)
-  for i in range(6):
-   var q: Vector2 = at+Vector2.from_angle(i*TAU/6)*58
-   draw_rect(Rect2(q-Vector2(5,5),Vector2(10,10)),Color("a9c8d2"))
-  draw_colored_polygon(PackedVector2Array([at+Vector2(-25,5),at+Vector2(-18,-61),at+Vector2(0,-42),at+Vector2(19,-61),at+Vector2(27,5)]),Color("82aeaf"))
-  for side in [-1,1]: draw_circle(at+Vector2(side*10,-20),5,Color("112d39"))
-  text(at+Vector2(-64,76),"密语祭坛 %d/%d" % [model.occupants(f.id).size(),model.capacity(f)],14,Color("c6b0eb"))
- if pointer.distance_to(at) < 70 and interactive:
-  draw_arc(at,85,0,TAU,40,Color(MINT,0.65),2)
 func draw_gacha() -> void:
  var at := gacha_position
  draw_arc(at,73,0,TAU,60,Color(GOLD,0.16+0.08*sin(clock)),2)
  text(at+Vector2(-66,80),"未知文明的仪器",14,GOLD)
-func draw_worker(w: Dictionary) -> void:
- var at: Vector2 = w.pos
- ellipse(at+Vector2(0,18),Vector2(18,6),Color(0.02,0.06,0.1,0.2))
- var color := Color("b7cad5")
- draw_rect(Rect2(at+Vector2(-11,-13),Vector2(22,22)),color)
- draw_rect(Rect2(at+Vector2(-8,8),Vector2(16,13)),color.darkened(0.12))
- for side in [-1,1]:
-  draw_rect(Rect2(at+Vector2(side*7-3,-5),Vector2(4,4)),Color("193944"))
-  draw_line(at+Vector2(side*9,10),at+Vector2(side*17,4+sin(clock*5)*6),color,4)
- if w.role != "general":
-  draw_rect(Rect2(at+Vector2(-15,-18),Vector2(30,5)),GOLD)
-  draw_rect(Rect2(at+Vector2(-10,-27),Vector2(20,10)),GOLD)
- text(at+Vector2(-25,39),w.status,11,Color("a1b8c7"))

@@ -8,9 +8,20 @@ static func step(state: Dictionary, model, c: Dictionary, motion: Vector2, walki
   state.facing="side";state.side_flip=false
   state.groom_wait=9.0+float(c.id%7)
  if motion!=Vector2.ZERO:
-  if absf(motion.x)>=absf(motion.y):
-   state.facing="side";state.side_flip=motion.x>0
-  else:state.facing="up" if motion.y<0 else "down"
+  var target: String=("right" if motion.x>0 else "left") if absf(motion.x)>=absf(motion.y) else ("up" if motion.y<0 else "down")
+  var current: String=("right" if state.side_flip else "left") if state.facing=="side" else state.facing
+  if target==current:
+   state.direction_distance=0.0;state.direction_target=target
+  else:
+   if state.get("direction_target","")!=target:state.direction_distance=0.0
+   state.direction_target=target
+   state.direction_distance=state.get("direction_distance",0.0)+maxf(absf(motion.x),absf(motion.y))
+   # Preserve the pulled version's steering-jitter filter for all four directions.
+   if state.direction_distance>=3.0:
+    state.facing="side" if target in ["left","right"] else target
+    if state.facing=="side":state.side_flip=target=="right"
+    state.direction_distance=0.0
+ elif not walking:state.direction_distance=0.0
  var clip: String=""
  if model.reacting(c):
   state.animation="produce";clip="produce"

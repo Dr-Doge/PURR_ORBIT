@@ -1,9 +1,19 @@
 extends RefCounted
 const D = preload("res://scripts/data.gd")
 const A = preload("res://scripts/cat_animation_data.gd")
+const T=preload("res://scripts/tree_specs.gd")
+const Build=preload("res://scripts/build_rules.gd")
+const Space=preload("res://scripts/cat_space.gd")
+var tree: Dictionary=T.nodes()
+var nodes_owned: Dictionary={}
+var build_state: Dictionary={}
+var group_settings: Array=[{"target":1,"rounds":0},{"target":1,"rounds":0},{"target":1,"rounds":0}]
+var orders: Array=[]
 const SAVE_VERSION = 27
 const B = preload("res://scripts/balance.gd")
-const FIELDS = ["round_no","wallet","tokens","food","cats","workers","facilities","researches","levels","inventory","owned","next_id","elapsed","round_elapsed","grown_total","token_progress","production","minted","first_token","contact_seen","gacha_ready","harvest_target","interference","harvests"]
+const FIELDS = ["nodes_owned","build_state","group_settings","orders","round_no","wallet","tokens","food","cats","workers","facilities","researches","levels","inventory","owned","next_id","elapsed","round_elapsed","grown_total","token_progress","production","minted","first_token","contact_seen","gacha_ready","harvest_target","interference","harvests"]
+var cat_overlap_times: Dictionary = {} # Pairwise continuous overlap; transient.
+var cat_escape_targets: Dictionary = {} # Stable walking destinations, never saved.
 var motion_tick: int = 0
 var cat_displacements: Dictionary = {} # Last simulation step; visual telemetry only, never saved.
 var hovered_cat_id: int = -1 # Transient input; intentionally absent from FIELDS/saves.
@@ -63,7 +73,7 @@ func worker(id: int) -> Dictionary:
 func lv(subject: String,key: String) -> int:
  return int(levels.get(subject+":"+key,0))
 func has(key: String) -> bool:
- return bool(researches.get(key,false)) and round_no >= D.gate(key)
+ return bool(researches.get(key,false))
 func count(kind: String) -> int:
  if kind == "short": return cats.size()
  if kind == "worker": return workers.size()
@@ -81,12 +91,14 @@ func effect(key: String) -> float:
 func add_cat(at: Vector2) -> Dictionary:
  # Legacy wander remains in the save schema, but no longer acts as a movement timer.
  var c: Dictionary = {"id":uid(),"kind":"short","pos":at,"dest":at,"layers":1,"harvest_revision":0,"reaction_left":0.0,"reaction_kind":"short","pet_stamp":-1.0,"growth":0.0,"pet":0.0,"station":-1,"timer":0.0,"fed":0.0,"food_kind":0,"pop":0.0,"wander":0.0,"color":cats.size()%3,"dragging":false}
+ c["variant"]=c.id%4;c["group"]=0;c["charges"]=[];c["ent_rounds"]=0;c["entry_bonus"]=0;c["use_boost"]=false
+ c.pos=Space.place(self,c,at);c.dest=c.pos
  cats.append(c)
  return c
 func clamp_position(at: Vector2) -> Vector2:
  return at.clamp(D.FLOOR.position+Vector2(35,30),D.FLOOR.end-Vector2(35,25))
 func price(key: String) -> int:
- return ceili(float(D.PRICES.get(key,0))*pow(float(B.PRICE_GROWTH.get(key,1.65)),maxi(0,count(key)-(2 if key == "short" else 0))))
+ return ceili(B.ECONOMY_COST_SCALE*float(D.PRICES.get(key,0))*pow(float(B.PRICE_GROWTH.get(key,1.65)),maxi(0,count(key)-(2 if key == "short" else 0))))
 func spend(amount: float) -> bool:
  if wallet+0.001 < amount: return fail("还差 %d 毛球" % ceili(amount-wallet))
  wallet = maxf(0.0,wallet-amount)
@@ -103,7 +115,7 @@ func research_reason(key: String) -> String:
 func research(key: String) -> bool:
  var why: String = research_reason(key)
  if why != "": return fail(why)
- if not spend(float(D.RESEARCH[key].price)): return false
+ if not spend(ceili(float(D.RESEARCH[key].price)*B.ECONOMY_COST_SCALE-0.000001)): return false
  researches[key] = true
  notify("已解锁"+D.title(key)+( "，在商店购买并摆放" if key in D.PRICES else ""))
  return true
@@ -126,9 +138,11 @@ func buy(key: String,at: Vector2 = Vector2(640,540)) -> bool:
 func upgrade_price(subject: String,key: String) -> int:
  if not D.BRANCHES.get(subject,{}).has(key): return -1
  var spec: Array = D.BRANCHES[subject][key]
- return -1 if lv(subject,key) >= int(spec[2]) else ceili(float(spec[1])*pow(B.BRANCH_GROWTH,lv(subject,key)))
+ return -1 if lv(subject,key) >= int(spec[2]) else ceili(ceili(float(spec[1])*pow(B.BRANCH_GROWTH,lv(subject,key)))*B.ECONOMY_COST_SCALE-0.000001)
 func upgrade(subject: String,key: String) -> bool:
- if not has(subject): return fail("先解锁该设施，且需达到开放阶段")
+ if not has(subject): return fail("先解锁该设施")
+ var segment: int=T.level_segment(subject,key,lv(subject,key)+1)
+ if segment>1 and not node_owned("S10" if segment==2 else "S20"):return fail("先购买分组照料" if segment==2 else "先购买流程复盘")
  var cost: int = upgrade_price(subject,key)
  if cost < 0: return fail("该项已满级")
  if not spend(cost): return false
@@ -165,14 +179,14 @@ func repair(id: int,by_worker: bool = false) -> bool:
  if by_worker and not has("maint"): return false
  f.hits += 1
  events.append({"kind":"hit","pos":f.pos})
- if f.hits >= 6: f.broken = false; f.hits = 0; notify("画面回来了，娱乐设施重新运行")
+ if f.hits >= B.REPAIR_HITS: f.broken = false; f.hits = 0; notify("画面回来了，娱乐设施重新运行")
  return true
 func feed_capacity() -> int:
  return B.FEED_CAPACITY+B.FEED_CAPACITY_STEP*lv("feeder","capacity")
 func work_speed() -> float:
  return effect("work")*(1+B.WORK_STEP*lv("worker","efficiency"))
 func capacity(f: Dictionary) -> int:
- return (2+lv(f.kind,"capacity")) if f.kind in ["sun","altar"] else 1
+ return 1
 func occupants(id: int) -> Array:
  var result: Array = []
  for c in cats:
@@ -183,30 +197,35 @@ func move_cat(id: int,at: Vector2) -> void:
  if c.is_empty(): return
  c.station = -1; c.timer = 0.0; cancel_pet(c)
  reset_activity(c)
- c.pos = clamp_position(at); c.dest = c.pos; c.dragging = false
+ c.pos = Space.place(self,c,at); c.dest = c.pos; c.dragging = false;c.entry_bonus=0;c.ent_rounds=0
 func assign(id: int,target_id: int) -> bool:
  var c: Dictionary = cat(id); var f: Dictionary = facility(target_id)
  if c.is_empty() or f.is_empty() or f.kind not in ["sun","arcade","altar"]: return fail("这里不能指派猫")
- if occupants(f.id).size() >= capacity(f): return fail("设施位置已满")
+ if Space.reserved(self,f,c.id):return fail("设施已有一只猫使用或前往")
+ if c.station==f.id:return fail("已在使用这台设施")
  if f.kind == "sun" and c.layers >= D.MAX_LAYERS: return fail("这只猫的毛层已满，先收割")
  reset_activity(c)
  cancel_pet(c)
  c.station = f.id; c.timer = 0.0; c.dragging = false
- c.pos = f.pos+Vector2(-25+occupants(f.id).size()*22,35); c.dest = c.pos
+ c.pos = Space.place(self,c,f.pos+Vector2(0,35)); c.dest = c.pos
+ c.ent_rounds=0;c.entry_bonus=0
+ if f.kind=="arcade" and node_owned("XBC") and c.get("use_boost",false) and c.layers>=4:
+  c.entry_bonus=mini(c.layers-1,3);c.layers=1;c.charges=[];c.harvest_revision=c_revision(c)+1
  return true
 func altar_speed() -> float:
  var amount: int = 0
  for f in facilities:
   if f.kind == "altar": amount += occupants(f.id).size()
- return 1.0+amount*(0.18+0.08*lv("altar","speed"))
+ return minf(B.ALTAR_SPEED_CAP,1.0+amount*(B.ALTAR_SPEED_BASE+B.ALTAR_SPEED_STEP*lv("altar","speed")))
 func growth_speed(c: Dictionary) -> float:
  var local: float = 1.0
  for other in cats:
-  if other.id != c.id and other.kind == "alien" and other.pos.distance_to(c.pos) <= 180: local = 1.35
+  if other.id != c.id and other.kind == "alien" and other.pos.distance_to(c.pos) <= B.ALIEN_RADIUS: local = B.ALIEN_SPEED
  return effect("speed")*altar_speed()*local
-func layer(c: Dictionary) -> void:
+func layer(c: Dictionary,source: String="natural") -> void:
  if c.layers >= D.MAX_LAYERS: return
  c.layers += 1; c.pop = D.CAT_PULSE_DURATION; grown_total += 1
+ Build.charge_layer(self,c,source)
 func multiplier(c: Dictionary) -> float:
  var m: float = effect("yield")
  if c.kind == "giant": m *= B.GIANT_FED if c.fed > 0 else B.GIANT_HUNGRY
@@ -231,8 +250,10 @@ func harvest_distance(n: int) -> float:
 func harvest_time(n: int) -> float:
  # Workers measure seconds; manual input measures motion distance using the same curve.
  return B.HARVEST_BASE_TIME*harvest_scale(n)
-func worker_target() -> int:
- return mini(D.MAX_LAYERS,1+lv("worker","harvest_layers"))
+func worker_target(w: Dictionary={}) -> int:
+ var maximum: int=mini(D.MAX_LAYERS,1+lv("worker","harvest_layers"))
+ if w.is_empty() or not node_owned("S10"):return maximum
+ return mini(maximum,int(group_settings[clampi(w.get("group",0),0,group_count()-1)].target))
 func worker_cooldown() -> float:
  return maxf(B.WORK_CD_MIN,B.WORK_POST_CD*pow(B.WORK_CD_RATIO,lv("worker","cooldown")))
 func harvest_ticket(c: Dictionary) -> Dictionary:
@@ -257,6 +278,7 @@ func money(amount: float,at: Vector2,fur_count: int = 0,cat_kind: String = "") -
 func prize(c: Dictionary,value: float) -> void:
  var item: Dictionary = {"id":uid(),"name":D.ITEMS[rng.randi_range(0,D.ITEMS.size()-1)],"value":value}
  inventory.append(item)
+ Build.refresh_orders(self)
  events.append({"kind":"prize","pos":c.pos,"text":item.name})
 func coin_bonus(c: Dictionary) -> void:
  if c.kind != "lucky": return
@@ -273,7 +295,8 @@ func harvest(id: int,action: Dictionary = {}) -> bool:
  var required: float=harvest_distance(n) if action.get("input","seconds")=="distance" else harvest_time(n)
  if action.progress+0.00001<required:return false
  var output: float = harvest_value(c,n)
- money(output,c.pos,n,c.kind)
+ var bonus: float=Build.harvest_bonus(self,c,n)
+ money(output*(1.0+bonus),c.pos,n,c.kind)
  c.reaction_kind=c.kind;c.reaction_left=A.reaction_duration(c.reaction_kind)
  c.layers = maxi(D.MIN_LAYERS,c.layers-n+D.MIN_LAYERS);cancel_pet(c)
  c.harvest_revision=int(c.get("harvest_revision",0))+1;c.pop=D.CAT_PULSE_DURATION;harvests+=1
@@ -296,23 +319,25 @@ func contribute(amount: float,at: Vector2 = Vector2.ZERO) -> void:
   events.append({"kind":"token","pos":at,"text":"+1 神秘代币"})
   notify("猫咪留下了一枚陌生的代币。远处传来一个信号……")
  if not first_token: return
- while minted < B.TOKEN_THRESHOLDS.size() and production >= B.TOKEN_THRESHOLDS[minted]:
+ while minted < B.TOKEN_THRESHOLDS.size() and production >= B.TOKEN_THRESHOLDS[minted]*B.TOKEN_SCALE:
   minted += 1; tokens += 1
   events.append({"kind":"token","pos":at,"text":"+1 神秘代币"})
 func signal_progress() -> float:
  if not first_token: return clampf(float(token_progress)/B.FIRST_TOKEN_LAYERS,0,1)
  if minted >= B.TOKEN_THRESHOLDS.size(): return 1.0
- var start: float = B.TOKEN_THRESHOLDS[minted-1]
- return clampf((production-start)/(B.TOKEN_THRESHOLDS[minted]-start),0,1)
+ var start: float = B.TOKEN_THRESHOLDS[minted-1]*B.TOKEN_SCALE
+ return clampf((production-start)/(B.TOKEN_THRESHOLDS[minted]*B.TOKEN_SCALE-start),0,1)
 func try_transform(c: Dictionary,kind: String,source: String) -> void:
  if c.kind != "short": return
  if rng.randf() < B.TRANSFORM_BASE+B.TRANSFORM_STEP*lv(source,"transform"):
-  c.kind = kind; c.pop = D.CAT_PULSE_DURATION
+  c.kind = kind; c.pop = D.CAT_PULSE_DURATION;c.pos=Space.place(self,c,c.pos)
   notify("一只猫变成了"+D.title(kind)+"！")
   events.append({"kind":"transform","pos":c.pos,"text":D.title(kind)})
 func reset_activity(c: Dictionary) -> void:
- c.feed_target=-1; c.eat_time=0.0; c.walk_left=0.0; c.idle_left=0.0
+ cat_escape_targets.erase(c.id)
+ c.feed_target=-1; c.eat_time=0.0; c.walk_left=0.0; c.idle_left=0.0;c.feed_wait=0.0
 func start_walk(c: Dictionary) -> void:
+ cat_escape_targets.erase(c.id)
  c.idle_left=0.0
  c.walk_left=rng.randf_range(B.CAT_WALK_MIN,B.CAT_WALK_MAX)
  var direction:=Vector2.from_angle(rng.randf_range(0,TAU))
@@ -325,17 +350,21 @@ func tick_cat_activity(c: Dictionary,dt: float) -> void:
  if not c.has("feed_target"):reset_activity(c)
  if c.fed<=0:
   var target: Dictionary=facility(c.feed_target)
-  if target.is_empty() or target.kind!="feeder" or target.grain<B.FEED_COST:
+  if target.is_empty() or target.kind!="feeder" or target.grain<B.FEED_COST or Space.reserved(self,target,c.id):
    c.feed_target=-1;c.eat_time=0.0
    var distance: float=INF
    for f in facilities:
-    if f.kind!="feeder" or f.grain<B.FEED_COST:continue
+    if f.kind!="feeder" or f.grain<B.FEED_COST or Space.reserved(self,f,c.id):continue
     var candidate: float=c.pos.distance_squared_to(feeding_spot(f))
     if candidate<distance:target=f;distance=candidate;c.feed_target=f.id
   if c.feed_target>=0:
    c.idle_left=0.0;c.walk_left=0.0;c.dest=feeding_spot(target)
    if c.pos.distance_to(c.dest)>B.FEED_REACH:
-    c.eat_time=0.0;c.pos=c.pos.move_toward(c.dest,D.CAT_MOVE_SPEED*dt)
+    c.eat_time=0.0
+    var previous: Vector2=c.pos
+    c.pos=Space.walk(self,c,c.pos.move_toward(c.dest,D.CAT_MOVE_SPEED*dt))
+    c.feed_wait=float(c.get("feed_wait",0.0))+dt if c.pos==previous else 0.0
+    if c.feed_wait>3.0:reset_activity(c);c.idle_left=1.0
    else:
     c.eat_time+=dt
     if c.eat_time+0.00001>=B.FEED_EAT_TIME:
@@ -355,7 +384,7 @@ func tick_cat_activity(c: Dictionary,dt: float) -> void:
   c.idle_left=maxf(0.0,c.idle_left-dt)
   return
  if c.walk_left<=0:start_walk(c)
- c.pos=c.pos.move_toward(c.dest,D.CAT_MOVE_SPEED*dt)
+ c.pos=Space.walk(self,c,c.pos.move_toward(c.dest,D.CAT_MOVE_SPEED*dt))
  c.walk_left=maxf(0.0,c.walk_left-dt)
  if c.walk_left<=0 or c.pos.distance_to(c.dest)<=1.0:
   c.walk_left=0.0;c.idle_left=rng.randf_range(B.CAT_IDLE_MIN,B.CAT_IDLE_MAX)
@@ -364,14 +393,15 @@ func tick(dt: float) -> void:
  motion_tick+=1
  var starts: Dictionary={}
  for c in cats:starts[c.id]=c.pos
+ Space.update_overlap(self,dt)
  elapsed += dt; round_elapsed += dt
  for f in facilities:
   if f.kind != "feeder": continue
-  if round_no >= 2 and count("sun") > 0:
+  if count("sun") > 0:
    f.neglect += dt
    if f.neglect >= D.BUG_TIME and f.bugs == 0:
     f.bugs = B.BUG_COUNT; f.hits = 0; notify("喂食器里有偷渡客！打开设备清理蟑螂")
- if round_no >= 3 and count("altar") > 0:
+ if count("altar") > 0 and count("arcade")>0:
   interference += dt
   if interference >= D.INTERFERENCE_TIME:
    interference = 0.0
@@ -391,25 +421,28 @@ func tick(dt: float) -> void:
    if station.kind == "sun":
     c.timer += dt*growth_speed(c)*(1+B.SUN_SPEED_STEP*lv("sun","time"))
     if c.timer >= B.SUN_TIME:
-     layer(c); c.growth = 0.0; try_transform(c,"static","sun")
+     layer(c,"sun"); c.growth = 0.0; try_transform(c,"static","sun")
      move_cat(c.id,station.pos+Vector2(rng.randf_range(-120,120),95))
    elif station.kind == "arcade":
     if station.broken: continue
     c.timer += dt*altar_speed()
     if c.timer >= B.ENT_TIME/(1+B.ENT_SPEED_STEP*lv("arcade","time")):
-     c.timer = 0.0
+     c.timer = 0.0;c.ent_rounds=int(c.get("ent_rounds",0))+1
      if rng.randf() < minf(0.9,B.ENT_WIN+B.ENT_WIN_STEP*lv("arcade","win")):
       var value: float = B.ENT_VALUE*(1+B.ENT_VALUE_STEP*lv("arcade","value"))
-      prize(c,value); contribute(value,c.pos); coin_bonus(c)
+      prize(c,value*(1.05 if c.get("entry_bonus",0)>0 else 1.0)); contribute(value,c.pos); coin_bonus(c)
+     c.entry_bonus=maxi(0,int(c.get("entry_bonus",0))-1)
      try_transform(c,"lucky","arcade")
+     var limit: int=int(group_settings[clampi(c.get("group",0),0,2)].rounds) if node_owned("S20") else 0
+     if limit>0 and c.ent_rounds>=limit:move_cat(c.id,station.pos+Vector2(0,110))
    elif station.kind == "altar":
     c.timer += dt
-    if c.timer >= 10.0: c.timer = 0.0; try_transform(c,"alien","altar")
+    if c.timer >= B.ALTAR_TRANSFORM_TIME: c.timer = 0.0; try_transform(c,"alien","altar")
    continue
   c.growth += dt*growth_speed(c)
   while c.growth >= D.LAYER_CD:
    c.growth -= D.LAYER_CD; layer(c)
-  tick_cat_activity(c,dt)
+  if not Space.escape(self,c,dt):tick_cat_activity(c,dt)
  var reserved: Dictionary = {}
  for w in workers:
   if not w.job.is_empty(): reserved[job_key(w.job)] = true
@@ -422,7 +455,6 @@ func set_role(id: int,role: String) -> bool:
  if role != "general" and not has("hats"): return fail("先解锁职责分配帽")
  if role == "repair" and not has("maint"): return fail("先解锁工人维护")
  if role in ["sun","arcade","altar"] and not has(role): return fail("先研发对应设施")
- if role == "clean" and round_no < 2: return fail("第二阶段才会出现虫害")
  if not w.job.is_empty() and w.job.get("stage","") == "carry":
   var carried: Dictionary = cat(w.job.cat)
   if not carried.is_empty(): move_cat(carried.id,carried.pos)
@@ -442,12 +474,13 @@ func choose_job(w: Dictionary,reserved: Dictionary) -> Dictionary:
   else:
    for c in cats:
     if c.station != -1 or c.dragging: continue
+    if node_owned("S10") and c.get("group",0)!=w.get("group",0):continue
     var key: String = "cat:"+str(c.id)
     if reserved.has(key): continue
-    if role == "harvest" and w.get("cooldown",0.0)<=0 and not reacting(c) and c.layers >= worker_target():return {"kind":role,"target":c.id,"cat":c.id,"revision":int(c.get("harvest_revision",0))}
-    if role in ["sun","arcade","altar"] and (role != "sun" or (c.layers<D.MAX_LAYERS and c.layers<=worker_target())):
+    if role == "harvest" and w.get("cooldown",0.0)<=0 and not reacting(c) and c.layers >= worker_target(w):return {"kind":role,"target":c.id,"cat":c.id,"revision":int(c.get("harvest_revision",0))}
+    if role in ["sun","arcade","altar"] and (role != "sun" or (c.layers<D.MAX_LAYERS and c.layers<=worker_target(w))):
      for f in facilities:
-      if f.kind == role and occupants(f.id).size() < capacity(f): return {"kind":role,"target":c.id,"cat":c.id,"facility":f.id}
+      if f.kind == role and not Space.reserved(self,f,c.id): return {"kind":role,"target":c.id,"cat":c.id,"facility":f.id}
  return {}
 func tick_worker(w: Dictionary,dt: float,reserved: Dictionary) -> void:
  w.cooldown=maxf(0.0,w.get("cooldown",0.0)-dt)
@@ -466,14 +499,16 @@ func tick_worker(w: Dictionary,dt: float,reserved: Dictionary) -> void:
   var destination: Dictionary = facility(job.facility)
   if destination.is_empty(): move_cat(target.id,w.pos); w.job = {}; return
   w.pos = w.pos.move_toward(destination.pos,B.WORK_SPEED*work_speed()*dt)
-  target.pos = w.pos+Vector2(0,-20); target.dest = target.pos
+  target.dest = clamp_position(w.pos+Vector2(0,-20))
+  target.pos = Space.walk(self,target,target.pos.move_toward(target.dest,B.WORK_SPEED*work_speed()*dt))
+  w.pos = target.pos+Vector2(0,20)
   if w.pos.distance_to(destination.pos) < B.WORK_REACH:
    move_cat(target.id,w.pos)
    assign(target.id,destination.id)
    w.job = {}
   return
  if job.kind=="harvest":
-  if w.cooldown>0 or reacting(target) or c_revision(target)!=job.get("revision",-1) or target.layers<worker_target():
+  if w.cooldown>0 or reacting(target) or c_revision(target)!=job.get("revision",-1) or target.layers<worker_target(w):
    w.job={};w.clock=0.0;return
  w.status = D.ROLES.get(job.kind,job.kind)
  var dest: Vector2 = target.pos
@@ -521,18 +556,55 @@ func advance_stage() -> bool:
  if round_no >= D.MAX_STAGE: return fail("这段信号已收集完成，可以继续经营")
  if not pool().is_empty(): return fail("仪器中仍有未回应的信号")
  round_no = 2
- # New risk starts here; every existing production/job timer remains untouched.
- for f in facilities:
-  if f.kind == "feeder": f.neglect = 0.0
+ # Collection restock does not reset facility timers or reservations.
  notify("仪器收到新的信号：24个新回声已抵达，舱室补给也更新了。")
  return true
 func sell_all() -> float:
- var total: float = 0.0
- for item in inventory: total += float(item.value)*effect("sale")
- wallet += total; inventory.clear()
- return total
+ return Build.sell(self)
+func group_count() -> int:return 3 if node_owned("S20") else (2 if node_owned("S10") else 1)
+func node_owned(id: String) -> bool:
+ if id=="S00":return true
+ if not tree.has(id):return false
+ var spec: Dictionary=tree[id]
+ if spec.kind=="research":return has(spec.subject)
+ if spec.kind=="upgrade":return lv(spec.subject,spec.branch)>=spec.level
+ return bool(nodes_owned.get(id,false))
+func node_reason(id: String) -> String:
+ if not tree.has(id):return "未知节点"
+ if node_owned(id):return "已获得"
+ var spec: Dictionary=tree[id]
+ for pre in spec.all:
+  if not node_owned(pre):return "需要："+tree[pre].title
+ if not spec.any.is_empty():
+  var allowed: bool=false
+  for pre in spec.any:
+   if node_owned(pre):allowed=true
+  if not allowed:return "需要任一路对应机制入口（或条件）"
+ return ""
+func buy_node(id: String) -> bool:
+ var why: String=node_reason(id)
+ if why!="":return fail(why)
+ var spec: Dictionary=tree[id]
+ if spec.kind=="research":return research(spec.subject)
+ if spec.kind=="upgrade":return upgrade(spec.subject,spec.branch)
+ if not spend(spec.price):return false
+ nodes_owned[id]=true
+ if id=="S10":
+  for group in group_settings:group.target=worker_target()
+ return true
+func set_group(kind: String,id: int,group: int) -> bool:
+ if not node_owned("S10") or group<0 or group>=group_count():return fail("先解锁对应猫群")
+ var entity: Dictionary=cat(id) if kind=="cat" else worker(id)
+ if entity.is_empty():return false
+ if kind=="worker":set_role(id,entity.role)
+ entity.group=group;return true
+func set_group_target(group: int,target: int,rounds: int=-1) -> bool:
+ if not node_owned("S10") or group<0 or group>=group_count() or target<1 or target>worker_target():return false
+ group_settings[group].target=target
+ if rounds>=0 and node_owned("S20"):group_settings[group].rounds=clampi(rounds,0,20)
+ return true
 func snapshot() -> Dictionary:
- var data: Dictionary = {"version":SAVE_VERSION,"harvest_rules":1,"rng":rng.state}
+ var data: Dictionary = {"version":SAVE_VERSION,"harvest_rules":1,"scope_rules":1,"rng":rng.state}
  for field in FIELDS: data[field] = get(field)
  return data.duplicate(true)
 func numeric_fields(record: Dictionary,fields: Array) -> bool:
@@ -542,6 +614,16 @@ func numeric_fields(record: Dictionary,fields: Array) -> bool:
 func restore(data: Dictionary) -> bool:
  data=data.duplicate(true)
  var refund: int=0
+ var old_scope: bool=not data.has("scope_rules")
+ if not old_scope and data.scope_rules!=1:return false
+ if old_scope:
+  data.nodes_owned={};data.build_state={};data.orders=[]
+  data.group_settings=[{"target":1,"rounds":0},{"target":1,"rounds":0},{"target":1,"rounds":0}]
+  if data.get("levels",null) is Dictionary:
+   var capacity_level=data.levels.get("sun:capacity",0)
+   if not capacity_level is int or capacity_level<0 or capacity_level>4:return false
+   for level in range(capacity_level):refund+=ceili(1200.0*pow(1.8,level))
+   data.levels.erase("sun:capacity")
  var legacy: bool=not data.has("harvest_rules")
  if not legacy and data.harvest_rules!=1:return false
  if legacy and data.get("levels",null) is Dictionary:
@@ -565,15 +647,15 @@ func restore(data: Dictionary) -> bool:
   if not c is Dictionary or not c.has_all(["id","kind","pos","dest","layers","growth","pet","station","timer","fed","food_kind","pop","wander","color","dragging"]): return false
   for field in ["feed_target","eat_time","walk_left","idle_left","harvest_revision","reaction_left"]:
    if c.has(field) and (not numeric_fields(c,[field]) or (field!="feed_target" and c[field]<0)):return false
-  if c.has("reaction_kind") and c.reaction_kind not in ["short","giant","static","lucky"]:return false
+  if c.has("reaction_kind") and c.reaction_kind not in ["short","giant","static","lucky","alien"]:return false
   if not numeric_fields(c,["id","layers","growth","pet","station","timer","fed","food_kind","pop","wander","color"]):return false
-  if c.kind not in ["short","giant","static","lucky"] or not c.pos is Vector2 or not c.dest is Vector2 or c.layers < 0 or c.layers > D.MAX_LAYERS or ids.has(c.id): return false
+  if c.kind not in ["short","giant","static","lucky","alien"] or not c.pos is Vector2 or not c.dest is Vector2 or c.layers < 0 or c.layers > D.MAX_LAYERS or ids.has(c.id): return false
   if c.color<0 or c.color>2 or c.food_kind<0 or c.food_kind>2 or not c.pos.is_finite() or not c.dest.is_finite():return false
   ids[c.id] = true
  for f in data.facilities:
   if not f is Dictionary or not f.has_all(["id","kind","pos","grain","food_kind","pulse","neglect","bugs","hits","broken"]): return false
   if not numeric_fields(f,["id","grain","food_kind","pulse","neglect","bugs","hits"]) or not f.broken is bool:return false
-  if f.kind not in ["feeder","sun","arcade"] or D.gate(f.kind) > data.round_no or not f.pos is Vector2 or ids.has(f.id): return false
+  if f.kind not in ["feeder","sun","arcade","altar"] or not f.pos is Vector2 or ids.has(f.id): return false
   if f.food_kind<0 or f.food_kind>2 or f.grain<0 or f.grain>B.FEED_CAPACITY+B.FEED_CAPACITY_STEP*int(data.levels.get("feeder:capacity",0)) or f.bugs<0 or not f.pos.is_finite():return false
   ids[f.id] = true;station_ids[f.id]=true
  for w in data.workers:
@@ -608,19 +690,55 @@ func restore(data: Dictionary) -> bool:
    if series.round == 1:
     for i in range(D.SERIES_SIZE):
      if not data.owned.has(series.id+":"+str(i)): return false
+ for id in data.nodes_owned:
+  if not tree.has(id) or tree[id].kind!="build" or not data.nodes_owned[id] is bool:return false
+ if data.group_settings.size()!=3:return false
+ for group in data.group_settings:
+  if not group is Dictionary or not group.has_all(["target","rounds"]) or not group.target is int or not group.rounds is int or group.target<1 or group.target>D.MAX_LAYERS or group.rounds<0 or group.rounds>20:return false
+ for field in ["combo","XAB_count","XAC_count"]:
+  if data.build_state.has(field) and (not data.build_state[field] is int or data.build_state[field]<0):return false
+ for field in ["XAB_ready","XAC_ready"]:
+  if data.build_state.has(field) and not data.build_state[field] is bool:return false
+ var reserved_items: Dictionary={}
+ if data.orders.size()>4:return false
+ for order in data.orders:
+  if not order is Dictionary or not order.has_all(["kind","ids"]) or not order.ids is Array or Build.order_size(order.kind)==0 or order.ids.size()>Build.order_size(order.kind):return false
+  for id in order.ids:
+   if not id is int or reserved_items.has(id):return false
+   var found: bool=false
+   for item in data.inventory:
+    if item.id==id:found=true
+   if not found:return false
+   reserved_items[id]=true
+ for c in data.cats:
+  for field in ["variant","group","ent_rounds","entry_bonus"]:
+   if c.has(field) and (not c[field] is int or c[field]<0):return false
+  if c.get("group",0)>2 or c.get("variant",0)>3:return false
+  if c.has("charges"):
+   if not c.charges is Array or c.charges.size()>6:return false
+   var last: int=0
+   for layer_number in c.charges:
+    if not layer_number is int or layer_number<2 or layer_number>c.layers or layer_number<=last:return false
+    last=layer_number
+  if c.has("use_boost") and not c.use_boost is bool:return false
+ for w in data.workers:
+  if w.has("group") and (not w.group is int or w.group<0 or w.group>2):return false
  for field in FIELDS:
   var value = data[field]
   set(field,value.duplicate(true) if value is Array or value is Dictionary else value)
  for c in cats:
+  c.variant=int(c.get("variant",c.id%4));c.group=int(c.get("group",0));c.charges=c.get("charges",[]);c.entry_bonus=int(c.get("entry_bonus",0));c.ent_rounds=int(c.get("ent_rounds",0));c.use_boost=bool(c.get("use_boost",false))
   c.reaction_left=float(c.get("reaction_left",0.0));c.reaction_kind=c.get("reaction_kind",c.kind)
   c.dragging = false;c.layers=maxi(D.MIN_LAYERS,c.layers);c.harvest_revision=int(c.get("harvest_revision",0));cancel_pet(c)
   if not c.has_all(["feed_target","eat_time","walk_left","idle_left"]):reset_activity(c)
+  c.feed_wait=float(c.get("feed_wait",0.0))
   if c.station < -1: c.station = -1
  for w in workers:w.job={};w.clock=0.0;w.cooldown=float(w.get("cooldown",0.0))
- hovered_cat_id=-1;cat_displacements.clear();motion_tick+=1
+ hovered_cat_id=-1;cat_displacements.clear();cat_overlap_times.clear();cat_escape_targets.clear();motion_tick+=1
+ Space.reconcile(self)
  harvest_target=worker_target();wallet+=refund
  rng.state = int(data.rng); events.clear()
- if refund>0:notify("旧搬运升级已返还 %d 毛球；收割目标从1层开始，可自行购买新升级。" % refund)
+ if refund>0:notify("旧容量／搬运升级已按原价返还 %d 毛球" % refund)
  return true
 func save_to(path: String) -> Error:
  var file := FileAccess.open(path+".tmp",FileAccess.WRITE)

@@ -6,7 +6,9 @@ class ReferenceModel extends M:
   production += amount
   if not first_token and token_progress >= B.FIRST_TOKEN_LAYERS:
    first_token = true; minted = 1; tokens += 1
-func _initialize() -> void: call_deferred("run")
+func _initialize() -> void:
+ print("Historical pacing is frozen. Use test_progression.gd for current September23 paired scenarios.")
+ quit()
 func mark(m, marks: Dictionary, key: String, valid: bool) -> void:
  if valid and not marks.has(key): marks[key] = snappedf(m.elapsed,0.1)
 func decisions(m, mode: String, second: int) -> void:

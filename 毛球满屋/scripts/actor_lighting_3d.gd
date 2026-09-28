@@ -5,6 +5,9 @@ var sprites: Dictionary={}
 var cards: Dictionary={}
 var lamps: Dictionary={}
 var seen: Dictionary={}
+func _ready() -> void:
+ for child in get_children():
+  if child is Sprite3D:sprites[str(child.name)]=child
 func ray_at(at: Vector2) -> Vector3:
  var ndc:=Vector4(at.x/room.size.x*2-1,1-at.y/room.size.y*2,-1,1)
  var p: Vector4=room.camera.get_camera_projection().inverse()*ndc
@@ -50,7 +53,7 @@ func procedural(key: String,entity: Dictionary,kind: String) -> Texture2D:
   viewport.render_target_update_mode=SubViewport.UPDATE_ALWAYS
   add_child(viewport)
   var card=preload("res://scripts/actor_card_3d.gd").new()
-  card.size=Vector2(256,256);viewport.add_child(card)
+  viewport.add_child(card)
   cards[key]={"viewport":viewport,"card":card}
  var entry: Dictionary=cards[key]
  entry.card.model=room.model;entry.card.entity=entity;entry.card.actor_kind=kind

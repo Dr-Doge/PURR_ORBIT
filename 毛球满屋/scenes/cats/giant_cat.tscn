@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/cat_actor.gd" id="actor"]
+[ext_resource type="SpriteFrames" path="res://Art/cat5_animations.tres" id="frames"]
+[node name="GiantCat" type="Node2D"]
+script = ExtResource("actor")
+kind = "giant"
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("frames")
+animation = &"idle"
+centered = false
+position = Vector2(-67.5, -75.25)
+scale = Vector2(0.1318359375, 0.1318359375)

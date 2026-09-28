@@ -1,22 +1,22 @@
 [gd_resource type="SpriteFrames" format=3]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new/三花猫 1-侧面 · 前进.png" id="0"]
+[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-侧面 · 前进.png" id="0"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new/三花猫 1-侧面 · 待机.png" id="1"]
+[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-侧面 · 待机.png" id="1"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new/三花猫 1-上方 · 前进.png" id="2"]
+[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-上方 · 前进.png" id="2"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new/三花猫 1-上方 · 待机.png" id="3"]
+[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-上方 · 待机.png" id="3"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new/三花猫 1-下方 · 前进.png" id="4"]
+[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-下方 · 前进.png" id="4"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new/三花猫 1-下方 · 待机.png" id="5"]
+[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-下方 · 待机.png" id="5"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new/三花猫 1-侧面 · 坐下舔爪.png" id="6"]
+[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-侧面 · 坐下舔爪.png" id="6"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new/三花猫 1-侧面 · 被抚摸.png" id="7"]
+[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-侧面 · 被抚摸.png" id="7"]
 
-[ext_resource type="Texture2D" path="res://Art/cat1new/三花猫 1-侧面 · 产毛.png" id="8"]
+[ext_resource type="Texture2D" path="res://Art/cat1new1/三花猫 1-侧面 · 产毛.png" id="8"]
 
 [sub_resource type="AtlasTexture" id="walk_0"]
 atlas = ExtResource("0")

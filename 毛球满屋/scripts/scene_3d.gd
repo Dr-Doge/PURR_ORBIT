@@ -1,9 +1,5 @@
 extends "res://scripts/main.gd"
 ## Alternate presentation; all progression and player saves use the original game.
-func create_room():
- return preload("res://scripts/room_3d.gd").new()
-func create_hud():
- return preload("res://scripts/hud_3d.gd").new()
 func layout_presentation() -> void:
  if hud == null:return
  hud.position=Vector2.ZERO;hud.scale=Vector2.ONE;hud.size=size

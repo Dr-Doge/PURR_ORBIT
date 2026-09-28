@@ -10,7 +10,7 @@ func check(ok: bool,message: String) -> void:
 func capture(name: String) -> Image:
  await process_frame;await process_frame;await RenderingServer.frame_post_draw
  var img: Image=root.get_texture().get_image()
- img.save_png(ProjectSettings.globalize_path("res://reports/3d_scene/"+name+".png"))
+ img.save_png(ProjectSettings.globalize_path("res://reports/merge_3d_928/"+name+".png"))
  return img
 func shadow_measure(lit: Image,clear: Image,exclude: Rect2) -> Vector2:
  var count: int=0
@@ -24,7 +24,7 @@ func shadow_measure(lit: Image,clear: Image,exclude: Rect2) -> Vector2:
     count+=1;center+=x
  return Vector2(count,center/maxi(1,count))
 func run() -> void:
- DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/3d_scene"))
+ DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/merge_3d_928"))
  game=load("res://scenes/3D scene.tscn").instantiate();game.testing=true;root.add_child(game)
  await process_frame;game.start_game();game.set_process(false);game.hud.hide()
  var room=game.room

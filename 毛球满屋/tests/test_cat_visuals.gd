@@ -20,10 +20,10 @@ func run() -> void:
  visuals.step(model,0.25)
  check(var_to_bytes(model.cats) == before,"Visual update does not mutate cats")
  check(visuals.texture(c.id) == Visuals.Short.FRAMES.get_frame_texture("idle",2),"Idle advances frames")
- c.pos.x += 1.0
+ c.pos.x += 4.0
  visuals.step(model,0.1)
  check(visuals.states[c.id].animation == "walk" and visuals.flipped(c.id),"Right movement walks and faces right")
- c.pos.x -= 1.0
+ c.pos.x -= 4.0
  visuals.step(model,0.1)
  check(not visuals.flipped(c.id),"Left movement faces left")
  model.reset_activity(c);c.idle_left=1;model.tick(0.01)
@@ -105,7 +105,7 @@ func run() -> void:
    check(texture.get_image().get_pixel(0,0).a<0.01,"Frame background transparent")
  if "--capture" in OS.get_cmdline_user_args():
   root.size = Vector2i(1440,900)
-  var room = Room.new()
+  var room = load("res://scenes/room.tscn").instantiate();room.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
   room.model = fresh
   fresh.cats[1].layers=fresh.cats[0].layers
   room.size = Vector2(1440,900)

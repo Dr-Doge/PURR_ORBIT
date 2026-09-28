@@ -1,0 +1,35 @@
+{
+  "local_baseline": "8356e74",
+  "art_source": "40e566cb",
+  "gameplay_files_unchanged": [
+    "毛球满屋/scripts/model.gd",
+    "毛球满屋/scripts/balance.gd",
+    "毛球满屋/scripts/data.gd",
+    "毛球满屋/scripts/build_rules.gd",
+    "毛球满屋/scripts/tree_specs.gd",
+    "毛球满屋/scripts/cat_space.gd",
+    "毛球满屋/scripts/cat_animation_data.gd"
+  ],
+  "art_and_whitebox_unchanged": true,
+  "produce_seconds_before_after": {
+    "short": [
+      1.1,
+      1.1
+    ],
+    "giant": [
+      1.1,
+      1.1
+    ],
+    "static": [
+      1.1,
+      1.1
+    ],
+    "lucky": [
+      1.1,
+      1.1
+    ]
+  },
+  "alien_visual_seconds": 1.7,
+  "alien_gameplay_reaction_seconds": 1.1,
+  "long_pacing_rerun": false
+}

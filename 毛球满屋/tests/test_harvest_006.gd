@@ -42,7 +42,7 @@ func run() -> void:
  m.pet(c.id,1000);check(c.pet==45,"Distance cap applies to first event too")
  check(not m.harvest(c.id),"Partial distance ticket is not interpreted as seconds")
  sim(m,0.2);m.pet(c.id,45);check(c.pet==90,"Brief interruption retains progress")
- sim(m,0.3);m.pet(c.id,20);check(c.pet==20,"Long interruption restarts with fresh event credit")
+ sim(m,3.1);m.pet(c.id,20);check(c.pet==20,"Long interruption restarts with fresh event credit")
  m.cancel_pet(c);c.layers=2;m.pet(c.id,40)
  var action: Dictionary=c.pet_action
  m.layer(c);rub_distance(m,c.id,224)

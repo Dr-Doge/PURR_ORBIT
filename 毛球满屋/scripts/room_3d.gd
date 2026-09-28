@@ -16,32 +16,13 @@ func _ready() -> void:
  gacha_position=Vector2(1190,465)
  super._ready()
  backdrop.hide()
- presentation=SubViewportContainer.new()
- presentation.name="WhiteboxViewport"
- presentation.mouse_filter=Control.MOUSE_FILTER_IGNORE
- presentation.show_behind_parent=true
- presentation.stretch=true
- add_child(presentation);move_child(presentation,0)
- view=SubViewport.new();view.name="World3D"
- view.size=Vector2i(size);view.own_world_3d=true
- view.render_target_update_mode=SubViewport.UPDATE_ALWAYS
- view.msaa_3d=Viewport.MSAA_2X
- # Reserve large atlas tiles for the room lights instead of the default small tiles.
- view.positional_shadow_atlas_size=4096
- view.positional_shadow_atlas_quad_0=Viewport.SHADOW_ATLAS_QUADRANT_SUBDIV_1
- view.positional_shadow_atlas_quad_1=Viewport.SHADOW_ATLAS_QUADRANT_SUBDIV_1
- view.positional_shadow_atlas_quad_2=Viewport.SHADOW_ATLAS_QUADRANT_SUBDIV_4
- view.positional_shadow_atlas_quad_3=Viewport.SHADOW_ATLAS_QUADRANT_SUBDIV_16
- presentation.add_child(view)
- shell=preload("res://scenes/whitebox_room.tscn").instantiate()
- view.add_child(shell)
+ presentation=$WhiteboxViewport
+ view=$WhiteboxViewport/World3D
+ shell=$WhiteboxViewport/World3D/WhiteboxRoom
  camera=shell.get_node("Camera")
- # A level camera keeps the back wall rectangular. An off-axis frustum puts
- # the vanishing point above the canvas, exposing the floor without tilting.
  camera.rotation=Vector3.ZERO
  camera.set_frustum(FRUSTUM_HEIGHT,Vector2(0,FRUSTUM_OFFSET),1.0,200.0)
- actor_lighting=preload("res://scripts/actor_lighting_3d.gd").new()
- actor_lighting.room=self;shell.add_child(actor_lighting)
+ actor_lighting=shell.get_node("ActorLighting");actor_lighting.room=self
  resized.connect(resize_world)
  resize_world()
 func resize_world() -> void:
@@ -126,12 +107,11 @@ func step(dt: float) -> void:
   var wall: MeshInstance3D=shell.get_node("BackWall")
   wall.material_override.set_shader_parameter("orbit_angle",clock*TAU/Backdrop.ORBIT_SECONDS)
   actor_lighting.sync()
+func sync_actors() -> void:
+ # Lit Sprite3D cards own world presentation; hide legacy 2D preview layers.
+ $Cats.hide();$Facilities.hide();$Workers.hide()
 func draw_cat(c: Dictionary) -> void:
- if c.id==hover:
-  draw_arc(c.pos,43*cat_extent(c)/100.0,0,TAU,32,MINT,2)
-  if c.pet>0:draw_arc(c.pos,47*cat_extent(c)/100.0,-PI/2,-PI/2+TAU*model.pet_progress(c),32,GOLD,3)
-  if c.kind=="alien":draw_arc(c.pos,180,0,TAU,50,Color(MINT,0.25),1)
- if c.station>=0:text(c.pos+Vector2(-25,47),"设施使用中",11,Color("8dadaf"))
+ draw_cat_feedback(c)
 func draw_facility(f: Dictionary) -> void:
  var caption: String=D.title(f.kind)
  if f.kind=="feeder":caption="猫粮 %d/%d"%[f.grain,model.feed_capacity()]

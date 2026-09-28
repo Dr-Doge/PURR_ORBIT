@@ -1,0 +1,25 @@
+
+test_september23.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+TREE: 128 positions; 264023 total cost
+SEPTEMBER23: 74 checks, 0 failures
+test_demo.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+MODEL: 125 checks, 0 failures
+test_harvest_006.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+HARVEST 006: 55 checks, 0 failures
+test_feeding.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+FEEDING / ROAM: 29 checks, 0 failures
+test_idle_009.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+IDLE 009: 17 checks, 0 failures; 884 idle, 2625 moving samples
+test_reaction_007.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+

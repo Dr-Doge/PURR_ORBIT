@@ -1,8 +1,10 @@
 extends SceneTree
 const Model = preload("res://scripts/model.gd")
 const Visuals = preload("res://scripts/cat_visuals.gd")
+var checks: int = 0
 var failures: int = 0
 func check(ok: bool, message: String) -> void:
+ checks+=1
  if not ok:
   failures+=1
   push_error(message)
@@ -53,7 +55,7 @@ func run() -> void:
  c.pos.x+=1;v.step(model,0.01)
  check(v.states[c.id].animation=="lift","Interrupted landing can restart movement")
  if "--capture" in OS.get_cmdline_user_args():
-  var room = preload("res://scripts/room.gd").new()
+  var room = preload("res://scenes/room.tscn").instantiate()
   room.model=model
   root.size=Vector2i(1440,900)
   room.size=Vector2(1440,900)
@@ -64,5 +66,5 @@ func run() -> void:
   root.get_texture().get_image().save_png(OS.get_environment("TEMP").path_join("purr-cat14-preview.png"))
   room.queue_free()
   await process_frame
- print("ALIEN ANIMATION CHECKS: ",failures," failures")
+ print("ALIEN ANIMATION: ",checks," checks, ",failures," failures")
  quit(0 if failures==0 else 1)

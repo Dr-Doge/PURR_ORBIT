@@ -18,7 +18,7 @@ func capture(name: String) -> void:
 func run() -> void:
  root.size=Vector2i(1440,900)
  var model=Model.new();model.cats.resize(1)
- var room=Room.new();room.model=model;room.size=Vector2(1440,900);root.add_child(room)
+ var room=load("res://scenes/room.tscn").instantiate();room.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT);room.model=model;room.size=Vector2(1440,900);root.add_child(room)
  var c: Dictionary=model.cats[0]
  model.wallet=20000;model.research("worker");model.research("feeder")
  check(model.buy("feeder",Vector2(1000,500)),"Feeder present for visual verification")

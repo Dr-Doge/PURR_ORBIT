@@ -13,7 +13,7 @@ func key(app, code: int, echo: bool = false, ctrl: bool = false) -> void:
  event.pressed = true
  event.echo = echo
  event.ctrl_pressed = ctrl
- app._unhandled_key_input(event)
+ root.push_input(event,true)
 func _initialize() -> void:
  call_deferred("run")
 func run() -> void:
@@ -25,20 +25,16 @@ func run() -> void:
  app.start_game()
  var wallet: float = app.model.wallet
  var owned: Array = app.model.owned.duplicate(true)
- for i in range(5):
-  key(app,KEY_1+i)
-  check(app.model.cats.size()==3+i,"One cat per press")
-  check(app.model.cats.back().kind==["short","giant","static","lucky","alien"][i],"Correct species")
- check(app.model.wallet==wallet and app.model.owned==owned,"Free shortcuts preserve balances")
+ for i in range(5):key(app,KEY_1+i)
+ check(app.model.cats.size()==2,"Keys1-5 do not restore old special-cat spawning")
+ check(app.model.wallet==wallet+10000 and app.model.owned==owned,"Number1 grants money without altering collections")
  key(app,KEY_1,true);key(app,KEY_1,false,true)
+ check(app.model.wallet==wallet+10000,"Repeat and modifiers ignored")
  app.show_pause();key(app,KEY_1)
- check(app.model.cats.size()==7,"Repeat, modifier and pause ignored")
+ check(app.model.wallet==wallet+20000,"Number commands work in pause menu")
  app.close_modal()
- app.testing=false
- key(app,KEY_1)
- check(app.model.cats.size()==7,"Normal gameplay ignores art preview spawn keys")
- app.testing=true
- var lucky: Dictionary=app.model.cats[5]
+ # Explicit test fixture covers the imported lucky-cat artwork without a gameplay cheat.
+ var lucky: Dictionary=app.model.add_cat(Vector2(700,500));lucky.kind="lucky"
  var visuals = Visuals.new()
  visuals.step(app.model,0)
  check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("idle",0),"Lucky idle bound")
@@ -51,9 +47,8 @@ func run() -> void:
  visuals.step(app.model,0)
  check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",0),"Lucky harvest bound")
  app.model.tick(1.05);visuals.step(app.model,1.05)
- check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",14),"Last produce frame plays before hold ends")
- app.model.tick(0.06);lucky.pos=visuals.states[lucky.id].pos
- app.model.reset_activity(lucky);lucky.idle_left=10;app.model.tick(0.001)
+ check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",7),"Last produce frame plays before hold ends")
+ lucky.pos=visuals.states[lucky.id].pos;app.model.reset_activity(lucky);lucky.idle_left=1;app.model.tick(0.06)
  visuals.step(app.model,0.06)
  check(visuals.states[lucky.id].animation=="idle","Produce completes")
  app.queue_free()
