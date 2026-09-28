@@ -26,6 +26,8 @@ func run() -> void:
   motion(room.screen_position(c.pos));room.refresh_hover();advance(0.05);room.step(0)
   var at: Vector2=c.pos;var dest: Vector2=c.dest;var walk: float=c.walk_left;var other_at: Vector2=other.pos
   check(m.hovered(c) and room.cat_visuals.states[c.id].animation=="idle","Effective hit selects idle on first stationary simulation step at "+str(dimensions))
+  # Positioning/resizing the pointer may itself be a valid motion; measure the stationary interval independently.
+  m.cancel_pet(c)
   advance(0.5)
   check(c.pos==at and c.dest==dest and c.walk_left==walk,"Hover freezes actual position and preserves route/timer")
   check(other.pos!=other_at and c.growth>0,"Other cats and hovered cat growth continue")
@@ -103,9 +105,9 @@ func run() -> void:
  check(not m.hovered(c) and c.station==-99 and c.pos==p,"Carried cat cannot be captured by hover")
  c.station=-1;c.dragging=false;m.set_hovered_cat(-1)
  walking(c,Vector2(600,500));room.step(0);motion(room.screen_position(c.pos));room.refresh_hover();game.refresh()
- DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/idle_009"))
+ DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/editor_928"))
  await process_frame;await RenderingServer.frame_post_draw
- root.get_texture().get_image().save_png(ProjectSettings.globalize_path("res://reports/idle_009/20_hover_idle.png"))
+ root.get_texture().get_image().save_png(ProjectSettings.globalize_path("res://reports/editor_928/20_hover_idle.png"))
  game.queue_free();await process_frame
  print("HOVER 008: ",checks," checks, ",failures," failures")
  quit(0 if failures==0 else 1)

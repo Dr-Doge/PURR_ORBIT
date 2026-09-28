@@ -1,4 +1,6 @@
 extends Control
+const Dev = preload("res://scripts/developer_tools.gd")
+var developer_feedback: Label
 const Model = preload("res://scripts/model.gd")
 const Room = preload("res://scripts/room.gd")
 const D = preload("res://scripts/data.gd")
@@ -50,21 +52,12 @@ func live(l: Label,callback: Callable) -> void:
  bindings.append({"node":l,"fn":callback}); l.text = callback.call()
 func _ready() -> void:
  get_tree().auto_accept_quit = false
- add_child(preload("res://scripts/game_cursor.gd").new())
- var font := SystemFont.new(); font.font_names = PackedStringArray(["Microsoft YaHei","Segoe UI"])
- var skin := Theme.new(); skin.default_font = font; skin.default_font_size = 16
- for state in ["normal","hover","pressed","disabled","focus"]:
-  skin.set_stylebox(state,"Button",style({"normal":"294856","hover":"3b646c","pressed":"486f68","disabled":"23313e","focus":"294856"}[state],"526f7e"))
- skin.set_color("font_color","Label",Color("334b49"));skin.set_color("font_color","CheckButton",Color("334b49"))
- skin.set_color("font_color","Button",Color("304b43")); skin.set_color("font_disabled_color","Button",Color("8c988d")); theme = skin
- room = Room.new(); room.model = model; room.set_anchors_and_offsets_preset(PRESET_FULL_RECT); add_child(room)
- room.facility_selected.connect(show_facility); room.worker_selected.connect(show_worker); room.gacha_selected.connect(show_gacha)
- room.notice.connect(message); room.build_requested.connect(func(key: String,at: Vector2): transact(func(): return model.buy(key,at)))
- hud=preload("res://scripts/station_hud.gd").new();hud.game=self;add_child(hud)
- overlay=PanelContainer.new();overlay.set_anchors_and_offsets_preset(PRESET_FULL_RECT);overlay.add_theme_stylebox_override("panel",style("0a1823bb","0a182300",0));add_child(overlay)
- var center:=CenterContainer.new();overlay.add_child(center)
- card=PanelContainer.new();card.custom_minimum_size=Vector2(820,580);card.add_theme_stylebox_override("panel",style("1a2d3e","607c87",22));center.add_child(card)
- body=column(card)
+ room=$Room;room.model=model;room.apply_initial_layout(model)
+ room.facility_selected.connect(show_facility);room.worker_selected.connect(show_worker);room.gacha_selected.connect(show_gacha)
+ room.notice.connect(message);room.build_requested.connect(func(key: String,at: Vector2):transact(func():return model.buy(key,at)))
+ hud=$HUD;hud.bind_game(self)
+ overlay=$Overlay;card=$Overlay/Center/Card;body=$Overlay/Center/Card/Body
+ room.step(0)
  resized.connect(resize_panel)
  resized.connect(layout_presentation)
  layout_presentation()
@@ -101,25 +94,28 @@ func close_modal() -> void:
  if modal == "contact": model.accept_contact();save_game()
  modal="";paused=false;bindings.clear();overlay.hide();room.interactive=true;room.reset_pointer();refresh();layout_presentation()
 func show_start() -> void:
- var content := screen("Purr Orbit / 毛球计划", "一群奇妙的室友，一台来自未知文明的仪器。", "start",true)
- clear(body);content=column(body)
- button("开始游戏",new_game_prompt,content)
- var load_button := button("继续游戏",func():
-  if model.load_from(SAVE): room.model=model;active=true;close_modal()
-  else: message("存档无法读取，原件没有覆盖");paragraph("无法读取当前存档；请尝试下方的备份恢复。",content),content)
- load_button.disabled = not FileAccess.file_exists(SAVE)
- if FileAccess.file_exists(SAVE+".bak"):
-  button("从自动备份继续",func():
-   if model.load_from(SAVE+".bak"):room.model=model;active=true;close_modal()
-   else:paragraph("备份也无法读取；原文件已保留。",content),content)
- button("设置",show_settings,content)
+ screen("Purr Orbit / 毛球计划","一群奇妙的室友，一台来自未知文明的仪器。","start",true)
+ clear(body)
+ var content=preload("res://scenes/ui/start_menu.tscn").instantiate();body.add_child(content)
+ content.get_node("NewGame").pressed.connect(new_game_prompt)
+ var load_button: Button=content.get_node("Continue")
+ load_button.pressed.connect(func():
+  if model.load_from(SAVE):room.model=model;active=true;close_modal()
+  else:message("存档无法读取，原件没有覆盖");paragraph("无法读取当前存档；请尝试下方的备份恢复。",content))
+ load_button.disabled=not FileAccess.file_exists(SAVE)
+ var backup: Button=content.get_node("RestoreBackup")
+ backup.visible=FileAccess.file_exists(SAVE+".bak")
+ backup.pressed.connect(func():
+  if model.load_from(SAVE+".bak"):room.model=model;active=true;close_modal()
+  else:paragraph("备份也无法读取；原文件已保留。",content))
+ content.get_node("Settings").pressed.connect(show_settings)
 func new_game_prompt() -> void:
  if FileAccess.file_exists(SAVE):
   var content := screen("开始新的驻留？","会开始一份新的驻留进度。当前进度留有自动备份，旧版本存档保留。","new_confirm",true)
   button("确认开始新游戏",start_game,content);button("取消",show_pause if active else show_start,content)
  else: start_game()
 func start_game() -> void:
- model=Model.new();room.model=model;room.effects.clear();active=true;save_clock=0;close_modal();save_game()
+ model=Model.new();room.apply_initial_layout(model);room.model=model;room.effects.clear();active=true;save_clock=0;close_modal();save_game()
 func message(value: String) -> void:
  notice_label.text=value;status_clock=7.0
 func transact(action: Callable) -> bool:
@@ -128,7 +124,7 @@ func transact(action: Callable) -> bool:
  else: save_game()
  refresh();return result
 func refresh() -> void:
- header_label.text="%s 毛球    ◇ %d\n阶段 %d · 猫 %d · 帮手 %d" % [format_money(model.wallet),model.tokens,model.round_no,model.cats.size(),model.workers.size()]
+ header_label.text="%s 毛球    ◇ %d\n收藏批次 %d · 猫 %d · 帮手 %d" % [format_money(model.wallet),model.tokens,model.round_no,model.cats.size(),model.workers.size()]
  hint_label.text="代币已集齐 · 等待回应" if model.minted==36 and model.owned.size()<36 else ("信号已全部收到" if model.owned.size()==36 else "下一枚代币  %d%%" % roundi(model.signal_progress()*100))
  signal_bar.value=model.signal_progress()*100
  nav_buttons.workers.visible=not model.workers.is_empty()
@@ -152,7 +148,7 @@ func _process(dt: float) -> void:
   model.events.clear()
   save_clock+=dt
   if save_clock>=10: save_clock=0;save_game()
-  if model.first_token and not model.gacha_ready and modal not in ["contact","pause","settings"]: show_contact()
+  if model.first_token and not model.gacha_ready and modal not in ["contact","pause","settings","developer"]: show_contact()
  room.step(dt)
  update_clock+=dt;status_clock-=dt
  if update_clock>=0.25:
@@ -170,18 +166,18 @@ func guidance() -> String:
   if f.bugs>0:return "喂食器里出现了蟑螂，产量正在下降！点击设施打开内部清理。"
   if f.broken:return "娱乐设施黑屏停产。点击捶打恢复，或解锁工人维护再分配维修岗位。"
  if not model.has("sun"):return "继续研发日光浴；将猫拖进去，它会更快长出一层毛，再自行离开。"
- if model.round_no==2 and not model.has("hats"):return "新的照料工作出现了。到成长面板解锁职责帽，给小帮手分工。"
- if model.round_no==2 and not model.has("arcade"):return "娱乐设施已开放：让一只猫去赢取小物件，生产也会推动信号进度。"
+ if not model.has("hats"):return "新的照料工作出现了。到成长面板解锁职责帽，给小帮手分工。"
+ if not model.has("arcade"):return "娱乐设施已开放：让一只猫去赢取小物件，生产也会推动信号进度。"
  for f in model.facilities:
   if f.kind=="feeder" and f.grain==0:return "喂食器空了。点击设备补粮；库存不足时可直接购买。"
  return "攒毛、喂食和娱乐中奖，都能让下一个信号更快抵达。"
 func show_shop() -> void:
  var content := screen("舱室补给", "添一位室友，或给它们一个新的好去处。", "shop")
  var grid := GridContainer.new();grid.columns=2;grid.add_theme_constant_override("h_separation",14);grid.add_theme_constant_override("v_separation",14);content.add_child(grid)
- for key in ["short","worker","feeder","sun","arcade"]:
+ for key in ["short","worker","feeder","sun","arcade","altar"]:
   var tile := PanelContainer.new();tile.custom_minimum_size.x=410;tile.size_flags_horizontal=SIZE_EXPAND_FILL;tile.add_theme_stylebox_override("panel",style("203b4a"));grid.add_child(tile)
   var c := column(tile);c.add_child(label(D.title(key),20,"496950"))
-  paragraph({"short":"新的软绵绵室友，会在设施中发现另一种自己。","worker":"替你收毛球、补粮和搬猫。","feeder":"猫会自行过来吃粮，吃饱后暂时增产。需要备好猫粮。","sun":"把猫拖进光里，长出一层毛后自行离开。","arcade":"暂停长毛，赢取小物件；在仓库出售。"}[key],c,15)
+  paragraph({"short":"新的软绵绵室友，会在设施中发现另一种自己。","worker":"替你收毛球、补粮和搬猫。","feeder":"猫会自行过来吃粮，吃饱后暂时增产。需要备好猫粮。","sun":"把猫拖进光里，长出一层毛后自行离开。","arcade":"暂停长毛，赢取小物件；在仓库出售。","altar":"一只猫留守产生全局加速，并可能转化外星猫；会干扰娱乐设备。"}[key],c,15)
   var buy_button:=button("",func():
    if model.round_no<D.gate(key):return
    if key!="short" and not model.has(key):show_tree(key)
@@ -202,60 +198,11 @@ func show_shop() -> void:
    bind_button(bulk,func():return "一次备好100份 · %d毛球" % (D.FOOD_PRICES[i]*10),func():return model.wallet<D.FOOD_PRICES[i]*10)
    bind_button(b,func():return "%s ×10 · %d毛球  /  库存%d" % [D.FOOD_NAMES[i],D.FOOD_PRICES[i],model.food[i]],func():return model.wallet<D.FOOD_PRICES[i])
 func show_tree(subject: String = "worker") -> void:
- tree_selected=subject
- var content := screen("成长树  /  向上探索", "先选一个方向，再看看它带来的变化。旁支不必升满，研究后在补给中购买实体。", "tree")
- var jumps := row(content)
- for target in D.RESEARCH:
-  if D.gate(target)>D.MAX_STAGE:continue
-  button(D.title(target),func():show_tree_detail(target);focus_tree(target),jumps)
- var layout := row(content);layout.custom_minimum_size.y=415
- graph=GraphEdit.new();graph.custom_minimum_size=Vector2(790,400);graph.size_flags_horizontal=SIZE_EXPAND_FILL;graph.minimap_enabled=false;graph.show_arrange_button=false;graph.show_grid_buttons=false;graph.show_minimap_button=false;graph.show_grid=false;graph.add_theme_stylebox_override("panel",style("e5e9df"));layout.add_child(graph)
- detail=column(layout);detail.custom_minimum_size.x=320
- for key in D.RESEARCH:
-  if D.gate(key)>D.MAX_STAGE:continue
-  var spec: Dictionary=D.RESEARCH[key]
-  var node := GraphNode.new();node.name=key;node.title=D.title(key);node.position_offset=spec.pos;node.custom_minimum_size.x=215;graph.add_child(node)
-  var state: String = "已解锁" if model.has(key) else ("首批回声收齐后" if model.round_no<spec.round else "研究 %d 毛球" % spec.price)
-  node.add_theme_stylebox_override("panel",style("f5f2e8"));node.add_theme_stylebox_override("titlebar",style("c8d7c1","c8d7c1"));node.add_theme_color_override("title_color",Color("334b49"))
-  button(state,func():show_tree_detail(key),node)
-  node.set_slot(0,true,0,Color("95c9bd"),true,0,Color("95c9bd"))
-  if D.BRANCHES.has(key):
-   var desc := label("＋ "+" / ".join(D.BRANCHES[key].keys()),12,"8faeae")
-   desc.text="＋ %d 项独立分支" % D.BRANCHES[key].size();node.add_child(desc)
- for key in D.RESEARCH:
-  if D.gate(key)>D.MAX_STAGE:continue
-  for pre in D.RESEARCH[key].pre: graph.connect_node(pre,0,key,0)
- for key in D.BRANCHES:
-  var index: int = 0
-  for branch in D.BRANCHES[key]:
-   var spec: Array = D.BRANCHES[key][branch]
-   var node := GraphNode.new();node.name=key+"_"+branch;node.title=spec[0]
-   node.position_offset=D.RESEARCH[key].pos+Vector2(-230+(index%3)*235,-180-(index/3)*150)
-   node.custom_minimum_size.x=185;graph.add_child(node)
-   node.add_theme_stylebox_override("panel",style("edf0e6"));node.add_theme_stylebox_override("titlebar",style("c8d7c1","c8d7c1"));node.add_theme_color_override("title_color",Color("334b49"))
-   button("%d / %d · 查看强化" % [model.lv(key,branch),spec[2]],func():show_tree_detail(key),node)
-   node.set_slot(0,true,0,Color("dec18d"),false,0,Color("dec18d"))
-   graph.connect_node(key,0,node.name,0);index+=1
- show_tree_detail(subject)
- focus_tree(subject)
-func focus_tree(subject: String) -> void:
- var target_graph: GraphEdit = graph
- await get_tree().process_frame
- await get_tree().process_frame
- if not is_instance_valid(target_graph) or target_graph!=graph:return
- target_graph.scroll_offset=D.RESEARCH[subject].pos-Vector2(300,260)
+ preload("res://scripts/tree_ui.gd").show_tree(self,subject)
 func show_tree_detail(key: String) -> void:
- clear(detail);tree_selected=key
- detail.add_child(label(D.title(key),23,"dfc794"));paragraph(D.RESEARCH[key].desc,detail)
- var cash := label("");detail.add_child(cash);live(cash,func():return "毛球："+format_money(model.wallet))
- var why: String = model.research_reason(key)
- paragraph(("已解锁 · 立即生效" if key=="hats" else "已解锁 · 实体在补给中购买") if model.has(key) else (why if why!="" else "研究费用：%d 毛球" % D.RESEARCH[key].price),detail)
- var b := button("研发主体",func():transact(func():return model.research(key));show_tree(key),detail);bind_button(b,func():return "已解锁" if model.has(key) else "研究 · %d 毛球" % D.RESEARCH[key].price,func():return why!="" or model.wallet<D.RESEARCH[key].price)
- for branch in D.BRANCHES.get(key,{}):
-  var spec: Array=D.BRANCHES[key][branch];var cost: int=model.upgrade_price(key,branch)
-  paragraph(D.branch_effect(key,branch,model.lv(key,branch))+" → "+D.branch_effect(key,branch,mini(model.lv(key,branch)+1,int(spec[2]))),detail,14)
-  var bt := button("%s %d/%d · %s" % [spec[0],model.lv(key,branch),spec[2],str(cost)+"毛球" if cost>=0 else "已满"],func():transact(func():return model.upgrade(key,branch));show_tree_detail(key),detail)
-  bind_button(bt,func():return "%s %d/%d · %s" % [spec[0],model.lv(key,branch),spec[2],str(cost)+"毛球" if cost>=0 else "已满"],func():return not model.has(key) or cost<0 or model.wallet<cost)
+ preload("res://scripts/tree_ui.gd").detail(self,key)
+func focus_tree(key: String) -> void:
+ preload("res://scripts/tree_ui.gd").focus(self,Model.T.SUBJECTS.get(key,key))
 func show_facility(id: int) -> void:
  var f: Dictionary=model.facility(id)
  if f.is_empty():return
@@ -274,7 +221,7 @@ func show_facility(id: int) -> void:
   if f.bugs>0:
    paragraph("虫害会取消增产并降低产量。连续点击清除，每只需要两下。",inside)
    button("捶它！  × %d 只蟑螂   [%d/2]" % [f.bugs,f.hits],func():model.clean(id);save_game();show_facility(id),inside)
-  else: paragraph("内部干净。"+(" 第一阶段不会发生虫害。" if model.round_no==1 else "工人也可以接手打理。"),inside)
+  else: paragraph("内部干净。"+(" 建好日光浴后需定期打理，工人也可以接手。"),inside)
  elif f.kind=="arcade" and f.broken:
   var repair_label := label("");content.add_child(repair_label);live(repair_label,func():return "黑屏维修：%d / 6" % f.hits if f.broken else "画面恢复，设备已重新产出")
   button("捶打设备",func():model.repair(id);save_game();refresh(),content)
@@ -294,7 +241,7 @@ func show_workers() -> void:
  live(strategy,func():return "收割门槛 %d 层 · 产出后CD %.2f秒" % [model.worker_target(),model.worker_cooldown()])
  button("升级收割策略与CD",func():show_tree("worker"),content)
  paragraph("层数升级每级增加1层门槛；可自行决定是否购买。蓝条为各自收割CD，期间仍能补粮、清虫和搬猫。",content,15)
- if not model.has("hats"):paragraph("固定分工在第二阶段解锁职责帽后开放；当前工人会自主照料。",content)
+ if not model.has("hats"):paragraph("固定分工在成长树解锁职责帽后开放；当前工人会自主照料。",content)
  if model.workers.is_empty():button("去招募一个小帮手",show_shop,content)
  for w in model.workers:
   var line := row(content);var text_label := label("");text_label.custom_minimum_size.x=460;line.add_child(text_label)
@@ -304,8 +251,32 @@ func show_workers() -> void:
   for i in range(keys.size()):
    select.add_item(D.ROLES[keys[i]],i)
    if keys[i]==w.role:select.select(i)
-   select.set_item_disabled(i,(keys[i]!="general" and not model.has("hats")) or (keys[i]=="repair" and not model.has("maint")) or (keys[i]=="arcade" and not model.has("arcade")) or (keys[i]=="altar" and not model.has("altar")) or (keys[i]=="clean" and model.round_no<2))
+   select.set_item_disabled(i,(keys[i]!="general" and not model.has("hats")) or (keys[i]=="repair" and not model.has("maint")) or (keys[i]=="arcade" and not model.has("arcade")) or (keys[i]=="altar" and not model.has("altar")))
   select.item_selected.connect(func(index:int):transact(func():return model.set_role(w.id,keys[index])))
+  if model.node_owned("S10"):
+   var group_pick:=OptionButton.new();line.add_child(group_pick)
+   for i in range(model.group_count()):group_pick.add_item("猫群 "+str(i+1),i)
+   group_pick.select(w.get("group",0));group_pick.item_selected.connect(func(index:int):transact(func():return model.set_group("worker",w.id,index)))
+ if model.node_owned("S10"):show_groups(content)
+func show_groups(content: VBoxContainer) -> void:
+ paragraph("猫群与照料预设：工人只接手自己组的猫；目标层不超过已付费上限。",content)
+ for group in range(model.group_count()):
+  var line:=row(content);line.add_child(label("猫群 "+str(group+1)))
+  var target:=OptionButton.new();line.add_child(target)
+  for n in range(1,model.worker_target()+1):target.add_item("收割目标 %d层" % n,n)
+  target.select(mini(model.group_settings[group].target,model.worker_target())-1)
+  target.item_selected.connect(func(index:int):transact(func():return model.set_group_target(group,index+1)))
+  if model.node_owned("S20"):
+   var rounds:=SpinBox.new();rounds.min_value=0;rounds.max_value=20;rounds.step=1;rounds.prefix="娱乐轮次";rounds.suffix="（0不限）";rounds.value=model.group_settings[group].rounds;line.add_child(rounds)
+   rounds.value_changed.connect(func(v:float):transact(func():return model.set_group_target(group,model.group_settings[group].target,int(v))))
+ for c in model.cats:
+  var line:=row(content);line.add_child(label("%s #%d" % [D.title(c.kind),c.id]))
+  var pick:=OptionButton.new();line.add_child(pick)
+  for i in range(model.group_count()):pick.add_item("猫群 "+str(i+1),i)
+  pick.select(c.get("group",0));pick.item_selected.connect(func(index:int):transact(func():return model.set_group("cat",c.id,index)))
+  if model.node_owned("XBC"):
+   var boost:=CheckButton.new();boost.text="满载入场：消耗多余毛层";boost.button_pressed=c.get("use_boost",false);line.add_child(boost)
+   boost.toggled.connect(func(v:bool):c.use_boost=v;save_game())
 func show_worker(_id: int) -> void:
  show_workers()
 func show_inventory() -> void:
@@ -313,17 +284,29 @@ func show_inventory() -> void:
  var info := label("");content.add_child(info)
  live(info,func():return "%d 件小物件   ·   合计 %s 毛球" % [model.inventory.size(),format_money(inventory_value())])
  var sell:=button("",func():message("出售获得 %.1f 毛球" % model.sell_all());save_game();show_inventory(),content)
- bind_button(sell,func():return "出售全部 %d 件 · %s 毛球" % [model.inventory.size(),format_money(inventory_value())],func():return model.inventory.is_empty())
+ bind_button(sell,func():return "出售未预留物品（库存%d件） · %s 毛球" % [model.inventory.size(),format_money(inventory_value())],func():return model.inventory.is_empty())
  var groups: Dictionary={}
  for item in model.inventory:
   if not groups.has(item.name):groups[item.name]={"count":0,"value":0.0}
-  groups[item.name].count+=1;groups[item.name].value+=float(item.value)*model.effect("sale")
+  groups[item.name].count+=1;groups[item.name].value+=model.Build.sale_value(model,item)
  for name in groups:
   content.add_child(label("%s    ×%d       %s 毛球" % [name,groups[name].count,format_money(groups[name].value)],19))
  if groups.is_empty():paragraph("还空着呢。去看看猫咪在娱乐设施里发现了什么。",content,19)
+ if model.node_owned("C1M"):
+  paragraph("订单预留：自动收集所需实物，齐全后手动提交。普通出售保留已预留物品。",content)
+  var choices:=row(content)
+  for kind in ["pair","trio","set"]:
+   var create:=button({"pair":"预留2件同款","trio":"预留3件不同","set":"预留5件不同"}[kind],func():transact(func():return model.Build.create_order(model,kind));show_inventory(),choices)
+   create.disabled=not model.Build.order_unlocked(model,kind)
+  for i in range(model.orders.size()):
+   var order: Dictionary=model.orders[i];var line:=row(content)
+   line.add_child(label("清单%d · %d/%d件 · ×%.2f" % [i+1,order.ids.size(),model.Build.order_size(order.kind),model.Build.order_factor(model,order.kind)]))
+   button("提交",func():message("订单获得 %.1f 毛球" % model.Build.sell(model,i));save_game();show_inventory(),line)
+   button("取消预留",func():model.orders.remove_at(i);model.Build.refresh_orders(model);save_game();show_inventory(),line)
 func inventory_value() -> float:
  var value: float=0.0
- for item in model.inventory:value+=float(item.value)*model.effect("sale")
+ for item in model.inventory:
+  if not model.Build.reserved_ids(model).has(item.id):value+=model.Build.sale_value(model,item)
  return value
 func show_contact() -> void:
  var content := screen("……你听见了吗？", "舱窗外，一个猫咪形状的轮廓正在望着你。", "contact",true)
@@ -373,6 +356,7 @@ func show_pause() -> void:
  var content := screen("驻留暂停", "猫咪、设备、工人和故障计时都已暂停。", "pause",true)
  button("继续驻留",close_modal,content);button("保存进度",func():message("已保存" if save_game() else "保存失败，请查看权限"),content)
  button("设置",show_settings,content);button("操作帮助",show_help,content);button("重新开始…",new_game_prompt,content)
+ button("开发者工具 · 9",show_developer,content)
  button("退出游戏",func():save_game();get_tree().quit(),content)
 func show_settings() -> void:
  var content := screen("设置", "视觉设置。", "settings",true)
@@ -381,13 +365,14 @@ func show_settings() -> void:
  button("返回",show_pause if active else show_start,content)
 func show_help() -> void:
  var content := screen("驻留手册", "让旧工作逐渐交给小帮手，把注意力留给新的发现。", "help",true)
- paragraph("① 不按键，在猫身上来回移动：收割。等多层再收，产量更高。收获动作结束后可再次摸这只猫。
+ paragraph("① 不按键，在猫身上来回移动：收割。停手后3秒内可接续；脚下短条显示进度。等多层再收，产量更高。收获动作结束后可再次摸这只猫。
 ② 按住猫拖动：搬猫；松在设施上可指派，松在空地则回到场地。
 ③ 成长树研发能力 → 商店购买实体 → 点击地板摆放。右键取消摆放。
 ④ 点击喂食器补粮；出现虫害时打开内部连续点击清除。
-⑤ 成长树可付费提高工人收割层数或缩短产出后CD；第二阶段职责帽安排固定岗位。
+⑤ 成长树可付费提高工人收割层数、缩短CD；职责帽安排固定岗位，分组照料可设各组目标。
 ⑥ 收割和娱乐中奖推进代币进度。12个回声收齐后补入24个，全部经营进度保留。",content,22)
  paragraph("不必急着收第一层毛。多攒几层，可以获得更多毛球与信号进度。",content,16)
+ paragraph("开发测试：直接按1—8执行指令，9查看快捷键面板，无需开启模式。需先开始或读取游戏。",content,16)
  if not active:button("返回开始界面",show_start,content)
 func save_game() -> bool:
  if testing or not active:return true
@@ -401,3 +386,31 @@ func _unhandled_key_input(event: InputEvent) -> void:
   get_viewport().set_input_as_handled()
 func _notification(what: int) -> void:
  if what==NOTIFICATION_WM_CLOSE_REQUEST:save_game();get_tree().quit()
+
+func show_developer() -> void:
+ if not active:return
+ var content:=screen("开发者工具 · 数字快捷键","直接按1—8执行指令，9打开此面板，无需开关。主键盘和数字小键盘均可用。开发操作沿用当前自动存档。","developer",true)
+ developer_feedback=paragraph("等待开发指令",body,16)
+ for command in Dev.COMMANDS:
+  var key: String=command[0]
+  button(command[1]+" · "+command[2],func():developer_command(key),content)
+ paragraph("设施免费生成并解锁对应研究及前置；不自动提升升级等级。娱乐和祭坛沿树前置开放，不再受收藏批次限制；按8可补齐首批收藏。面板内暂停模拟，返回舱室后继续。",content,16)
+func developer_command(key: String) -> void:
+ if not active:return
+ var result: String=Dev.execute(model,key)
+ if modal=="developer" and is_instance_valid(developer_feedback):developer_feedback.text=result
+ refresh()
+ if save_game():message("[开发] "+result)
+func _input(event: InputEvent) -> void:
+ if not event is InputEventKey or not event.pressed or event.echo or not active:return
+ if event.alt_pressed or event.meta_pressed or event.shift_pressed or event.ctrl_pressed:return
+ var focused: Control=get_viewport().gui_get_focus_owner()
+ if focused is LineEdit or focused is TextEdit:return
+ var key: int=event.keycode
+ if key>=KEY_KP_0 and key<=KEY_KP_9:key=KEY_0+(key-KEY_KP_0)
+ if key==KEY_9:show_developer()
+ else:
+  var command: String={KEY_1:"money",KEY_2:"food",KEY_3:"feeder",KEY_4:"sun",KEY_5:"arcade",KEY_6:"worker",KEY_7:"short",KEY_8:"stage2"}.get(key,"")
+  if command=="":return
+  developer_command(command)
+ get_viewport().set_input_as_handled()

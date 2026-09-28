@@ -34,15 +34,15 @@ func run() -> void:
  H.rub(m,c.id)
  check(c.layers==1,"Hover movement completes harvest")
  sim(m,80);check(c.layers==8,"Fur cap")
- m=funded();check(not m.research("arcade") and not m.buy("arcade"),"Money cannot bypass stage gates")
- check(not m.research("altar") and not m.buy("altar") and not m.buy("alien"),"Future content unavailable")
+ m=funded();var scope=funded();check(scope.research("arcade") and scope.buy("arcade"),"Entertainment no longer waits for collections")
+ check(scope.research("altar") and scope.buy("altar") and not scope.buy("alien"),"Altar enabled, special cats remain conversion-only")
  check(m.has("sun") and m.lv("feeder","food")==0,"Branches not mandatory")
  m.buy("feeder",Vector2(600,500));var f: Dictionary=m.facilities[0]
  m.refill(f.id);check(f.grain==20 and m.food[0]==0,"Refill conserves grain")
  m.buy("sun",Vector2(950,500));var sun: Dictionary=m.facilities[1]
- c=m.cats[0];m.move_cat(c.id,f.pos);c.layers=2;var before: float=m.harvest_value(c)
+ c=m.cats[0];m.cats[1].pos=Vector2(1200,700);m.move_cat(c.id,m.feeding_spot(f));c.layers=2;var before: float=m.harvest_value(c)
  sim(m,3.5);check(m.harvest_value(c)>before,"Actual arrival and eating improves output")
- f.neglect=999;sim(m,1);check(f.bugs==0,"No stage-one pests")
+ f.neglect=999;sim(m,1);check(f.bugs==B.BUG_COUNT,"Sun enables pests without collection gate")
  c.layers=1;m.assign(c.id,sun.id);sim(m,2.5)
  check(c.layers==2 and c.station==-1,"Sun adds a layer and releases cat")
  m.buy("worker");m.workers[0].job={"kind":"harvest","target":c.id,"cat":c.id};m.workers[0].clock=0.3
@@ -51,8 +51,9 @@ func run() -> void:
  check(m.tokens==24,"Restock never charges next coin")
  check(m.wallet==snap.wallet and m.cats==snap.cats and m.workers==snap.workers,"Restock keeps money, cats, partial CD, jobs and positions")
  check(m.food==snap.food and m.researches==snap.researches and f.grain==snap.facilities[0].grain,"Restock keeps supplies and facilities")
- check(f.neglect==0 and is_equal_approx(m.effect("yield"),1.6) and is_equal_approx(m.effect("speed"),1.24),"Pest grace and non-duplicated set buffs")
+ check(f.neglect==snap.facilities[0].neglect and is_equal_approx(m.effect("yield"),1.6) and is_equal_approx(m.effect("speed"),1.24),"Collection restock preserves risk timer and set buffs")
  check(not m.advance_stage(),"No skip to third stage")
+ for i in range(B.BUG_COUNT*B.BUG_HITS):m.clean(f.id)
  m.workers.clear();f.grain=0;f.pulse=999;c.kind="short";c.fed=0;m.move_cat(c.id,f.pos)
  sim(m,D.BUG_TIME-1);check(f.bugs==0,"No instant pests")
  sim(m,1.2);check(f.bugs==B.BUG_COUNT,"Existing sun enables second-stage pests")
@@ -65,7 +66,7 @@ func run() -> void:
  m.research("hats");m.research("arcade");m.buy("arcade",Vector2(400,650));var arcade: Dictionary=m.facilities.back()
  c.kind="short";m.assign(c.id,arcade.id);var layers: int=c.layers;sim(m,60)
  check(c.layers==layers and m.inventory.size()>0 and m.production>production,"Arcade replaces fur with contributing main prizes")
- check(not arcade.broken and not m.research("maint"),"No interference or maintenance")
+ check(not arcade.broken and not m.research("maint"),"No interference without altar; maintenance requires its tree prerequisite")
  m.move_cat(c.id,Vector2(600,500));c.kind="static";c.layers=1
  var other: Dictionary=m.cats[1];other.pos=c.pos+Vector2(30,0);other.layers=5
  before=m.production;value=m.harvest_value(c);H.settle(m,c.id)
@@ -97,7 +98,7 @@ func run() -> void:
  var balance: float=m.wallet;var grain: int=m.food[0]
  check(m.buy_food(0,10) and m.food[0]==grain+100 and m.wallet==balance-60,"Bulk food preserves per-pack cost")
  balance=m.wallet;check(not m.buy_food(0,-1) and m.wallet==balance,"Negative bulk cannot refund money")
- m=M.new();m.token_progress=3;m.contribute(B.TOKEN_THRESHOLDS[5]+0.1)
+ m=M.new();m.token_progress=3;m.contribute(B.TOKEN_THRESHOLDS[5]*B.TOKEN_SCALE+0.1)
  check(m.tokens==6 and m.minted==6,"Large production settles every crossed threshold")
  var path: String="user://test_v027_isolated.save"
  check(m.save_to(path)==OK,"Isolated save write");m.wallet=99.0;check(m.save_to(path)==OK,"Atomic replacement")

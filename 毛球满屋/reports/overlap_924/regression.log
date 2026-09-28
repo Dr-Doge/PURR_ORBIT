@@ -1,0 +1,63 @@
+
+test_overlap_924.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+SOFT OVERLAP: 19 checks, 0 failures
+test_overlap_ui_924.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+ERROR: Holding overlapping cat does not displace it
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_overlap_ui_924.gd:8)
+       [1] run (res://tests/test_overlap_ui_924.gd:23)
+ERROR: Mouse release keeps requested overlap position
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_overlap_ui_924.gd:8)
+       [1] run (res://tests/test_overlap_ui_924.gd:25)
+ERROR: Two second drop grace preserves overlap
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_overlap_ui_924.gd:8)
+       [1] run (res://tests/test_overlap_ui_924.gd:28)
+OVERLAP UI: 7 checks, 3 failures
+UI fixture correction: idle target cat before hold so natural wandering does not change the drop reference.
+test_overlap_ui_924.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+OVERLAP UI: 7 checks, 0 failures
+test_september23.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+TREE: 128 positions; 264023 total cost
+SEPTEMBER23: 74 checks, 0 failures
+test_feeding.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+FEEDING / ROAM: 29 checks, 0 failures
+test_idle_009.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+IDLE 009: 17 checks, 0 failures; 847 idle, 2665 moving samples
+test_reaction_007.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+REACTION 007: 58 checks, 0 failures
+test_cat_feedback.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+CAT FEEDBACK: 17 checks, 0 failures
+test_hover_008.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+HOVER 008: 39 checks, 0 failures

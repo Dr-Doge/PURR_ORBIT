@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/cat_actor.gd" id="actor"]
+[ext_resource type="SpriteFrames" path="res://Art/cat10_animations.tres" id="frames"]
+[node name="LuckyCat" type="Node2D"]
+script = ExtResource("actor")
+kind = "lucky"
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("frames")
+animation = &"idle"
+centered = false
+position = Vector2(-67.10000000000001, -70.98046875000001)
+scale = Vector2(0.26210937500000003, 0.26210937500000003)

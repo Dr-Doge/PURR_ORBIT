@@ -105,7 +105,7 @@ func run() -> void:
    check(texture.get_image().get_pixel(0,0).a<0.01,"Frame background transparent")
  if "--capture" in OS.get_cmdline_user_args():
   root.size = Vector2i(1440,900)
-  var room = Room.new()
+  var room = load("res://scenes/room.tscn").instantiate();room.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
   room.model = fresh
   fresh.cats[1].layers=fresh.cats[0].layers
   room.size = Vector2(1440,900)

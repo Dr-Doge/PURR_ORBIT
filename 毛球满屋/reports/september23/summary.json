@@ -1,0 +1,137 @@
+{
+  "results": [
+    {
+      "mode": "full",
+      "old_minutes": [
+        62.2,
+        59.07,
+        56.12
+      ],
+      "new_minutes": [
+        27.85,
+        29.02,
+        27.98
+      ],
+      "speed_ratios": [
+        2.2333931777378817,
+        2.035611717403791,
+        2.0053603335318644
+      ],
+      "restock_minutes": [
+        12.92,
+        13.1,
+        12.35
+      ],
+      "altar_minutes": [
+        27.17,
+        27.5,
+        27.17
+      ]
+    },
+    {
+      "mode": "layers",
+      "old_minutes": [
+        50.88,
+        52.88,
+        49.87
+      ],
+      "new_minutes": [
+        28.62,
+        27.97,
+        27.3
+      ],
+      "speed_ratios": [
+        1.7781013395457193,
+        1.8909415971394516,
+        1.8266178266178266
+      ],
+      "restock_minutes": [
+        13.18,
+        13.02,
+        12.33
+      ],
+      "altar_minutes": [
+        27.17,
+        27.17,
+        26.17
+      ]
+    },
+    {
+      "mode": "single",
+      "old_minutes": [
+        79.3,
+        71.5,
+        71.18
+      ],
+      "new_minutes": [
+        41.43,
+        39.98,
+        39.88
+      ],
+      "speed_ratios": [
+        1.9139179404666131,
+        1.7882451021258858,
+        1.7847889678228166
+      ],
+      "restock_minutes": [
+        22.98,
+        22.77,
+        20.92
+      ],
+      "altar_minutes": [
+        40.17,
+        38.83,
+        39.0
+      ]
+    },
+    {
+      "mode": "arcade",
+      "old_minutes": [
+        64.68,
+        62.0,
+        58.98
+      ],
+      "new_minutes": [
+        34.97,
+        36.05,
+        35.42
+      ],
+      "speed_ratios": [
+        1.849857006673022,
+        1.7198335644937586,
+        1.6654117647058824
+      ],
+      "restock_minutes": [
+        14.5,
+        14.55,
+        14.15
+      ],
+      "altar_minutes": [
+        26.17,
+        26.67,
+        26.0
+      ]
+    }
+  ],
+  "source_sha256": {
+    "balance.gd": "314d306f065bd83d8fedee5916401ddd87668e61773700371713bca3fbe5a420",
+    "build_rules.gd": "6967df40dbfd9b6bea88fa0adaa2e9281955713ac40c648335b3e50090da1e50",
+    "cat_animation_data.gd": "5f2cfb4c4b99019e05a9654082520aa7d8b0e3ce2a323dba15433e17a41368a1",
+    "cat_space.gd": "36b83ed3c0797334de59a686b29f2f00e8e380963743c2ca493755afdaa2c6a3",
+    "cat_visuals.gd": "31ce5077c6c1e84ff9b4174405530cbeddc25ef811f307622ee4842353303941",
+    "data.gd": "ede00d2b372a61edfc4bc13be2a87914d229aac5460a7111ec3f7d3ef986315c",
+    "developer_tools.gd": "73a1040f2ce133e911a3287a3473ae9c6c42ffbe9dfb6580756e9518f69b2d97",
+    "game_cursor.gd": "67de6a93c31038583e96e713d64a6d499d289daa622996da75f3988cc436de54",
+    "harvest_art.gd": "ed385a25c7cb0dae8ae5afe1225791ad67f7024c92880deb2ae4f3fb4262cd79",
+    "main.gd": "65cbdb740890c6ae02567299fa4c2fc36cf7b828f33cea16cace714d7959e165",
+    "model.gd": "53a5bd566417ef18e4343f10839083927408b4b6600b1909b4d61cc688a375c0",
+    "room.gd": "19f775380d73a8e75ad35633f9c848ae1f4089a5494d0c062650adb6b6ad2bfd",
+    "static_cat_outline.gd": "927f9da895549b0299d046fa62522a1b2934b90a277566adf8c1a45f76fba926",
+    "station_backdrop.gd": "39af630b04e3f3eea6371d08edee4e05da3133bbe81b5b59fef26a8f0dd8c341",
+    "station_hud.gd": "6f46cc6dd04979b5223f3aa907a035d43188d215e223607c627c04f8bf5e9466",
+    "token_effect.gd": "9832510550fd3e3f6af0f52a64c01ed563f5f4a14ea11dc707d1d7544d941e3b",
+    "tree_specs.gd": "efad02673fb59e84146f42a66fcb14bcc215976781b825edfdb10c3406eccd8d",
+    "tree_ui.gd": "fc0197c07783b0bbd7a7c481fe9afee4b03da0621763575f1e1de5de0c4fab57"
+  },
+  "limitation": "24 policy simulations; not human play. Nodes/affordability recorded at 50,60,70 minutes. Actual completion uses marks.complete, not observation-end seconds."
+}

@@ -1,0 +1,37 @@
+
+test_motion_924.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+MOTION 924: 10 checks, 0 failures; old reversals=779 new=0
+test_september23.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+TREE: 128 positions; 264023 total cost
+SEPTEMBER23: 74 checks, 0 failures
+test_feeding.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+FEEDING / ROAM: 29 checks, 0 failures
+test_idle_009.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+IDLE 009: 17 checks, 0 failures; 1366 idle, 2046 moving samples
+test_reaction_007.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+REACTION 007: 58 checks, 0 failures
+test_cat_feedback.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+CAT FEEDBACK: 17 checks, 0 failures
+test_hover_008.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+HOVER 008: 39 checks, 0 failures

@@ -1,0 +1,37 @@
+Visual regressions require a rendering device; use normal engine, not headless.
+test_reaction_007.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+REACTION 007: 58 checks, 0 failures
+test_hover_008.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+ERROR: Stationary hover has no harvesting progress
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_hover_008.gd:9)
+       [1] run (res://tests/test_hover_008.gd:32)
+HOVER 008: 39 checks, 1 failures
+Hover fixture corrected: exclude deliberate setup motion from the stationary measurement; rerun below.
+test_hover_008.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+HOVER 008: 39 checks, 0 failures
+test_cat_feedback.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+CAT FEEDBACK: 17 checks, 0 failures
+test_developer_004.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+DEVELOPER CHECKS: 28; failures: 0
+test_september23_ui.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+SEPTEMBER23 UI: 22 checks, 0 failures

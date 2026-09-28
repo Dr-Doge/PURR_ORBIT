@@ -1,0 +1,118 @@
+
+test_overlap_ui_924.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+OVERLAP UI: 7 checks, 0 failures
+test_september23_ui.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+SEPTEMBER23 UI: 22 checks, 0 failures
+test_cat_feedback.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+ERROR: Node not found: "Cats" (relative to "/root/@Control@2").
+   at: get_node (scene/main/node.cpp:1975)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://scripts/room.gd:81)
+       [1] run (res://tests/test_cat_feedback.gd:35)
+SCRIPT ERROR: Cannot call method 'get_children' on a null value.
+   at: _ready (res://scripts/room.gd:81)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://scripts/room.gd:81)
+       [1] run (res://tests/test_cat_feedback.gd:35)
+SCRIPT ERROR: Invalid call. Nonexistent function 'hide' in base 'Nil'.
+   at: run (res://tests/test_cat_feedback.gd:55)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_cat_feedback.gd:55)
+Room.new fixture replaced with actual room.tscn instance after scene extraction.
+test_cat_feedback.gd
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 616.92 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+WARNING: Nodes with non-equal opposite anchors will have their size overridden after _ready(). 
+If you want to set size, change the anchors or consider using set_deferred().
+   at: _set_size (scene/gui/control.cpp:1519)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/test_cat_feedback.gd:35)
+ERROR: Real hover movement harvests a walking cat
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_cat_feedback.gd:12)
+       [1] run (res://tests/test_cat_feedback.gd:40)
+ERROR: Hover stops autonomous movement without changing route
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_cat_feedback.gd:12)
+       [1] run (res://tests/test_cat_feedback.gd:41)
+ERROR: Index p_y = 810 is out of bounds (height = 810).
+   at: get_pixel (core/io/image.cpp:3690)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/test_cat_feedback.gd:25)
+ERROR: Index p_y = 810 is out of bounds (height = 810).
+   at: get_pixel (core/io/image.cpp:3690)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/test_cat_feedback.gd:25)
+ERROR: Index p_y = 810 is out of bounds (height = 810).
+   at: get_pixel (core/io/image.cpp:3690)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/test_cat_feedback.gd:25)
+ERROR: Index p_y = 810 is out of bounds (height = 810).
+   at: get_pixel (core/io/image.cpp:3690)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/test_cat_feedback.gd:25)
+ERROR: Index p_y = 810 is out of bounds (height = 810).
+   at: get_pixel (core/io/image.cpp:3690)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/test_cat_feedback.gd:25)
+ERROR: Index p_y = 810 is out of bounds (height = 810).
+   at: get_pixel (core/io/image.cpp:3690)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/test_cat_feedback.gd:25)
+ERROR: Index p_y = 810 is out of bounds (height = 810).
+   at: get_pixel (core/io/image.cpp:3690)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/test_cat_feedback.gd:25)
+ERROR: Index p_y = 810 is out of bounds (height = 810).
+   at: get_pixel (core/io/image.cpp:3690)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/test_cat_feedback.gd:25)
+ERROR: Index p_y = 810 is out of bounds (height = 810).
+   at: get_pixel (core/io/image.cpp:3690)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/test_cat_feedback.gd:25)
+ERROR: Index p_y = 810 is out of bounds (height = 810).
+   at: get_pixel (core/io/image.cpp:3690)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/test_cat_feedback.gd:25)
+ERROR: Index p_y = 810 is out of bounds (height = 810).
+   at: get_pixel (core/io/image.cpp:3690)
+   GDScript backtrace (most recent call first):
+       [0] capture (res://tests/test_cat_feedback.gd:25)
+ERROR: Index p_y = 810 is out of bounds (height = 810).
+   at: get_pixel (core/io/image.cpp:3690)
+[Repeated out-of-bounds diagnostics compacted: 290536 original lines. Standalone Room test applied size before parenting an anchored scene; corrected to top-left anchors.]
+ERROR: Texture with GL ID of 37: leaked 4915136 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 38: leaked 4915136 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 39: leaked 4915136 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 40: leaked 4915136 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 41: leaked 4915136 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 42: leaked 4915136 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 43: leaked 4915136 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 44: leaked 4915136 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 45: leaked 4915136 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+WARNING: 29 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 27 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

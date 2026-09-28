@@ -16,7 +16,7 @@ func step(model, dt: float) -> void:
  for c in model.cats:
   alive[c.id] = true
   if not states.has(c.id):
-   states[c.id] = {"pos":c.pos,"layers":c.layers,"revision":c.get("harvest_revision",0),"animation":"idle","age":0.0,"flip":false,"motion_tick":-1,"displaced":false}
+   states[c.id] = {"pos":c.pos,"layers":c.layers,"revision":c.get("harvest_revision",0),"animation":"idle","age":0.0,"flip":false,"motion_tick":-1,"displaced":false,"turn_distance":0.0}
   var state: Dictionary = states[c.id]
   state.frames = A.frames_for(c.get("reaction_kind",c.kind) if model.reacting(c) else c.kind)
   var movement: Vector2 = c.pos-state.pos
@@ -27,7 +27,16 @@ func step(model, dt: float) -> void:
    state.motion_tick=model.motion_tick;state.displaced=false
   state.displaced=state.displaced or movement!=Vector2.ZERO
   var walking: bool=state.displaced or tick_motion!=Vector2.ZERO
-  if walking and absf(movement.x)>0.001: state.flip = movement.x>0
+  # Require sustained opposite horizontal travel, not subpixel steering corrections.
+  if walking and absf(movement.x)>0.001:
+   if (movement.x>0)==state.flip:
+    state.turn_distance=0.0
+   else:
+    state.turn_distance+=absf(movement.x)
+    if state.turn_distance>=3.0:
+     state.flip=movement.x>0;state.turn_distance=0.0
+  elif not walking:
+   state.turn_distance=0.0
   state.age += dt
   # Simulation owns this clock, including pause/load/offscreen and animation interruption.
   if model.reacting(c):
@@ -59,8 +68,11 @@ func flipped(id: int) -> bool:
 
 var foot_anchors: Dictionary = {}
 func foot_anchor(id: int) -> float:
- var frame: Texture2D=texture(id)
- if not foot_anchors.has(frame):
+ # One ground pivot per sprite set; animation bounds include lifted paws and VFX.
+ # Re-anchoring each frame moves the entire cat vertically as those bounds change.
+ var frames: SpriteFrames=states.get(id,{}).get("frames",FRAMES)
+ if not foot_anchors.has(frames):
+  var frame: Texture2D=frames.get_frame_texture("idle",0)
   var bounds: Rect2i=frame.get_image().get_used_rect()
-  foot_anchors[frame]=float(bounds.end.y)/frame.get_height()
- return foot_anchors[frame]
+  foot_anchors[frames]=float(bounds.end.y)/frame.get_height()
+ return foot_anchors[frames]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/facility_view.gd" id="view"]
+[ext_resource type="Texture2D" path="res://Art/Light.png" id="art"]
+[node name="Sun" type="Node2D"]
+script = ExtResource("view")
+kind = "sun"
+[node name="Artwork" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture = ExtResource("art")
+position = Vector2(0, -10)
+scale = Vector2(0.1953125, 0.1953125)

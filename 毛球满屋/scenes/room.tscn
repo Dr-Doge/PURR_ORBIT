@@ -1,0 +1,75 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/room.gd" id="1_w68ji"]
+[ext_resource type="Shader" path="res://Art/station_windows.gdshader" id="2_23wr2"]
+[ext_resource type="Texture2D" path="res://Art/universe.jpg" id="3_3j2fx"]
+[ext_resource type="Texture2D" path="res://Art/mask.jpg" id="4_dynfe"]
+[ext_resource type="Texture2D" path="res://Art/Scene.jpg" id="5_vfrn5"]
+[ext_resource type="Script" path="res://scripts/station_backdrop.gd" id="6_katsu"]
+[ext_resource type="Script" path="res://scripts/static_cat_outline.gd" id="7_jxwrd"]
+[ext_resource type="Script" path="res://scripts/harvest_art.gd" id="8_spkk5"]
+[ext_resource type="Script" path="res://scripts/token_effect.gd" id="10_2ulci"]
+[ext_resource type="PackedScene" path="res://scenes/cats/short_cat.tscn" id="11_kk8bn"]
+[ext_resource type="Script" path="res://scripts/cat_actor.gd" id="12_mc3m6"]
+[ext_resource type="PackedScene" path="res://scenes/facilities/gacha.tscn" id="gacha_scene"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kmb1v"]
+shader = ExtResource("2_23wr2")
+shader_parameter/window_mask = ExtResource("4_dynfe")
+shader_parameter/universe = ExtResource("3_3j2fx")
+shader_parameter/orbit_angle = 0.00034906585039886
+shader_parameter/orbit_center = null
+
+[node name="Room" type="Control" unique_id=501453793]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_w68ji")
+
+[node name="Backdrop" type="TextureRect" parent="." unique_id=685792387]
+show_behind_parent = true
+z_index = -2
+material = SubResource("ShaderMaterial_kmb1v")
+layout_mode = 0
+offset_right = 1440.0
+offset_bottom = 810.0
+mouse_filter = 2
+texture = ExtResource("5_vfrn5")
+expand_mode = 1
+script = ExtResource("6_katsu")
+
+[node name="StaticOutlines" type="Node2D" parent="." unique_id=1980686230]
+show_behind_parent = true
+script = ExtResource("7_jxwrd")
+
+[node name="HarvestEffects" type="Node2D" parent="." unique_id=134934707]
+script = ExtResource("8_spkk5")
+
+[node name="GachaMachine" parent="HarvestEffects" instance=ExtResource("gacha_scene")]
+visible = false
+z_index = -1
+
+[node name="TokenLayer" type="CanvasLayer" parent="." unique_id=1759353960]
+layer = 20
+
+[node name="TokenEffect" type="Node2D" parent="TokenLayer" unique_id=1520565747]
+script = ExtResource("10_2ulci")
+
+[node name="Facilities" type="Node2D" parent="." unique_id=379291039]
+show_behind_parent = true
+
+[node name="Cats" type="Node2D" parent="." unique_id=1744127457]
+show_behind_parent = true
+
+[node name="StarterCat1" type="Node2D" parent="Cats" unique_id=1050054086 instance=ExtResource("11_kk8bn")]
+position = Vector2(446.46677, 367.23288)
+script = ExtResource("12_mc3m6")
+
+[node name="StarterCat2" type="Node2D" parent="Cats" unique_id=702395821 instance=ExtResource("11_kk8bn")]
+position = Vector2(572.08386, 419.65295)
+script = ExtResource("12_mc3m6")
+
+[node name="Workers" type="Node2D" parent="." unique_id=1372731792]
+show_behind_parent = true

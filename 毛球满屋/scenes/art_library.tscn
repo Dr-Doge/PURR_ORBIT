@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3]
+[ext_resource type="PackedScene" path="res://scenes/cats/short_cat.tscn" id="cat0"]
+[ext_resource type="PackedScene" path="res://scenes/cats/giant_cat.tscn" id="cat1"]
+[ext_resource type="PackedScene" path="res://scenes/cats/static_cat.tscn" id="cat2"]
+[ext_resource type="PackedScene" path="res://scenes/cats/lucky_cat.tscn" id="cat3"]
+[ext_resource type="PackedScene" path="res://scenes/cats/alien_cat.tscn" id="cat4"]
+[ext_resource type="PackedScene" path="res://scenes/facilities/feeder.tscn" id="f0"]
+[ext_resource type="PackedScene" path="res://scenes/facilities/sun.tscn" id="f1"]
+[ext_resource type="PackedScene" path="res://scenes/facilities/arcade.tscn" id="f2"]
+[ext_resource type="PackedScene" path="res://scenes/facilities/altar.tscn" id="f3"]
+[ext_resource type="PackedScene" path="res://scenes/facilities/worker.tscn" id="f4"]
+[ext_resource type="PackedScene" path="res://scenes/facilities/gacha.tscn" id="gacha"]
+[node name="ArtLibrary" type="Node2D"]
+[node name="Short" parent="." instance=ExtResource("cat0")]
+position = Vector2(160, 250)
+[node name="Giant" parent="." instance=ExtResource("cat1")]
+position = Vector2(400, 250)
+[node name="Static" parent="." instance=ExtResource("cat2")]
+position = Vector2(640, 250)
+[node name="Lucky" parent="." instance=ExtResource("cat3")]
+position = Vector2(880, 250)
+[node name="Alien" parent="." instance=ExtResource("cat4")]
+position = Vector2(1120, 250)
+[node name="Feeder" parent="." instance=ExtResource("f0")]
+position = Vector2(160, 550)
+[node name="Sun" parent="." instance=ExtResource("f1")]
+position = Vector2(400, 550)
+[node name="Arcade" parent="." instance=ExtResource("f2")]
+position = Vector2(640, 550)
+[node name="Altar" parent="." instance=ExtResource("f3")]
+position = Vector2(880, 550)
+[node name="Worker" parent="." instance=ExtResource("f4")]
+position = Vector2(1120, 550)
+[node name="Gacha" parent="." instance=ExtResource("gacha")]
+position = Vector2(1320, 550)
+[node name="CatLabel0" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 300.0
+offset_right = 245.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 18
+text = "短毛 · Cat1"
+[node name="CatLabel1" type="Label" parent="."]
+offset_left = 320.0
+offset_top = 300.0
+offset_right = 485.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 18
+text = "巨型 · Cat5"
+[node name="CatLabel2" type="Label" parent="."]
+offset_left = 560.0
+offset_top = 300.0
+offset_right = 725.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 18
+text = "静电 · Cat8"
+[node name="CatLabel3" type="Label" parent="."]
+offset_left = 800.0
+offset_top = 300.0
+offset_right = 965.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 18
+text = "招财 · Cat10"
+[node name="CatLabel4" type="Label" parent="."]
+offset_left = 1040.0
+offset_top = 300.0
+offset_right = 1205.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 18
+text = "外星 · 临时复用Cat1"

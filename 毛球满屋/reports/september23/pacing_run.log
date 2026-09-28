@@ -1,0 +1,26 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+legacy=true full / 2718 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 60.0, "feeder": 390.0, "sun": 1050.0, "restock": 1640.0, "hats": 1650.0, "first_bug": 1731.0, "arcade": 2260.0, "complete": 3732.0 }
+legacy=true full / 42 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 60.0, "feeder": 370.0, "sun": 1010.0, "restock": 1591.0, "hats": 1600.0, "first_bug": 1682.0, "arcade": 2150.0, "complete": 3544.0 }
+legacy=true full / 81926 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 60.0, "feeder": 290.0, "sun": 860.0, "restock": 1359.0, "hats": 1380.0, "first_bug": 1450.0, "arcade": 1960.0, "complete": 3367.0 }
+legacy=true layers / 2718 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 60.0, "feeder": 360.0, "sun": 1110.0, "restock": 1422.0, "hats": 1430.0, "first_bug": 1513.0, "arcade": 1890.0, "complete": 3053.0 }
+legacy=true layers / 42 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 60.0, "feeder": 330.0, "sun": 1160.0, "restock": 1466.0, "hats": 1470.0, "first_bug": 1557.0, "arcade": 1910.0, "complete": 3173.0 }
+legacy=true layers / 81926 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 60.0, "feeder": 250.0, "sun": 1010.0, "restock": 1286.0, "hats": 1310.0, "first_bug": 1377.0, "arcade": 1750.0, "complete": 2992.0 }
+legacy=true single / 2718 : 79.3 min; 36; { "first_token": 10.0, "first_worker": 60.0, "feeder": 300.0, "sun": 1480.0, "restock": 2501.0, "hats": 2510.0, "first_bug": 2592.0, "arcade": 3020.0, "complete": 4758.0 }
+legacy=true single / 42 : 71.5 min; 36; { "first_token": 10.0, "first_worker": 60.0, "feeder": 280.0, "sun": 1160.0, "restock": 2114.0, "hats": 2120.0, "first_bug": 2205.0, "arcade": 2590.0, "complete": 4290.0 }
+legacy=true single / 81926 : 71.2 min; 36; { "first_token": 10.0, "first_worker": 60.0, "feeder": 290.0, "sun": 1060.0, "restock": 1969.0, "hats": 1970.0, "first_bug": 2060.0, "arcade": 2440.0, "complete": 4271.0 }
+legacy=true arcade / 2718 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 60.0, "feeder": 390.0, "sun": 1050.0, "restock": 1640.0, "hats": 1650.0, "first_bug": 1731.0, "arcade": 2260.0, "complete": 3881.0 }
+legacy=true arcade / 42 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 60.0, "feeder": 370.0, "sun": 1010.0, "restock": 1591.0, "hats": 1600.0, "first_bug": 1682.0, "arcade": 2150.0, "complete": 3720.0 }
+legacy=true arcade / 81926 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 60.0, "feeder": 290.0, "sun": 860.0, "restock": 1359.0, "hats": 1380.0, "first_bug": 1450.0, "arcade": 1960.0, "complete": 3539.0 }
+legacy=false full / 2718 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 20.0, "feeder": 120.0, "hats": 180.0, "sun": 520.0, "first_bug": 611.0, "restock": 775.0, "arcade": 940.0, "altar": 1630.0, "complete": 1671.0 }
+legacy=false full / 42 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 20.0, "feeder": 110.0, "hats": 180.0, "sun": 520.0, "first_bug": 611.0, "restock": 786.0, "arcade": 940.0, "altar": 1650.0, "complete": 1741.0 }
+legacy=false full / 81926 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 20.0, "feeder": 110.0, "hats": 160.0, "sun": 480.0, "first_bug": 571.0, "restock": 741.0, "arcade": 910.0, "altar": 1630.0, "complete": 1679.0 }
+legacy=false layers / 2718 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 20.0, "feeder": 130.0, "hats": 170.0, "sun": 510.0, "first_bug": 601.0, "restock": 791.0, "arcade": 940.0, "altar": 1630.0, "complete": 1717.0 }
+legacy=false layers / 42 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 20.0, "feeder": 110.0, "hats": 170.0, "sun": 490.0, "first_bug": 581.0, "restock": 781.0, "arcade": 920.0, "altar": 1630.0, "complete": 1678.0 }
+legacy=false layers / 81926 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 20.0, "feeder": 120.0, "hats": 170.0, "sun": 480.0, "first_bug": 571.0, "restock": 740.0, "arcade": 890.0, "altar": 1570.0, "complete": 1638.0 }
+legacy=false single / 2718 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 20.0, "feeder": 90.0, "hats": 190.0, "sun": 740.0, "first_bug": 831.0, "restock": 1379.0, "arcade": 1560.0, "altar": 2410.0, "complete": 2486.0 }
+legacy=false single / 42 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 20.0, "feeder": 80.0, "hats": 180.0, "sun": 710.0, "first_bug": 801.0, "restock": 1366.0, "arcade": 1480.0, "altar": 2330.0, "complete": 2399.0 }
+legacy=false single / 81926 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 20.0, "feeder": 80.0, "hats": 190.0, "sun": 700.0, "first_bug": 791.0, "restock": 1255.0, "arcade": 1480.0, "altar": 2340.0, "complete": 2393.0 }
+legacy=false arcade / 2718 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 20.0, "feeder": 120.0, "hats": 150.0, "sun": 470.0, "first_bug": 561.0, "restock": 870.0, "arcade": 1020.0, "altar": 1570.0, "complete": 2098.0 }
+legacy=false arcade / 42 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 20.0, "feeder": 110.0, "hats": 160.0, "sun": 460.0, "first_bug": 551.0, "restock": 873.0, "arcade": 1040.0, "altar": 1600.0, "complete": 2163.0 }
+legacy=false arcade / 81926 : 70.0 min; 36; { "first_token": 10.0, "first_worker": 20.0, "feeder": 110.0, "hats": 150.0, "sun": 440.0, "first_bug": 531.0, "restock": 849.0, "arcade": 1010.0, "altar": 1560.0, "complete": 2125.0 }

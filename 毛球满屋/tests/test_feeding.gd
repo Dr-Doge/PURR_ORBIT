@@ -45,7 +45,7 @@ func run() -> void:
  check(c.fed==0 and c.eat_time==0,"Food lost mid-meal cancels without reward")
  second.grain=1
  var other: Dictionary=m.add_cat(m.feeding_spot(second));other.kind="giant"
- m.move_cat(c.id,m.feeding_spot(second));sim(m,1.1)
+ other.pos=Vector2(1100,650);m.move_cat(c.id,m.feeding_spot(second));sim(m,1.1)
  check(second.grain==0 and int(c.fed>0)+int(other.fed>0)==1,"Two cats cannot consume the same last portion")
  m=fixture();c=m.cats[0];f=m.facilities[0];f.bugs=2
  m.move_cat(c.id,m.feeding_spot(f));sim(m,1.1)
