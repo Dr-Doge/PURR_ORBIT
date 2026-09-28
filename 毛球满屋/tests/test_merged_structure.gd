@@ -14,14 +14,19 @@ func run() -> void:
  var scene=Main.instantiate()
  for path in ["Room/WhiteboxViewport/World3D/WhiteboxRoom/Floor","Room/WhiteboxViewport/World3D/WhiteboxRoom/MainLamp","Room/WhiteboxViewport/World3D/WhiteboxRoom/Camera","Room/WhiteboxViewport/World3D/WhiteboxRoom/ActorLighting/Cat_1","Room/WhiteboxViewport/World3D/WhiteboxRoom/ActorLighting/Cat_2","HUD/Status/Header","HUD/Drawer/Content/Tree","Overlay/Center/Card/Body/StartMenu/NewGame"]:
   check(scene.has_node(path),"Authored before scripts: "+path)
+ var expected=preload("res://Art/cat1new_animations.tres")
+ for key in ["Cat_1","Cat_2"]:
+  var preview=scene.get_node("Room/WhiteboxViewport/World3D/WhiteboxRoom/ActorLighting/"+key)
+  check(preview.texture is AtlasTexture and preview.texture.atlas==expected.get_frame_texture("idle",0).atlas,"Saved 3D card uses new sheet before ready")
+ check(scene.get_node("Room/Cats/StarterCat1/Animation").sprite_frames==expected,"Saved 2D preview uses new animation resource")
  scene.set_script(null);scene.get_node("Room").set_script(null)
  var cursor=scene.get_node("Cursor");scene.remove_child(cursor);cursor.free()
  root.add_child(scene);await frames();await RenderingServer.frame_post_draw
- root.get_texture().get_image().save_png("res://reports/merge_3d_928/05_authored_scene.png")
+ root.get_texture().get_image().save_png("res://reports/merge_cat1new_928/05_authored_scene.png")
  scene.queue_free();await frames()
  var library=load("res://scenes/art_library.tscn").instantiate();root.add_child(library)
  await frames();await RenderingServer.frame_post_draw
- root.get_texture().get_image().save_png("res://reports/merge_3d_928/06_art_library.png")
+ root.get_texture().get_image().save_png("res://reports/merge_cat1new_928/06_art_library.png")
  library.queue_free();await frames()
  var game=Main.instantiate();game.testing=true;root.add_child(game);game.set_process(false);await frames()
  for i in range(3):

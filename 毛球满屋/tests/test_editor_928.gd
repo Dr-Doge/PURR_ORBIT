@@ -10,7 +10,7 @@ func frames() -> void:
  for i in range(4):await process_frame
 func capture(name: String) -> void:
  await frames();await RenderingServer.frame_post_draw
- check(root.get_texture().get_image().save_png("res://reports/editor_928/"+name+".png")==OK,"Screenshot "+name)
+ check(root.get_texture().get_image().save_png("res://reports/merge_cat1new_928/"+name+".png")==OK,"Screenshot "+name)
 func _initialize() -> void:root.size=Vector2i(1440,810);call_deferred("run")
 func run() -> void:
  var scene=Main.instantiate()
@@ -34,12 +34,12 @@ func run() -> void:
  game.room.step(0)
  for c in m.cats:
   var sprite: AnimatedSprite2D=game.room.cat_nodes[c.id].get_node("Animation")
-  check(sprite.sprite_frames==A.frames_for(c.kind),"Original animation set: "+c.kind)
+  check(sprite.sprite_frames==(preload("res://Art/cat1new_animations.tres") if c.kind=="short" else A.frames_for(c.kind)),"Original animation set: "+c.kind)
   check(sprite.modulate==Color.WHITE,"No color overlay: "+c.kind)
   for anim in ["idle","walk","produce"]:
    check(sprite.sprite_frames.has_animation(anim) and sprite.sprite_frames.get_frame_count(anim)>1,"Complete animation "+c.kind+"/"+anim)
   c.reaction_kind=c.kind;c.reaction_left=A.reaction_duration(c.kind);game.room.step(0)
-  check(sprite.animation=="produce" and sprite.sprite_frames==A.frames_for(c.kind),"Produce keeps its own original asset "+c.kind)
+  check(sprite.animation=="produce" and sprite.sprite_frames==(preload("res://Art/cat1new_animations.tres") if c.kind=="short" else A.frames_for(c.kind)),"Produce keeps its own original asset "+c.kind)
  await capture("03_runtime_original_cats")
  var changed: Dictionary=m.cats[0];changed.kind="giant";changed.reaction_left=0;game.room.step(0)
  check(game.room.cat_nodes[changed.id].scene_file_path=="res://scenes/cats/giant_cat.tscn","Transformation replaces the live instance with the matching species scene")

@@ -16,10 +16,10 @@ func key(code: int,ctrl: bool=false,echo_key: bool=false) -> void:
  e=InputEventKey.new();e.keycode=code;e.pressed=false;e.ctrl_pressed=ctrl;root.push_input(e,true)
 func capture(name: String) -> void:
  await frames();await RenderingServer.frame_post_draw
- check(root.get_texture().get_image().save_png("res://reports/merge_3d_928/developer/"+name+".png")==OK,"Screenshot "+name)
+ check(root.get_texture().get_image().save_png("res://reports/merge_cat1new_928/developer/"+name+".png")==OK,"Screenshot "+name)
  check(game.card.get_global_rect().end.x<=game.size.x+1 and game.card.get_global_rect().end.y<=game.size.y+1,"Panel inside viewport")
 func run() -> void:
- DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/merge_3d_928/developer"))
+ DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/merge_cat1new_928/developer"))
  game=Main.instantiate();game.testing=true;root.add_child(game);game.set_process(false);await frames()
  key(KEY_1);key(KEY_3);key(KEY_9)
  check(game.model.wallet==0 and game.model.facilities.is_empty() and game.modal=="start","Start screen ignores developer commands")
@@ -55,7 +55,7 @@ func run() -> void:
    valid=valid and not ids.has(entity.id) and game.model.clamp_position(entity.pos).is_equal_approx(entity.pos);ids[entity.id]=true
  check(valid,"Created entities have unique IDs and valid positions")
  var restored=M.new();check(restored.restore(game.model.snapshot()),"Developer state passes normal save validation")
- var path: String="res://reports/merge_3d_928/developer/test.save"
+ var path: String="res://reports/merge_cat1new_928/developer/test.save"
  check(game.model.save_to(path)==OK and restored.load_from(path),"Isolated developer save can be written and loaded")
  check(restored.owned.size()==12 and restored.count("arcade")==2 and restored.wallet==10000,"Granted assets persist through load")
  await capture("01_tools_1440")
@@ -76,5 +76,5 @@ func run() -> void:
  game.start_game();key(KEY_1)
  check(game.model.wallet==10000 and game.model.facilities.is_empty(),"New game has direct shortcuts with no switch")
  print("DEVELOPER CHECKS: ",checks,"; failures: ",failures)
- var file:=FileAccess.open("res://reports/merge_3d_928/developer/result.txt",FileAccess.WRITE);file.store_string("DEVELOPER CHECKS: %d; failures: %d\n" % [checks,failures]);file.close()
+ var file:=FileAccess.open("res://reports/merge_cat1new_928/developer/result.txt",FileAccess.WRITE);file.store_string("DEVELOPER CHECKS: %d; failures: %d\n" % [checks,failures]);file.close()
  quit(0 if failures==0 else 1)

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" path="res://scenes/whitebox_room.tscn" id="2_gwxsr"]
 [ext_resource type="Texture2D" path="res://Art/universe.jpg" id="6_ssy4c"]
 [ext_resource type="Script" path="res://scripts/actor_lighting_3d.gd" id="12_gaeys"]
-[ext_resource type="Texture2D" path="res://Art/Cat1idle/001.png" id="13_fkfji"]
+[ext_resource type="Texture2D" path="res://Art/cat1new2/三花猫 1-侧面 · 待机.png" id="13_fkfji"]
 [ext_resource type="Shader" path="res://Art/station_windows.gdshader" id="14_6nnlf"]
 [ext_resource type="Texture2D" path="res://Art/mask.jpg" id="15_omf8v"]
 [ext_resource type="Texture2D" path="res://Art/Scene.jpg" id="16_q2hcn"]
@@ -17,12 +17,17 @@
 [ext_resource type="Script" path="res://scripts/cat_actor.gd" id="26_anq0v"]
 [ext_resource type="Script" path="res://scripts/room_3d.gd" id="view"]
 
+[sub_resource type="AtlasTexture" id="ShortPreview"]
+atlas = ExtResource("13_fkfji")
+region = Rect2(0, 0, 256, 256)
+filter_clip = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uodng"]
 transparency = 2
 alpha_scissor_threshold = 0.35
 alpha_antialiasing_mode = 0
 cull_mode = 2
-albedo_texture = ExtResource("13_fkfji")
+albedo_texture = SubResource("ShortPreview")
 metallic_specular = 0.0
 texture_filter = 0
 disable_receive_shadows = true
@@ -32,7 +37,7 @@ transparency = 2
 alpha_scissor_threshold = 0.35
 alpha_antialiasing_mode = 0
 cull_mode = 2
-albedo_texture = ExtResource("13_fkfji")
+albedo_texture = SubResource("ShortPreview")
 metallic_specular = 0.0
 texture_filter = 0
 disable_receive_shadows = true
@@ -77,26 +82,26 @@ render_target_update_mode = 4
 script = ExtResource("12_gaeys")
 
 [node name="Cat_1" type="Sprite3D" parent="WhiteboxViewport/World3D/WhiteboxRoom/ActorLighting" unique_id=677913622]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.135018, 0.24373245, -2.789772)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1350175, 0.33490372, -2.789772)
 material_override = SubResource("StandardMaterial3D_uodng")
 cast_shadow = 2
-pixel_size = 0.00093028805
+pixel_size = 0.00279086432419717
 shaded = true
 alpha_cut = 1
 alpha_scissor_threshold = 0.35
 texture_filter = 0
-texture = ExtResource("13_fkfji")
+texture = SubResource("ShortPreview")
 
 [node name="Cat_2" type="Sprite3D" parent="WhiteboxViewport/World3D/WhiteboxRoom/ActorLighting" unique_id=1855398072]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109841056, 0.24362183, -1.898735)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109841056, 0.3347435, -1.898735)
 material_override = SubResource("StandardMaterial3D_aqmbu")
 cast_shadow = 2
-pixel_size = 0.00092983595
+pixel_size = 0.00278950785286725
 shaded = true
 alpha_cut = 1
 alpha_scissor_threshold = 0.35
 texture_filter = 0
-texture = ExtResource("13_fkfji")
+texture = SubResource("ShortPreview")
 
 [node name="Backdrop" type="TextureRect" parent="." unique_id=685792387]
 visible = false

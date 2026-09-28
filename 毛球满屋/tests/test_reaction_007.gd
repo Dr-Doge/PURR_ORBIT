@@ -90,9 +90,9 @@ func run() -> void:
  check(not game.model.reacting(c) and c.pet==0 and game.model.harvests==1,"Unpause ends reaction without cached gesture")
  for i in range(12):motion(game,c,i)
  check(game.model.harvests==2,"New actual motion works after reaction")
- DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/merge_3d_928"))
+ DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://reports/merge_cat1new_928"))
  game.room.step(0);await process_frame;await RenderingServer.frame_post_draw
- root.get_texture().get_image().save_png(ProjectSettings.globalize_path("res://reports/merge_3d_928/20_reaction.png"))
+ root.get_texture().get_image().save_png(ProjectSettings.globalize_path("res://reports/merge_cat1new_928/20_reaction.png"))
  game.queue_free();await process_frame
  print("REACTION 007: ",checks," checks, ",failures," failures")
  quit(0 if failures==0 else 1)

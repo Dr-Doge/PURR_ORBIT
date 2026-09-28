@@ -149,7 +149,7 @@ func run() -> void:
  for spec in booking.tree.values():total+=spec.price
  check(total>100000 and total<927484,"Updated full-tree budget calculated from actual nodes")
  print("TREE: ",booking.tree.size()," positions; ",total," total cost")
- var file:=FileAccess.open("res://reports/merge_3d_928/mechanics.txt",FileAccess.WRITE)
+ var file:=FileAccess.open("res://reports/merge_cat1new_928/mechanics.txt",FileAccess.WRITE)
  file.store_string("SEPTEMBER23: %d checks, %d failures\n" % [checks,failures]);file.close()
  print("SEPTEMBER23: ",checks," checks, ",failures," failures")
  quit(0 if failures==0 else 1)
