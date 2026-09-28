@@ -1,0 +1,62 @@
+{
+  "results": [
+    {
+      "mode": "full",
+      "completed": 3,
+      "min_minutes": 52.92,
+      "max_minutes": 59.13
+    },
+    {
+      "mode": "cats",
+      "completed": 1,
+      "min_minutes": 119.43,
+      "max_minutes": 120.0
+    },
+    {
+      "mode": "workers",
+      "completed": 3,
+      "min_minutes": 48.57,
+      "max_minutes": 55.15
+    },
+    {
+      "mode": "arcade",
+      "completed": 3,
+      "min_minutes": 54.93,
+      "max_minutes": 60.22
+    },
+    {
+      "mode": "layers",
+      "completed": 3,
+      "min_minutes": 47.83,
+      "max_minutes": 52.98
+    },
+    {
+      "mode": "single",
+      "completed": 3,
+      "min_minutes": 75.92,
+      "max_minutes": 91.55
+    },
+    {
+      "mode": "none",
+      "completed": 0,
+      "min_minutes": 120.0,
+      "max_minutes": 120.0
+    }
+  ],
+  "target_50_to_70_met": true,
+  "source_sha256": {
+    "balance.gd": "6d30e51d9246905dd0bd289aec0fab152e0ef19c034097b2854dcb2c15881fbb",
+    "cat_visuals.gd": "b4e8c09b16cdf66f8ab38d754c6304ffb99c19af1c54cc6785bed7c93740308e",
+    "data.gd": "b399b112f22d80ee51d7697acc16397d530a27d4c84122fc849d9af5fd1d1773",
+    "game_cursor.gd": "67de6a93c31038583e96e713d64a6d499d289daa622996da75f3988cc436de54",
+    "harvest_art.gd": "ed385a25c7cb0dae8ae5afe1225791ad67f7024c92880deb2ae4f3fb4262cd79",
+    "main.gd": "8250c787c0971a1940d74d5d4bb46e902e344815d7da642fe57953e89d07b8cb",
+    "model.gd": "d0d6ef857966743482576d7dc5b8043c0f38f04371f2ab393b1c061fce3ae0de",
+    "room.gd": "25151f0f320766daa018418bb08e98a31c2cb1910d7ba7a667c9576e89209ce8",
+    "static_cat_outline.gd": "927f9da895549b0299d046fa62522a1b2934b90a277566adf8c1a45f76fba926",
+    "station_backdrop.gd": "2f678c1c9bd81cd53e34e9232ebb601e02773aa391d5e69982c058732f4e830d",
+    "station_hud.gd": "6f46cc6dd04979b5223f3aa907a035d43188d215e223607c627c04f8bf5e9466",
+    "token_effect.gd": "9832510550fd3e3f6af0f52a64c01ed563f5f4a14ea11dc707d1d7544d941e3b"
+  },
+  "limitation": "Simulation, not human play time. Incomplete runs censored at 120 minutes."
+}

@@ -130,3 +130,12 @@ Godot 4.7.1 / OpenGL Compatibility / NVIDIA RTX 3060。
 - 环境底光从 0.48 降为 0.25，主点光强度仍为 0.85，位置、颜色、范围不变。整体暗部降低，保留直接照明，增强明暗与阴影对比。
 - 已检查实际截图，54 项场景检查通过。
 2026-09-28 点光源微调：MainLamp 强度由 0.85 提至 1.1，颜色改为暖色 (1,0.86,0.68)，环境底光保持 0.25。已检查截图，54 项场景检查通过。
+
+
+### 2026-09-28 合并远端玩法更新
+- 合并 origin/main 49808281，保留远端 AGENTS.md、全部玩法策划、model.gd、data.gd、balance.gd 与 cat_animation_data.gd。
+- 3D 命中检测使用投影后的猫尺寸；收割进度沿用最新 model.pet_progress，保留悬停停步、自动觅食和 produce 禁收计时。
+- 外星猫新增美术动画按远端模型反应时钟重定时，不延长 gameplay cooldown。数字键生猫仅测试或显式 --art-preview 模式生效。
+- 验证：3D 场景 54、3D 光影 10、模型 125、觅食 29、收割 55、反应 58、悬停 39、idle 17 项全部通过；普通／外星猫动画与预览快捷键测试均通过。检查实际 3D 渲染截图。
+- 反应与悬停测试依赖图形帧，headless 等待渲染超时后已改用图形模式重跑通过。
+- 本地未提交的策划修改保留在 Git stash（local planning preserved before origin main merge 2026-09-28），未覆盖远端蓝图。

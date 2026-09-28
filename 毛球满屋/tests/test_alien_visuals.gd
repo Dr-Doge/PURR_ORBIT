@@ -28,20 +28,24 @@ func run() -> void:
  c.pos.x+=1;v.step(model,0.4)
  check(v.visual_offset(c.id).y<y,"Hover bobs upward")
  check(v.foot_anchor(c.id)==anchor,"Retracting feet do not shift the sprite anchor")
+ model.reset_activity(c);c.idle_left=10;model.tick(0.001)
  for i in range(4):
   v.step(model,0.0 if i==0 else 0.101)
   check(v.texture(c.id).resource_path.ends_with("Cat14Walk/%03d.png" % (i+6)),"Stop frame "+str(i+6))
  v.step(model,0.101)
  check(v.texture(c.id)==idle and is_zero_approx(v.visual_offset(c.id).y),"Stopping lands at original height")
  c.layers=1;v.step(model,0)
- c.layers=0;c.pop=1
- var snapshot: PackedByteArray=var_to_bytes(model.cats)
+ preload("res://tests/harvest_fixture.gd").settle(model,c.id)
+ var reaction: float=c.reaction_left
  for i in range(17):
-  v.step(model,0.0 if i==0 else 0.10001)
+  if i>0:model.tick(reaction/17.0+0.000001)
+  var snapshot: PackedByteArray=var_to_bytes(model.cats)
+  v.step(model,0)
+  check(var_to_bytes(model.cats)==snapshot,"Animation does not modify gameplay")
   check(v.texture(c.id).resource_path.ends_with("Cat14Produce/%03d.png" % (i+1)),"Produce frame "+str(i+1))
   if i==8:check(v.visual_offset(c.id).y < -7,"Produce floats after retracting legs")
  check(is_zero_approx(v.visual_offset(c.id).y),"Produce lands on final frame")
- check(var_to_bytes(model.cats)==snapshot,"Animation does not modify gameplay")
+ model.tick(reaction/17.0+0.001)
  v.step(model,0.11)
  check(v.texture(c.id)==idle,"Produce returns to idle")
  c.pos.x+=1;v.step(model,0)

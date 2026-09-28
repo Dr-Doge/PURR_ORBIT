@@ -20,6 +20,11 @@ var placing: String = ""
 var moving_id: int = -1
 var dragging: int = -1
 var hover: int = -1
+var pointer_focused: bool = true
+var hover_model
+var viewport_pointer := Vector2.ZERO
+var pointer_known: bool = false
+
 var pointer := Vector2.ZERO
 var previous := Vector2.ZERO
 var clock: float = 0.0
@@ -29,7 +34,7 @@ var font := SystemFont.new()
 const INK = Color("e3efef")
 const MINT = Color("91e2c6")
 const GOLD = Color("f3ca86")
-const GACHA_POS = Vector2(1190,352)
+const GACHA_POS = Vector2(1362,300)
 var gacha_position: Vector2 = GACHA_POS
 var cat_visuals = preload("res://scripts/cat_visuals.gd").new()
 func _ready() -> void:
@@ -37,6 +42,7 @@ func _ready() -> void:
  clip_contents = true
  backdrop = Backdrop.new()
  backdrop.show_behind_parent = true
+ backdrop.z_index=-2
  add_child(backdrop)
  static_outlines=preload("res://scripts/static_cat_outline.gd").new()
  static_outlines.show_behind_parent=true
@@ -47,7 +53,61 @@ func _ready() -> void:
  add_child(harvest_art)
  var token_layer:=CanvasLayer.new();token_layer.layer=20;add_child(token_layer)
  token_effect=preload("res://scripts/token_effect.gd").new();token_effect.room=self;token_layer.add_child(token_effect)
- mouse_exited.connect(func(): hover = -1)
+ mouse_exited.connect(clear_hover)
+ get_window().focus_exited.connect(lose_pointer_focus)
+ get_window().focus_entered.connect(gain_pointer_focus)
+func _input(event: InputEvent) -> void:
+ if event is InputEventMouseMotion or event is InputEventMouseButton:
+  viewport_pointer=event.position;pointer_known=true
+func _process(_dt: float) -> void:
+ refresh_hover()
+func _exit_tree() -> void:
+ clear_hover()
+func clear_hover() -> void:
+ hover=-1
+ if model!=null:model.set_hovered_cat(-1)
+ if hover_model!=null:hover_model.set_hovered_cat(-1)
+func lose_pointer_focus() -> void:
+ pointer_focused=false;reset_pointer()
+func gain_pointer_focus() -> void:
+ pointer_focused=true
+func cat_at_screen(at: Vector2) -> int:
+ # Reverse draw order: the frontmost displayed cat owns an overlapping hit.
+ var ordered: Array=model.cats.duplicate()
+ ordered.sort_custom(func(a: Dictionary,b: Dictionary):return a.pos.y<b.pos.y)
+ ordered.reverse()
+ for c in ordered:
+  if c.station!=-1 or c.dragging:continue
+  var rect: Rect2=cat_rect(c)
+  var factor: float=object_scale(c.pos)
+  var hit:=Rect2(screen_position(c.pos)+(rect.position-c.pos)*factor,rect.size*factor)
+  if hit.has_point(at):return c.id
+ return -1
+func ui_obstructs(node: Node,at: Vector2) -> bool:
+ if node==self:return false
+ if node is CanvasItem and not node.is_visible_in_tree():return false
+ # A newly shown/moved UI can precede Godot's next mouse-motion GUI pick.
+ if node is Control and node.is_greater_than(self):
+  var local: Vector2=node.get_global_transform_with_canvas().affine_inverse()*at
+  if node.clip_contents and not Rect2(Vector2.ZERO,node.size).has_point(local):return false
+  if node.mouse_filter!=MOUSE_FILTER_IGNORE and Rect2(Vector2.ZERO,node.size).has_point(local):return true
+ for child in node.get_children():
+  if ui_obstructs(child,at):return true
+ return false
+func refresh_hover() -> void:
+ if hover_model!=model:
+  clear_hover();hover_model=model
+ if model==null:return
+ if not pointer_known or not interactive or not pointer_focused or not is_visible_in_tree() or dragging>=0 or placing!="" or moving_id>=0:
+  clear_hover();return
+ # GUI routing catches HUD/overlays even when no mouse-motion event occurs.
+ if get_viewport().gui_get_hovered_control()!=self or ui_obstructs(get_tree().root,viewport_pointer):
+  clear_hover();return
+ var at: Vector2=get_global_transform_with_canvas().affine_inverse()*viewport_pointer
+ if not Rect2(Vector2.ZERO,size).has_point(at):clear_hover();return
+ pointer=world(at)
+ hover=cat_at_screen(at)
+ model.set_hovered_cat(hover)
 func stage_scale() -> float:
  return minf(size.x/Backdrop.DESIGN_SIZE.x,size.y/Backdrop.DESIGN_SIZE.y)
 func stage_origin() -> Vector2:
@@ -88,6 +148,7 @@ func consume_event(e: Dictionary) -> void:
  item.age = 0.0
  effects.append(item)
 func step(dt: float) -> void:
+ refresh_hover()
  clock += dt
  if backdrop != null: backdrop.step(dt)
  if model != null: cat_visuals.step(model,dt)
@@ -100,7 +161,9 @@ func step(dt: float) -> void:
  if token_effect != null:token_effect.queue_redraw()
  queue_redraw()
 func reset_pointer() -> void:
- hover = -1
+ if model!=null:
+  for c in model.cats:model.cancel_pet(c)
+ clear_hover()
  if dragging >= 0:
   var c: Dictionary = model.cat(dragging)
   if not c.is_empty(): c.dragging = false
@@ -119,10 +182,10 @@ func station_at(at: Vector2) -> int:
 func _get_cursor_shape(at: Vector2) -> int:
  if not interactive or model == null or dragging >= 0 or placing != "" or moving_id >= 0:
   return CURSOR_ARROW
- var id: int=cat_at(world(at))
+ var id: int=cat_at_screen(at)
  if id>=0:
   var c: Dictionary=model.cat(id)
-  if c.station == -1 and not c.dragging:return CURSOR_CROSS
+  if c.station == -1 and not c.dragging and not model.reacting(c):return CURSOR_CROSS
  return CURSOR_ARROW
 func _gui_input(event: InputEvent) -> void:
  if not interactive: return
@@ -132,9 +195,10 @@ func _gui_input(event: InputEvent) -> void:
    var c: Dictionary = model.cat(dragging)
    if not c.is_empty(): c.pos = model.clamp_position(pointer)
   elif placing == "" and moving_id < 0:
-   var id: int = cat_at(pointer)
-   if id >= 0 and id == hover: model.pet(id,pointer.distance_to(previous))
-   hover = id
+   var last_hover: int=hover
+   refresh_hover()
+   var id: int=hover
+   if id >= 0 and id == last_hover:model.pet(id,pointer.distance_to(previous))
   previous = pointer
  elif event is InputEventMouseButton:
   pointer = world(event.position)
@@ -154,11 +218,12 @@ func _gui_input(event: InputEvent) -> void:
     else:
      var key: String = placing; placing = ""; build_requested.emit(key,pointer)
     accept_event(); return
-   var id: int = cat_at(pointer)
+   var id: int = cat_at_screen(event.position)
+   if id<0:id=cat_at(pointer) # Preserve explicit dragging out of facilities.
    if id >= 0:
     dragging = id
     var c: Dictionary = model.cat(id)
-    c.dragging = true; c.pet = 0.0
+    c.dragging = true; model.cancel_pet(c);clear_hover()
     accept_event(); return
    for w in model.workers:
     if w.pos.distance_to(pointer) < 25: worker_selected.emit(w.id); accept_event(); return
@@ -214,13 +279,16 @@ func _draw() -> void:
  if dragging >= 0: text(pointer+Vector2(28,-30),"松开：放下 / 送入设施",16,GOLD)
  if placing != "" or moving_id >= 0:
   var kind: String = placing if placing != "" else model.facility(moving_id).kind
-  draw_arc(pointer,200 if kind=="feeder" else 80,0,TAU,50,MINT,2)
+  draw_arc(pointer,58 if kind=="feeder" else 80,0,TAU,50,MINT,2)
   panel(Rect2(pointer-Vector2(45,35),Vector2(90,70)),Color(0.5,0.9,0.8,0.18),MINT)
   text(pointer+Vector2(-65,-48),D.title(kind)+" · 点击摆放",17,MINT)
  elif hover >= 0:
   var c: Dictionary = model.cat(hover)
   if not c.is_empty():
    var desc: String = "%s · %d 层 · 收割 %.1f 毛球" % [D.title(c.kind),c.layers,model.harvest_value(c)]
+   if model.reacting(c):desc+=" · 收获中 %.1f秒" % c.reaction_left
+   if c.fed>0:desc+=" · 饱食 %.0f秒" % c.fed
+   elif c.get("feed_target",-1)>=0:desc+=" · "+("进食中" if c.get("eat_time",0)>0 else "正在觅食")
    stage_transform()
    panel(Rect2(295,735,690,32),Color("101f2b"),Color("52796e"))
    text(Vector2(310,757),desc,16,MINT)
@@ -245,14 +313,14 @@ func draw_cat(c: Dictionary) -> void:
  draw_texture_rect(image,rect,false,color)
  if c.id == hover:
   draw_arc(c.pos,43*px/4,0,TAU,32,MINT,2)
-  if c.pet > 0: draw_arc(c.pos,47*px/4,-PI/2,-PI/2+TAU*minf(1,c.pet/D.PET_DISTANCE),32,GOLD,3)
+  if c.pet > 0: draw_arc(c.pos,47*px/4,-PI/2,-PI/2+TAU*model.pet_progress(c),32,GOLD,3)
   if c.kind == "alien": draw_arc(c.pos,180,0,TAU,50,Color(MINT,0.25),1)
  if c.station >= 0: text(c.pos+Vector2(-25,47),"设施使用中",11,Color("8dadaf"))
 func draw_facility(f: Dictionary) -> void:
  var at: Vector2 = f.pos
  ellipse(at+Vector2(0,40),Vector2(64,15),Color(0.01,0.05,0.09,0.3))
  if f.kind == "feeder":
-  if pointer.distance_to(at)<70:draw_circle(at,200,Color(0.63,0.82,0.57,0.055))
+
   draw_texture_rect(FEED_TEXTURE,Rect2(at-Vector2(78,101),Vector2(156,156)),false)
   text(at+Vector2(-47,70),"猫粮 %d/%d" % [f.grain,model.feed_capacity()],13,GOLD)
   if f.bugs > 0:

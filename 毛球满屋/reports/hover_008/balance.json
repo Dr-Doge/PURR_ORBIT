@@ -1,0 +1,533 @@
+{
+  "branches": {
+    "arcade:time": {
+      "costs": [
+        4000,
+        7200,
+        12960,
+        23329
+      ],
+      "effects": [
+        "每轮 5.0 秒",
+        "每轮 4.0 秒",
+        "每轮 3.3 秒",
+        "每轮 2.9 秒",
+        "每轮 2.5 秒"
+      ],
+      "name": "轮次速度"
+    },
+    "arcade:transform": {
+      "costs": [
+        3000,
+        5400,
+        9720,
+        17497
+      ],
+      "effects": [
+        "转化概率 2.0%",
+        "转化概率 4.5%",
+        "转化概率 7.0%",
+        "转化概率 9.5%",
+        "转化概率 12.0%"
+      ],
+      "name": "招财猫转化"
+    },
+    "arcade:value": {
+      "costs": [
+        4500,
+        8100,
+        14581,
+        26245
+      ],
+      "effects": [
+        "奖品基础价值 90",
+        "奖品基础价值 125",
+        "奖品基础价值 162",
+        "奖品基础价值 198",
+        "奖品基础价值 234"
+      ],
+      "name": "奖品价值"
+    },
+    "arcade:win": {
+      "costs": [
+        3500,
+        6300,
+        11340,
+        20413
+      ],
+      "effects": [
+        "中奖率 55%",
+        "中奖率 63%",
+        "中奖率 71%",
+        "中奖率 79%",
+        "中奖率 87%"
+      ],
+      "name": "获奖概率"
+    },
+    "feeder:capacity": {
+      "costs": [
+        450,
+        810,
+        1458,
+        2625
+      ],
+      "effects": [
+        "料仓 80 份",
+        "料仓 120 份",
+        "料仓 160 份",
+        "料仓 200 份",
+        "料仓 240 份"
+      ],
+      "name": "扩充料仓"
+    },
+    "feeder:food": {
+      "costs": [
+        500,
+        900
+      ],
+      "effects": [
+        "标准猫条",
+        "高能冻干",
+        "星尘鱼罐头"
+      ],
+      "name": "高级猫粮"
+    },
+    "feeder:transform": {
+      "costs": [
+        650,
+        1170,
+        2106,
+        3791
+      ],
+      "effects": [
+        "转化概率 2.0%",
+        "转化概率 4.5%",
+        "转化概率 7.0%",
+        "转化概率 9.5%",
+        "转化概率 12.0%"
+      ],
+      "name": "巨型猫转化"
+    },
+    "sun:capacity": {
+      "costs": [
+        1200,
+        2160,
+        3889,
+        6999
+      ],
+      "effects": [
+        "2 个位置",
+        "3 个位置",
+        "4 个位置",
+        "5 个位置",
+        "6 个位置"
+      ],
+      "name": "日光浴容量"
+    },
+    "sun:time": {
+      "costs": [
+        1600,
+        2880,
+        5184,
+        9332
+      ],
+      "effects": [
+        "处理速度 +0%",
+        "处理速度 +30%",
+        "处理速度 +60%",
+        "处理速度 +90%",
+        "处理速度 +120%"
+      ],
+      "name": "日光浴速度"
+    },
+    "sun:transform": {
+      "costs": [
+        1800,
+        3240,
+        5832,
+        10498
+      ],
+      "effects": [
+        "转化概率 2.0%",
+        "转化概率 4.5%",
+        "转化概率 7.0%",
+        "转化概率 9.5%",
+        "转化概率 12.0%"
+      ],
+      "name": "静电猫转化"
+    },
+    "worker:cooldown": {
+      "costs": [
+        180,
+        324,
+        584,
+        1050,
+        1890,
+        3402
+      ],
+      "effects": [
+        "产出后CD 3.00 秒",
+        "产出后CD 2.55 秒",
+        "产出后CD 2.17 秒",
+        "产出后CD 1.84 秒",
+        "产出后CD 1.57 秒",
+        "产出后CD 1.33 秒",
+        "产出后CD 1.13 秒"
+      ],
+      "name": "收割CD缩减"
+    },
+    "worker:efficiency": {
+      "costs": [
+        160,
+        288,
+        519,
+        934,
+        1680,
+        3024
+      ],
+      "effects": [
+        "行动效率 +0%",
+        "行动效率 +15%",
+        "行动效率 +30%",
+        "行动效率 +45%",
+        "行动效率 +60%",
+        "行动效率 +75%",
+        "行动效率 +90%"
+      ],
+      "name": "轻快步伐"
+    },
+    "worker:harvest_layers": {
+      "costs": [
+        120,
+        216,
+        389,
+        700,
+        1260,
+        2268,
+        4082
+      ],
+      "effects": [
+        "至少 1 层接单",
+        "至少 2 层接单",
+        "至少 3 层接单",
+        "至少 4 层接单",
+        "至少 5 层接单",
+        "至少 6 层接单",
+        "至少 7 层接单",
+        "至少 8 层接单"
+      ],
+      "name": "积攒层数收割"
+    }
+  },
+  "bug_seconds": 90.0,
+  "cat_reaction_seconds": {
+    "giant": 1.09999999999764,
+    "lucky": 1.1,
+    "short": 1.1,
+    "static": 1.09999999999764
+  },
+  "default_harvest_target": 1,
+  "harvest_curve": [
+    {
+      "layers": 1,
+      "manual_pixels": 165.0,
+      "multiplier": 1.0,
+      "worker_seconds_before_efficiency": 2.0
+    },
+    {
+      "layers": 2,
+      "manual_pixels": 264.0,
+      "multiplier": 1.6,
+      "worker_seconds_before_efficiency": 3.2
+    },
+    {
+      "layers": 3,
+      "manual_pixels": 333.3,
+      "multiplier": 2.02,
+      "worker_seconds_before_efficiency": 4.04
+    },
+    {
+      "layers": 4,
+      "manual_pixels": 381.81,
+      "multiplier": 2.314,
+      "worker_seconds_before_efficiency": 4.628
+    },
+    {
+      "layers": 5,
+      "manual_pixels": 415.767,
+      "multiplier": 2.5198,
+      "worker_seconds_before_efficiency": 5.0396
+    },
+    {
+      "layers": 6,
+      "manual_pixels": 439.5369,
+      "multiplier": 2.66386,
+      "worker_seconds_before_efficiency": 5.32772
+    },
+    {
+      "layers": 7,
+      "manual_pixels": 456.17583,
+      "multiplier": 2.764702,
+      "worker_seconds_before_efficiency": 5.529404
+    },
+    {
+      "layers": 8,
+      "manual_pixels": 467.823081,
+      "multiplier": 2.8352914,
+      "worker_seconds_before_efficiency": 5.6705828
+    }
+  ],
+  "layer_cd": 10.0,
+  "max_layers": 8,
+  "min_layers": 1,
+  "parameters": {
+    "BASE_YIELD": 3.0,
+    "BRANCH_GROWTH": 1.8,
+    "BUG_COUNT": 3,
+    "BUG_HITS": 2,
+    "BUG_MULT": 0.65,
+    "CAT_IDLE_MAX": 3.5,
+    "CAT_IDLE_MIN": 1.0,
+    "CAT_WALK_MAX": 6.0,
+    "CAT_WALK_MIN": 2.0,
+    "DRAW_COST": 1,
+    "ENT_SPEED_STEP": 0.25,
+    "ENT_TIME": 5.0,
+    "ENT_VALUE": 90.0,
+    "ENT_VALUE_STEP": 0.4,
+    "ENT_WIN": 0.55,
+    "ENT_WIN_STEP": 0.08,
+    "FEED_CAPACITY": 80,
+    "FEED_CAPACITY_STEP": 40,
+    "FEED_COST": 1,
+    "FEED_DURATION": 11.0,
+    "FEED_EAT_TIME": 1.0,
+    "FEED_RADIUS": 200.0,
+    "FEED_REACH": 6.0,
+    "FIRST_TOKEN_LAYERS": 3,
+    "FOOD_BATCH": 10,
+    "FOOD_MULT": [
+      1.65,
+      1.95,
+      2.25
+    ],
+    "GIANT_FED": 3.0,
+    "GIANT_HUNGRY": 1.4,
+    "HARVEST_BASE_TIME": 2.0,
+    "HARVEST_CURVE_DECAY": 0.7,
+    "HARVEST_CURVE_EXTRA": 2.0,
+    "LUCKY_CHANCE": 0.5,
+    "LUCKY_VALUE": 18.0,
+    "PET_BASE_DISTANCE": 165.0,
+    "PET_BREAK_TIME": 0.25,
+    "PET_MAX_DISTANCE": 45.0,
+    "PRICE_GROWTH": {
+      "arcade": 1.65,
+      "feeder": 1.65,
+      "short": 1.48,
+      "sun": 1.65,
+      "worker": 1.55
+    },
+    "REFILL_THRESHOLD": 12,
+    "STACK_BONUS": 1.0,
+    "STATIC_RADIUS": 185.0,
+    "SUN_SPEED_STEP": 0.3,
+    "SUN_TIME": 2.2,
+    "TOKEN_THRESHOLDS": [
+      9.0,
+      520.0,
+      1480.0,
+      3700.0,
+      6430.0,
+      9080.0,
+      12520.0,
+      15960.0,
+      20040.0,
+      23740.0,
+      27680.0,
+      32030.0,
+      34710.0,
+      37350.0,
+      39990.0,
+      43070.0,
+      46510.0,
+      50130.0,
+      54860.0,
+      60350.0,
+      67130.0,
+      74290.0,
+      82440.0,
+      89090.0,
+      98550.0,
+      108840.0,
+      119820.0,
+      131600.0,
+      144760.0,
+      157980.0,
+      174320.0,
+      191430.0,
+      210050.0,
+      228840.0,
+      248590.0,
+      268190.0
+    ],
+    "TRANSFORM_BASE": 0.02,
+    "TRANSFORM_STEP": 0.025,
+    "WORK_ACTION": 0.6,
+    "WORK_CD_MIN": 0.6,
+    "WORK_CD_RATIO": 0.85,
+    "WORK_POST_CD": 3.0,
+    "WORK_REACH": 36.0,
+    "WORK_SPEED": 155.0,
+    "WORK_STEP": 0.15
+  },
+  "repeat": {
+    "arcade": {
+      "base": 12000,
+      "first_five": [
+        12000,
+        19800,
+        32670,
+        53906,
+        88945
+      ],
+      "growth": 1.65
+    },
+    "feeder": {
+      "base": 300,
+      "first_five": [
+        300,
+        495,
+        817,
+        1348,
+        2224
+      ],
+      "growth": 1.65
+    },
+    "short": {
+      "base": 30,
+      "first_five": [
+        30,
+        45,
+        66,
+        98,
+        144
+      ],
+      "growth": 1.48
+    },
+    "sun": {
+      "base": 3000,
+      "first_five": [
+        3000,
+        4950,
+        8168,
+        13477,
+        22237
+      ],
+      "growth": 1.65
+    },
+    "worker": {
+      "base": 45,
+      "first_five": [
+        45,
+        70,
+        109,
+        168,
+        260
+      ],
+      "growth": 1.55
+    }
+  },
+  "research": {
+    "arcade": {
+      "price": 16000,
+      "requires": [
+        "feeder"
+      ],
+      "stage": 2
+    },
+    "feeder": {
+      "price": 350,
+      "requires": [
+        "worker"
+      ],
+      "stage": 1
+    },
+    "hats": {
+      "price": 900,
+      "requires": [
+        "worker"
+      ],
+      "stage": 2
+    },
+    "sun": {
+      "price": 6000,
+      "requires": [
+        "feeder"
+      ],
+      "stage": 1
+    },
+    "worker": {
+      "price": 35,
+      "requires": [],
+      "stage": 1
+    }
+  },
+  "series": [
+    {
+      "color": "e4bc76",
+      "effect": "yield",
+      "full": 0.6,
+      "id": "s1_fur",
+      "label": "毛球产量",
+      "name": "柔软物质档案",
+      "round": 1
+    },
+    {
+      "color": "79d2cd",
+      "effect": "speed",
+      "full": 0.24,
+      "id": "s1_time",
+      "label": "毛层生长速度",
+      "name": "呼噜时间碎片",
+      "round": 1
+    },
+    {
+      "color": "c2a2f0",
+      "effect": "work",
+      "full": 0.45,
+      "id": "s2_hands",
+      "label": "工人行动效率",
+      "name": "看不见的同伴",
+      "round": 2
+    },
+    {
+      "color": "ec9d84",
+      "effect": "sale",
+      "full": 0.6,
+      "id": "s2_trade",
+      "label": "道具出售价格",
+      "name": "星港交换记录",
+      "round": 2
+    },
+    {
+      "color": "e4bc76",
+      "effect": "yield",
+      "full": 0.6,
+      "id": "s2_fur",
+      "label": "毛球产量",
+      "name": "猫绒星际物质",
+      "round": 2
+    },
+    {
+      "color": "79d2cd",
+      "effect": "speed",
+      "full": 0.24,
+      "id": "s2_time",
+      "label": "毛层生长速度",
+      "name": "猫眼里的光年",
+      "round": 2
+    }
+  ],
+  "version": "v0.27-N2 IMP-20260921-008 trial"
+}

@@ -9,6 +9,7 @@ var cutout: ShaderMaterial
 func _ready() -> void:
  cutout=ShaderMaterial.new();cutout.shader=CUTOUT
  machine=Sprite2D.new();machine.texture=GACHA
+ machine.z_index=-1
  add_child(machine);machine.hide()
 func fur_sprite() -> Sprite2D:
  var sprite:=Sprite2D.new();sprite.texture=FUR;sprite.material=cutout

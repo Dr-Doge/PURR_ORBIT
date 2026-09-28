@@ -1,4 +1,5 @@
 extends SceneTree
+const H=preload("res://tests/harvest_fixture.gd")
 const Model=preload("res://scripts/model.gd")
 const Room=preload("res://scripts/room.gd")
 var failures: int=0
@@ -25,6 +26,7 @@ func run() -> void:
  check(model.buy("sun",Vector2(760,600)),"Sun lamp present for visual verification")
  model.events.clear()
  for count in [1,3,8]:
+  H.wait_ready(model,c)
   room.effects.clear();c.layers=count;room.step(0)
   check(visible_count(room.harvest_art.badges)==count,"One badge per fur layer: "+str(count))
   var starts: Array[Vector2]=[]
@@ -33,12 +35,12 @@ func run() -> void:
   if count==8:await capture("purr-feed-fur-before")
   var before: float=model.wallet
   var expected: float=model.harvest_value(c)
-  model.harvest(c.id)
+  H.settle(model,c.id)
   for event in model.events:
    if event.kind=="money":room.consume_event(event)
   model.events.clear();room.step(0)
   check(is_equal_approx(model.wallet-before,expected),"Harvest payout unchanged")
-  check(visible_count(room.harvest_art.badges)==0,"Harvest removes stored badges")
+  check(visible_count(room.harvest_art.badges)==1,"Harvest leaves permanent first-layer badge")
   check(visible_count(room.harvest_art.particles)==count,"Flight count matches badges: "+str(count))
   for i in range(count):check(room.harvest_art.particles[i].position.is_equal_approx(starts[i]),"Flight begins at badge position")
   if count==8:

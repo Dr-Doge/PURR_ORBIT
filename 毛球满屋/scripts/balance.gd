@@ -1,5 +1,5 @@
 extends RefCounted
-## v0.27 playable calibration. Parameter IDs refer to design document 17, section 12.
+## v0.27 playable calibration. Parameter IDs refer to design document 17, sections 12 and 13.5.1.
 ## Trial values, not a claim of a validated human completion time.
 const BASE_YIELD = 3.0 # CAT-05
 const STACK_BONUS = 1.0
@@ -8,7 +8,13 @@ const BRANCH_GROWTH = 1.8
 const FOOD_MULT = [1.65,1.95,2.25]
 const FOOD_BATCH = 10
 const FEED_RADIUS = 200.0
-const FEED_PERIOD = 8.0
+const FEED_EAT_TIME = 1.0
+const FEED_REACH = 6.0
+const FEED_COST = 1
+const CAT_WALK_MIN = 2.0
+const CAT_WALK_MAX = 6.0
+const CAT_IDLE_MIN = 1.0
+const CAT_IDLE_MAX = 3.5
 const FEED_DURATION = 11.0
 const FEED_CAPACITY = 80
 const FEED_CAPACITY_STEP = 40
@@ -32,10 +38,17 @@ const BUG_HITS = 2
 const BUG_MULT = 0.65
 const WORK_SPEED = 155.0
 const WORK_REACH = 36.0
-const WORK_HARVEST = 1.0
+const HARVEST_BASE_TIME = 2.0 # Worker first-layer seconds; manual input uses pixels.
+const HARVEST_CURVE_EXTRA = 2.0
+const HARVEST_CURVE_DECAY = 0.7 # Trial saturation rate; extra=2 gives the confirmed 3x limit.
+const PET_BASE_DISTANCE = 165.0
+const PET_MAX_DISTANCE = 45.0
+const PET_BREAK_TIME = 0.25
+const WORK_POST_CD = 3.0
+const WORK_CD_RATIO = 0.85
+const WORK_CD_MIN = 0.6
 const WORK_ACTION = 0.6
 const WORK_STEP = 0.15
-const CARRY_STEP = 0.20
 const REFILL_THRESHOLD = 12
 const FIRST_TOKEN_LAYERS = 3
 const DRAW_COST = 1

@@ -5,9 +5,9 @@ const FLOOR = Rect2(88, 300, 1264, 438)
 const MAX_STAGE = 2
 const SERIES_SIZE = 6
 const B = preload("res://scripts/balance.gd")
-const LAYER_CD = 6.0
+const LAYER_CD = 10.0
 const MAX_LAYERS = 8
-const PET_DISTANCE = 110.0
+const MIN_LAYERS = 1
 const CAT_MOVE_SPEED = 16.0
 const CAT_PULSE_DURATION = 0.35
 const CAT_PULSE_AMOUNT = 0.16
@@ -17,7 +17,7 @@ const INTERFERENCE_TIME = 32.0
 const NAMES = {"short":"短毛猫", "giant":"巨型猫", "static":"静电猫", "lucky":"招财猫", "alien":"外星猫", "worker":"毛球精灵", "feeder":"高能喂食器", "sun":"太空舷窗日光浴", "arcade":"猫用娱乐设施", "altar":"喵喵密语祭坛", "hats":"职责分配帽", "maint":"工人维护", "gacha":"未知文明的仪器"}
 const RESEARCH = {
  "worker":{"round":1,"price":35,"pre":[],"pos":Vector2(1050,1900),"desc":"招募小帮手，接手收割与照料。"},
- "feeder":{"round":1,"price":350,"pre":["worker"],"pos":Vector2(260,1450),"desc":"范围喂食增产；需要补粮，可能转化巨型猫。"},
+ "feeder":{"round":1,"price":350,"pre":["worker"],"pos":Vector2(260,1450),"desc":"猫自主前来进食，获得持续增产；需要补粮，可能转化巨型猫。"},
  "sun":{"round":1,"price":6000,"pre":["feeder"],"pos":Vector2(260,750),"desc":"将CD中的猫拖进日光浴，快速长出新毛层。"},
  "hats":{"round":2,"price":900,"pre":["worker"],"pos":Vector2(1050,1100),"desc":"把固定工作交给固定工人。"},
  "arcade":{"round":2,"price":16000,"pre":["feeder"],"pos":Vector2(1900,1200),"desc":"猫暂停长毛，按轮次赢取换金道具。"},
@@ -25,7 +25,7 @@ const RESEARCH = {
  "maint":{"round":3,"price":95,"pre":["hats","altar"],"pos":Vector2(1050,180),"desc":"解锁工人维修黑屏设备的能力。"}}
 const PRICES = {"short":30,"worker":45,"feeder":300,"sun":3000,"arcade":12000}
 const BRANCHES = {
- "worker":{"efficiency":["轻快步伐",160,6],"carry":["稳稳抱猫",240,4]},
+ "worker":{"efficiency":["轻快步伐",160,6],"harvest_layers":["积攒层数收割",120,7],"cooldown":["收割CD缩减",180,6]},
  "feeder":{"food":["高级猫粮",500,2],"transform":["巨型猫转化",650,4],"capacity":["扩充料仓",450,4]},
  "sun":{"time":["日光浴速度",1600,4],"capacity":["日光浴容量",1200,4],"transform":["静电猫转化",1800,4]},
  "arcade":{"win":["获奖概率",3500,4],"time":["轮次速度",4000,4],"value":["奖品价值",4500,4],"transform":["招财猫转化",3000,4]}}
@@ -54,7 +54,8 @@ static func collectible_name(key: String) -> String:
 static func branch_effect(subject: String,key: String,level: int) -> String:
  match subject+":"+key:
   "worker:efficiency": return "行动效率 +%d%%" % (level*15)
-  "worker:carry": return "搬运速度 +%d%%" % (level*20)
+  "worker:harvest_layers": return "至少 %d 层接单" % mini(MAX_LAYERS,1+level)
+  "worker:cooldown": return "产出后CD %.2f 秒" % maxf(B.WORK_CD_MIN,B.WORK_POST_CD*pow(B.WORK_CD_RATIO,level))
   "feeder:capacity": return "料仓 %d 份" % (B.FEED_CAPACITY+level*B.FEED_CAPACITY_STEP)
   "feeder:food": return FOOD_NAMES[level]
   "sun:time": return "处理速度 +%d%%" % (level*30)

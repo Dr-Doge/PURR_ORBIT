@@ -1,0 +1,63 @@
+{
+  "results": [
+    {
+      "mode": "full",
+      "completed": 3,
+      "min_minutes": 48.48,
+      "max_minutes": 53.58
+    },
+    {
+      "mode": "cats",
+      "completed": 2,
+      "min_minutes": 115.25,
+      "max_minutes": 120.0
+    },
+    {
+      "mode": "workers",
+      "completed": 3,
+      "min_minutes": 50.3,
+      "max_minutes": 56.32
+    },
+    {
+      "mode": "arcade",
+      "completed": 3,
+      "min_minutes": 50.07,
+      "max_minutes": 55.75
+    },
+    {
+      "mode": "layers",
+      "completed": 3,
+      "min_minutes": 45.62,
+      "max_minutes": 48.52
+    },
+    {
+      "mode": "single",
+      "completed": 3,
+      "min_minutes": 75.58,
+      "max_minutes": 80.97
+    },
+    {
+      "mode": "none",
+      "completed": 0,
+      "min_minutes": 120.0,
+      "max_minutes": 120.0
+    }
+  ],
+  "target_50_to_70_met": false,
+  "source_sha256": {
+    "balance.gd": "280334e589e5f2b7a1ae7ea105e80a8f8c2dd53b393f6e7f880f6fe8135ca90e",
+    "cat_animation_data.gd": "5f2cfb4c4b99019e05a9654082520aa7d8b0e3ce2a323dba15433e17a41368a1",
+    "cat_visuals.gd": "538bdfc787640b118b55ab360ed233dbfc31e509c63d5fe5839b6708b0e76e5e",
+    "data.gd": "b399b112f22d80ee51d7697acc16397d530a27d4c84122fc849d9af5fd1d1773",
+    "game_cursor.gd": "67de6a93c31038583e96e713d64a6d499d289daa622996da75f3988cc436de54",
+    "harvest_art.gd": "ed385a25c7cb0dae8ae5afe1225791ad67f7024c92880deb2ae4f3fb4262cd79",
+    "main.gd": "4f3687ecccacb208c8d6824b510768c30b6460c1befde5fcd9a581f1c647b765",
+    "model.gd": "dac840f645341f25d42e8b03b7dede4e997bea6f3cb31a70309dfc031cb773be",
+    "room.gd": "3f92dd2007137f67207e4b6d0a49af9daf8d811a907a1e422f2d1c2d9ea4c818",
+    "static_cat_outline.gd": "927f9da895549b0299d046fa62522a1b2934b90a277566adf8c1a45f76fba926",
+    "station_backdrop.gd": "2f678c1c9bd81cd53e34e9232ebb601e02773aa391d5e69982c058732f4e830d",
+    "station_hud.gd": "6f46cc6dd04979b5223f3aa907a035d43188d215e223607c627c04f8bf5e9466",
+    "token_effect.gd": "9832510550fd3e3f6af0f52a64c01ed563f5f4a14ea11dc707d1d7544d941e3b"
+  },
+  "limitation": "Simulation, not human play time. Incomplete runs censored at 120 minutes."
+}

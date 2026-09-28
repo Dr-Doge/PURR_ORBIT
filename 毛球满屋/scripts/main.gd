@@ -147,6 +147,7 @@ func refresh() -> void:
 func format_money(amount: float) -> String:
  return "%.1fk" % (amount/1000.0) if amount>=10000 else "%.0f" % amount
 func _process(dt: float) -> void:
+ room.refresh_hover()
  if active and not paused:
   model.tick(minf(dt,0.1))
   for e in model.events:
@@ -165,7 +166,7 @@ func guidance() -> String:
  if room.placing!="":return "点击地板摆放"+D.title(room.placing)+"；右键取消，落地时才扣款。"
  if room.moving_id>=0:return "选择设备的新位置；右键取消。"
  if model.owned.size()==36:return "所有回声都已收到。留在这里，继续陪伴你的猫咪吧。"
- if model.harvests<2:return "在猫身上来回移动鼠标收割；猫旁的小毛球是毛层，等待多层更赚。按住可以搬猫。"
+ if model.harvests<2:return "悬停让猫停下，来回摸猫完成收割；收获动作结束后可再摸。按住可以搬猫。"
  if not model.has("worker"):return "成长树已出现毛球精灵。先研究，再去商店招募，让它接手收割。"
  if model.workers.is_empty():return "精灵研究完成了。到商店招募一个真正的小帮手。"
  if not model.has("feeder"):return "喂食器能增加产毛量。成长树开放能力，商店购买实体。"
@@ -184,7 +185,7 @@ func show_shop() -> void:
  for key in ["short","worker","feeder","sun","arcade"]:
   var tile := PanelContainer.new();tile.custom_minimum_size.x=410;tile.size_flags_horizontal=SIZE_EXPAND_FILL;tile.add_theme_stylebox_override("panel",style("203b4a"));grid.add_child(tile)
   var c := column(tile);c.add_child(label(D.title(key),20,"496950"))
-  paragraph({"short":"新的软绵绵室友，会在设施中发现另一种自己。","worker":"替你收毛球、补粮和搬猫。","feeder":"附近的猫吃饱后产量更高。需要备好猫粮。","sun":"把猫拖进光里，长出一层毛后自行离开。","arcade":"暂停长毛，赢取小物件；在仓库出售。"}[key],c,15)
+  paragraph({"short":"新的软绵绵室友，会在设施中发现另一种自己。","worker":"替你收毛球、补粮和搬猫。","feeder":"猫会自行过来吃粮，吃饱后暂时增产。需要备好猫粮。","sun":"把猫拖进光里，长出一层毛后自行离开。","arcade":"暂停长毛，赢取小物件；在仓库出售。"}[key],c,15)
   var buy_button:=button("",func():
    if model.round_no<D.gate(key):return
    if key!="short" and not model.has(key):show_tree(key)
@@ -266,6 +267,7 @@ func show_facility(id: int) -> void:
  var info := label("");content.add_child(info)
  live(info,func():return "料仓 %d / %d   ·   蟑螂 %d" % [f.grain,model.feed_capacity(),f.bugs] if f.kind=="feeder" else "占用 %d / %d   %s" % [model.occupants(id).size(),model.capacity(f),"黑屏 · 停止产出" if f.broken else "正常运行"])
  if f.kind=="feeder":
+  paragraph("猫会自行前来进食；吃饱后离开也能保持加成。你和小帮手负责补粮。",content,15)
   var options := row(content)
   for i in range(D.FOOD_NAMES.size()):
    var b := button("补入%s（库存%d）" % [D.FOOD_NAMES[i],model.food[i]],func():transact(func():return model.refill(id,i));show_facility(id),options)
@@ -292,13 +294,15 @@ func show_facility(id: int) -> void:
  button("查看分支升级",func():show_tree(f.kind),actions)
 func show_workers() -> void:
  var content := screen("毛球精灵 · 职责台", "设施带来新能力，工人接手劳动。没有掉落物拾取岗位；补粮工人使用已购买的猫粮。", "workers")
- var target_row := row(content);target_row.add_child(label("收割策略：等到几层再收？",18,"dfc794"))
- var spin := SpinBox.new();spin.min_value=1;spin.max_value=D.MAX_LAYERS;spin.value=model.harvest_target;spin.value_changed.connect(func(v:float):model.harvest_target=int(v);save_game());target_row.add_child(spin)
+ var strategy:=label("");content.add_child(strategy)
+ live(strategy,func():return "收割门槛 %d 层 · 产出后CD %.2f秒" % [model.worker_target(),model.worker_cooldown()])
+ button("升级收割策略与CD",func():show_tree("worker"),content)
+ paragraph("层数升级每级增加1层门槛；可自行决定是否购买。蓝条为各自收割CD，期间仍能补粮、清虫和搬猫。",content,15)
  if not model.has("hats"):paragraph("固定分工在第二阶段解锁职责帽后开放；当前工人会自主照料。",content)
  if model.workers.is_empty():button("去招募一个小帮手",show_shop,content)
  for w in model.workers:
   var line := row(content);var text_label := label("");text_label.custom_minimum_size.x=460;line.add_child(text_label)
-  live(text_label,func():return "精灵 #%d   ·   %s   ·   %s" % [w.id,D.ROLES[w.role],w.status])
+  live(text_label,func():return "精灵 #%d · %s · %s\n收割CD %.1f秒" % [w.id,D.ROLES[w.role],w.status,w.get("cooldown",0.0)])
   var select := OptionButton.new();select.custom_minimum_size=Vector2(220,42);line.add_child(select)
   var keys: Array=D.ROLES.keys()
   for i in range(keys.size()):
@@ -381,11 +385,11 @@ func show_settings() -> void:
  button("返回",show_pause if active else show_start,content)
 func show_help() -> void:
  var content := screen("驻留手册", "让旧工作逐渐交给小帮手，把注意力留给新的发现。", "help",true)
- paragraph("① 不按键，在猫身上来回移动：收割。等多层再收，产量更高。
+ paragraph("① 不按键，在猫身上来回移动：收割。等多层再收，产量更高。收获动作结束后可再次摸这只猫。
 ② 按住猫拖动：搬猫；松在设施上可指派，松在空地则回到场地。
 ③ 成长树研发能力 → 商店购买实体 → 点击地板摆放。右键取消摆放。
 ④ 点击喂食器补粮；出现虫害时打开内部连续点击清除。
-⑤ 工人分工中可设置目标收割层数；第二阶段职责帽安排固定岗位。
+⑤ 成长树可付费提高工人收割层数或缩短产出后CD；第二阶段职责帽安排固定岗位。
 ⑥ 收割和娱乐中奖推进代币进度。12个回声收齐后补入24个，全部经营进度保留。",content,22)
  paragraph("不必急着收第一层毛。多攒几层，可以获得更多毛球与信号进度。",content,16)
  if not active:button("返回开始界面",show_start,content)
@@ -395,7 +399,7 @@ func save_game() -> bool:
  if result!=OK:message("存档写入失败，请检查磁盘空间；当前游戏仍在运行。")
  return result==OK
 func _unhandled_key_input(event: InputEvent) -> void:
- if event is InputEventKey and event.pressed and not event.echo and active and not paused and modal=="":
+ if event is InputEventKey and event.pressed and not event.echo and active and not paused and modal=="" and (testing or "--art-preview" in OS.get_cmdline_user_args()):
   if not event.ctrl_pressed and not event.alt_pressed and not event.meta_pressed and not event.shift_pressed:
    var index: int = [KEY_1,KEY_2,KEY_3,KEY_4,KEY_5].find(event.keycode)
    if index >= 0:

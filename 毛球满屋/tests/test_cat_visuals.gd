@@ -1,4 +1,5 @@
 extends SceneTree
+const H=preload("res://tests/harvest_fixture.gd")
 const Model = preload("res://scripts/model.gd")
 const Visuals = preload("res://scripts/cat_visuals.gd")
 const Room = preload("res://scripts/room.gd")
@@ -25,6 +26,7 @@ func run() -> void:
  c.pos.x -= 1.0
  visuals.step(model,0.1)
  check(not visuals.flipped(c.id),"Left movement faces left")
+ model.reset_activity(c);c.idle_left=1;model.tick(0.01)
  visuals.step(model,0.1)
  check(visuals.states[c.id].animation == "idle","Stopping returns to idle")
  model.layer(c)
@@ -33,18 +35,20 @@ func run() -> void:
  model.pet(c.id,45.0)
  visuals.step(model,0.1)
  check(visuals.states[c.id].animation == "idle","Incomplete petting does not produce")
- for i in range(20): model.pet(c.id,45.0)
+ H.settle(model,c.id)
  visuals.step(model,0.1)
  check(visuals.states[c.id].animation == "produce","Completed pet harvest triggers produce")
+ model.tick(0.4)
  c.pos.x += 1.0
  visuals.step(model,0.4)
  check(visuals.states[c.id].animation == "produce","Produce frames can play while the model keeps walking")
+ model.tick(0.8)
  c.pos.x += 1.0
  visuals.step(model,0.8)
  check(visuals.states[c.id].animation == "walk","Finished produce returns to movement")
  c.layers = 2
  visuals.step(model,0.1)
- model.harvest(c.id)
+ H.settle(model,c.id)
  visuals.step(model,0.1)
  check(visuals.states[c.id].animation == "produce","Worker harvest also triggers produce")
  var stationary: Vector2=c.pos
@@ -64,10 +68,15 @@ func run() -> void:
  check(visuals.texture(giant.id).resource_path.begins_with("res://Art/Cat5idle/"),"Transformation selects Cat5 idle immediately")
  giant.pos.x+=1.0;visuals.step(fresh,0.1)
  check(visuals.texture(giant.id)==Visuals.GIANT_FRAMES.get_frame_texture("walk",0),"Giant uses Cat5 walk")
- giant.layers=2;visuals.step(fresh,0.1);fresh.harvest(giant.id);visuals.step(fresh,0.0)
+ giant.layers=2;visuals.step(fresh,0.1);H.settle(fresh,giant.id);visuals.step(fresh,0.0)
  check(visuals.texture(giant.id)==Visuals.GIANT_FRAMES.get_frame_texture("produce",0),"Giant uses Cat5 produce")
- visuals.step(fresh,1.05)
- check(visuals.texture(giant.id)==Visuals.GIANT_FRAMES.get_frame_texture("produce",13),"All 14 produce frames fit the existing hold")
+ fresh.tick(1.05);visuals.step(fresh,1.05)
+ check(visuals.texture(giant.id)==Visuals.GIANT_FRAMES.get_frame_texture("produce",13),"All produce frames fit the existing hold")
+ fresh.tick(0.06)
+ for cat in fresh.cats:
+  cat.pos=visuals.states.get(cat.id,{"pos":cat.pos}).pos
+  fresh.reset_activity(cat);cat.idle_left=10
+ fresh.tick(0.001)
  visuals.step(fresh,0.06)
  check(visuals.states[giant.id].animation=="idle","Giant produce finishes with existing timing")
  check(Visuals.GIANT_FRAMES.get_frame_count("idle")==20 and Visuals.GIANT_FRAMES.get_frame_count("walk")==10,"All Cat5 loop frames loaded")
@@ -76,10 +85,15 @@ func run() -> void:
  check(visuals.texture(electric.id).resource_path.begins_with("res://Art/Cat8idle/"),"Static cat selects Cat8 idle")
  electric.pos.x+=1;visuals.step(fresh,0.1)
  check(visuals.texture(electric.id).resource_path.begins_with("res://Art/Cat8Walk/"),"Static cat selects Cat8 walk")
- electric.layers=1;visuals.step(fresh,0.1);fresh.harvest(electric.id);visuals.step(fresh,0)
+ electric.layers=1;visuals.step(fresh,0.1);H.settle(fresh,electric.id);visuals.step(fresh,0)
  check(visuals.texture(electric.id).resource_path.begins_with("res://Art/Cat8Produce/"),"Static cat selects Cat8 produce")
- visuals.step(fresh,1.05)
- check(visuals.texture(electric.id)==Visuals.STATIC_FRAMES.get_frame_texture("produce",13),"All 14 Cat8 produce frames play")
+ fresh.tick(1.05);visuals.step(fresh,1.05)
+ check(visuals.texture(electric.id)==Visuals.STATIC_FRAMES.get_frame_texture("produce",13),"All Cat8 produce frames play")
+ fresh.tick(0.06)
+ for cat in fresh.cats:
+  cat.pos=visuals.states.get(cat.id,{"pos":cat.pos}).pos
+  fresh.reset_activity(cat);cat.idle_left=10
+ fresh.tick(0.001)
  visuals.step(fresh,0.06)
  check(visuals.states[electric.id].animation=="idle","Static cat returns to idle")
  for animation in ["idle","walk","produce"]:

@@ -129,7 +129,7 @@ func step(dt: float) -> void:
 func draw_cat(c: Dictionary) -> void:
  if c.id==hover:
   draw_arc(c.pos,43*cat_extent(c)/100.0,0,TAU,32,MINT,2)
-  if c.pet>0:draw_arc(c.pos,47*cat_extent(c)/100.0,-PI/2,-PI/2+TAU*minf(1,c.pet/D.PET_DISTANCE),32,GOLD,3)
+  if c.pet>0:draw_arc(c.pos,47*cat_extent(c)/100.0,-PI/2,-PI/2+TAU*model.pet_progress(c),32,GOLD,3)
   if c.kind=="alien":draw_arc(c.pos,180,0,TAU,50,Color(MINT,0.25),1)
  if c.station>=0:text(c.pos+Vector2(-25,47),"设施使用中",11,Color("8dadaf"))
 func draw_facility(f: Dictionary) -> void:

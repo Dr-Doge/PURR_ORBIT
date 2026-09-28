@@ -3,7 +3,8 @@ const SCENE = preload("res://Art/Scene.jpg")
 const MASK = preload("res://Art/mask.jpg")
 const UNIVERSE = preload("res://Art/universe.jpg")
 const SHADER = preload("res://Art/station_windows.gdshader")
-const DESIGN_SIZE = Vector2(1440,1440.0*1536.0/2752.0)
+# Fit the scene and its mask to the same 16:9 presentation canvas.
+const DESIGN_SIZE = Vector2(1440,810)
 const ORBIT_SECONDS = 300.0
 var elapsed: float = 0.0
 func _ready() -> void:

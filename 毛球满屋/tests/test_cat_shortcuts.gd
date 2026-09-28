@@ -1,4 +1,5 @@
 extends SceneTree
+const H=preload("res://tests/harvest_fixture.gd")
 const Main = preload("res://scripts/main.gd")
 const Visuals = preload("res://scripts/cat_visuals.gd")
 var failures: int = 0
@@ -33,6 +34,10 @@ func run() -> void:
  app.show_pause();key(app,KEY_1)
  check(app.model.cats.size()==7,"Repeat, modifier and pause ignored")
  app.close_modal()
+ app.testing=false
+ key(app,KEY_1)
+ check(app.model.cats.size()==7,"Normal gameplay ignores art preview spawn keys")
+ app.testing=true
  var lucky: Dictionary=app.model.cats[5]
  var visuals = Visuals.new()
  visuals.step(app.model,0)
@@ -42,11 +47,13 @@ func run() -> void:
  check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("walk",0),"Lucky walk bound")
  lucky.layers=1
  visuals.step(app.model,0)
- app.model.harvest(lucky.id)
+ H.settle(app.model,lucky.id)
  visuals.step(app.model,0)
  check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",0),"Lucky harvest bound")
- visuals.step(app.model,1.05)
+ app.model.tick(1.05);visuals.step(app.model,1.05)
  check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",14),"Last produce frame plays before hold ends")
+ app.model.tick(0.06);lucky.pos=visuals.states[lucky.id].pos
+ app.model.reset_activity(lucky);lucky.idle_left=10;app.model.tick(0.001)
  visuals.step(app.model,0.06)
  check(visuals.states[lucky.id].animation=="idle","Produce completes")
  app.queue_free()
