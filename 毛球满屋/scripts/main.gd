@@ -403,3 +403,11 @@ func developer_command(key: String) -> void:
  room.step(0);refresh()
  if is_instance_valid(developer_drawer):developer_drawer.feedback.text=result
  if save_game():message("[开发] "+result)
+
+func _input(event: InputEvent) -> void:
+ if not event is InputEventKey or not event.pressed or event.echo or not active:return
+ if event.keycode!=KEY_L or event.alt_pressed or event.meta_pressed or event.shift_pressed or event.ctrl_pressed:return
+ var focused: Control=get_viewport().gui_get_focus_owner()
+ if focused is LineEdit or focused is TextEdit:return
+ developer_command("static")
+ get_viewport().set_input_as_handled()

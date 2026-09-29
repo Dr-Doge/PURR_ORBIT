@@ -1,6 +1,8 @@
 extends Node3D
 ## Alpha-tested animation cards cast actual per-frame shadows into the room.
 var room
+var outline_frames: Dictionary={}
+const OUTLINE=preload("res://Art/static_cat_outline_3d.gdshader")
 var sprites: Dictionary={}
 var cards: Dictionary={}
 var lamps: Dictionary={}
@@ -37,8 +39,10 @@ func place(key: String,texture: Texture2D,rect: Rect2,foot: Vector2,flipped: boo
   actor.material_override=surface
   add_child(actor);sprites[key]=actor
  var sprite: Sprite3D=sprites[key]
+ # Layer 2 is reserved for cat-only fill; layer 1 preserves normal room lighting.
+ sprite.layers=3 if key.begins_with("Cat_") else 1
  sprite.texture=texture;sprite.flip_h=flipped
- sprite.material_override.albedo_texture=texture
+ if sprite.material_override is StandardMaterial3D:sprite.material_override.albedo_texture=texture
  var ground: Vector3=floor_at(foot)
  var center_ray: Vector3=ray_at(rect.get_center())
  var eye: Vector3=room.camera.global_position
@@ -67,6 +71,19 @@ func sync() -> void:
   var rect: Rect2=room.cat_rect(c)
   var at: Vector2=room.screen_position(c.pos)
   place("Cat_%d"%c.id,room.cat_visuals.texture(c.id),Rect2(at+(rect.position-c.pos)*factor,rect.size*factor),at+Vector2(0,26)*factor,room.cat_visuals.flipped(c.id))
+  if c.kind in ["short","static"]:
+   var texture: Texture2D=room.cat_visuals.texture(c.id)
+   if not outline_frames.has(texture):outline_frames[texture]=ImageTexture.create_from_image(room.cat_visuals.read_frame_image(texture))
+   var key: String="Outline_%d"%c.id
+   place(key,outline_frames[texture],Rect2(at+(rect.position-c.pos)*factor,rect.size*factor),at+Vector2(0,26)*factor,room.cat_visuals.flipped(c.id))
+   var outline: Sprite3D=sprites[key]
+   outline.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+   if not outline.material_override is ShaderMaterial:
+    var material:=ShaderMaterial.new();material.shader=OUTLINE;outline.material_override=material
+   outline.material_override.set_shader_parameter("frame_texture",outline_frames[texture])
+   var pulse: float=pow(0.5-0.5*cos(room.clock*TAU/1.4),2.0)
+   if room.cat_visuals.states[c.id].animation=="produce":pulse=sqrt(pulse)
+   outline.material_override.set_shader_parameter("pulse",pulse if c.kind=="static" else 0.0)
  for f in room.model.facilities:
   var key: String="Facility_%d"%f.id
   var factor: float=room.object_scale(f.pos)

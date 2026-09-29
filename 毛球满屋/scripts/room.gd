@@ -264,8 +264,10 @@ func _gui_input(event: InputEvent) -> void:
    var id: int = cat_at_screen(event.position)
    if id<0:id=cat_at(pointer) # Preserve explicit dragging out of facilities.
    if id >= 0:
-    dragging = id
     var c: Dictionary = model.cat(id)
+    if model.grooming(c):
+     accept_event(); return
+    dragging = id
     c.dragging = true; model.cancel_pet(c);clear_hover()
     accept_event(); return
    for w in model.workers:
@@ -342,6 +344,12 @@ func cat_rect(c: Dictionary) -> Rect2:
  if cat_visuals.states.get(c.id,{}).get("frames")==cat_visuals.Short.FRAMES:
   extent*=0.8
   if cat_visuals.states[c.id].get("clip","") in ["walk_up","idle_up"]:extent*=0.88
+  elif cat_visuals.states[c.id].get("clip","") in ["groom","pet","produce"]:extent*=1.10
+ if cat_visuals.states.get(c.id,{}).get("frames")==cat_visuals.STATIC_FRAMES:
+  extent*=0.8
+  var clip: String=cat_visuals.states[c.id].get("clip","")
+  if clip=="pet":extent*=1.32
+  elif clip in ["walk_down","idle_down"]:extent*=1.05
  # Anchor the opaque foot pixels, including during the growth pulse.
  var variant: int=int(c.get("variant",c.id%4))
  var progress: float=model.pet_progress(c)

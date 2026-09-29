@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3]
 [ext_resource type="Script" path="res://scripts/cat_actor.gd" id="actor"]
-[ext_resource type="SpriteFrames" path="res://Art/cat8_animations.tres" id="frames"]
+[ext_resource type="SpriteFrames" path="res://Art/cat2new_animations.tres" id="frames"]
 [node name="StaticCat" type="Node2D"]
 script = ExtResource("actor")
 kind = "static"
@@ -8,5 +8,5 @@ kind = "static"
 sprite_frames = ExtResource("frames")
 animation = &"idle"
 centered = false
-position = Vector2(-50, -49.78125)
-scale = Vector2(0.09765625, 0.09765625)
+position = Vector2(-40, -51.5)
+scale = Vector2(0.25, 0.25)

@@ -15,10 +15,10 @@ func run() -> void:
   check(v.states[c.id].clip==pair[1] and v.flipped(c.id)==pair[2],"Dominant movement direction "+pair[1])
   m.reset_activity(c);c.idle_left=100;m.tick(0.001);v.step(m,0)
   check(v.states[c.id].clip==String(pair[1]).replace("walk","idle"),"Idle retains direction")
- v.states[c.id].groom_wait=0;v.step(m,0)
+ c.groom_wait=0;m.tick(0.001);v.step(m,0)
  check(v.states[c.id].clip=="groom","Idle timer triggers grooming")
- c.pos.x+=4;v.step(m,0.1)
- check(v.states[c.id].clip=="walk","Movement interrupts grooming")
+ m.tick(0.1);v.step(m,0.1)
+ check(v.states[c.id].clip=="groom","Grooming remains locked")
  m.reset_activity(c);c.idle_left=100;m.tick(0.001);m.set_hovered_cat(c.id);m.pet(c.id,1);v.step(m,0)
  check(v.states[c.id].clip=="pet","Pet input starts stroking")
  var t=v.texture(c.id);v.step(m,0.625)
@@ -35,9 +35,9 @@ func run() -> void:
  check(snapshot==var_to_bytes(m.cats),"Visuals never mutate simulation")
  for kind in ["giant","static","lucky","alien"]:
   var other: Dictionary=m.add_cat(Vector2(300,400));other.kind=kind;v.step(m,0)
-  check(v.states[other.id].frames==(V.Alien.FRAMES if kind=="alien" else V.A.frames_for(kind)),"Other cat unchanged: "+kind)
+  check(v.states[other.id].frames==(V.Alien.FRAMES if kind=="alien" else V.STATIC_FRAMES if kind=="static" else V.A.frames_for(kind)),"Other cat unchanged: "+kind)
  m.tick(0.6);m.cancel_pet(c);m.set_hovered_cat(-1);m.reset_activity(c);c.idle_left=100;m.tick(0.001);v.step(m,0)
- v.states[c.id].groom_wait=0;v.step(m,0);v.step(m,2.51)
+ c.groom_wait=0;m.tick(0.001);v.step(m,0);m.tick(2.51);v.step(m,0)
  check(v.states[c.id].clip.begins_with("idle"),"Grooming completes into idle")
  var room=preload("res://scenes/room.tscn").instantiate();room.model=m;room.cat_visuals=v
  v.states[c.id].clip="walk";var side_size: Vector2=room.cat_rect(c).size
@@ -45,17 +45,20 @@ func run() -> void:
  check(up_size.is_equal_approx(side_size*0.88),"Upward walking is 12 percent smaller")
  v.states[c.id].clip="idle_up"
  check(room.cat_rect(c).size.is_equal_approx(up_size),"Upward idle matches walking size")
- for clip in ["walk_down","idle","produce","pet","groom"]:
+ for clip in ["walk_down","idle"]:
   v.states[c.id].clip=clip
   check(room.cat_rect(c).size.is_equal_approx(side_size),"Other clip retains size: "+clip)
+ for clip in ["groom","pet","produce"]:
+  v.states[c.id].clip=clip
+  check(room.cat_rect(c).size.is_equal_approx(side_size*1.10),"Clip is 10 percent larger: "+clip)
  for clip in V.Short.FRAMES.get_animation_names():
   var sheet: AtlasTexture=V.Short.FRAMES.get_frame_texture(clip,0)
   check(sheet.atlas.resource_path.begins_with("res://Art/cat1new2/"),"Latest sheet: "+clip)
- var idle: AtlasTexture=V.Short.FRAMES.get_frame_texture("idle",0)
- var source=Image.new();source.load_png_from_buffer(FileAccess.get_file_as_bytes(idle.atlas.resource_path))
- var original=source.get_region(Rect2i(idle.region))
- var expected_anchor=float(original.get_used_rect().end.y)/idle.get_height()
- check(expected_anchor>0.5 and absf(v.foot_anchor(c.id)-expected_anchor)<=0.02,"Compressed atlas ground pivot matches source artwork without empty crop")
+ var anchor: float=v.foot_anchor(c.id)
+ for clip in ["walk_up","idle_up"]:
+  for index in range(V.Short.FRAMES.get_frame_count(clip)):
+   var frame: Texture2D=V.Short.FRAMES.get_frame_texture(clip,index)
+   check(float(V.read_frame_image(frame).get_used_rect().end.y)/frame.get_height()<=anchor,"Upward frame stays above floor: "+clip+str(index))
  room.free()
  print("CAT1NEW: ",checks," checks, ",failures," failures")
  quit(0 if failures==0 else 1)

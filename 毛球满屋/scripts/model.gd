@@ -1,6 +1,7 @@
 extends RefCounted
 const D = preload("res://scripts/data.gd")
 const A = preload("res://scripts/cat_animation_data.gd")
+const GROOM_FRAMES = preload("res://Art/cat1new_animations.tres")
 const T=preload("res://scripts/tree_specs.gd")
 const Build=preload("res://scripts/build_rules.gd")
 const Space=preload("res://scripts/cat_space.gd")
@@ -194,13 +195,14 @@ func occupants(id: int) -> Array:
  return result
 func move_cat(id: int,at: Vector2) -> void:
  var c: Dictionary = cat(id)
- if c.is_empty(): return
+ if c.is_empty() or grooming(c): return
  c.station = -1; c.timer = 0.0; cancel_pet(c)
  reset_activity(c)
  c.pos = Space.place(self,c,at); c.dest = c.pos; c.dragging = false;c.entry_bonus=0;c.ent_rounds=0
 func assign(id: int,target_id: int) -> bool:
  var c: Dictionary = cat(id); var f: Dictionary = facility(target_id)
  if c.is_empty() or f.is_empty() or f.kind not in ["sun","arcade","altar"]: return fail("这里不能指派猫")
+ if grooming(c):return false
  if Space.reserved(self,f,c.id):return fail("设施已有一只猫使用或前往")
  if c.station==f.id:return fail("已在使用这台设施")
  if f.kind == "sun" and c.layers >= D.MAX_LAYERS: return fail("这只猫的毛层已满，先收割")
@@ -260,9 +262,24 @@ func harvest_ticket(c: Dictionary) -> Dictionary:
  return {"revision":int(c.get("harvest_revision",0)),"layers":int(c.layers),"progress":0.0}
 func cancel_pet(c: Dictionary) -> void:
  c.pet=0.0;c.pet_stamp=-1.0;c.erase("pet_action")
+# Grooming uses simulation time so movement and worker actions share the same lock.
+func grooming(c: Dictionary) -> bool:
+ return c.get("groom_left",0.0)>0.0
+func tick_grooming(c: Dictionary,dt: float) -> bool:
+ if grooming(c):
+  c.groom_left=maxf(0.0,c.groom_left-dt)
+  return true
+ if c.kind not in ["short","static"] or reacting(c) or c.pet>0 or hovered(c):return false
+ if c.get("idle_left",0.0)<=0 or c.get("feed_target",-1)>=0:return false
+ c.groom_wait=c.get("groom_wait",(9.0+float(c.id%7))*0.5)-dt
+ if c.groom_wait>0:return false
+ c.groom_wait=(12.0+float(c.id%9))*0.5
+ c.groom_left=A.duration("groom",preload("res://Art/cat2new_animations.tres") if c.kind=="static" else GROOM_FRAMES)
+ return true
 func pet(id: int,distance: float) -> void:
  var c: Dictionary=cat(id)
  if c.is_empty() or c.station!=-1 or c.dragging or reacting(c) or distance<=0 or not is_finite(distance):return
+ c.groom_left=0.0 # Only valid player petting interrupts grooming.
  var stamp: float=c.get("pet_stamp",-1.0)
  if stamp<0 or elapsed-stamp>B.PET_BREAK_TIME or not c.has("pet_action"):
   cancel_pet(c);c.pet_action=harvest_ticket(c);c.pet_action.input="distance"
@@ -287,7 +304,7 @@ func coin_bonus(c: Dictionary) -> void:
  if heads: prize(c,B.LUCKY_VALUE)
 func harvest(id: int,action: Dictionary = {}) -> bool:
  var c: Dictionary = cat(id)
- if c.is_empty() or c.station != -1 or c.dragging or reacting(c):return false
+ if c.is_empty() or c.station != -1 or c.dragging or reacting(c) or grooming(c):return false
  if action.is_empty():action=c.get("pet_action",{})
  if not action.has_all(["revision","layers","progress"]):return false
  if action.revision!=c.get("harvest_revision",0) or action.layers<1 or action.layers>c.layers:return false
@@ -340,7 +357,8 @@ func start_walk(c: Dictionary) -> void:
  cat_escape_targets.erase(c.id)
  c.idle_left=0.0
  c.walk_left=rng.randf_range(B.CAT_WALK_MIN,B.CAT_WALK_MAX)
- var direction:=Vector2.from_angle(rng.randf_range(0,TAU))
+ var direction:=Vector2.from_angle(float(rng.randi_range(0,3))*PI/2.0+rng.randf_range(-Space.DIRECTION_DEVIATION,Space.DIRECTION_DEVIATION))
+ c.walk_horizontal=absf(direction.x)>=absf(direction.y)
  c.dest=clamp_position(c.pos+direction*D.CAT_MOVE_SPEED*c.walk_left)
  if c.pos.distance_to(c.dest)<8.0:c.dest=clamp_position(c.pos-direction*D.CAT_MOVE_SPEED*c.walk_left)
 func feeding_spot(f: Dictionary) -> Vector2:
@@ -442,7 +460,7 @@ func tick(dt: float) -> void:
   c.growth += dt*growth_speed(c)
   while c.growth >= D.LAYER_CD:
    c.growth -= D.LAYER_CD; layer(c)
-  if not Space.escape(self,c,dt):tick_cat_activity(c,dt)
+  if not tick_grooming(c,dt) and not Space.escape(self,c,dt):tick_cat_activity(c,dt)
  var reserved: Dictionary = {}
  for w in workers:
   if not w.job.is_empty(): reserved[job_key(w.job)] = true
@@ -473,7 +491,7 @@ func choose_job(w: Dictionary,reserved: Dictionary) -> Dictionary:
     if valid and not reserved.has(key): return {"kind":role,"target":f.id,"cat":-1}
   else:
    for c in cats:
-    if c.station != -1 or c.dragging: continue
+    if c.station != -1 or c.dragging or grooming(c): continue
     if node_owned("S10") and c.get("group",0)!=w.get("group",0):continue
     var key: String = "cat:"+str(c.id)
     if reserved.has(key): continue
@@ -492,7 +510,7 @@ func tick_worker(w: Dictionary,dt: float,reserved: Dictionary) -> void:
   reserved[job_key(w.job)] = true
  var job: Dictionary = w.job
  var target: Dictionary = cat(job.target) if job.cat >= 0 else facility(job.target)
- if target.is_empty() or (job.cat >= 0 and (target.dragging or (target.station != -1 and target.station != -w.id-2))):
+ if target.is_empty() or (job.cat >= 0 and (target.dragging or grooming(target) or (target.station != -1 and target.station != -w.id-2))):
   w.job = {}; return
  if job.get("stage","") == "carry":
   if target.station != -w.id-2: w.job = {}; return
