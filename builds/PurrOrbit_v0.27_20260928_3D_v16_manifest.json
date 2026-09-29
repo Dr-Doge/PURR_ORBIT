@@ -1,0 +1,11 @@
+{
+  "version": "0.27.0.16",
+  "source": "18e1e0e97df171fbc97f19a4153361851d6e65d6",
+  "main_scene": "res://scenes/3D scene.tscn",
+  "embedded_pck": true,
+  "bytes": 155649032,
+  "sha256": "A57CBAC694B4071B587860C295561710C8F739D02E32765B5837E9F41BBB3AD1",
+  "export_exit_code": 0,
+  "graphics_startup_exit_code": 0,
+  "engine": "4.7.1.stable.official.a13da4feb"
+}

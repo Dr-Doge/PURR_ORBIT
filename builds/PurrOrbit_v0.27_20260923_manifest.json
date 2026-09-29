@@ -1,0 +1,18 @@
+{
+  "version": "0.27.0.10",
+  "date": "2026-09-23",
+  "engine": "4.7.1.stable.official.a13da4feb",
+  "base_commit": "498082819401883f5611303eb093a1339f46c27d",
+  "working_tree": "uncommitted current workspace; not a committed release",
+  "smoke_exit": 0,
+  "files": {
+    "builds\\PurrOrbit_v0.27_20260923\\PurrOrbit.exe": {
+      "bytes": 139950336,
+      "sha256": "ef7bae1f882dea5abae99067355d4c37b29e5b50126dff141d6015367836f9ee"
+    },
+    "builds\\PurrOrbit_v0.27_20260923_Windows.zip": {
+      "bytes": 68546924,
+      "sha256": "558ce64e5e95e69920a3b4671d896593a454e7c21622283a54b7d67f29c184ed"
+    }
+  }
+}
