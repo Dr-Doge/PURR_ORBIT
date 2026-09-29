@@ -1,5 +1,7 @@
 [gd_scene format=3]
 
+[ext_resource type="PackedScene" path="res://scenes/ui/developer_drawer.tscn" id="dev_drawer"]
+
 [ext_resource type="Script" path="res://scripts/lab_scene.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/game_cursor.gd" id="2_jkv2x"]
 [ext_resource type="PackedScene" path="res://scenes/test_room.tscn" id="room_scene"]
@@ -202,6 +204,8 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 12
 
 [node name="StartMenu" parent="Overlay/Center/Card/Body" instance=ExtResource("start_menu")]
+
+[node name="DeveloperDrawer" parent="." instance=ExtResource("dev_drawer")]
 
 [editable path="Room"]
 [editable path="Overlay/Center/Card/Body/StartMenu"]

@@ -1,0 +1,31 @@
+{
+  "upstream_before": "18e1e0e97df171fbc97f19a4153361851d6e65d6",
+  "pull_result": "Already up to date",
+  "checks": 422,
+  "results": {
+    "test_3d_scene": {
+      "checks": 54,
+      "failures": 0
+    },
+    "test_cat1new": {
+      "checks": 39,
+      "failures": 0
+    },
+    "test_cat_shortcuts": {
+      "checks": 10,
+      "failures": 0
+    },
+    "test_demo": {
+      "checks": 125,
+      "failures": 0
+    },
+    "test_developer_menu_929": {
+      "checks": 104,
+      "failures": 0
+    },
+    "test_lab_004": {
+      "checks": 90,
+      "failures": 0
+    }
+  }
+}

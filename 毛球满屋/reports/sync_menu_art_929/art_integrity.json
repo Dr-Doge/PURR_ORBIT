@@ -1,0 +1,41 @@
+[
+  {
+    "file": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 产毛.png",
+    "old_dimensions": [
+      1280,
+      256
+    ],
+    "new_dimensions": [
+      1280,
+      256
+    ],
+    "sha256": "7b0937d24826d1ec508d0b67c2f12e2437a92b855ba9694f809f147d98b794ee",
+    "alt_matches": true
+  },
+  {
+    "file": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 待机.png",
+    "old_dimensions": [
+      2560,
+      256
+    ],
+    "new_dimensions": [
+      2560,
+      256
+    ],
+    "sha256": "a70d4b3e9132e5eacef70890312f6fdcdcd509150718cd86a3b3fdbc5cee5d20",
+    "alt_matches": true
+  },
+  {
+    "file": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 被抚摸.png",
+    "old_dimensions": [
+      1280,
+      256
+    ],
+    "new_dimensions": [
+      1280,
+      256
+    ],
+    "sha256": "7626d11493978ad89e48a293aff7c40825937dc6e175e50dad0456c536427c02",
+    "alt_matches": true
+  }
+]

@@ -186,3 +186,11 @@ lab_model执行收割专职，独立树126位置，N11/N12移除、S10/S20帽维
 远端983468c4合并本地27e82e94；短毛显示现在cat1new2，旧cat1new/cat1new1远端已删。正式room_3d与独立test_room/test_actors同步。上行idle／walk均×0.88，produce视觉约0.733秒末帧保持至模型1.1秒；压缩Atlas在计算脚底前解压CPU副本。经济与004模型／人设不变，497项验证reports/merge_cat1new2_928，参数17第25节。未重跑长期节奏／未导出EXE，发布状态见18同ID与Git。
 
 005发布确认：91a4524b已push至origin/main，包含27e82e94本地测试场景；497项验证代码不变，18同ID标已完成。
+
+2026-09-28最新主场景执行文件：builds/PurrOrbit_v0.27_20260928_3D_v16/PurrOrbit.exe，版本0.27.0.16，默认3D scene.tscn，单EXE内嵌资源。导出与图形启动退出码0；18e1e0e9源码＋导出版本元数据，未更改玩法、未提交／push本次构建。
+
+## 2026-09-29开发者菜单（覆盖数字1—9规则）
+
+IMP-20260929-001已完成：main／3D／测试场景均实例化scenes/ui/developer_drawer.tscn，最左侧按钮悬停提示、点击展开；数字和小键盘不再触发指令。菜单含原资源／设施／帮手／收藏、五猫种及异常演示；独立测试含原测试台、档案、存读档和重置。展开暂停防穿透，Esc或点击收起恢复。正常特殊猫仍转化获得，正式／lab存档范围保持。383项通过，17第26节、reports/developer_menu_929；本轮未build／提交／push，旧v16 EXE不含此改动。
+
+2026-09-29源码发布复核：fetch／pull确认远端main仍18e1e0e9，无新远端场景提交；本地开发菜单、三张cat1new2侧面图集与alt备用素材完整整合。422项通过，reports/sync_menu_art_929；经济／model／lab_model保持，未新build。

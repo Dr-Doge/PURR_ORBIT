@@ -1,6 +1,6 @@
 extends Control
 const Dev = preload("res://scripts/developer_tools.gd")
-var developer_feedback: Label
+var developer_drawer
 const Model = preload("res://scripts/model.gd")
 const Room = preload("res://scripts/room.gd")
 const D = preload("res://scripts/data.gd")
@@ -57,6 +57,7 @@ func _ready() -> void:
  room.notice.connect(message);room.build_requested.connect(func(key: String,at: Vector2):transact(func():return model.buy(key,at)))
  hud=$HUD;hud.bind_game(self)
  overlay=$Overlay;card=$Overlay/Center/Card;body=$Overlay/Center/Card/Body
+ developer_drawer=$DeveloperDrawer;developer_drawer.bind_game(self)
  room.step(0)
  resized.connect(resize_panel)
  resized.connect(layout_presentation)
@@ -67,6 +68,7 @@ func layout_presentation() -> void:
  hud.position=room.stage_origin();hud.size=Room.Backdrop.DESIGN_SIZE;hud.scale=Vector2.ONE*room.stage_scale()
  hud.show_title(modal=="start")
 func screen(title: String,description: String,kind: String,freeze: bool = false) -> VBoxContainer:
+ if is_instance_valid(developer_drawer):developer_drawer.hide_panel()
  room.reset_pointer();room.interactive=false;room.placing="";room.moving_id=-1
  modal=kind;paused=freeze;overlay.show();bindings.clear();clear(body);resize_panel();layout_presentation()
  var title_row := row(body);var h := label(title,28,"dfc794");h.size_flags_horizontal=SIZE_EXPAND_FILL;title_row.add_child(h)
@@ -90,6 +92,7 @@ func resize_panel() -> void:
 func bind_button(b: Button, text_fn: Callable, disabled_fn: Callable) -> void:
  bindings.append({"node":b,"fn":text_fn,"disabled":disabled_fn});b.text=text_fn.call();b.disabled=disabled_fn.call()
 func close_modal() -> void:
+ if is_instance_valid(developer_drawer):developer_drawer.hide_panel()
  if not active: show_start();return
  if modal == "contact": model.accept_contact();save_game()
  modal="";paused=false;bindings.clear();overlay.hide();room.interactive=true;room.reset_pointer();refresh();layout_presentation()
@@ -356,7 +359,7 @@ func show_pause() -> void:
  var content := screen("驻留暂停", "猫咪、设备、工人和故障计时都已暂停。", "pause",true)
  button("继续驻留",close_modal,content);button("保存进度",func():message("已保存" if save_game() else "保存失败，请查看权限"),content)
  button("设置",show_settings,content);button("操作帮助",show_help,content);button("重新开始…",new_game_prompt,content)
- button("开发者工具 · 9",show_developer,content)
+ button("开发者工具",show_developer,content)
  button("退出游戏",func():save_game();get_tree().quit(),content)
 func show_settings() -> void:
  var content := screen("设置", "视觉设置。", "settings",true)
@@ -372,7 +375,7 @@ func show_help() -> void:
 ⑤ 成长树可付费提高工人收割层数、缩短CD；职责帽安排固定岗位，分组照料可设各组目标。
 ⑥ 收割和娱乐中奖推进代币进度。12个回声收齐后补入24个，全部经营进度保留。",content,22)
  paragraph("不必急着收第一层毛。多攒几层，可以获得更多毛球与信号进度。",content,16)
- paragraph("开发测试：直接按1—8执行指令，9查看快捷键面板，无需开启模式。需先开始或读取游戏。",content,16)
+ paragraph("开发测试：开始游戏后，悬停屏幕最左侧“开发工具”查看提示，点击展开菜单。数字快捷键已取消；菜单可生成五种猫并保留资源、设施和流程测试。",content,16)
  if not active:button("返回开始界面",show_start,content)
 func save_game() -> bool:
  if testing or not active:return true
@@ -389,28 +392,14 @@ func _notification(what: int) -> void:
 
 func show_developer() -> void:
  if not active:return
- var content:=screen("开发者工具 · 数字快捷键","直接按1—8执行指令，9打开此面板，无需开关。主键盘和数字小键盘均可用。开发操作沿用当前自动存档。","developer",true)
- developer_feedback=paragraph("等待开发指令",body,16)
- for command in Dev.COMMANDS:
-  var key: String=command[0]
-  button(command[1]+" · "+command[2],func():developer_command(key),content)
- paragraph("设施免费生成并解锁对应研究及前置；不自动提升升级等级。娱乐和祭坛沿树前置开放，不再受收藏批次限制；按8可补齐首批收藏。面板内暂停模拟，返回舱室后继续。",content,16)
+ close_modal()
+ if hud.has_method("set_open"):hud.set_open(false)
+ room.reset_pointer();room.interactive=false;room.placing="";room.moving_id=-1
+ modal="developer";paused=true
+ developer_drawer.open_panel()
 func developer_command(key: String) -> void:
  if not active:return
  var result: String=Dev.execute(model,key)
- if modal=="developer" and is_instance_valid(developer_feedback):developer_feedback.text=result
- refresh()
+ room.step(0);refresh()
+ if is_instance_valid(developer_drawer):developer_drawer.feedback.text=result
  if save_game():message("[开发] "+result)
-func _input(event: InputEvent) -> void:
- if not event is InputEventKey or not event.pressed or event.echo or not active:return
- if event.alt_pressed or event.meta_pressed or event.shift_pressed or event.ctrl_pressed:return
- var focused: Control=get_viewport().gui_get_focus_owner()
- if focused is LineEdit or focused is TextEdit:return
- var key: int=event.keycode
- if key>=KEY_KP_0 and key<=KEY_KP_9:key=KEY_0+(key-KEY_KP_0)
- if key==KEY_9:show_developer()
- else:
-  var command: String={KEY_1:"money",KEY_2:"food",KEY_3:"feeder",KEY_4:"sun",KEY_5:"arcade",KEY_6:"worker",KEY_7:"short",KEY_8:"stage2"}.get(key,"")
-  if command=="":return
-  developer_command(command)
- get_viewport().set_input_as_handled()

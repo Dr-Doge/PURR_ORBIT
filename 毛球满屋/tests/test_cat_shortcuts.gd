@@ -1,9 +1,11 @@
 extends SceneTree
 const H=preload("res://tests/harvest_fixture.gd")
-const Main = preload("res://scripts/main.gd")
+const Main = preload("res://scenes/3D scene.tscn")
 const Visuals = preload("res://scripts/cat_visuals.gd")
 var failures: int = 0
+var checks: int = 0
 func check(ok: bool, message: String) -> void:
+ checks+=1
  if not ok:
   failures += 1
   push_error(message)
@@ -17,7 +19,7 @@ func key(app, code: int, echo: bool = false, ctrl: bool = false) -> void:
 func _initialize() -> void:
  call_deferred("run")
 func run() -> void:
- var app = Main.new()
+ var app = Main.instantiate()
  app.testing = true
  root.add_child(app)
  key(app,KEY_1)
@@ -27,11 +29,11 @@ func run() -> void:
  var owned: Array = app.model.owned.duplicate(true)
  for i in range(5):key(app,KEY_1+i)
  check(app.model.cats.size()==2,"Keys1-5 do not restore old special-cat spawning")
- check(app.model.wallet==wallet+10000 and app.model.owned==owned,"Number1 grants money without altering collections")
+ check(app.model.wallet==wallet and app.model.owned==owned,"Numeric inputs no longer alter resources or collections")
  key(app,KEY_1,true);key(app,KEY_1,false,true)
- check(app.model.wallet==wallet+10000,"Repeat and modifiers ignored")
+ check(app.model.wallet==wallet,"Repeat and modifiers ignored")
  app.show_pause();key(app,KEY_1)
- check(app.model.wallet==wallet+20000,"Number commands work in pause menu")
+ check(app.model.wallet==wallet,"Numeric inputs remain inactive in pause menu")
  app.close_modal()
  # Explicit test fixture covers the imported lucky-cat artwork without a gameplay cheat.
  var lucky: Dictionary=app.model.add_cat(Vector2(700,500));lucky.kind="lucky"
@@ -47,11 +49,11 @@ func run() -> void:
  visuals.step(app.model,0)
  check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",0),"Lucky harvest bound")
  app.model.tick(1.05);visuals.step(app.model,1.05)
- check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",7),"Last produce frame plays before hold ends")
+ check(visuals.texture(lucky.id)==Visuals.LUCKY_FRAMES.get_frame_texture("produce",Visuals.LUCKY_FRAMES.get_frame_count("produce")-1),"Last produce frame plays before hold ends")
  lucky.pos=visuals.states[lucky.id].pos;app.model.reset_activity(lucky);lucky.idle_left=1;app.model.tick(0.06)
  visuals.step(app.model,0.06)
  check(visuals.states[lucky.id].animation=="idle","Produce completes")
  app.queue_free()
  await process_frame
- print("CAT SHORTCUT CHECKS: ",failures," failures")
+ print("CAT INPUT: ",checks," checks, ",failures," failures")
  quit(0 if failures==0 else 1)
