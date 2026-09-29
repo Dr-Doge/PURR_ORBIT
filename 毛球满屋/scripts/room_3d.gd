@@ -15,6 +15,7 @@ var room_half_width: float = 12.0
 func _ready() -> void:
  gacha_position=Vector2(1190,465)
  super._ready()
+ static_outlines.hide()
  backdrop.hide()
  presentation=$WhiteboxViewport
  view=$WhiteboxViewport/World3D

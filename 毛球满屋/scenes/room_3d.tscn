@@ -81,8 +81,15 @@ render_target_update_mode = 4
 [node name="ActorLighting" type="Node3D" parent="WhiteboxViewport/World3D/WhiteboxRoom" unique_id=1323991665]
 script = ExtResource("12_gaeys")
 
+[node name="CatFillLight" type="DirectionalLight3D" parent="WhiteboxViewport/World3D/WhiteboxRoom/ActorLighting"]
+light_color = Color(1, 0.97, 0.93, 1)
+light_energy = 0.35
+light_cull_mask = 2
+shadow_enabled = false
+
 [node name="Cat_1" type="Sprite3D" parent="WhiteboxViewport/World3D/WhiteboxRoom/ActorLighting" unique_id=677913622]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1350175, 0.33490372, -2.789772)
+layers = 3
 material_override = SubResource("StandardMaterial3D_uodng")
 cast_shadow = 2
 pixel_size = 0.00279086432419717
@@ -94,6 +101,7 @@ texture = SubResource("ShortPreview")
 
 [node name="Cat_2" type="Sprite3D" parent="WhiteboxViewport/World3D/WhiteboxRoom/ActorLighting" unique_id=1855398072]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109841056, 0.3347435, -1.898735)
+layers = 3
 material_override = SubResource("StandardMaterial3D_aqmbu")
 cast_shadow = 2
 pixel_size = 0.00278950785286725

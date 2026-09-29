@@ -389,7 +389,7 @@ func _notification(what: int) -> void:
 
 func show_developer() -> void:
  if not active:return
- var content:=screen("开发者工具 · 数字快捷键","直接按1—8执行指令，9打开此面板，无需开关。主键盘和数字小键盘均可用。开发操作沿用当前自动存档。","developer",true)
+ var content:=screen("开发者工具 · 数字快捷键","按1—5、7—8执行数字指令，L生成静电猫，9打开此面板，无需开关。主键盘和数字小键盘均可用。开发操作沿用当前自动存档。","developer",true)
  developer_feedback=paragraph("等待开发指令",body,16)
  for command in Dev.COMMANDS:
   var key: String=command[0]
@@ -410,7 +410,7 @@ func _input(event: InputEvent) -> void:
  if key>=KEY_KP_0 and key<=KEY_KP_9:key=KEY_0+(key-KEY_KP_0)
  if key==KEY_9:show_developer()
  else:
-  var command: String={KEY_1:"money",KEY_2:"food",KEY_3:"feeder",KEY_4:"sun",KEY_5:"arcade",KEY_6:"worker",KEY_7:"short",KEY_8:"stage2"}.get(key,"")
+  var command: String={KEY_1:"money",KEY_2:"food",KEY_3:"feeder",KEY_4:"sun",KEY_5:"arcade",KEY_L:"static",KEY_7:"short",KEY_8:"stage2"}.get(key,"")
   if command=="":return
   developer_command(command)
  get_viewport().set_input_as_handled()

@@ -12,13 +12,33 @@ static func is_clear(m,c: Dictionary,at: Vector2) -> bool:
 static func place(m,_c: Dictionary,at: Vector2) -> Vector2:
  # Placement and dragging are authoritative; overlap is resolved later by walking.
  return m.clamp_position(at)
+const DIRECTION_DEVIATION = PI/9.0 # 20 degrees either side of a cardinal direction.
+static func cardinal_step(delta: Vector2,horizontal: bool) -> Vector2:
+ var slope: float=tan(DIRECTION_DEVIATION)
+ if horizontal:return Vector2(delta.x,clampf(delta.y,-absf(delta.x)*slope,absf(delta.x)*slope))
+ return Vector2(clampf(delta.x,-absf(delta.y)*slope,absf(delta.y)*slope),delta.y)
 static func walk(m,c: Dictionary,at: Vector2) -> Vector2:
- at=m.clamp_position(at)
- if is_clear(m,c,at):return at
  var direction: Vector2=at-c.pos
- # Best effort only: prefer a clear small turn, but never block forward travel.
- for angle in [PI/6,-PI/6]:
-  var candidate: Vector2=m.clamp_position(c.pos+direction.rotated(angle))
+ if c.station==-1:
+  # Keep the main axis until the destination is clearly to the other side;
+  # selecting the nearest axis every frame would zigzag around 45 degrees.
+  var horizontal: bool=c.get("walk_horizontal",absf(direction.x)>=absf(direction.y))
+  if absf(direction.x)>absf(direction.y)*3.0:horizontal=true
+  elif absf(direction.y)>absf(direction.x)*3.0:horizontal=false
+  c.walk_horizontal=horizontal
+  direction=cardinal_step(direction,horizontal)
+ at=m.clamp_position(c.pos+direction)
+ if c.station==-1:
+  var bounded: Vector2=at-c.pos
+  at=c.pos+cardinal_step(bounded,absf(bounded.x)>=absf(bounded.y))
+ if is_clear(m,c,at):return at
+ for angle in [DIRECTION_DEVIATION,-DIRECTION_DEVIATION]:
+  var offset: Vector2=direction.rotated(angle)
+  if c.station==-1:offset=cardinal_step(offset,c.walk_horizontal)
+  var candidate: Vector2=m.clamp_position(c.pos+offset)
+  if c.station==-1:
+   offset=candidate-c.pos
+   candidate=c.pos+cardinal_step(offset,absf(offset.x)>=absf(offset.y))
   if is_clear(m,c,candidate):return candidate
  return at
 static func body_radius(c: Dictionary) -> Vector2:
@@ -27,7 +47,7 @@ static func body_radius(c: Dictionary) -> Vector2:
 static func overlaps(a: Dictionary,b: Dictionary) -> bool:
  return ((a.pos-b.pos)/(body_radius(a)+body_radius(b))).length_squared()<1.0
 static func can_leave(m,c: Dictionary) -> bool:
- return c.station==-1 and not c.dragging and not m.hovered(c)
+ return c.station==-1 and not c.dragging and not m.hovered(c) and not m.grooming(c)
 static func escape_spot(m,c: Dictionary) -> Vector2:
  var start_angle: float=fmod(float(c.id)*2.399963,TAU)
  for ring in range(1,25):
@@ -61,7 +81,7 @@ static func update_overlap(m,dt: float) -> void:
    m.cat_escape_targets[id]=escape_spot(m,c)
 static func escape(m,c: Dictionary,dt: float) -> bool:
  if not can_leave(m,c) or not m.cat_escape_targets.has(c.id):return false
- c.pos=c.pos.move_toward(m.cat_escape_targets[c.id],D.CAT_MOVE_SPEED*dt)
+ c.pos=walk(m,c,c.pos.move_toward(m.cat_escape_targets[c.id],D.CAT_MOVE_SPEED*dt))
  return true
 static func reserved(m,f: Dictionary,except_cat: int=-1) -> bool:
  for c in m.cats:

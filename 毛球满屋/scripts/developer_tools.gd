@@ -9,7 +9,8 @@ const COMMANDS=[
  ["feeder","3","获得喂食器"],
  ["sun","4","获得日光浴"],
  ["arcade","5","获得娱乐设施"],
- ["worker","6","获得小帮手"],
+ ["static","L","获得静电猫"],
+ ["worker","面板","获得小帮手"],
  ["short","7","获得短毛猫"],
  ["stage2","8","补齐首批12件收藏，进入第二阶段"]
 ]
@@ -20,6 +21,12 @@ static func unlock(model,key: String) -> bool:
  model.wallet+=float(D.RESEARCH[key].price)
  return model.research(key)
 static func execute(model,key: String) -> String:
+ if key=="static":
+  var at: Vector2=D.FLOOR.get_center()
+  var c: Dictionary=model.add_cat(at)
+  c.kind="static";c.reaction_kind="static"
+  if not model.Space.is_clear(model,c,at):c.pos=model.Space.escape_spot(model,c);c.dest=c.pos
+  return "已生成一只静电猫"
  if key=="money":model.wallet+=MONEY;return "+10,000 毛球"
  if key=="food":model.food[0]+=FOOD;return "+100 份标准猫粮（在喂食器中补入）"
  if key=="stage2":
