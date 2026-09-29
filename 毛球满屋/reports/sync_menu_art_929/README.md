@@ -9,3 +9,5 @@ Godot4.7.1，真实图形与鼠标检查通过：菜单104、猫输入10、模�
 复现普通测试位于tests；菜单、lab、3D检查为.tools/sync_menu_art_929中的只改输出路径的副本。当前报告不覆盖旧证据；lab测试写reports/lab_004/sync_menu_art_929。原规则见17第26节，001完成记录见18。
 
 本轮发布源码与美术，没有新build。export_presets中的0.27.0.16与对应说明来自先前构建；其EXE尚不含菜单改动，旧未跟踪builds继续保留本地。
+
+2026-09-29发布确认：b2d47eba已push至origin/main，包含开发菜单与当前本地美术；422项验证，未新build。
