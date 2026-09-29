@@ -27,6 +27,10 @@ func run() -> void:
  check(v.states[c.id].clip=="produce" and is_equal_approx(c.reaction_left,1.1),"Produce overrides pet without changing cooldown")
  m.tick(0.55);v.step(m,0)
  check(v.texture(c.id)==V.Short.FRAMES.get_frame_texture("produce",3),"Produce advances at 1.5x on model clock")
+ m.tick(0.25);v.step(m,0)
+ check(v.texture(c.id)==V.Short.FRAMES.get_frame_texture("produce",4) and m.reacting(c),"Faster art holds final frame while original reaction still locks harvest")
+ var previous=m.harvests;m.pet(c.id,1000)
+ check(m.harvests==previous and c.pet==0,"End of visual playback cannot bypass model reaction lock")
  var snapshot=var_to_bytes(m.cats);v.step(m,0.2)
  check(snapshot==var_to_bytes(m.cats),"Visuals never mutate simulation")
  for kind in ["giant","static","lucky","alien"]:
@@ -54,7 +58,7 @@ func run() -> void:
  for clip in ["walk_up","idle_up"]:
   for index in range(V.Short.FRAMES.get_frame_count(clip)):
    var frame: Texture2D=V.Short.FRAMES.get_frame_texture(clip,index)
-   check(float(frame.get_image().get_used_rect().end.y)/frame.get_height()<=anchor,"Upward frame stays above floor: "+clip+str(index))
+   check(float(V.read_frame_image(frame).get_used_rect().end.y)/frame.get_height()<=anchor,"Upward frame stays above floor: "+clip+str(index))
  room.free()
  print("CAT1NEW: ",checks," checks, ",failures," failures")
  quit(0 if failures==0 else 1)

@@ -48,7 +48,7 @@ func run() -> void:
   check((sprite.texture is AtlasTexture and sprite.texture.atlas.resource_path.ends_with("侧面 · 产毛.png")) if c.kind in ["short","static"] else sprite.texture.resource_path.to_lower().contains(prefixes[index].to_lower()+"produce"),"Original produce art: "+c.kind)
   index+=1
  var snap=m.snapshot();check(m.restore(snap),"Existing save schema loads after scene merge");game.room.step(0);await frames()
- check(game.room.actor_lighting.sprites.size()==5,"Restore reconciles five visual cards")
+ check(game.room.actor_lighting.sprites.size()==7,"Restore reconciles five cats and two outlines")
  game.queue_free();await frames()
  print("MERGED STRUCTURE: ",checks," checks, ",failures," failures")
  quit(0 if failures==0 else 1)

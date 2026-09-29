@@ -1,0 +1,140 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/test_whitebox.tscn" id="2_gwxsr"]
+[ext_resource type="Texture2D" path="res://Art/universe.jpg" id="6_ssy4c"]
+[ext_resource type="Script" path="res://scripts/actor_lighting_3d.gd" id="12_gaeys"]
+[ext_resource type="Texture2D" path="res://Art/cat1new2/三花猫 1-侧面 · 待机.png" id="13_fkfji"]
+[ext_resource type="Shader" path="res://Art/station_windows.gdshader" id="14_6nnlf"]
+[ext_resource type="Texture2D" path="res://Art/mask.jpg" id="15_omf8v"]
+[ext_resource type="Texture2D" path="res://Art/Scene.jpg" id="16_q2hcn"]
+[ext_resource type="Script" path="res://scripts/station_backdrop.gd" id="17_vjyle"]
+[ext_resource type="Script" path="res://scripts/static_cat_outline.gd" id="18_av56t"]
+[ext_resource type="Script" path="res://scripts/harvest_art.gd" id="19_o77gr"]
+[ext_resource type="PackedScene" path="res://scenes/facilities/gacha.tscn" id="20_kqvsb"]
+[ext_resource type="Texture2D" path="res://Art/Gachapon.png" id="21_2v6qc"]
+[ext_resource type="Script" path="res://scripts/token_effect.gd" id="24_wmf35"]
+[ext_resource type="PackedScene" path="res://scenes/cats/short_cat.tscn" id="25_xww5h"]
+[ext_resource type="Script" path="res://scripts/cat_actor.gd" id="26_anq0v"]
+[ext_resource type="Script" path="res://scripts/lab_room.gd" id="view"]
+
+[ext_resource type="PackedScene" path="res://scenes/test_actors.tscn" id="labactors"]
+
+[sub_resource type="AtlasTexture" id="ShortPreview"]
+atlas = ExtResource("13_fkfji")
+region = Rect2(0, 0, 256, 256)
+filter_clip = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uodng"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = SubResource("ShortPreview")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqmbu"]
+transparency = 2
+alpha_scissor_threshold = 0.35
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = SubResource("ShortPreview")
+metallic_specular = 0.0
+texture_filter = 0
+disable_receive_shadows = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhn4i"]
+shader = ExtResource("14_6nnlf")
+shader_parameter/window_mask = ExtResource("15_omf8v")
+shader_parameter/universe = ExtResource("6_ssy4c")
+shader_parameter/orbit_angle = 0.0
+shader_parameter/orbit_center = Vector2(0.5, 0.68)
+
+[node name="Room" type="Control" unique_id=1549452529]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("view")
+
+[node name="WhiteboxViewport" type="SubViewportContainer" parent="." unique_id=890935031]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 1440.0
+offset_bottom = 810.0
+mouse_filter = 2
+stretch = true
+
+[node name="World3D" type="SubViewport" parent="WhiteboxViewport" unique_id=191237996]
+own_world_3d = true
+msaa_3d = 1
+positional_shadow_atlas_size = 4096
+positional_shadow_atlas_quad_0 = 1
+positional_shadow_atlas_quad_1 = 1
+positional_shadow_atlas_quad_2 = 2
+positional_shadow_atlas_quad_3 = 3
+size = Vector2i(1440, 810)
+render_target_update_mode = 4
+
+[node name="WhiteboxRoom" type="Node3D" parent="WhiteboxViewport/World3D" unique_id=1780483802 instance=ExtResource("2_gwxsr")]
+
+[node name="ActorLighting" parent="WhiteboxViewport/World3D/WhiteboxRoom" instance=ExtResource("labactors")]
+
+[node name="Backdrop" type="TextureRect" parent="." unique_id=685792387]
+visible = false
+show_behind_parent = true
+z_index = -2
+material = SubResource("ShaderMaterial_uhn4i")
+layout_mode = 0
+offset_right = 1440.0
+offset_bottom = 810.0
+mouse_filter = 2
+texture = ExtResource("16_q2hcn")
+expand_mode = 1
+script = ExtResource("17_vjyle")
+
+[node name="StaticOutlines" type="Node2D" parent="." unique_id=1980686230]
+show_behind_parent = true
+script = ExtResource("18_av56t")
+
+[node name="HarvestEffects" type="Node2D" parent="." unique_id=134934707]
+script = ExtResource("19_o77gr")
+
+[node name="GachaMachine" type="Sprite2D" parent="HarvestEffects" unique_id=2095506696 instance=ExtResource("20_kqvsb")]
+visible = false
+z_index = -1
+position = Vector2(1200.0354, 393.2207)
+scale = Vector2(0.2086692, 0.25040305)
+texture = ExtResource("21_2v6qc")
+
+[node name="TokenLayer" type="CanvasLayer" parent="." unique_id=1759353960]
+layer = 20
+
+[node name="TokenEffect" type="Node2D" parent="TokenLayer" unique_id=1520565747]
+script = ExtResource("24_wmf35")
+
+[node name="Facilities" type="Node2D" parent="." unique_id=379291039]
+visible = false
+show_behind_parent = true
+
+[node name="Cats" type="Node2D" parent="." unique_id=1744127457]
+visible = false
+show_behind_parent = true
+
+[node name="StarterCat1" type="Node2D" parent="Cats" unique_id=1050054086 instance=ExtResource("25_xww5h")]
+position = Vector2(446.46677, 367.23288)
+script = ExtResource("26_anq0v")
+
+[node name="StarterCat2" type="Node2D" parent="Cats" unique_id=702395821 instance=ExtResource("25_xww5h")]
+position = Vector2(572.08386, 419.65295)
+script = ExtResource("26_anq0v")
+
+[node name="Workers" type="Node2D" parent="." unique_id=1372731792]
+visible = false
+show_behind_parent = true
+
+[editable path="WhiteboxViewport/World3D/WhiteboxRoom"]
+
+[editable path="WhiteboxViewport/World3D/WhiteboxRoom/ActorLighting"]

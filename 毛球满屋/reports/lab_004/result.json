@@ -1,0 +1,12 @@
+{
+  "budget": {
+    "cooldown": 45,
+    "efficiency": 40,
+    "food_packet": 6,
+    "layers": 30
+  },
+  "checks": 90,
+  "failures": 0,
+  "source": "404099a5",
+  "tree_nodes": 126
+}

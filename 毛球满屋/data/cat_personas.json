@@ -1,0 +1,860 @@
+{
+  "version": "lab-004-v1",
+  "source": "AI预生成缓存（离线）",
+  "sampling": "按类别从相容缓存组合逐步抽样；同轮优先未用名称，非所有词条独立均匀分布。",
+  "categories": [
+    "origin",
+    "past",
+    "trait",
+    "habit",
+    "contrast",
+    "naming"
+  ],
+  "words": {
+    "origin": [
+      {
+        "id": "origin_1",
+        "text": "废弃气象站",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "origin_2",
+        "text": "环形货港",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "origin_3",
+        "text": "无重力温室",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "origin_4",
+        "text": "中转候车舱",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "origin_5",
+        "text": "旧轨道检修站",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "origin_6",
+        "text": "废弃星图馆",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      }
+    ],
+    "past": [
+      {
+        "id": "past_1",
+        "text": "记录过没有天气的日子",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ],
+        "requires": {
+          "origin": "origin_1"
+        }
+      },
+      {
+        "id": "past_2",
+        "text": "给云层编号",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ],
+        "requires": {
+          "origin": "origin_1"
+        }
+      },
+      {
+        "id": "past_3",
+        "text": "盘点空纸箱",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ],
+        "requires": {
+          "origin": "origin_2"
+        }
+      },
+      {
+        "id": "past_4",
+        "text": "误乘补给船",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ],
+        "requires": {
+          "origin": "origin_2"
+        }
+      },
+      {
+        "id": "past_5",
+        "text": "追过飘走的种子",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ],
+        "requires": {
+          "origin": "origin_3"
+        }
+      },
+      {
+        "id": "past_6",
+        "text": "看守人造太阳",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ],
+        "requires": {
+          "origin": "origin_3"
+        }
+      },
+      {
+        "id": "past_7",
+        "text": "等过取消的航班",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ],
+        "requires": {
+          "origin": "origin_4"
+        }
+      },
+      {
+        "id": "past_8",
+        "text": "替广播打过哈欠",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ],
+        "requires": {
+          "origin": "origin_4"
+        }
+      },
+      {
+        "id": "past_9",
+        "text": "看管备用螺丝",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ],
+        "requires": {
+          "origin": "origin_5"
+        }
+      },
+      {
+        "id": "past_10",
+        "text": "保管闲置工具",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ],
+        "requires": {
+          "origin": "origin_5"
+        }
+      },
+      {
+        "id": "past_11",
+        "text": "整理缺页地图",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ],
+        "requires": {
+          "origin": "origin_6"
+        }
+      },
+      {
+        "id": "past_12",
+        "text": "给星星贴便签",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ],
+        "requires": {
+          "origin": "origin_6"
+        }
+      }
+    ],
+    "trait": [
+      {
+        "id": "trait_1",
+        "text": "一本正经",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "trait_2",
+        "text": "慢半拍",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "trait_3",
+        "text": "过分自信",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "trait_4",
+        "text": "谨慎",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "trait_5",
+        "text": "认真",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "trait_6",
+        "text": "爱面子",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "trait_7",
+        "text": "很有耐心",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "trait_8",
+        "text": "不爱争辩",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      }
+    ],
+    "habit": [
+      {
+        "id": "habit_1",
+        "text": "检查地板",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "habit_2",
+        "text": "盯着空窗",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "habit_3",
+        "text": "把纸箱排队",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "habit_4",
+        "text": "睡前数脚爪",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "habit_5",
+        "text": "把粮粒分组",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "habit_6",
+        "text": "朝灯鞠躬",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "habit_7",
+        "text": "给座位留空",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "habit_8",
+        "text": "收藏包装纸",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "habit_9",
+        "text": "围着椅子转圈",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "habit_10",
+        "text": "让出半张垫子",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "habit_11",
+        "text": "对空处点头",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "habit_12",
+        "text": "坐进最小纸箱",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      }
+    ],
+    "contrast": [
+      {
+        "id": "contrast_1",
+        "text": "把午睡登记成值班",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "contrast_2",
+        "text": "坚持预报没有过期",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "contrast_3",
+        "text": "把自己列为贵重货物",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "contrast_4",
+        "text": "坚持自己不是迷路",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "contrast_5",
+        "text": "把发芽交给明天",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "contrast_6",
+        "text": "把阴天算成休假",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "contrast_7",
+        "text": "把等待算成旅行",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "contrast_8",
+        "text": "只买单程想象",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "contrast_9",
+        "text": "把没修过当成没坏过",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "contrast_10",
+        "text": "给舒服留出公差",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "contrast_11",
+        "text": "把空白称为新发现",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "contrast_12",
+        "text": "把远方折到身边",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      }
+    ],
+    "naming": [
+      {
+        "id": "naming_1",
+        "text": "量具",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "naming_2",
+        "text": "文具",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "naming_3",
+        "text": "算具",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "naming_4",
+        "text": "票据",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "naming_5",
+        "text": "植物",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "naming_6",
+        "text": "时刻",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "naming_7",
+        "text": "工具",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      },
+      {
+        "id": "naming_8",
+        "text": "纸张",
+        "kinds": [
+          "short",
+          "giant",
+          "static",
+          "lucky",
+          "alien"
+        ]
+      }
+    ]
+  },
+  "conflicts": [],
+  "profiles": [
+    {
+      "key": "persona_1",
+      "tags": {
+        "origin": "origin_1",
+        "past": "past_1",
+        "trait": "trait_1",
+        "habit": "habit_1",
+        "contrast": "contrast_1",
+        "naming": "naming_1"
+      },
+      "name": "小刻度",
+      "bio": "曾在废弃气象站记录晴天，连续三年没有写错。如今每次坐下都先检查地板，把午睡郑重登记成值班。它认为休息也该留有原始记录。"
+    },
+    {
+      "key": "persona_2",
+      "tags": {
+        "origin": "origin_1",
+        "past": "past_2",
+        "trait": "trait_2",
+        "habit": "habit_2",
+        "contrast": "contrast_2",
+        "naming": "naming_2"
+      },
+      "name": "云签",
+      "bio": "以前负责给气象站窗外的云编号，撤站时只带走一张空表。现在常盯着舷窗发呆，坚称今天的预报只是尚未抵达，并不是昨天忘了交。"
+    },
+    {
+      "key": "persona_3",
+      "tags": {
+        "origin": "origin_2",
+        "past": "past_3",
+        "trait": "trait_3",
+        "habit": "habit_3",
+        "contrast": "contrast_3",
+        "naming": "naming_3"
+      },
+      "name": "算盘",
+      "bio": "来自环形货港，擅长把空纸箱清点出两份结果。每次整理箱子都给自己留下最中央的位置，货物清单里写着贵重，运费一栏则坚持留白。"
+    },
+    {
+      "key": "persona_4",
+      "tags": {
+        "origin": "origin_2",
+        "past": "past_4",
+        "trait": "trait_4",
+        "habit": "habit_4",
+        "contrast": "contrast_4",
+        "naming": "naming_4"
+      },
+      "name": "回执",
+      "bio": "它把一次误乘补给船解释为主动考察航线。睡前会数一遍脚爪，确认随身物品齐全；唯独回程票从不清点，说那属于尚未发生的采购。"
+    },
+    {
+      "key": "persona_5",
+      "tags": {
+        "origin": "origin_3",
+        "past": "past_5",
+        "trait": "trait_5",
+        "habit": "habit_5",
+        "contrast": "contrast_5",
+        "naming": "naming_5"
+      },
+      "name": "豆苗",
+      "bio": "在无重力温室追过一整季种子，没有一粒肯按时落地。如今先把猫粮分组再开饭，声称这是育苗试验；试验的结论通常是全部可以吃。"
+    },
+    {
+      "key": "persona_6",
+      "tags": {
+        "origin": "origin_3",
+        "past": "past_6",
+        "trait": "trait_6",
+        "habit": "habit_6",
+        "contrast": "contrast_6",
+        "naming": "naming_5"
+      },
+      "name": "叶票",
+      "bio": "曾看守温室里的人造太阳，交班时总要向灯鞠躬。灯坏后它申请了无限期阴天假，如今见到日光浴仍会点头，双方都没有提欠下的工时。"
+    },
+    {
+      "key": "persona_7",
+      "tags": {
+        "origin": "origin_4",
+        "past": "past_7",
+        "trait": "trait_7",
+        "habit": "habit_7",
+        "contrast": "contrast_7",
+        "naming": "naming_6"
+      },
+      "name": "晚点",
+      "bio": "在候车舱等过一班已经取消的飞船，后来连候车舱也搬走了。它至今给旁边留一个座位，称旅途最舒服的部分就是目的地还没开始催促。"
+    },
+    {
+      "key": "persona_8",
+      "tags": {
+        "origin": "origin_4",
+        "past": "past_8",
+        "trait": "trait_8",
+        "habit": "habit_8",
+        "contrast": "contrast_8",
+        "naming": "naming_4"
+      },
+      "name": "票根",
+      "bio": "它曾替深夜候车广播打哈欠，报酬是一张没有日期的票。现在收藏猫粮包装纸，认为只要折得像船票，就无需再次解释自己究竟从哪来。"
+    },
+    {
+      "key": "persona_9",
+      "tags": {
+        "origin": "origin_5",
+        "past": "past_9",
+        "trait": "trait_3",
+        "habit": "habit_9",
+        "contrast": "contrast_9",
+        "naming": "naming_7"
+      },
+      "name": "扳豆",
+      "bio": "它在旧检修站看管备用螺丝，任内没有丢过任何一颗。离站时才知道那些是铆钉，不过这不妨碍它绕着新椅子转圈，宣布检查取得圆满成功。"
+    },
+    {
+      "key": "persona_10",
+      "tags": {
+        "origin": "origin_5",
+        "past": "past_10",
+        "trait": "trait_1",
+        "habit": "habit_10",
+        "contrast": "contrast_10",
+        "naming": "naming_1"
+      },
+      "name": "余量",
+      "bio": "检修站曾让它保管一套闲置工具，它坚持每天检查工具是否仍然闲置。搬来以后总让出半张垫子，说这是舒适度的安全余量，暂不对外出租。"
+    },
+    {
+      "key": "persona_11",
+      "tags": {
+        "origin": "origin_6",
+        "past": "past_11",
+        "trait": "trait_4",
+        "habit": "habit_11",
+        "contrast": "contrast_11",
+        "naming": "naming_2"
+      },
+      "name": "书角",
+      "bio": "在星图馆整理缺页地图时，它发现空白部分最不容易出错。现在常对房间角落点头，称那里有一处尚未公布的新发现，具体坐标等睡醒再说。"
+    },
+    {
+      "key": "persona_12",
+      "tags": {
+        "origin": "origin_6",
+        "past": "past_12",
+        "trait": "trait_2",
+        "habit": "habit_12",
+        "contrast": "contrast_12",
+        "naming": "naming_8"
+      },
+      "name": "折页",
+      "bio": "它曾给星图上的星星贴便签，标签比星星先失去粘性。后来学会坐进最小的纸箱，说这样就能把远方折到身边，至于箱盖则不必勉强。"
+    }
+  ]
+}
