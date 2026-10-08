@@ -1,0 +1,17 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const project={id:'p',name:'demo',layout:{},actions:[{id:'walk',name:'walk',prompt:'walk',options:{duration:1}},{id:'idle',name:'idle',prompt:'idle',options:{duration:2}}],batches:[]};
+const images=[{id:'white',name:'white',source:'/white.png'},{id:'orange',name:'orange',source:'/orange.png'}];
+const g={nodes:['image-white','image-orange','action-walk','action-idle','batch-b'],edges:images.map(im=>({from:'image-'+im.id,to:'batch-b',slot:'image'}))};
+project.batches=[{id:'b',source_project:'p',actions:['walk','idle'],image_id:'reference',frame_count:20,threshold:25,outputs:[],cells:{'orange:idle':{enabled:false},'white:walk':{frame_count:13}}}];
+const stub={insertAdjacentHTML(){}};
+const ctx={document:{addEventListener(){}},$:()=>stub,state:{projects:[project],jobs:[]},pid:'p',p:()=>project,graph:()=>g,imageItem:id=>images.find(im=>im.id===id),imageItems:()=>images,a:id=>project.actions.find(a=>a.id===id),last:a=>a?.exports?.at(-1),esc:s=>String(s??''),statusHtml:()=>'',card:(a,b,c,d,e,body)=>body};
+vm.createContext(ctx);vm.runInContext(fs.readFileSync('web/multi-batch.js','utf8'),ctx);
+const html=vm.runInContext('renderBatchNodes()',ctx);
+assert.match(html,/实际 3 个收费视频任务/);assert.match(html,/data-cell-frames="white:walk" value="13"/);
+assert.match(html,/type="file" multiple/);assert.equal((html.match(/data-cell-frames=/g)||[]).length,4);
+project.batches[0].groups=[{image_id:'white',name:'white',reference:'/white.png',actions:['generated']}];project.batches[0].outputs=['generated'];
+assert.equal(vm.runInContext("batchNodeHidden('action-generated')",ctx),true);
+vm.runInContext("batchExpanded.add('p:b:white')",ctx);
+assert.equal(vm.runInContext("batchNodeHidden('action-generated')",ctx),false);
+assert.match(vm.runInContext('renderBatchNodes()',ctx),/仅重试未完成项/);
+console.log('Multi-reference render, per-cell settings and grouped visibility passed');
