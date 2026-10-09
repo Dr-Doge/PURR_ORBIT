@@ -2,9 +2,9 @@
 
 [ext_resource type="Shader" path="res://Art/whitebox_window.gdshader" id="1"]
 [ext_resource type="Texture2D" path="res://Art/universe.jpg" id="2"]
-[ext_resource type="Texture2D" path="res://Art/Ground1.png" id="3"]
+[ext_resource type="Texture2D" path="res://Art/C_Floor.png" id="3"]
 [ext_resource type="Texture2D" path="res://Art/Wall.jpg" id="4"]
-[ext_resource type="Texture2D" path="res://Art/Window1.jpg" id="5"]
+[ext_resource type="Texture2D" path="res://Art/C_Window.png" id="5"]
 [ext_resource type="Shader" path="res://Art/whitebox_side.gdshader" id="6"]
 [ext_resource type="Texture2D" path="res://Art/Frame.png" id="7"]
 [ext_resource type="Shader" path="res://Art/frame_cutout.gdshader" id="8"]
