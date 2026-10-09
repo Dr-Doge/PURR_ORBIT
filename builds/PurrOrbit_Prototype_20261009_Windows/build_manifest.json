@@ -1,0 +1,52 @@
+{
+  "version": "0.27.0.17",
+  "source_head": "39638e74ff75c784a64cf4f69985c433e0c0041e",
+  "uncommitted_workspace": true,
+  "entry": "res://scenes/测试场景.tscn",
+  "embedded_pck": true,
+  "engine": "4.7.1.stable.official.a13da4feb",
+  "source_files": [
+    {
+      "path": "毛球满屋/project.godot",
+      "sha256": "b6f1a3f71f77ddeaba30e9528b6304d9e9a794790be8776871f709717f3a8051"
+    },
+    {
+      "path": "毛球满屋/export_presets.cfg",
+      "sha256": "8b344335da069428ce0d4b167aa00e14d1955356f8232879fad58e2ac6a4d970"
+    },
+    {
+      "path": "毛球满屋/scenes/测试场景.tscn",
+      "sha256": "1dc020ad318caad501992c1c84635b7983e48ee8f2e706ebfe7ce7849135b5d5"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_harvest/config.gd",
+      "sha256": "a1a9e99b04b32778f7fadd4baa20818f11d6f439f67dc63da532e17d2c4649bd"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_harvest/controller.gd",
+      "sha256": "ddf9b60b50444484ab239583b7d911b21dd9938e015820d4737714c98979685c"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_harvest/model.gd",
+      "sha256": "be4c416ebd6dd149daac20f33d237b561e0c36409e8f7329d96b3957330e3337"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_harvest/room.gd",
+      "sha256": "a1f24f98b586d06d85529de2c28a7233deb7f63be7cd06bb375f75fe26845664"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_harvest/view.gd",
+      "sha256": "472b36e7e554e186c48a926e1fbea7d7b56ffd7e6ca331c5047b51042f155930"
+    }
+  ],
+  "bytes": 169447408,
+  "sha256": "7465210361bc584759586479f51f57225469e343997cfc9da08e2d9e25173ab0",
+  "export_exit_code": 0,
+  "graphics_startup_exit_code": 0,
+  "packed_resource_smoke_exit_code": 0,
+  "packed_resource_smoke": "Godot 4.7.1 --main-pack EXE: exported entry, 3 animation sets, 3D room, 8 stages and menu entries; failures=[]",
+  "source_unchanged": true,
+  "custom_user_directory": "PurrOrbitPrototype_20261009",
+  "save_behavior": "Memory-only prototype",
+  "export_filter": "all_resources; excluded tests, reports, builds, smoke_packed.gd"
+}

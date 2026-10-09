@@ -1,0 +1,33 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/prototype_harvest/whitebox.tscn" id="2_gwxsr"]
+[ext_resource type="Script" path="res://scripts/prototype_harvest/room.gd" id="view"]
+
+[node name="Room" type="Control"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("view")
+
+[node name="WhiteboxViewport" type="SubViewportContainer" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 1440.0
+offset_bottom = 810.0
+mouse_filter = 2
+stretch = true
+
+[node name="World3D" type="SubViewport" parent="WhiteboxViewport"]
+own_world_3d = true
+msaa_3d = 1
+positional_shadow_atlas_size = 4096
+positional_shadow_atlas_quad_0 = 1
+positional_shadow_atlas_quad_1 = 1
+positional_shadow_atlas_quad_2 = 2
+positional_shadow_atlas_quad_3 = 3
+size = Vector2i(1440, 810)
+render_target_update_mode = 4
+
+[node name="WhiteboxRoom" type="Node3D" parent="WhiteboxViewport/World3D" instance=ExtResource("2_gwxsr")]
+

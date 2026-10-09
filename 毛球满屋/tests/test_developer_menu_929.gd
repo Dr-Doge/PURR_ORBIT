@@ -28,7 +28,7 @@ func capture(name: String) -> void:
  check(root.get_texture().get_image().save_png("res://reports/developer_menu_929/"+name+".png")==OK,"Capture "+name)
 func run() -> void:
  for scene in ["3D scene","测试场景","main"]:
-  game=load("res://scenes/"+scene+".tscn").instantiate();game.testing=true;root.add_child(game);game.set_process(false);await frames()
+  game=load("res://scenes/archive/测试场景_004.tscn" if scene=="测试场景" else "res://scenes/"+scene+".tscn").instantiate();game.testing=true;root.add_child(game);game.set_process(false);await frames()
   var lab=scene=="测试场景"
   var drawer=game.developer_drawer
   if not lab:

@@ -1,0 +1,46 @@
+{
+  "checks": 104,
+  "continuous_mouse_upgrades": [
+    "yield",
+    "grow",
+    "chain",
+    "king",
+    "buff",
+    "touch",
+    "worker",
+    "worker_rate",
+    "king_rate"
+  ],
+  "continuous_simulated_seconds": 73,
+  "failures": [],
+  "note": "Injected mouse inputs plus accelerated simulation, not a human playthrough",
+  "render_performance": [
+    {
+      "display_hairs": 1001,
+      "engine_fps": 135.0,
+      "final_hairs": 1001,
+      "frames": 60,
+      "initial_hairs": 1000,
+      "observed_frame_delivery_fps": 163.213344323032,
+      "wall_ms": 367.617
+    },
+    {
+      "display_hairs": 2001,
+      "engine_fps": 135.0,
+      "final_hairs": 10001,
+      "frames": 60,
+      "initial_hairs": 10000,
+      "observed_frame_delivery_fps": 160.456981483264,
+      "wall_ms": 373.932
+    },
+    {
+      "display_hairs": 2381,
+      "engine_fps": 135.0,
+      "final_hairs": 50001,
+      "frames": 60,
+      "initial_hairs": 50000,
+      "observed_frame_delivery_fps": 137.841041710699,
+      "wall_ms": 435.284
+    }
+  ]
+}

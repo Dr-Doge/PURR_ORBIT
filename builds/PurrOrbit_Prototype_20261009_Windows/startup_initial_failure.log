@@ -1,0 +1,19 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+SCRIPT ERROR: Parse Error: Preload file "res://scripts/prototype_harvest/model.gd" does not exist.
+   at: GDScript::reload (res://scripts/prototype_harvest/controller.gd:2)
+SCRIPT ERROR: Parse Error: Preload file "res://scripts/prototype_harvest/config.gd" does not exist.
+   at: GDScript::reload (res://scripts/prototype_harvest/controller.gd:3)
+ERROR: Failed to load script "res://scripts/prototype_harvest/controller.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+SCRIPT ERROR: Parse Error: Preload file "res://scripts/prototype_harvest/config.gd" does not exist.
+   at: GDScript::reload (res://scripts/prototype_harvest/view.gd:2)
+SCRIPT ERROR: Parse Error: Preload file "res://Art/cat1new_animations.tres" does not exist.
+   at: GDScript::reload (res://scripts/prototype_harvest/view.gd:4)
+SCRIPT ERROR: Parse Error: Preload file "res://Art/cat2new_animations.tres" does not exist.
+   at: GDScript::reload (res://scripts/prototype_harvest/view.gd:5)
+SCRIPT ERROR: Parse Error: Preload file "res://Art/cat5_animations.tres" does not exist.
+   at: GDScript::reload (res://scripts/prototype_harvest/view.gd:6)
+ERROR: Failed to load script "res://scripts/prototype_harvest/view.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

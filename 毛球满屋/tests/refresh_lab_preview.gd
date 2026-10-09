@@ -5,7 +5,7 @@ func run() -> void:
  if not ("--textures" in OS.get_cmdline_user_args() or "--actors" in OS.get_cmdline_user_args()):
   print("Use --textures, import assets, then --actors to update only test_actors.tscn.");quit();return
  root.size=Vector2i(1440,810)
- var game=load("res://scenes/测试场景.tscn").instantiate();game.testing=true;root.add_child(game);game.set_process(false)
+ var game=load("res://scenes/archive/测试场景_004.tscn").instantiate();game.testing=true;root.add_child(game);game.set_process(false)
  for i in range(4):await process_frame
  await RenderingServer.frame_post_draw
  DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://data/lab_previews"))

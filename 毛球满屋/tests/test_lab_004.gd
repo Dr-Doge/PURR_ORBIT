@@ -1,5 +1,5 @@
 extends SceneTree
-const Scene=preload("res://scenes/测试场景.tscn")
+const Scene=preload("res://scenes/archive/测试场景_004.tscn")
 const Lab=preload("res://scripts/lab_model.gd")
 const Base=preload("res://scripts/model.gd")
 var game

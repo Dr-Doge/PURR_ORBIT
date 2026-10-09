@@ -1,0 +1,93 @@
+{
+  "checks": 365,
+  "continuous_strategy": {
+    "all_bought": true,
+    "lifetime": 369,
+    "note": "Automated strategy only, not human playtime",
+    "purchases": [
+      {
+        "key": "yield",
+        "level": 1,
+        "seconds": 2
+      },
+      {
+        "key": "grow",
+        "level": 1,
+        "seconds": 4
+      },
+      {
+        "key": "chain",
+        "level": 1,
+        "seconds": 12
+      },
+      {
+        "key": "king",
+        "level": 1,
+        "seconds": 20
+      },
+      {
+        "key": "buff",
+        "level": 1,
+        "seconds": 27
+      },
+      {
+        "key": "yield",
+        "level": 2,
+        "seconds": 33
+      },
+      {
+        "key": "touch",
+        "level": 1,
+        "seconds": 33
+      },
+      {
+        "key": "worker",
+        "level": 1,
+        "seconds": 35
+      },
+      {
+        "key": "grow",
+        "level": 2,
+        "seconds": 37
+      },
+      {
+        "key": "worker_rate",
+        "level": 1,
+        "seconds": 37
+      },
+      {
+        "key": "king_rate",
+        "level": 1,
+        "seconds": 40
+      },
+      {
+        "key": "worker_rate",
+        "level": 2,
+        "seconds": 42
+      }
+    ],
+    "seconds": 42,
+    "wallet": 14
+  },
+  "failures": [],
+  "performance": [
+    {
+      "collect_ms": 1.383,
+      "hairs": 1000,
+      "spawn_ms": 1.738,
+      "tick_10s_ms": 0.024
+    },
+    {
+      "collect_ms": 14.164,
+      "hairs": 10000,
+      "spawn_ms": 19.751,
+      "tick_10s_ms": 0.034
+    },
+    {
+      "collect_ms": 79.976,
+      "hairs": 50000,
+      "spawn_ms": 103.357,
+      "tick_10s_ms": 0.036
+    }
+  ]
+}

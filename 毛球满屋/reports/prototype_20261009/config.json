@@ -1,0 +1,304 @@
+{
+  "BODY_RADIUS": {
+    "x": 0.46000000834465,
+    "y": 0.280000001192093
+  },
+  "BUFF_COST": 20,
+  "BUFF_MULTIPLIER": 1.5,
+  "CATS": {
+    "fast": {
+      "art": "static",
+      "name": "闪闪 · 快生长样本",
+      "rate": 2.0,
+      "value": 1
+    },
+    "normal": {
+      "art": "short",
+      "name": "团团 · 普通猫",
+      "rate": 1.0,
+      "value": 1
+    },
+    "special": {
+      "art": "giant",
+      "name": "刺刺 · 手动样本",
+      "rate": 1.0,
+      "value": 2
+    }
+  },
+  "CHAIN_RADIUS": 0.08,
+  "DECOR_COST": 5,
+  "EVENT_INTERVALS": {
+    "flea": 60.0,
+    "knot": 45.0
+  },
+  "FLEA_CLICKS": 6,
+  "FLEA_HOLD": 0.4,
+  "FLEA_RADIUS": 0.04,
+  "FLEA_SPEED": 0.48,
+  "FLEA_STEAL_COUNT": 2,
+  "FLEA_STEAL_INTERVAL": 1.0,
+  "FLEA_TIME": 12.0,
+  "HIT_RADIUS": 0.018,
+  "KING_CLICKS": 6,
+  "KING_MULTIPLIER": 20,
+  "KING_RATES": [
+    0.02,
+    0.04
+  ],
+  "KNOT_DISTANCE": 0.8,
+  "KNOT_RADIUS": 0.08,
+  "KNOT_REVERSALS": 2,
+  "MILESTONES": {
+    "fast": 80,
+    "flea": 300,
+    "knot": 150,
+    "special": 220
+  },
+  "NODES": [
+    {
+      "costs": [
+        10,
+        30
+      ],
+      "description": "新长出的每根毛 +1 价值；旧毛不变",
+      "key": "yield",
+      "name": "单根增产",
+      "prereq": ""
+    },
+    {
+      "costs": [
+        15,
+        40
+      ],
+      "description": "每级全猫生长频率 ×1.25",
+      "key": "grow",
+      "name": "生长提速",
+      "prereq": ""
+    },
+    {
+      "costs": [
+        25
+      ],
+      "description": "鼠标移动扫过普通毛头即可收取",
+      "key": "touch",
+      "name": "移动触碰",
+      "prereq": "yield"
+    },
+    {
+      "costs": [
+        20
+      ],
+      "description": "手动摘毛同时收取周围普通毛",
+      "key": "chain",
+      "name": "一跳连锁",
+      "prereq": "grow"
+    },
+    {
+      "costs": [
+        20
+      ],
+      "description": "新毛 2% 为毛王；连点 6 次拔出",
+      "key": "king",
+      "name": "毛王发现",
+      "prereq": "yield"
+    },
+    {
+      "costs": [
+        40
+      ],
+      "description": "毛王概率升至 4%",
+      "key": "king_rate",
+      "name": "毛王概率",
+      "prereq": "king"
+    },
+    {
+      "costs": [
+        30
+      ],
+      "description": "开放招募；每名另需 20 毛球",
+      "key": "worker",
+      "name": "猫身小帮手",
+      "prereq": "touch"
+    },
+    {
+      "costs": [
+        20,
+        40
+      ],
+      "description": "每级工作频率 ×1.25",
+      "key": "worker_rate",
+      "name": "小帮手效率",
+      "prereq": "worker"
+    },
+    {
+      "costs": [
+        20
+      ],
+      "description": "开放生长灯与无属性装饰购买",
+      "key": "buff",
+      "name": "船舱设施",
+      "prereq": "grow"
+    }
+  ],
+  "RATE_WINDOW": 10.0,
+  "STAGES": [
+    {
+      "cabin": false,
+      "cats": [
+        "normal"
+      ],
+      "counts": [
+        20
+      ],
+      "intro": "点击毛头赚毛球。停手观察长毛；滚轮向下回船舱，悬停猫向上放大。",
+      "name": "S01 单猫随机长毛",
+      "research": [],
+      "wallet": 0,
+      "workers": 0
+    },
+    {
+      "cabin": false,
+      "cats": [
+        "normal"
+      ],
+      "counts": [
+        150
+      ],
+      "intro": "先单点，再打开成长树购买触碰与连锁。45 毛球恰好购买两项。",
+      "name": "S02 收割工具进化",
+      "research": [
+        "yield",
+        "grow"
+      ],
+      "wallet": 45,
+      "workers": 0
+    },
+    {
+      "cabin": false,
+      "cats": [
+        "normal"
+      ],
+      "counts": [
+        60
+      ],
+      "intro": "连点金色毛王 6 次；移动触碰与小帮手不能代替。再提升出现概率。",
+      "name": "S03 毛王爆发收获",
+      "research": [
+        "king"
+      ],
+      "wallet": 40,
+      "workers": 0
+    },
+    {
+      "cabin": true,
+      "cats": [
+        "normal",
+        "fast"
+      ],
+      "counts": [
+        40,
+        40
+      ],
+      "intro": "比较两猫，购买生长灯并指派目标；装饰不增加收益。",
+      "name": "S04 多猫产能与船舱buff",
+      "research": [
+        "buff"
+      ],
+      "wallet": 25,
+      "workers": 0
+    },
+    {
+      "cabin": false,
+      "cats": [
+        "normal",
+        "fast"
+      ],
+      "counts": [
+        80,
+        80
+      ],
+      "intro": "招募、指派小帮手，再购买效率。切到另一只猫，原猫继续工作。",
+      "name": "S05 猫身自动化",
+      "research": [
+        "worker",
+        "chain"
+      ],
+      "wallet": 40,
+      "workers": 0
+    },
+    {
+      "cabin": false,
+      "cats": [
+        "normal",
+        "fast"
+      ],
+      "counts": [
+        100,
+        100
+      ],
+      "intro": "毛结只锁局部。按住左键来回刷，至少两次反向；其他区域照常摘毛。",
+      "name": "S06 毛发打结",
+      "research": [
+        "worker",
+        "chain"
+      ],
+      "wallet": 20,
+      "workers": 1
+    },
+    {
+      "cabin": false,
+      "cats": [
+        "normal",
+        "fast"
+      ],
+      "counts": [
+        200,
+        80
+      ],
+      "intro": "跳蚤出现后本猫暂停所有收割。连点击败追回赃物；可重试观察逃跑。",
+      "name": "S07 偷毛贼来袭",
+      "research": [
+        "worker",
+        "chain"
+      ],
+      "wallet": 20,
+      "workers": 1
+    },
+    {
+      "cabin": true,
+      "cats": [
+        "normal",
+        "fast",
+        "special"
+      ],
+      "counts": [
+        100,
+        100,
+        100
+      ],
+      "intro": "给手动样本指派小帮手观察缩毛损失，再撤下手动摘毛；其他猫持续生产。",
+      "name": "S08 特殊猫与综合循环",
+      "research": [
+        "worker",
+        "chain",
+        "king",
+        "buff"
+      ],
+      "wallet": 40,
+      "workers": 2
+    }
+  ],
+  "TRANSITION": 0.6,
+  "WORKER_COST": 20,
+  "stage_seeds": [
+    104901,
+    104902,
+    104903,
+    104904,
+    104905,
+    104906,
+    104907,
+    104908
+  ],
+  "status": "Independent prototype playtest values; not final balance"
+}

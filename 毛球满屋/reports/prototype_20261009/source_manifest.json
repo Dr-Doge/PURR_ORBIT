@@ -1,0 +1,50 @@
+[
+  {
+    "path": "毛球满屋/scripts/prototype_harvest/config.gd",
+    "sha256": "a1a9e99b04b32778f7fadd4baa20818f11d6f439f67dc63da532e17d2c4649bd"
+  },
+  {
+    "path": "毛球满屋/scripts/prototype_harvest/controller.gd",
+    "sha256": "ddf9b60b50444484ab239583b7d911b21dd9938e015820d4737714c98979685c"
+  },
+  {
+    "path": "毛球满屋/scripts/prototype_harvest/model.gd",
+    "sha256": "be4c416ebd6dd149daac20f33d237b561e0c36409e8f7329d96b3957330e3337"
+  },
+  {
+    "path": "毛球满屋/scripts/prototype_harvest/room.gd",
+    "sha256": "a1f24f98b586d06d85529de2c28a7233deb7f63be7cd06bb375f75fe26845664"
+  },
+  {
+    "path": "毛球满屋/scripts/prototype_harvest/view.gd",
+    "sha256": "472b36e7e554e186c48a926e1fbea7d7b56ffd7e6ca331c5047b51042f155930"
+  },
+  {
+    "path": "毛球满屋/scenes/prototype_harvest/room.tscn",
+    "sha256": "56d2ac94898f91c100f994fb1ad7ddc9d2adc99b65806d8510667b75d392f2d9"
+  },
+  {
+    "path": "毛球满屋/scenes/prototype_harvest/whitebox.tscn",
+    "sha256": "1e3e9081c2a66ca3841110134def40926bdd8e9d06d677fcd71474899efba2e1"
+  },
+  {
+    "path": "毛球满屋/scenes/测试场景.tscn",
+    "sha256": "1dc020ad318caad501992c1c84635b7983e48ee8f2e706ebfe7ce7849135b5d5"
+  },
+  {
+    "path": "毛球满屋/tests/test_prototype_20261009.gd",
+    "sha256": "9425c5c6ec735ca7df69591cbde72449764fa825f5377d9a1f822ca36d27fc14"
+  },
+  {
+    "path": "毛球满屋/tests/test_prototype_ui_20261009.gd",
+    "sha256": "9f239ebee8818d76fb444250936f4397d34b20ec2f13b9c07fcc4ea1ef840de3"
+  },
+  {
+    "path": "毛球满屋/tests/export_prototype_20261009.gd",
+    "sha256": "447a195ae6a5f80e2a97f66eaa13cec116ef6ca30f0d120cddfd4048d340a2a8"
+  },
+  {
+    "path": "毛球满屋/tests/run_prototype_20261009.ps1",
+    "sha256": "36e22844811acc644a85f6662f5dc2b411d6cd87b8034449a0a5973f4082c62f"
+  }
+]

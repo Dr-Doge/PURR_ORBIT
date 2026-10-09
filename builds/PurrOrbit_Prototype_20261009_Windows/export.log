@@ -1,0 +1,682 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started 项目初始化 (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | 正在扫描文件结构……[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | 正在加载全局类名……[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | 正在校验 GDExtension……[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | 正在创建自动加载脚本……[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | 正在初始化插件……[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | 正在启动文件扫描……[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1msavepack[22m | Started 打包中 (102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-0187fcc2ac90edd9211afe49613886e8.s3tc.ctex[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/001.png.import[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-5101586cad625692788e791b50aa5cd8.ctex[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/002.png.import[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-1478722e84ea0d5c679d94ffc5e5b3c4.ctex[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/003.png.import[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-df2e237b9cd6372103e0548b002d2c64.ctex[39m[0m
+[   1% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/004.png.import[39m[0m
+[   2% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-7106f5ee6e94d2631388f74a5d7dc2e6.ctex[39m[0m
+[   2% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/005.png.import[39m[0m
+[   2% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-ce4273419fb4bfa1bfc90284f5344654.ctex[39m[0m
+[   2% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/006.png.import[39m[0m
+[   2% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-beb2df3d9937cdec66c51c2cc38019fd.ctex[39m[0m
+[   2% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/007.png.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-a316d5af45c14c3885ebe6bf7ed60770.ctex[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/008.png.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-c390c258f4b73d130100a51a3e685590.ctex[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/009.png.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-fe1bf552cd5d7498b194ca70137fe7f7.ctex[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/010.png.import[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/011.png-3ba8612520d95d6d0ada820f6fb2d917.ctex[39m[0m
+[   3% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/011.png.import[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/012.png-78111363507559353e017429eb43ac92.ctex[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/012.png.import[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/013.png-6ace3c7386fba1fa4565604ae7fe4038.ctex[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/013.png.import[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/014.png-93452820a35f5edf5693874aa73ece57.ctex[39m[0m
+[   4% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/014.png.import[39m[0m
+[   5% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/015.png-2da97c70e60366d900786808ca841a15.ctex[39m[0m
+[   5% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/015.png.import[39m[0m
+[   5% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/016.png-687d8ea3317f6caa1d0ecef8ea87c9f1.ctex[39m[0m
+[   5% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/016.png.import[39m[0m
+[   5% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/017.png-d933b4886fe3302ea1f9c7a6f1e61d54.ctex[39m[0m
+[   5% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/017.png.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/018.png-9f9aa930a1cd2c0bbd92406e7700b75c.ctex[39m[0m
+[   6% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/018.png.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/019.png-d8bfa9863fa525a2db301d6b84235268.ctex[39m[0m
+[   6% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/019.png.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/020.png-f694bc6debc0c51bfa378262be05c56c.ctex[39m[0m
+[   6% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1idle/020.png.import[39m[0m
+[   6% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 产毛.png-a6f5f1d52eafa39dae769c59ce0215b2.ctex[39m[0m
+[   6% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new2/alt/三花猫 1-侧面 · 产毛.png.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 待机.png-3b9b4394de8f3b72f2e6159df41d4981.ctex[39m[0m
+[   7% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new2/alt/三花猫 1-侧面 · 待机.png.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 被抚摸.png-292664174606f609a4802e887fc2bbac.ctex[39m[0m
+[   7% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new2/alt/三花猫 1-侧面 · 被抚摸.png.import[39m[0m
+[   7% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-上方 · 前进.png-5db362cd4d7ae887013eacccddee6958.ctex[39m[0m
+[   7% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new2/三花猫 1-上方 · 前进.png.import[39m[0m
+[   8% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-上方 · 待机.png-4673f1bb1b5d31acfcf02f4b0e4d7bc7.ctex[39m[0m
+[   8% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new2/三花猫 1-上方 · 待机.png.import[39m[0m
+[   8% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-下方 · 前进.png-0d5a3cc6c7b0b1cfe2e9fb245568dfac.ctex[39m[0m
+[   8% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new2/三花猫 1-下方 · 前进.png.import[39m[0m
+[   8% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-下方 · 待机.png-06cd30f3c68a908353f9c9edc4bf6718.ctex[39m[0m
+[   8% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new2/三花猫 1-下方 · 待机.png.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 产毛.png-e1745af8f0c8d95d0e4d892f8be86566.ctex[39m[0m
+[   9% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new2/三花猫 1-侧面 · 产毛.png.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 前进.png-a4a923ea79558063545becfa0e043f8f.ctex[39m[0m
+[   9% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new2/三花猫 1-侧面 · 前进.png.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 坐下舔爪.png-312f17811e8142390ea3424da130839d.ctex[39m[0m
+[   9% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new2/三花猫 1-侧面 · 坐下舔爪.png.import[39m[0m
+[   9% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 待机.png-7719a306fefafec482752beb3ba8f3ea.s3tc.ctex[39m[0m
+[   9% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new2/三花猫 1-侧面 · 待机.png.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 被抚摸.png-403e88b6a6bba9d8906f9a6d208433a6.ctex[39m[0m
+[  10% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new2/三花猫 1-侧面 · 被抚摸.png.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-上方 · 前进.png-e180c3180d8889364133922bf95f5f8b.ctex[39m[0m
+[  10% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new3/三花猫 1-上方 · 前进.png.import[39m[0m
+[  10% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-上方 · 待机.png-c6ea40393d8998329de3fc08dec38141.ctex[39m[0m
+[  10% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new3/三花猫 1-上方 · 待机.png.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-下方 · 前进.png-1c98107ff05b709eb89209484c82e6ca.ctex[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new3/三花猫 1-下方 · 前进.png.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-下方 · 待机.png-bd70275faa95394a54c08ac009518da4.ctex[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new3/三花猫 1-下方 · 待机.png.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 产毛.png-05acd72a1bc6569a63c8a553650d184d.ctex[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new3/三花猫 1-侧面 · 产毛.png.import[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 前进.png-18ff6b848f993e82c322c7c5beadeca0.ctex[39m[0m
+[  11% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new3/三花猫 1-侧面 · 前进.png.import[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 坐下舔爪.png-4df7f496290b1e30c5d0b907a6318101.ctex[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new3/三花猫 1-侧面 · 坐下舔爪.png.import[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 待机.png-5f7d12c86da27ff2d23f52b7a2c7fbc7.ctex[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new3/三花猫 1-侧面 · 待机.png.import[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 被抚摸.png-724937366d37257ee0acdbd54cc271a4.ctex[39m[0m
+[  12% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new3/三花猫 1-侧面 · 被抚摸.png.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-上方 · 前进.png-47cdbe951ee9a04c8098e7cfb1771fea.ctex[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1new4/三花猫 1-上方 · 前进.png.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-上方 · 待机.png-8e755719ba852f9acbb945e5f4ab2039.ctex[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1new4/三花猫 1-上方 · 待机.png.import[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-下方 · 前进.png-5935ff2bb54fc3a600891c80e10b24b5.ctex[39m[0m
+[  13% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1new4/三花猫 1-下方 · 前进.png.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-下方 · 待机.png-244cd8d62dfae4bc76000c963c27a7f7.ctex[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1new4/三花猫 1-下方 · 待机.png.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 产毛.png-d87995bfa4e28f8806221fdfeaef5b46.ctex[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1new4/三花猫 1-侧面 · 产毛.png.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 前进.png-7d2e980e3cc7a11c52cd18eee5565c23.ctex[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1new4/三花猫 1-侧面 · 前进.png.import[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 坐下舔爪.png-a84cbdd888d96953ff2137d20ee1de48.ctex[39m[0m
+[  14% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1new4/三花猫 1-侧面 · 坐下舔爪.png.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 待机.png-d0b1215a446bb7811cb15ce0ed7f9907.ctex[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1new4/三花猫 1-侧面 · 待机.png.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/三花猫 1-侧面 · 被抚摸.png-ea94fb63e5a011d8c12ef7a754204477.ctex[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1new4/三花猫 1-侧面 · 被抚摸.png.import[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-f9276d6a8d84ab14f7d56377560555c8.ctex[39m[0m
+[  15% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1produce/001.png.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-07d5d36d43910a9e015a8cd5b81f2238.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1produce/002.png.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-bdbb812d5174e6bc74716fdbbd40a420.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1produce/003.png.import[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-29dcf6d4aa35c430533e7584ee9c8ab4.ctex[39m[0m
+[  16% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1produce/004.png.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-3ee627a9b976098b288af7bc696a43ac.ctex[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1produce/005.png.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-7ce5b366dfedd86bc38a47ad8ee2fbdc.ctex[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1produce/006.png.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-402d73c1525c67a33e90310ad6873996.ctex[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1produce/007.png.import[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-cf38aabfe2c65b5befdcb17fe6217b18.ctex[39m[0m
+[  17% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1produce/008.png.import[39m[0m
+[  18% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-f3530252df9f554975e94acabe0dcb25.ctex[39m[0m
+[  18% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1produce/009.png.import[39m[0m
+[  18% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-394476e3183c7ac77a80fc4453772503.ctex[39m[0m
+[  18% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1produce/010.png.import[39m[0m
+[  18% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/011.png-ddef14ef3408921b4884660d040d0b0a.ctex[39m[0m
+[  18% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1produce/011.png.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-3028d3747fa50a6e594048a90429738b.ctex[39m[0m
+[  19% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1Walk/001.png.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-cea343871a61d5fe0d1eba3a4cf2cfa3.ctex[39m[0m
+[  19% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1Walk/002.png.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-ebca006adb6568410f821e1062acb1e2.ctex[39m[0m
+[  19% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1Walk/003.png.import[39m[0m
+[  19% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-4254d353c4284285cc14309e330ad178.ctex[39m[0m
+[  19% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1Walk/004.png.import[39m[0m
+[  20% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-975b198ea245f086c6358be49a0ea3d1.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1Walk/005.png.import[39m[0m
+[  20% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-922e17f01dd621bd3ad2a2d7f46e13c4.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1Walk/006.png.import[39m[0m
+[  20% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-1a53371e960c4c726b3681e38ce81b81.ctex[39m[0m
+[  20% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1Walk/007.png.import[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-405a07f09876d52912b5f5803f7b2ed5.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1Walk/008.png.import[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-0ef1082dd1cb6d523f26996dcdc783fe.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1Walk/009.png.import[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-fc5592496112ee16e197cc3ff411fefc.ctex[39m[0m
+[  21% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat1Walk/010.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/静电猫-上方 · 前进.png-924f6e4d391202db95fed9fe903e1c4d.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat2new/静电猫-上方 · 前进.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/静电猫-上方 · 待机.png-1060c3e9427282d4a2411206a8b014bc.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat2new/静电猫-上方 · 待机.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/静电猫-下方 · 前进.png-26b870e911bf5abe4e45a3a8ce051a30.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat2new/静电猫-下方 · 前进.png.import[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/静电猫-下方 · 待机.png-a7f6373b7aed66a7eb791953e6e856ce.ctex[39m[0m
+[  22% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat2new/静电猫-下方 · 待机.png.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/静电猫-侧面 · 产毛.png-15bea7f949e55c4221177b23eaaa116a.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat2new/静电猫-侧面 · 产毛.png.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/静电猫-侧面 · 前进.png-78325860a958f95855c2a9acb07b102a.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat2new/静电猫-侧面 · 前进.png.import[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/静电猫-侧面 · 待机.png-55406b6cc96bd1f29130a7c78b4c5498.ctex[39m[0m
+[  23% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat2new/静电猫-侧面 · 待机.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/静电猫-侧面 · 被抚摸.png-2bf3a88149da4f3605a03faffb291ea1.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat2new/静电猫-侧面 · 被抚摸.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/静电猫-侧面.休息.png-f7560b6a13c1de177cf1e91a50753527.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat2new/静电猫-侧面.休息.png.import[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-3cf12199781ac4b4e07a5432b99f9e27.s3tc.ctex[39m[0m
+[  24% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/001.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-1f3aff56a892f0e64834a7ec10cd473e.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/002.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-fb76026f9a1c6d1e516cd6461f28c345.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/003.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-90ade8f8c087158a649e35b44bd12f13.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/004.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-1a2b5a13f7d5307c05c1fbeb7c42fa6b.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/005.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-9ed77f4eb89496ae475035a42a188613.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/006.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-fd7fa6699ec78521652959a14c11f5ca.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/007.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-da8863e317ee153f5d46d2345358da11.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/008.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-4e09c7f0edd79e8240fa6064a4cf9c23.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/009.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-579dfb0f2522fa22e1cb32ee7e64aee4.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/010.png.import[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/011.png-1e4fe38f691bb930694eb503edce058b.ctex[39m[0m
+[  27% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/011.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/012.png-ea1239eddb807eaf427651dbcb39cf78.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/012.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/013.png-5612321bc9c45f338cae0939f3281ca1.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/013.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/014.png-54e417c8b7e6f9088c580ec5b70d7a85.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/014.png.import[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/015.png-bd867ce7f313802f457b35f3ad9a530c.ctex[39m[0m
+[  28% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/015.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/016.png-ade306dcdaf166a2f45f298264481900.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/016.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/017.png-c8378ac631d3cf23410c218603901683.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/017.png.import[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/018.png-f6c0726dba5b0753be2646be99a1bf04.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/018.png.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/019.png-b41a9883fb68a1ac24b521f50844a8c7.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/019.png.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/020.png-a285e9a70ef5629692342ecc91749451.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5idle/020.png.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-a222037c9d989c5a6f5812bcc53fdec5.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/001.png.import[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-d2905a9423abbf1cd8b89d0d45298c32.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/002.png.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-534161cd146dc7ccc30afcf242489287.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/003.png.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-b34fd84b0f33432b979f05ae3afa8661.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/004.png.import[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-6ef76c2d88367826c7ae43836d073e96.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/005.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-5e945f6ac3e860ebf40e35fb4738a8cc.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/006.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-a5123a7256c661e758ddf9bd32f49df4.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/007.png.import[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-038101a4a6cc5df2efcb0e57186d5da2.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/008.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-0ce9ca25960bbc235dabb7553a227f9a.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/009.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-f705737987c3b0935df2dfe4f7e859ba.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/010.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/011.png-f23bf683f9e04a1a841b892d6fd9e271.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/011.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/012.png-243552a3288245ad7f6f3d4feaed0958.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/012.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/013.png-df6ee09f1a18baaf29ec085ed785d913.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/013.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/014.png-d2a912cdcfb823569d08ed4bc6710403.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Produce/014.png.import[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-f1bd047997a8b57218c0c550e442d68b.ctex[39m[0m
+[  33% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Walk/001.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-0ac9403921bc23ce07f7b056412b1bbe.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Walk/002.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-7c5cd5f4f1372c6c00dc3d126fe62e06.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Walk/003.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-0a99e59dfd0a61fa33e9656d5a03a766.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Walk/004.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-43077f18cc6937e2402eccb75edaad4a.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Walk/005.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-c1a564e0831fdde3ff1f6b288a0e2563.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Walk/006.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-06a89453bdc201130a3aaada20e0b825.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Walk/007.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-91e9395f2dbb2318aa6619f3c74d0999.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Walk/008.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-265c4c385796048bd39934100355f42b.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Walk/009.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-a80d272a2f5cb5e2925d35319568da6d.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat5Walk/010.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-00cf6d7e61ca27c28b46d010dadf4009.s3tc.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/001.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-ee1c7cba9beef6b9df92e712b972d70f.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/002.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-b46b48e4b800bcdd7bbbbd09d739518d.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/003.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-46f1ffe82fcab0f3a5d2e3b0b2def249.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/004.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-791ef3164d4d684e9f54dee65cc12462.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/005.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-821a6f9ecd29219763f29b50f51c81d5.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/006.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-10b713cdc15b56f1edcbc83dfecb0ff8.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/007.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-db5f95c628c15d415d255ef32b5bc22e.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/008.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-240c63835a53e1d5fa345b0ce8b39fc1.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/009.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-154038075e29774f266c4fe10f4ed99e.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/010.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/011.png-b2a331be91a21ccc60879c4026d6ab53.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/011.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/012.png-1ed5088596d2382753e8de03acbb3053.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/012.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/013.png-8a7db5b4c6f812d20c5767a86c672213.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/013.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/014.png-83fe3e9daacefa971ca3e30c1c06216b.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/014.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/015.png-12f34562051e7cecd7e36dfc143264d7.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/015.png.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/016.png-61bac126878506371e32015ac4f1e496.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/016.png.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/017.png-2fc12b989f69d0952f246e46285fbb66.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/017.png.import[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/018.png-be50c1006604525bb163bd544af007ee.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/018.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/019.png-685421bb4e78db8a96a2b60d3eb85af9.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/019.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/020.png-719f9d6ade9efcfbe7e684b451f6ac12.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8idle/020.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-b06a6434f44c6083bea8acbf4c4cdfc5.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/001.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-d62b6be1e1c90f1967c23b209a34746c.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/002.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-e6b833d1fce173c8d20d5a09df864899.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/003.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-27bbaf602555891b1c81562781342acc.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/004.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-74f141cbb55cc1b83eff4533c965e2ba.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/005.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-9a11b020aad80f1caad2095bd4bcde6b.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/006.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-eaa43bd9539a7d2de03f350aa672f458.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/007.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-c1f81cd37d0a6676929ef9c270246f2b.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/008.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-1f83e805256e1588c604222dbbfaa447.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/009.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-5a1cedafb735283d639cf76836b8d570.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/010.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/011.png-cacbba4f6b12ab0aa2dc82b148b73184.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/011.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/012.png-6d7b43ceed6e262a5bb50e00476e74d3.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/012.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/013.png-9b5ffb6b032891305d14309756e4d3b7.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/013.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/014.png-f9b3a6b03f166748f07e27f8c937de95.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Produce/014.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-c8e0eb7f9082bcc6eb25d9a4c4193c0a.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Walk/001.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-fda9879931fd9bc81c1bb4951ca3fb70.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Walk/002.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-d96759dd1767826bfb04d0e2665a9bc1.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Walk/003.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-aa17f0a2fb90561b43503151ace243d4.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Walk/004.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-e880fea4a819f165b6cb48d9939e196d.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Walk/005.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-b5c992dd727cfb420ca9c1e5ba3fd728.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Walk/006.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-cf3ecb9d0999ba31ed462feb41193db6.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Walk/007.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-fc013c8cf717709c85f0865e7abb665d.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Walk/008.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-cb0afcf0ce468e7154d1acd9019141fc.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Walk/009.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-32d835c48ded85d674f69ffd9fb60c0f.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat8Walk/010.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-a7f2e1ceb9d459ac92237f41041417e1.s3tc.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/001.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-edbd614c8fa834ef7d18bba4f9c4103a.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/002.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-a3f0b5ec45b389889b50d503e7f05e02.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/003.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-8124a5298f18cfa8c94a52325b4be7a6.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/004.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-a1603ca768b043967fae005d3a634ade.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/005.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-72c9bf0d16e82fcb41048feb31d3d80d.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/006.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-01a18ef6aa39a2c2cf0261298e8131bd.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/007.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-b25de1714ad8a9757cfab7adfab9a8ab.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/008.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-b1cf207fa3e1c3abe9c729666d883f65.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/009.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-27add237bdb279ea85e2c3ad532f1d0e.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/010.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/011.png-70bbd561a02216ba4963494fad016660.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/011.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/012.png-20790d362f48c57f6a9a3494826237d0.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/012.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/013.png-611f6243b11bbc4057fa789413c409ba.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/013.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/014.png-979659be6a2d6ca2e3a3612b8bf41033.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/014.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/015.png-469c0a12fef4bc0d3e61323b29c2edd6.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10idle/015.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-86ca46a424f0ff2f25e0b14a0374291c.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/001.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-dc555cac7232d4c4db5f2c153996eaa4.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/002.png.import[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-96866e676d3bed4eb510cd9d9064aac5.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/003.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-1ada07087f6c3466849782dd01b0a6b3.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/004.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-60fcda3c53578ec35da822ae9ea329db.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/005.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-d8323ddc92b88c7b8f1cc00d1bbbce6d.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/006.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-292a68c557d315137ad91607b8cac833.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/007.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-8770669f6faa9239f3c1c259262fd0a5.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/008.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-cfdde316dddc562190b8b5cdae721186.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/009.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-787cccc7d202e6f4fbc395159b899af7.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/010.png.import[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/011.png-5d94bbe11fefde4899a2ab172119401e.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/011.png.import[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/012.png-eef7715f29522499b6d37da4e9fe0489.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/012.png.import[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/013.png-fda2a3c5965842a0825e26d003f3d791.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/013.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/014.png-36005258878d620a9950d16582a236b8.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/014.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/015.png-56cef5e06d9d01a8547ecddd083d8319.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Produce/015.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-74dcd822a5b8365551b5225d5ed160eb.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Walk/001.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-3903247f2c7e6a1d2f4cad0fcc3c97ba.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Walk/002.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-c12b000b7a1272a26e6b7a2fd5872852.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Walk/003.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-51ae2703ebc417b4b050c289b1ca22e1.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Walk/004.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-bf3bc39ddc7b7c7fa3320530eb143096.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Walk/005.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-ef56d38f07ce8dee60e8ce1d6e8bf5fc.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Walk/006.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-20f4a1bd53982a651d684bff6e3ba1c2.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Walk/007.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-8c8abc6bf37225b22236c5fba974a76c.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Walk/008.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-9b7f92a8050d77501a3317d4a6fdb1ab.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Walk/009.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-900ceb1064987ebce6e8de1086ba5c35.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat10Walk/010.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-f3bb5f0bc79ed1ff34491376ee67d9e6.ctex[39m[0m
+[  61% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/001.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-545ce8b4501b9fb9cdde0f8878ac309d.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/002.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-fe37fb3c38013655fbacabe0a094e615.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/003.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-d935209a84d20bd43da2bc503ab23f60.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/004.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-8068e1b9ca5ce557c2780e2970869826.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/005.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-555091f8a03cd1c2cbc28fdbabbb7d6f.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/006.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-e153682dbb55df96c588a7afa86b69ed.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/007.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-2baa41ba3072bffb067a448fcc76e82d.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/008.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-e40cbc5c87a3fcbad72373cb2d24ca45.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/009.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/010.png-114ffa7269f552f1eb0622f4b66d5352.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/010.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/011.png-3e33897336183f9bcdc0695cc1bfcd95.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/011.png.import[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/012.png-5a1f275cc46ba2ead53ba07e7ef5bc8a.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/012.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/013.png-fe8b0704e2a14b1634a60f35cd39d8a4.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/013.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/014.png-29f83a31048b204a8ee693415da9f7f2.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/014.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/015.png-c837e9402cd22e7159aa9c588c8c992a.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/015.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/016.png-ffdb72b0354d546a6ec729c33a8ad129.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/016.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/017.png-9b754b9bcb11b2731e001f523621f79d.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Produce/017.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/001.png-8060171accc1c2ec16716d11a5d13a13.s3tc.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Walk/001.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/002.png-4267f803bae50692b3c7e006a18767fe.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Walk/002.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/003.png-1a7ba2034232d346a3a5fa89d4d14abd.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Walk/003.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/004.png-7db758018e88dc14dfd63790f041a57b.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Walk/004.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/005.png-1ca3d1ec590cdba28e830894e8cf9f43.ctex[39m[0m
+[  66% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Walk/005.png.import[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/006.png-cf89c65ef911a4246347f34c4e56655b.ctex[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Walk/006.png.import[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/007.png-ee943a20e21b4ac3235cf38c53420d40.ctex[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Walk/007.png.import[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/008.png-ecbf02aa2da73ff4c59c8eb333fe5078.ctex[39m[0m
+[  67% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Walk/008.png.import[39m[0m
+[  68% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/009.png-6c5e879c49291f0f49d4047b56764db5.ctex[39m[0m
+[  68% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Cat14Walk/009.png.import[39m[0m
+[  68% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-4676053afed345d8885982737cc2ed4c-cat1new_animations.res[39m[0m
+[  68% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-c00f31daf189e6d599010a4c8a9c1fa6-cat1_animations.res[39m[0m
+[  69% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-bf2ff6923478f5d593962450873a084f-cat2new_animations.res[39m[0m
+[  69% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-bda5ed53c0f51bec93eafe09e9d28212-cat5_animations.res[39m[0m
+[  69% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-83404c8ae7b66122337c17441373486d-cat8_animations.res[39m[0m
+[  69% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-4369fc4dc4414a11ebc3ee2fc80a03b6-cat10_animations.res[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-c6fff05bc9094a062cc0ac02bb7a901a-cat14_animations.res[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Coin.png-5ba798bfeaf31990282f9332f6fbf44c.ctex[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Coin.png.import[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Feed.png-45b0600e1fe7ecffe9b7e78226feccf5.s3tc.ctex[39m[0m
+[  70% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Feed.png.import[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://Art/floor_contact.gdshader[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Frame.png-85ff3032dad2e09f1583914d6c717abe.s3tc.ctex[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Frame.png.import[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://Art/frame_cutout.gdshader[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Furryball.png-3ee6127e83d1e4388d398daeceb41ce9.ctex[39m[0m
+[  71% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Furryball.png.import[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Gachapon.png-de3ef4c3b815533c029899bba1ca9faf.s3tc.ctex[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Gachapon.png.import[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Glove.png-6d5783b7c17aab6f8daec23a80590c3c.ctex[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Glove.png.import[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Ground1.png-ce6b10abad5b50d5b32b0937deea6c73.s3tc.ctex[39m[0m
+[  72% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Ground1.png.import[39m[0m
+[  73% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Ground.jpg-43801bd04f746c37892fe23807cdbd87.ctex[39m[0m
+[  73% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Ground.jpg.import[39m[0m
+[  73% ] [90m[1msavepack[22m | 正在保存文件：res://Art/imported_art.gdshader[39m[0m
+[  73% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Light.png-d2a75277c3d245367c882dae628488a7.s3tc.ctex[39m[0m
+[  73% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Light.png.import[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/mask.jpg-7033bf0097e1f4580bac23daccece35c.ctex[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://Art/mask.jpg.import[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Mouse.png-57db4726d5ab8a914ed114ac4479aae2.ctex[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Mouse.png.import[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Scene.jpg-8e45ca78db0bac5a13494eeddf80a57e.ctex[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Scene.jpg.import[39m[0m
+[  74% ] [90m[1msavepack[22m | 正在保存文件：res://Art/static_cat_outline.gdshader[39m[0m
+[  75% ] [90m[1msavepack[22m | 正在保存文件：res://Art/static_cat_outline_3d.gdshader[39m[0m
+[  75% ] [90m[1msavepack[22m | 正在保存文件：res://Art/station_windows.gdshader[39m[0m
+[  75% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/title.jpg-16692fabaa94a4881dba1274769697d4.ctex[39m[0m
+[  75% ] [90m[1msavepack[22m | 正在保存文件：res://Art/title.jpg.import[39m[0m
+[  76% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/universe.jpg-d293c31125039d35d5b493c520fe940d.s3tc.ctex[39m[0m
+[  76% ] [90m[1msavepack[22m | 正在保存文件：res://Art/universe.jpg.import[39m[0m
+[  76% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Wall.jpg-ef42ad731b69607526c345f44df95650.s3tc.ctex[39m[0m
+[  76% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Wall.jpg.import[39m[0m
+[  76% ] [90m[1msavepack[22m | 正在保存文件：res://Art/whitebox_side.gdshader[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://Art/whitebox_window.gdshader[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Window1.jpg-7d5c5b133d4563b58b580f80e329f5ca.s3tc.ctex[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Window1.jpg.import[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Window.jpg-88b32c569eeaa67ed1f0adeee80e3992.ctex[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://Art/Window.jpg.import[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Facility_17.png-6941340b0951ed1e34f62e4f3fac64b6.s3tc.ctex[39m[0m
+[  77% ] [90m[1msavepack[22m | 正在保存文件：res://data/lab_previews/Facility_17.png.import[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Facility_18.png-e3806aeb86ce159d318bddab6a9d269a.s3tc.ctex[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://data/lab_previews/Facility_18.png.import[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Facility_19.png-3340c8652c33d4b220c8ec8eb487e17b.s3tc.ctex[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://data/lab_previews/Facility_19.png.import[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Worker_20.png-0262b77773b7460af7d5cc9c41ac1bf9.s3tc.ctex[39m[0m
+[  78% ] [90m[1msavepack[22m | 正在保存文件：res://data/lab_previews/Worker_20.png.import[39m[0m
+[  79% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/imported/Worker_21.png-7184b9095b8b217faa94ba19d2ddbc84.s3tc.ctex[39m[0m
+[  79% ] [90m[1msavepack[22m | 正在保存文件：res://data/lab_previews/Worker_21.png.import[39m[0m
+[  79% ] [90m[1msavepack[22m | 正在保存文件：res://data/cat_personas.json[39m[0m
+[  79% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-e045250acbd61a06683a7e0f80019067-测试场景_004.scn[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-2f550dce0aaf926a12c05cab4c8ddb0c-alien_cat.scn[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-3036a0650338841afec943d95a48201c-giant_cat.scn[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-fbb3df9c6515072aa078b755c4ea9d38-lucky_cat.scn[39m[0m
+[  80% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-abdac025c23165bd85dd1152f443b537-short_cat.scn[39m[0m
+[  81% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-cb4bb8d2f0395d51d070af06b10f4501-static_cat.scn[39m[0m
+[  81% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-351bdf456770c6de307901e9c51dc869-altar.scn[39m[0m
+[  81% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-eb9351fdff321e3f148e50effd78281e-arcade.scn[39m[0m
+[  82% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-8f5739fd8dcfd33a779ae2bb578898c9-feeder.scn[39m[0m
+[  82% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-ceccbe6831255ba05db0e0107fa1128f-gacha.scn[39m[0m
+[  82% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-9f76ee58778a3094b6022b9858ebd38b-sun.scn[39m[0m
+[  82% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-da2fc88b57a29446518125c815ffd9f4-worker.scn[39m[0m
+[  83% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-557ca665d741cc752caab98708178201-room.scn[39m[0m
+[  83% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-4cfa6a2b4c6f2b79e60cb1a6a50316e2-whitebox.scn[39m[0m
+[  83% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-bd42c59e325acbf09c3afc0e593305cc-developer_drawer.scn[39m[0m
+[  84% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-de254b77e2e14394365fde8021eef8bf-hud_3d.scn[39m[0m
+[  84% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-0d1e5e5969cfd7fbc6405e3a19dac33b-start_menu.scn[39m[0m
+[  84% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-eba3cb609e7f1d88c47d1f9213dce819-test_hud.scn[39m[0m
+[  85% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-88e1b32bd29c171437940d61523e9aee-3D scene.scn[39m[0m
+[  85% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-1c6ef0e39caa4eb856486f04124784bf-art_library.scn[39m[0m
+[  85% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn[39m[0m
+[  85% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-9d65d9b5d82f26ef2a89ece08ca936e6-room.scn[39m[0m
+[  86% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-646da86ffb5a9cd87b61a4f7fbae9c98-room_3d.scn[39m[0m
+[  86% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-346415c64c8171683e946f486d5309d6-test_actors.scn[39m[0m
+[  86% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-53f9aedb6492177e335a8b3e66131c33-test_room.scn[39m[0m
+[  87% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-f05b9f08cf8610dfd95e87b78715fbb8-test_whitebox.scn[39m[0m
+[  87% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-a57144cd844accc11a20fcbf7520ae67-whitebox_room.scn[39m[0m
+[  87% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/exported/133200997/export-e4ab42d9fb10d6b3e4c66d73f205bd20-测试场景.scn[39m[0m
+[  88% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/prototype_harvest/config.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/prototype_harvest/controller.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/prototype_harvest/model.gdc[39m[0m
+[  88% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/prototype_harvest/room.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/prototype_harvest/view.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/actor_card_3d.gdc[39m[0m
+[  89% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/actor_lighting_3d.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/alien_cat_visuals.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/balance.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/build_rules.gdc[39m[0m
+[  90% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/cat_actor.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/cat_animation_data.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/cat_personas.gdc[39m[0m
+[  91% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/cat_space.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/cat_visuals.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/data.gdc[39m[0m
+[  92% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/developer_drawer.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/developer_tools.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/facility_view.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/game_cursor.gdc[39m[0m
+[  93% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/harvest_art.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/hud_3d.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/lab_model.gdc[39m[0m
+[  94% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/lab_room.gdc[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/lab_scene.gdc[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/main.gdc[39m[0m
+[  95% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/model.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/room.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/room_3d.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/scene_3d.gdc[39m[0m
+[  96% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/short_cat_visuals.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/static_cat_outline.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/station_backdrop.gdc[39m[0m
+[  97% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/station_hud.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/token_effect.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/tree_specs.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/tree_ui.gdc[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1new_animations.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat1_animations.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat2new_animations.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat5_animations.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat8_animations.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat10_animations.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://Art/cat14_animations.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/archive/测试场景_004.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/cats/alien_cat.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/cats/giant_cat.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/cats/lucky_cat.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/cats/short_cat.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/cats/static_cat.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/facilities/altar.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/facilities/arcade.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/facilities/feeder.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/facilities/gacha.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/facilities/sun.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/facilities/worker.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/prototype_harvest/room.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/prototype_harvest/whitebox.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/ui/developer_drawer.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/ui/hud_3d.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/ui/start_menu.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/ui/test_hud.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/3D scene.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/art_library.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/main.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/room.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/room_3d.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/test_actors.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/test_room.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/test_whitebox.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/whitebox_room.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scenes/测试场景.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/prototype_harvest/config.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/prototype_harvest/controller.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/prototype_harvest/model.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/prototype_harvest/room.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/prototype_harvest/view.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/actor_card_3d.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/actor_lighting_3d.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/alien_cat_visuals.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/balance.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/build_rules.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/cat_actor.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/cat_animation_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/cat_personas.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/cat_space.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/cat_visuals.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/developer_drawer.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/developer_tools.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/facility_view.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/game_cursor.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/harvest_art.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/hud_3d.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/lab_model.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/lab_room.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/lab_scene.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/main.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/model.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/room.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/room_3d.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/scene_3d.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/short_cat_visuals.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/static_cat_outline.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/station_backdrop.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/station_hud.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/token_effect.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/tree_specs.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://scripts/tree_ui.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/global_script_class_cache.cfg[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://.godot/uid_cache.bin[39m[0m
+[  98% ] [90m[1msavepack[22m | 正在保存文件：res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m

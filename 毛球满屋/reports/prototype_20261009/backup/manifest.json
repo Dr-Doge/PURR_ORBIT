@@ -1,0 +1,30 @@
+[
+  {
+    "Algorithm": "SHA256",
+    "Hash": "4C6AAF4B41CAFC678DF902D2CC77E04EB0028957F2D235A8D08878166974F398",
+    "Path": "C:\\Users\\ruohaojing\\Desktop\\爽开\\毛球满屋\\reports\\prototype_20261009\\backup\\测试场景_004.tscn"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "CE35084BD529C9091BB73BA5EB98FE5AB0A1F738443536E2F9C36FB293743B13",
+    "Path": "C:\\Users\\ruohaojing\\Desktop\\爽开\\毛球满屋\\reports\\prototype_20261009\\backup\\source_main.tscn"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "9717D8DE260D213A130CA485B7C3E01B21FFB29BA8E0F2AAFC70252760ED842B",
+    "Path": "C:\\Users\\ruohaojing\\Desktop\\爽开\\毛球满屋\\reports\\prototype_20261009\\backup\\test_lab_004.gd",
+    "source": "39638e74 HEAD; clean on entry"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6A8478637A9AB789B28CC37B4EC408E546014BDA53DA2B292DBEE1FD65F829AC",
+    "Path": "C:\\Users\\ruohaojing\\Desktop\\爽开\\毛球满屋\\reports\\prototype_20261009\\backup\\test_developer_menu_929.gd",
+    "source": "39638e74 HEAD; clean on entry"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "24F584D4A8D255A8A6A775217E92BD7AFF982DC279397F3ABD5344473DB1778C",
+    "Path": "C:\\Users\\ruohaojing\\Desktop\\爽开\\毛球满屋\\reports\\prototype_20261009\\backup\\refresh_lab_preview.gd",
+    "source": "39638e74 HEAD; clean on entry"
+  }
+]

@@ -1,0 +1,57 @@
+Godot Engine v4.7.1.stable.official.a13da4feb - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060
+
+ERROR: S02 both real tool purchases
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_prototype_ui_20261009.gd:9)
+       [1] run (res://tests/test_prototype_ui_20261009.gd:68)
+       [2] press (res://tests/test_prototype_ui_20261009.gd:30)
+ERROR: S02 real motion harvest and chain
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_prototype_ui_20261009.gd:9)
+       [1] run (res://tests/test_prototype_ui_20261009.gd:71)
+       [2] press (res://tests/test_prototype_ui_20261009.gd:30)
+ERROR: S05 real popup selects cat
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_prototype_ui_20261009.gd:9)
+       [1] run (res://tests/test_prototype_ui_20261009.gd:97)
+ERROR: S05 worker actual production
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_prototype_ui_20261009.gd:9)
+       [1] run (res://tests/test_prototype_ui_20261009.gd:101)
+       [2] press (res://tests/test_prototype_ui_20261009.gd:30)
+ERROR: S05 other cat view keeps worker income
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_prototype_ui_20261009.gd:9)
+       [1] run (res://tests/test_prototype_ui_20261009.gd:106)
+       [2] capture (res://tests/test_prototype_ui_20261009.gd:24)
+       [3] draw_wait (res://tests/test_prototype_ui_20261009.gd:21)
+ERROR: S07 retry then fail only loses stolen hairs
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_prototype_ui_20261009.gd:9)
+       [1] run (res://tests/test_prototype_ui_20261009.gd:122)
+       [2] load_by_menu (res://tests/test_prototype_ui_20261009.gd:37)
+       [3] draw_wait (res://tests/test_prototype_ui_20261009.gd:21)
+ERROR: S08 assign special using popup
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_prototype_ui_20261009.gd:9)
+       [1] run (res://tests/test_prototype_ui_20261009.gd:130)
+ERROR: S08 actual local automation penalty
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_prototype_ui_20261009.gd:9)
+       [1] run (res://tests/test_prototype_ui_20261009.gd:131)
+ERROR: Continuous mouse run earns tools and second cat without menu gifts
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/test_prototype_ui_20261009.gd:9)
+       [1] run (res://tests/test_prototype_ui_20261009.gd:159)
+       [2] press (res://tests/test_prototype_ui_20261009.gd:30)
+PROTOTYPE UI: 100 checks, 9 failures
