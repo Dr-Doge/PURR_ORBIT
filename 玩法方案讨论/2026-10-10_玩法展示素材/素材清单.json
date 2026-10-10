@@ -1,0 +1,88 @@
+{
+  "created": "2026-10-10",
+  "method": "built-in image_gen",
+  "original_reference": "C:/Users/ruohaojing/Documents/xwechat_files/wxid_cphixqbmh6gj22_cb32/temp/RWTemp/2026-10/597d6d0e10d87b10551df81620fcaf0f.png",
+  "assets": [
+    {
+      "id": "01A",
+      "key": "01_final",
+      "file": "01A_首次打捞_宇宙远景.png",
+      "title": "首次免费打捞",
+      "scene": "宇宙远景",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-ee37990f-6f6c-4c58-afc0-5f1d030e5f61.png",
+      "generation_prompt": "Precise minimal UI edit, one wide 16:9 game reference frame. Keep this input space game screenshot visually identical in composition, ship design, ship position top-right, planet position bottom-left, starfield, capsule, cable, bottom HUD and HOLD gauge. Change ONLY the top-left resource icon: replace the calico cat face icon with a plain round fluffy white furball icon, no eyes, no ears, no mouth. Keep the adjacent number '0' and dark brown panel exactly. No other changes, no new cats, no room, no new ship, no crop, no watermark."
+    },
+    {
+      "id": "01B",
+      "key": "01B",
+      "file": "01B_第一只猫登船_固定船舱.png",
+      "title": "第一只猫登船",
+      "scene": "固定船舱",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-1451fea5-5632-4c30-bdcd-b837208d95a5.png",
+      "generation_prompt": "Use case: ui-mockup / precise-object-edit. Edit the exact supplied NEW CAT ARRIVAL cabin frame into the FIRST CAT ARRIVAL. ONE 16:9 landscape game reference. Preserve every architectural detail, fixed camera, warm outlined art, floor tiles, windows, plants, bed, feeder and brush exactly. Keep the central airlock OPEN and same small open cat-ear rescue capsule at center-back. Remove the green alien cat COMPLETELY. There must be exactly ONE living cat, the original black-white-orange CALICO cat from this reference, same coat and scale, now stepping out on the floor just below capsule ramp, at x52% y53%. It looks curiously toward a single small white mouse cursor near it. Top-left HUD change currency to white fluffy furball icon plus '0'. Same top-right gear, same bottom-left cat and hook tabs with cat tab active. No pet progress bar, no floating furballs, no reward panel, no other cat, no green cat, no duplicate cat. No human, no close-up, no starship inside cabin, no watermark."
+    },
+    {
+      "id": "02",
+      "key": null,
+      "file": "02_撸猫产出_固定船舱.png",
+      "title": "撸猫产出",
+      "scene": "固定船舱",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-0ba867be-82bb-4908-8d72-7acb8e9dc9fb.png",
+      "generation_prompt": "精确保留用户原船舱参考图的建筑、镜头、暖色描边美术与设施位置，仅保留一只三花猫，加入小手形光标、短满足条、毛球产出及简洁图标HUD。"
+    },
+    {
+      "id": "03",
+      "key": "03",
+      "file": "03_升级与消费选择_固定船舱.png",
+      "title": "升级与消费选择",
+      "scene": "固定船舱",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-2ce8f316-17f8-41a5-a26f-817cb2c69e0a.png",
+      "generation_prompt": "Use case: ui-mockup / precise-object-edit. Edit the reference gameplay image into segment 03 UPGRADE CHOICE. Output ONE 16:9 gameplay screenshot. Keep the entire cabin architecture, viewpoint, floor grid, orange lighting, plants, bed alcove, two windows, central door, right food machine and brush IDENTICAL in position, color and scale. Keep the ONE original front-facing calico cat at same lower-middle floor position; remove the glove, small happiness bar, floating furballs and sparkles. Same top-left furball currency HUD now '40', same gear and bottom-left cat/hook tabs. Show a compact brown rounded upgrade panel floating in LEFT-CENTER empty floor area, occupying only 24% of image width and 30% image height, not covering cat or most room. It contains two distinct vertical rows: first row a white glove icon, small upward-arrow glyph, furball price '12', a simple plus purchase button; second row a mechanical salvage claw/winch icon, upward arrow, furball price '20', plus purchase button. No other text. A white mouse cursor hovers directly on the first row purchase button, highlighted amber; small orange outline on first row. The center back-door side control panel can show a subtle amber dot suggesting salvage entry. The pet cat is relaxed, not being processed by facilities. ONE screen, no second viewpoint, no extra cats, no humans, no floor redesign, no closeup, no watermark."
+    },
+    {
+      "id": "04A",
+      "key": "04A",
+      "file": "04A_牵引小游戏_宇宙远景.png",
+      "title": "力量感打捞",
+      "scene": "宇宙远景",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-570cdd2a-ab60-44e6-9f43-e35d1cd0200d.png",
+      "generation_prompt": "Use case: ui-mockup / precise-object-edit. Edit THIS exact outside salvage game screenshot for segment 04A. Preserve the same fixed 16:9 composition and reference artwork: amber ochre planet lower-left, identical beige cat-emblem salvage spaceship upper-right, starfield, lighting, few rocks, top-right gear, bottom-left cat and hook tabs, mechanical GOLD CABLE. Keep spaceship scale and position identical, do NOT move camera. Change ONLY the target capsule into a small rectangular worn beige cargo crate with orange corner lights, located at same center-lower position and tied to same cable. Target is slightly caught behind two small loose rocks; no other targets. Top-left currency icon MUST be a simple white fluffy furball, NOT cat face, numeral '28'. Bottom-center same rounded dark charge-panel style, now a horizontal tug-progress bar at 65% with three small chevrons and one simple white mouse pointer near its right edge; tiny text 'PULL' only. A few subtle angular movement strokes near the rocks and tension gleam along cable imply physical pull, no explosion and no laser. ONE actual-play screenshot, no cabin, no split screen, no extra ships, no humans, no watermark."
+    },
+    {
+      "id": "04B",
+      "key": "04B",
+      "file": "04B_换金道具出售_固定船舱.png",
+      "title": "换金道具出售",
+      "scene": "固定船舱",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-c35a3c3e-0445-437f-b373-cc1c27beca16.png",
+      "generation_prompt": "Use case: ui-mockup / precise-object-edit. Edit this exact cabin screenshot into segment 04B SELL recovered junk. ONE 16:9 single gameplay frame. Keep original camera, entire cabin architecture, floor grid, both windows, amber lights, left bed/plants, central closed airlock, right feeder and brush EXACTLY unchanged. Keep ONE original black-white-orange calico cat at same lower-middle position. Remove glove cursor, furballs, progress bar and sparkles. Same top-left white furball currency HUD now '28', same gear and bottom-left tabs. Add a compact semi-transparent dark-brown rounded loot panel in left-center empty floor space, no more than 27% frame width, NOT a fullscreen inventory. It displays ONE 2D cartoon icon of a goofy useless stone paperweight with a small metallic stand and tiny star engraving, not a cat or collectible figurine. At panel bottom show a furball icon, '+8', and ONE gold button whose only text is 'SELL'. A single white mouse cursor hovers over SELL. Near central back door sits a small CLOSED worn cargo crate, smaller than cat-capsule, without adding a new permanent machine. Keep room mostly visible and calico unobscured. No humans, no giant hands, no extra cats, no watermark."
+    },
+    {
+      "id": "05",
+      "key": "05",
+      "file": "05_新猫招募_固定船舱.png",
+      "title": "新猫招募",
+      "scene": "固定船舱",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-c4f3eefa-5998-4f96-81c4-245a1ac2c8fc.png",
+      "generation_prompt": "Use case: ui-mockup / precise-object-edit. Create segment 05 NEW CAT ARRIVAL reference still by editing the supplied game screenshot. ONE 16:9 landscape. Preserve the same original cabin CAMERA and architecture exactly: circular cushion alcove and plants left, double windows back, central airlock, right feeder and brush, metal floor grid and amber lights all unchanged. Keep original ONE calico cat but move it a little left to x=45% y=62%, facing the newcomer, feet grounded and same original scale. Remove glove cursor, happiness bar, floating furballs and sparkles. The central back airlock is now open; a SMALL opened cat-ear rescue capsule sits on the floor immediately in front of it, scaled less than 14% screen width. A new round cute GREEN alien CAT with TWO small ball-tipped antennae, large black eyes, feline ears and tail steps out of capsule and stands at x=62% y=59%, same size as the calico. Both cats clearly separated, no overlap. New cat has soft-green skin/fur, not human, not tentacled monster. Calico's original black-white-orange coat unchanged. A simple white cursor nearby newcomer. Top-left matching furball HUD numeral '36', top-right gear, bottom-left same cat and hook tabs with cat tab active. No floating huge cards, no text biographies, no giant spaceship inside room. Warm natural projected floor shadows. Reference for a playable new-cat arrival, ONE shot, no human, no closeup, no watermark."
+    },
+    {
+      "id": "06",
+      "key": "06",
+      "file": "06_收藏永久加成_固定船舱.png",
+      "title": "收藏永久加成",
+      "scene": "固定船舱",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-e1ded6a7-8d73-47af-a496-c1d3dd14b942.png",
+      "generation_prompt": "Use case: ui-mockup / precise-object-edit. Edit supplied exact cabin game frame for segment 06 PERMANENT COLLECTIBLE reveal. ONE 16:9 gameplay still. Preserve original room camera, architecture and positions of every wall/window/light, metal floor grid, left bed/plants, right feeder and brush, and original calico cat. Remove glove cursor, pet-progress bar and floating furballs. Same top-left furball HUD '52', same gear and bottom-left tabs. On floor in front of central CLOSED airlock is a SMALL open mysterious beige cat-totem recovery box with a restrained warm glow. LEFT-CENTER empty floor area contains a compact dark-brown rounded collectible panel, maximum 27% screen width, no giant fullscreen cinematic. Panel top has a small golden seated CAT FIGURINE, clearly an inanimate collectible icon, not a living second cat. Panel below has SIX small square slots arranged 3 across by 2 down: first slot filled by miniature golden cat figurine, other FIVE empty with subtle question silhouettes. Lower area shows hand icon plus white furball icon plus upward arrow and '+10%' to communicate permanent production buff. ONLY ONE gold confirmation button with a checkmark, no SELL button. Single white pointer over confirmation. Add a small constant tiny golden figurine buff icon next to resource HUD, not extra currency. No new furniture, no humans, no closeups, no watermark. Keep playful warm hand-drawn style and room still dominant."
+    },
+    {
+      "id": "07",
+      "key": "07_final",
+      "file": "07_工人收割与双循环_固定船舱.png",
+      "title": "工人收割与双循环",
+      "scene": "固定船舱",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-ae81ab27-2b75-4aa7-ad5a-8cc6916b61d9.png",
+      "generation_prompt": "Precise-object-edit. Image 1 is the EDIT TARGET, image 2 is the exact architectural reference. Correct ONLY the center back airlock in image 1: replace the newly invented large circular segmented hatch with image 2's original rectangular beige sliding door, its SMALL dark circular window, two vertical amber handle lights, and rectangular black side control panel. Match door architecture in image 2 exactly, same central position and outline. Keep EVERY other pixel region of image 1 visually unchanged: two cats, furball helper petting calico, glove cursor on green cat, cat shapes, floor tiles, windows, all facilities, plants, lighting, shadows and HUD values '64'. Also recolor the two small pet-progress bars amber with dark brown casing to match original image 2 room lights, same size/position/fill. ONE wide near-16:9 game screen, preserve source full-frame aspect/composition, no new architecture, no cats removed/added, no crop, no watermark."
+    }
+  ]
+}
