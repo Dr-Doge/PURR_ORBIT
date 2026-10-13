@@ -1,0 +1,2575 @@
+{
+  "candidate_count": 50,
+  "scope": "Cats AND Incremental / Cats AND Idler plus directed searches",
+  "metadata": [
+    {
+      "appid": 3859210,
+      "name": "Rhythm Animal Café",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 12, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "Welcome to ​Rhythm Animal Café​! Animals' daily chaos meets funky beats: boss hype, colleague woes, your slacking, unfair blame—all become hilarious one-tap rhythm games! Simple controls, joyful groove. Feel music fuse with daily life’s warmth!",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 7,
+        "review_score_desc": "Positive",
+        "total_positive": 26,
+        "total_negative": 0,
+        "total_reviews": 26
+      },
+      "captured_at": "2026-10-13T17:36:17.704857+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=3859210&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/3859210?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=3859210"
+      }
+    },
+    {
+      "appid": 3911840,
+      "name": "100 Cats Lost in China 2 Find & Color",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 11, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "🐱 Discover 500 hidden cats across 5 artistic hand-drawn scenes 🖌️. Relax with color-by-numbers 🎨 and add life to every detail. Play solo or in cozy co-op 👯‍♂️, while Meow FM 🎶 sets the perfect creative mood.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "2 user reviews",
+        "total_positive": 2,
+        "total_negative": 0,
+        "total_reviews": 2
+      },
+      "captured_at": "2026-10-13T17:36:17.725753+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=3911840&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/3911840?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=3911840"
+      }
+    },
+    {
+      "appid": 5295550,
+      "name": "Happy Cats Market",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 9, 2026"
+      },
+      "page_check": {
+        "appid": 5295550,
+        "url": "https://store.steampowered.com/app/5295550/?l=english&cc=us",
+        "store_release": "Oct 9, 2026",
+        "early_access_release": "Oct 9, 2026",
+        "tags": [
+          "Incremental",
+          "Collectathon",
+          "Casual",
+          "Idler",
+          "Point & Click",
+          "2D",
+          "Cute",
+          "Relaxing",
+          "Cozy",
+          "Funny",
+          "Colorful",
+          "Indie",
+          "Early Access",
+          "Pixel Graphics",
+          "Cats",
+          "Automation",
+          "Animals",
+          "Singleplayer"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "70",
+          "description": "Early Access"
+        }
+      ],
+      "short_description": "From a slice of bread to a parade of cats! Click food, trigger satisfying chains, and combine feline talents in a cozy pixel-art incremental game. Explore five growing shops, meet 93 cats, and celebrate around the campfire to earn lasting upgrades.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "1 user reviews",
+        "total_positive": 1,
+        "total_negative": 0,
+        "total_reviews": 1
+      },
+      "captured_at": "2026-10-13T17:36:17.616042+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5295550&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5295550?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5295550"
+      }
+    },
+    {
+      "appid": 5079650,
+      "name": "Miners Cat Revolution",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 7, 2026"
+      },
+      "page_check": {
+        "appid": 5079650,
+        "url": "https://store.steampowered.com/app/5079650/?l=english&cc=us",
+        "store_release": "Oct 7, 2026",
+        "early_access_release": "Oct 7, 2026",
+        "tags": [
+          "Early Access",
+          "Pixel Graphics",
+          "Casual",
+          "Strategy",
+          "Singleplayer",
+          "2D",
+          "Combat",
+          "Tower Defense",
+          "Idler",
+          "Incremental",
+          "Cute",
+          "Animals",
+          "Cats",
+          "Cozy",
+          "Economy",
+          "Family Friendly",
+          "Funny",
+          "Management",
+          "Mining",
+          "Relaxing"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "3",
+          "description": "RPG"
+        },
+        {
+          "id": "2",
+          "description": "Strategy"
+        },
+        {
+          "id": "70",
+          "description": "Early Access"
+        }
+      ],
+      "short_description": "An idle mining game about cats. You break the first rock; the crew keeps digging while you are away. Chain combos, plant traps against the waves and descend nine layers through an upgrade tree whose forks close for good. Pay once, works offline.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "No user reviews",
+        "total_positive": 0,
+        "total_negative": 0,
+        "total_reviews": 0
+      },
+      "captured_at": "2026-10-13T17:36:17.792925+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5079650&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5079650?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5079650"
+      }
+    },
+    {
+      "appid": 4692190,
+      "name": "Idle Bomb Animals - Desktop Mining",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 28, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "A desktop idle mining game you can play right on your PC screen! While you work, study, or play other games, adorable animals will happily dig through caves in the background.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "No user reviews",
+        "total_positive": 0,
+        "total_negative": 0,
+        "total_reviews": 0
+      },
+      "captured_at": "2026-10-13T17:36:17.814173+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4692190&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4692190?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4692190"
+      }
+    },
+    {
+      "appid": 3972410,
+      "name": "Black Cat Book Club",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 25, 2026"
+      },
+      "page_check": {
+        "appid": 3972410,
+        "url": "https://store.steampowered.com/app/3972410/?l=english&cc=us",
+        "store_release": "Sep 25, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Desktop Companion",
+          "Cozy",
+          "Idler",
+          "Relaxing",
+          "Cats",
+          "Incremental",
+          "Magic",
+          "Casual",
+          "Character Customization",
+          "Simulation",
+          "Wholesome",
+          "3D",
+          "Cute",
+          "Management",
+          "Resource Management",
+          "Utilities",
+          "Singleplayer",
+          "Indie",
+          "Atmospheric"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "A magical library you can place on your desktop. Help the black cat study ancient tomes and learn spells in this cozy idle game.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 64,
+        "total_negative": 0,
+        "total_reviews": 64
+      },
+      "captured_at": "2026-10-13T17:36:17.726259+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=3972410&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/3972410?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=3972410"
+      }
+    },
+    {
+      "appid": 4753960,
+      "name": "Meow Squad: Incremental Fishing",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 23, 2026"
+      },
+      "page_check": {
+        "appid": 4753960,
+        "url": "https://store.steampowered.com/app/4753960/?l=english&cc=us",
+        "store_release": "Sep 23, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Casual",
+          "Strategy",
+          "Incremental",
+          "Arcade",
+          "Simulation",
+          "Capitalism",
+          "Resource Management",
+          "Collectathon",
+          "Fishing",
+          "Relaxing",
+          "Cute",
+          "Cozy",
+          "Loot",
+          "Indie",
+          "Underwater",
+          "Management",
+          "Economy",
+          "Cats",
+          "3D",
+          "Cartoon"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        },
+        {
+          "id": "2",
+          "description": "Strategy"
+        }
+      ],
+      "short_description": "30 Seconds a Round, Easy to Pick Up! This relaxing, addictive fishing-themed incremental game combines incremental fishing with arcade-style boss battles. Across five seas, catch fish, train your meow squad, and challenge mysterious Overlords beneath the waves!",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 485,
+        "total_negative": 59,
+        "total_reviews": 544
+      },
+      "captured_at": "2026-10-13T17:36:18.866193+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4753960&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4753960?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4753960"
+      }
+    },
+    {
+      "appid": 4609190,
+      "name": "Cats and Sushi",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 17, 2026"
+      },
+      "page_check": {
+        "appid": 4609190,
+        "url": "https://store.steampowered.com/app/4609190/?l=english&cc=us",
+        "store_release": "Sep 17, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Cooking",
+          "Simulation",
+          "Time Management",
+          "Cats",
+          "Casual",
+          "Crafting",
+          "Job Simulator",
+          "Inventory Management",
+          "Cute",
+          "Point & Click",
+          "Shop Keeper",
+          "Cartoon",
+          "Incremental",
+          "3D",
+          "Relaxing",
+          "Arcade",
+          "Cartoony",
+          "Stylized",
+          "Economy",
+          "Fantasy"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "Run a cozy sushi restaurant for adorable cats. Stock up the ingredients, prepare dishes requested by customers, earn tips and unlock new recipes.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "1 user reviews",
+        "total_positive": 1,
+        "total_negative": 0,
+        "total_reviews": 1
+      },
+      "captured_at": "2026-10-13T17:36:19.029499+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4609190&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4609190?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4609190"
+      }
+    },
+    {
+      "appid": 3520820,
+      "name": "Idle Kitty",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 15, 2026"
+      },
+      "page_check": {
+        "appid": 3520820,
+        "url": "https://store.steampowered.com/app/3520820/?l=english&cc=us",
+        "store_release": "Sep 15, 2026",
+        "early_access_release": "Jul 10, 2026",
+        "tags": [
+          "Idler",
+          "Loot",
+          "Casual",
+          "Management",
+          "Incremental",
+          "Turn-Based Strategy",
+          "Auto Battler",
+          "Cats",
+          "Character Customization",
+          "Collectathon",
+          "Anime",
+          "Roguelike",
+          "Automation",
+          "Memes",
+          "Turn-Based Tactics",
+          "Funny",
+          "Procedural Generation",
+          "Resource Management",
+          "Singleplayer",
+          "Strategy"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "3",
+          "description": "RPG"
+        },
+        {
+          "id": "2",
+          "description": "Strategy"
+        }
+      ],
+      "short_description": "⭐老牌国家电网合作伙伴⭐独立开发，挂机猫猫传是一款 猫星人 杂烩大乱斗 为题材 —— 以角色抽卡、爽快刷宝、自由培养、经营势力、攻略推图为玩法的 【甜点级】 挂 机 游 戏 喵 ~",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 63,
+        "total_negative": 11,
+        "total_reviews": 74
+      },
+      "captured_at": "2026-10-13T17:36:18.938751+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=3520820&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/3520820?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=3520820"
+      }
+    },
+    {
+      "appid": 5129240,
+      "name": "Neko Neko Shop",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 15, 2026"
+      },
+      "page_check": {
+        "appid": 5129240,
+        "url": "https://store.steampowered.com/app/5129240/?l=english&cc=us",
+        "store_release": "Sep 15, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Casual",
+          "Simulation",
+          "Organizing",
+          "Relaxing",
+          "Collectathon",
+          "Puzzle",
+          "Hidden Object",
+          "Incremental",
+          "3D",
+          "Indie",
+          "Cute",
+          "Cats",
+          "Singleplayer"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "Neko Neko Shop is a cozy organizing game where you sort, stock, and display adorable neko collectibles in a wonderfully messy shop. Relax, tidy up, and turn the chaos into the cutest store around.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 7,
+        "review_score_desc": "Positive",
+        "total_positive": 31,
+        "total_negative": 3,
+        "total_reviews": 34
+      },
+      "captured_at": "2026-10-13T17:36:19.108271+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5129240&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5129240?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5129240"
+      }
+    },
+    {
+      "appid": 4930400,
+      "name": "TaskPaw",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 13, 2026"
+      },
+      "page_check": {
+        "appid": 4930400,
+        "url": "https://store.steampowered.com/app/4930400/?l=english&cc=us",
+        "store_release": "Sep 13, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Casual",
+          "Idler",
+          "3D",
+          "Cute",
+          "Relaxing",
+          "Desktop Companion",
+          "Walking Simulator",
+          "Side Scroller",
+          "Typing",
+          "Cats",
+          "Cozy",
+          "Family Friendly",
+          "Character Customization",
+          "Singleplayer",
+          "Incremental",
+          "Indie",
+          "Software"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        }
+      ],
+      "short_description": "Let a cute little cat keep you company while you work. Watch them walk or run across your desktop, dress them up, and enjoy different places from day to night.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "No user reviews",
+        "total_positive": 0,
+        "total_negative": 0,
+        "total_reviews": 0
+      },
+      "captured_at": "2026-10-13T17:36:19.044914+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4930400&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4930400?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4930400"
+      }
+    },
+    {
+      "appid": 4319660,
+      "name": "Moon Garden",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 11, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "A cozy incremental game about growing your way home. Strategically plant flowers, optimize machinery, and grow your tree tall enough to escape!",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 62,
+        "total_negative": 13,
+        "total_reviews": 75
+      },
+      "captured_at": "2026-10-13T17:36:19.374666+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4319660&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4319660?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4319660"
+      }
+    },
+    {
+      "appid": 3967820,
+      "name": "Push Push",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 9, 2026"
+      },
+      "page_check": {
+        "appid": 3967820,
+        "url": "https://store.steampowered.com/app/3967820/?l=english&cc=us",
+        "store_release": "Sep 9, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Casual",
+          "Desktop Companion",
+          "Idler",
+          "Farming Sim",
+          "Incremental",
+          "Creature Collector",
+          "Decorating",
+          "Cute",
+          "Cats",
+          "Animals",
+          "Automation",
+          "Physics",
+          "Strategy",
+          "Utilities",
+          "Point & Click",
+          "Cartoon",
+          "Indie",
+          "Singleplayer",
+          "Relaxing",
+          "Hand-drawn"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "Push Push is a cute and relaxing idle balloon game! Pump balloons, unlock adorable cats, and collect all kinds of quirky pumps and animal companions. Perfect for quick breaks and stress relief.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 146,
+        "total_negative": 9,
+        "total_reviews": 155
+      },
+      "captured_at": "2026-10-13T17:36:20.661762+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=3967820&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/3967820?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=3967820"
+      }
+    },
+    {
+      "appid": 5108840,
+      "name": "Kitty Needs A Home!",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 3, 2026"
+      },
+      "page_check": {
+        "appid": 5108840,
+        "url": "https://store.steampowered.com/app/5108840/?l=english&cc=us",
+        "store_release": "Sep 3, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Farming Sim",
+          "Hobby Sim",
+          "Cats",
+          "Short",
+          "Casual",
+          "Idler",
+          "Point & Click",
+          "Incremental",
+          "Anime",
+          "2D",
+          "Pixel Graphics",
+          "Cozy",
+          "Emotional",
+          "Funny",
+          "Relaxing",
+          "Zoo",
+          "Singleplayer",
+          "Procedural Generation",
+          "Desktop Companion"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        }
+      ],
+      "short_description": "A cozy idle game about a shelter for cats. Catch fluffballs in the yard, fulfill heartwarming requests from around the world, collect an album of happy endings — and win Jane's heart. Cuteness, pixels, and purring. Plays itself while you're away!",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "8 user reviews",
+        "total_positive": 8,
+        "total_negative": 0,
+        "total_reviews": 8
+      },
+      "captured_at": "2026-10-13T17:36:20.531523+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5108840&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5108840?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5108840"
+      }
+    },
+    {
+      "appid": 4967970,
+      "name": "Bloom Cats",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Aug 26, 2026"
+      },
+      "page_check": {
+        "appid": 4967970,
+        "url": "https://store.steampowered.com/app/4967970/?l=english&cc=us",
+        "store_release": "Aug 26, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Idler",
+          "Creature Collector",
+          "Casual",
+          "Incremental",
+          "Automation",
+          "2D",
+          "Cozy",
+          "Cute",
+          "Pixel Graphics",
+          "Cartoony",
+          "Cats",
+          "Singleplayer",
+          "Indie",
+          "Relaxing",
+          "Resource Management",
+          "Simulation",
+          "Stylized",
+          "Tutorial",
+          "Farming Sim"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "Ever heard cats grow from flowerpots? In Bloom Cats, tend your balcony: plant flowers, and kittens visit as they bloom. Each cat has its own story and quirks; the more they visit, the more treasures they gift you. Calm, cozy, idle—just blooming flowers and lovely cats for unhurried hours.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 7,
+        "review_score_desc": "Positive",
+        "total_positive": 11,
+        "total_negative": 0,
+        "total_reviews": 11
+      },
+      "captured_at": "2026-10-13T17:36:20.517268+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4967970&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4967970?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4967970"
+      }
+    },
+    {
+      "appid": 4539530,
+      "name": "Snap the Cat",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Aug 25, 2026"
+      },
+      "page_check": {
+        "appid": 4539530,
+        "url": "https://store.steampowered.com/app/4539530/?l=english&cc=us",
+        "store_release": "Aug 25, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Incremental",
+          "Casual",
+          "Idler",
+          "Relaxing",
+          "Strategy",
+          "Simulation",
+          "Arcade",
+          "Colorful",
+          "2D",
+          "Cats",
+          "Cute",
+          "Indie",
+          "Singleplayer",
+          "Family Friendly",
+          "Pixel Graphics",
+          "Strategy RPG",
+          "Linear",
+          "Experimental",
+          "RPG",
+          "Atmospheric"
+        ]
+      },
+      "genres": [
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "3",
+          "description": "RPG"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "An incremental game about taking photos of cats. Upgrade your account, unlock new cats, and take photos of them so everyone on the planet will follow you!",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 186,
+        "total_negative": 10,
+        "total_reviews": 196
+      },
+      "captured_at": "2026-10-13T17:36:20.647471+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4539530&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4539530?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4539530"
+      }
+    },
+    {
+      "appid": 5009510,
+      "name": "Aquasushi Cat",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Aug 13, 2026"
+      },
+      "page_check": {
+        "appid": 5009510,
+        "url": "https://store.steampowered.com/app/5009510/?l=english&cc=us",
+        "store_release": "Aug 13, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Casual",
+          "Incremental",
+          "2D",
+          "Cartoon",
+          "Idler",
+          "Cats",
+          "Ninja",
+          "Funny",
+          "Character Customization",
+          "Combat",
+          "Indie",
+          "PvE",
+          "Singleplayer",
+          "Arcade",
+          "Relaxing",
+          "Underwater"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "Make the aquariums nervous — in an incremental game that grows bigger with every dive. Set up your own kitchen and take on the world in Arcade Mode to claim the crown. It won't always be easy. But it's worth it.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "2 user reviews",
+        "total_positive": 2,
+        "total_negative": 0,
+        "total_reviews": 2
+      },
+      "captured_at": "2026-10-13T17:36:20.503829+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5009510&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5009510?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5009510"
+      }
+    },
+    {
+      "appid": 4860340,
+      "name": "Dream House Cleaning",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Aug 13, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "Bring forgotten places back to life in a cozy cleaning and restoration game! Clean dirt and trash, repair damaged areas, decorate interiors with furniture, and enjoy a relaxing experience at your own pace.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 65,
+        "total_negative": 15,
+        "total_reviews": 80
+      },
+      "captured_at": "2026-10-13T17:36:20.750332+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4860340&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4860340?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4860340"
+      }
+    },
+    {
+      "appid": 5249210,
+      "name": "NekoTrak",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 10, 2026"
+      },
+      "page_check": {
+        "appid": 5249210,
+        "url": "https://store.steampowered.com/app/5249210/?l=english&cc=us",
+        "store_release": "Oct 10, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Utilities",
+          "Desktop Companion",
+          "Idler",
+          "Cats",
+          "Casual",
+          "Simulation",
+          "Cute",
+          "Indie"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "NekoTrak blends time tracking with focus-based pet care. Raise a cat that roams your desktop. Earn experience, collect coins, and unlock cats, and play multiplayer so your cats can meet. It tracks app and website time and shares your activity, music, and tasks on Steam and Discord.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 61,
+        "total_negative": 0,
+        "total_reviews": 61
+      },
+      "captured_at": "2026-10-13T17:36:21.689338+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5249210&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5249210?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5249210"
+      }
+    },
+    {
+      "appid": 4755470,
+      "name": "Pixel Kitten Desktop",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 9, 2026"
+      },
+      "page_check": {
+        "appid": 4755470,
+        "url": "https://store.steampowered.com/app/4755470/?l=english&cc=us",
+        "store_release": "Oct 9, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Desktop Companion",
+          "Idler",
+          "Life Sim",
+          "Cats",
+          "Cozy",
+          "Relaxing",
+          "Creature Collector",
+          "Simulation",
+          "Casual",
+          "2D",
+          "Cute",
+          "Pixel Graphics",
+          "Cartoony",
+          "Colorful",
+          "Cartoon",
+          "Singleplayer",
+          "Character Customization"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "A cozy pixel desktop pet game. Keep one kitten by your side while you work, or raise a whole colony: pair cats up, welcome their kittens, and follow hidden coat genes through the family tree to collect all 43 coats.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "1 user reviews",
+        "total_positive": 1,
+        "total_negative": 0,
+        "total_reviews": 1
+      },
+      "captured_at": "2026-10-13T17:36:21.806945+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4755470&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4755470?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4755470"
+      }
+    },
+    {
+      "appid": 5105310,
+      "name": "Chestnut's Idle Farm",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 9, 2026"
+      },
+      "page_check": {
+        "appid": 5105310,
+        "url": "https://store.steampowered.com/app/5105310/?l=english&cc=us",
+        "store_release": "Oct 9, 2026",
+        "early_access_release": "Oct 9, 2026",
+        "tags": [
+          "Desktop Companion",
+          "Idler",
+          "Farming Sim",
+          "Simulation",
+          "Cozy",
+          "Cats",
+          "Relaxing",
+          "Pixel Graphics",
+          "Automation",
+          "Fishing",
+          "Indie",
+          "Early Access",
+          "Casual",
+          "2D",
+          "Singleplayer"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        },
+        {
+          "id": "70",
+          "description": "Early Access"
+        }
+      ],
+      "short_description": "Run a cozy pixel farm with Chestnut in a corner of your desktop. Grow crops, fish at your leisure, and manage a market and restaurant. Enjoy idle progress and rewarding harvests between work or study sessions. Come take a break with Chestnut!",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "3 user reviews",
+        "total_positive": 3,
+        "total_negative": 0,
+        "total_reviews": 3
+      },
+      "captured_at": "2026-10-13T17:36:21.758465+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5105310&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5105310?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5105310"
+      }
+    },
+    {
+      "appid": 5235730,
+      "name": "Don't Click",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 6, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        }
+      ],
+      "short_description": "DO NOT CLICK on the cat in the middle of the screen. If you do, you start an unstoppable process that leads to the cat through 5 stages of grief.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "No user reviews",
+        "total_positive": 0,
+        "total_negative": 0,
+        "total_reviews": 0
+      },
+      "captured_at": "2026-10-13T17:36:22.069000+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5235730&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5235730?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5235730"
+      }
+    },
+    {
+      "appid": 5250830,
+      "name": "Pawmlet - Wheat Farm",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 2, 2026"
+      },
+      "page_check": {
+        "appid": 5250830,
+        "url": "https://store.steampowered.com/app/5250830/?l=english&cc=us",
+        "store_release": "Oct 2, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Desktop Companion",
+          "Casual",
+          "Idler",
+          "Farming Sim",
+          "2D",
+          "Cute",
+          "Cozy",
+          "Pixel Graphics",
+          "Agriculture",
+          "Indie",
+          "Cats",
+          "Animals",
+          "Singleplayer"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "A cozy, lightweight desktop idle farming companion. Watch Barnaby the cat till, plant, water, and harvest golden wheat right at the bottom of your screen while you work, study, or relax. Zero stress, pure wholesome pastoral vibes.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "1 user reviews",
+        "total_positive": 1,
+        "total_negative": 0,
+        "total_reviews": 1
+      },
+      "captured_at": "2026-10-13T17:36:21.821839+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5250830&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5250830?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5250830"
+      }
+    },
+    {
+      "appid": 5031490,
+      "name": "My Desktop Cat",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 1, 2026"
+      },
+      "page_check": {
+        "appid": 5031490,
+        "url": "https://store.steampowered.com/app/5031490/?l=english&cc=us",
+        "store_release": "Oct 1, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Desktop Companion",
+          "Idler",
+          "Creature Collector",
+          "Animals",
+          "Life Sim",
+          "Character Customization",
+          "2D",
+          "Cute",
+          "Isometric",
+          "Cozy",
+          "Wholesome",
+          "Relaxing",
+          "Casual",
+          "Simulation",
+          "Anime",
+          "Colorful",
+          "Family Friendly",
+          "Cats",
+          "Decorating",
+          "Resource Management"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        },
+        {
+          "id": "37",
+          "description": "Free To Play"
+        }
+      ],
+      "short_description": "Bring a cozy animated cat to your Windows desktop. Care for your companion, play with toys, decorate every screen, unlock new cats and achievements, and play mini games while normal apps stay unobstructed.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 6,
+        "review_score_desc": "Mostly Positive",
+        "total_positive": 15,
+        "total_negative": 6,
+        "total_reviews": 21
+      },
+      "captured_at": "2026-10-13T17:36:21.967967+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5031490&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5031490?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5031490"
+      }
+    },
+    {
+      "appid": 5094130,
+      "name": "Pawsweeper",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 1, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "2",
+          "description": "Strategy"
+        }
+      ],
+      "short_description": "The shelter is full of cats, and the cats are full of trouble. Clear their fur in a Minesweeper-style puzzle, except the grid is round and the mines are ticks and fleas. Spend what you earn on treatment and upgrades, and get the shelter through one more day.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "4 user reviews",
+        "total_positive": 4,
+        "total_negative": 0,
+        "total_reviews": 4
+      },
+      "captured_at": "2026-10-13T17:36:23.018341+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5094130&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5094130?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5094130"
+      }
+    },
+    {
+      "appid": 5034300,
+      "name": "Cosmo Cat: A Cozy Desktop Idler",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 29, 2026"
+      },
+      "page_check": {
+        "appid": 5034300,
+        "url": "https://store.steampowered.com/app/5034300/?l=english&cc=us",
+        "store_release": "Sep 29, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Cozy",
+          "Desktop Companion",
+          "Cats",
+          "Relaxing",
+          "Idler",
+          "Casual",
+          "Character Customization",
+          "Simulation",
+          "Cute",
+          "Utilities",
+          "Exploration",
+          "Space",
+          "Co-op",
+          "Multiplayer",
+          "Singleplayer",
+          "Online Co-Op",
+          "Indie"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "An emotional desktop idle game where you spend time with your own cat floating through space and record your day as constellations.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 7,
+        "review_score_desc": "Positive",
+        "total_positive": 16,
+        "total_negative": 0,
+        "total_reviews": 16
+      },
+      "captured_at": "2026-10-13T17:36:22.933169+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5034300&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5034300?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5034300"
+      }
+    },
+    {
+      "appid": 5151800,
+      "name": "Cyberpunk Cats & Dogs",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 24, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "37",
+          "description": "Free To Play"
+        }
+      ],
+      "short_description": "Let cyberpunk cats and dogs roam your Windows desktop in this free-to-play mascot app. They patrol windows and the taskbar, stop to rest, sprint across the screen, and occasionally interact with each other.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "3 user reviews",
+        "total_positive": 3,
+        "total_negative": 0,
+        "total_reviews": 3
+      },
+      "captured_at": "2026-10-13T17:36:23.110704+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5151800&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5151800?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5151800"
+      }
+    },
+    {
+      "appid": 4815060,
+      "name": "Animal Cozy Corner Shop",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 24, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "Animal Cozy Corner Shop is a warm desktop idle shop game that moves along with real-world time. Open a tiny animal convenience store in the corner of your screen, stock products, welcome quiet animal visitors, earn income, and unlock more items, furniture, and cute guests.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "6 user reviews",
+        "total_positive": 5,
+        "total_negative": 1,
+        "total_reviews": 6
+      },
+      "captured_at": "2026-10-13T17:36:23.033976+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4815060&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4815060?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4815060"
+      }
+    },
+    {
+      "appid": 5119020,
+      "name": "Sill Dogs",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 23, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        },
+        {
+          "id": "37",
+          "description": "Free To Play"
+        }
+      ],
+      "short_description": "Dogs walk around on your desktop. A dog is loyal to its owner — unlike a cat, it actually does as it's told. Put two out and they'll greet each other and play chase. A resident pet app with a free base version. Please take good care of them.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 7,
+        "review_score_desc": "Positive",
+        "total_positive": 30,
+        "total_negative": 3,
+        "total_reviews": 33
+      },
+      "captured_at": "2026-10-13T17:36:23.151539+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5119020&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5119020?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5119020"
+      }
+    },
+    {
+      "appid": 5080710,
+      "name": "Furry Slot",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 14, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "Welcome to the Last Casino, beyond the edge of the world. Spin the reels for a 777 jackpot, revive 60 furry souls as collectible cards, and win them off the dealer in a shell game. A generous casino where nobody goes broke — tonight, the floor is yours.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "No user reviews",
+        "total_positive": 0,
+        "total_negative": 0,
+        "total_reviews": 0
+      },
+      "captured_at": "2026-10-13T17:36:23.390870+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5080710&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5080710?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5080710"
+      }
+    },
+    {
+      "appid": 5152450,
+      "name": "Cutie Clicker",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 10, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "2",
+          "description": "Strategy"
+        }
+      ],
+      "short_description": "Plunged into a land of cuteness, you have to collect coins and become a cutie millionaire!",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "No user reviews",
+        "total_positive": 0,
+        "total_negative": 0,
+        "total_reviews": 0
+      },
+      "captured_at": "2026-10-13T17:36:24.282280+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5152450&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5152450?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5152450"
+      }
+    },
+    {
+      "appid": 5069160,
+      "name": "桌面寵物工作室 - DesktopPetStudio",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 8, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "Desktop Pet Studio is a Windows desktop pet creator. Upload PNG frames or GIFs, set animations and speech bubbles, then add alarms, calendars, tasks, and Do Not Disturb. Care for your pet, share creations on Steam Workshop, or trigger reactions with Twitch Bits.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "No user reviews",
+        "total_positive": 0,
+        "total_negative": 0,
+        "total_reviews": 0
+      },
+      "captured_at": "2026-10-13T17:36:24.413171+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5069160&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5069160?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5069160"
+      }
+    },
+    {
+      "appid": 4515550,
+      "name": "Desktop Pet: DonEatFish",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 6, 2026"
+      },
+      "page_check": {
+        "appid": 4515550,
+        "url": "https://store.steampowered.com/app/4515550/?l=english&cc=us",
+        "store_release": "Sep 6, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Desktop Companion",
+          "Cats",
+          "Cute",
+          "Idler",
+          "Cozy",
+          "Simulation",
+          "Casual",
+          "Relaxing",
+          "Character Customization",
+          "Collectathon",
+          "Fishing",
+          "Decorating",
+          "Wholesome",
+          "Co-op",
+          "Creature Collector",
+          "2D",
+          "Life Sim",
+          "Free to Play",
+          "Cartoon",
+          "Indie"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        },
+        {
+          "id": "37",
+          "description": "Free To Play"
+        }
+      ],
+      "short_description": "A cozy cat on your desktop while you goof off. Idle fish, crack chests, dress up—turn your desk corner into a wholesome little nook. Come adopt an adorable kitty. Some antivirus software may falsely flag this game as a virus. If that bothers you, please don't download it. Thank you.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 5,
+        "review_score_desc": "Mixed",
+        "total_positive": 31,
+        "total_negative": 19,
+        "total_reviews": 50
+      },
+      "captured_at": "2026-10-13T17:36:24.265974+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4515550&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4515550?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4515550"
+      }
+    },
+    {
+      "appid": 4997240,
+      "name": "Nonoko: Lofi Days",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 1, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        }
+      ],
+      "short_description": "Nonoko: Lofi Days is a cute and cozy desktop companion app. Let Nonoko and Mimiko stay by your side while you study, work, or unwind. Enjoy soothing Lofi music, calming nature sounds, and simple, lightweight focus tools that help you move through your day at your own pace.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 7,
+        "review_score_desc": "Positive",
+        "total_positive": 42,
+        "total_negative": 0,
+        "total_reviews": 42
+      },
+      "captured_at": "2026-10-13T17:36:24.486235+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4997240&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4997240?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4997240"
+      }
+    },
+    {
+      "appid": 5035800,
+      "name": "Ether Flow :: Focus, organize, and create.",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Aug 30, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "Ether Flow is a desktop productivity tool that turns your focus time into alchemical resources. Maintain your concentration with real-time distraction detection and pure work tracking. Hatch and nurture a diverse cast of charming homunculus girls as you complete your daily goals!",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 7,
+        "review_score_desc": "Positive",
+        "total_positive": 25,
+        "total_negative": 0,
+        "total_reviews": 25
+      },
+      "captured_at": "2026-10-13T17:36:24.536838+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5035800&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5035800?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5035800"
+      }
+    },
+    {
+      "appid": 5023670,
+      "name": "Taskbar Cat Club",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Aug 28, 2026"
+      },
+      "page_check": {
+        "appid": 5023670,
+        "url": "https://store.steampowered.com/app/5023670/?l=english&cc=us",
+        "store_release": "Aug 28, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Desktop Companion",
+          "Cats",
+          "Idler",
+          "Casual",
+          "Simulation",
+          "Animals",
+          "Life Sim",
+          "Character Customization",
+          "Cute",
+          "Cozy",
+          "Relaxing",
+          "Pixel Graphics",
+          "Colorful",
+          "Family Friendly",
+          "Singleplayer"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "Adopt a club of pixel cats that live on your desktop. They stroll along your taskbar, nap on your monitors, climb your windows, chase your cursor, and wander from screen to screen, always on top and never in your way.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "1 user reviews",
+        "total_positive": 1,
+        "total_negative": 0,
+        "total_reviews": 1
+      },
+      "captured_at": "2026-10-13T17:36:24.655882+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5023670&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5023670?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5023670"
+      }
+    },
+    {
+      "appid": 4885010,
+      "name": "Daymark",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Aug 20, 2026"
+      },
+      "page_check": {
+        "appid": 4885010,
+        "url": "https://store.steampowered.com/app/4885010/?l=english&cc=us",
+        "store_release": "Aug 20, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Idler",
+          "Utilities",
+          "Tutorial",
+          "Casual",
+          "Life Sim",
+          "Character Customization",
+          "2D",
+          "Cute",
+          "Relaxing",
+          "Wholesome",
+          "Cozy",
+          "Cartoony",
+          "Dogs",
+          "Cats",
+          "Emotional",
+          "Atmospheric",
+          "Cartoon",
+          "Decorating",
+          "Singleplayer"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        }
+      ],
+      "short_description": "Tap along with friends! Bongo Cat-like companions react to your input, with multiplayer and Steam Workshop support. Combine apps, music and a custom message in your auto-updating Steam status. Earn XP, level up, build your career record and unlock characters and skins.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 51,
+        "total_negative": 5,
+        "total_reviews": 56
+      },
+      "captured_at": "2026-10-13T17:36:25.560389+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4885010&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4885010?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4885010"
+      }
+    },
+    {
+      "appid": 4300680,
+      "name": "Anidema",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Aug 14, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "ANIDEMA is a desktop companion simulation featuring a customizable character who explores your screen, reacts to your actions, and plays mini-games. Genre: Casual Life Sim. Endless replayability.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "No user reviews",
+        "total_positive": 0,
+        "total_negative": 0,
+        "total_reviews": 0
+      },
+      "captured_at": "2026-10-13T17:36:25.763877+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4300680&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4300680?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4300680"
+      }
+    },
+    {
+      "appid": 5005680,
+      "name": "CatPoker",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 7, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "2",
+          "description": "Strategy"
+        },
+        {
+          "id": "37",
+          "description": "Free To Play"
+        }
+      ],
+      "short_description": "Build your deck, bomb your friends into oblivion, and score 9,999 gold with a single card. CatPoker is an online 1–3 player roguelike Dou Dizhu game, packed with adorable cats and tons of fun items. Gather your friends for a match of Dou Dizhu where strategy meets friendship-ending chaos!",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 49,
+        "total_negative": 1,
+        "total_reviews": 50
+      },
+      "captured_at": "2026-10-13T17:36:25.580980+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5005680&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5005680?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5005680"
+      }
+    },
+    {
+      "appid": 5217460,
+      "name": "Neko Cargo",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 30, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "25",
+          "description": "Adventure"
+        },
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "3",
+          "description": "RPG"
+        }
+      ],
+      "short_description": "Space delivery has never been so enticing! Five varied mini-games, 45 levels, and charming furry girls. Pack cargo, race through neon streets, fight in space, and solve puzzles to unlock a collection of colorful furry artwork!",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "6 user reviews",
+        "total_positive": 6,
+        "total_negative": 0,
+        "total_reviews": 6
+      },
+      "captured_at": "2026-10-13T17:36:25.816189+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5217460&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5217460?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5217460"
+      }
+    },
+    {
+      "appid": 5206820,
+      "name": "猫猫爱钓鱼 Cat Fishing",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 24, 2026"
+      },
+      "page_check": {
+        "appid": 5206820,
+        "url": "https://store.steampowered.com/app/5206820/?l=english&cc=us",
+        "store_release": "Sep 24, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Incremental",
+          "Idler",
+          "Fishing",
+          "Creature Collector",
+          "Casual",
+          "Singleplayer",
+          "Cartoon",
+          "Cute",
+          "2D"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        }
+      ],
+      "short_description": "&quot;Cat Fishing&quot; is a relaxing idle fishing game. Keep casting your line to reel in all kinds of items, collect gear, and upgrade your stats — this fishing spot is yours to rule!",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 7,
+        "review_score_desc": "Positive",
+        "total_positive": 11,
+        "total_negative": 0,
+        "total_reviews": 11
+      },
+      "captured_at": "2026-10-13T17:36:25.913021+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=5206820&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/5206820?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=5206820"
+      }
+    },
+    {
+      "appid": 4459980,
+      "name": "Catventure",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Oct 4, 2026"
+      },
+      "page_check": null,
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        }
+      ],
+      "short_description": "Catventure is a cozy and relaxing idle game that can sit at the bottom of your screen (or anywhere else), allowing you to enjoy a peaceful adventure during work or a busy day.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "3 user reviews",
+        "total_positive": 3,
+        "total_negative": 0,
+        "total_reviews": 3
+      },
+      "captured_at": "2026-10-13T17:36:25.847632+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4459980&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4459980?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4459980"
+      }
+    },
+    {
+      "appid": 4197890,
+      "name": "The Last Cat in the Universe",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Apr 23, 2026"
+      },
+      "page_check": {
+        "appid": 4197890,
+        "url": "https://store.steampowered.com/app/4197890/?l=english&cc=us",
+        "store_release": "Apr 23, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Incremental",
+          "Emotional",
+          "Story Rich",
+          "Relaxing",
+          "Casual",
+          "Cats",
+          "Mining",
+          "Atmospheric",
+          "Singleplayer",
+          "Cute",
+          "Idler",
+          "Sci-fi",
+          "Resource Management",
+          "Indie",
+          "Pixel Graphics",
+          "Cozy",
+          "Space",
+          "2D",
+          "Soundtrack",
+          "Short"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "Gather the remains of a dying space station to build a cozy home for the last cat in the universe. A short, narrative-driven incremental game about finding peace in the face of darkness",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 1304,
+        "total_negative": 72,
+        "total_reviews": 1376
+      },
+      "captured_at": "2026-10-13T17:36:26.905825+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4197890&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4197890?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4197890"
+      }
+    },
+    {
+      "appid": 4249770,
+      "name": "Captain Whiskers: Incremental Seas",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Feb 10, 2026"
+      },
+      "page_check": {
+        "appid": 4249770,
+        "url": "https://store.steampowered.com/app/4249770/?l=english&cc=us",
+        "store_release": "Feb 10, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Casual",
+          "Incremental",
+          "Simulation",
+          "Relaxing",
+          "Resource Management",
+          "Arcade",
+          "Capitalism",
+          "Management",
+          "Fishing",
+          "Strategy",
+          "2D",
+          "Collectathon",
+          "Loot",
+          "Underwater",
+          "Cute",
+          "Cats",
+          "Indie",
+          "Cozy",
+          "Economy",
+          "Cartoon"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        }
+      ],
+      "short_description": "5 minutes to get started, play anytime! This is a relaxing fishing-themed incremental game. You will join the Cat Captains to explore global fishing grounds, catch fish, and collect resources. Every rewarding voyage will have you shouting, &quot;One more round!&quot;",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 844,
+        "total_negative": 141,
+        "total_reviews": 985
+      },
+      "captured_at": "2026-10-13T17:36:26.959877+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4249770&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4249770?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4249770"
+      }
+    },
+    {
+      "appid": 4249200,
+      "name": "Incremental Cats",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Jan 26, 2026"
+      },
+      "page_check": {
+        "appid": 4249200,
+        "url": "https://store.steampowered.com/app/4249200/?l=english&cc=us",
+        "store_release": "Jan 26, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Casual",
+          "Idler",
+          "Incremental",
+          "Point & Click",
+          "Relaxing",
+          "Cats",
+          "Cute",
+          "Collectathon",
+          "Cozy",
+          "Management",
+          "Resource Management",
+          "Economy",
+          "Cartoony",
+          "Colorful",
+          "Singleplayer",
+          "2D"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        }
+      ],
+      "short_description": "Incremental Cats is a short incremental game about befriending cute cats of all rarities, from common to legendary, while generating cosmic amounts of hearts to unlock upgrades.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 7,
+        "review_score_desc": "Positive",
+        "total_positive": 24,
+        "total_negative": 0,
+        "total_reviews": 24
+      },
+      "captured_at": "2026-10-13T17:36:27.238974+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4249200&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4249200?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4249200"
+      }
+    },
+    {
+      "appid": 4615010,
+      "name": "Kibble Cats",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Jul 14, 2026"
+      },
+      "page_check": {
+        "appid": 4615010,
+        "url": "https://store.steampowered.com/app/4615010/?l=english&cc=us",
+        "store_release": "Jul 14, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Idler",
+          "Incremental",
+          "Casual",
+          "Building",
+          "Resource Management",
+          "Cats",
+          "2D",
+          "Cute",
+          "Colorful",
+          "Pixel Graphics",
+          "Automation",
+          "Economy",
+          "Fantasy",
+          "Stylized",
+          "Nature",
+          "Lovecraftian",
+          "Mystery",
+          "Singleplayer",
+          "Space",
+          "Auto Battler"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "Kibble Cats is a cozy, short incremental game with a definite ending. Rebuild an ancient cat village around a buried Pawbelisk. Hire cats, unlock buildings and reach milestones as a thread emerges connecting it all to something greater. A force stirs within this village, and it dreams a Great Dream.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 7,
+        "review_score_desc": "Positive",
+        "total_positive": 38,
+        "total_negative": 4,
+        "total_reviews": 42
+      },
+      "captured_at": "2026-10-13T17:36:27.142343+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4615010&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4615010?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=4615010"
+      }
+    },
+    {
+      "appid": 3924280,
+      "name": "Pat the Cat",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Jun 25, 2026"
+      },
+      "page_check": {
+        "appid": 3924280,
+        "url": "https://store.steampowered.com/app/3924280/?l=english&cc=us",
+        "store_release": "Jun 25, 2026",
+        "early_access_release": null,
+        "tags": [
+          "Desktop Companion",
+          "Idler",
+          "Cats",
+          "Cozy",
+          "Casual",
+          "Cute",
+          "Character Customization",
+          "Utilities",
+          "Relaxing",
+          "Indie",
+          "Singleplayer"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        }
+      ],
+      "short_description": "Your very own kitty — right on your desktop! A cozy idle game where you pet, feed, and play with a fluffy friend to earn purr points. Spend them on hats, toys, and cozy spots to sit. With hundreds of customization items, you can create a kitty that's truly yours — always by your side.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 221,
+        "total_negative": 3,
+        "total_reviews": 224
+      },
+      "captured_at": "2026-10-13T17:36:27.262375+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=3924280&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/3924280?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=3924280"
+      }
+    },
+    {
+      "appid": 3419430,
+      "name": "Bongo Cat",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Mar 5, 2025"
+      },
+      "page_check": {
+        "appid": 3419430,
+        "url": "https://store.steampowered.com/app/3419430/?l=english&cc=us",
+        "store_release": "Mar 5, 2025",
+        "early_access_release": null,
+        "tags": [
+          "Desktop Companion",
+          "Free to Play",
+          "Cats",
+          "Cute",
+          "Idler",
+          "Typing",
+          "Character Customization",
+          "Casual",
+          "2D",
+          "Incremental",
+          "Singleplayer",
+          "Relaxing",
+          "Indie",
+          "Cartoony",
+          "Simulation",
+          "Multiplayer",
+          "Colorful",
+          "Software",
+          "Funny",
+          "Massively Multiplayer"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "29",
+          "description": "Massively Multiplayer"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        },
+        {
+          "id": "37",
+          "description": "Free To Play"
+        }
+      ],
+      "short_description": "Bongo cat needs your help. Bongo cat needz more hatz!!! Every time you press a key, Bongo cat will punch your taskbar. Type, click, play, work to collect more points. Which hats will you find?",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 9,
+        "review_score_desc": "Overwhelmingly Positive",
+        "total_positive": 108591,
+        "total_negative": 3869,
+        "total_reviews": 112460
+      },
+      "captured_at": "2026-10-13T17:37:53.060987+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=3419430&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/3419430?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=3419430"
+      }
+    },
+    {
+      "appid": 2797340,
+      "name": "Cat God Ranch",
+      "api_release": {
+        "coming_soon": false,
+        "date": "Sep 12, 2024"
+      },
+      "page_check": {
+        "appid": 2797340,
+        "url": "https://store.steampowered.com/app/2797340/?l=english&cc=us",
+        "store_release": "Sep 12, 2024",
+        "early_access_release": null,
+        "tags": [
+          "Management",
+          "Farming Sim",
+          "Simulation",
+          "Resource Management",
+          "Roguelike Deckbuilder",
+          "Deckbuilding",
+          "Casual",
+          "Card Battler",
+          "Roguelike",
+          "Replay Value",
+          "Farming",
+          "Roguelite",
+          "Strategy",
+          "Auto Battler",
+          "Creature Collector",
+          "Card Game",
+          "Turn-Based Tactics",
+          "Cats",
+          "Choices Matter",
+          "RPG"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "23",
+          "description": "Indie"
+        },
+        {
+          "id": "3",
+          "description": "RPG"
+        },
+        {
+          "id": "28",
+          "description": "Simulation"
+        },
+        {
+          "id": "2",
+          "description": "Strategy"
+        }
+      ],
+      "short_description": "Lead hundreds of &quot;wise&quot; little animals to pay tribute to the Cat God!! 7 animal families, 100+ animals, 10+ Cat Gods, 100+ items, and various animal combinations waiting for you to explore!",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 8,
+        "review_score_desc": "Very Positive",
+        "total_positive": 2055,
+        "total_negative": 149,
+        "total_reviews": 2204
+      },
+      "captured_at": "2026-10-13T17:37:54.369391+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=2797340&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/2797340?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+        "players": "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=2797340"
+      }
+    },
+    {
+      "appid": 4379520,
+      "name": "Catnip Cosmos",
+      "api_release": {
+        "coming_soon": true,
+        "date": "Q4 2026"
+      },
+      "page_check": {
+        "appid": 4379520,
+        "url": "https://store.steampowered.com/app/4379520/?l=english&cc=us",
+        "store_release": null,
+        "early_access_release": null,
+        "tags": [
+          "Side Scroller",
+          "Bullet Heaven",
+          "Shoot 'Em Up",
+          "Incremental",
+          "Roguelite",
+          "Arcade",
+          "Strategy",
+          "2D",
+          "Action",
+          "Casual",
+          "Pixel Graphics",
+          "Cats",
+          "Space",
+          "Singleplayer",
+          "Boss Rush",
+          "Replay Value"
+        ]
+      },
+      "genres": [
+        {
+          "id": "4",
+          "description": "Casual"
+        },
+        {
+          "id": "2",
+          "description": "Strategy"
+        }
+      ],
+      "short_description": "Shoot. Upgrade. Incrementally progress further. Pilot cat-operated spaceships on timed Zoomies runs in this space shooter. Combine pilots for powerful synergies, defeat boss challenges to unlock new weapons and improve exponentially.",
+      "reviews": {
+        "num_reviews": 0,
+        "review_score": 0,
+        "review_score_desc": "No user reviews",
+        "total_positive": 0,
+        "total_negative": 0,
+        "total_reviews": 0
+      },
+      "captured_at": "2026-10-13T17:37:57.412233+08:00",
+      "source_urls": {
+        "appdetails": "https://store.steampowered.com/api/appdetails?appids=4379520&l=english&cc=us",
+        "reviews": "https://store.steampowered.com/appreviews/4379520?json=1&language=all&purchase_type=all&filter=all&num_per_page=0"
+      }
+    }
+  ]
+}

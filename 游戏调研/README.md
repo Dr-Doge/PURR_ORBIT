@@ -7,6 +7,7 @@
 | ForgeTax／铸剑纳贡（锻剑／断剑模拟器） | [完整拆解](ForgeTax/ForgeTax_玩法拆解.md) | [融入建议与优先级](ForgeTax/项目适配与融入建议.md) | [agent_input.json](ForgeTax/agent_input.json) | [2026-10-13快照](2026-10-13_项目开发快照.md) |
 | 深空当铺／Probably Stolen | [玩法拆解](ProbablyStolen/深空当铺_玩法拆解.md) | [融入建议与优先级](ProbablyStolen/项目适配与融入建议.md) | [agent_input.json](ProbablyStolen/agent_input.json) | main `b156a051`，2026-10-13重新核对，见报告与证据记录 |
 | 2026-08-13—10-13新增量游戏名单（多游戏初筛） | [热度、日期与循环清单](2026-10-13_近期增量游戏清单/近两个月新增量游戏_调研清单.md) | [项目适配与优先研究](2026-10-13_近期增量游戏清单/项目适配与优先研究建议.md) | [agent_input.json](2026-10-13_近期增量游戏清单/agent_input.json) | main `2cfde7cf`，未实玩，见报告 |
+| 猫主题增量／放置游戏筛选 | [近期、旧作与待发售清单](2026-10-13_猫主题增量游戏清单/猫主题游戏_筛选清单.md) | [项目适配与研究建议](2026-10-13_猫主题增量游戏清单/项目适配与研究建议.md) | [agent_input.json](2026-10-13_猫主题增量游戏清单/agent_input.json) | main `e0bf4769`，2026-10-13核对，未实玩 |
 
 ## 工作流与技能
 

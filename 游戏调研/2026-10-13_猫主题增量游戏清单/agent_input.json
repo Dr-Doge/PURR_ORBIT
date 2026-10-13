@@ -1,0 +1,2368 @@
+{
+  "schema_version": "1.1",
+  "document_type": "cat_theme_shortlist",
+  "analysis_date": "2026-10-13",
+  "scope_note": "猫主题筛选，未实玩，不是每款完整拆解；区分纯增量／混合／桌宠工具／旧作／未发布",
+  "date_window": {
+    "from": "2026-08-13",
+    "to": "2026-10-13"
+  },
+  "platform_scope": [
+    "Steam",
+    "PC"
+  ],
+  "project_context": {
+    "project": "Purr Orbit／毛球计划",
+    "repository": "https://github.com/Dr-Doge/PURR_ORBIT",
+    "branch": "main",
+    "commit": "e0bf47695eaeba69b5c32a3263c4411953ceaffe",
+    "checked_on": "2026-10-13",
+    "implemented": [
+      "正式3D入口，旧毛层／设施／统一树／36件收藏模型",
+      "独立猫身采集原型：随机毛、触碰、连锁、帮手、事件，纯内存"
+    ],
+    "pending": [
+      "IMP-20261009-002回收舱／90件新收藏尚未实装"
+    ],
+    "confirmed_direction_but_rules_pending": [
+      "独立打捞与盲盒锻造",
+      "锻造对象是盲盒，没有锻猫或锻造变形"
+    ],
+    "discussed_not_verified": [
+      "单猫摸／停手／哈气损失本次产出",
+      "时限／冷却具体值",
+      "每猫自动机器的效率演进",
+      "小队探索与社交经济"
+    ],
+    "withdrawn": [
+      "插入摸猫过程的5—10秒小游戏",
+      "锻猫／猫死亡强化／锻造变形"
+    ],
+    "source_refs": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06"
+    ]
+  },
+  "integration_assessment": {
+    "status": "research_candidate",
+    "research_order": [
+      "G4197890",
+      "G3967820",
+      "G4539530",
+      "G4753960",
+      "G3972410",
+      "G4967970"
+    ],
+    "rationale": "优先猫照料目标、共享交互、打捞回流；旧作按适配价值补充，不混入近期热榜"
+  },
+  "games": {
+    "recent_main": [
+      {
+        "id": "G4753960",
+        "appid": 4753960,
+        "name": "Meow Squad: Incremental Fishing",
+        "first_steam_release": "2026-09-23",
+        "store_release": "Sep 23, 2026",
+        "stage": "released",
+        "type": "主动增量／捕鱼",
+        "loop_summary": "短局捕鱼→网具／人才升级→猫炮台自动捕鱼→新海域",
+        "reviews": 544,
+        "positive_percent": 89,
+        "popularity": "已有小众关注",
+        "fit_verdict": "优先验证",
+        "fit_reasoning": "最适合研究打捞短局与手动／自动协作；不直接搬入首领战",
+        "fit_status": "inference",
+        "source_refs": [
+          "S4753960",
+          "R4753960"
+        ],
+        "url": "https://store.steampowered.com/app/4753960/"
+      },
+      {
+        "id": "G4539530",
+        "appid": 4539530,
+        "name": "Snap the Cat",
+        "first_steam_release": "2026-08-25",
+        "store_release": "Aug 25, 2026",
+        "stage": "released",
+        "type": "主动增量／猫收藏",
+        "loop_summary": "拍猫→点赞／粉丝→变现与设备升级→新猫／服装",
+        "reviews": 196,
+        "positive_percent": 95,
+        "popularity": "已有小众关注",
+        "fit_verdict": "优先验证",
+        "fit_reasoning": "研究共享操作如何靠目标和反馈变化持续成长；不自动新增拍照模式",
+        "fit_status": "inference",
+        "source_refs": [
+          "S4539530",
+          "R4539530"
+        ],
+        "url": "https://store.steampowered.com/app/4539530/"
+      },
+      {
+        "id": "G3967820",
+        "appid": 3967820,
+        "name": "Push Push",
+        "first_steam_release": "2026-09-09",
+        "store_release": "Sep 9, 2026",
+        "stage": "released",
+        "type": "桌面放置／猫养成",
+        "loop_summary": "给猫充气球→体力／幸运取舍→币／收藏→自动化",
+        "reviews": 155,
+        "positive_percent": 94,
+        "popularity": "已有小众关注",
+        "fit_verdict": "优先验证",
+        "fit_reasoning": "研究猫状态、产出与停手选择；气球不是本项目必须的新小游戏",
+        "fit_status": "inference",
+        "source_refs": [
+          "S3967820",
+          "R3967820"
+        ],
+        "url": "https://store.steampowered.com/app/3967820/"
+      },
+      {
+        "id": "G3972410",
+        "appid": 3972410,
+        "name": "Black Cat Book Club",
+        "first_steam_release": "2026-09-25",
+        "store_release": "Sep 25, 2026",
+        "stage": "released",
+        "type": "放置增量／读书",
+        "loop_summary": "古书解锁→消耗Focus解读符文→读书成长／独特升级",
+        "reviews": 64,
+        "positive_percent": 100,
+        "popularity": "小样本观察",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "可研究单猫状态和清晰成长目标；Focus恢复、具体成本仍未知",
+        "fit_status": "inference",
+        "source_refs": [
+          "S3972410",
+          "R3972410"
+        ],
+        "url": "https://store.steampowered.com/app/3972410/"
+      },
+      {
+        "id": "G5249210",
+        "appid": 5249210,
+        "name": "NekoTrak",
+        "first_steam_release": "2026-10-10",
+        "store_release": "Oct 10, 2026",
+        "stage": "released",
+        "type": "专注工具／桌宠成长",
+        "loop_summary": "记录时间／专注→经验与金币→解锁猫和养成",
+        "reviews": 61,
+        "positive_percent": 100,
+        "popularity": "小样本观察",
+        "fit_verdict": "暂缓",
+        "fit_reasoning": "猫陪伴表现可看；工时追踪、联机与状态同步不进入一期",
+        "fit_status": "inference",
+        "source_refs": [
+          "S5249210",
+          "R5249210"
+        ],
+        "url": "https://store.steampowered.com/app/5249210/"
+      },
+      {
+        "id": "G4885010",
+        "appid": 4885010,
+        "name": "Daymark",
+        "first_steam_release": "2026-08-20",
+        "store_release": "Aug 20, 2026",
+        "stage": "released",
+        "type": "输入陪伴／桌宠成长",
+        "loop_summary": "键鼠输入→伙伴反应→XP等级→角色／皮肤",
+        "reviews": 56,
+        "positive_percent": 91,
+        "popularity": "小样本观察",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "观察低成本输入反馈；不是完整猫生产经营循环",
+        "fit_status": "inference",
+        "source_refs": [
+          "S4885010",
+          "R4885010"
+        ],
+        "url": "https://store.steampowered.com/app/4885010/"
+      },
+      {
+        "id": "G4515550",
+        "appid": 4515550,
+        "name": "Desktop Pet: DonEatFish",
+        "first_steam_release": "2026-09-06",
+        "store_release": "Sep 6, 2026",
+        "stage": "released",
+        "type": "放置钓鱼／桌宠",
+        "loop_summary": "猫自动钓鱼→宝箱→装扮与收集",
+        "reviews": 50,
+        "positive_percent": 62,
+        "popularity": "小样本观察",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "看短回访和收藏揭晓；口碑混合，不视为体验有效的证明",
+        "fit_status": "inference",
+        "source_refs": [
+          "S4515550",
+          "R4515550"
+        ],
+        "url": "https://store.steampowered.com/app/4515550/"
+      },
+      {
+        "id": "G5129240",
+        "appid": 5129240,
+        "name": "Neko Neko Shop",
+        "first_steam_release": "2026-09-15",
+        "store_release": "Sep 15, 2026",
+        "stage": "released",
+        "type": "主动增量／摆件整理",
+        "loop_summary": "找招财猫摆件→归位→搬运／搜索升级→更快整理",
+        "reviews": 34,
+        "positive_percent": 91,
+        "popularity": "小样本观察",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "适合猫收藏呈现；主角是摆件整理，不是活猫照料",
+        "fit_status": "inference",
+        "source_refs": [
+          "S5129240",
+          "R5129240"
+        ],
+        "url": "https://store.steampowered.com/app/5129240/"
+      },
+      {
+        "id": "G5031490",
+        "appid": 5031490,
+        "name": "My Desktop Cat",
+        "first_steam_release": "2026-10-01",
+        "store_release": "Oct 1, 2026",
+        "stage": "released",
+        "type": "桌宠／照料收集",
+        "loop_summary": "照料、玩具、装饰→解锁猫与成就",
+        "reviews": 21,
+        "positive_percent": 71,
+        "popularity": "小样本观察",
+        "fit_verdict": "证据不足",
+        "fit_reasoning": "可看照料反馈；升级与生产链还未完整确认，不称纯增量",
+        "fit_status": "inference",
+        "source_refs": [
+          "S5031490",
+          "R5031490"
+        ],
+        "url": "https://store.steampowered.com/app/5031490/"
+      },
+      {
+        "id": "G5034300",
+        "appid": 5034300,
+        "name": "Cosmo Cat: A Cozy Desktop Idler",
+        "first_steam_release": "2026-09-29",
+        "store_release": "Sep 29, 2026",
+        "stage": "released",
+        "type": "时间陪伴／桌面放置",
+        "loop_summary": "猫漂流→星尘／星座碎片→外观与宇宙布置",
+        "reviews": 16,
+        "positive_percent": 100,
+        "popularity": "小样本观察",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "可看太空猫与环境积累表现；专注计时不是一期核心",
+        "fit_status": "inference",
+        "source_refs": [
+          "S5034300",
+          "R5034300"
+        ],
+        "url": "https://store.steampowered.com/app/5034300/"
+      },
+      {
+        "id": "G4967970",
+        "appid": 4967970,
+        "name": "Bloom Cats",
+        "first_steam_release": "2026-08-26",
+        "store_release": "Aug 26, 2026",
+        "stage": "released",
+        "type": "放置养成／访客收藏",
+        "loop_summary": "种花→不同猫来访→照料与好感→毛团／专属礼物",
+        "reviews": 11,
+        "positive_percent": 100,
+        "popularity": "小样本观察",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "猫来访、个性、毛团与礼物值得研究；样本小，规则与经济尚待核实",
+        "fit_status": "inference",
+        "source_refs": [
+          "S4967970",
+          "R4967970"
+        ],
+        "url": "https://store.steampowered.com/app/4967970/"
+      },
+      {
+        "id": "G5206820",
+        "appid": 5206820,
+        "name": "猫猫爱钓鱼 Cat Fishing",
+        "first_steam_release": "2026-09-24",
+        "store_release": "Sep 24, 2026",
+        "stage": "released",
+        "type": "放置捕鱼／装备成长",
+        "loop_summary": "自动捕鱼→卖鱼／宝箱→装备词条／天赋→更高水域",
+        "reviews": 11,
+        "positive_percent": 100,
+        "popularity": "小样本观察",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "研究打捞产物的去向与收藏加成；避免一期堆装备、强化、觉醒系统",
+        "fit_status": "inference",
+        "source_refs": [
+          "S5206820",
+          "R5206820"
+        ],
+        "url": "https://store.steampowered.com/app/5206820/"
+      }
+    ],
+    "recent_small_sample": [
+      {
+        "id": "G5295550",
+        "appid": 5295550,
+        "name": "Happy Cats Market",
+        "first_steam_release": "2026-10-09",
+        "store_release": "Oct 9, 2026",
+        "stage": "EA",
+        "type": "主动增量，EA",
+        "loop_summary": "点食物→连锁／猫能力→升级→营火永久成长",
+        "reviews": 1,
+        "positive_percent": 100,
+        "popularity": "样本极少，不能称热门",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "与原型点击／触碰／连锁有重合，先研究表现；1条评测不是成功证据",
+        "fit_status": "inference",
+        "source_refs": [
+          "S5295550",
+          "R5295550"
+        ],
+        "url": "https://store.steampowered.com/app/5295550/"
+      },
+      {
+        "id": "G5079650",
+        "appid": 5079650,
+        "name": "Miners Cat Revolution",
+        "first_steam_release": "2026-10-07",
+        "store_release": "Oct 7, 2026",
+        "stage": "EA",
+        "type": "放置采矿，EA",
+        "loop_summary": "手动破岩→矿物→招猫自动采矿→分支树／新矿层",
+        "reviews": 0,
+        "positive_percent": null,
+        "popularity": "样本极少，不能称热门",
+        "fit_verdict": "暂缓",
+        "fit_reasoning": "猫职业、不可逆分支和疾病负担需评估；0评测不能列热门",
+        "fit_status": "inference",
+        "source_refs": [
+          "S5079650",
+          "R5079650"
+        ],
+        "url": "https://store.steampowered.com/app/5079650/"
+      },
+      {
+        "id": "G5108840",
+        "appid": 5108840,
+        "name": "Kitty Needs A Home!",
+        "first_steam_release": "2026-09-03",
+        "store_release": "Sep 3, 2026",
+        "stage": "released",
+        "type": "放置猫收容所",
+        "loop_summary": "抓猫／照料→满足领养请求→明信片收藏／升级",
+        "reviews": 8,
+        "positive_percent": 100,
+        "popularity": "样本极少，不能称热门",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "研究为猫找家的阶段目标，不能仅为集图增加订单系统",
+        "fit_status": "inference",
+        "source_refs": [
+          "S5108840",
+          "R5108840"
+        ],
+        "url": "https://store.steampowered.com/app/5108840/"
+      },
+      {
+        "id": "G5009510",
+        "appid": 5009510,
+        "name": "Aquasushi Cat",
+        "first_steam_release": "2026-08-13",
+        "store_release": "Aug 13, 2026",
+        "stage": "released",
+        "type": "主动增量／潜水",
+        "loop_summary": "猫潜水抓鱼→技能树／助手→更深水域与首领",
+        "reviews": 2,
+        "positive_percent": 100,
+        "popularity": "样本极少，不能称热门",
+        "fit_verdict": "暂缓",
+        "fit_reasoning": "看打捞成长链；样本极小，主动战斗范围较大",
+        "fit_status": "inference",
+        "source_refs": [
+          "S5009510",
+          "R5009510"
+        ],
+        "url": "https://store.steampowered.com/app/5009510/"
+      },
+      {
+        "id": "G4755470",
+        "appid": 4755470,
+        "name": "Pixel Kitten Desktop",
+        "first_steam_release": "2026-10-09",
+        "store_release": "Oct 9, 2026",
+        "stage": "released",
+        "type": "桌宠／繁育模拟",
+        "loop_summary": "照料猫→配对繁育→遗传毛色→家谱和收集挑战",
+        "reviews": 1,
+        "positive_percent": 100,
+        "popularity": "样本极少，不能称热门",
+        "fit_verdict": "暂缓",
+        "fit_reasoning": "看个体身份，完整遗传与繁育会扩大成本，不进入一期",
+        "fit_status": "inference",
+        "source_refs": [
+          "S4755470",
+          "R4755470"
+        ],
+        "url": "https://store.steampowered.com/app/4755470/"
+      },
+      {
+        "id": "G5105310",
+        "appid": 5105310,
+        "name": "Chestnut's Idle Farm",
+        "first_steam_release": "2026-10-09",
+        "store_release": "Oct 9, 2026",
+        "stage": "EA",
+        "type": "桌面放置经营，EA",
+        "loop_summary": "猫农场种植→卖菜／做菜→等级与自动播种",
+        "reviews": 3,
+        "positive_percent": 100,
+        "popularity": "样本极少，不能称热门",
+        "fit_verdict": "暂缓",
+        "fit_reasoning": "资源去向可研究，完整农场和餐厅超出一期",
+        "fit_status": "inference",
+        "source_refs": [
+          "S5105310",
+          "R5105310"
+        ],
+        "url": "https://store.steampowered.com/app/5105310/"
+      },
+      {
+        "id": "G5250830",
+        "appid": 5250830,
+        "name": "Pawmlet - Wheat Farm",
+        "first_steam_release": "2026-10-02",
+        "store_release": "Oct 2, 2026",
+        "stage": "released",
+        "type": "桌面放置农场",
+        "loop_summary": "猫种麦→收获出售→扩地→任务队列",
+        "reviews": 1,
+        "positive_percent": 100,
+        "popularity": "样本极少，不能称热门",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "看单猫自动工作与短回访；农场题材不直接迁移",
+        "fit_status": "inference",
+        "source_refs": [
+          "S5250830",
+          "R5250830"
+        ],
+        "url": "https://store.steampowered.com/app/5250830/"
+      },
+      {
+        "id": "G4609190",
+        "appid": 4609190,
+        "name": "Cats and Sushi",
+        "first_steam_release": "2026-09-17",
+        "store_release": "Sep 17, 2026",
+        "stage": "released",
+        "type": "猫餐厅经营",
+        "loop_summary": "补食材→做寿司满足猫顾客→小费／新食谱",
+        "reviews": 1,
+        "positive_percent": 100,
+        "popularity": "样本极少，不能称热门",
+        "fit_verdict": "暂缓",
+        "fit_reasoning": "经营旁支，是否具有充分增量成长仍待连续实机",
+        "fit_status": "inference",
+        "source_refs": [
+          "S4609190",
+          "R4609190"
+        ],
+        "url": "https://store.steampowered.com/app/4609190/"
+      },
+      {
+        "id": "G5023670",
+        "appid": 5023670,
+        "name": "Taskbar Cat Club",
+        "first_steam_release": "2026-08-28",
+        "store_release": "Aug 28, 2026",
+        "stage": "released",
+        "type": "纯桌宠陪伴",
+        "loop_summary": "猫沿任务栏／窗口行走、睡觉、追光标",
+        "reviews": 1,
+        "positive_percent": 100,
+        "popularity": "样本极少，不能称热门",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "只研究猫反应与陪伴表现，不列为数值增量游戏",
+        "fit_status": "inference",
+        "source_refs": [
+          "S5023670",
+          "R5023670"
+        ],
+        "url": "https://store.steampowered.com/app/5023670/"
+      },
+      {
+        "id": "G4930400",
+        "appid": 4930400,
+        "name": "TaskPaw",
+        "first_steam_release": "2026-09-13",
+        "store_release": "Sep 13, 2026",
+        "stage": "released",
+        "type": "纯桌宠陪伴",
+        "loop_summary": "猫走／跑／换装，桌面日夜环境",
+        "reviews": 0,
+        "positive_percent": null,
+        "popularity": "样本极少，不能称热门",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "只研究轻反馈与呈现，未确认完整增长循环",
+        "fit_status": "inference",
+        "source_refs": [
+          "S4930400",
+          "R4930400"
+        ],
+        "url": "https://store.steampowered.com/app/4930400/"
+      }
+    ],
+    "outside_window": [
+      {
+        "id": "G4197890",
+        "appid": 4197890,
+        "name": "The Last Cat in the Universe",
+        "first_steam_release": "2026-04-23",
+        "store_release": "Apr 23, 2026",
+        "stage": "released",
+        "type": "主动增量／叙事",
+        "loop_summary": "回收空间站残骸→升级工具／维持空气与温暖→照顾最后的猫",
+        "reviews": 1376,
+        "positive_percent": 95,
+        "popularity": "已有小众关注",
+        "fit_verdict": "优先验证",
+        "fit_reasoning": "空间站、回收与照顾猫接近本项目，但资源由回收产生，与猫产毛不同",
+        "fit_status": "inference",
+        "source_refs": [
+          "S4197890",
+          "R4197890"
+        ],
+        "url": "https://store.steampowered.com/app/4197890/"
+      },
+      {
+        "id": "G4249770",
+        "appid": 4249770,
+        "name": "Captain Whiskers: Incremental Seas",
+        "first_steam_release": "2026-02-10",
+        "store_release": "Feb 10, 2026",
+        "stage": "released",
+        "type": "主动增量／捕鱼",
+        "loop_summary": "猫船长出航→捕鱼→资源／技能树→下一航次",
+        "reviews": 985,
+        "positive_percent": 86,
+        "popularity": "已有小众关注",
+        "fit_verdict": "优先验证",
+        "fit_reasoning": "与Meow Squad同开发商，可比较捕鱼循环和迭代差异",
+        "fit_status": "inference",
+        "source_refs": [
+          "S4249770",
+          "R4249770"
+        ],
+        "url": "https://store.steampowered.com/app/4249770/"
+      },
+      {
+        "id": "G4249200",
+        "appid": 4249200,
+        "name": "Incremental Cats",
+        "first_steam_release": "2026-01-26",
+        "store_release": "Jan 26, 2026",
+        "stage": "released",
+        "type": "短流程猫增量",
+        "loop_summary": "结交不同稀有猫→心心产出→升级／法术重置",
+        "reviews": 24,
+        "positive_percent": 100,
+        "popularity": "小样本观察",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "研究猫收集与能力回流；法术重置与当前Demo不重开冲突",
+        "fit_status": "inference",
+        "source_refs": [
+          "S4249200",
+          "R4249200"
+        ],
+        "url": "https://store.steampowered.com/app/4249200/"
+      },
+      {
+        "id": "G4615010",
+        "appid": 4615010,
+        "name": "Kibble Cats",
+        "first_steam_release": "2026-07-14",
+        "store_release": "Jul 14, 2026",
+        "stage": "released",
+        "type": "短流程猫村增量",
+        "loop_summary": "雇猫→解锁建筑→达成里程碑→村庄发展与结局",
+        "reviews": 42,
+        "positive_percent": 90,
+        "popularity": "小样本观察",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "看猫分工和环境成长；完整村庄建造先暂缓",
+        "fit_status": "inference",
+        "source_refs": [
+          "S4615010",
+          "R4615010"
+        ],
+        "url": "https://store.steampowered.com/app/4615010/"
+      },
+      {
+        "id": "G3520820",
+        "appid": 3520820,
+        "name": "Idle Kitty",
+        "first_steam_release": "2026-07-10",
+        "store_release": "Sep 15, 2026",
+        "stage": "released",
+        "type": "放置猫RPG",
+        "loop_summary": "抽猫→队伍培养／刷装／经营→推图",
+        "reviews": 74,
+        "positive_percent": 85,
+        "popularity": "小样本观察",
+        "fit_verdict": "暂缓",
+        "fit_reasoning": "7月10日已EA，不是9月的新作；装备与战斗不是一期重点",
+        "fit_status": "inference",
+        "source_refs": [
+          "S3520820",
+          "R3520820"
+        ],
+        "url": "https://store.steampowered.com/app/3520820/"
+      },
+      {
+        "id": "G3924280",
+        "appid": 3924280,
+        "name": "Pat the Cat",
+        "first_steam_release": "2026-06-25",
+        "store_release": "Jun 25, 2026",
+        "stage": "released",
+        "type": "桌宠／照料成长",
+        "loop_summary": "抚摸／喂食／玩耍→呼噜点→帽子／玩具／休憩点",
+        "reviews": 224,
+        "positive_percent": 99,
+        "popularity": "已有小众关注",
+        "fit_verdict": "优先验证",
+        "fit_reasoning": "最直接的猫照料输入反馈；9月绘画更新不是首次发行",
+        "fit_status": "inference",
+        "source_refs": [
+          "S3924280",
+          "R3924280"
+        ],
+        "url": "https://store.steampowered.com/app/3924280/"
+      },
+      {
+        "id": "G3419430",
+        "appid": 3419430,
+        "name": "Bongo Cat",
+        "first_steam_release": "2025-03-05",
+        "store_release": "Mar 5, 2025",
+        "stage": "released",
+        "type": "输入陪伴／收藏",
+        "loop_summary": "键鼠输入→猫拍任务栏→积分→帽子收藏",
+        "reviews": 112460,
+        "positive_percent": 97,
+        "popularity": "已有小众关注",
+        "fit_verdict": "可局部借鉴",
+        "fit_reasoning": "猫动作与玩家输入同步，值得看低成本反馈；不照搬掉落市场",
+        "fit_status": "inference",
+        "source_refs": [
+          "S3419430",
+          "R3419430"
+        ],
+        "url": "https://store.steampowered.com/app/3419430/"
+      },
+      {
+        "id": "G2797340",
+        "appid": 2797340,
+        "name": "Cat God Ranch",
+        "first_steam_release": "2024-09-12",
+        "store_release": "Sep 12, 2024",
+        "stage": "released",
+        "type": "猫神主题／构筑肉鸽",
+        "loop_summary": "选动物／地形／道具协同→收益→按周纳贡",
+        "reviews": 2204,
+        "positive_percent": 93,
+        "popularity": "已有小众关注",
+        "fit_verdict": "暂缓",
+        "fit_reasoning": "主体是多动物牧场与卡牌构筑，不是纯猫养成增量",
+        "fit_status": "inference",
+        "source_refs": [
+          "S2797340",
+          "R2797340"
+        ],
+        "url": "https://store.steampowered.com/app/2797340/"
+      }
+    ]
+  },
+  "upcoming": [
+    {
+      "id": "G4379520",
+      "appid": 4379520,
+      "name": "Catnip Cosmos",
+      "coming_soon": true,
+      "planned_release_api": "Q4 2026",
+      "demo_available": true,
+      "url": "https://store.steampowered.com/app/4379520/",
+      "source_refs": [
+        "S4379520"
+      ],
+      "scope_note": "缓存曾显示Q3；本轮API为Q4，不承诺日期，不计新发行"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S3859210",
+      "type": "official_store",
+      "title": "Rhythm Animal Café",
+      "url": "https://store.steampowered.com/app/3859210/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=3859210&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:17.704857+08:00"
+    },
+    {
+      "id": "R3859210",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/3859210?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:17.704857+08:00"
+    },
+    {
+      "id": "S3911840",
+      "type": "official_store",
+      "title": "100 Cats Lost in China 2 Find & Color",
+      "url": "https://store.steampowered.com/app/3911840/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=3911840&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:17.725753+08:00"
+    },
+    {
+      "id": "R3911840",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/3911840?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:17.725753+08:00"
+    },
+    {
+      "id": "S5295550",
+      "type": "official_store",
+      "title": "Happy Cats Market",
+      "url": "https://store.steampowered.com/app/5295550/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5295550&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:17.616042+08:00"
+    },
+    {
+      "id": "R5295550",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5295550?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:17.616042+08:00"
+    },
+    {
+      "id": "S5079650",
+      "type": "official_store",
+      "title": "Miners Cat Revolution",
+      "url": "https://store.steampowered.com/app/5079650/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5079650&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:17.792925+08:00"
+    },
+    {
+      "id": "R5079650",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5079650?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:17.792925+08:00"
+    },
+    {
+      "id": "S4692190",
+      "type": "official_store",
+      "title": "Idle Bomb Animals - Desktop Mining",
+      "url": "https://store.steampowered.com/app/4692190/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4692190&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:17.814173+08:00"
+    },
+    {
+      "id": "R4692190",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4692190?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:17.814173+08:00"
+    },
+    {
+      "id": "S3972410",
+      "type": "official_store",
+      "title": "Black Cat Book Club",
+      "url": "https://store.steampowered.com/app/3972410/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=3972410&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:17.726259+08:00"
+    },
+    {
+      "id": "R3972410",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/3972410?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:17.726259+08:00"
+    },
+    {
+      "id": "S4753960",
+      "type": "official_store",
+      "title": "Meow Squad: Incremental Fishing",
+      "url": "https://store.steampowered.com/app/4753960/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4753960&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:18.866193+08:00"
+    },
+    {
+      "id": "R4753960",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4753960?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:18.866193+08:00"
+    },
+    {
+      "id": "S4609190",
+      "type": "official_store",
+      "title": "Cats and Sushi",
+      "url": "https://store.steampowered.com/app/4609190/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4609190&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:19.029499+08:00"
+    },
+    {
+      "id": "R4609190",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4609190?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:19.029499+08:00"
+    },
+    {
+      "id": "S3520820",
+      "type": "official_store",
+      "title": "Idle Kitty",
+      "url": "https://store.steampowered.com/app/3520820/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=3520820&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:18.938751+08:00"
+    },
+    {
+      "id": "R3520820",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/3520820?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:18.938751+08:00"
+    },
+    {
+      "id": "S5129240",
+      "type": "official_store",
+      "title": "Neko Neko Shop",
+      "url": "https://store.steampowered.com/app/5129240/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5129240&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:19.108271+08:00"
+    },
+    {
+      "id": "R5129240",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5129240?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:19.108271+08:00"
+    },
+    {
+      "id": "S4930400",
+      "type": "official_store",
+      "title": "TaskPaw",
+      "url": "https://store.steampowered.com/app/4930400/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4930400&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:19.044914+08:00"
+    },
+    {
+      "id": "R4930400",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4930400?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:19.044914+08:00"
+    },
+    {
+      "id": "S4319660",
+      "type": "official_store",
+      "title": "Moon Garden",
+      "url": "https://store.steampowered.com/app/4319660/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4319660&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:19.374666+08:00"
+    },
+    {
+      "id": "R4319660",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4319660?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:19.374666+08:00"
+    },
+    {
+      "id": "S3967820",
+      "type": "official_store",
+      "title": "Push Push",
+      "url": "https://store.steampowered.com/app/3967820/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=3967820&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:20.661762+08:00"
+    },
+    {
+      "id": "R3967820",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/3967820?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:20.661762+08:00"
+    },
+    {
+      "id": "S5108840",
+      "type": "official_store",
+      "title": "Kitty Needs A Home!",
+      "url": "https://store.steampowered.com/app/5108840/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5108840&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:20.531523+08:00"
+    },
+    {
+      "id": "R5108840",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5108840?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:20.531523+08:00"
+    },
+    {
+      "id": "S4967970",
+      "type": "official_store",
+      "title": "Bloom Cats",
+      "url": "https://store.steampowered.com/app/4967970/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4967970&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:20.517268+08:00"
+    },
+    {
+      "id": "R4967970",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4967970?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:20.517268+08:00"
+    },
+    {
+      "id": "S4539530",
+      "type": "official_store",
+      "title": "Snap the Cat",
+      "url": "https://store.steampowered.com/app/4539530/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4539530&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:20.647471+08:00"
+    },
+    {
+      "id": "R4539530",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4539530?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:20.647471+08:00"
+    },
+    {
+      "id": "S5009510",
+      "type": "official_store",
+      "title": "Aquasushi Cat",
+      "url": "https://store.steampowered.com/app/5009510/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5009510&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:20.503829+08:00"
+    },
+    {
+      "id": "R5009510",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5009510?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:20.503829+08:00"
+    },
+    {
+      "id": "S4860340",
+      "type": "official_store",
+      "title": "Dream House Cleaning",
+      "url": "https://store.steampowered.com/app/4860340/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4860340&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:20.750332+08:00"
+    },
+    {
+      "id": "R4860340",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4860340?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:20.750332+08:00"
+    },
+    {
+      "id": "S5249210",
+      "type": "official_store",
+      "title": "NekoTrak",
+      "url": "https://store.steampowered.com/app/5249210/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5249210&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:21.689338+08:00"
+    },
+    {
+      "id": "R5249210",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5249210?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:21.689338+08:00"
+    },
+    {
+      "id": "S4755470",
+      "type": "official_store",
+      "title": "Pixel Kitten Desktop",
+      "url": "https://store.steampowered.com/app/4755470/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4755470&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:21.806945+08:00"
+    },
+    {
+      "id": "R4755470",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4755470?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:21.806945+08:00"
+    },
+    {
+      "id": "S5105310",
+      "type": "official_store",
+      "title": "Chestnut's Idle Farm",
+      "url": "https://store.steampowered.com/app/5105310/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5105310&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:21.758465+08:00"
+    },
+    {
+      "id": "R5105310",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5105310?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:21.758465+08:00"
+    },
+    {
+      "id": "S5235730",
+      "type": "official_store",
+      "title": "Don't Click",
+      "url": "https://store.steampowered.com/app/5235730/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5235730&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:22.069000+08:00"
+    },
+    {
+      "id": "R5235730",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5235730?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:22.069000+08:00"
+    },
+    {
+      "id": "S5250830",
+      "type": "official_store",
+      "title": "Pawmlet - Wheat Farm",
+      "url": "https://store.steampowered.com/app/5250830/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5250830&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:21.821839+08:00"
+    },
+    {
+      "id": "R5250830",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5250830?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:21.821839+08:00"
+    },
+    {
+      "id": "S5031490",
+      "type": "official_store",
+      "title": "My Desktop Cat",
+      "url": "https://store.steampowered.com/app/5031490/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5031490&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:21.967967+08:00"
+    },
+    {
+      "id": "R5031490",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5031490?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:21.967967+08:00"
+    },
+    {
+      "id": "S5094130",
+      "type": "official_store",
+      "title": "Pawsweeper",
+      "url": "https://store.steampowered.com/app/5094130/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5094130&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:23.018341+08:00"
+    },
+    {
+      "id": "R5094130",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5094130?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:23.018341+08:00"
+    },
+    {
+      "id": "S5034300",
+      "type": "official_store",
+      "title": "Cosmo Cat: A Cozy Desktop Idler",
+      "url": "https://store.steampowered.com/app/5034300/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5034300&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:22.933169+08:00"
+    },
+    {
+      "id": "R5034300",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5034300?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:22.933169+08:00"
+    },
+    {
+      "id": "S5151800",
+      "type": "official_store",
+      "title": "Cyberpunk Cats & Dogs",
+      "url": "https://store.steampowered.com/app/5151800/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5151800&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:23.110704+08:00"
+    },
+    {
+      "id": "R5151800",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5151800?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:23.110704+08:00"
+    },
+    {
+      "id": "S4815060",
+      "type": "official_store",
+      "title": "Animal Cozy Corner Shop",
+      "url": "https://store.steampowered.com/app/4815060/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4815060&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:23.033976+08:00"
+    },
+    {
+      "id": "R4815060",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4815060?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:23.033976+08:00"
+    },
+    {
+      "id": "S5119020",
+      "type": "official_store",
+      "title": "Sill Dogs",
+      "url": "https://store.steampowered.com/app/5119020/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5119020&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:23.151539+08:00"
+    },
+    {
+      "id": "R5119020",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5119020?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:23.151539+08:00"
+    },
+    {
+      "id": "S5080710",
+      "type": "official_store",
+      "title": "Furry Slot",
+      "url": "https://store.steampowered.com/app/5080710/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5080710&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:23.390870+08:00"
+    },
+    {
+      "id": "R5080710",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5080710?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:23.390870+08:00"
+    },
+    {
+      "id": "S5152450",
+      "type": "official_store",
+      "title": "Cutie Clicker",
+      "url": "https://store.steampowered.com/app/5152450/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5152450&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:24.282280+08:00"
+    },
+    {
+      "id": "R5152450",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5152450?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:24.282280+08:00"
+    },
+    {
+      "id": "S5069160",
+      "type": "official_store",
+      "title": "桌面寵物工作室 - DesktopPetStudio",
+      "url": "https://store.steampowered.com/app/5069160/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5069160&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:24.413171+08:00"
+    },
+    {
+      "id": "R5069160",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5069160?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:24.413171+08:00"
+    },
+    {
+      "id": "S4515550",
+      "type": "official_store",
+      "title": "Desktop Pet: DonEatFish",
+      "url": "https://store.steampowered.com/app/4515550/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4515550&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:24.265974+08:00"
+    },
+    {
+      "id": "R4515550",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4515550?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:24.265974+08:00"
+    },
+    {
+      "id": "S4997240",
+      "type": "official_store",
+      "title": "Nonoko: Lofi Days",
+      "url": "https://store.steampowered.com/app/4997240/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4997240&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:24.486235+08:00"
+    },
+    {
+      "id": "R4997240",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4997240?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:24.486235+08:00"
+    },
+    {
+      "id": "S5035800",
+      "type": "official_store",
+      "title": "Ether Flow :: Focus, organize, and create.",
+      "url": "https://store.steampowered.com/app/5035800/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5035800&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:24.536838+08:00"
+    },
+    {
+      "id": "R5035800",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5035800?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:24.536838+08:00"
+    },
+    {
+      "id": "S5023670",
+      "type": "official_store",
+      "title": "Taskbar Cat Club",
+      "url": "https://store.steampowered.com/app/5023670/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5023670&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:24.655882+08:00"
+    },
+    {
+      "id": "R5023670",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5023670?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:24.655882+08:00"
+    },
+    {
+      "id": "S4885010",
+      "type": "official_store",
+      "title": "Daymark",
+      "url": "https://store.steampowered.com/app/4885010/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4885010&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:25.560389+08:00"
+    },
+    {
+      "id": "R4885010",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4885010?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:25.560389+08:00"
+    },
+    {
+      "id": "S4300680",
+      "type": "official_store",
+      "title": "Anidema",
+      "url": "https://store.steampowered.com/app/4300680/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4300680&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:25.763877+08:00"
+    },
+    {
+      "id": "R4300680",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4300680?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:25.763877+08:00"
+    },
+    {
+      "id": "S5005680",
+      "type": "official_store",
+      "title": "CatPoker",
+      "url": "https://store.steampowered.com/app/5005680/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5005680&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:25.580980+08:00"
+    },
+    {
+      "id": "R5005680",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5005680?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:25.580980+08:00"
+    },
+    {
+      "id": "S5217460",
+      "type": "official_store",
+      "title": "Neko Cargo",
+      "url": "https://store.steampowered.com/app/5217460/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5217460&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:25.816189+08:00"
+    },
+    {
+      "id": "R5217460",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5217460?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:25.816189+08:00"
+    },
+    {
+      "id": "S5206820",
+      "type": "official_store",
+      "title": "猫猫爱钓鱼 Cat Fishing",
+      "url": "https://store.steampowered.com/app/5206820/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=5206820&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:25.913021+08:00"
+    },
+    {
+      "id": "R5206820",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/5206820?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:25.913021+08:00"
+    },
+    {
+      "id": "S4459980",
+      "type": "official_store",
+      "title": "Catventure",
+      "url": "https://store.steampowered.com/app/4459980/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4459980&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:25.847632+08:00"
+    },
+    {
+      "id": "R4459980",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4459980?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:25.847632+08:00"
+    },
+    {
+      "id": "S4197890",
+      "type": "official_store",
+      "title": "The Last Cat in the Universe",
+      "url": "https://store.steampowered.com/app/4197890/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4197890&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:26.905825+08:00"
+    },
+    {
+      "id": "R4197890",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4197890?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:26.905825+08:00"
+    },
+    {
+      "id": "S4249770",
+      "type": "official_store",
+      "title": "Captain Whiskers: Incremental Seas",
+      "url": "https://store.steampowered.com/app/4249770/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4249770&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:26.959877+08:00"
+    },
+    {
+      "id": "R4249770",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4249770?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:26.959877+08:00"
+    },
+    {
+      "id": "S4249200",
+      "type": "official_store",
+      "title": "Incremental Cats",
+      "url": "https://store.steampowered.com/app/4249200/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4249200&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:27.238974+08:00"
+    },
+    {
+      "id": "R4249200",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4249200?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:27.238974+08:00"
+    },
+    {
+      "id": "S4615010",
+      "type": "official_store",
+      "title": "Kibble Cats",
+      "url": "https://store.steampowered.com/app/4615010/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4615010&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:27.142343+08:00"
+    },
+    {
+      "id": "R4615010",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4615010?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:27.142343+08:00"
+    },
+    {
+      "id": "S3924280",
+      "type": "official_store",
+      "title": "Pat the Cat",
+      "url": "https://store.steampowered.com/app/3924280/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=3924280&l=english&cc=us",
+      "captured_at": "2026-10-13T17:36:27.262375+08:00"
+    },
+    {
+      "id": "R3924280",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/3924280?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:36:27.262375+08:00"
+    },
+    {
+      "id": "S3419430",
+      "type": "official_store",
+      "title": "Bongo Cat",
+      "url": "https://store.steampowered.com/app/3419430/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=3419430&l=english&cc=us",
+      "captured_at": "2026-10-13T17:37:53.060987+08:00"
+    },
+    {
+      "id": "R3419430",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/3419430?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:37:53.060987+08:00"
+    },
+    {
+      "id": "S2797340",
+      "type": "official_store",
+      "title": "Cat God Ranch",
+      "url": "https://store.steampowered.com/app/2797340/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=2797340&l=english&cc=us",
+      "captured_at": "2026-10-13T17:37:54.369391+08:00"
+    },
+    {
+      "id": "R2797340",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/2797340?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:37:54.369391+08:00"
+    },
+    {
+      "id": "S4379520",
+      "type": "official_store",
+      "title": "Catnip Cosmos",
+      "url": "https://store.steampowered.com/app/4379520/",
+      "api_url": "https://store.steampowered.com/api/appdetails?appids=4379520&l=english&cc=us",
+      "captured_at": "2026-10-13T17:37:57.412233+08:00"
+    },
+    {
+      "id": "R4379520",
+      "type": "official_api",
+      "title": "全语言全部购买来源评测",
+      "url": "https://store.steampowered.com/appreviews/4379520?json=1&language=all&purchase_type=all&filter=all&num_per_page=0",
+      "captured_at": "2026-10-13T17:37:57.412233+08:00"
+    },
+    {
+      "id": "P01",
+      "type": "project_repository",
+      "path": "AGENTS.md",
+      "commit": "e0bf47695eaeba69b5c32a3263c4411953ceaffe",
+      "url": "https://github.com/Dr-Doge/PURR_ORBIT/blob/e0bf47695eaeba69b5c32a3263c4411953ceaffe/AGENTS.md"
+    },
+    {
+      "id": "P02",
+      "type": "project_repository",
+      "path": "摸猫增量策划案/00_索引.md",
+      "commit": "e0bf47695eaeba69b5c32a3263c4411953ceaffe",
+      "url": "https://github.com/Dr-Doge/PURR_ORBIT/blob/e0bf47695eaeba69b5c32a3263c4411953ceaffe/摸猫增量策划案/00_索引.md"
+    },
+    {
+      "id": "P03",
+      "type": "project_repository",
+      "path": "摸猫增量策划案/18_实装变更日志.md",
+      "commit": "e0bf47695eaeba69b5c32a3263c4411953ceaffe",
+      "url": "https://github.com/Dr-Doge/PURR_ORBIT/blob/e0bf47695eaeba69b5c32a3263c4411953ceaffe/摸猫增量策划案/18_实装变更日志.md"
+    },
+    {
+      "id": "P04",
+      "type": "project_repository",
+      "path": "会议纪要/2026-10-12_日会_整理纪要.md",
+      "commit": "e0bf47695eaeba69b5c32a3263c4411953ceaffe",
+      "url": "https://github.com/Dr-Doge/PURR_ORBIT/blob/e0bf47695eaeba69b5c32a3263c4411953ceaffe/会议纪要/2026-10-12_日会_整理纪要.md"
+    },
+    {
+      "id": "P05",
+      "type": "project_repository",
+      "path": "毛球满屋/project.godot",
+      "commit": "e0bf47695eaeba69b5c32a3263c4411953ceaffe",
+      "url": "https://github.com/Dr-Doge/PURR_ORBIT/blob/e0bf47695eaeba69b5c32a3263c4411953ceaffe/毛球满屋/project.godot"
+    },
+    {
+      "id": "P06",
+      "type": "project_repository",
+      "path": "毛球满屋/scripts/prototype_harvest/controller.gd",
+      "commit": "e0bf47695eaeba69b5c32a3263c4411953ceaffe",
+      "url": "https://github.com/Dr-Doge/PURR_ORBIT/blob/e0bf47695eaeba69b5c32a3263c4411953ceaffe/毛球满屋/scripts/prototype_harvest/controller.gd"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C4753960",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-09-23",
+        "reviews": 544,
+        "official_loop_summary": "短局捕鱼→网具／人才升级→猫炮台自动捕鱼→新海域"
+      },
+      "source_refs": [
+        "S4753960",
+        "R4753960"
+      ]
+    },
+    {
+      "id": "I4753960",
+      "status": "inference",
+      "statement": "优先验证：最适合研究打捞短局与手动／自动协作；不直接搬入首领战",
+      "source_refs": [
+        "S4753960",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C4539530",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-08-25",
+        "reviews": 196,
+        "official_loop_summary": "拍猫→点赞／粉丝→变现与设备升级→新猫／服装"
+      },
+      "source_refs": [
+        "S4539530",
+        "R4539530"
+      ]
+    },
+    {
+      "id": "I4539530",
+      "status": "inference",
+      "statement": "优先验证：研究共享操作如何靠目标和反馈变化持续成长；不自动新增拍照模式",
+      "source_refs": [
+        "S4539530",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C3967820",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-09-09",
+        "reviews": 155,
+        "official_loop_summary": "给猫充气球→体力／幸运取舍→币／收藏→自动化"
+      },
+      "source_refs": [
+        "S3967820",
+        "R3967820"
+      ]
+    },
+    {
+      "id": "I3967820",
+      "status": "inference",
+      "statement": "优先验证：研究猫状态、产出与停手选择；气球不是本项目必须的新小游戏",
+      "source_refs": [
+        "S3967820",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C3972410",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-09-25",
+        "reviews": 64,
+        "official_loop_summary": "古书解锁→消耗Focus解读符文→读书成长／独特升级"
+      },
+      "source_refs": [
+        "S3972410",
+        "R3972410"
+      ]
+    },
+    {
+      "id": "I3972410",
+      "status": "inference",
+      "statement": "可局部借鉴：可研究单猫状态和清晰成长目标；Focus恢复、具体成本仍未知",
+      "source_refs": [
+        "S3972410",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C5249210",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-10-10",
+        "reviews": 61,
+        "official_loop_summary": "记录时间／专注→经验与金币→解锁猫和养成"
+      },
+      "source_refs": [
+        "S5249210",
+        "R5249210"
+      ]
+    },
+    {
+      "id": "I5249210",
+      "status": "inference",
+      "statement": "暂缓：猫陪伴表现可看；工时追踪、联机与状态同步不进入一期",
+      "source_refs": [
+        "S5249210",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C4885010",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-08-20",
+        "reviews": 56,
+        "official_loop_summary": "键鼠输入→伙伴反应→XP等级→角色／皮肤"
+      },
+      "source_refs": [
+        "S4885010",
+        "R4885010"
+      ]
+    },
+    {
+      "id": "I4885010",
+      "status": "inference",
+      "statement": "可局部借鉴：观察低成本输入反馈；不是完整猫生产经营循环",
+      "source_refs": [
+        "S4885010",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C4515550",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-09-06",
+        "reviews": 50,
+        "official_loop_summary": "猫自动钓鱼→宝箱→装扮与收集"
+      },
+      "source_refs": [
+        "S4515550",
+        "R4515550"
+      ]
+    },
+    {
+      "id": "I4515550",
+      "status": "inference",
+      "statement": "可局部借鉴：看短回访和收藏揭晓；口碑混合，不视为体验有效的证明",
+      "source_refs": [
+        "S4515550",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C5129240",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-09-15",
+        "reviews": 34,
+        "official_loop_summary": "找招财猫摆件→归位→搬运／搜索升级→更快整理"
+      },
+      "source_refs": [
+        "S5129240",
+        "R5129240"
+      ]
+    },
+    {
+      "id": "I5129240",
+      "status": "inference",
+      "statement": "可局部借鉴：适合猫收藏呈现；主角是摆件整理，不是活猫照料",
+      "source_refs": [
+        "S5129240",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C5031490",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-10-01",
+        "reviews": 21,
+        "official_loop_summary": "照料、玩具、装饰→解锁猫与成就"
+      },
+      "source_refs": [
+        "S5031490",
+        "R5031490"
+      ]
+    },
+    {
+      "id": "I5031490",
+      "status": "inference",
+      "statement": "证据不足：可看照料反馈；升级与生产链还未完整确认，不称纯增量",
+      "source_refs": [
+        "S5031490",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C5034300",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-09-29",
+        "reviews": 16,
+        "official_loop_summary": "猫漂流→星尘／星座碎片→外观与宇宙布置"
+      },
+      "source_refs": [
+        "S5034300",
+        "R5034300"
+      ]
+    },
+    {
+      "id": "I5034300",
+      "status": "inference",
+      "statement": "可局部借鉴：可看太空猫与环境积累表现；专注计时不是一期核心",
+      "source_refs": [
+        "S5034300",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C4967970",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-08-26",
+        "reviews": 11,
+        "official_loop_summary": "种花→不同猫来访→照料与好感→毛团／专属礼物"
+      },
+      "source_refs": [
+        "S4967970",
+        "R4967970"
+      ]
+    },
+    {
+      "id": "I4967970",
+      "status": "inference",
+      "statement": "可局部借鉴：猫来访、个性、毛团与礼物值得研究；样本小，规则与经济尚待核实",
+      "source_refs": [
+        "S4967970",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C5206820",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-09-24",
+        "reviews": 11,
+        "official_loop_summary": "自动捕鱼→卖鱼／宝箱→装备词条／天赋→更高水域"
+      },
+      "source_refs": [
+        "S5206820",
+        "R5206820"
+      ]
+    },
+    {
+      "id": "I5206820",
+      "status": "inference",
+      "statement": "可局部借鉴：研究打捞产物的去向与收藏加成；避免一期堆装备、强化、觉醒系统",
+      "source_refs": [
+        "S5206820",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C5295550",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-10-09",
+        "reviews": 1,
+        "official_loop_summary": "点食物→连锁／猫能力→升级→营火永久成长"
+      },
+      "source_refs": [
+        "S5295550",
+        "R5295550"
+      ]
+    },
+    {
+      "id": "I5295550",
+      "status": "inference",
+      "statement": "可局部借鉴：与原型点击／触碰／连锁有重合，先研究表现；1条评测不是成功证据",
+      "source_refs": [
+        "S5295550",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C5079650",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-10-07",
+        "reviews": 0,
+        "official_loop_summary": "手动破岩→矿物→招猫自动采矿→分支树／新矿层"
+      },
+      "source_refs": [
+        "S5079650",
+        "R5079650"
+      ]
+    },
+    {
+      "id": "I5079650",
+      "status": "inference",
+      "statement": "暂缓：猫职业、不可逆分支和疾病负担需评估；0评测不能列热门",
+      "source_refs": [
+        "S5079650",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C5108840",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-09-03",
+        "reviews": 8,
+        "official_loop_summary": "抓猫／照料→满足领养请求→明信片收藏／升级"
+      },
+      "source_refs": [
+        "S5108840",
+        "R5108840"
+      ]
+    },
+    {
+      "id": "I5108840",
+      "status": "inference",
+      "statement": "可局部借鉴：研究为猫找家的阶段目标，不能仅为集图增加订单系统",
+      "source_refs": [
+        "S5108840",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C5009510",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-08-13",
+        "reviews": 2,
+        "official_loop_summary": "猫潜水抓鱼→技能树／助手→更深水域与首领"
+      },
+      "source_refs": [
+        "S5009510",
+        "R5009510"
+      ]
+    },
+    {
+      "id": "I5009510",
+      "status": "inference",
+      "statement": "暂缓：看打捞成长链；样本极小，主动战斗范围较大",
+      "source_refs": [
+        "S5009510",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C4755470",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-10-09",
+        "reviews": 1,
+        "official_loop_summary": "照料猫→配对繁育→遗传毛色→家谱和收集挑战"
+      },
+      "source_refs": [
+        "S4755470",
+        "R4755470"
+      ]
+    },
+    {
+      "id": "I4755470",
+      "status": "inference",
+      "statement": "暂缓：看个体身份，完整遗传与繁育会扩大成本，不进入一期",
+      "source_refs": [
+        "S4755470",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C5105310",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-10-09",
+        "reviews": 3,
+        "official_loop_summary": "猫农场种植→卖菜／做菜→等级与自动播种"
+      },
+      "source_refs": [
+        "S5105310",
+        "R5105310"
+      ]
+    },
+    {
+      "id": "I5105310",
+      "status": "inference",
+      "statement": "暂缓：资源去向可研究，完整农场和餐厅超出一期",
+      "source_refs": [
+        "S5105310",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C5250830",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-10-02",
+        "reviews": 1,
+        "official_loop_summary": "猫种麦→收获出售→扩地→任务队列"
+      },
+      "source_refs": [
+        "S5250830",
+        "R5250830"
+      ]
+    },
+    {
+      "id": "I5250830",
+      "status": "inference",
+      "statement": "可局部借鉴：看单猫自动工作与短回访；农场题材不直接迁移",
+      "source_refs": [
+        "S5250830",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C4609190",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-09-17",
+        "reviews": 1,
+        "official_loop_summary": "补食材→做寿司满足猫顾客→小费／新食谱"
+      },
+      "source_refs": [
+        "S4609190",
+        "R4609190"
+      ]
+    },
+    {
+      "id": "I4609190",
+      "status": "inference",
+      "statement": "暂缓：经营旁支，是否具有充分增量成长仍待连续实机",
+      "source_refs": [
+        "S4609190",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C5023670",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-08-28",
+        "reviews": 1,
+        "official_loop_summary": "猫沿任务栏／窗口行走、睡觉、追光标"
+      },
+      "source_refs": [
+        "S5023670",
+        "R5023670"
+      ]
+    },
+    {
+      "id": "I5023670",
+      "status": "inference",
+      "statement": "可局部借鉴：只研究猫反应与陪伴表现，不列为数值增量游戏",
+      "source_refs": [
+        "S5023670",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C4930400",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-09-13",
+        "reviews": 0,
+        "official_loop_summary": "猫走／跑／换装，桌面日夜环境"
+      },
+      "source_refs": [
+        "S4930400",
+        "R4930400"
+      ]
+    },
+    {
+      "id": "I4930400",
+      "status": "inference",
+      "statement": "可局部借鉴：只研究轻反馈与呈现，未确认完整增长循环",
+      "source_refs": [
+        "S4930400",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C4197890",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-04-23",
+        "reviews": 1376,
+        "official_loop_summary": "回收空间站残骸→升级工具／维持空气与温暖→照顾最后的猫"
+      },
+      "source_refs": [
+        "S4197890",
+        "R4197890"
+      ]
+    },
+    {
+      "id": "I4197890",
+      "status": "inference",
+      "statement": "优先验证：空间站、回收与照顾猫接近本项目，但资源由回收产生，与猫产毛不同",
+      "source_refs": [
+        "S4197890",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C4249770",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-02-10",
+        "reviews": 985,
+        "official_loop_summary": "猫船长出航→捕鱼→资源／技能树→下一航次"
+      },
+      "source_refs": [
+        "S4249770",
+        "R4249770"
+      ]
+    },
+    {
+      "id": "I4249770",
+      "status": "inference",
+      "statement": "优先验证：与Meow Squad同开发商，可比较捕鱼循环和迭代差异",
+      "source_refs": [
+        "S4249770",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C4249200",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-01-26",
+        "reviews": 24,
+        "official_loop_summary": "结交不同稀有猫→心心产出→升级／法术重置"
+      },
+      "source_refs": [
+        "S4249200",
+        "R4249200"
+      ]
+    },
+    {
+      "id": "I4249200",
+      "status": "inference",
+      "statement": "可局部借鉴：研究猫收集与能力回流；法术重置与当前Demo不重开冲突",
+      "source_refs": [
+        "S4249200",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C4615010",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-07-14",
+        "reviews": 42,
+        "official_loop_summary": "雇猫→解锁建筑→达成里程碑→村庄发展与结局"
+      },
+      "source_refs": [
+        "S4615010",
+        "R4615010"
+      ]
+    },
+    {
+      "id": "I4615010",
+      "status": "inference",
+      "statement": "可局部借鉴：看猫分工和环境成长；完整村庄建造先暂缓",
+      "source_refs": [
+        "S4615010",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C3520820",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-07-10",
+        "reviews": 74,
+        "official_loop_summary": "抽猫→队伍培养／刷装／经营→推图"
+      },
+      "source_refs": [
+        "S3520820",
+        "R3520820"
+      ]
+    },
+    {
+      "id": "I3520820",
+      "status": "inference",
+      "statement": "暂缓：7月10日已EA，不是9月的新作；装备与战斗不是一期重点",
+      "source_refs": [
+        "S3520820",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C3924280",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2026-06-25",
+        "reviews": 224,
+        "official_loop_summary": "抚摸／喂食／玩耍→呼噜点→帽子／玩具／休憩点"
+      },
+      "source_refs": [
+        "S3924280",
+        "R3924280"
+      ]
+    },
+    {
+      "id": "I3924280",
+      "status": "inference",
+      "statement": "优先验证：最直接的猫照料输入反馈；9月绘画更新不是首次发行",
+      "source_refs": [
+        "S3924280",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C3419430",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2025-03-05",
+        "reviews": 112460,
+        "official_loop_summary": "键鼠输入→猫拍任务栏→积分→帽子收藏"
+      },
+      "source_refs": [
+        "S3419430",
+        "R3419430"
+      ]
+    },
+    {
+      "id": "I3419430",
+      "status": "inference",
+      "statement": "可局部借鉴：猫动作与玩家输入同步，值得看低成本反馈；不照搬掉落市场",
+      "source_refs": [
+        "S3419430",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    },
+    {
+      "id": "C2797340",
+      "status": "fact",
+      "statement": {
+        "first_steam_release": "2024-09-12",
+        "reviews": 2204,
+        "official_loop_summary": "选动物／地形／道具协同→收益→按周纳贡"
+      },
+      "source_refs": [
+        "S2797340",
+        "R2797340"
+      ]
+    },
+    {
+      "id": "I2797340",
+      "status": "inference",
+      "statement": "暂缓：主体是多动物牧场与卡牌构筑，不是纯猫养成增量",
+      "source_refs": [
+        "S2797340",
+        "P03",
+        "P04"
+      ],
+      "reasoning": "对照官方资料与项目实现／决策边界；效果未实玩验证"
+    }
+  ],
+  "transfer_candidates": [
+    {
+      "id": "T01",
+      "status": "candidate",
+      "priority": 1,
+      "fit_verdict": "优先验证",
+      "source_game_refs": [
+        "G4197890"
+      ],
+      "project_source_refs": [
+        "P02",
+        "P03",
+        "P04"
+      ],
+      "problem_to_solve": "打捞产物需要可理解、可见的用途与猫的目标",
+      "specific_change": "毛球打捞带回一种材料，解锁一项舱室改善或猫反应；先测试反馈，不直接加生存维护费或装饰buff",
+      "reusable_capabilities": [
+        "钱包",
+        "独立界面",
+        "猫与舱室呈现"
+      ],
+      "new_work": [
+        "打捞结算",
+        "一种材料用途",
+        "一次可见反馈"
+      ],
+      "expected_benefit": "资源消费对应可记住的照料目标",
+      "tradeoffs": [
+        "参考游戏回收产资源，本项目猫产毛，因果不同",
+        "原型装饰不加数值"
+      ],
+      "minimal_prototype": "一猫、一种材料、一次改善，体验两次打捞",
+      "measures": [
+        "能解释材料用途",
+        "记住为猫追求什么"
+      ],
+      "falsifying_observations": [
+        "只清进度条",
+        "新维护造成强制劳动"
+      ],
+      "implementation_burden": "低到中",
+      "next_step": "先完整拆解，不自动派发开发"
+    },
+    {
+      "id": "T02",
+      "status": "candidate",
+      "priority": 1,
+      "fit_verdict": "优先验证",
+      "source_game_refs": [
+        "G3967820",
+        "G3972410",
+        "G4539530"
+      ],
+      "project_source_refs": [
+        "P03",
+        "P04",
+        "P06"
+      ],
+      "problem_to_solve": "猫差异不能变成大量独立小游戏",
+      "specific_change": "共用摸／停／领取，猫差异放在可读状态与简短反应；不新增气球、拍照、读书模式",
+      "reusable_capabilities": [
+        "单猫近景",
+        "猫ID和差异配置"
+      ],
+      "new_work": [
+        "状态提示",
+        "哈气结算",
+        "失败恢复"
+      ],
+      "expected_benefit": "同一动作产生不同但可理解的选择",
+      "tradeoffs": [
+        "哈气规则未实装",
+        "体力、幸运和Focus详细恢复未知"
+      ],
+      "minimal_prototype": "两猫一套UI，一次停手与一次失败",
+      "measures": [
+        "解释差异",
+        "理解损失范围"
+      ],
+      "falsifying_observations": [
+        "只能背每猫规则",
+        "失败像随机惩罚",
+        "冷却形成排班负担"
+      ],
+      "implementation_burden": "中",
+      "next_step": "先核实原作具体规则"
+    },
+    {
+      "id": "T03",
+      "status": "candidate",
+      "priority": 2,
+      "fit_verdict": "可局部借鉴",
+      "source_game_refs": [
+        "G4967970",
+        "G4539530",
+        "G4615010"
+      ],
+      "project_source_refs": [
+        "P02",
+        "P03",
+        "P04"
+      ],
+      "problem_to_solve": "猫收藏需有个性和获得线索，不能只换皮",
+      "specific_change": "在已有猫ID、设施关联和收藏上显示获得原因／反应线索，不新增重复猫来源",
+      "reusable_capabilities": [
+        "猫ID",
+        "介绍",
+        "收藏呈现"
+      ],
+      "new_work": [
+        "少量条件提示",
+        "首次反应"
+      ],
+      "expected_benefit": "玩家能识别、追求不同猫",
+      "tradeoffs": [
+        "Bloom Cats样本11条，机制未实玩",
+        "新打捞来源尚待定"
+      ],
+      "minimal_prototype": "两猫两条明确线索",
+      "measures": [
+        "识别差异",
+        "主动追求目标"
+      ],
+      "falsifying_observations": [
+        "仍是外观换皮",
+        "需要大量专属动画"
+      ],
+      "implementation_burden": "低到中",
+      "next_step": "资料补全与实际观察后再决定是否入案"
+    }
+  ],
+  "open_questions": [
+    "未逐款实玩",
+    "猫状态与失败恢复参数未知",
+    "小样本作品不代表成功机制",
+    "手机和全部browser猫游戏不在本轮确认范围"
+  ]
+}
