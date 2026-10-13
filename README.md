@@ -102,3 +102,9 @@ Windows总版本执行文件：`builds/PurrOrbit_v0.27_20260928_3D/PurrOrbit.exe
 IMP-20260928-001已完成。打开毛球满屋/scenes/main.tscn查看实际主场景，room.tscn为舱室，art_library.tscn为全部猫咪／设施素材预览；详细编辑方法见毛球满屋/scenes/README.md（工程内路径省略毛球满屋前缀）。HUD／菜单为保存节点，猫／设施／工人为同源场景实例；动态数量与列表在运行时远程树查看。
 
 四套猫动画映射保持Cat1短毛、Cat5巨型、Cat8静电、Cat10招财，移除统一染色与临时项圈覆盖，原图不改。外星猫没有独立原始序列，仍为标注的Cat1绿色占位。42场景＋160既有UI／反馈断言，共202项及双尺寸render_demo通过；证据reports/editor_928。数值未改、正式存档未改、旧节奏不作本轮证据。测试实例化room.tscn，不再Room.new()。未提交。
+
+## 游戏调研与玩法融入
+
+[游戏调研索引](游戏调研/README.md)集中保存参考游戏拆解、当前项目适配判断、具体融入建议及策划Agent输入。每次研究同时完成“调研游戏”和“结合当前开发情况判断借鉴价值”，有好的建议再提出优先验证方案。
+
+可复用流程见[gameplay-research技能](游戏调研/skill/gameplay-research/SKILL.md)。首份归档为ForgeTax／铸剑纳贡，附项目开发快照、证据和JSON 1.1。

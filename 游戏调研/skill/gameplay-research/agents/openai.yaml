@@ -1,0 +1,4 @@
+interface:
+  display_name: "游戏调研与玩法融入"
+  short_description: "拆解参考游戏，并结合当前项目开发状态判断借鉴价值和融入方案"
+  default_prompt: "使用 $gameplay-research 调研指定游戏，核对当前项目开发情况，并提出有依据的玩法融入建议。"

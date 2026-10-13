@@ -1,0 +1,2344 @@
+{
+  "schema_version": "1.1",
+  "game": {
+    "name": "ForgeTax／铸剑纳贡",
+    "platform": "Steam Windows",
+    "version": null,
+    "mode": "单人合同／局内锻造；当前规则汇总至2026-10-12公告",
+    "analysis_date": "2026-10-13"
+  },
+  "coverage": {
+    "basis": "资料观察；无原版实玩",
+    "covered": [
+      "官方规则及2026-09-30至2026-10-12公告",
+      "三张官方静态截图",
+      "注明build 25755699的社区代码提取资料与指南",
+      "对Purr Orbit的候选适配",
+      "2026-10-13对本项目9679a7bc的正式入口、原型和待办复核"
+    ],
+    "not_covered": [
+      "可核查时间戳的连续实机录像",
+      "当前安装build运行验证",
+      "完整事件顺序和构筑穷举",
+      "真人节奏与多局长期体验"
+    ],
+    "limitations": [
+      "官方旧截图与当前规则有数值差异",
+      "社区提取代码与当前版本一致性未独立认证",
+      "操作链按资料重建，不是实际游玩记录",
+      "不把11月计划当已上线玩法",
+      "所有迁移为候选，无开发授权或实装状态",
+      "项目代码与会议分层核对，但新建议仍为候选"
+    ]
+  },
+  "summary": "管理有限的可锻造资产，在每一锤风险、入神机会、兑现目标和遗物投资之间选择；失败补偿和事件构筑改变下一次尝试的条件。",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Steam商店：关于此游戏",
+      "location": "https://store.steampowered.com/app/5245810/ForgeTax/?l=schinese",
+      "locator": "关于此游戏／用锤子敲出好运／舍弃长剑",
+      "type": "官方规则说明",
+      "version_or_date": "2026-10-13查看"
+    },
+    {
+      "id": "S02",
+      "title": "21-Day Contract Update",
+      "location": "https://steamcommunity.com/gid/103582791475828607/announcements/detail/712288224875118771",
+      "locator": "A 21-day contract／Interactions",
+      "type": "官方公告；补给规则被S05覆盖",
+      "version_or_date": "2026-09-30"
+    },
+    {
+      "id": "S03",
+      "title": "New Relics and the Funerary Sword",
+      "location": "https://steamcommunity.com/gid/103582791475828607/announcements/detail/712288224875120567",
+      "locator": "Consumables／Feedback／Unlocks",
+      "type": "官方公告",
+      "version_or_date": "2026-10-04"
+    },
+    {
+      "id": "S04",
+      "title": "Relic & Balance Overhaul",
+      "location": "https://steamcommunity.com/gid/103582791475828607/announcements/detail/712288224875120852",
+      "locator": "Relics／Frenzy／Codex",
+      "type": "官方公告；部分恢复值被S05覆盖",
+      "version_or_date": "2026-10-06"
+    },
+    {
+      "id": "S05",
+      "title": "Recovery Relic Improvements",
+      "location": "https://steamcommunity.com/gid/103582791475828607/announcements/detail/712288224875121056",
+      "locator": "Recovery／Inheritance",
+      "type": "官方热修公告",
+      "version_or_date": "2026-10-06后续"
+    },
+    {
+      "id": "S06",
+      "title": "Clearer Relic Effect Displays",
+      "location": "https://steamcommunity.com/gid/103582791475828607/announcements/detail/712288859283521584",
+      "locator": "Draw tickets／Current sword effects",
+      "type": "官方公告",
+      "version_or_date": "2026-10-07"
+    },
+    {
+      "id": "S07",
+      "title": "Save Loading and Rewind Fixes",
+      "location": "https://steamcommunity.com/gid/103582791475828607/announcements/detail/712288859283524553",
+      "locator": "Rewind after a sword breaks",
+      "type": "官方公告",
+      "version_or_date": "2026-10-10"
+    },
+    {
+      "id": "S08",
+      "title": "Interface Improvements",
+      "location": "https://steamcommunity.com/gid/103582791475828607/announcements/detail/712288859283524782",
+      "locator": "Relic interface improvements",
+      "type": "官方公告",
+      "version_or_date": "2026-10-12"
+    },
+    {
+      "id": "S09",
+      "title": "November Update Development News",
+      "location": "https://steamcommunity.com/gid/103582791475828607/announcements/detail/712288859283524589",
+      "locator": "Making choices rewarding／Development schedule",
+      "type": "官方开发计划；不是当前已上线规则",
+      "version_or_date": "2026-10-11"
+    },
+    {
+      "id": "S10",
+      "title": "Steam官方静态截图",
+      "location": "游戏调研/ForgeTax/steam_screenshot_1.jpg",
+      "locator": "截图0：龙与铃；截图1：铁砧信息；截图2：贡台与遗物机器",
+      "type": "实际查看的官方静态画面；不是连续实机证据",
+      "version_or_date": "拍摄build未知；当前商店留存图显示旧3倍Great"
+    },
+    {
+      "id": "S11",
+      "title": "Grindnstrat首日与操作指南",
+      "location": "https://grindnstrat.com/forgetax-beginner-guide-and-walkthrough-controls-tips/",
+      "locator": "Anvil／Ring the Bell／Controls",
+      "type": "社区指南；非本轮实玩",
+      "version_or_date": "2026-10-07"
+    },
+    {
+      "id": "S12",
+      "title": "ForgeTax.tools：How to play",
+      "location": "https://www.forgetax.tools/guides/how-to-play",
+      "locator": "First day／Relics／Controls",
+      "type": "非官方代码提取资料；真实性未独立验证",
+      "version_or_date": "该站声明Steam build 25755699"
+    },
+    {
+      "id": "S13",
+      "title": "ForgeTax.tools：Forging odds",
+      "location": "https://www.forgetax.tools/guides/forging-odds",
+      "locator": "Five outcomes／Curve／Modifiers",
+      "type": "非官方代码提取资料；当前原版未复测",
+      "version_or_date": "该站声明Steam build 25755699"
+    },
+    {
+      "id": "S14",
+      "title": "ForgeTax.tools：Sword value",
+      "location": "https://www.forgetax.tools/guides/sword-value",
+      "locator": "Formula／Base value",
+      "type": "非官方代码提取资料；当前原版未复测",
+      "version_or_date": "该站声明Steam build 25755699"
+    },
+    {
+      "id": "S15",
+      "title": "ForgeTax.tools：Frenzy",
+      "location": "https://www.forgetax.tools/guides/frenzy",
+      "locator": "Charge／Duration／Outcomes",
+      "type": "非官方代码提取资料；当前原版未复测",
+      "version_or_date": "该站声明Steam build 25755699"
+    },
+    {
+      "id": "S16",
+      "title": "ForgeTax.tools：Sword forms",
+      "location": "https://www.forgetax.tools/swords",
+      "locator": "Before +10／Families",
+      "type": "非官方代码提取资料；非完整当前内容审计",
+      "version_or_date": "该站声明Steam build 25755699"
+    },
+    {
+      "id": "S17",
+      "title": "ForgeTax.tools：Tribute and anger",
+      "location": "https://www.forgetax.tools/guides/tribute",
+      "locator": "What counts／Falling short",
+      "type": "非官方代码提取资料；精确经济未原版复测",
+      "version_or_date": "该站声明Steam build 25755699"
+    },
+    {
+      "id": "S18",
+      "title": "毛球计划10-12日会整理纪要",
+      "location": "https://github.com/Dr-Doge/PURR_ORBIT/blob/9679a7bc/会议纪要/2026-10-12_日会_整理纪要.md",
+      "locator": "核心结论／摸猫交互／10-13更正",
+      "type": "用户项目资料；本轮重新核对",
+      "version_or_date": "2026-10-13更正，项目基准9679a7bc"
+    },
+    {
+      "id": "S19",
+      "title": "正式工程入口",
+      "location": "毛球满屋/project.godot",
+      "locator": "application/run/main_scene",
+      "type": "只读核对的项目配置",
+      "version_or_date": "9679a7bcabfef533d7edca1c6897094b6f01c6a3"
+    },
+    {
+      "id": "S20",
+      "title": "正式主逻辑与模型入口",
+      "location": "毛球满屋/scripts/main.gd",
+      "locator": "Model preload、model.new及收藏HUD；scene_3d.gd继承入口",
+      "type": "只读核对的项目代码",
+      "version_or_date": "9679a7bcabfef533d7edca1c6897094b6f01c6a3"
+    },
+    {
+      "id": "S21",
+      "title": "猫身采集原型实现报告",
+      "location": "毛球满屋/reports/prototype_20261009/README.md",
+      "locator": "运行、工程保护、验证与限制",
+      "type": "项目历史实现证据，本轮未重跑验证",
+      "version_or_date": "9679a7bcabfef533d7edca1c6897094b6f01c6a3"
+    },
+    {
+      "id": "S22",
+      "title": "实装日志当前批次",
+      "location": "摸猫增量策划案/18_实装变更日志.md",
+      "locator": "当前批次IMP-20261009-001和002",
+      "type": "项目待办与实现记录；需与代码区分",
+      "version_or_date": "9679a7bcabfef533d7edca1c6897094b6f01c6a3"
+    },
+    {
+      "id": "S23",
+      "title": "本轮项目开发快照",
+      "location": "游戏调研/2026-10-13_项目开发快照.md",
+      "locator": "状态与证据、适配问题",
+      "type": "本轮整理的状态快照与明确推断，事实依据追溯S18至S22及S24",
+      "version_or_date": "2026-10-13，基准9679a7bc"
+    },
+    {
+      "id": "S24",
+      "title": "独立测试场景绑定",
+      "location": "毛球满屋/scenes/测试场景.tscn",
+      "locator": "prototype_harvest/controller.gd和view.gd引用",
+      "type": "只读核对的项目场景配置",
+      "version_or_date": "9679a7bcabfef533d7edca1c6897094b6f01c6a3"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "分析对象为用户确认的GraveYardDev开发的Steam Windows单人游戏ForgeTax，App ID 5245810。",
+      "status": "fact",
+      "source_refs": [
+        "S01"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C02",
+      "text": "官方流程包括拿剑加热、放到铁砧锻造、将剑用于贡品或遗物兑换。",
+      "status": "fact",
+      "source_refs": [
+        "S01"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C03",
+      "text": "社区操作资料记录移动、观察、E交互与左键敲击；官方提示区分E带剑离开和右键留剑。",
+      "status": "fact",
+      "source_refs": [
+        "S11",
+        "S03"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C04",
+      "text": "社区基础判定资料记录Success使剑升1级。",
+      "status": "fact",
+      "source_refs": [
+        "S13"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C05",
+      "text": "社区基础判定资料记录Great使剑升2级。",
+      "status": "fact",
+      "source_refs": [
+        "S13"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C06",
+      "text": "社区基础判定资料记录Hold为停滞结果，可触发条件效果。",
+      "status": "fact",
+      "source_refs": [
+        "S13"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C07",
+      "text": "社区基础判定资料记录Damage降低1级且不低于+0。",
+      "status": "fact",
+      "source_refs": [
+        "S11",
+        "S13"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C08",
+      "text": "社区资料记录Break毁坏剑，保护或恢复能力可以改写后果。",
+      "status": "fact",
+      "source_refs": [
+        "S13",
+        "S05"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C09",
+      "text": "官方说明铁砧显示下一锤最终概率，票数显示用于区分条件修改。",
+      "status": "fact",
+      "source_refs": [
+        "S06"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C10",
+      "text": "10月6日官方把Great价值倍率改为2.5倍。",
+      "status": "fact",
+      "source_refs": [
+        "S04"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C11",
+      "text": "10月6日官方将强化上限提高到+99，外观到+20后不再新增。",
+      "status": "fact",
+      "source_refs": [
+        "S04"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C12",
+      "text": "官方常规描述为同剑锻造10次充满入神，下一次敲击触发短暂不会碎剑的状态。",
+      "status": "fact",
+      "source_refs": [
+        "S01"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C13",
+      "text": "10月6日后入神本身不额外提高基础锤速。",
+      "status": "fact",
+      "source_refs": [
+        "S04"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C14",
+      "text": "社区build资料记录基础入神窗口为4秒；本轮未验证当前原版时长。",
+      "status": "fact",
+      "source_refs": [
+        "S15"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C15",
+      "text": "社区入神资料记录窗口内仍存在Damage、Hold、Success和Great，因此免碎剑不等于必升级。",
+      "status": "fact",
+      "source_refs": [
+        "S15"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C16",
+      "text": "官方为新局提供免费三选一的起始遗物。",
+      "status": "fact",
+      "source_refs": [
+        "S04"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C17",
+      "text": "社区兑换资料记录任意等级的一把剑换1个遗物商店信用。",
+      "status": "fact",
+      "source_refs": [
+        "S12"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C18",
+      "text": "社区记录遗物架8槽；官方满槽提示要求先舍弃已有遗物。",
+      "status": "fact",
+      "source_refs": [
+        "S12",
+        "S08"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C19",
+      "text": "官方合同长度为21个游戏内日，完成后可以继续锻造。",
+      "status": "fact",
+      "source_refs": [
+        "S02"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C20",
+      "text": "10月6日公告中的第21日基础纳贡要求为232,000G。",
+      "status": "fact",
+      "source_refs": [
+        "S04"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C21",
+      "text": "官方流程是放置贡品并摇铃结算，达标以贡品价值判断。",
+      "status": "fact",
+      "source_refs": [
+        "S01",
+        "S02"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C22",
+      "text": "贡品不足会增加怒气，达到第三怒气阶段会致死；缓解效果可改变到达该阶段的过程。",
+      "status": "fact",
+      "source_refs": [
+        "S02",
+        "S03",
+        "S17"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C23",
+      "text": "10月6日恢复公告规定贡品不足后下一日仍获得3把基础剑。",
+      "status": "fact",
+      "source_refs": [
+        "S05"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C24",
+      "text": "社区资料记录献出的价值在结算后转为金币，成功或不足均有这一兑现渠道。",
+      "status": "fact",
+      "source_refs": [
+        "S17"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C25",
+      "text": "社区资料记录金币用于商人货物和遗物刷新，商人从第3日起每3日出现。",
+      "status": "fact",
+      "source_refs": [
+        "S12",
+        "S17"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C26",
+      "text": "资料说明未献出的剑可跨游戏日保留；官方也修复了推进后铁砧未献出剑消失的问题。",
+      "status": "fact",
+      "source_refs": [
+        "S02",
+        "S12"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C27",
+      "text": "官方遗物示例包括让Damage影响后续风险或Great收益、让Hold为后续Great积累收益。",
+      "status": "fact",
+      "source_refs": [
+        "S04"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C28",
+      "text": "恢复公告记录Undertaker's Chalice将碎剑峰值价值的30%作为废料放到贡台。",
+      "status": "fact",
+      "source_refs": [
+        "S05"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C29",
+      "text": "官方恢复公告说明Broken Holy Sword和Dawn Scabbard的继承效果可以组合。",
+      "status": "fact",
+      "source_refs": [
+        "S05"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C30",
+      "text": "官方确认碎剑后在具有撤销条件时存在恢复机会，并修复E使机会丢失的问题。",
+      "status": "fact",
+      "source_refs": [
+        "S07"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C31",
+      "text": "官方物品说明记录Incense of Oblivion可降低一阶段怒气，每局一次。",
+      "status": "fact",
+      "source_refs": [
+        "S03"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C32",
+      "text": "官方说明本局永久获得的票数可在舍弃来源遗物后保留，但新局重置。",
+      "status": "fact",
+      "source_refs": [
+        "S04"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C33",
+      "text": "官方说明图鉴发现跨局保留。",
+      "status": "fact",
+      "source_refs": [
+        "S04"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C34",
+      "text": "官方更新为成就添加了可解锁遗物，解锁后加入出现池。",
+      "status": "fact",
+      "source_refs": [
+        "S03"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C35",
+      "text": "开发者将持剑对龙战斗列为后续开发内容，11月为当时目标而非已上线事实。",
+      "status": "fact",
+      "source_refs": [
+        "S09"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C36",
+      "text": "开发者指出早期缺剑和连续破坏影响尝试，以及成型构筑后的重复体验仍需改进。",
+      "status": "fact",
+      "source_refs": [
+        "S09"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C37",
+      "text": "实际查看的官方铁砧截图同时显示剑名、等级、价值、五种概率、充能和最近结果。",
+      "status": "fact",
+      "source_refs": [
+        "S10"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C38",
+      "text": "当前留存商店截图显示3倍Great，与S04中的当前2.5倍规则不同，不能用截图数值替代更新规则。",
+      "status": "fact",
+      "source_refs": [
+        "S10",
+        "S04"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C39",
+      "text": "社区build价值资料给出的普通基础值模型是320乘以1.5的等级次幂；遗物与事件会增加其他项。",
+      "status": "fact",
+      "source_refs": [
+        "S14"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C40",
+      "text": "社区build无遗物概率资料记录+5时下一锤碎剑概率29.7%。",
+      "status": "fact",
+      "source_refs": [
+        "S13"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C41",
+      "text": "社区build无遗物概率资料记录+10时下一锤碎剑概率46.7%。",
+      "status": "fact",
+      "source_refs": [
+        "S13"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C42",
+      "text": "社区build无遗物概率资料记录+0剑下一锤碎剑概率0%。",
+      "status": "fact",
+      "source_refs": [
+        "S13"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C43",
+      "text": "风险选择由当前资产、下一步信息、备用资产、兑现用途及恢复条件共同决定。",
+      "status": "inference",
+      "source_refs": [
+        "S01",
+        "S05",
+        "S06",
+        "S12"
+      ],
+      "reasoning": "相同概率对应不同额度差额、备用剑和保护状态，其完整后果不同；这不是经过玩家实验的结论。"
+    },
+    {
+      "id": "C44",
+      "text": "入神可能把逐锤判断转换成短窗口内的密集操作，再回到谨慎选择。",
+      "status": "inference",
+      "source_refs": [
+        "S01",
+        "S04",
+        "S15"
+      ],
+      "reasoning": "相同输入在不同状态下的损失规则不同；需要实机观察玩家是否感知和利用这一差异。"
+    },
+    {
+      "id": "C45",
+      "text": "按价值纳贡和按剑件数购买遗物构成两种估值体系，产生资产用途竞争。",
+      "status": "inference",
+      "source_refs": [
+        "S01",
+        "S12",
+        "S17"
+      ],
+      "reasoning": "一把剑的贡品价值随加工改变，而社区兑换信用按件数处理；资金与原料状况仍可能产生单一占优选择。"
+    },
+    {
+      "id": "C46",
+      "text": "结果事件型遗物可能改变玩家对损失和停滞的判断，提供超过单纯倍率的策略变化。",
+      "status": "inference",
+      "source_refs": [
+        "S04",
+        "S05"
+      ],
+      "reasoning": "某些结果会影响后续收益或风险；是否足以改变行为取决于补偿强度和可见性。"
+    },
+    {
+      "id": "C47",
+      "text": "限定损失与恢复入口可能让失败后仍有新的可行决定。",
+      "status": "inference",
+      "source_refs": [
+        "S05",
+        "S07",
+        "S09"
+      ],
+      "reasoning": "碎剑后的废料、继承和撤销改变下一次尝试条件；本轮没有测量重试意愿。"
+    },
+    {
+      "id": "C48",
+      "text": "简化单锤模型使用社区+5数据得到下一锤价值期望约为当前价值0.982倍，这不等于最优停手策略。",
+      "status": "inference",
+      "source_refs": [
+        "S13",
+        "S14",
+        "S04"
+      ],
+      "reasoning": "假设无遗物、固定加成、物品和未来充能价值；使用1.5pSuccess+2.5pGreat+pHold+pDamage/1.5。完整额度效用与保护条件被省略。"
+    },
+    {
+      "id": "C49",
+      "text": "风险消除与早期无资源是两种不同的停滞，应分别验证。",
+      "status": "inference",
+      "source_refs": [
+        "S05",
+        "S09"
+      ],
+      "reasoning": "前者仍可操作但可能无新判断，后者缺乏可执行的新尝试；机制结构不等于普遍玩家感受。"
+    },
+    {
+      "id": "C50",
+      "text": "毛球计划最新日会将锻造放在盲盒上，摸猫正在讨论继续、收手与哈气导致本次损失。",
+      "status": "fact",
+      "source_refs": [
+        "S18"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C51",
+      "text": "当前安装build、所有事件执行顺序、入神到期边界和暂停存档规则尚未验证。",
+      "status": "unknown",
+      "source_refs": [
+        "S15",
+        "S07"
+      ],
+      "reasoning": "没有启动原版或逐帧连续录像；社区数据不能填补当前运行验证。"
+    },
+    {
+      "id": "C52",
+      "text": "是否有强制结束工作日的现实时间倒计时尚未确认。",
+      "status": "unknown",
+      "source_refs": [
+        "S01",
+        "S12",
+        "S17"
+      ],
+      "reasoning": "资料描述摇铃推进，不能把晚间叙述解释成强制现实倒计时。"
+    },
+    {
+      "id": "C53",
+      "text": "正式版挂机锻造、离线收入或自动化系统未查证。",
+      "status": "unknown",
+      "source_refs": [],
+      "reasoning": "没有相应已查看官方规则；不将社区模拟器的自动按钮归于原版。"
+    },
+    {
+      "id": "C54",
+      "text": "完整长期内容、真人节奏、最佳构筑和普遍续玩动机未测量。",
+      "status": "unknown",
+      "source_refs": [
+        "S09"
+      ],
+      "reasoning": "没有多局原版实验、代表性用户样本或长期数据。"
+    },
+    {
+      "id": "C55",
+      "text": "每锤是否直接扣费、完整金币与商人经济及弃置退款的现版细节尚未原版复核。",
+      "status": "unknown",
+      "source_refs": [
+        "S11",
+        "S12",
+        "S17"
+      ],
+      "reasoning": "报告采用来源明确的社区资料，未把未记录的扣费机制补入。"
+    },
+    {
+      "id": "C56",
+      "text": "本项目默认正式入口仍为res://scenes/3D scene.tscn。",
+      "status": "fact",
+      "source_refs": [
+        "S19"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C57",
+      "text": "正式3D入口使用main.gd及正式model.gd，仍保留旧经营与收藏主逻辑。",
+      "status": "fact",
+      "source_refs": [
+        "S20"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C58",
+      "text": "独立测试场景绑定prototype_harvest，历史报告记录猫身采集、双视角与帮手等原型实现；不是最新哈气玩法的验收。",
+      "status": "fact",
+      "source_refs": [
+        "S21",
+        "S24"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C59",
+      "text": "IMP-20261009-002轨道回收舱和9套90件仍登记为待实装。",
+      "status": "fact",
+      "source_refs": [
+        "S22"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C60",
+      "text": "最新日会的哈气、打捞保证金预测和盲盒锻造有方向或提案，具体规则与数值仍需细化。",
+      "status": "fact",
+      "source_refs": [
+        "S18"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C61",
+      "text": "日会更正排除锻猫及随锻造变形，原摸猫过程额外小游戏已关闭。",
+      "status": "fact",
+      "source_refs": [
+        "S18"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C62",
+      "text": "摸猫、打捞和盲盒若都采用同质的加码与全失机制，可能重复，需要区分三者的决策任务。",
+      "status": "inference",
+      "source_refs": [
+        "S18"
+      ],
+      "reasoning": "三套当前讨论均包含风险后果；未经过原型证明重复，因此作为待验证风险。"
+    },
+    {
+      "id": "C63",
+      "text": "现有近景与独立原型经验可供新风险规则的隔离验证，但不能据旧验证报告证明新规则成立。",
+      "status": "inference",
+      "source_refs": [
+        "S19",
+        "S20",
+        "S21",
+        "S24"
+      ],
+      "reasoning": "当前入口和独立模型分开；复用需要检查耦合，新增权益与结算仍需验证。"
+    }
+  ],
+  "resources": [
+    {
+      "id": "R01",
+      "name": "实体剑／可锻造原料",
+      "sources": [
+        "每日补给",
+        "商人",
+        "条件效果"
+      ],
+      "sinks": [
+        "锻造损失",
+        "贡品",
+        "遗物信用兑换"
+      ],
+      "persistence": "未献出的剑跨日保留；跨新局资产初始化未完整验证",
+      "claim_refs": [
+        "C23",
+        "C25",
+        "C26"
+      ]
+    },
+    {
+      "id": "R02",
+      "name": "剑上价值",
+      "sources": [
+        "强化",
+        "Great与其他条件加成"
+      ],
+      "sinks": [
+        "贡品额度",
+        "金币兑现",
+        "损失"
+      ],
+      "persistence": "兑现前附着于剑，不等同于金币",
+      "claim_refs": [
+        "C10",
+        "C21",
+        "C24",
+        "C39"
+      ]
+    },
+    {
+      "id": "R03",
+      "name": "金币",
+      "sources": [
+        "社区资料中的献出兑现",
+        "特定效果"
+      ],
+      "sinks": [
+        "商人购买",
+        "遗物刷新"
+      ],
+      "persistence": null,
+      "claim_refs": [
+        "C24",
+        "C25",
+        "C55"
+      ]
+    },
+    {
+      "id": "R04",
+      "name": "遗物商店信用",
+      "sources": [
+        "剑兑换",
+        "特定局内效果"
+      ],
+      "sinks": [
+        "购买遗物"
+      ],
+      "persistence": "局内信用；完整跨新局规则未验证",
+      "claim_refs": [
+        "C17"
+      ]
+    },
+    {
+      "id": "R05",
+      "name": "入神充能",
+      "sources": [
+        "常规锻造",
+        "物品或继承等条件"
+      ],
+      "sinks": [
+        "入神触发"
+      ],
+      "persistence": "单剑状态；全部存档边界未知",
+      "claim_refs": [
+        "C12",
+        "C14",
+        "C29",
+        "C51"
+      ]
+    },
+    {
+      "id": "R06",
+      "name": "保护／撤销机会与物品",
+      "sources": [
+        "遗物",
+        "商人"
+      ],
+      "sinks": [
+        "阻止损失",
+        "撤销",
+        "改变一次尝试"
+      ],
+      "persistence": "依据单个能力的使用次数和触发条件",
+      "claim_refs": [
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ]
+    },
+    {
+      "id": "R07",
+      "name": "怒气／失败容错",
+      "sources": [
+        "贡品不足增加"
+      ],
+      "sinks": [
+        "缓解效果",
+        "达到致死阶段结束局"
+      ],
+      "persistence": "局内合同状态",
+      "claim_refs": [
+        "C22",
+        "C31"
+      ]
+    },
+    {
+      "id": "R08",
+      "name": "遗物槽位与构筑",
+      "sources": [
+        "起始选择",
+        "购买"
+      ],
+      "sinks": [
+        "弃置或替换"
+      ],
+      "persistence": "局内效果与跨局解锁分开",
+      "claim_refs": [
+        "C16",
+        "C18",
+        "C32",
+        "C34"
+      ]
+    },
+    {
+      "id": "R09",
+      "name": "图鉴发现／内容解锁",
+      "sources": [
+        "外观发现",
+        "成就"
+      ],
+      "sinks": [
+        "打开未来可认识或可出现的内容"
+      ],
+      "persistence": "图鉴发现跨局保留；不代表普通金币和剑全部跨局保留",
+      "claim_refs": [
+        "C33",
+        "C34"
+      ]
+    }
+  ],
+  "mechanisms": [
+    {
+      "id": "M01",
+      "name": "工坊中的拿取、加热与铁砧准备",
+      "role": "为一把具体资产建立可操作入口",
+      "preconditions": [
+        "有可用剑",
+        "可访问炉子与铁砧"
+      ],
+      "actions": [
+        "选剑",
+        "拿取",
+        "加热",
+        "放到铁砧",
+        "带走或留剑"
+      ],
+      "state_transitions": [
+        {
+          "from": "未准备的剑",
+          "trigger": "拿取并完成加热",
+          "to": "可锻造剑"
+        },
+        {
+          "from": "铁砧上的剑",
+          "trigger": "E或右键对应操作",
+          "to": "带走或留在台上"
+        }
+      ],
+      "costs": [
+        "处理和搬运的时间与注意力；精确时长未知"
+      ],
+      "rewards": [
+        "进入M02",
+        "物理上保留同一件可分配资产"
+      ],
+      "decisions": [
+        "加工哪把剑",
+        "停手后放在哪里"
+      ],
+      "feedback": [
+        "铁砧上的实体剑与锤",
+        "操作提示；实际音画时序未实测"
+      ],
+      "failure_and_recovery": [
+        "放置容错与加热存档细节未知"
+      ],
+      "dependencies": [
+        "M02",
+        "M04",
+        "M05"
+      ],
+      "resource_refs": [
+        "R01"
+      ],
+      "claim_refs": [
+        "C02",
+        "C03",
+        "C37"
+      ],
+      "unknowns": [
+        "加热精确时长",
+        "占用与存档边界",
+        "玩家对搬运的实际感受"
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "普通单锤概率结果与停手",
+      "role": "在当前资产和更高可能收益之间形成重复决策",
+      "preconditions": [
+        "剑已准备并在铁砧",
+        "当前可输入"
+      ],
+      "actions": [
+        "读取价值、概率、充能和保护",
+        "选择敲击",
+        "接收结果",
+        "继续或停手"
+      ],
+      "state_transitions": [
+        {
+          "from": "可用当前剑",
+          "trigger": "普通敲击",
+          "to": "结果与效果结算"
+        },
+        {
+          "from": "结果结算",
+          "trigger": "剑仍可用",
+          "to": "重新决策"
+        },
+        {
+          "from": "结果结算",
+          "trigger": "Break且未恢复",
+          "to": "当前剑不可用"
+        },
+        {
+          "from": "重新决策",
+          "trigger": "主动停手",
+          "to": "保留或分配资产"
+        }
+      ],
+      "costs": [
+        "当前剑的价值损失风险",
+        "继续尝试与使用该剑的机会成本；未确认每锤现金扣费"
+      ],
+      "rewards": [
+        "等级与价值可能增加",
+        "入神充能和条件事件"
+      ],
+      "decisions": [
+        "继续还是停手",
+        "是否事前保护",
+        "是否更换剑"
+      ],
+      "feedback": [
+        "等级、价值、五种概率、充能和最近结果在同一块板上"
+      ],
+      "failure_and_recovery": [
+        "Damage与Break后果不同",
+        "M07能力决定保护、残值、继承和撤销"
+      ],
+      "dependencies": [
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R05",
+        "R06"
+      ],
+      "claim_refs": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C37",
+        "C43"
+      ],
+      "unknowns": [
+        "普通敲击动画与结算精确顺序",
+        "当前完整公式",
+        "所有遗物转换优先级"
+      ]
+    },
+    {
+      "id": "M03",
+      "name": "充能与入神窗口",
+      "role": "暂时改变碎剑风险，并形成状态切换",
+      "preconditions": [
+        "同一把剑达到充能条件"
+      ],
+      "actions": [
+        "准备触发",
+        "下一次有效敲击触发",
+        "利用窗口",
+        "结束后重看风险"
+      ],
+      "state_transitions": [
+        {
+          "from": "常规充能",
+          "trigger": "达到阈值",
+          "to": "待触发"
+        },
+        {
+          "from": "待触发",
+          "trigger": "下一锤",
+          "to": "入神"
+        },
+        {
+          "from": "入神",
+          "trigger": "窗口结束",
+          "to": "常规状态"
+        }
+      ],
+      "costs": [
+        "常规充能阶段仍暴露于风险",
+        "窗口内时间与有效输入能力"
+      ],
+      "rewards": [
+        "短时间免碎剑",
+        "可能通过构筑扩大窗口收益"
+      ],
+      "decisions": [
+        "是否继续充能",
+        "何时触发",
+        "结束后是否收手"
+      ],
+      "feedback": [
+        "充能格和窗口状态；实际结束提示时序未知"
+      ],
+      "failure_and_recovery": [
+        "免碎剑不等于所有结果升级",
+        "遗物可改变准备和收益；当前边界未实测"
+      ],
+      "dependencies": [
+        "M02",
+        "M06",
+        "M07"
+      ],
+      "resource_refs": [
+        "R02",
+        "R05",
+        "R06"
+      ],
+      "claim_refs": [
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C44",
+        "C51"
+      ],
+      "unknowns": [
+        "当前精确时长",
+        "触发锤到期边缘输入",
+        "暂停、保存及取下剑后的全部边界"
+      ]
+    },
+    {
+      "id": "M04",
+      "name": "纳贡、怒气与21日合同",
+      "role": "为兑现建立额度目标和局内压力",
+      "preconditions": [
+        "能够放置贡品并摇铃",
+        "合同仍在进行"
+      ],
+      "actions": [
+        "准备贡品",
+        "核对额度和怒气",
+        "摇铃",
+        "处理结果",
+        "进入下一日或结束"
+      ],
+      "state_transitions": [
+        {
+          "from": "工作日",
+          "trigger": "摇铃",
+          "to": "贡品结算"
+        },
+        {
+          "from": "贡品结算",
+          "trigger": "不足",
+          "to": "怒气增加"
+        },
+        {
+          "from": "怒气增加",
+          "trigger": "致死阶段且未缓解",
+          "to": "本局结束"
+        },
+        {
+          "from": "贡品结算",
+          "trigger": "未致死",
+          "to": "下一日或完成合同"
+        }
+      ],
+      "costs": [
+        "献出的剑离开可用库存"
+      ],
+      "rewards": [
+        "合同推进",
+        "社区资料中的金币兑现"
+      ],
+      "decisions": [
+        "献哪些剑",
+        "是否保留后备",
+        "何时结算",
+        "是否使用怒气缓解"
+      ],
+      "feedback": [
+        "贡台额度",
+        "铃铛",
+        "龙的警告与墙面怒气标记"
+      ],
+      "failure_and_recovery": [
+        "单剑损失与合同结束不同",
+        "最新不足后仍给3把基础剑",
+        "条件效果可缓解怒气"
+      ],
+      "dependencies": [
+        "M02",
+        "M05",
+        "M07",
+        "M08"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03",
+        "R07"
+      ],
+      "claim_refs": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C26",
+        "C52"
+      ],
+      "unknowns": [
+        "所有存档版本分支",
+        "全部合同后选项",
+        "是否存在未查得现实时间限制"
+      ]
+    },
+    {
+      "id": "M05",
+      "name": "剑信用、遗物购买与槽位替换",
+      "role": "将原料和当前产能投资为后续能力",
+      "preconditions": [
+        "有信用或可兑换的剑",
+        "有可购买遗物或起始选择"
+      ],
+      "actions": [
+        "查看效果与报价",
+        "兑换",
+        "购买或刷新",
+        "满槽时先决定移除"
+      ],
+      "state_transitions": [
+        {
+          "from": "实体剑",
+          "trigger": "兑换",
+          "to": "商店信用"
+        },
+        {
+          "from": "信用与空槽",
+          "trigger": "购买",
+          "to": "局内构筑改变"
+        },
+        {
+          "from": "满槽",
+          "trigger": "舍弃后购买",
+          "to": "替换构筑"
+        }
+      ],
+      "costs": [
+        "剑的机会成本",
+        "信用",
+        "刷新金币",
+        "替换已有能力"
+      ],
+      "rewards": [
+        "改变后续结果和收益的遗物"
+      ],
+      "decisions": [
+        "贡品与投资分配",
+        "选哪种效果",
+        "刷新还是接受眼前选项",
+        "替换哪个槽位"
+      ],
+      "feedback": [
+        "展示报价与效果",
+        "满槽说明",
+        "实体剑、信用和金币应可区分"
+      ],
+      "failure_and_recovery": [
+        "投入遗物后缺少可锻造剑是官方正在关注的问题"
+      ],
+      "dependencies": [
+        "M04",
+        "M06",
+        "M08"
+      ],
+      "resource_refs": [
+        "R01",
+        "R03",
+        "R04",
+        "R08"
+      ],
+      "claim_refs": [
+        "C16",
+        "C17",
+        "C18",
+        "C36",
+        "C45"
+      ],
+      "unknowns": [
+        "当前弃置退款细节",
+        "所有商店价格和解锁权重"
+      ]
+    },
+    {
+      "id": "M06",
+      "name": "概率与结果事件的遗物构筑",
+      "role": "改变某种结果的意义和下一次行动条件",
+      "preconditions": [
+        "拥有相应遗物",
+        "满足其条件"
+      ],
+      "actions": [
+        "选择组合",
+        "触发Damage、Hold、Break等事件",
+        "观察当前效果与下一次条件"
+      ],
+      "state_transitions": [
+        {
+          "from": "当前构筑",
+          "trigger": "条件事件",
+          "to": "后续概率、收益或继承状态变化"
+        }
+      ],
+      "costs": [
+        "购买与槽位投入",
+        "风险事件所造成的原有损失"
+      ],
+      "rewards": [
+        "条件概率变化",
+        "Great收益准备",
+        "失败到后续尝试的转化"
+      ],
+      "decisions": [
+        "采用哪些事件链",
+        "为当前剑还是下一把准备",
+        "替换冗余效果"
+      ],
+      "feedback": [
+        "当前剑的票、累积票、继承、激活提示"
+      ],
+      "failure_and_recovery": [
+        "补偿不等于每次继续都划算",
+        "成型构筑可能减少逐锤判断"
+      ],
+      "dependencies": [
+        "M02",
+        "M03",
+        "M05",
+        "M07"
+      ],
+      "resource_refs": [
+        "R02",
+        "R05",
+        "R06",
+        "R08"
+      ],
+      "claim_refs": [
+        "C09",
+        "C27",
+        "C29",
+        "C32",
+        "C36",
+        "C46"
+      ],
+      "unknowns": [
+        "完整转换优先级",
+        "所有协同和占优策略",
+        "玩家实际是否改变停手"
+      ]
+    },
+    {
+      "id": "M07",
+      "name": "保护、恢复、残值、继承与撤销",
+      "role": "限定损失并保留之后的行动入口",
+      "preconditions": [
+        "事前有能力或事后满足恢复条件"
+      ],
+      "actions": [
+        "准备保护",
+        "选择使用时机",
+        "损失后处理残值或继承",
+        "满足条件时撤销"
+      ],
+      "state_transitions": [
+        {
+          "from": "风险敲击",
+          "trigger": "保护触发",
+          "to": "被改写的结果"
+        },
+        {
+          "from": "碎剑",
+          "trigger": "残值或继承条件",
+          "to": "贡品或下一把剑的资产"
+        },
+        {
+          "from": "结果之后",
+          "trigger": "可用撤销",
+          "to": "恢复状态"
+        }
+      ],
+      "costs": [
+        "有限保护机会",
+        "物品或遗物投入"
+      ],
+      "rewards": [
+        "保留当前资产或下一轮部分条件",
+        "降低怒气或恢复一次尝试"
+      ],
+      "decisions": [
+        "现在用还是保留",
+        "救当前剑还是为后续准备"
+      ],
+      "feedback": [
+        "剩余保护次数",
+        "充能状态",
+        "撤销指引",
+        "继承和残值去向"
+      ],
+      "failure_and_recovery": [
+        "无相应能力时不能自动恢复",
+        "没有全局无限撤销的证据"
+      ],
+      "dependencies": [
+        "M02",
+        "M03",
+        "M04",
+        "M06",
+        "M08"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R05",
+        "R06",
+        "R07"
+      ],
+      "claim_refs": [
+        "C23",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C47"
+      ],
+      "unknowns": [
+        "全部消耗次序",
+        "加载和离场后的撤销边界",
+        "恢复经济的真人效果"
+      ]
+    },
+    {
+      "id": "M08",
+      "name": "金币、商人与再投资",
+      "role": "把兑现变成下一次尝试的购买力",
+      "preconditions": [
+        "有金币",
+        "商人或刷新选项可用"
+      ],
+      "actions": [
+        "兑现后查看余额",
+        "买剑或物品",
+        "付费刷新遗物"
+      ],
+      "state_transitions": [
+        {
+          "from": "剑的献出价值",
+          "trigger": "结算，按社区资料",
+          "to": "金币"
+        },
+        {
+          "from": "金币",
+          "trigger": "购买或刷新",
+          "to": "原料、物品或新的选项"
+        }
+      ],
+      "costs": [
+        "金币",
+        "其他购买的机会成本"
+      ],
+      "rewards": [
+        "更多尝试",
+        "保护能力",
+        "组合选择"
+      ],
+      "decisions": [
+        "买数量、保险还是寻找协同",
+        "是否为商人时点保留现金"
+      ],
+      "feedback": [
+        "金币余额",
+        "报价",
+        "到访日历"
+      ],
+      "failure_and_recovery": [
+        "不能由社区说明推断所有当前现金特例"
+      ],
+      "dependencies": [
+        "M04",
+        "M05",
+        "M07"
+      ],
+      "resource_refs": [
+        "R01",
+        "R03",
+        "R04",
+        "R06"
+      ],
+      "claim_refs": [
+        "C24",
+        "C25",
+        "C55"
+      ],
+      "unknowns": [
+        "完整价格和库存曲线",
+        "最优购买策略",
+        "跨新局金币"
+      ]
+    },
+    {
+      "id": "M09",
+      "name": "剑形发现、图鉴与跨局解锁",
+      "role": "为等级追求和未来局提供内容变化",
+      "preconditions": [
+        "达到外观或成就条件"
+      ],
+      "actions": [
+        "发展某把剑",
+        "发现外观",
+        "获得成就或遗物解锁",
+        "重新尝试"
+      ],
+      "state_transitions": [
+        {
+          "from": "未发现内容",
+          "trigger": "达到条件",
+          "to": "图鉴或出现池变化"
+        }
+      ],
+      "costs": [
+        "为发现目标投入剑与风险"
+      ],
+      "rewards": [
+        "外观发现",
+        "未来可能出现的新遗物"
+      ],
+      "decisions": [
+        "追求哪种剑或成就",
+        "数值与内容目标的分配"
+      ],
+      "feedback": [
+        "剑外观",
+        "图鉴",
+        "解锁通知"
+      ],
+      "failure_and_recovery": [
+        "图鉴保留不代表本局全部经济资产跨局保留"
+      ],
+      "dependencies": [
+        "M02",
+        "M05",
+        "M06"
+      ],
+      "resource_refs": [
+        "R01",
+        "R08",
+        "R09"
+      ],
+      "claim_refs": [
+        "C11",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "unknowns": [
+        "完整当前内容量",
+        "新局所有资产初始化",
+        "实际多局动机"
+      ]
+    }
+  ],
+  "loops": [
+    {
+      "id": "L01",
+      "scale": "动作",
+      "entry_conditions": [
+        "当前剑可锻造"
+      ],
+      "steps": [
+        "读取状态",
+        "选择继续或停",
+        "敲击并结算",
+        "重新决策"
+      ],
+      "mechanism_refs": [
+        "M02",
+        "M03",
+        "M06",
+        "M07"
+      ],
+      "what_changes_next_cycle": [
+        "价值、等级、充能、风险、保护"
+      ],
+      "exit_or_failure_paths": [
+        "主动停手",
+        "碎剑后未恢复"
+      ],
+      "claim_refs": [
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C12",
+        "C43"
+      ]
+    },
+    {
+      "id": "L02",
+      "scale": "任务或单剑尝试",
+      "entry_conditions": [
+        "有一把可用剑"
+      ],
+      "steps": [
+        "准备",
+        "逐锤或入神",
+        "停手或损失",
+        "将资产用于贡品、投资或储备"
+      ],
+      "mechanism_refs": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M07"
+      ],
+      "what_changes_next_cycle": [
+        "原料库存",
+        "贡品和购买能力",
+        "条件继承"
+      ],
+      "exit_or_failure_paths": [
+        "献出",
+        "兑换",
+        "保留",
+        "破坏"
+      ],
+      "claim_refs": [
+        "C02",
+        "C12",
+        "C17",
+        "C21",
+        "C28",
+        "C29",
+        "C45"
+      ]
+    },
+    {
+      "id": "L03",
+      "scale": "游戏日",
+      "entry_conditions": [
+        "合同未结束",
+        "有补给或库存及当日要求"
+      ],
+      "steps": [
+        "锻造",
+        "分配资产",
+        "摇铃",
+        "额度与怒气判断",
+        "下一日"
+      ],
+      "mechanism_refs": [
+        "M02",
+        "M04",
+        "M05",
+        "M08"
+      ],
+      "what_changes_next_cycle": [
+        "金币",
+        "怒气",
+        "保留剑",
+        "构筑",
+        "下一日要求"
+      ],
+      "exit_or_failure_paths": [
+        "致死",
+        "合同完成后停止或继续"
+      ],
+      "claim_refs": [
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C26"
+      ]
+    },
+    {
+      "id": "L04",
+      "scale": "局内成长",
+      "entry_conditions": [
+        "有剑信用、金币或起始选择"
+      ],
+      "steps": [
+        "投资遗物、物品或原料",
+        "应用后续条件",
+        "锻造与兑现",
+        "再投资"
+      ],
+      "mechanism_refs": [
+        "M05",
+        "M06",
+        "M07",
+        "M08"
+      ],
+      "what_changes_next_cycle": [
+        "结果的意义",
+        "损失范围",
+        "收益结构",
+        "资源选择"
+      ],
+      "exit_or_failure_paths": [
+        "投资后无原料",
+        "局结束",
+        "成型后重复"
+      ],
+      "claim_refs": [
+        "C16",
+        "C27",
+        "C29",
+        "C36",
+        "C46",
+        "C49"
+      ]
+    },
+    {
+      "id": "L05",
+      "scale": "跨局与长期内容",
+      "entry_conditions": [
+        "尝试外观或成就目标"
+      ],
+      "steps": [
+        "达成发现条件",
+        "记录或解锁",
+        "未来局接触变化后的内容"
+      ],
+      "mechanism_refs": [
+        "M09",
+        "M05"
+      ],
+      "what_changes_next_cycle": [
+        "图鉴知识",
+        "遗物出现池的可选内容"
+      ],
+      "exit_or_failure_paths": [
+        "长期内容量未验证",
+        "没有已核实的通用永久数值升级树"
+      ],
+      "claim_refs": [
+        "C33",
+        "C34",
+        "C54"
+      ]
+    }
+  ],
+  "design_principles": [
+    {
+      "id": "P01",
+      "mechanism_refs": [
+        "M02",
+        "M04"
+      ],
+      "causal_chain": "可见累积资产和下一步风险加上兑现出口，使玩家能主动选择继续或停手。",
+      "dependencies": [
+        "信息可理解",
+        "兑现有用途"
+      ],
+      "counterfactual": "没有兑现出口时继续可能变成必做；没有可理解信息时可能成为盲抽。",
+      "claim_refs": [
+        "C43"
+      ]
+    },
+    {
+      "id": "P02",
+      "mechanism_refs": [
+        "M03"
+      ],
+      "causal_chain": "危险状态中的准备，换来暂时不同的损失规则，可能让同一输入在窗口前后形成节奏变化。",
+      "dependencies": [
+        "状态与结束可辨识",
+        "窗口改变规则"
+      ],
+      "counterfactual": "始终免失败会移除前段张力；窗口只换演出则难以改变决策。",
+      "claim_refs": [
+        "C44"
+      ]
+    },
+    {
+      "id": "P03",
+      "mechanism_refs": [
+        "M04",
+        "M05"
+      ],
+      "causal_chain": "同一资产有不同估值和用途，迫使现在兑现、储备和投资后续能力竞争。",
+      "dependencies": [
+        "真实机会成本",
+        "用途收益不完全等价"
+      ],
+      "counterfactual": "唯一占优用途或完全等价用途会消除分配判断。",
+      "claim_refs": [
+        "C45"
+      ]
+    },
+    {
+      "id": "P04",
+      "mechanism_refs": [
+        "M06"
+      ],
+      "causal_chain": "构筑将结果转为后续事件，使玩家可能改变对停滞和损失的估值。",
+      "dependencies": [
+        "效果可见",
+        "需要准备",
+        "损失未被无代价全部消除"
+      ],
+      "counterfactual": "只加相同倍率可能完全不改变行动。",
+      "claim_refs": [
+        "C46"
+      ]
+    },
+    {
+      "id": "P05",
+      "mechanism_refs": [
+        "M07"
+      ],
+      "causal_chain": "限定损失与可恢复资产，让失败后的下一次决定具有可执行入口。",
+      "dependencies": [
+        "恢复可获得",
+        "失败不吞掉全部行动条件"
+      ],
+      "counterfactual": "恢复完全依赖难得道具可能导致停滞；失败若更赚钱可能形成刷失败策略。",
+      "claim_refs": [
+        "C47",
+        "C49"
+      ]
+    }
+  ],
+  "transfer_candidates": [
+    {
+      "id": "T01",
+      "status": "candidate",
+      "source_mechanism_refs": [
+        "M02",
+        "M07"
+      ],
+      "problem_to_solve": "让短促摸猫产生判断，避免仅重复输入或每猫独立小游戏。",
+      "preserved_causal_chain": "未结算收益、可理解风险和真实停手出口共同建立继续或收手选择。",
+      "project_mapping": [
+        "当前剑价值对应本次未结算毛球",
+        "下一锤对应下一次有效抚摸",
+        "停手对应结束并到账",
+        "哈气损失限定本次，猫本体保留"
+      ],
+      "dependencies_and_conflicts": [
+        "风险与收益曲线",
+        "状态提示含义",
+        "时限与冷却",
+        "任何保底或部分结算都属于额外候选，不能冒充当前讨论已采用"
+      ],
+      "minimal_prototype": "一只猫、共享界面、继续/停手、哈气、明确结算和冷却；比较明确概率与稳定状态提示。",
+      "hypothesis": "玩家能解释停手原因，并随状态改变而改变停手位置。",
+      "measures": [
+        "不同状态的继续/停手分布",
+        "失败后再试比例",
+        "损失范围理解",
+        "思考、操作和等待比例"
+      ],
+      "falsifying_observations": [
+        "始终第一下走",
+        "始终摸到失败",
+        "只按固定次数不读状态",
+        "不能理解风险"
+      ],
+      "implementation_burden": "低—中：主要在状态反馈与动画，不需要先做10套独立玩法。",
+      "expected_benefit": "让短促共享交互形成状态相关选择，降低独立猫玩法数量。",
+      "priority": 1,
+      "project_source_refs": [
+        "S18",
+        "S21",
+        "S24"
+      ],
+      "affected_systems": [
+        "单猫近景互动",
+        "本次毛球结算"
+      ],
+      "tradeoffs": [
+        "与盲盒／打捞同质风险",
+        "保底或部分结算属于额外候选",
+        "旧原型证据不能证明新规则"
+      ],
+      "specific_change": "从已核对的收割／采集对照中隔离新增本次未结算收益、继续／收手和哈气，猫本体保留。",
+      "next_step": "设计细化后做一只猫的隔离原型，对照风险信息与停手行为。",
+      "new_work": [
+        "未结算状态",
+        "风险提示",
+        "哈气判定",
+        "主动结算与冷却"
+      ],
+      "reusable_capabilities": [
+        "近景入口",
+        "角色表现",
+        "纯内存原型隔离"
+      ],
+      "fit_verdict": "优先验证"
+    },
+    {
+      "id": "T02",
+      "status": "candidate",
+      "source_mechanism_refs": [
+        "M02",
+        "M03",
+        "M07"
+      ],
+      "problem_to_solve": "让盲盒品质提升包含主动兑现选择，而非重复付钱看随机结果。",
+      "preserved_causal_chain": "继续改善潜在奖励，但暴露当前盒的权益；现在兑现有独立价值。",
+      "project_mapping": [
+        "一把在加工的剑对应待开盲盒",
+        "剑价值对应当前品质奖励信息",
+        "停手对应当前品质开盒或保存",
+        "继续对应付毛球尝试提高品质"
+      ],
+      "dependencies_and_conflicts": [
+        "原游戏未确认每锤直接付钱，项目付毛球是新增成本",
+        "失败后果需要另定",
+        "两层随机性需保证当前品质有可理解价值",
+        "Fever作为独立变量，不预设必须"
+      ],
+      "minimal_prototype": "一个盲盒、3个示意品质档、继续/兑现、一次明确失败规则、一个保护选项和奖励回流；档数是原型建议。",
+      "hypothesis": "品质和资金状态会改变继续/开盒选择，兑现后仍有再次进入的理由。",
+      "measures": [
+        "各中间品质兑现率",
+        "失败恢复成本",
+        "品质与资金状态下的选择"
+      ],
+      "falsifying_observations": [
+        "所有人只追最高档",
+        "所有人只开最低档",
+        "中间品质无兑现价值"
+      ],
+      "implementation_burden": "中：品质和奖励经济、损失演出及信息清晰度是主要负担。",
+      "expected_benefit": "使品质提升包含主动投资判断而非只有重复付费揭晓。",
+      "priority": 2,
+      "project_source_refs": [
+        "S18",
+        "S20",
+        "S22"
+      ],
+      "affected_systems": [
+        "独立盲盒锻造界面",
+        "品质兑现",
+        "奖励回流"
+      ],
+      "tradeoffs": [
+        "付毛球是迁移新增成本",
+        "两层随机导致品质难估值",
+        "轨道回收舱待办与打捞奖励需对齐"
+      ],
+      "specific_change": "将消耗毛球提高品质的方向细化为每个中间品质可兑现、继续付费或现在开盒／保存的选择。",
+      "next_step": "做一个盲盒的完整循环，先确认中间品质的兑现价值，再考虑独立Fever。",
+      "new_work": [
+        "盲盒与品质状态",
+        "失败后果",
+        "兑现信息",
+        "奖励回流"
+      ],
+      "reusable_capabilities": [
+        "统一钱包与交易经验"
+      ],
+      "fit_verdict": "优先验证"
+    },
+    {
+      "id": "T03",
+      "status": "candidate",
+      "source_mechanism_refs": [
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08"
+      ],
+      "problem_to_solve": "给毛球持续用途，并让失败后仍有基础生产和恢复入口。",
+      "preserved_causal_chain": "当前消耗与后续能力竞争，同时风险奖励能反哺下一轮生产。",
+      "project_mapping": [
+        "猫咪生产对应稳定恢复入口",
+        "毛球在确定研究、打捞和盲盒尝试之间竞争",
+        "永久奖励实际改善后续生产",
+        "保留机会成本关系，不必复制剑信用货币"
+      ],
+      "dependencies_and_conflicts": [
+        "同一预算比较收入、成本和永久增益",
+        "自动化效率与手动收益需额外验证",
+        "原参考游戏未查证自动化"
+      ],
+      "minimal_prototype": "一条基础收入、一个确定收益研究和一个风险盲盒选项，奖励回流；先闭环再接完整打捞。",
+      "hypothesis": "失败后玩家仍能恢复尝试，且会在研究和风险投资间改变选择。",
+      "measures": [
+        "再次负担尝试的时间",
+        "资金用途分布",
+        "恢复期有效操作"
+      ],
+      "falsifying_observations": [
+        "资金断流且无恢复入口",
+        "一种用途长期完全压倒另一种",
+        "恢复只剩无判断重复"
+      ],
+      "implementation_burden": "中：主要是经济和状态衔接，可先减少素材规模。",
+      "expected_benefit": "失败后仍能继续，毛球有持续用途，自动化后有明确主动选择。",
+      "priority": 3,
+      "project_source_refs": [
+        "S18",
+        "S20",
+        "S21",
+        "S22"
+      ],
+      "affected_systems": [
+        "基础收入",
+        "研究／打捞／盲盒投资",
+        "自动化与主动玩法"
+      ],
+      "tradeoffs": [
+        "强补偿可能诱发刷失败",
+        "一种投入可能压倒其他路线",
+        "原参考未证明自动化效果"
+      ],
+      "specific_change": "把风险损失限定为本次权益，保持基础生产入口，并让永久奖励真正改善下一轮；给三个环节不同决策任务。",
+      "next_step": "连接基础收入、确定研究和风险盲盒，验证恢复与用途分配，再接完整打捞。",
+      "new_work": [
+        "三套损失账目",
+        "恢复成本预算",
+        "投资用途比较",
+        "奖励与生产闭环"
+      ],
+      "reusable_capabilities": [
+        "统一钱包经验",
+        "独立原型帮手收入作对照"
+      ],
+      "fit_verdict": "优先验证"
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "Q01",
+      "question": "当前原版入神触发锤、窗口和到期输入怎样执行？",
+      "impact_mechanism_refs": [
+        "M03"
+      ],
+      "needed_evidence": "同剑充能、触发到窗口结束的连续原版录屏与结果时间。"
+    },
+    {
+      "id": "Q02",
+      "question": "真实成本、剑库存、贡品金币和信用怎样结算？",
+      "impact_mechanism_refs": [
+        "M04",
+        "M05",
+        "M08"
+      ],
+      "needed_evidence": "一个工作日逐项记录剑数、信用、金币、贡品前后。"
+    },
+    {
+      "id": "Q03",
+      "question": "连续失败后有哪些可行恢复行动，是否依赖指定稀有遗物？",
+      "impact_mechanism_refs": [
+        "M07"
+      ],
+      "needed_evidence": "不同起始组合的早期多次原版尝试，记录恢复成本。"
+    },
+    {
+      "id": "Q04",
+      "question": "社区提取build与当前原版的概率、公式和效果顺序是否一致？",
+      "impact_mechanism_refs": [
+        "M02",
+        "M03",
+        "M06",
+        "M07",
+        "M08"
+      ],
+      "needed_evidence": "原版界面和结果逐项核对；网页模拟器不能替代原版。"
+    },
+    {
+      "id": "Q05",
+      "question": "不同构筑是否改变停手和资产分配？",
+      "impact_mechanism_refs": [
+        "M05",
+        "M06"
+      ],
+      "needed_evidence": "多种事件链对照，记录选择变化与投入。"
+    },
+    {
+      "id": "Q06",
+      "question": "真实音画时序是否及时表达输入、判定、结算和风险恢复？",
+      "impact_mechanism_refs": [
+        "M01",
+        "M02",
+        "M03"
+      ],
+      "needed_evidence": "连续录像与输入记录。"
+    },
+    {
+      "id": "Q07",
+      "question": "合同后和跨局内容是否提供新的决定？",
+      "impact_mechanism_refs": [
+        "M09"
+      ],
+      "needed_evidence": "多局、合同后体验，区分新内容、学习和重复行为。"
+    }
+  ],
+  "project_context": {
+    "name": "Purr Orbit／毛球计划",
+    "repository": "https://github.com/Dr-Doge/PURR_ORBIT",
+    "branch": "main",
+    "commit": "9679a7bcabfef533d7edca1c6897094b6f01c6a3",
+    "reviewed_at": "2026-10-13",
+    "implemented": [
+      "正式3D经营入口使用原model和统一毛球／收藏主逻辑"
+    ],
+    "prototype_implemented": [
+      "独立猫身采集原型，双视角、随机毛、帮手和事件；纯内存，与正式入口分开"
+    ],
+    "confirmed_pending": [
+      "IMP-20261009-002轨道回收舱、随机接驳和9套90件"
+    ],
+    "proposals": [
+      "单猫继续／停手／哈气及时限冷却",
+      "独立打捞保证金与数量预测",
+      "独立盲盒锻造品质、奖励和失败细化",
+      "后期自动化效率与主动玩法分工"
+    ],
+    "cancelled_or_superseded": [
+      "原额外插入摸猫小游戏",
+      "锻猫及锻造变形作为当前方向",
+      "10-08误登记头脑风暴任务"
+    ],
+    "current_problems": [
+      "新风险互动未由旧采集验证证明",
+      "三种风险玩法可能同质，此为推断",
+      "新奖励与生产回流需对齐",
+      "自动化后的主动价值需验证",
+      "打捞提案与轨道回收舱待办关系未明确"
+    ],
+    "reusable_capabilities": [
+      "船舱和角色资源",
+      "单猫／船舱视角能力",
+      "统一钱包与交易工程经验",
+      "独立原型隔离和测试方法"
+    ],
+    "constraints": [
+      "先玩法框架再猫美术",
+      "避免10套独立小游戏和大量升级形态动画",
+      "正式、旧Lab和纯内存原型状态分离",
+      "推荐不能直接登记为已采纳或已实现"
+    ],
+    "source_refs": [
+      "S18",
+      "S19",
+      "S20",
+      "S21",
+      "S22",
+      "S24"
+    ],
+    "limitations": [
+      "本轮只读核对，没有运行工程",
+      "738项是历史原型证据",
+      "新哈气／打捞／盲盒完整实现未被本轮确认",
+      "本快照需要在下次调研重新核对"
+    ]
+  },
+  "integration_assessment": [
+    {
+      "source_mechanism_refs": [
+        "M02"
+      ],
+      "verdict": "优先验证",
+      "project_problem_or_opportunity": "单猫收手与盲盒中间品质兑现",
+      "reasoning": "匹配最新方向，但应限定损失对象并验证风险信息。",
+      "project_source_refs": [
+        "S18",
+        "S21",
+        "S24"
+      ],
+      "candidate_refs": [
+        "T01",
+        "T02"
+      ]
+    },
+    {
+      "source_mechanism_refs": [
+        "M03"
+      ],
+      "verdict": "可局部借鉴",
+      "project_problem_or_opportunity": "短反应造成节奏变化",
+      "reasoning": "先完成基本收手再单独验证窗口，不沿用被更正的投喂变形演示。",
+      "project_source_refs": [
+        "S18"
+      ],
+      "candidate_refs": [
+        "T01",
+        "T02"
+      ]
+    },
+    {
+      "source_mechanism_refs": [
+        "M05"
+      ],
+      "verdict": "可局部借鉴",
+      "project_problem_or_opportunity": "毛球的用途竞争",
+      "reasoning": "借机会成本，不复制剑信用第二货币。",
+      "project_source_refs": [
+        "S20",
+        "S18"
+      ],
+      "candidate_refs": [
+        "T03"
+      ]
+    },
+    {
+      "source_mechanism_refs": [
+        "M06",
+        "M07"
+      ],
+      "verdict": "优先验证",
+      "project_problem_or_opportunity": "失败后的行动入口",
+      "reasoning": "先少量可见恢复条件，暂缓大规模遗物池。",
+      "project_source_refs": [
+        "S18",
+        "S21"
+      ],
+      "candidate_refs": [
+        "T03"
+      ]
+    },
+    {
+      "source_mechanism_refs": [
+        "M04"
+      ],
+      "verdict": "不适合",
+      "project_problem_or_opportunity": "是否增加局终压力",
+      "reasoning": "直接复制致死合同会改变当前持续经营、关系和损失范围。",
+      "project_source_refs": [
+        "S18",
+        "S20"
+      ],
+      "candidate_refs": []
+    },
+    {
+      "source_mechanism_refs": [
+        "M09"
+      ],
+      "verdict": "暂缓",
+      "project_problem_or_opportunity": "大量形态与长期内容",
+      "reasoning": "当前先框架后形象，数值等级不应自动增加同等数量动画。",
+      "project_source_refs": [
+        "S18"
+      ],
+      "candidate_refs": []
+    }
+  ]
+}
