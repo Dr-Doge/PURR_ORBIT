@@ -1,0 +1,1199 @@
+{
+  "schema_version": "1.1",
+  "game": {
+    "name": "深空当铺：可能是偷的 / Probably Stolen",
+    "platform": "Windows PC / Steam",
+    "version": "公开Demo UPDATE 049；内部修订号未知，历史48.3.10／12单列",
+    "mode": "单人",
+    "analysis_date": "2026-10-13"
+  },
+  "coverage": {
+    "basis": "资料观察",
+    "covered": [
+      "官方定位",
+      "049具体功能与操作改进",
+      "历史风险修正",
+      "项目状态核对",
+      "条件性融入候选"
+    ],
+    "not_covered": [
+      "微信正文",
+      "实玩",
+      "连续实机",
+      "鉴定与议价完整规则",
+      "Demo买断终点",
+      "正式版"
+    ],
+    "limitations": [
+      "不得把商店说明当精确规则",
+      "历史补丁不代表当前全部规则",
+      "没有真人验证候选收益"
+    ]
+  },
+  "summary": "优先研究信息有后果与功能成长，不当前移植完整当铺经营。",
+  "project_context": {
+    "name": "Purr Orbit／毛球计划",
+    "repository": "C:\\Users\\leooosliu\\Downloads\\htalk\\PURR_ORBIT_read",
+    "branch": "main",
+    "commit": "b156a051eb0e9d1bc7331c6dfba1dd60ce516bba",
+    "reviewed_at": "2026-10-13",
+    "implemented": [
+      "正式3D入口",
+      "毛球经营与旧代币收藏去重、补货"
+    ],
+    "prototype_implemented": [
+      "隔离采毛原型",
+      "近景／船舱切换",
+      "帮手与异常"
+    ],
+    "confirmed_pending": [
+      "19号轨道回收舱9套90件，日志002待实装"
+    ],
+    "proposals": [
+      "摸猫哈气与主动收手、时限冷却",
+      "打捞保证金与数量预测",
+      "毛球锻造盲盒品质",
+      "逐步自动化"
+    ],
+    "cancelled_or_superseded": [
+      "额外摸猫小游戏关闭",
+      "锻猫／锻造改变猫形态不是当前方向"
+    ],
+    "current_problems": [
+      "核心框架待定",
+      "风险分工",
+      "奖励回流",
+      "自动化后的主动价值"
+    ],
+    "reusable_capabilities": [
+      "3D表现",
+      "近景切换",
+      "资源反馈",
+      "独立模型验证经验"
+    ],
+    "constraints": [
+      "先框架后猫形象",
+      "避免十套独立小游戏",
+      "不将旧原型和旧经济当新规则"
+    ],
+    "source_refs": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08"
+    ],
+    "limitations": [
+      "只读核对，未运行引擎",
+      "TAPD提单不等于代码落地",
+      "历史验证不是当前真人体验"
+    ]
+  },
+  "integration_assessment": [
+    {
+      "source_mechanism_refs": [
+        "M01"
+      ],
+      "verdict": "优先验证",
+      "project_problem_or_opportunity": "哈气判断的可学性",
+      "reasoning": "自然反应线索可进入现有讨论框架，须验证赌感与信息量",
+      "project_source_refs": [
+        "P02",
+        "P06"
+      ],
+      "candidate_refs": [
+        "T01"
+      ]
+    },
+    {
+      "source_mechanism_refs": [
+        "M03"
+      ],
+      "verdict": "可局部借鉴",
+      "project_problem_or_opportunity": "打捞和盲盒回流",
+      "reasoning": "先闭合用途与结算，不引入生产链全套",
+      "project_source_refs": [
+        "P02",
+        "P07",
+        "P08"
+      ],
+      "candidate_refs": [
+        "T02"
+      ]
+    },
+    {
+      "source_mechanism_refs": [
+        "M03",
+        "M04"
+      ],
+      "verdict": "可局部借鉴",
+      "project_problem_or_opportunity": "自动化后主动价值",
+      "reasoning": "原则可借鉴，但实现暂缓，避免重复造帮手",
+      "project_source_refs": [
+        "P02",
+        "P06"
+      ],
+      "candidate_refs": [
+        "T03"
+      ]
+    },
+    {
+      "source_mechanism_refs": [
+        "M02",
+        "M06"
+      ],
+      "verdict": "暂缓",
+      "project_problem_or_opportunity": "远期交易与人物",
+      "reasoning": "内容负担高，非一期核心",
+      "project_source_refs": [
+        "P02",
+        "P08"
+      ],
+      "candidate_refs": []
+    },
+    {
+      "source_mechanism_refs": [
+        "M05",
+        "M07"
+      ],
+      "verdict": "不适合",
+      "project_problem_or_opportunity": "额外经营惩罚",
+      "reasoning": "当前已有多风险点，未证明需要持续强制压力",
+      "project_source_refs": [
+        "P02"
+      ],
+      "candidate_refs": []
+    },
+    {
+      "source_mechanism_refs": [
+        "M04"
+      ],
+      "verdict": "暂缓",
+      "project_problem_or_opportunity": "网格背包整理",
+      "reasoning": "未证明空间取舍是当前目标体验",
+      "project_source_refs": [
+        "P02",
+        "P08"
+      ],
+      "candidate_refs": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "S00",
+      "title": "用户微信原文",
+      "location": "https://mp.weixin.qq.com/s/S7B87_s6QD-FNQgEmCCdug",
+      "locator": "访问失败，未读正文",
+      "type": "访问记录",
+      "version_or_date": "2026-10-13"
+    },
+    {
+      "id": "S01",
+      "title": "官方本体商店",
+      "location": "https://store.steampowered.com/app/4348910/?l=english",
+      "locator": "About This Game／发行信息",
+      "type": "官方商店",
+      "version_or_date": "2026-10-13"
+    },
+    {
+      "id": "S02",
+      "title": "官方Demo商店",
+      "location": "https://store.steampowered.com/app/4349200/Probably_Stolen_Demo/?l=english",
+      "locator": "Demo身份／平台",
+      "type": "官方商店",
+      "version_or_date": "2026-10-13"
+    },
+    {
+      "id": "S03",
+      "title": "UPDATE 049",
+      "location": "https://store.steampowered.com/news/app/4348910/view/1843481262702145",
+      "locator": "Content／Quality of Life／Trading & economy；官方新闻流及API",
+      "type": "官方补丁",
+      "version_or_date": "2026-09-14"
+    },
+    {
+      "id": "S04",
+      "title": "Playtest 48.3.12",
+      "location": "https://store.steampowered.com/news/app/4348910/view/1840310314345942",
+      "locator": "Changes；官方Steam新闻API条目",
+      "type": "官方历史补丁",
+      "version_or_date": "Playtest 48.3.12"
+    },
+    {
+      "id": "S05",
+      "title": "Playtest 48.3.10",
+      "location": "https://store.steampowered.com/news/app/4348910/view/1840310314342898",
+      "locator": "Changes／New Content；官方Steam新闻API条目",
+      "type": "官方历史补丁",
+      "version_or_date": "Playtest 48.3.10"
+    },
+    {
+      "id": "S06",
+      "title": "官方新闻流",
+      "location": "https://steamcommunity.com/app/4348910/allnews/",
+      "locator": "UPDATE 049／Playtest Ledger",
+      "type": "官方新闻",
+      "version_or_date": "2026-10-13"
+    },
+    {
+      "id": "P01",
+      "title": "项目AGENTS",
+      "location": "../../AGENTS.md",
+      "locator": "游戏调研与项目边界",
+      "type": "项目指引",
+      "version_or_date": "b156a051eb0e9d1bc7331c6dfba1dd60ce516bba"
+    },
+    {
+      "id": "P02",
+      "title": "10-12日会含10-13更正",
+      "location": "../../会议纪要/2026-10-12_日会_整理纪要.md",
+      "locator": "核心玩法／摸猫／打捞／待办",
+      "type": "有效会议更正",
+      "version_or_date": "b156a051eb0e9d1bc7331c6dfba1dd60ce516bba"
+    },
+    {
+      "id": "P03",
+      "title": "当前策划索引",
+      "location": "../../摸猫增量策划案/00_索引.md",
+      "locator": "正式与新方向入口",
+      "type": "策划入口",
+      "version_or_date": "b156a051eb0e9d1bc7331c6dfba1dd60ce516bba"
+    },
+    {
+      "id": "P04",
+      "title": "实装日志",
+      "location": "../../摸猫增量策划案/18_实装变更日志.md",
+      "locator": "IMP-20261009-001／002",
+      "type": "开发状态记录",
+      "version_or_date": "b156a051eb0e9d1bc7331c6dfba1dd60ce516bba"
+    },
+    {
+      "id": "P05",
+      "title": "正式模型",
+      "location": "../../毛球满屋/scripts/model.gd",
+      "locator": "pool／draw_capsule／advance_stage；另核对project.godot:15",
+      "type": "正式代码",
+      "version_or_date": "b156a051eb0e9d1bc7331c6dfba1dd60ce516bba"
+    },
+    {
+      "id": "P06",
+      "title": "原型报告与输入能力",
+      "location": "../../毛球满屋/reports/prototype_20261009/README.md",
+      "locator": "运行、隔离与限制；另核对controller.gd:143—154",
+      "type": "独立原型证据",
+      "version_or_date": "b156a051eb0e9d1bc7331c6dfba1dd60ce516bba"
+    },
+    {
+      "id": "P07",
+      "title": "19号轨道回收舱",
+      "location": "../../摸猫增量策划案/19_背景故事与轨道回收舱盲盒系统.md",
+      "locator": "单次回收／9套90件／待实施迁移",
+      "type": "已入案待实装",
+      "version_or_date": "b156a051eb0e9d1bc7331c6dfba1dd60ce516bba"
+    },
+    {
+      "id": "P08",
+      "title": "长线规划含更正",
+      "location": "../../会议纪要/2026-10-12_长线规划讨论_整理纪要.md",
+      "locator": "一期及远期边界",
+      "type": "方向讨论",
+      "version_or_date": "b156a051eb0e9d1bc7331c6dfba1dd60ce516bba"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "存在商品鉴定、议价、加工及交易设计",
+      "status": "fact",
+      "source_refs": [
+        "S01"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C02",
+      "text": "049支持工具装备、批量操作及功能升级",
+      "status": "fact",
+      "source_refs": [
+        "S03"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C03",
+      "text": "48.3.12取消主动诱发检查后通过获得安保信誉的刷取路径",
+      "status": "fact",
+      "source_refs": [
+        "S04"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C04",
+      "text": "租金、信誉与执法给经营附加约束",
+      "status": "fact",
+      "source_refs": [
+        "S01"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C05",
+      "text": "信息补足可能让选择从盲猜转向判断",
+      "status": "inference",
+      "source_refs": [
+        "S01"
+      ],
+      "reasoning": "鉴定与错误成本相关，但具体线索有效性未实测"
+    },
+    {
+      "id": "C06",
+      "text": "功能升级可能同时减少劳动并改变用途",
+      "status": "inference",
+      "source_refs": [
+        "S03"
+      ],
+      "reasoning": "从工具批量操作和机器人功能升级推导，体验未验证"
+    },
+    {
+      "id": "C07",
+      "text": "原游戏具体鉴定对质、议价边界和Demo买断终点未知",
+      "status": "unknown",
+      "source_refs": [],
+      "reasoning": "缺少连续录像和试玩"
+    },
+    {
+      "id": "C08",
+      "text": "最新会议关闭额外摸猫小游戏，锻造用于盲盒，没有锻猫",
+      "status": "fact",
+      "source_refs": [
+        "P02"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C09",
+      "text": "哈气停手、保证金预测及盲盒品质属于待细化讨论，不能当正式实装",
+      "status": "fact",
+      "source_refs": [
+        "P02",
+        "P03",
+        "P04",
+        "P05"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C10",
+      "text": "正式配置仍是3D入口，模型保留代币与去重收藏",
+      "status": "fact",
+      "source_refs": [
+        "P05"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C11",
+      "text": "采毛原型具备独立近景和船舱切换，历史测试不等于最新真人结论",
+      "status": "fact",
+      "source_refs": [
+        "P06"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C12",
+      "text": "19号9套90件回收舱已入案但仍待实装",
+      "status": "fact",
+      "source_refs": [
+        "P04",
+        "P07"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C13",
+      "text": "三处风险若都只做盲赌可能重复",
+      "status": "inference",
+      "source_refs": [
+        "P02"
+      ],
+      "reasoning": "摸猫、保证金及品质投资均涉及不确定结果，需分工验证"
+    },
+    {
+      "id": "C14",
+      "text": "猫情绪线索可能增强主动停手判断",
+      "status": "inference",
+      "source_refs": [
+        "S01",
+        "P02"
+      ],
+      "reasoning": "迁移信息有后果原理，并非原作猫机制"
+    },
+    {
+      "id": "C15",
+      "text": "打捞奖励的用途与回流可加强循环联系",
+      "status": "inference",
+      "source_refs": [
+        "S01",
+        "P02",
+        "P07",
+        "P08"
+      ],
+      "reasoning": "通过可投入产物改变下一次行动条件"
+    },
+    {
+      "id": "C16",
+      "text": "自动化最终超过手动时，主动参与的价值需要另行定义",
+      "status": "inference",
+      "source_refs": [
+        "P02",
+        "P06"
+      ],
+      "reasoning": "相同目标只有效率竞争时手动可能被支配"
+    },
+    {
+      "id": "C17",
+      "text": "48.3.10强调机器夜间和手动功能，并调整部分困难模式终局",
+      "status": "fact",
+      "source_refs": [
+        "S05"
+      ],
+      "reasoning": null
+    }
+  ],
+  "resources": [
+    {
+      "id": "R01",
+      "name": "信用资金",
+      "sources": [
+        "交易"
+      ],
+      "sinks": [
+        "采购",
+        "升级",
+        "持续支出"
+      ],
+      "persistence": null,
+      "claim_refs": [
+        "C01",
+        "C04"
+      ]
+    },
+    {
+      "id": "R02",
+      "name": "商品与材料",
+      "sources": [
+        "采购",
+        "加工"
+      ],
+      "sinks": [
+        "出售",
+        "加工",
+        "升级"
+      ],
+      "persistence": null,
+      "claim_refs": [
+        "C01",
+        "C02"
+      ]
+    },
+    {
+      "id": "R03",
+      "name": "库存空间",
+      "sources": [
+        "容器与管理能力"
+      ],
+      "sinks": [
+        "存放货物和工具"
+      ],
+      "persistence": null,
+      "claim_refs": [
+        "C02"
+      ]
+    },
+    {
+      "id": "R04",
+      "name": "信誉",
+      "sources": [
+        "交易与事件"
+      ],
+      "sinks": [
+        "关系与供货条件，不等于直接扣除"
+      ],
+      "persistence": null,
+      "claim_refs": [
+        "C03",
+        "C04"
+      ]
+    },
+    {
+      "id": "R05",
+      "name": "电力",
+      "sources": [
+        "供电能力"
+      ],
+      "sinks": [
+        "机器工作"
+      ],
+      "persistence": null,
+      "claim_refs": [
+        "C02"
+      ]
+    }
+  ],
+  "mechanisms": [
+    {
+      "id": "M01",
+      "name": "鉴定与信息补足",
+      "role": "形成货物判断",
+      "preconditions": [
+        "货物与可用检视信息"
+      ],
+      "actions": [
+        "查看",
+        "使用适配工具",
+        "做交易选择"
+      ],
+      "state_transitions": [
+        "报价或待检物→补信息→作选择（分析模型）"
+      ],
+      "costs": [
+        "注意力，具体费用未知"
+      ],
+      "rewards": [
+        "更有依据的判断（推断）"
+      ],
+      "decisions": [
+        "直接买／先检查／拒绝"
+      ],
+      "feedback": [
+        "扫描面板与提示"
+      ],
+      "failure_and_recovery": [
+        "对质和错误判定未知"
+      ],
+      "dependencies": [
+        "可学线索",
+        "交易后果"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02"
+      ],
+      "claim_refs": [
+        "C01",
+        "C05",
+        "C07"
+      ],
+      "unknowns": [
+        "未实机确认完整操作、参数和边界；见对应报告机制卡"
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "议价与成交",
+      "role": "资金与货物交换",
+      "preconditions": [
+        "交易对象与报价"
+      ],
+      "actions": [
+        "评估",
+        "议价",
+        "接受或拒绝"
+      ],
+      "state_transitions": [
+        "报价→回应→成交或退出（分析模型）"
+      ],
+      "costs": [
+        "资金占用"
+      ],
+      "rewards": [
+        "交易结果"
+      ],
+      "decisions": [
+        "利润与后续关系的取舍（推断）"
+      ],
+      "feedback": [
+        "议价面板及方向乘数"
+      ],
+      "failure_and_recovery": [
+        "次数、退款和退出未知"
+      ],
+      "dependencies": [
+        "M01",
+        "M06"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R04"
+      ],
+      "claim_refs": [
+        "C01",
+        "C07"
+      ],
+      "unknowns": [
+        "未实机确认完整操作、参数和边界；见对应报告机制卡"
+      ]
+    },
+    {
+      "id": "M03",
+      "name": "加工与功能升级",
+      "role": "扩展商品用途与处理能力",
+      "preconditions": [
+        "机器与材料"
+      ],
+      "actions": [
+        "投入",
+        "处理",
+        "升级"
+      ],
+      "state_transitions": [
+        "打印机升级→新增规格；机器人升级→焚烧可用"
+      ],
+      "costs": [
+        "升级材料",
+        "电力"
+      ],
+      "rewards": [
+        "处理能力"
+      ],
+      "decisions": [
+        "扩功能还是保留资源（推断）"
+      ],
+      "feedback": [
+        "具体运行演出未知"
+      ],
+      "failure_and_recovery": [
+        "停电、满仓与取消未知"
+      ],
+      "dependencies": [
+        "生产配置",
+        "资源结算"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R05"
+      ],
+      "claim_refs": [
+        "C01",
+        "C02",
+        "C06"
+      ],
+      "unknowns": [
+        "未实机确认完整操作、参数和边界；见对应报告机制卡"
+      ]
+    },
+    {
+      "id": "M04",
+      "name": "库存与工具操作",
+      "role": "降低物品操作负担",
+      "preconditions": [
+        "物品与库存或工具"
+      ],
+      "actions": [
+        "框选",
+        "拖放",
+        "排序",
+        "装备"
+      ],
+      "state_transitions": [
+        "框选→多选→移动或作用；快捷键→装备"
+      ],
+      "costs": [
+        "空间",
+        "整理注意力"
+      ],
+      "rewards": [
+        "批量操作能力"
+      ],
+      "decisions": [
+        "持货量与整理负担（推断）"
+      ],
+      "feedback": [
+        "选框与状态色"
+      ],
+      "failure_and_recovery": [
+        "目标失效与取消未知"
+      ],
+      "dependencies": [
+        "所有权",
+        "合法目标",
+        "UI命中"
+      ],
+      "resource_refs": [
+        "R02",
+        "R03"
+      ],
+      "claim_refs": [
+        "C02",
+        "C06"
+      ],
+      "unknowns": [
+        "未实机确认完整操作、参数和边界；见对应报告机制卡"
+      ]
+    },
+    {
+      "id": "M05",
+      "name": "高收益货物与检查",
+      "role": "为货物处置添加风险",
+      "preconditions": [
+        "风险货物与检查条件"
+      ],
+      "actions": [
+        "展示",
+        "隐藏",
+        "应对检查"
+      ],
+      "state_transitions": [
+        "特定路径：展示违禁品→检查→隐藏→通过，不再刷安保信誉"
+      ],
+      "costs": [
+        "潜在处罚，具体未知"
+      ],
+      "rewards": [
+        "风险交易的机会（推断）"
+      ],
+      "decisions": [
+        "接受风险还是避开"
+      ],
+      "feedback": [
+        "检查提示细则未知"
+      ],
+      "failure_and_recovery": [
+        "处罚表及恢复未知"
+      ],
+      "dependencies": [
+        "检查规则",
+        "M04"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R04"
+      ],
+      "claim_refs": [
+        "C03",
+        "C04"
+      ],
+      "unknowns": [
+        "未实机确认完整操作、参数和边界；见对应报告机制卡"
+      ]
+    },
+    {
+      "id": "M06",
+      "name": "顾客与信誉",
+      "role": "改变交易机会",
+      "preconditions": [
+        "遇到不同对象"
+      ],
+      "actions": [
+        "交易",
+        "拒绝",
+        "报告（定位层）"
+      ],
+      "state_transitions": [
+        "行为→关系→后续机会（分析模型）"
+      ],
+      "costs": [
+        "关系机会成本（推断）"
+      ],
+      "rewards": [
+        "供货与机会"
+      ],
+      "decisions": [
+        "单笔收益与长期关系（推断）"
+      ],
+      "feedback": [
+        "具体信誉反馈未知"
+      ],
+      "failure_and_recovery": [
+        "恢复矩阵未知"
+      ],
+      "dependencies": [
+        "顾客内容",
+        "信誉规则"
+      ],
+      "resource_refs": [
+        "R04"
+      ],
+      "claim_refs": [
+        "C01",
+        "C04"
+      ],
+      "unknowns": [
+        "未实机确认完整操作、参数和边界；见对应报告机制卡"
+      ]
+    },
+    {
+      "id": "M07",
+      "name": "租金现金约束",
+      "role": "使投资考虑兑现与流动性",
+      "preconditions": [
+        "持续经营"
+      ],
+      "actions": [
+        "留现金",
+        "投入库存",
+        "应付支出"
+      ],
+      "state_transitions": [
+        "投资→兑现→支出→下一轮（分析模型）"
+      ],
+      "costs": [
+        "持续支出"
+      ],
+      "rewards": [
+        "继续经营能力"
+      ],
+      "decisions": [
+        "留储备还是扩张"
+      ],
+      "feedback": [
+        "具体账单UI未知"
+      ],
+      "failure_and_recovery": [
+        "宽限、破产、恢复未知"
+      ],
+      "dependencies": [
+        "交易经济"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02"
+      ],
+      "claim_refs": [
+        "C04",
+        "C07"
+      ],
+      "unknowns": [
+        "未实机确认完整操作、参数和边界；见对应报告机制卡"
+      ]
+    }
+  ],
+  "loops": [
+    {
+      "id": "L01",
+      "scale": "动作",
+      "entry_conditions": [
+        "可操作目标"
+      ],
+      "steps": [
+        "检视或工具／拖放",
+        "获得属性或位置反馈"
+      ],
+      "mechanism_refs": [
+        "M01",
+        "M04"
+      ],
+      "what_changes_next_cycle": [
+        "信息与整理状态"
+      ],
+      "exit_or_failure_paths": [
+        "无效操作细则未知"
+      ],
+      "claim_refs": [
+        "C02",
+        "C05"
+      ]
+    },
+    {
+      "id": "L02",
+      "scale": "任务或单局",
+      "entry_conditions": [
+        "资金或货物"
+      ],
+      "steps": [
+        "评估",
+        "议价",
+        "持货／处理",
+        "出售"
+      ],
+      "mechanism_refs": [
+        "M01",
+        "M02",
+        "M03",
+        "M05",
+        "M06",
+        "M07"
+      ],
+      "what_changes_next_cycle": [
+        "资金、货物、关系变化；分析模型"
+      ],
+      "exit_or_failure_paths": [
+        "拒绝",
+        "处罚与负债边界未知"
+      ],
+      "claim_refs": [
+        "C01",
+        "C04",
+        "C07"
+      ]
+    },
+    {
+      "id": "L03",
+      "scale": "成长",
+      "entry_conditions": [
+        "可投资收益"
+      ],
+      "steps": [
+        "投资工具／功能",
+        "改操作或用途",
+        "经营获得新收益"
+      ],
+      "mechanism_refs": [
+        "M03",
+        "M04"
+      ],
+      "what_changes_next_cycle": [
+        "规格、功能、操作负担变化"
+      ],
+      "exit_or_failure_paths": [
+        "缺材料或资金；细则未知"
+      ],
+      "claim_refs": [
+        "C02",
+        "C06"
+      ]
+    },
+    {
+      "id": "L04",
+      "scale": "长期",
+      "entry_conditions": [
+        "持续经营"
+      ],
+      "steps": [
+        "扩大能力与关系",
+        "追求拥有店铺"
+      ],
+      "mechanism_refs": [
+        "M06",
+        "M07"
+      ],
+      "what_changes_next_cycle": [
+        "机会与能力累积，推断"
+      ],
+      "exit_or_failure_paths": [
+        "Demo买断及跨局规则未知"
+      ],
+      "claim_refs": [
+        "C04",
+        "C07"
+      ]
+    }
+  ],
+  "design_principles": [
+    "有效信息改变选择",
+    "升级改动作或用途",
+    "利润必须兑现为可支配资金",
+    "不同内容共享动作框架",
+    "降低劳动后保留判断"
+  ],
+  "transfer_candidates": [
+    {
+      "id": "T01",
+      "status": "candidate",
+      "source_mechanism_refs": [
+        "M01"
+      ],
+      "priority": 1,
+      "fit_verdict": "优先验证",
+      "project_source_refs": [
+        "P02",
+        "P05",
+        "P06",
+        "P07"
+      ],
+      "affected_systems": [
+        "货物状态→猫情绪",
+        "交易选择→继续或收手",
+        "交易后果→本次毛球结算"
+      ],
+      "specific_change": "在单猫抚摸继续之前呈现可学情绪线索，区分累计与到账收益；非额外小游戏",
+      "reusable_capabilities": [
+        "近景切换",
+        "选择猫",
+        "HUD与资源表现"
+      ],
+      "new_work": [
+        "未结算收益",
+        "兑现",
+        "情绪与线索映射",
+        "哈气判定",
+        "冷却"
+      ],
+      "expected_benefit": "线索→改变继续或收手→结果验证判断",
+      "tradeoffs": [
+        "与纯随机赌感可能冲突",
+        "旧原型即时结算不能直接复用",
+        "十猫避免十套小游戏"
+      ],
+      "problem_to_solve": "哈气是否只能盲赌",
+      "preserved_causal_chain": "线索→改变继续或收手→结果验证判断",
+      "project_mapping": [
+        "货物状态→猫情绪",
+        "交易选择→继续或收手",
+        "交易后果→本次毛球结算"
+      ],
+      "dependencies_and_conflicts": [
+        "与纯随机赌感可能冲突",
+        "旧原型即时结算不能直接复用",
+        "十猫避免十套小游戏"
+      ],
+      "minimal_prototype": "一猫、一动作、三种反应、主动收手、哈气失去本次产出、冷却；与无有效线索对照",
+      "hypothesis": "线索→改变继续或收手→结果验证判断；未验证",
+      "measures": [
+        "停手解释",
+        "学习后的选择变化",
+        "误触与失败归因"
+      ],
+      "falsifying_observations": [
+        "只背固定次数",
+        "线索不影响选择",
+        "观察负担过大"
+      ],
+      "implementation_burden": "低到中：一猫占位容易，十猫专属动画较重",
+      "next_step": "先定状态表，再做隔离短交互候选验证"
+    },
+    {
+      "id": "T02",
+      "status": "candidate",
+      "source_mechanism_refs": [
+        "M01",
+        "M03"
+      ],
+      "priority": 2,
+      "fit_verdict": "可局部借鉴",
+      "project_source_refs": [
+        "P02",
+        "P05",
+        "P06",
+        "P07"
+      ],
+      "affected_systems": [
+        "打捞结果",
+        "盲盒锻造",
+        "收藏回流"
+      ],
+      "specific_change": "在打捞结果明确用途及投资去向，先对齐19号窗口与新保证金入口",
+      "reusable_capabilities": [
+        "旧钱包与拒绝经验",
+        "收藏去重和加成经验"
+      ],
+      "new_work": [
+        "打捞结算",
+        "用途与品质展示",
+        "投入及回流",
+        "奖励持久性"
+      ],
+      "expected_benefit": "理解用途→分配投入→兑现效果→改变下一轮",
+      "tradeoffs": [
+        "窗口与保证金不能擅自双收费",
+        "预测错误带回物规则未定",
+        "不直接扩旧36件为90件"
+      ],
+      "problem_to_solve": "打捞与盲盒奖励是否回到生产",
+      "preserved_causal_chain": "理解用途→分配投入→兑现效果→改变下一轮",
+      "project_mapping": [
+        "打捞结果",
+        "盲盒锻造",
+        "收藏回流"
+      ],
+      "dependencies_and_conflicts": [
+        "窗口与保证金不能擅自双收费",
+        "预测错误带回物规则未定",
+        "不直接扩旧36件为90件"
+      ],
+      "minimal_prototype": "两物品：杂物兑换；盲盒直接开或明确规则后锻一次；收藏效果进入下一次摸猫",
+      "hypothesis": "理解用途→分配投入→兑现效果→改变下一轮；未验证",
+      "measures": [
+        "用途理解",
+        "分配理由",
+        "是否促使再摸再捞"
+      ],
+      "falsifying_observations": [
+        "奖励只进图鉴",
+        "永远同一选择",
+        "亏损无法恢复"
+      ],
+      "implementation_burden": "中：新结算和品质兼容；配方扩张会变高",
+      "next_step": "先统一一轮资源账本，不增加加工大系统"
+    },
+    {
+      "id": "T03",
+      "status": "candidate",
+      "source_mechanism_refs": [
+        "M03",
+        "M04"
+      ],
+      "priority": 3,
+      "fit_verdict": "暂缓",
+      "project_source_refs": [
+        "P02",
+        "P05",
+        "P06",
+        "P07"
+      ],
+      "affected_systems": [
+        "自动基础收入",
+        "主动状态机会"
+      ],
+      "specific_change": "基础自动收入与主动状态判断分工，是否额外奖励需团队决定",
+      "reusable_capabilities": [
+        "原型帮手分配",
+        "后台收入",
+        "切换近景"
+      ],
+      "new_work": [
+        "来源统计",
+        "占用规则",
+        "机会提示",
+        "比较面板"
+      ],
+      "expected_benefit": "减少重复劳动→注意力转向状态判断",
+      "tradeoffs": [
+        "允许自动超过手动的取向",
+        "过强手动收益变强制",
+        "机会提示可能催促"
+      ],
+      "problem_to_solve": "自动超过手动后主动操作价值",
+      "preserved_causal_chain": "减少重复劳动→注意力转向状态判断",
+      "project_mapping": [
+        "自动基础收入",
+        "主动状态机会"
+      ],
+      "dependencies_and_conflicts": [
+        "允许自动超过手动的取向",
+        "过强手动收益变强制",
+        "机会提示可能催促"
+      ],
+      "minimal_prototype": "两猫一帮手，后台产出，另一猫主动互动再返回；同猫不重复结算",
+      "hypothesis": "减少重复劳动→注意力转向状态判断；未验证",
+      "measures": [
+        "自动化前后劳动量",
+        "主动进入理由",
+        "打断频率"
+      ],
+      "falsifying_observations": [
+        "只等钱",
+        "强迫频繁切换",
+        "自动升级增加任务"
+      ],
+      "implementation_burden": "中：调度与经济耦合",
+      "next_step": "暂缓实现，先定主动价值，T01通过后复用"
+    }
+  ],
+  "open_questions": [
+    "连续鉴定与议价操作及错误成本",
+    "机器停机与库存失效恢复",
+    "Demo买断终点",
+    "情绪信息与赌感的比例",
+    "19号窗口与新打捞入口关系",
+    "自动超过手动后的主动目标"
+  ]
+}

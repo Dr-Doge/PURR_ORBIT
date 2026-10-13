@@ -5,12 +5,14 @@
 | 游戏 | 参考游戏分析 | 项目借鉴与融入判断 | Agent输入 | 项目快照 |
 |---|---|---|---|---|
 | ForgeTax／铸剑纳贡（锻剑／断剑模拟器） | [完整拆解](ForgeTax/ForgeTax_玩法拆解.md) | [融入建议与优先级](ForgeTax/项目适配与融入建议.md) | [agent_input.json](ForgeTax/agent_input.json) | [2026-10-13快照](2026-10-13_项目开发快照.md) |
+| 深空当铺／Probably Stolen | [玩法拆解](ProbablyStolen/深空当铺_玩法拆解.md) | [融入建议与优先级](ProbablyStolen/项目适配与融入建议.md) | [agent_input.json](ProbablyStolen/agent_input.json) | main `b156a051`，2026-10-13重新核对，见报告与证据记录 |
 
 ## 工作流与技能
 
 - [gameplay-research技能](skill/gameplay-research/SKILL.md)：可复制到个人或团队技能目录，使用`$gameplay-research`调用。
 - [详细调研Prompt与JSON 1.1模板](skill/gameplay-research/references/research-prompt.md)：统一原生分析、项目状态核对、借鉴判断、建议及验证。
 - 本仓库的`游戏调研/skill/gameplay-research`是版本管理的技能源；个人安装副本从这里同步。
+- 每次报告校验完成后自动提交报告、证据与本索引并push；执行[发布脚本](skill/gameplay-research/scripts/publish_report.py)，明确指定本次路径。成功交付Git链接与提交号；遇到冲突或推送失败保留成果，在HTalk来源群发起ask。
 
 新增游戏沿用独立子目录，并更新本索引。至少交付原生拆解、项目融入判断和JSON；有价值的建议写引入位置、前后区别、可复用能力、新增工作、代价与验证。没有好的融入方向也记录判断，不能为了凑建议强行推荐。
 
