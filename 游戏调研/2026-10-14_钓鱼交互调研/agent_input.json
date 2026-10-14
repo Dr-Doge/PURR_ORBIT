@@ -25,7 +25,7 @@
     "name": "Purr Orbit／毛球计划",
     "repository": "https://github.com/Dr-Doge/PURR_ORBIT",
     "branch": "main",
-    "commit": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+    "commit": "0575237a3d5cfc817ab857f05ac2ddbf335854fb",
     "reviewed_at": "2026-10-14",
     "implemented": [
       "正式工程仍以res://scenes/3D scene.tscn启动；既有猫咪／毛球系统与货币未迁移。"
@@ -53,6 +53,7 @@
     ],
     "reusable_capabilities": [
       "Godot4.7.1工程与现有猫外观／表现素材；需开发时核对可直接复用范围。",
+      "最新11款静态猫阵容与图层可做第二顾客视觉参考；不是现成动画、区域判定或已整合运行资源。",
       "历史独立原型的场景隔离经验、输入及反馈设施可参考；不宣称美容区域判定已完成。"
     ],
     "constraints": [
@@ -72,7 +73,8 @@
       "P06",
       "P07",
       "P08",
-      "P09"
+      "P09",
+      "P10"
     ],
     "limitations": [
       "未运行游戏、未验收美容代码；项目状态按快照文档及入口配置。",
@@ -108,7 +110,8 @@
       "project_source_refs": [
         "P02",
         "P03",
-        "P04"
+        "P04",
+        "P10"
       ],
       "candidate_refs": [
         "T02"
@@ -1033,7 +1036,7 @@
       "title": "项目工作规则",
       "location": "AGENTS.md",
       "type": "项目仓库文档／配置",
-      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "version_or_date": "0575237a3d5cfc817ab857f05ac2ddbf335854fb",
       "locator": "调研发布／正式规则与提案边界",
       "accessed_at": "2026-10-14",
       "limitation": null
@@ -1043,7 +1046,7 @@
       "title": "美容梳理与修甲规则",
       "location": "玩法方案讨论/2026-10-14_毛球计划_美容梳理与修甲Demo交互规则.md",
       "type": "项目仓库文档／配置",
-      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "version_or_date": "0575237a3d5cfc817ab857f05ac2ddbf335854fb",
       "locator": "1—7节；最优先交互要求",
       "accessed_at": "2026-10-14",
       "limitation": null
@@ -1053,7 +1056,7 @@
       "title": "美容Demo待办",
       "location": "玩法方案讨论/2026-10-14_毛球计划_美容店主交互与Demo待办清单.md",
       "type": "项目仓库文档／配置",
-      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "version_or_date": "0575237a3d5cfc817ab857f05ac2ddbf335854fb",
       "locator": "最新2026-10-14更新",
       "accessed_at": "2026-10-14",
       "limitation": null
@@ -1063,7 +1066,7 @@
       "title": "实装日志",
       "location": "摸猫增量策划案/18_实装变更日志.md",
       "type": "项目仓库文档／配置",
-      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "version_or_date": "0575237a3d5cfc817ab857f05ac2ddbf335854fb",
       "locator": "IMP-20261014-001：待实装／未接手；D01—D08",
       "accessed_at": "2026-10-14",
       "limitation": null
@@ -1073,7 +1076,7 @@
       "title": "策划总索引",
       "location": "摸猫增量策划案/00_索引.md",
       "type": "项目仓库文档／配置",
-      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "version_or_date": "0575237a3d5cfc817ab857f05ac2ddbf335854fb",
       "locator": "最新独立原型与正式工程边界",
       "accessed_at": "2026-10-14",
       "limitation": null
@@ -1083,7 +1086,7 @@
       "title": "正式工程配置",
       "location": "毛球满屋/project.godot",
       "type": "项目仓库文档／配置",
-      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "version_or_date": "0575237a3d5cfc817ab857f05ac2ddbf335854fb",
       "locator": "run/main_scene仍为3D scene.tscn",
       "accessed_at": "2026-10-14",
       "limitation": null
@@ -1093,7 +1096,7 @@
       "title": "10月14日会议一",
       "location": "会议纪要/2026-10-14_日会-AI生成游戏讨论_整理纪要.md",
       "type": "项目仓库文档／配置",
-      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "version_or_date": "0575237a3d5cfc817ab857f05ac2ddbf335854fb",
       "locator": "少操作／可重复手感／先主交互",
       "accessed_at": "2026-10-14",
       "limitation": null
@@ -1103,7 +1106,7 @@
       "title": "10月14日会议二",
       "location": "会议纪要/2026-10-14_日会-快速会议_整理纪要.md",
       "type": "项目仓库文档／配置",
-      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "version_or_date": "0575237a3d5cfc817ab857f05ac2ddbf335854fb",
       "locator": "美容优先／打捞后置／真人体验",
       "accessed_at": "2026-10-14",
       "limitation": null
@@ -1113,8 +1116,18 @@
       "title": "美容交互效果图说明",
       "location": "玩法方案讨论/2026-10-14_美容店交互效果图/00_效果图说明.md",
       "type": "项目仓库文档／配置",
-      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "version_or_date": "0575237a3d5cfc817ab857f05ac2ddbf335854fb",
       "locator": "参考图非实机；机器猫换皮不新增输入／任务",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "P10",
+      "title": "11款猫静态阵容与素材状态",
+      "location": "美术技美报告/12_2026-10-14_猫咪个性化设计与阵容排版.md",
+      "type": "项目仓库文档／配置",
+      "version_or_date": "0575237a3d5cfc817ab857f05ac2ddbf335854fb",
+      "locator": "静态视觉参考／可编辑图层；未制作动画或替换运行资源",
       "accessed_at": "2026-10-14",
       "limitation": null
     }
@@ -3664,7 +3677,8 @@
       "project_source_refs": [
         "P02",
         "P03",
-        "P04"
+        "P04",
+        "P10"
       ],
       "affected_systems": [
         "覆盖物规则",
@@ -3673,7 +3687,8 @@
       ],
       "specific_change": "当前同动作不同对象已确认。进一步把对象几何、处理需求和反馈做成可读配置：普通灰尘适合较长扫过；毛结慢梳；垃圾短程往复。第二猫主要改变区域／对象分布与处理量，不偷偷反转基本正确动作。",
       "reusable_capabilities": [
-        "已有猫外观素材；D03局部覆盖物模型是待实装依赖。"
+        "已有猫外观和最新11款静态图层可作为第二猫参考；动画／运行资源仍需核对。",
+        "D03局部覆盖物模型是待实装依赖。"
       ],
       "new_work": [
         "对象配置与视觉提示的一一对应。",
