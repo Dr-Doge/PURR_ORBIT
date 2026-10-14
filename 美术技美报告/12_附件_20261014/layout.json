@@ -1,0 +1,244 @@
+[
+  {
+    "number": 1,
+    "name": "普通猫",
+    "source": "1普通猫.jpg",
+    "source_sha256": "6dc034eac0bcf5f76d4a514f6cc5c035b107ccc0f91bc0f2e20e4da8f9fbd71c",
+    "bbox": [
+      65,
+      244,
+      1184,
+      1049
+    ],
+    "position": [
+      318,
+      572
+    ],
+    "size": [
+      623,
+      448
+    ],
+    "baseline": 1020,
+    "scale": 0.5569258266309205
+  },
+  {
+    "number": 2,
+    "name": "长毛猫",
+    "source": "2长毛猫.jpg",
+    "source_sha256": "19aa92b05006203ff961ad0eb07ee00c6047e1fd1b7c4f965824c7d1cde36815",
+    "bbox": [
+      49,
+      189,
+      987,
+      855
+    ],
+    "position": [
+      1230,
+      480
+    ],
+    "size": [
+      760,
+      540
+    ],
+    "baseline": 1020,
+    "scale": 0.8102345415778252
+  },
+  {
+    "number": 3,
+    "name": "Gigachad猫",
+    "source": "3gigachad猫.jpg",
+    "source_sha256": "fd5eac8b334b538febabfbed413a0c50d2c20c6af7de3d3109d28d8817fbe65c",
+    "bbox": [
+      43,
+      164,
+      983,
+      911
+    ],
+    "position": [
+      2202,
+      404
+    ],
+    "size": [
+      775,
+      616
+    ],
+    "baseline": 1020,
+    "scale": 0.8240963855421688
+  },
+  {
+    "number": 4,
+    "name": "良子猫",
+    "source": "4良子猫.jpg",
+    "source_sha256": "3849095573b81426e61558bd7bde5ba06b16e06895ae20bf05ce0d45c5546b06",
+    "bbox": [
+      20,
+      203,
+      996,
+      904
+    ],
+    "position": [
+      3095,
+      338
+    ],
+    "size": [
+      950,
+      682
+    ],
+    "baseline": 1020,
+    "scale": 0.9733606557377049
+  },
+  {
+    "number": 5,
+    "name": "猫猫虫",
+    "source": "5猫猫虫.jpg",
+    "source_sha256": "325d0dd8c2019841dd58dc49d11729ceb033f669611cd51107ade2bcb8983826",
+    "bbox": [
+      47,
+      338,
+      985,
+      673
+    ],
+    "position": [
+      155,
+      2111
+    ],
+    "size": [
+      950,
+      339
+    ],
+    "baseline": 2450,
+    "scale": 1.0127931769722816
+  },
+  {
+    "number": 6,
+    "name": "招财猫",
+    "source": "6招财猫.jpg",
+    "source_sha256": "2a117c050f77241521cfc95caddd4790d4bc0e06065698bdcba752d0b86d1e8d",
+    "bbox": [
+      94,
+      206,
+      948,
+      880
+    ],
+    "position": [
+      1278,
+      1926
+    ],
+    "size": [
+      664,
+      524
+    ],
+    "baseline": 2450,
+    "scale": 0.7780415430267063
+  },
+  {
+    "number": 7,
+    "name": "鹰头猫",
+    "source": "7鹰头猫.jpg",
+    "source_sha256": "bdbcc8d711cb756a8e7dbee131ab701162f798eb3bfdb452222ed4fb3a24f9a3",
+    "bbox": [
+      198,
+      215,
+      867,
+      819
+    ],
+    "position": [
+      2249,
+      1834
+    ],
+    "size": [
+      682,
+      616
+    ],
+    "baseline": 2450,
+    "scale": 1.019205298013245
+  },
+  {
+    "number": 8,
+    "name": "高猫",
+    "source": "8长毛猫.jpg",
+    "source_sha256": "126989eec3bf44c5b9a79068cc148fa84f43fadbad6403dd0fbb656b6623c45a",
+    "bbox": [
+      145,
+      87,
+      728,
+      1183
+    ],
+    "position": [
+      3267,
+      1310
+    ],
+    "size": [
+      606,
+      1140
+    ],
+    "baseline": 2450,
+    "scale": 1.0401459854014599
+  },
+  {
+    "number": 9,
+    "name": "机械猫",
+    "source": "9机械猫.jpg",
+    "source_sha256": "3ea090b4880f8c1b2c8b4687054812db56709c6f29d72654674b50e78b160964",
+    "bbox": [
+      101,
+      178,
+      929,
+      845
+    ],
+    "position": [
+      724,
+      2842
+    ],
+    "size": [
+      792,
+      638
+    ],
+    "baseline": 3480,
+    "scale": 0.95712143928036
+  },
+  {
+    "number": 10,
+    "name": "克苏鲁猫",
+    "source": "10克苏鲁猫.jpg",
+    "source_sha256": "0133551933e84e4639e42dacd89fe5fd68a2bed002142d87ffa899ef37617e7d",
+    "bbox": [
+      37,
+      77,
+      998,
+      888
+    ],
+    "position": [
+      1722,
+      2842
+    ],
+    "size": [
+      756,
+      638
+    ],
+    "baseline": 3480,
+    "scale": 0.7871763255240444
+  },
+  {
+    "number": 11,
+    "name": "太空猫",
+    "source": "11t太空猫.jpg",
+    "source_sha256": "dac49b3a2f59356866de06bfbc99e808e57e04530af586b8196b8ae13c456aab",
+    "bbox": [
+      247,
+      90,
+      735,
+      913
+    ],
+    "position": [
+      2931,
+      2978
+    ],
+    "size": [
+      297,
+      502
+    ],
+    "baseline": 3480,
+    "scale": 0.6094775212636695
+  }
+]
