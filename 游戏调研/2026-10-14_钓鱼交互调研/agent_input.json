@@ -1,0 +1,3831 @@
+{
+  "schema_version": "1.1",
+  "research_type": "cross_game_interaction_survey",
+  "report_date": "2026-10-14",
+  "scope": {
+    "game_count": 54,
+    "deep_card_count": 24,
+    "steam_count": 41,
+    "other_platform_count": 13,
+    "exhaustive": false,
+    "excluded": "未穷尽移动长尾、Roblox衍生与下架／历史作品；部分系列待补充"
+  },
+  "evidence_quality": {
+    "hands_on": false,
+    "continuous_gameplay_review": false,
+    "method": "官方商店／说明书／支持页／版本公告；社区规则补缺；Scale Steam用户记录单列",
+    "limitations": [
+      "无本次Agent实玩。",
+      "当前全部平台和版本参数不统一推定。",
+      "概况条目不能直接当程序规则。"
+    ]
+  },
+  "summary": "12类钓鱼交互，当前优先细化美容Demo的对象差异、风险反馈与可继续完成的软失败；未来打捞路径与自动化后置。",
+  "project_context": {
+    "name": "Purr Orbit／毛球计划",
+    "repository": "https://github.com/Dr-Doge/PURR_ORBIT",
+    "branch": "main",
+    "commit": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+    "reviewed_at": "2026-10-14",
+    "implemented": [
+      "正式工程仍以res://scenes/3D scene.tscn启动；既有猫咪／毛球系统与货币未迁移。"
+    ],
+    "prototype_implemented": [
+      "旧猫身采集独立原型有历史实装／验证记录；不能当作美容Demo已完成。"
+    ],
+    "confirmed_pending": [
+      "IMP-20261014-001待实装、未接手：左键按住拖动梳理＋按住划线修甲。",
+      "有效服务中过快／粗暴疼痛扣评；浅剪继续、完美完成、深剪扣评。",
+      "全部需求完成后按评价一次自动结算测试金钱；无结算弹窗、无领取按钮。"
+    ],
+    "proposals": [
+      "对象规则建议为灰尘正常扫、毛结慢梳、垃圾短程往复。",
+      "首版先一猫底层再第二猫，局部归一化路径与速度、违规段限频、深剪不卡单是实现整理建议。"
+    ],
+    "cancelled_or_superseded": [
+      "高频点击／疯狂揉搓不是当前首版主操作。",
+      "前版每步入账毛球再整单奖励被本次整单金钱一次结算替代。",
+      "打捞、升级、自动化、盲盒／锻造不作为当前美容首版前置。"
+    ],
+    "current_problems": [
+      "主交互尚待实装和真人试玩；风险阈值、对象耐受、完美带宽、报酬和转场未定。",
+      "需要验证不同对象仍共用同一动作是否有趣且可读。"
+    ],
+    "reusable_capabilities": [
+      "Godot4.7.1工程与现有猫外观／表现素材；需开发时核对可直接复用范围。",
+      "历史独立原型的场景隔离经验、输入及反馈设施可参考；不宣称美容区域判定已完成。"
+    ],
+    "constraints": [
+      "首版两种鼠标操作，最多三种；不加独立QTE窗口。",
+      "普通鼠标无压力输入；速度仅为代理。",
+      "有效接触才扣评；不能逐帧扣光；松手保留局部进度。",
+      "浅剪不额外扣评；无效手势不切、不扣评；深剪后有可继续完成订单的流程。",
+      "独立纯内存原型，保留正式入口与旧原型／存档。",
+      "货币名、猫毛材料与锻造关系未知；不新增多币种兑换。"
+    ],
+    "source_refs": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09"
+    ],
+    "limitations": [
+      "未运行游戏、未验收美容代码；项目状态按快照文档及入口配置。",
+      "源文件中的历史脚本检查与用户体验不作为本次Agent实玩证据。"
+    ]
+  },
+  "integration_assessment": [
+    {
+      "source_mechanism_refs": [
+        "M04",
+        "M05"
+      ],
+      "verdict": "优先验证",
+      "project_problem_or_opportunity": "粗暴操作已有代价，尚缺可读且可学习的过程表现。",
+      "reasoning": "让玩家在被扣评前知道如何修正速度，持续拖动能保留判断。",
+      "project_source_refs": [
+        "P02",
+        "P03",
+        "P04"
+      ],
+      "candidate_refs": [
+        "T01"
+      ]
+    },
+    {
+      "source_mechanism_refs": [
+        "M03",
+        "M09"
+      ],
+      "verdict": "优先验证",
+      "project_problem_or_opportunity": "需要判断对象规则能否提供实际技巧差异，同时保持两种基础输入。",
+      "reasoning": "少输入下产生不同处理节奏，让顾客差异来自对象而不只是换贴图。",
+      "project_source_refs": [
+        "P02",
+        "P03",
+        "P04"
+      ],
+      "candidate_refs": [
+        "T02"
+      ]
+    },
+    {
+      "source_mechanism_refs": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "verdict": "可局部借鉴",
+      "project_problem_or_opportunity": "软失败必须有真实质量区别，同时能继续完成服务。",
+      "reasoning": "保留技巧代价，又避免失误迫使玩家重复整只猫或卡在受伤部位。",
+      "project_source_refs": [
+        "P02",
+        "P04"
+      ],
+      "candidate_refs": [
+        "T03"
+      ]
+    },
+    {
+      "source_mechanism_refs": [
+        "M08"
+      ],
+      "verdict": "暂缓",
+      "project_problem_or_opportunity": "未来打捞若需要手动参与，应让玩家决定如何回收而非只确认结果。",
+      "reasoning": "鱼钩路径的空间选择可转成低输入的回收操作，区别于一次按钮随机开箱。",
+      "project_source_refs": [
+        "P02",
+        "P03",
+        "P07",
+        "P08"
+      ],
+      "candidate_refs": [
+        "T04"
+      ]
+    },
+    {
+      "source_mechanism_refs": [
+        "M05",
+        "M06",
+        "M11",
+        "M12"
+      ],
+      "verdict": "暂缓",
+      "project_problem_or_opportunity": "当前首版要验证两种主操作，不引入高负担设备／多参数模拟。",
+      "reasoning": "完整方向对抗、拟真钓组、体感硬件与航次管理会增加学习和制作负担。",
+      "project_source_refs": [
+        "P02",
+        "P03",
+        "P04"
+      ],
+      "candidate_refs": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "ST380600",
+      "title": "Fishing Planet Steam官方商店",
+      "location": "https://store.steampowered.com/app/380600/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST766570",
+      "title": "Russian Fishing 4 Steam官方商店",
+      "location": "https://store.steampowered.com/app/766570/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1136380",
+      "title": "Ultimate Fishing® Simulator 2 Steam官方商店",
+      "location": "https://store.steampowered.com/app/1136380/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1408610",
+      "title": "Call of the Wild: The Angler™ Steam官方商店",
+      "location": "https://store.steampowered.com/app/1408610/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1449500",
+      "title": "Bassmaster® Fishing Steam官方商店",
+      "location": "https://store.steampowered.com/app/1449500/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST314520",
+      "title": "Euro Fishing Steam官方商店",
+      "location": "https://store.steampowered.com/app/314520/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST71240",
+      "title": "SEGA Bass Fishing Steam官方商店",
+      "location": "https://store.steampowered.com/app/71240/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1266470",
+      "title": "Real VR Fishing Steam官方商店",
+      "location": "https://store.steampowered.com/app/1266470/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1562430",
+      "title": "DREDGE Steam官方商店",
+      "location": "https://store.steampowered.com/app/1562430/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1868140",
+      "title": "DAVE THE DIVER Steam官方商店",
+      "location": "https://store.steampowered.com/app/1868140/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST3198890",
+      "title": "Scale the Depths Steam官方商店",
+      "location": "https://store.steampowered.com/app/3198890/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST343780",
+      "title": "Cat Goes Fishing Steam官方商店",
+      "location": "https://store.steampowered.com/app/343780/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST3146520",
+      "title": "WEBFISHING Steam官方商店",
+      "location": "https://store.steampowered.com/app/3146520/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST3483740",
+      "title": "Cast n Chill Steam官方商店",
+      "location": "https://store.steampowered.com/app/3483740/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST949600",
+      "title": "Intergalactic Fishing Steam官方商店",
+      "location": "https://store.steampowered.com/app/949600/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1477790",
+      "title": "Luna's Fishing Garden Steam官方商店",
+      "location": "https://store.steampowered.com/app/1477790/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1781030",
+      "title": "Fishing Paradiso Steam官方商店",
+      "location": "https://store.steampowered.com/app/1781030/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1361400",
+      "title": "Moonglow Bay Steam官方商店",
+      "location": "https://store.steampowered.com/app/1361400/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST413150",
+      "title": "Stardew Valley Steam官方商店",
+      "location": "https://store.steampowered.com/app/413150/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1172620",
+      "title": "Sea of Thieves: 2026 Edition Steam官方商店",
+      "location": "https://store.steampowered.com/app/1172620/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1174180",
+      "title": "Red Dead Redemption 2 Steam官方商店",
+      "location": "https://store.steampowered.com/app/1174180/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST972660",
+      "title": "Spiritfarer®: Farewell Edition Steam官方商店",
+      "location": "https://store.steampowered.com/app/972660/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST275850",
+      "title": "No Man's Sky Steam官方商店",
+      "location": "https://store.steampowered.com/app/275850/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST105600",
+      "title": "Terraria Steam官方商店",
+      "location": "https://store.steampowered.com/app/105600/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1401590",
+      "title": "Disney Dreamlight Valley Steam官方商店",
+      "location": "https://store.steampowered.com/app/1401590/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST637650",
+      "title": "FINAL FANTASY XV WINDOWS EDITION Steam官方商店",
+      "location": "https://store.steampowered.com/app/637650/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST39210",
+      "title": "FINAL FANTASY XIV Online Steam官方商店",
+      "location": "https://store.steampowered.com/app/39210/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST230410",
+      "title": "Warframe Steam官方商店",
+      "location": "https://store.steampowered.com/app/230410/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1145360",
+      "title": "Hades Steam官方商店",
+      "location": "https://store.steampowered.com/app/1145360/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1158160",
+      "title": "Coral Island Steam官方商店",
+      "location": "https://store.steampowered.com/app/1158160/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1055540",
+      "title": "A Short Hike Steam官方商店",
+      "location": "https://store.steampowered.com/app/1055540/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1621690",
+      "title": "Core Keeper Steam官方商店",
+      "location": "https://store.steampowered.com/app/1621690/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST4753960",
+      "title": "Meow Squad: Incremental Fishing Steam官方商店",
+      "location": "https://store.steampowered.com/app/4753960/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST4249770",
+      "title": "Captain Whiskers: Incremental Seas Steam官方商店",
+      "location": "https://store.steampowered.com/app/4249770/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST4601160",
+      "title": "Just Keep Fishing Steam官方商店",
+      "location": "https://store.steampowered.com/app/4601160/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST5206820",
+      "title": "猫猫爱钓鱼 Cat Fishing Steam官方商店",
+      "location": "https://store.steampowered.com/app/5206820/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST4126480",
+      "title": "Fishing Inc Steam官方商店",
+      "location": "https://store.steampowered.com/app/4126480/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST4515550",
+      "title": "Desktop Pet: DonEatFish Steam官方商店",
+      "location": "https://store.steampowered.com/app/4515550/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST2725560",
+      "title": "Idle Fishing Steam官方商店",
+      "location": "https://store.steampowered.com/app/2725560/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST1264250",
+      "title": "Fishing: North Atlantic - Enhanced Edition Steam官方商店",
+      "location": "https://store.steampowered.com/app/1264250/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "ST501080",
+      "title": "Fishing: Barents Sea Steam官方商店",
+      "location": "https://store.steampowered.com/app/501080/",
+      "type": "官方商店／API",
+      "version_or_date": "抓取日商店描述；非已安装构建",
+      "locator": "About This Game",
+      "accessed_at": "2026-10-14",
+      "limitation": "通常仅证明玩法概况，不能替代完整操作教程。"
+    },
+    {
+      "id": "S01",
+      "title": "Nintendo：Animal Crossing钓鱼提示",
+      "location": "https://play.nintendo.com/news-tips/tips-tricks/fishing-new-horizons-tips-and-tricks/",
+      "type": "官方说明",
+      "version_or_date": "New Horizons",
+      "locator": "How to reel them in",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S02",
+      "title": "Minecraft：Fishing Rod",
+      "location": "https://www.minecraft.net/en-us/article/fishing-rod",
+      "type": "官方说明",
+      "version_or_date": "2026-02-09",
+      "locator": "使用、咬钩、附魔",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S03",
+      "title": "Stardew Valley Wiki：Fishing",
+      "location": "https://stardewvalleywiki.com/Fishing",
+      "type": "社区维护规则",
+      "version_or_date": "1.6时代页面；抓取日",
+      "locator": "Fishing Minigame／Treasure Chests",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S04",
+      "title": "DREDGE攻略",
+      "location": "https://gamefaqs.gamespot.com/pc/326052-dredge/faqs/81335",
+      "type": "玩家攻略",
+      "version_or_date": "攻略修订1.3a；2026-03-20更新；非游戏版本号",
+      "locator": "General Advice：Fishing",
+      "accessed_at": "2026-10-14",
+      "limitation": "多平台攻略；不能证明最新所有选项默认值。"
+    },
+    {
+      "id": "S05",
+      "title": "Fishing Clash：Casting the line and catching fish",
+      "location": "https://tensquaregames.helpshift.com/hc/en/3-fishing-clash/faq/42-casting-the-line-and-catching-fish/",
+      "type": "官方说明",
+      "version_or_date": "抓取日帮助页",
+      "locator": "Button Way／Slider Technique",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S06",
+      "title": "SEGA Bass Fishing PC说明书",
+      "location": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/71240/manuals/DC_SBF_PC_MG_EFIGS_FINAL.pdf?t=1733765152",
+      "type": "官方说明书",
+      "version_or_date": "Steam PC版",
+      "locator": "英文How to Fish；Line Tension",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S07",
+      "title": "Bassmaster Fishing 2022说明书",
+      "location": "https://media.dovetailgames.com/manuals/Bassmaster%20Fishing%202022%20Manual.pdf",
+      "type": "官方说明书",
+      "version_or_date": "2022版",
+      "locator": "PC Controls；Basic Casting；Total Cast Control",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S08",
+      "title": "Euro Fishing快速指南",
+      "location": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/314520/manuals/Fishing_Quick_Start_Guide_EN.pdf?t=1750778236",
+      "type": "官方说明书",
+      "version_or_date": null,
+      "locator": "Academy／casting／multiple rods",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S09",
+      "title": "Sea of Thieves钓鱼规则",
+      "location": "https://seaofthieves.wiki.gg/wiki/Fishing",
+      "type": "社区维护规则",
+      "version_or_date": null,
+      "locator": "Usage／reeling",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S10",
+      "title": "RDR2钓鱼规则",
+      "location": "https://reddead.fandom.com/wiki/Fishing",
+      "type": "社区维护规则",
+      "version_or_date": null,
+      "locator": "Red Dead Redemption 2",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S11",
+      "title": "Rockstar：1.15更新说明",
+      "location": "https://support.rockstargames.com/articles/28AmlyPGLVKsJ8OpdN8myn/red-dead-redemption-2-title-update-1-15-notes-ps4-xbox-one-pc-stadia",
+      "type": "官方更新",
+      "version_or_date": "2019；1.15",
+      "locator": "Hold to Reel (Fishing)",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S12",
+      "title": "FFXV钓鱼技能攻略",
+      "location": "https://samurai-gamers.com/final-fantasy-15-ffxv/fishing-skill-final-fantasy-15-ffxv/",
+      "type": "玩家攻略",
+      "version_or_date": "早期版本攻略",
+      "locator": "Fishing tips",
+      "accessed_at": "2026-10-14",
+      "limitation": "当前Windows版全部数值与键位未复核。"
+    },
+    {
+      "id": "S13",
+      "title": "WEBFISHING玩家评测",
+      "location": "https://gamefaqs.gamespot.com/pc/480764-webfishing/reviews/177911",
+      "type": "玩家评测",
+      "version_or_date": "2025",
+      "locator": "hold/click fishing input",
+      "accessed_at": "2026-10-14",
+      "limitation": "不能据此确认最新版本是否增加全程按住替代模式。"
+    },
+    {
+      "id": "S14",
+      "title": "Cast n Chill评测",
+      "location": "https://www.noobfeed.com/reviews/cast-n-chill-review",
+      "type": "媒体评测",
+      "version_or_date": "2025-06",
+      "locator": "left/right mouse fishing controls",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S15",
+      "title": "Scale the Depths原始Jam作品",
+      "location": "https://serpexnessie.itch.io/scale-the-depths",
+      "type": "开发者作品说明",
+      "version_or_date": "2024 GMTK Jam；网页原版",
+      "locator": "Controls／Instructions",
+      "accessed_at": "2026-10-14",
+      "limitation": "A/D鱼钩控制与按钮交付属于旧Jam版；不能写成2026 Steam版键位。"
+    },
+    {
+      "id": "S16",
+      "title": "Cat Goes Fishing玩家完整指南",
+      "location": "https://steamcommunity.com/sharedfiles/filedetails/?id=1272884938",
+      "type": "玩家攻略",
+      "version_or_date": "2018起；部分内容可能滞后",
+      "locator": "Bait／Medium fish",
+      "accessed_at": "2026-10-14",
+      "limitation": "不确认当前beta与正式分支的全部鱼种和物理模式。"
+    },
+    {
+      "id": "S17",
+      "title": "Tiny Fishing官方门户玩法",
+      "location": "https://www.coolmathgames.com/0-tiny-fishing",
+      "type": "运营门户说明",
+      "version_or_date": null,
+      "locator": "Instructions／How to Play",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S18",
+      "title": "Ridiculous Fishing EX官方商店",
+      "location": "https://apps.apple.com/tr/app/ridiculous-fishing-ex/id1610164691",
+      "type": "开发者商店描述",
+      "version_or_date": "EX；Apple Arcade",
+      "locator": "玩法描述",
+      "accessed_at": "2026-10-14",
+      "limitation": "商店不提供全部运动输入参数。"
+    },
+    {
+      "id": "S19",
+      "title": "Ridiculous Fishing EX交互说明",
+      "location": "https://twit.tv/posts/transcripts/macbreak-weekly-879-transcript",
+      "type": "媒体播客文字稿",
+      "version_or_date": "2023；EX",
+      "locator": "01:55:12—01:55:59",
+      "accessed_at": "2026-10-14",
+      "limitation": "运动输入补充来自媒体与用户评测；非本次实玩。"
+    },
+    {
+      "id": "S20",
+      "title": "Black Desert SA钓鱼指南",
+      "location": "https://www.sa.playblackdesert.com/PT-BR/Wiki?wikiNo=38",
+      "type": "官方说明",
+      "version_or_date": "抓取日PT-BR指南",
+      "locator": "Etapas de Pesca／Pesca Automática",
+      "accessed_at": "2026-10-14",
+      "limitation": "官方也提示指南可能落后于实际版本；主机键位不沿用PC。"
+    },
+    {
+      "id": "S21",
+      "title": "Fisch Roblox官方游戏页",
+      "location": "https://www.roblox.com/games/9050835756/Fisch",
+      "type": "开发者平台描述",
+      "version_or_date": "抓取日；动态游戏",
+      "locator": "How to play（搜索摘要）",
+      "accessed_at": "2026-10-14",
+      "limitation": "静态页面部分正文不显示，基础输入来自已检索摘要；未安装实际构建。"
+    },
+    {
+      "id": "S22",
+      "title": "Genshin钓鱼游戏内教程转录",
+      "location": "https://genshin-impact.fandom.com/wiki/Tutorial/Fishing",
+      "type": "社区转录游戏内教程",
+      "version_or_date": null,
+      "locator": "Fishing／Ideal Tension Zone",
+      "accessed_at": "2026-10-14",
+      "limitation": "搜索索引可读取教程段落；正文访问受限。"
+    },
+    {
+      "id": "S23",
+      "title": "Disney Dreamlight Valley Dapper Delights更新",
+      "location": "https://disneydreamlightvalley.com/news/update-aug-21-2024",
+      "type": "官方更新",
+      "version_or_date": "2024-08-21",
+      "locator": "Accessibility：hold option",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S24",
+      "title": "Hades钓鱼规则",
+      "location": "https://hades.fandom.com/wiki/Fishing",
+      "type": "社区维护规则",
+      "version_or_date": "Hades 1",
+      "locator": "Fishing／Perfect Catch",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S25",
+      "title": "Terraria钓鱼规则",
+      "location": "https://terraria.wiki.gg/wiki/Fishing",
+      "type": "官方社区Wiki",
+      "version_or_date": "抓取日页面",
+      "locator": "Fishing／line break",
+      "accessed_at": "2026-10-14",
+      "limitation": "断线涉及随机检查，不能描述成玩家张力操作失败。"
+    },
+    {
+      "id": "S26",
+      "title": "No Man’s Sky Aquarius更新",
+      "location": "https://www.nomanssky.com/2024/09/aquarius-update/",
+      "type": "官方更新",
+      "version_or_date": "2024-09-04",
+      "locator": "Fishing／Automated Fish Traps／Fishing Records",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S27",
+      "title": "Luna’s Fishing Garden评测",
+      "location": "https://findthestrawberry.com/lunas-fishing-garden-review/",
+      "type": "玩家评测",
+      "version_or_date": "2021",
+      "locator": "两种钓鱼操作模式",
+      "accessed_at": "2026-10-14",
+      "limitation": "具体切换方式与当前移植版本未实测。"
+    },
+    {
+      "id": "S28",
+      "title": "Fishing Paradiso评测",
+      "location": "https://gamefaqs.gamespot.com/switch/336301-fishing-paradiso/reviews/173708",
+      "type": "玩家评测",
+      "version_or_date": "Switch版",
+      "locator": "casting/reeling",
+      "accessed_at": "2026-10-14",
+      "limitation": "只支持操作概况，失败细节待复核。"
+    },
+    {
+      "id": "S29",
+      "title": "Spiritfarer金枪鱼操作讨论",
+      "location": "https://steamcommunity.com/app/972660/discussions/0/4336358006705487665/",
+      "type": "玩家讨论",
+      "version_or_date": "2020起",
+      "locator": "hold/release/tap",
+      "accessed_at": "2026-10-14",
+      "limitation": "高强度金枪鱼技巧不能概括成所有鱼默认规则。"
+    },
+    {
+      "id": "S30",
+      "title": "Coral Island鱼竿规则",
+      "location": "https://coralisland.fandom.com/wiki/Fishing_pole",
+      "type": "社区维护规则",
+      "version_or_date": null,
+      "locator": "Max tension／Fishing",
+      "accessed_at": "2026-10-14",
+      "limitation": "搜索索引信息；正文访问受限。"
+    },
+    {
+      "id": "S31",
+      "title": "A Short Hike钓鱼攻略",
+      "location": "https://www.neoseeker.com/a-short-hike/walkthrough/Fishing_Guide",
+      "type": "玩家攻略",
+      "version_or_date": null,
+      "locator": "Fishing controls",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S32",
+      "title": "Fishing Hook官方移动商店",
+      "location": "https://play.google.com/store/apps/details?hl=en&id=com.mobirix.fishinghook",
+      "type": "开发者商店描述",
+      "version_or_date": null,
+      "locator": "pull button／distance／tension",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S33",
+      "title": "Ace Fishing: Wild Catch官方移动商店",
+      "location": "https://play.google.com/store/apps/details?hl=en&id=com.com2us.acefishing.normal.freefull.google.global.android.common",
+      "type": "开发者商店描述",
+      "version_or_date": null,
+      "locator": "one-touch controls",
+      "accessed_at": "2026-10-14",
+      "limitation": "手势技巧与当前辅助选项未实测。"
+    },
+    {
+      "id": "S34",
+      "title": "Fishing and Life官方移动商店",
+      "location": "https://play.google.com/store/apps/details?id=com.nexelon.fishinglife",
+      "type": "开发者商店描述",
+      "version_or_date": null,
+      "locator": "simple controls",
+      "accessed_at": "2026-10-14",
+      "limitation": "确认为Nexelon版本，不与同名移动游戏混合。"
+    },
+    {
+      "id": "S35",
+      "title": "Real VR Fishing开发者网站",
+      "location": "https://www.realvrfishing.com/",
+      "type": "开发者网站",
+      "version_or_date": null,
+      "locator": "VR fishing",
+      "accessed_at": "2026-10-14",
+      "limitation": "不同设备、难度与手部追踪的具体动作未逐一核验。"
+    },
+    {
+      "id": "S36",
+      "title": "Bait!开发者网站",
+      "location": "https://www.resolutiongames.com/bait/",
+      "type": "开发者网站",
+      "version_or_date": null,
+      "locator": "VR fishing",
+      "accessed_at": "2026-10-14",
+      "limitation": "Quest、早期Go及其他模式操作不能混用。"
+    },
+    {
+      "id": "S37",
+      "title": "Ace Angler街机宣传说明",
+      "location": "https://bandainamco-am.co.jp/am/english/aa/pdf/Aceangler.pdf",
+      "type": "官方街机说明",
+      "version_or_date": "历史街机型号",
+      "locator": "How to play／Thunder Bolts",
+      "accessed_at": "2026-10-14",
+      "limitation": "不是Switch及所有后续街机型号的统一键位。"
+    },
+    {
+      "id": "S38",
+      "title": "Warframe Remote Observer 31",
+      "location": "https://www.warframe.com/en/news/the-remote-observer-vol-31",
+      "type": "官方更新",
+      "version_or_date": "2018",
+      "locator": "Fishing HUD",
+      "accessed_at": "2026-10-14",
+      "limitation": "仅证实投矛捕鱼工具及专用HUD，不证明所有矛的完整操作。"
+    },
+    {
+      "id": "S39",
+      "title": "FFXIV 7.0更新说明",
+      "location": "https://na.finalfantasyxiv.com/lodestone/topics/detail/c807875c5f8f7529887c86d2955f709eae0231ef",
+      "type": "官方更新",
+      "version_or_date": "7.0",
+      "locator": "Fisher／Fish Guide／hookset",
+      "accessed_at": "2026-10-14",
+      "limitation": "不能作为2026所有技能完整指南。"
+    },
+    {
+      "id": "S40",
+      "title": "Moonglow Bay开发者介绍",
+      "location": "https://coatsink.com/blog/moonglow-bay-sets-sail-october-26-copy",
+      "type": "开发者说明",
+      "version_or_date": "2021",
+      "locator": "fishing/cooking/town",
+      "accessed_at": "2026-10-14",
+      "limitation": "工具具体键位与失败条件待实玩。"
+    },
+    {
+      "id": "S41",
+      "title": "Core Keeper 1.0.0 Full Launch Update Patch Notes",
+      "location": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875595438705775228",
+      "type": "开发者Steam公告",
+      "version_or_date": "2024-08-27",
+      "locator": "公告对应小节",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S42",
+      "title": "Core Keeper - 1.0.0.10 Post-Launch Stability Patch",
+      "location": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6339469370177903827",
+      "type": "开发者Steam公告",
+      "version_or_date": "2024-09-25",
+      "locator": "公告对应小节",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S43",
+      "title": "Maldives Update Tweaks for Smoother Fights",
+      "location": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814942955104014",
+      "type": "开发者Steam公告",
+      "version_or_date": "2025-10-29",
+      "locator": "公告对应小节",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S44",
+      "title": "Release Note 5.0.0: Ocean Update",
+      "location": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972545475232",
+      "type": "开发者Steam公告",
+      "version_or_date": "2024-06-05",
+      "locator": "公告对应小节",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "S45",
+      "title": "Cast n Chill Demo v2 is Live",
+      "location": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756309203",
+      "type": "开发者Steam公告",
+      "version_or_date": "2025-05-29",
+      "locator": "公告对应小节",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "P01",
+      "title": "项目工作规则",
+      "location": "AGENTS.md",
+      "type": "项目仓库文档／配置",
+      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "locator": "调研发布／正式规则与提案边界",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "P02",
+      "title": "美容梳理与修甲规则",
+      "location": "玩法方案讨论/2026-10-14_毛球计划_美容梳理与修甲Demo交互规则.md",
+      "type": "项目仓库文档／配置",
+      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "locator": "1—7节；最优先交互要求",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "P03",
+      "title": "美容Demo待办",
+      "location": "玩法方案讨论/2026-10-14_毛球计划_美容店主交互与Demo待办清单.md",
+      "type": "项目仓库文档／配置",
+      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "locator": "最新2026-10-14更新",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "P04",
+      "title": "实装日志",
+      "location": "摸猫增量策划案/18_实装变更日志.md",
+      "type": "项目仓库文档／配置",
+      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "locator": "IMP-20261014-001：待实装／未接手；D01—D08",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "P05",
+      "title": "策划总索引",
+      "location": "摸猫增量策划案/00_索引.md",
+      "type": "项目仓库文档／配置",
+      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "locator": "最新独立原型与正式工程边界",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "P06",
+      "title": "正式工程配置",
+      "location": "毛球满屋/project.godot",
+      "type": "项目仓库文档／配置",
+      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "locator": "run/main_scene仍为3D scene.tscn",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "P07",
+      "title": "10月14日会议一",
+      "location": "会议纪要/2026-10-14_日会-AI生成游戏讨论_整理纪要.md",
+      "type": "项目仓库文档／配置",
+      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "locator": "少操作／可重复手感／先主交互",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "P08",
+      "title": "10月14日会议二",
+      "location": "会议纪要/2026-10-14_日会-快速会议_整理纪要.md",
+      "type": "项目仓库文档／配置",
+      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "locator": "美容优先／打捞后置／真人体验",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    },
+    {
+      "id": "P09",
+      "title": "美容交互效果图说明",
+      "location": "玩法方案讨论/2026-10-14_美容店交互效果图/00_效果图说明.md",
+      "type": "项目仓库文档／配置",
+      "version_or_date": "409031bb44f3940ec0e2e855329eecc6048ba9da",
+      "locator": "参考图非实机；机器猫换皮不新增输入／任务",
+      "accessed_at": "2026-10-14",
+      "limitation": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "找到鱼影→把浮标投到鱼前方→等试探→看到浮标真正下沉或听到明显水声→按A→展示鱼获。",
+      "status": "fact",
+      "source_refs": [
+        "S01"
+      ],
+      "reasoning": null,
+      "limitation": "具体反应窗口及不同设备辅助功能未测。"
+    },
+    {
+      "id": "C02",
+      "text": "使用鱼竿抛线→观察鱼接近浮标→浮标下沉→及时再次使用收获→再抛线。",
+      "status": "fact",
+      "source_refs": [
+        "S02"
+      ],
+      "reasoning": null,
+      "limitation": "不固定写一套等待秒数或跨Java／Bedrock统一概率。"
+    },
+    {
+      "id": "C03",
+      "text": "停船在可采点→开始捕鱼→按对应类型，在标记／绿色区域对齐时输入→取得鱼货放入船舱。疏浚另用双环与障碍的交互，不是同一个钓鱼表。",
+      "status": "fact",
+      "source_refs": [
+        "ST1562430",
+        "S04"
+      ],
+      "reasoning": null,
+      "limitation": "以2026更新的玩家攻略补规则；准确版本、各类错按量和当期默认设置未实测。"
+    },
+    {
+      "id": "C04",
+      "text": "蓄力投竿→咬钩时确认→按住使绿条上升，松开使其下降→让鱼持续处在绿条中→进度填满收获。",
+      "status": "fact",
+      "source_refs": [
+        "S03"
+      ],
+      "reasoning": null,
+      "limitation": "未测具体鱼种参数、辅助MOD与手柄体验。"
+    },
+    {
+      "id": "C05",
+      "text": "按住鼠标抛线→通过Shake吸引／加速等待→鱼咬后按住或点击控制白条。",
+      "status": "fact",
+      "source_refs": [
+        "S21"
+      ],
+      "reasoning": null,
+      "limitation": "动态游戏可能更新；移动端、自动Shake、当前竿技能应实玩复核。"
+    },
+    {
+      "id": "C06",
+      "text": "持竿瞄准并释放鱼饵→等待真正咬钩→提钩→按住／松开捕鱼按钮让张力停在理想区→进度完成。",
+      "status": "fact",
+      "source_refs": [
+        "S22"
+      ],
+      "reasoning": null,
+      "limitation": "资料为游戏教程的社区转录，非当前客户端验证。"
+    },
+    {
+      "id": "C07",
+      "text": "点CAST立即咬钩→Button Way点HOOK并按住REEL IN；或Slider Technique移动滑杆→保持中心张力→鱼获展示重量、分数、星级与金币。",
+      "status": "fact",
+      "source_refs": [
+        "S05"
+      ],
+      "reasoning": null,
+      "limitation": "移动端触控手感和宽容时间未测试。"
+    },
+    {
+      "id": "C08",
+      "text": "选地点／拟饵→抛投→移动鱼竿带动拟饵→咬钩时扬竿→切换收线速度，必要时反鱼游向控竿→落鱼计重量。",
+      "status": "fact",
+      "source_refs": [
+        "S06"
+      ],
+      "reasoning": null,
+      "limitation": "以PC说明书为准；不将Dreamcast专用竿操作写成PC要求。"
+    },
+    {
+      "id": "C09",
+      "text": "准备拟饵→Basic Cast用蓄力条释放；或Total Cast Control用鼠标拉后甩前→操控拟饵→鱼咬→调整卷速／泄力并收获。",
+      "status": "fact",
+      "source_refs": [
+        "S07"
+      ],
+      "reasoning": null,
+      "limitation": "辅助选项、手柄映射和当前更新的细微容错未实测。"
+    },
+    {
+      "id": "C10",
+      "text": "选水域与钓组→抛投或部署→按钓法诱鱼／等待→中鱼后结合收线、提竿、泄力控制→收获、保留或处理鱼货。",
+      "status": "fact",
+      "source_refs": [
+        "ST380600",
+        "S43",
+        "S44"
+      ],
+      "reasoning": null,
+      "limitation": "2024的5.0重做Pull and Reel；旧视频不能默认代表2026手感。"
+    },
+    {
+      "id": "C11",
+      "text": "准备饵竿并抛投→鱼咬后进入控竿→鱼向一边挣扎时朝相反方向拉竿→鱼疲劳后收线→重复直到落鱼。",
+      "status": "fact",
+      "source_refs": [
+        "S09"
+      ],
+      "reasoning": null,
+      "limitation": "当前各平台辅助键位、鱼疲劳时间未实测。"
+    },
+    {
+      "id": "C12",
+      "text": "准备饵竿、抛投→识别咬钩→鱼挣扎时控竿对抗→平稳时提竿卷线→落鱼。手柄可用Hold to Reel替代转圈收线。",
+      "status": "fact",
+      "source_refs": [
+        "S10",
+        "S11"
+      ],
+      "reasoning": null,
+      "limitation": "官方替代输入自1.15加入；不宣称亲测所有当期版本设置。"
+    },
+    {
+      "id": "C13",
+      "text": "选拟饵与钓点→抛投诱鱼→中鱼后按提示随鱼方向控竿→挣扎时减收，平静时收→消耗鱼体力后完成。",
+      "status": "fact",
+      "source_refs": [
+        "S12"
+      ],
+      "reasoning": null,
+      "limitation": "早期攻略用于识别结构，不作为2026全参数依据。"
+    },
+    {
+      "id": "C14",
+      "text": "抛投等待→中鱼进入收线→按住推进，遇阻挡时点击通过→在追赶压力下完成→鱼货用于成长或社交。",
+      "status": "fact",
+      "source_refs": [
+        "ST3146520",
+        "S13"
+      ],
+      "reasoning": null,
+      "limitation": "不能把社区传闻中的替代模式写成已核官方事实；也未测试长期点击疲劳。"
+    },
+    {
+      "id": "C15",
+      "text": "主动模式抛投→鱼试探／咬钩→用左键收线、右键放线的评测版本控制→鱼疲劳时回收→记录鱼获；也可使用Passive Mode。",
+      "status": "fact",
+      "source_refs": [
+        "ST3483740",
+        "S14",
+        "S45"
+      ],
+      "reasoning": null,
+      "limitation": "2025 Demo v2的疲劳与拟饵说明、正式版评测与抓取日商店须分开；没有实测最新多人模式。"
+    },
+    {
+      "id": "C16",
+      "text": "2024 Jam：A/D移动下沉鱼钩撞鱼→造成足够作用后回收→工作台去鳞→按完成按钮→喂饱顾客付钱→升级再潜。2026 Steam的细操作由项目用户记录提供。",
+      "status": "fact",
+      "source_refs": [
+        "ST3198890",
+        "S15",
+        "P02"
+      ],
+      "reasoning": null,
+      "limitation": "Jam键盘和按钮、Steam鼠标及用户记录的具体版本不能拼成同一实机流程。"
+    },
+    {
+      "id": "C17",
+      "text": "投放鱼饵→规划鱼钩路线接近目标→带鱼回收→出售，或把鱼作为更大鱼饵再次投放。",
+      "status": "fact",
+      "source_refs": [
+        "ST343780",
+        "S16"
+      ],
+      "reasoning": null,
+      "limitation": "不写固定价格、咬食折价和全部鱼种特殊条件；旧指南存在版本边界。"
+    },
+    {
+      "id": "C18",
+      "text": "点击转盘投放鱼钩→拖动鱼钩经过鱼→回到水面结算本轮现金→升级后再次下钩。",
+      "status": "fact",
+      "source_refs": [
+        "S17"
+      ],
+      "reasoning": null,
+      "limitation": "具体转盘数值、不同平台版本与后期升级曲线未实测。"
+    },
+    {
+      "id": "C19",
+      "text": "鱼线下降时避鱼尽量下潜→碰鱼后转为上升并抓更多鱼→到表面把鱼抛到空中射击→收入换升级。",
+      "status": "fact",
+      "source_refs": [
+        "S18",
+        "S19"
+      ],
+      "reasoning": null,
+      "limitation": "三阶段由EX商店和媒体说明支持；运动输入细节与控制器选项未实玩。"
+    },
+    {
+      "id": "C20",
+      "text": "装备竿→Space抛线→咬钩后Space→停移动表→限时按WASD序列→获得鱼；不启动小游戏可等自动钓取。",
+      "status": "fact",
+      "source_refs": [
+        "S20"
+      ],
+      "reasoning": null,
+      "limitation": "PC葡语官方指南；全平台当前参数与实际手感未复核。"
+    },
+    {
+      "id": "C21",
+      "text": "1.0正式发布移除旧钓鱼小游戏；随后1.0.0.10在Gameplay设置增加Legacy fishing minigame开关，让玩家可启用旧流程。",
+      "status": "fact",
+      "source_refs": [
+        "S41",
+        "S42"
+      ],
+      "reasoning": null,
+      "limitation": "公告不是2026客户端实测；当前默认值和键位需一次实玩确认。"
+    },
+    {
+      "id": "C22",
+      "text": "把光标移过鱼群→自动捕获接触目标→金币／钻石增长→购买成长→向下一海域推进。",
+      "status": "fact",
+      "source_refs": [
+        "ST4249770"
+      ],
+      "reasoning": null,
+      "limitation": "鼠标悬停捕获由官方商店支持；极端目标密度、速度和自动化平衡未实测。"
+    },
+    {
+      "id": "C23",
+      "text": "VR中的持竿、抛投和收线模拟连接鱼获；具体Quest／SteamVR控制器与手部追踪映射尚未逐一取得。",
+      "status": "fact",
+      "source_refs": [
+        "ST1266470",
+        "S35"
+      ],
+      "reasoning": null,
+      "limitation": "不能从传统竿游戏推断VR键位；没有头显实测与完整官方教程。"
+    },
+    {
+      "id": "C24",
+      "text": "用街机杆控制抛出浮标→咬钩时卷线→按Thunder Bolts削弱鱼→成功捕获计分。",
+      "status": "fact",
+      "source_refs": [
+        "S37"
+      ],
+      "reasoning": null,
+      "limitation": "历史街机说明，不代表当前Switch版的按键与模式。"
+    },
+    {
+      "id": "C25",
+      "text": "美容梳理与修甲独立Demo待实装、未接手；两种鼠标输入，整单按评价一次自动结算。",
+      "status": "fact",
+      "source_refs": [
+        "P02",
+        "P03",
+        "P04"
+      ],
+      "reasoning": null
+    },
+    {
+      "id": "C26",
+      "text": "对象规则、可读风险提示与局部恢复比增加新的钓鱼小游戏更适合当前主交互验证。",
+      "status": "inference",
+      "source_refs": [
+        "P02",
+        "P04",
+        "S03",
+        "S05",
+        "S15",
+        "S41",
+        "S42"
+      ],
+      "reasoning": "这些结构解决现有两种输入的反馈与重复差异问题，且制作与操作负担较低；尚需真人验证。"
+    },
+    {
+      "id": "C27",
+      "text": "54款样本不构成全球所有钓鱼游戏完整清单，也没有证明候选提高玩家留存或乐趣。",
+      "status": "unknown",
+      "source_refs": [],
+      "reasoning": "没有全球统一名录及全部平台长尾覆盖，也没有本次实玩或真人实验。"
+    }
+  ],
+  "games": [
+    {
+      "id": "G01",
+      "name": "Fishing Planet",
+      "appid": 380600,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M06"
+      ],
+      "input_chain": "选钓组与钓点；拟饵／泄力；收线时提竿",
+      "decision_or_failure": "动态张力与准备匹配；5.0后操作变化",
+      "growth": "装备、地区、任务",
+      "evidence_depth": "较详",
+      "fit_verdict": "暂缓",
+      "source_refs": [
+        "ST380600",
+        "S43",
+        "S44"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G02",
+      "name": "Russian Fishing 4",
+      "appid": 766570,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M06"
+      ],
+      "input_chain": "浮漂、路亚、底钓多钓法；精确键位待核",
+      "decision_or_failure": "装备与环境选择；完整断线规则未复核",
+      "growth": "装备／生活技能／地区",
+      "evidence_depth": "概况",
+      "fit_verdict": "暂缓",
+      "source_refs": [
+        "ST766570"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G03",
+      "name": "Ultimate Fishing® Simulator 2",
+      "appid": 1136380,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M06"
+      ],
+      "input_chain": "多钓法模拟；具体输入与辅助模式待核",
+      "decision_or_failure": "规则与工具负担需实玩",
+      "growth": "装备／地区",
+      "evidence_depth": "概况",
+      "fit_verdict": "暂缓",
+      "source_refs": [
+        "ST1136380"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G04",
+      "name": "Call of the Wild: The Angler™",
+      "appid": 1408610,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M06"
+      ],
+      "input_chain": "开放世界定位、鱼种／钓具选择；键位待核",
+      "decision_or_failure": "探索与捕获条件；当前细节待核",
+      "growth": "任务／装备／图鉴",
+      "evidence_depth": "概况",
+      "fit_verdict": "暂缓",
+      "source_refs": [
+        "ST1408610"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G05",
+      "name": "Bassmaster® Fishing",
+      "appid": 1449500,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M06"
+      ],
+      "input_chain": "基础蓄力抛投／完整抛投；抽饵、卷速、泄力",
+      "decision_or_failure": "抛投红区精度；张力显示",
+      "growth": "比赛与装备",
+      "evidence_depth": "较详",
+      "fit_verdict": "局部反馈",
+      "source_refs": [
+        "ST1449500",
+        "S07"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G06",
+      "name": "Euro Fishing",
+      "appid": 314520,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M06"
+      ],
+      "input_chain": "抛投、泄力、多个钓竿切换、抄网",
+      "decision_or_failure": "多工具注意力分配；失败细节待核",
+      "growth": "比赛／钓点",
+      "evidence_depth": "概况",
+      "fit_verdict": "暂缓",
+      "source_refs": [
+        "ST314520",
+        "S08"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G07",
+      "name": "SEGA Bass Fishing",
+      "appid": 71240,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M05"
+      ],
+      "input_chain": "选饵抛投；鱼咬时扬竿；两档收线及反向控竿",
+      "decision_or_failure": "红张力停收线；鱼逃逸／断线",
+      "growth": "重量目标／锦标赛",
+      "evidence_depth": "较详",
+      "fit_verdict": "局部反馈",
+      "source_refs": [
+        "ST71240",
+        "S06"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G08",
+      "name": "Real VR Fishing",
+      "appid": 1266470,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M11"
+      ],
+      "input_chain": "VR竿与收线动作；逐设备映射待核",
+      "decision_or_failure": "硬件、难度模式改变信息呈现",
+      "growth": "地点／装备／图鉴",
+      "evidence_depth": "概况",
+      "fit_verdict": "演出可借",
+      "source_refs": [
+        "ST1266470",
+        "S35"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G09",
+      "name": "DREDGE",
+      "appid": 1562430,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M02"
+      ],
+      "input_chain": "钓鱼标记／区域时机；疏浚为另一套避障交互",
+      "decision_or_failure": "错按成本和宽松设置需分开；金色时机快收",
+      "growth": "鱼货／船舱／船与钓具",
+      "evidence_depth": "较详",
+      "fit_verdict": "可局部借鉴",
+      "source_refs": [
+        "ST1562430",
+        "S04"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G10",
+      "name": "DAVE THE DIVER",
+      "appid": 1868140,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M09"
+      ],
+      "input_chain": "潜水探索、鱼叉／武器捕获，再经营餐厅",
+      "decision_or_failure": "氧气和负重等出海限制；具体鱼叉QTE待核",
+      "growth": "鱼获加工／菜单／装备",
+      "evidence_depth": "概况",
+      "fit_verdict": "循环可借",
+      "source_refs": [
+        "ST1868140"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G11",
+      "name": "Scale the Depths",
+      "appid": 3198890,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M08",
+        "M09"
+      ],
+      "input_chain": "Jam：A/D导向碰鱼；Steam加工操作见用户记录",
+      "decision_or_failure": "捕获→去鳞→喂顾客；版本键位不混用",
+      "growth": "处理工具／深度／区域",
+      "evidence_depth": "较详",
+      "fit_verdict": "优先参考",
+      "source_refs": [
+        "ST3198890",
+        "S15",
+        "P02"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G12",
+      "name": "Cat Goes Fishing",
+      "appid": 343780,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M08"
+      ],
+      "input_chain": "抛线、鱼钩路线，鱼可出售或作更大鱼饵",
+      "decision_or_failure": "卖掉换现钱，或保留作为升级捕获机会",
+      "growth": "鱼竿／任务／船／鱼图鉴",
+      "evidence_depth": "较详",
+      "fit_verdict": "未来打捞",
+      "source_refs": [
+        "ST343780",
+        "S16"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G13",
+      "name": "WEBFISHING",
+      "appid": 3146520,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M03"
+      ],
+      "input_chain": "按住收线，在阻挡处点击；完整辅助设置待核",
+      "decision_or_failure": "追赶条／阻挡制造压力；点击负担明显",
+      "growth": "鱼货／钓具／外观与社交",
+      "evidence_depth": "较详",
+      "fit_verdict": "输入不宜直接借",
+      "source_refs": [
+        "ST3146520",
+        "S13"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G14",
+      "name": "Cast n Chill",
+      "appid": 3483740,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M04",
+        "M10"
+      ],
+      "input_chain": "主动抛投；收／放线；也有Passive Mode",
+      "decision_or_failure": "疲劳时收线；背景模式注意力更低",
+      "growth": "鱼货／地点／装备／鱼记录",
+      "evidence_depth": "较详",
+      "fit_verdict": "节奏可借",
+      "source_refs": [
+        "ST3483740",
+        "S14",
+        "S45"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G15",
+      "name": "Intergalactic Fishing",
+      "appid": 949600,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M06"
+      ],
+      "input_chain": "探索星球并配置自定义拟饵；实际操竿待核",
+      "decision_or_failure": "鱼个体偏好和环境匹配；收线细节未知",
+      "growth": "拟饵改件／探索／任务",
+      "evidence_depth": "概况",
+      "fit_verdict": "信息选择可借",
+      "source_refs": [
+        "ST949600"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G16",
+      "name": "Luna's Fishing Garden",
+      "appid": 1477790,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M03",
+        "M04"
+      ],
+      "input_chain": "评测描述挑战条与简易收线两种风格",
+      "decision_or_failure": "模式选择让挑战程度可调",
+      "growth": "卖鱼／花园建设",
+      "evidence_depth": "概况",
+      "fit_verdict": "可局部借鉴",
+      "source_refs": [
+        "ST1477790",
+        "S27"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G17",
+      "name": "Fishing Paradiso",
+      "appid": 1781030,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M04"
+      ],
+      "input_chain": "简化抛投／收线；具体状态及失败条件待核",
+      "decision_or_failure": "故事任务与简化动作并行",
+      "growth": "鱼任务／装备／故事",
+      "evidence_depth": "概况",
+      "fit_verdict": "暂缓判定",
+      "source_refs": [
+        "ST1781030",
+        "S28"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G18",
+      "name": "Moonglow Bay",
+      "appid": 1361400,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M09"
+      ],
+      "input_chain": "鱼竿、网、陷阱等工具；加工与出售",
+      "decision_or_failure": "工具任务不同；没有完整按钮链证据",
+      "growth": "烹饪／经营／社区修复",
+      "evidence_depth": "概况",
+      "fit_verdict": "任务循环可借",
+      "source_refs": [
+        "ST1361400",
+        "S40"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G19",
+      "name": "Stardew Valley",
+      "appid": 413150,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M03"
+      ],
+      "input_chain": "蓄力抛竿；咬钩提交；按住上升、放开下降",
+      "decision_or_failure": "鱼在绿条内增加进度；宝箱与鱼争同一控制条",
+      "growth": "技能／钓具／食物／图鉴",
+      "evidence_depth": "较详",
+      "fit_verdict": "优先研究",
+      "source_refs": [
+        "ST413150",
+        "S03"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G20",
+      "name": "Sea of Thieves: 2026 Edition",
+      "appid": 1172620,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M05"
+      ],
+      "input_chain": "反鱼游向控竿，鱼疲劳时收线",
+      "decision_or_failure": "错误方向声画预警；断线丢本次捕获",
+      "growth": "卖鱼／烹饪／声望",
+      "evidence_depth": "较详",
+      "fit_verdict": "反馈可借",
+      "source_refs": [
+        "ST1172620",
+        "S09"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G21",
+      "name": "Red Dead Redemption 2",
+      "appid": 1174180,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M05"
+      ],
+      "input_chain": "观察咬钩；对抗游向；择机卷线／提竿",
+      "decision_or_failure": "挣扎与休息区分；Hold to Reel可替代摇杆转圈",
+      "growth": "食物／出售／挑战",
+      "evidence_depth": "较详",
+      "fit_verdict": "辅助输入可借",
+      "source_refs": [
+        "ST1174180",
+        "S10",
+        "S11"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G22",
+      "name": "Spiritfarer®: Farewell Edition",
+      "appid": 972660,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M04"
+      ],
+      "input_chain": "按住收线、观察线色、释放缓压",
+      "decision_or_failure": "高强度鱼可能需点按保距离；不要泛化所有鱼",
+      "growth": "烹饪／旅程任务",
+      "evidence_depth": "概况",
+      "fit_verdict": "提示可借",
+      "source_refs": [
+        "ST972660",
+        "S29"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G23",
+      "name": "No Man's Sky",
+      "appid": 275850,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M01",
+        "M10"
+      ],
+      "input_chain": "手钓等待咬钩；亦可部署自动陷阱",
+      "decision_or_failure": "环境、鱼饵与收集；精确落鱼输入待核",
+      "growth": "鱼记录／烹饪／陷阱／探索",
+      "evidence_depth": "概况",
+      "fit_verdict": "成长后置",
+      "source_refs": [
+        "ST275850",
+        "S26"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G24",
+      "name": "Terraria",
+      "appid": 105600,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M01"
+      ],
+      "input_chain": "装备竿饵；浮标咬钩后再次使用",
+      "decision_or_failure": "断线可能是随机检查，并非控张力失误",
+      "growth": "装备／任务／材料",
+      "evidence_depth": "较详",
+      "fit_verdict": "提示可借",
+      "source_refs": [
+        "ST105600",
+        "S25"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G25",
+      "name": "Disney Dreamlight Valley",
+      "appid": 1401590,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M02"
+      ],
+      "input_chain": "钓鱼时机输入；官方加入按住替代选项",
+      "decision_or_failure": "输入辅助减少重复按键；默认详细节奏待核",
+      "growth": "食材／任务／地区",
+      "evidence_depth": "概况",
+      "fit_verdict": "辅助输入可借",
+      "source_refs": [
+        "ST1401590",
+        "S23"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G26",
+      "name": "FINAL FANTASY XV WINDOWS EDITION",
+      "appid": 637650,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M05"
+      ],
+      "input_chain": "随鱼游向控竿，挣扎时减收，休息时卷线",
+      "decision_or_failure": "线耐久与鱼体力；方向规则不同于Sea of Thieves",
+      "growth": "钓具／鱼种／钓鱼技能",
+      "evidence_depth": "较详",
+      "fit_verdict": "局部参考",
+      "source_refs": [
+        "ST637650",
+        "S12"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G27",
+      "name": "FINAL FANTASY XIV Online",
+      "appid": 39210,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M01",
+        "M06"
+      ],
+      "input_chain": "竿饵和时地选择；技能提钩种类",
+      "decision_or_failure": "7.0鱼图鉴提示Hookset；现行全部技能未核",
+      "growth": "生活技能／鱼图鉴／任务",
+      "evidence_depth": "概况",
+      "fit_verdict": "首版不引入",
+      "source_refs": [
+        "ST39210",
+        "S39"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G28",
+      "name": "Warframe",
+      "appid": 230410,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M09"
+      ],
+      "input_chain": "装备捕鱼矛、选择诱饵／染料并瞄准",
+      "decision_or_failure": "属于直接投矛；不同矛完整规则未核",
+      "growth": "制造材料／地区／声望",
+      "evidence_depth": "概况",
+      "fit_verdict": "直接瞄准参考",
+      "source_refs": [
+        "ST230410",
+        "S38"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G29",
+      "name": "Hades",
+      "appid": 1145360,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M01"
+      ],
+      "input_chain": "等真正咬钩后迅速确认，注意假动静",
+      "decision_or_failure": "快反应可得更优捕获；不是持续张力游戏",
+      "growth": "鱼换资源／区域图鉴",
+      "evidence_depth": "较详",
+      "fit_verdict": "声画信号可借",
+      "source_refs": [
+        "ST1145360",
+        "S24"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G30",
+      "name": "Coral Island",
+      "appid": 1158160,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M04"
+      ],
+      "input_chain": "收线并控制张力；最大张力随工具变化",
+      "decision_or_failure": "当前按钮映射和失误处理待实玩",
+      "growth": "生活技能／工具／鱼图鉴",
+      "evidence_depth": "概况",
+      "fit_verdict": "提示可借",
+      "source_refs": [
+        "ST1158160",
+        "S30"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G31",
+      "name": "A Short Hike",
+      "appid": 1055540,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M05"
+      ],
+      "input_chain": "向后拉并重复Use Item完成收线",
+      "decision_or_failure": "攻略中的重复按键对鼠标长期操作负担高",
+      "growth": "探索／鱼类收集",
+      "evidence_depth": "概况",
+      "fit_verdict": "不直接借输入",
+      "source_refs": [
+        "ST1055540",
+        "S31"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G32",
+      "name": "Core Keeper",
+      "appid": 1621690,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M01",
+        "M03"
+      ],
+      "input_chain": "1.0移除旧小游戏；1.0.0.10增加Legacy开关",
+      "decision_or_failure": "旧小游戏可选，不能只按早期版拆解",
+      "growth": "食材／装备／区域",
+      "evidence_depth": "较详",
+      "fit_verdict": "模式取舍参考",
+      "source_refs": [
+        "ST1621690",
+        "S41",
+        "S42"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G33",
+      "name": "Meow Squad: Incremental Fishing",
+      "appid": 4753960,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M07",
+        "M10"
+      ],
+      "input_chain": "主动捕鱼网＋猫炮台自动捕鱼；键位待核",
+      "decision_or_failure": "限时捕鱼回合；手动与自动职责不同",
+      "growth": "升级网格／区域／Boss",
+      "evidence_depth": "概况",
+      "fit_verdict": "反馈可借",
+      "source_refs": [
+        "ST4753960"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G34",
+      "name": "Captain Whiskers: Incremental Seas",
+      "appid": 4249770,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M07"
+      ],
+      "input_chain": "光标悬停经过鱼群即捕获",
+      "decision_or_failure": "无逐鱼咬钩拉扯；路径与鱼群分布重要",
+      "growth": "收益／技能树／队员／区域",
+      "evidence_depth": "较详",
+      "fit_verdict": "局部反馈",
+      "source_refs": [
+        "ST4249770"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G35",
+      "name": "Just Keep Fishing",
+      "appid": 4601160,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M10"
+      ],
+      "input_chain": "商店只概述捕鱼、买升级；详细输入未知",
+      "decision_or_failure": "未取得规则，不能归为张力或追踪条",
+      "growth": "捕鱼收益／升级",
+      "evidence_depth": "不足",
+      "fit_verdict": "证据不足",
+      "source_refs": [
+        "ST4601160"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G36",
+      "name": "猫猫爱钓鱼 Cat Fishing",
+      "appid": 5206820,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M10"
+      ],
+      "input_chain": "放置捕鱼、出售、开箱与天赋装备",
+      "decision_or_failure": "离线收益；手动张力微操作未证实",
+      "growth": "装备／稀有度／天赋／地区",
+      "evidence_depth": "概况",
+      "fit_verdict": "暂缓",
+      "source_refs": [
+        "ST5206820"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G37",
+      "name": "Fishing Inc",
+      "appid": 4126480,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M03"
+      ],
+      "input_chain": "在鱼逃前点击推进到目标",
+      "decision_or_failure": "点击频率与截止压力；与当前少连点方向冲突",
+      "growth": "鱼熟练度／品质／装备",
+      "evidence_depth": "概况",
+      "fit_verdict": "不适合当前",
+      "source_refs": [
+        "ST4126480"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G38",
+      "name": "Desktop Pet: DonEatFish",
+      "appid": 4515550,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M10"
+      ],
+      "input_chain": "桌面宠物自动捕鱼、宝箱与换装",
+      "decision_or_failure": "手动收鱼全过程资料不足",
+      "growth": "外观／放置收获",
+      "evidence_depth": "概况",
+      "fit_verdict": "陪伴演出参考",
+      "source_refs": [
+        "ST4515550"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G39",
+      "name": "Idle Fishing",
+      "appid": 2725560,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M10"
+      ],
+      "input_chain": "队伍挂机捕鱼；亦有主动技巧小游戏",
+      "decision_or_failure": "不能把整作描述成完全没有手动操作",
+      "growth": "队伍／升级／地区／长期成长",
+      "evidence_depth": "概况",
+      "fit_verdict": "自动化暂缓",
+      "source_refs": [
+        "ST2725560"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G40",
+      "name": "Fishing: North Atlantic - Enhanced Edition",
+      "appid": 1264250,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M12"
+      ],
+      "input_chain": "鱼叉、延绳钓、笼具、网、拖网等航次工具",
+      "decision_or_failure": "路线与生产工具；精确各阶段键位未核",
+      "growth": "船／船员／航次收益",
+      "evidence_depth": "概况",
+      "fit_verdict": "商业规划暂缓",
+      "source_refs": [
+        "ST1264250"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G41",
+      "name": "Fishing: Barents Sea",
+      "appid": 501080,
+      "platform_scope": "Steam PC页面对应游戏",
+      "mechanism_refs": [
+        "M12"
+      ],
+      "input_chain": "商业船、网具、声呐与航次",
+      "decision_or_failure": "作业安排与设备管理；不是单鱼条游戏",
+      "growth": "船／船员／配额／收入",
+      "evidence_depth": "概况",
+      "fit_verdict": "商业规划暂缓",
+      "source_refs": [
+        "ST501080"
+      ],
+      "version_scope": "抓取日资料；精确构建未知，版本说明见来源",
+      "hands_on": false
+    },
+    {
+      "id": "G42",
+      "name": "Animal Crossing: New Horizons",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M01"
+      ],
+      "input_chain": "将浮标投在鱼影前，真正下沉时按A",
+      "decision_or_failure": "过早提竿鱼逃；声效可辅助判断",
+      "growth": "季节／天气／图鉴",
+      "evidence_depth": "较详",
+      "fit_verdict": "反馈可借",
+      "source_refs": [
+        "S01"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    },
+    {
+      "id": "G43",
+      "name": "Minecraft",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M01"
+      ],
+      "input_chain": "使用抛竿；浮标下沉时再次使用",
+      "decision_or_failure": "错过会继续等下一次；非长时间拉扯",
+      "growth": "附魔／宝藏／食物",
+      "evidence_depth": "较详",
+      "fit_verdict": "信号可借",
+      "source_refs": [
+        "S02"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    },
+    {
+      "id": "G44",
+      "name": "Fishing Clash",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M04"
+      ],
+      "input_chain": "按钮按住收线，或滑杆保持中心张力",
+      "decision_or_failure": "高低张力都可失败；中心连击带分数收益",
+      "growth": "鱼重量／评分／装备",
+      "evidence_depth": "较详",
+      "fit_verdict": "优先研究",
+      "source_refs": [
+        "S05"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    },
+    {
+      "id": "G45",
+      "name": "Ace Fishing: Wild Catch",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M04"
+      ],
+      "input_chain": "官方称一触捕鱼；精确手势链待核",
+      "decision_or_failure": "手游收线工具与反馈需实测",
+      "growth": "装备／鱼种／竞技",
+      "evidence_depth": "概况",
+      "fit_verdict": "暂缓判定",
+      "source_refs": [
+        "S33"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    },
+    {
+      "id": "G46",
+      "name": "Fishing Hook",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M04"
+      ],
+      "input_chain": "拉按钮使鱼受作用并靠近",
+      "decision_or_failure": "距离、张力关联；精确判败与输入细节待核",
+      "growth": "地区／装备／鱼种",
+      "evidence_depth": "概况",
+      "fit_verdict": "暂缓判定",
+      "source_refs": [
+        "S32"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    },
+    {
+      "id": "G47",
+      "name": "Fishing and Life（Nexelon）",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M08"
+      ],
+      "input_chain": "简化触屏钓鱼；具体过程待核",
+      "decision_or_failure": "休闲海面表现；不能冒充完整规则已读",
+      "growth": "钓具／鱼饵／鱼类",
+      "evidence_depth": "概况",
+      "fit_verdict": "表现可借",
+      "source_refs": [
+        "S34"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    },
+    {
+      "id": "G48",
+      "name": "Ridiculous Fishing EX",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M08",
+        "M09"
+      ],
+      "input_chain": "下降避鱼→上升抓鱼→空中射击",
+      "decision_or_failure": "同一路径去程与回程目标相反",
+      "growth": "收益／鱼线深度／武器",
+      "evidence_depth": "较详",
+      "fit_verdict": "阶段规则可借",
+      "source_refs": [
+        "S18",
+        "S19"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    },
+    {
+      "id": "G49",
+      "name": "Tiny Fishing",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M08"
+      ],
+      "input_chain": "点转盘下钩，拖鱼钩捕多个鱼",
+      "decision_or_failure": "容量与路径决定本轮鱼获；无逐鱼张力链",
+      "growth": "现金／容量／深度／离线",
+      "evidence_depth": "较详",
+      "fit_verdict": "未来打捞",
+      "source_refs": [
+        "S17"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    },
+    {
+      "id": "G50",
+      "name": "Fisch（Roblox）",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M03"
+      ],
+      "input_chain": "按住抛投、Shake吸引，咬钩后控制白条",
+      "decision_or_failure": "具体失败数值与移动端映射需另查",
+      "growth": "鱼货／钓竿／地点",
+      "evidence_depth": "较详",
+      "fit_verdict": "对象变化参考",
+      "source_refs": [
+        "S21"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    },
+    {
+      "id": "G51",
+      "name": "Genshin Impact／原神",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M03"
+      ],
+      "input_chain": "瞄准鱼饵、提钩；按住／松开保持理想张力区",
+      "decision_or_failure": "太远难吸引、太近惊鱼；捕获进度随区间变化",
+      "growth": "鱼饵／鱼类／兑换",
+      "evidence_depth": "较详",
+      "fit_verdict": "提示可借",
+      "source_refs": [
+        "S22"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    },
+    {
+      "id": "G52",
+      "name": "Black Desert／黑色沙漠",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M02",
+        "M10"
+      ],
+      "input_chain": "Space抛投及咬钩，定点停表，再按WASD序列",
+      "decision_or_failure": "手动两段小游戏；不操作可等自动捕鱼",
+      "growth": "鱼货／技能／自动时间／贸易",
+      "evidence_depth": "较详",
+      "fit_verdict": "模式取舍参考",
+      "source_refs": [
+        "S20"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    },
+    {
+      "id": "G53",
+      "name": "Bait! VR",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M11"
+      ],
+      "input_chain": "VR钓鱼与装备；逐设备操作待核",
+      "decision_or_failure": "手部操控和体验装置是成本",
+      "growth": "任务／鱼类／装备",
+      "evidence_depth": "概况",
+      "fit_verdict": "演出可借",
+      "source_refs": [
+        "S36"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    },
+    {
+      "id": "G54",
+      "name": "Ace Angler（街机系列）",
+      "appid": null,
+      "platform_scope": "来源所指主机／移动／浏览器／VR／街机版本",
+      "mechanism_refs": [
+        "M11"
+      ],
+      "input_chain": "实体竿抛浮标、卷线；雷击按钮削弱鱼",
+      "decision_or_failure": "专用设备与街机得分；成本参数未知",
+      "growth": "得分／设备游玩循环",
+      "evidence_depth": "较详",
+      "fit_verdict": "不直接借硬件",
+      "source_refs": [
+        "S37"
+      ],
+      "version_scope": "以来源版本为准；非统一最新构建",
+      "hands_on": false
+    }
+  ],
+  "game_interaction_cards": [
+    {
+      "game_id": "G42",
+      "heading": "Animal Crossing：咬钩辨认，而非收线技巧",
+      "source_refs": [
+        "S01"
+      ],
+      "input_chain": "找到鱼影→把浮标投到鱼前方→等试探→看到浮标真正下沉或听到明显水声→按A→展示鱼获。",
+      "decisions": "提前判断投放位置；等待阶段抑制抢按。鱼影形状、地点与时段支持找目标，但不会让玩家提前知道全部结果。",
+      "feedback": "轻啄与真正咬钩的浮标／声音不同；成功立即揭示鱼。",
+      "failure_and_recovery": "抢按会让鱼逃，需重新找鱼抛投。损失本次机会，不是扣掉已赚钱包。",
+      "loop_and_growth": "鱼进入收集／出售循环；下一轮通过地点、时段、季节找缺失品种，而非增加一套收线按键。",
+      "unknowns": "具体反应窗口及不同设备辅助功能未测。",
+      "transfer_inference": "对美容可借“原因明确的前置信号”：接近过速先看到猫警觉，真正疼痛再扣评；不照搬数次随机假咬钩。"
+    },
+    {
+      "game_id": "G43",
+      "heading": "Minecraft：一次确认＋等待的机会成本",
+      "source_refs": [
+        "S02"
+      ],
+      "input_chain": "使用鱼竿抛线→观察鱼接近浮标→浮标下沉→及时再次使用收获→再抛线。",
+      "decisions": "选择环境及鱼竿附魔；主要即时判断是收杆时机。",
+      "feedback": "水面粒子和浮标下沉指示触发。",
+      "failure_and_recovery": "没及时收杆可再等待新的咬钩；装备耐久等长期成本与本次时机失误分开。",
+      "loop_and_growth": "鱼、杂物与宝藏推动装备和资源使用；Lure影响等待，Luck of the Sea改变宝藏／杂物机会。",
+      "unknowns": "不固定写一套等待秒数或跨Java／Bedrock统一概率。",
+      "transfer_inference": "“降低等候”是一种成长价值，但美容首版应先验证持续处理本身；无需制造等待再卖跳过。"
+    },
+    {
+      "game_id": "G09",
+      "heading": "DREDGE：时机输入缩短取得过程，钓鱼与疏浚分开",
+      "source_refs": [
+        "ST1562430",
+        "S04"
+      ],
+      "input_chain": "停船在可采点→开始捕鱼→按对应类型，在标记／绿色区域对齐时输入→取得鱼货放入船舱。疏浚另用双环与障碍的交互，不是同一个钓鱼表。",
+      "decisions": "相同确认输入配不同标记图形；某些黄色时机可快速取得较大鱼。捕后还有船舱摆放、选择鱼种和返港决策。",
+      "feedback": "目标区域、运动标记和进度给即时判断；鱼货形状进入空间库存。",
+      "failure_and_recovery": "默认错按具体扣进度／耗时因小游戏和模式另核；攻略记录Relaxed Fishing Mode减少失败惩罚，最终可取得。不能概括成错一次丢掉全船鱼。",
+      "loop_and_growth": "鱼货出售→船与钓具能力→新区域／鱼种；动作效率与外层空间和航行资源串联。",
+      "unknowns": "以2026更新的玩家攻略补规则；准确版本、各类错按量和当期默认设置未实测。",
+      "transfer_inference": "可借可读完美区与软失败；划线修甲应看实际切线位置，不改成按旋转圆圈，也不把船舱拼图加到首版。"
+    },
+    {
+      "game_id": "G19",
+      "heading": "Stardew Valley：同一控制，目标行为与宝箱产生取舍",
+      "source_refs": [
+        "S03"
+      ],
+      "input_chain": "蓄力投竿→咬钩时确认→按住使绿条上升，松开使其下降→让鱼持续处在绿条中→进度填满收获。",
+      "decisions": "追踪会平滑、下沉、漂浮或猛窜的鱼；同一操作需要不同节奏。宝箱出现时，分配同一控制条给鱼或箱子。",
+      "feedback": "绿条位置、鱼轨迹与捕获进度同时可见；惯性影响追踪。",
+      "failure_and_recovery": "鱼离条进度下降，降到底失去本次鱼；捞到宝箱仍要成功钓鱼才获得宝物。新手首次教程有更宽容规则。",
+      "loop_and_growth": "鱼获、技能和钓具改变下一轮可处理范围；技能／特定钓具可改变容错，不应写成所有鱼竿升级必然加宽绿条。",
+      "unknowns": "未测具体鱼种参数、辅助MOD与手柄体验。",
+      "transfer_inference": "最有用的是“对象行为变化仍共用同一输入”。迁移为毛结慢梳、垃圾往复，而不是给猫叠一条跟鱼一样乱跳的指标。"
+    },
+    {
+      "game_id": "G50",
+      "heading": "Fisch：把吸引与追踪拆为连续阶段",
+      "source_refs": [
+        "S21"
+      ],
+      "input_chain": "按住鼠标抛线→通过Shake吸引／加速等待→鱼咬后按住或点击控制白条。",
+      "decisions": "抛投后先吸引，再维持目标追踪；不能只用“点一下钓鱼”概括。",
+      "feedback": "Shake提示与白色控制条提供阶段反馈。",
+      "failure_and_recovery": "精确追踪失误如何扣进度、失败阈值和当期辅助选项尚未取到完整官方规则，不补造。",
+      "loop_and_growth": "鱼货、钓竿与地点带动反复捕获；具体Control／Resilience等参数不据未核Wiki定值。",
+      "unknowns": "动态游戏可能更新；移动端、自动Shake、当前竿技能应实玩复核。",
+      "transfer_inference": "借鉴对象与工具改变同一输入难度；吸引阶段的重复按钮不适合现在的猫美容连续拖动。"
+    },
+    {
+      "game_id": "G51",
+      "heading": "原神：把目标区、容错和吸引距离表达出来",
+      "source_refs": [
+        "S22"
+      ],
+      "input_chain": "持竿瞄准并释放鱼饵→等待真正咬钩→提钩→按住／松开捕鱼按钮让张力停在理想区→进度完成。",
+      "decisions": "鱼饵太远吸引差，太近可能惊鱼；搏鱼阶段持续判断移动的理想区。",
+      "feedback": "理想张力区与捕获进度明确分工；对象状态改变目标区域。",
+      "failure_and_recovery": "区外影响捕获进度；过早／过迟提钩或长时间不匹配会丢机会，精确阈值未复核。",
+      "loop_and_growth": "鱼饵、鱼类和兑换目标形成循环；收集需求引导更换地点和目标鱼。",
+      "unknowns": "资料为游戏教程的社区转录，非当前客户端验证。",
+      "transfer_inference": "服务的舒适区可以表达为工具速度提示或猫反应；目标应仍在猫和指甲上，不额外要求玩家操作另一条条形小游戏。"
+    },
+    {
+      "game_id": "G44",
+      "heading": "Fishing Clash：同一张力系统提供按钮和滑杆",
+      "source_refs": [
+        "S05"
+      ],
+      "input_chain": "点CAST立即咬钩→Button Way点HOOK并按住REEL IN；或Slider Technique移动滑杆→保持中心张力→鱼获展示重量、分数、星级与金币。",
+      "decisions": "张力不能过高也不能过低；中心表现获得连击／分数奖励。",
+      "feedback": "上方张力位置与中心区持续显示；成功揭示鱼获品质。",
+      "failure_and_recovery": "张力越界可能逃鱼。按钮与滑杆改变输入负担，目标系统仍保持一致。",
+      "loop_and_growth": "更好的捕获评分和鱼货支持继续成长；不在此复写未经核对的抽卡概率和付费经济。",
+      "unknowns": "移动端触控手感和宽容时间未测试。",
+      "transfer_inference": "有力证据是“调整输入负担而保留决策”。当前鼠标已按住拖动，不需再加滑杆；值得学习可读中心、提前预警和稳定手势。"
+    },
+    {
+      "game_id": "G07",
+      "heading": "SEGA Bass Fishing：粗粒度收线和明确危险色",
+      "source_refs": [
+        "S06"
+      ],
+      "input_chain": "选地点／拟饵→抛投→移动鱼竿带动拟饵→咬钩时扬竿→切换收线速度，必要时反鱼游向控竿→落鱼计重量。",
+      "decisions": "抛到哪、如何诱鱼、何时减收线；高速并非始终最佳。",
+      "feedback": "Fish提示、竿线动画与红色高张力；成功重量反馈。",
+      "failure_and_recovery": "红张力继续硬拉可能断线丢鱼。街机模式还受时间／重量任务制约，不能把全部模式混为同一损失。",
+      "loop_and_growth": "练习、街机目标与锦标赛提供不同外层结构；动作掌握提升相同装备下的效率。",
+      "unknowns": "以PC说明书为准；不将Dreamcast专用竿操作写成PC要求。",
+      "transfer_inference": "危险反馈要早于惩罚，颜色配合音效。猫美容无需借完整双档收线／方向反抗，只借清晰的“现在太快”信号。"
+    },
+    {
+      "game_id": "G05",
+      "heading": "Bassmaster：同一抛投目标允许两种操作精度",
+      "source_refs": [
+        "S07"
+      ],
+      "input_chain": "准备拟饵→Basic Cast用蓄力条释放；或Total Cast Control用鼠标拉后甩前→操控拟饵→鱼咬→调整卷速／泄力并收获。",
+      "decisions": "基础模式避免蓄力红区；完整模式把抛投变为连续运动手势。中鱼后再分配卷速与张力。",
+      "feedback": "抛投力量条、钩挂质量与线张力HUD；水下视角辅助理解。",
+      "failure_and_recovery": "红区导致抛投不准；所有线状态到具体断线判定的公式未取得，不伪造。",
+      "loop_and_growth": "装备与赛事影响目标；投放手势熟练让同一流程更有效率。",
+      "unknowns": "辅助选项、手柄映射和当前更新的细微容错未实测。",
+      "transfer_inference": "修甲可借“连续手势需要过程可见”：预览实际切线，按跨越位置判定。无需替玩家再加蓄力条。"
+    },
+    {
+      "game_id": "G01",
+      "heading": "Fishing Planet：准备与控竿耦合，版本变化不能忽略",
+      "source_refs": [
+        "ST380600",
+        "S43",
+        "S44"
+      ],
+      "input_chain": "选水域与钓组→抛投或部署→按钓法诱鱼／等待→中鱼后结合收线、提竿、泄力控制→收获、保留或处理鱼货。",
+      "decisions": "鱼种、天气与装备匹配之外，实际控竿影响能否保持有效张力。2025官方建议收线时做大幅垂直提竿。",
+      "feedback": "竿线状态和张力反馈让装备限制可感知；明确按钮依平台和钓法另核。",
+      "failure_and_recovery": "设备与捕获存在风险；不把所有失败笼统写成只要松手就断线，具体状态公式未知。",
+      "loop_and_growth": "收益投入钓组／地区与任务，新的装备扩展可处理目标；准备选择占比很大。",
+      "unknowns": "2024的5.0重做Pull and Reel；旧视频不能默认代表2026手感。",
+      "transfer_inference": "长期成长可改变可服务的对象而非只乘收入；当前完整装备、拟饵、体力和泄力模拟成本过高，先不做。"
+    },
+    {
+      "game_id": "G20",
+      "heading": "Sea of Thieves：看方向，等疲劳再收线",
+      "source_refs": [
+        "S09"
+      ],
+      "input_chain": "准备饵竿并抛投→鱼咬后进入控竿→鱼向一边挣扎时朝相反方向拉竿→鱼疲劳后收线→重复直到落鱼。",
+      "decisions": "鱼挣扎时如何控方向、何时从对抗转为收获。可进行更细的收线技巧，但不是新手必须。",
+      "feedback": "错误方向会有镜头／鱼竿摇动与木头开裂声；疲劳阶段改变鱼的行为。",
+      "failure_and_recovery": "错误持续可断线，障碍碰线也可能破坏本次捕获；重新抛投恢复。",
+      "loop_and_growth": "鱼可烹饪／出售及获得声望；收线成功后还有用途与交付选择。",
+      "unknowns": "当前各平台辅助键位、鱼疲劳时间未实测。",
+      "transfer_inference": "可借声音和对象身体表现把失误原因直接显出来；猫咪不能靠突然反向乱窜制造无法预警的扣评。"
+    },
+    {
+      "game_id": "G21",
+      "heading": "RDR2：高负担旋转输入有官方替代",
+      "source_refs": [
+        "S10",
+        "S11"
+      ],
+      "input_chain": "准备饵竿、抛投→识别咬钩→鱼挣扎时控竿对抗→平稳时提竿卷线→落鱼。手柄可用Hold to Reel替代转圈收线。",
+      "decisions": "区别试探与实际咬钩、搏斗与休息；卷线时机决定风险和效率。",
+      "feedback": "鱼的挣扎与杆线运动持续说明状态。",
+      "failure_and_recovery": "错误搏鱼可失去本次鱼；具体装备、输入与损失规则按平台复核。",
+      "loop_and_growth": "捕获用于食物、出售、挑战；地点与鱼饵改变目标。",
+      "unknowns": "官方替代输入自1.15加入；不宣称亲测所有当期版本设置。",
+      "transfer_inference": "借鉴前应找等价的低负担输入。当前方案已经采用左键按住，不应再移植长时间旋摇杆或要求手腕反复转圈。"
+    },
+    {
+      "game_id": "G26",
+      "heading": "FFXV：相似画面不代表方向规则相同",
+      "source_refs": [
+        "S12"
+      ],
+      "input_chain": "选拟饵与钓点→抛投诱鱼→中鱼后按提示随鱼方向控竿→挣扎时减收，平静时收→消耗鱼体力后完成。",
+      "decisions": "同时关注鱼体力和线耐久；这份攻略要求顺鱼方向，不能照Sea of Thieves写成反向拉。",
+      "feedback": "方向提示、线耐久与鱼体力把不同风险拆开显示。",
+      "failure_and_recovery": "线状态恶化可能断线失去本次目标；具体消耗数值未测。",
+      "loop_and_growth": "钓具、拟饵和技能改变捕获条件；鱼种成为收藏与任务目标。",
+      "unknowns": "早期攻略用于识别结构，不作为2026全参数依据。",
+      "transfer_inference": "不同服务对象的规则要可读，不能只换皮就偷偷反转正确操作。统一输入可以有差异，但提示与因果必须一起变。"
+    },
+    {
+      "game_id": "G13",
+      "heading": "WEBFISHING：阶段阻挡叠加点击负担",
+      "source_refs": [
+        "ST3146520",
+        "S13"
+      ],
+      "input_chain": "抛投等待→中鱼进入收线→按住推进，遇阻挡时点击通过→在追赶压力下完成→鱼货用于成长或社交。",
+      "decisions": "在不同阶段切换持续按住与点击；玩家评测描述的是被追赶的限时压力。",
+      "feedback": "收线进度、阻挡和追赶条可见；声音提示收线。",
+      "failure_and_recovery": "未及时完成会失败；完整辅助设置与当前是否可全程按住通过阻挡未取得官方证据。",
+      "loop_and_growth": "鱼货转为钓具／外观；多人场景和社交让重复捕鱼有陪伴价值。",
+      "unknowns": "不能把社区传闻中的替代模式写成已核官方事实；也未测试长期点击疲劳。",
+      "transfer_inference": "社交氛围可作为以后观察点；按住再疯狂连点与当前明确少输入、少连点方向冲突，暂不借动作。"
+    },
+    {
+      "game_id": "G14",
+      "heading": "Cast n Chill：收放节奏与后台模式并存",
+      "source_refs": [
+        "ST3483740",
+        "S14",
+        "S45"
+      ],
+      "input_chain": "主动模式抛投→鱼试探／咬钩→用左键收线、右键放线的评测版本控制→鱼疲劳时回收→记录鱼获；也可使用Passive Mode。",
+      "decisions": "收线与放线不是无脑一直按；鱼的疲劳、目标种类与拟饵引导判断。",
+      "feedback": "鱼的行为、线状态和发现记录支撑节奏。",
+      "failure_and_recovery": "过度拉扯可丢本次鱼；确切断线阈值和后台收益公式未知。",
+      "loop_and_growth": "鱼货与装备／地点循环；主动和后台可满足不同注意力投入。",
+      "unknowns": "2025 Demo v2的疲劳与拟饵说明、正式版评测与抓取日商店须分开；没有实测最新多人模式。",
+      "transfer_inference": "后期可让自动化替代单调劳动、保留对象选择。但当前美容先做真实手感，不同时投入后台经营。"
+    },
+    {
+      "game_id": "G11",
+      "heading": "Scale the Depths：捕获—处理—顾客闭环，严格区分两个版本",
+      "source_refs": [
+        "ST3198890",
+        "S15",
+        "P02"
+      ],
+      "input_chain": "2024 Jam：A/D移动下沉鱼钩撞鱼→造成足够作用后回收→工作台去鳞→按完成按钮→喂饱顾客付钱→升级再潜。2026 Steam的细操作由项目用户记录提供。",
+      "decisions": "捕获路线、处理顺序和顾客要求连成任务。用户记录描述普通鳞重复、寄生虫慢刮、藤壶快往复，共用按住移动。",
+      "feedback": "对象逐步清除和顾客满足把处理结果直接呈现。",
+      "failure_and_recovery": "本次未试玩，正式版每种错误的确切损失未知；不按Jam完成按钮推导美容结算。",
+      "loop_and_growth": "鱼获需要加工／交付才形成下一轮工具和深度成长；抓取日Steam版于2026-05-28发行。",
+      "unknowns": "Jam键盘和按钮、Steam鼠标及用户记录的具体版本不能拼成同一实机流程。",
+      "transfer_inference": "当前项目已明确采用同动作不同对象。最值得细化的是可读局部进度、同一动作的速度差异，以及整个顾客订单的一次完成结算。"
+    },
+    {
+      "game_id": "G12",
+      "heading": "Cat Goes Fishing：鱼获既是收入，也是下一次机会",
+      "source_refs": [
+        "ST343780",
+        "S16"
+      ],
+      "input_chain": "投放鱼饵→规划鱼钩路线接近目标→带鱼回收→出售，或把鱼作为更大鱼饵再次投放。",
+      "decisions": "当下兑现还是让渡本轮收入换下一次更大目标；鱼与路线的关系使鱼饵不只是菜单上的数值。",
+      "feedback": "可见鱼群与鱼钩路径帮助理解捕获目标；上钩结果和出售变化给回报。",
+      "failure_and_recovery": "不同鱼与物理模式可影响捕获；当前正式／beta模式的断线与咬食损失细则未复核。",
+      "loop_and_growth": "捕获→卖鱼／作饵→钓竿、船与更远区域；下一轮可接触的目标改变。",
+      "unknowns": "不写固定价格、咬食折价和全部鱼种特殊条件；旧指南存在版本边界。",
+      "transfer_inference": "未来打捞可研究“获得物既可兑现也可用于接近高价值物”的机会成本；当前美容货币关系未定，不能顺便加入猫毛兑换链。"
+    },
+    {
+      "game_id": "G49",
+      "heading": "Tiny Fishing：把主要判断放在路线和容量",
+      "source_refs": [
+        "S17"
+      ],
+      "input_chain": "点击转盘投放鱼钩→拖动鱼钩经过鱼→回到水面结算本轮现金→升级后再次下钩。",
+      "decisions": "路径选择与能带走多少条鱼共同限定一轮成果；不是每条鱼各打一个张力小游戏。",
+      "feedback": "鱼钩、捕获物与结算现金直接可见；深度和容量成长改变下一轮路径价值。",
+      "failure_and_recovery": "容量限制和遗漏目标主要影响本轮收益，资料没有支持一套持续断线惩罚。",
+      "loop_and_growth": "现金换深度、容量等能力；还有离线收入，增长会改变一次能获取多少与能到多深。",
+      "unknowns": "具体转盘数值、不同平台版本与后期升级曲线未实测。",
+      "transfer_inference": "未来打捞可试一屏中移动引导回收工具，容量只做一次选择约束；当前美容首版无需追加此小游戏。"
+    },
+    {
+      "game_id": "G48",
+      "heading": "Ridiculous Fishing EX：同一空间的规则反转",
+      "source_refs": [
+        "S18",
+        "S19"
+      ],
+      "input_chain": "鱼线下降时避鱼尽量下潜→碰鱼后转为上升并抓更多鱼→到表面把鱼抛到空中射击→收入换升级。",
+      "decisions": "下降尽量避开，上升尽量接近；前一阶段的深度和路径影响后面能收多少。",
+      "feedback": "方向转换和空中射击制造明显阶段回报。",
+      "failure_and_recovery": "下降提前碰鱼会缩短探索机会，后续遗漏鱼损失潜在收入；准确容量、伤害与武器参数未核。",
+      "loop_and_growth": "收益提升线长／深度和武器，再进入更丰富捕鱼；不同阶段的成绩串联。",
+      "unknowns": "三阶段由EX商店和媒体说明支持；运动输入细节与控制器选项未实玩。",
+      "transfer_inference": "可借去程／回程同物不同目标的结构；美容首版已经有两种动作，不再复制三阶段武器操作。"
+    },
+    {
+      "game_id": "G52",
+      "heading": "Black Desert：手动多步骤与延时自动的替代",
+      "source_refs": [
+        "S20"
+      ],
+      "input_chain": "装备竿→Space抛线→咬钩后Space→停移动表→限时按WASD序列→获得鱼；不启动小游戏可等自动钓取。",
+      "decisions": "手动更快取得结果，自动把注意力换成等待；地点资源状态影响咬钩等候。",
+      "feedback": "移动表、指令序列与鱼获等级显示阶段状态；自动模式可筛掉低品质鱼。",
+      "failure_and_recovery": "手动指令存在失败风险；鱼货价格保鲜等后续成本与收线失误分开。",
+      "loop_and_growth": "生活技能、钓竿与各种减时加成影响自动节奏，鱼用于交易／加工／烹饪。",
+      "unknowns": "PC葡语官方指南；全平台当前参数与实际手感未复核。",
+      "transfer_inference": "后期自动化可以用时间置换手部负担；首版不要同时加入停表、指令序列、保鲜与多币种系统。"
+    },
+    {
+      "game_id": "G32",
+      "heading": "Core Keeper：历史小游戏被移除，再作为选项保留",
+      "source_refs": [
+        "S41",
+        "S42"
+      ],
+      "input_chain": "1.0正式发布移除旧钓鱼小游戏；随后1.0.0.10在Gameplay设置增加Legacy fishing minigame开关，让玩家可启用旧流程。",
+      "decisions": "产品在默认流程简化与可选挑战之间调整，而不是所有玩家强制同一负担。",
+      "feedback": "这两份官方公告证明模式调整；本次没有看到当前实际HUD，不补造新默认的动画和键位。",
+      "failure_and_recovery": "旧版与简化版的精确失败成本未逐版本复核，不能直接拿早期体力／张力条作为当前默认。",
+      "loop_and_growth": "鱼仍进入资源成长循环；改变微操作不必删除采集在长期游戏里的作用。",
+      "unknowns": "公告不是2026客户端实测；当前默认值和键位需一次实玩确认。",
+      "transfer_inference": "若美容手感测试显示负担过高，先增加容错、减少重复次数，再评估可选辅助。不能据此现在就删除已确认的划线修甲。"
+    },
+    {
+      "game_id": "G34",
+      "heading": "Captain Whiskers：光标经过即可形成成群产出",
+      "source_refs": [
+        "ST4249770"
+      ],
+      "input_chain": "把光标移过鱼群→自动捕获接触目标→金币／钻石增长→购买成长→向下一海域推进。",
+      "decisions": "即时操作重点在空间分布、移动路径与批量效率；没有逐鱼咬钩的独立搏斗。",
+      "feedback": "一次路径可产生多个捕获和收益回报；工具／队员表现支撑增长。",
+      "failure_and_recovery": "商店没有描述逐鱼张力断线；不能因为主题是钓鱼就自动补上断线条。",
+      "loop_and_growth": "收益进入技能、队员与区域成长；升级让同一指针动作带来更大产出。",
+      "unknowns": "鼠标悬停捕获由官方商店支持；极端目标密度、速度和自动化平衡未实测。",
+      "transfer_inference": "可借即时反馈和目标分布。当前猫梳理必须按住且按对象规则积累，不能改成随便划过就自动清干净。"
+    },
+    {
+      "game_id": "G08",
+      "heading": "Real VR Fishing：体感参与本身就是玩法成本",
+      "source_refs": [
+        "ST1266470",
+        "S35"
+      ],
+      "input_chain": "VR中的持竿、抛投和收线模拟连接鱼获；具体Quest／SteamVR控制器与手部追踪映射尚未逐一取得。",
+      "decisions": "身体动作、竿的位置与收线表现形成参与；不同难度可能改变给玩家的信息，具体内容留待体验。",
+      "feedback": "真实场景、竿线运动及VR空间提供表现基础；不凭旧帖子给当前版本固定张力色规则。",
+      "failure_and_recovery": "断线与成功判定的完整实时规则未核，不把可能存在的每项动作写成事实。",
+      "loop_and_growth": "装备、地点和鱼类收藏支撑重复游玩。",
+      "unknowns": "不能从传统竿游戏推断VR键位；没有头显实测与完整官方教程。",
+      "transfer_inference": "值得借的是对象动作、线／工具声音和空间临场。实体卷线动作依设备，不适合鼠标美容直接复刻。"
+    },
+    {
+      "game_id": "G54",
+      "heading": "Ace Angler：实体卷线加主动技能",
+      "source_refs": [
+        "S37"
+      ],
+      "input_chain": "用街机杆控制抛出浮标→咬钩时卷线→按Thunder Bolts削弱鱼→成功捕获计分。",
+      "decisions": "实体卷线和雷击技能构成同一捕鱼战斗；目标与投入在街机环境中安排。",
+      "feedback": "大屏鱼、竿控制和主动技能效果给强反馈。",
+      "failure_and_recovery": "不同型号的消耗、时限和失败回报未核，不能补造投入几枚币或掉几分。",
+      "loop_and_growth": "得分与局次形成街机外层循环；不是家庭增量游戏的统一经济。",
+      "unknowns": "历史街机说明，不代表当前Switch版的按键与模式。",
+      "transfer_inference": "可借成功时的集中演出；硬件卷线和雷击按钮会增加动作种类，当前不适合。"
+    }
+  ],
+  "resources": [
+    {
+      "id": "R01",
+      "name": "鱼获／本轮对象",
+      "sources": [
+        "成功捕获"
+      ],
+      "sinks": [
+        "出售／作饵／加工／交付／收藏；逐游戏不同"
+      ],
+      "persistence": "按游戏、模式和取得阶段核对",
+      "claim_refs": [
+        "C03",
+        "C16",
+        "C17",
+        "C18"
+      ]
+    },
+    {
+      "id": "R02",
+      "name": "捕获进度／张力／质量等局内状态",
+      "sources": [
+        "有效操作"
+      ],
+      "sinks": [
+        "失误或推进规则"
+      ],
+      "persistence": "不是跨游戏统一；局内和局外必须分开",
+      "claim_refs": [
+        "C03",
+        "C06",
+        "C07",
+        "C11"
+      ]
+    },
+    {
+      "id": "R03",
+      "name": "收益与成长资源",
+      "sources": [
+        "取得物用途或任务回报"
+      ],
+      "sinks": [
+        "装备／地点／其他成长"
+      ],
+      "persistence": "按每游戏经济定义；本报告不统一合并币种",
+      "claim_refs": [
+        "C16",
+        "C17",
+        "C18",
+        "C22"
+      ]
+    }
+  ],
+  "mechanisms": [
+    {
+      "id": "M01",
+      "name": "识别咬钩后按一次",
+      "role": "几乎无持续拉扯；难度来自信号和窗口",
+      "preconditions": [
+        "按每游戏及平台版本定义，见游戏卡。"
+      ],
+      "actions": [
+        "看／听真正咬钩，及时提交"
+      ],
+      "state_transitions": [
+        "见代表交互卡的逐游戏状态链；本类别不是所有游戏通用状态机。"
+      ],
+      "costs": [
+        "失误代价、注意力与装备成本必须逐游戏确认。"
+      ],
+      "rewards": [
+        "取得鱼获；货币通常需经过出售或交付，不能统称每动作发钱。"
+      ],
+      "decisions": [
+        "几乎无持续拉扯；难度来自信号和窗口"
+      ],
+      "feedback": [
+        "详见对应游戏卡。"
+      ],
+      "failure_and_recovery": [
+        "详见游戏卡；资料不足明确保留未知。"
+      ],
+      "dependencies": [
+        "平台／模式与版本"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "game_refs": [
+        "G23",
+        "G24",
+        "G27",
+        "G29",
+        "G32",
+        "G42",
+        "G43"
+      ],
+      "claim_refs": [
+        "C01",
+        "C02",
+        "C21"
+      ],
+      "unknowns": [
+        "归类仅描述共享控制问题，不等于规则和参数相同。"
+      ],
+      "transfer_inference": "提示音、对象动画可借鉴；等待时间不照搬"
+    },
+    {
+      "id": "M02",
+      "name": "对准时机／序列输入",
+      "role": "时机精度，或连续阶段的记忆／反应",
+      "preconditions": [
+        "按每游戏及平台版本定义，见游戏卡。"
+      ],
+      "actions": [
+        "点击移动标记或按提示顺序"
+      ],
+      "state_transitions": [
+        "见代表交互卡的逐游戏状态链；本类别不是所有游戏通用状态机。"
+      ],
+      "costs": [
+        "失误代价、注意力与装备成本必须逐游戏确认。"
+      ],
+      "rewards": [
+        "取得鱼获；货币通常需经过出售或交付，不能统称每动作发钱。"
+      ],
+      "decisions": [
+        "时机精度，或连续阶段的记忆／反应"
+      ],
+      "feedback": [
+        "详见对应游戏卡。"
+      ],
+      "failure_and_recovery": [
+        "详见游戏卡；资料不足明确保留未知。"
+      ],
+      "dependencies": [
+        "平台／模式与版本"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "game_refs": [
+        "G09",
+        "G25",
+        "G52"
+      ],
+      "claim_refs": [
+        "C03",
+        "C20"
+      ],
+      "unknowns": [
+        "归类仅描述共享控制问题，不等于规则和参数相同。"
+      ],
+      "transfer_inference": "完美区间的可读性；不往梳理中插入独立QTE"
+    },
+    {
+      "id": "M03",
+      "name": "按住／松开追踪区域",
+      "role": "预判目标运动，平衡追踪和进度",
+      "preconditions": [
+        "按每游戏及平台版本定义，见游戏卡。"
+      ],
+      "actions": [
+        "控制条的位置，让目标保持在范围内"
+      ],
+      "state_transitions": [
+        "见代表交互卡的逐游戏状态链；本类别不是所有游戏通用状态机。"
+      ],
+      "costs": [
+        "失误代价、注意力与装备成本必须逐游戏确认。"
+      ],
+      "rewards": [
+        "取得鱼获；货币通常需经过出售或交付，不能统称每动作发钱。"
+      ],
+      "decisions": [
+        "预判目标运动，平衡追踪和进度"
+      ],
+      "feedback": [
+        "详见对应游戏卡。"
+      ],
+      "failure_and_recovery": [
+        "详见游戏卡；资料不足明确保留未知。"
+      ],
+      "dependencies": [
+        "平台／模式与版本"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "game_refs": [
+        "G13",
+        "G16",
+        "G19",
+        "G32",
+        "G37",
+        "G50",
+        "G51"
+      ],
+      "claim_refs": [
+        "C04",
+        "C05",
+        "C06",
+        "C14",
+        "C21"
+      ],
+      "unknowns": [
+        "归类仅描述共享控制问题，不等于规则和参数相同。"
+      ],
+      "transfer_inference": "同输入配不同对象运动；不要把实体服务变成盯条"
+    },
+    {
+      "id": "M04",
+      "name": "控制张力，收放交替",
+      "role": "张力上下限／鱼的疲劳；一直用力并不总是更快",
+      "preconditions": [
+        "按每游戏及平台版本定义，见游戏卡。"
+      ],
+      "actions": [
+        "按住、释放、滑杆或放线，维持有效范围"
+      ],
+      "state_transitions": [
+        "见代表交互卡的逐游戏状态链；本类别不是所有游戏通用状态机。"
+      ],
+      "costs": [
+        "失误代价、注意力与装备成本必须逐游戏确认。"
+      ],
+      "rewards": [
+        "取得鱼获；货币通常需经过出售或交付，不能统称每动作发钱。"
+      ],
+      "decisions": [
+        "张力上下限／鱼的疲劳；一直用力并不总是更快"
+      ],
+      "feedback": [
+        "详见对应游戏卡。"
+      ],
+      "failure_and_recovery": [
+        "详见游戏卡；资料不足明确保留未知。"
+      ],
+      "dependencies": [
+        "平台／模式与版本"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "game_refs": [
+        "G14",
+        "G16",
+        "G17",
+        "G22",
+        "G30",
+        "G44",
+        "G45",
+        "G46"
+      ],
+      "claim_refs": [
+        "C07",
+        "C15"
+      ],
+      "unknowns": [
+        "归类仅描述共享控制问题，不等于规则和参数相同。"
+      ],
+      "transfer_inference": "服务速度可做可读舒适窗口，但无需新增收放键"
+    },
+    {
+      "id": "M05",
+      "name": "方向对抗与疲劳周期",
+      "role": "方向、风险与收线时机同时判断；规则各有不同",
+      "preconditions": [
+        "按每游戏及平台版本定义，见游戏卡。"
+      ],
+      "actions": [
+        "观察鱼游向，调整鱼竿并择机收线"
+      ],
+      "state_transitions": [
+        "见代表交互卡的逐游戏状态链；本类别不是所有游戏通用状态机。"
+      ],
+      "costs": [
+        "失误代价、注意力与装备成本必须逐游戏确认。"
+      ],
+      "rewards": [
+        "取得鱼获；货币通常需经过出售或交付，不能统称每动作发钱。"
+      ],
+      "decisions": [
+        "方向、风险与收线时机同时判断；规则各有不同"
+      ],
+      "feedback": [
+        "详见对应游戏卡。"
+      ],
+      "failure_and_recovery": [
+        "详见游戏卡；资料不足明确保留未知。"
+      ],
+      "dependencies": [
+        "平台／模式与版本"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "game_refs": [
+        "G07",
+        "G20",
+        "G21",
+        "G26",
+        "G31"
+      ],
+      "claim_refs": [
+        "C08",
+        "C11",
+        "C12",
+        "C13"
+      ],
+      "unknowns": [
+        "归类仅描述共享控制问题，不等于规则和参数相同。"
+      ],
+      "transfer_inference": "猫反应应指示原因；多轴拉扯当前负担偏大"
+    },
+    {
+      "id": "M06",
+      "name": "拟真准备、抛投与拟饵操控",
+      "role": "准备决策与多参数动态系统",
+      "preconditions": [
+        "按每游戏及平台版本定义，见游戏卡。"
+      ],
+      "actions": [
+        "选钓点／钓组，控制抛距、拟饵、泄力与提竿"
+      ],
+      "state_transitions": [
+        "见代表交互卡的逐游戏状态链；本类别不是所有游戏通用状态机。"
+      ],
+      "costs": [
+        "失误代价、注意力与装备成本必须逐游戏确认。"
+      ],
+      "rewards": [
+        "取得鱼获；货币通常需经过出售或交付，不能统称每动作发钱。"
+      ],
+      "decisions": [
+        "准备决策与多参数动态系统"
+      ],
+      "feedback": [
+        "详见对应游戏卡。"
+      ],
+      "failure_and_recovery": [
+        "详见游戏卡；资料不足明确保留未知。"
+      ],
+      "dependencies": [
+        "平台／模式与版本"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "game_refs": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G15",
+        "G27"
+      ],
+      "claim_refs": [
+        "C09",
+        "C10"
+      ],
+      "unknowns": [
+        "归类仅描述共享控制问题，不等于规则和参数相同。"
+      ],
+      "transfer_inference": "选择和成长留后续；首版不引入整套装备模拟"
+    },
+    {
+      "id": "M07",
+      "name": "扫过目标的批量捕获",
+      "role": "移动路径、目标分布与多单位产出",
+      "preconditions": [
+        "按每游戏及平台版本定义，见游戏卡。"
+      ],
+      "actions": [
+        "光标经过或操控网，捕获成群目标"
+      ],
+      "state_transitions": [
+        "见代表交互卡的逐游戏状态链；本类别不是所有游戏通用状态机。"
+      ],
+      "costs": [
+        "失误代价、注意力与装备成本必须逐游戏确认。"
+      ],
+      "rewards": [
+        "取得鱼获；货币通常需经过出售或交付，不能统称每动作发钱。"
+      ],
+      "decisions": [
+        "移动路径、目标分布与多单位产出"
+      ],
+      "feedback": [
+        "详见对应游戏卡。"
+      ],
+      "failure_and_recovery": [
+        "详见游戏卡；资料不足明确保留未知。"
+      ],
+      "dependencies": [
+        "平台／模式与版本"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "game_refs": [
+        "G33",
+        "G34"
+      ],
+      "claim_refs": [
+        "C22"
+      ],
+      "unknowns": [
+        "归类仅描述共享控制问题，不等于规则和参数相同。"
+      ],
+      "transfer_inference": "即时局部反馈；不能省略猫身对象的处理规则"
+    },
+    {
+      "id": "M08",
+      "name": "控制鱼钩路径与容量",
+      "role": "取舍在空间路径与容量／深度，未必有咬钩等待",
+      "preconditions": [
+        "按每游戏及平台版本定义，见游戏卡。"
+      ],
+      "actions": [
+        "下潜／回收时移动鱼钩，选取路径上的目标"
+      ],
+      "state_transitions": [
+        "见代表交互卡的逐游戏状态链；本类别不是所有游戏通用状态机。"
+      ],
+      "costs": [
+        "失误代价、注意力与装备成本必须逐游戏确认。"
+      ],
+      "rewards": [
+        "取得鱼获；货币通常需经过出售或交付，不能统称每动作发钱。"
+      ],
+      "decisions": [
+        "取舍在空间路径与容量／深度，未必有咬钩等待"
+      ],
+      "feedback": [
+        "详见对应游戏卡。"
+      ],
+      "failure_and_recovery": [
+        "详见游戏卡；资料不足明确保留未知。"
+      ],
+      "dependencies": [
+        "平台／模式与版本"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "game_refs": [
+        "G11",
+        "G12",
+        "G47",
+        "G48",
+        "G49"
+      ],
+      "claim_refs": [
+        "C16",
+        "C17",
+        "C18",
+        "C19"
+      ],
+      "unknowns": [
+        "归类仅描述共享控制问题，不等于规则和参数相同。"
+      ],
+      "transfer_inference": "未来打捞可优先试一屏路线选择"
+    },
+    {
+      "id": "M09",
+      "name": "直接捕猎与捕后加工",
+      "role": "动作与处理工序形成任务循环",
+      "preconditions": [
+        "按每游戏及平台版本定义，见游戏卡。"
+      ],
+      "actions": [
+        "瞄准／潜水捕获，再加工、交付或经营"
+      ],
+      "state_transitions": [
+        "见代表交互卡的逐游戏状态链；本类别不是所有游戏通用状态机。"
+      ],
+      "costs": [
+        "失误代价、注意力与装备成本必须逐游戏确认。"
+      ],
+      "rewards": [
+        "取得鱼获；货币通常需经过出售或交付，不能统称每动作发钱。"
+      ],
+      "decisions": [
+        "动作与处理工序形成任务循环"
+      ],
+      "feedback": [
+        "详见对应游戏卡。"
+      ],
+      "failure_and_recovery": [
+        "详见游戏卡；资料不足明确保留未知。"
+      ],
+      "dependencies": [
+        "平台／模式与版本"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "game_refs": [
+        "G10",
+        "G11",
+        "G18",
+        "G28",
+        "G48"
+      ],
+      "claim_refs": [
+        "C16",
+        "C19"
+      ],
+      "unknowns": [
+        "归类仅描述共享控制问题，不等于规则和参数相同。"
+      ],
+      "transfer_inference": "对象处理变化和顾客完成结算更贴近美容"
+    },
+    {
+      "id": "M10",
+      "name": "手动与自动并行",
+      "role": "注意力分配与成长；自动化不必自动替代全部选择",
+      "preconditions": [
+        "按每游戏及平台版本定义，见游戏卡。"
+      ],
+      "actions": [
+        "主动操作获取额外收益，或配置后台捕鱼"
+      ],
+      "state_transitions": [
+        "见代表交互卡的逐游戏状态链；本类别不是所有游戏通用状态机。"
+      ],
+      "costs": [
+        "失误代价、注意力与装备成本必须逐游戏确认。"
+      ],
+      "rewards": [
+        "取得鱼获；货币通常需经过出售或交付，不能统称每动作发钱。"
+      ],
+      "decisions": [
+        "注意力分配与成长；自动化不必自动替代全部选择"
+      ],
+      "feedback": [
+        "详见对应游戏卡。"
+      ],
+      "failure_and_recovery": [
+        "详见游戏卡；资料不足明确保留未知。"
+      ],
+      "dependencies": [
+        "平台／模式与版本"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "game_refs": [
+        "G14",
+        "G23",
+        "G33",
+        "G35",
+        "G36",
+        "G38",
+        "G39",
+        "G52"
+      ],
+      "claim_refs": [
+        "C15",
+        "C20"
+      ],
+      "unknowns": [
+        "归类仅描述共享控制问题，不等于规则和参数相同。"
+      ],
+      "transfer_inference": "当前暂缓，后期才考虑替代机械重复"
+    },
+    {
+      "id": "M11",
+      "name": "VR／街机实体操控",
+      "role": "身体动作和设备反馈",
+      "preconditions": [
+        "按每游戏及平台版本定义，见游戏卡。"
+      ],
+      "actions": [
+        "手持杆、转动／模拟卷线、动作与专用按钮"
+      ],
+      "state_transitions": [
+        "见代表交互卡的逐游戏状态链；本类别不是所有游戏通用状态机。"
+      ],
+      "costs": [
+        "失误代价、注意力与装备成本必须逐游戏确认。"
+      ],
+      "rewards": [
+        "取得鱼获；货币通常需经过出售或交付，不能统称每动作发钱。"
+      ],
+      "decisions": [
+        "身体动作和设备反馈"
+      ],
+      "feedback": [
+        "详见对应游戏卡。"
+      ],
+      "failure_and_recovery": [
+        "详见游戏卡；资料不足明确保留未知。"
+      ],
+      "dependencies": [
+        "平台／模式与版本"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "game_refs": [
+        "G08",
+        "G53",
+        "G54"
+      ],
+      "claim_refs": [
+        "C23",
+        "C24"
+      ],
+      "unknowns": [
+        "归类仅描述共享控制问题，不等于规则和参数相同。"
+      ],
+      "transfer_inference": "演出与声音可借；硬件输入不能直接移植"
+    },
+    {
+      "id": "M12",
+      "name": "商业捕鱼与工具调度",
+      "role": "多段航次的生产规划，不是单鱼微操作",
+      "preconditions": [
+        "按每游戏及平台版本定义，见游戏卡。"
+      ],
+      "actions": [
+        "路线、渔具部署、起网、船员与航次管理"
+      ],
+      "state_transitions": [
+        "见代表交互卡的逐游戏状态链；本类别不是所有游戏通用状态机。"
+      ],
+      "costs": [
+        "失误代价、注意力与装备成本必须逐游戏确认。"
+      ],
+      "rewards": [
+        "取得鱼获；货币通常需经过出售或交付，不能统称每动作发钱。"
+      ],
+      "decisions": [
+        "多段航次的生产规划，不是单鱼微操作"
+      ],
+      "feedback": [
+        "详见对应游戏卡。"
+      ],
+      "failure_and_recovery": [
+        "详见游戏卡；资料不足明确保留未知。"
+      ],
+      "dependencies": [
+        "平台／模式与版本"
+      ],
+      "resource_refs": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "game_refs": [
+        "G40",
+        "G41"
+      ],
+      "claim_refs": [],
+      "unknowns": [
+        "归类仅描述共享控制问题，不等于规则和参数相同。"
+      ],
+      "transfer_inference": "商业经营观察；首版美容无需航线、配额模拟"
+    }
+  ],
+  "loops": [
+    {
+      "id": "L01",
+      "scale": "动作／单次捕获",
+      "entry_conditions": [
+        "准备目标与工具"
+      ],
+      "steps": [
+        "抛投或直接捕获",
+        "等待／吸引（如有）",
+        "信号确认（如有）",
+        "时机／追踪／张力／路径控制",
+        "取得或失败"
+      ],
+      "mechanism_refs": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M10",
+        "M11",
+        "M12"
+      ],
+      "what_changes_next_cycle": [
+        "目标、位置或工具条件变化；详见游戏卡"
+      ],
+      "exit_or_failure_paths": [
+        "丢本次机会、进度／收益变化或装备损失；按游戏确认"
+      ],
+      "claim_refs": [
+        "C01",
+        "C03",
+        "C06",
+        "C17"
+      ]
+    },
+    {
+      "id": "L02",
+      "scale": "任务／成长",
+      "entry_conditions": [
+        "有鱼获或任务成果"
+      ],
+      "steps": [
+        "出售、加工、交付或收藏",
+        "投入成长或完成目标",
+        "遇到新对象／新地点",
+        "再次捕获"
+      ],
+      "mechanism_refs": [
+        "M06",
+        "M08",
+        "M09",
+        "M10",
+        "M12"
+      ],
+      "what_changes_next_cycle": [
+        "处理范围、容量、深度、可接触目标或注意力负担"
+      ],
+      "exit_or_failure_paths": [
+        "目的达成／容量及资源约束；不假设所有游戏无限循环"
+      ],
+      "claim_refs": [
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C22"
+      ]
+    }
+  ],
+  "design_principles": [
+    "少输入可以通过可见对象差异形成技巧；不能只加重复次数。",
+    "错误原因应可读，失败扣什么和保留什么分别定义。",
+    "考虑替代输入及模式版本，不凭主题假设断线条。",
+    "结算归属和物品用途连接成长，不把每次局部反馈都记成最终发钱。"
+  ],
+  "transfer_candidates": [
+    {
+      "id": "T01",
+      "status": "candidate",
+      "source_mechanism_refs": [
+        "M04",
+        "M05"
+      ],
+      "priority": 1,
+      "fit_verdict": "优先验证",
+      "project_source_refs": [
+        "P02",
+        "P03",
+        "P04"
+      ],
+      "affected_systems": [
+        "梳理速度反馈",
+        "顾客反应",
+        "评价提示"
+      ],
+      "specific_change": "已确认过速疼痛扣评，但阈值表现未定。在工具与猫身接触时，舒适速度给平稳梳毛反馈，接近危险给姿态／短音预警，实际违规再明确疼痛与扣评；若使用轻量速度标记，贴近工具，不新增独立追踪条操作。",
+      "reusable_capabilities": [
+        "现有猫外观／动画与HUD样式可参考；实际素材待核。"
+      ],
+      "new_work": [
+        "在既有待办D03/D05中细化安全、预警、违规的反馈规则。",
+        "按对象局部速度校准；非服务移动不进入风险判断。"
+      ],
+      "expected_benefit": "让玩家在被扣评前知道如何修正速度，持续拖动能保留判断。",
+      "tradeoffs": [
+        "过多颜色条会抢走看猫的注意力。",
+        "预警过长可能没有张力；过短可能只是事后提示。"
+      ],
+      "problem_to_solve": "粗暴操作已有代价，尚缺可读且可学习的过程表现。",
+      "preserved_causal_chain": "有效接触→速度接近对象舒适边界→给预警→玩家减速→处理继续；真正违规才疼痛扣评。",
+      "project_mapping": [
+        "张力状态映射为局部服务速度／舒适状态；不把鱼的随机游向映射成猫随机扣评。"
+      ],
+      "dependencies_and_conflicts": [
+        "依赖已有D03/D05；本建议不是新增任务。",
+        "不增加第二套全局体力／怒气条；不要求按右键放线。"
+      ],
+      "minimal_prototype": "同一只猫、同一毛结，两组仅反馈不同：A当前直接疼痛扣评；B增加贴近对象的预警。都保留相同已确认扣评与局部进度。",
+      "hypothesis": "前置预警能减少不知道原因的失误，并保持玩家关注猫身。",
+      "measures": [
+        "首次遇到毛结后是否能说明为何失败。",
+        "未经口头提醒的第二次操作能否主动调整速度。",
+        "玩家看猫身还是额外标记；记录停顿与反复误操作。"
+      ],
+      "falsifying_observations": [
+        "玩家仍猜不出扣评原因。",
+        "视觉标记遮挡服务区域或把体验变成盯指标。",
+        "为完成对象必须越过疼痛阈值。"
+      ],
+      "implementation_burden": "低到中：沿既有输入／评价任务加反馈与调参，需新提示表现。",
+      "next_step": "设计细化到现有原型验收，先真人对比；不改正式规则或立即开发新小游戏。"
+    },
+    {
+      "id": "T02",
+      "status": "candidate",
+      "source_mechanism_refs": [
+        "M03",
+        "M09"
+      ],
+      "priority": 1,
+      "fit_verdict": "优先验证",
+      "project_source_refs": [
+        "P02",
+        "P03",
+        "P04"
+      ],
+      "affected_systems": [
+        "覆盖物规则",
+        "第二只猫差异",
+        "关单节奏"
+      ],
+      "specific_change": "当前同动作不同对象已确认。进一步把对象几何、处理需求和反馈做成可读配置：普通灰尘适合较长扫过；毛结慢梳；垃圾短程往复。第二猫主要改变区域／对象分布与处理量，不偷偷反转基本正确动作。",
+      "reusable_capabilities": [
+        "已有猫外观素材；D03局部覆盖物模型是待实装依赖。"
+      ],
+      "new_work": [
+        "对象配置与视觉提示的一一对应。",
+        "用第二只猫验证差异；在现有D07中完成而非另立任务。"
+      ],
+      "expected_benefit": "少输入下产生不同处理节奏，让顾客差异来自对象而不只是换贴图。",
+      "tradeoffs": [
+        "只增加耐受次数可能变成重复劳动。",
+        "差异太隐蔽会被理解为随机惩罚。"
+      ],
+      "problem_to_solve": "需要判断对象规则能否提供实际技巧差异，同时保持两种基础输入。",
+      "preserved_causal_chain": "看出对象类型→选择同一拖动的速度／路径→局部状态按规则改善→反馈证明选择有效→下一对象改变处理节奏。",
+      "project_mapping": [
+        "Stardew不同鱼运动对应不同控制节奏；Scale处理物不同耐受对应服务物不同规则。"
+      ],
+      "dependencies_and_conflicts": [
+        "沿用D03/D07；不能加每猫独立按钮小游戏。",
+        "垃圾重复规则必须有不痛且可完成的速度范围。"
+      ],
+      "minimal_prototype": "两只猫都可按住拖动完成；一只以普通覆盖物为主，一只增加明显毛结与垃圾，保持相同基础输入与总任务量级。",
+      "hypothesis": "对象规则差异比单纯把清理量翻倍更能产生愿意继续的变化。",
+      "measures": [
+        "玩家能否辨识需要慢梳和往复的对象。",
+        "重复第二单时是否改变操作，而非机械乱扫。",
+        "记录最后小块卡住的时间、原因和退出意愿。"
+      ],
+      "falsifying_observations": [
+        "只感到第二猫更慢，没有新的判断。",
+        "对象看不出区别，需要背隐藏规则。",
+        "正常动作无法完成或需要新增键位。"
+      ],
+      "implementation_burden": "中：配置与对象表现，已在现有原型范围；核心区域判定仍待实现。",
+      "next_step": "在D03/D07细化两猫配置，再做真人服务对比；候选不改正式任务列表。"
+    },
+    {
+      "id": "T03",
+      "status": "candidate",
+      "source_mechanism_refs": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "priority": 1,
+      "fit_verdict": "可局部借鉴",
+      "project_source_refs": [
+        "P02",
+        "P04"
+      ],
+      "affected_systems": [
+        "梳理进度保留",
+        "修甲恢复",
+        "质量结算"
+      ],
+      "specific_change": "现有规则已确认局部进度保留、疼痛扣评、浅剪继续。细化失败状态的可读性：有效但浅的剪切显示真实变短，深剪给明确扣评并保证能关单；松手可以观察／调整而不清零。不要引入鱼逃式整单归零。",
+      "reusable_capabilities": [
+        "现有D03/D04/D05/D06设计边界。"
+      ],
+      "new_work": [
+        "提示“需要继续／已完成／扣评但可继续”的三个状态。",
+        "明确深剪恢复与一次手势一次判定；记录为原型选择。"
+      ],
+      "expected_benefit": "保留技巧代价，又避免失误迫使玩家重复整只猫或卡在受伤部位。",
+      "tradeoffs": [
+        "反馈过弱会让操作变得可忽略。",
+        "若任何乱剪都快速完成且收益差很小，玩家可能故意违规。"
+      ],
+      "problem_to_solve": "软失败必须有真实质量区别，同时能继续完成服务。",
+      "preserved_causal_chain": "失误→明确局部／评价变化→已处理部分保留→玩家可以修正或继续→最终整单收益体现质量并只发一次。",
+      "project_mapping": [
+        "DREDGE宽松选项和Core Keeper可选旧玩法提供负担取舍的参考；并不直接证明猫美容的最优失败代价。"
+      ],
+      "dependencies_and_conflicts": [
+        "浅剪不新增扣评。",
+        "深剪完成该根是现有实现建议而非本次新增用户确认。",
+        "不新增伤病／医疗；不移植原作全部辅助菜单。"
+      ],
+      "minimal_prototype": "同需求两单：正常服务与故意失误，均能完成且钱包各入账一次；中途松手再继续；浅、完美、深三次有效手势分别演示。",
+      "hypothesis": "可解释的局部失误和较低收益比整单重做更适合重复服务。",
+      "measures": [
+        "玩家失误后能否知道下一步。",
+        "失败单是否可自动结算且能接下一单。",
+        "正常和失误的金额差异是否被理解；观察是否故意违规提速。"
+      ],
+      "falsifying_observations": [
+        "玩家卡单或只能重开。",
+        "玩家找不到扣评对应的动作。",
+        "反复违规在时间收益上显著更划算。"
+      ],
+      "implementation_burden": "低到中：主要为既有D04/D05/D06的状态／反馈细化及真人校准。",
+      "next_step": "作为现有验收观察，不新增整单归零规则；收益阈值待用户／原型调参。"
+    },
+    {
+      "id": "T04",
+      "status": "candidate",
+      "source_mechanism_refs": [
+        "M08"
+      ],
+      "priority": 2,
+      "fit_verdict": "暂缓",
+      "project_source_refs": [
+        "P02",
+        "P03",
+        "P07",
+        "P08"
+      ],
+      "affected_systems": [
+        "未来轨道打捞交互"
+      ],
+      "specific_change": "美容主交互验证后，可另做一屏轨道回收：按住拖动引导回收头，去／回程经过可见物体；用有限容量或路径差异形成选择。只试一种输入、两种目标行为，不同时做张力、停表、指令序列和高频点击。",
+      "reusable_capabilities": [
+        "现有Godot工程、科幻船舱题材；美容路径输入能否复用需当时核对。"
+      ],
+      "new_work": [
+        "可见目标和回收头的移动／碰撞。",
+        "单轮容量或路径取舍、取得物的去向与结束条件。"
+      ],
+      "expected_benefit": "鱼钩路径的空间选择可转成低输入的回收操作，区别于一次按钮随机开箱。",
+      "tradeoffs": [
+        "新增副玩法会分散主交互验证。",
+        "如果目标和容量只留下数值最优答案，路线可能没有乐趣。"
+      ],
+      "problem_to_solve": "未来打捞若需要手动参与，应让玩家决定如何回收而非只确认结果。",
+      "preserved_causal_chain": "看见目标分布→选择回收路径→空间接触与容量决定得到什么→本轮取得物改变下一轮可选目标／工具。",
+      "project_mapping": [
+        "Tiny Fishing路径和容量；Cat Goes Fishing路径与鱼获用途；Scale Jam方向导向。"
+      ],
+      "dependencies_and_conflicts": [
+        "美容Demo先完成真人验证。",
+        "不改现有回收舱任务或默认新增押金、断线、猫毛兑换和锻造链。",
+        "未来打捞的货币和目标用途需重新核对最新设计。"
+      ],
+      "minimal_prototype": "仅一屏、一个拖动回收头、两类可见目标、一次回收清单；不要求持久存档与经营经济。",
+      "hypothesis": "可见路径取舍能提供重复操作差异，而不会变成新的复杂小游戏。",
+      "measures": [
+        "玩家能否说明这次为何选这条路。",
+        "不同路线是否产生可理解的收益／目标差异。",
+        "第二轮是否有新的判断，操作是否明显增加负担。"
+      ],
+      "falsifying_observations": [
+        "所有玩家只需横扫全图且无取舍。",
+        "必须新增多个按钮才能解释玩法。",
+        "打捞验证占用当前美容开发而主玩法仍未确认。"
+      ],
+      "implementation_burden": "中：新增完整但小型的空间捕获循环；尚未实现。",
+      "next_step": "暂缓，待美容真人验收后决定是否开独立原型；当前只保留研究候选。"
+    }
+  ],
+  "open_questions": [
+    "当前美容原型何时实现以及真人操作证据？",
+    "舒适速度、对象处理量、完美带、扣评与收益如何校准？",
+    "未来打捞的目标和取得物用途是否值得用路径取舍？",
+    "WEBFISHING当期替代输入、各VR设备映射和全部概况游戏的失败恢复需补实玩。"
+  ]
+}

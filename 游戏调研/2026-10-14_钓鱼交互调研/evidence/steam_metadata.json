@@ -1,0 +1,742 @@
+[
+  {
+    "appid": 380600,
+    "name": "Fishing Planet",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=380600&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/380600/",
+    "captured_at": "2026-10-14T21:59:46.977704+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Aug 28, 2017"
+    },
+    "developers": [
+      "Fishing Planet LLC"
+    ],
+    "publishers": [
+      "Fishing Planet LLC"
+    ],
+    "short_description": "Fishing Planet® is a highly realistic first-person online multiplayer fishing simulator. Developed by avid fishing enthusiasts to bring you the full thrill of actual angling on your PC. Free-to-Play and just a download away!"
+  },
+  {
+    "appid": 766570,
+    "name": "Russian Fishing 4",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=766570&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/766570/",
+    "captured_at": "2026-10-14T21:59:46.945592+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Nov 10, 2021"
+    },
+    "developers": [
+      "FishSoft LLC"
+    ],
+    "publishers": [
+      "FishSoft LLC"
+    ],
+    "short_description": "Russian Fishing 4 is a fishing simulator with RPG elements. There is no story line and the whole process is based on the concept of an open, free to roam and free to play game."
+  },
+  {
+    "appid": 1136380,
+    "name": "Ultimate Fishing® Simulator 2",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1136380&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1136380/",
+    "captured_at": "2026-10-14T21:59:46.977192+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "May 9, 2025"
+    },
+    "developers": [
+      "Silent Bear Studio",
+      "SHINING GAMES"
+    ],
+    "publishers": [
+      "Ultimate Games S.A."
+    ],
+    "short_description": "Fish around the globe using float, bottom, spinning, or casting gear, and catch over 60 realistic fish species. Play solo or online in normal, realistic, or sandbox mode! Explore stunning locations, switch to an underwater cam, and fill your trophy room!"
+  },
+  {
+    "appid": 1408610,
+    "name": "Call of the Wild: The Angler™",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1408610&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1408610/",
+    "captured_at": "2026-10-14T21:59:46.976677+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Aug 31, 2022"
+    },
+    "developers": [
+      "Expansive Worlds"
+    ],
+    "publishers": [
+      "Avalanche Studios"
+    ],
+    "short_description": "The Angler is an open world fishing game that can be played solo or with friends. Discover and catch a wide variety of unique fish species, from common to rare, on your journey to become a master angler."
+  },
+  {
+    "appid": 1449500,
+    "name": "Bassmaster® Fishing",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1449500&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1449500/",
+    "captured_at": "2026-10-14T21:59:47.022777+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Oct 28, 2021"
+    },
+    "developers": [
+      "Dovetail Games"
+    ],
+    "publishers": [
+      "Dovetail Games - Fishing"
+    ],
+    "short_description": "Bassmaster® Fishing, the official video game is OUT NOW, bringing the thrill of competitive big bass fishing to PC. Dive into the fully licensed content from the Bassmaster series from amateur to elite events."
+  },
+  {
+    "appid": 314520,
+    "name": "Euro Fishing",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=314520&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/314520/",
+    "captured_at": "2026-10-14T21:59:46.961065+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Nov 2, 2015"
+    },
+    "developers": [
+      "Dovetail Games"
+    ],
+    "publishers": [
+      "Dovetail Games"
+    ],
+    "short_description": "Euro Fishing immerses you deep into the adrenaline-packed action, fun and beauty of Europe’s most famous lakes. Master your rod, line and tactics, and refine your technique to become a top angler. This is the closest you can get to real fishing from the comfort of your own couch."
+  },
+  {
+    "appid": 71240,
+    "name": "SEGA Bass Fishing",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=71240&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/71240/",
+    "captured_at": "2026-10-14T21:59:47.234888+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Mar 4, 2011"
+    },
+    "developers": [
+      "SEGA"
+    ],
+    "publishers": [
+      "SEGA"
+    ],
+    "short_description": "Explore the exciting sport of Bass fishing! Based on the Dreamcast hit, motor out to eight different fishing locations to catch the biggest and baddest Bass possible! Choose between fourteen different lures, and compete in four tournaments. Start off as an amateur, and work your way up to the pros in the Masters Classic tournament."
+  },
+  {
+    "appid": 1266470,
+    "name": "Real VR Fishing",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1266470&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1266470/",
+    "captured_at": "2026-10-14T21:59:47.410855+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Dec 6, 2024"
+    },
+    "developers": [
+      "Devs United Games, Inc"
+    ],
+    "publishers": [
+      "Devs United Games, Inc."
+    ],
+    "short_description": "Real VR Fishing recreates real-world locations. Start across 40 maps, then expand to 95 fishing spots and 300+ species through DLC. Cast, feel every bite, and build your own aquarium — solo or with up to 3 friends. Pure, relaxing catch-and-release, in VR."
+  },
+  {
+    "appid": 1562430,
+    "name": "DREDGE",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1562430&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1562430/",
+    "captured_at": "2026-10-14T21:59:47.391977+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Mar 30, 2023"
+    },
+    "developers": [
+      "Black Salt Games"
+    ],
+    "publishers": [
+      "Team17"
+    ],
+    "short_description": "DREDGE is a single-player fishing adventure with a sinister undercurrent. Sell your catch, upgrade your boat, and dredge the depths for long-buried secrets. Explore a mysterious archipelago and discover why some things are best left forgotten."
+  },
+  {
+    "appid": 1868140,
+    "name": "DAVE THE DIVER",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1868140&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1868140/",
+    "captured_at": "2026-10-14T21:59:47.339514+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Jun 28, 2023"
+    },
+    "developers": [
+      "MINTROCKET"
+    ],
+    "publishers": [
+      "MINTROCKET"
+    ],
+    "short_description": "DAVE THE DIVER is a casual, singleplayer adventure RPG featuring deep-sea exploration and fishing during the day and sushi restaurant management at night. Join Dave and his quirky friends as they seek to uncover the secrets of the mysterious Blue Hole."
+  },
+  {
+    "appid": 3198890,
+    "name": "Scale the Depths",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=3198890&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/3198890/",
+    "captured_at": "2026-10-14T21:59:47.275396+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "May 28, 2026"
+    },
+    "developers": [
+      "Glass Gecko Games"
+    ],
+    "publishers": [
+      "Pretty Soon",
+      "Phoenix Games"
+    ],
+    "short_description": "Fish, scale, sell, repeat. Scale the Depths is a casual fishing game built around this simple but satisfying loop. Feed hungry customers, upgrade your gear, and uncover the many secrets hidden beneath the surface."
+  },
+  {
+    "appid": 343780,
+    "name": "Cat Goes Fishing",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=343780&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/343780/",
+    "captured_at": "2026-10-14T21:59:47.290494+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Jan 19, 2015"
+    },
+    "developers": [
+      "Cat5Games"
+    ],
+    "publishers": null,
+    "short_description": "Start out on an island with a basic rod. Progress into a radar-wielding master fisher-cat scouring the sea for the biggest and baddest fish. Each fish has unique behaviors that you will learn to exploit as you tailor your arsenal of fishing rods to suit your style of play. Mrrrow!"
+  },
+  {
+    "appid": 3146520,
+    "name": "WEBFISHING",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=3146520&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/3146520/",
+    "captured_at": "2026-10-14T21:59:47.519943+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Oct 11, 2024"
+    },
+    "developers": [
+      "lamedeveloper"
+    ],
+    "publishers": [
+      "lamedeveloper"
+    ],
+    "short_description": "WEBFISHING a multiplayer chatroom-focused fishing game! Relax and fish (on the web!)"
+  },
+  {
+    "appid": 3483740,
+    "name": "Cast n Chill",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=3483740&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/3483740/",
+    "captured_at": "2026-10-14T21:59:47.554762+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Jun 16, 2025"
+    },
+    "developers": [
+      "Wombat Brawler"
+    ],
+    "publishers": [
+      "Wombat Brawler"
+    ],
+    "short_description": "Cast n Chill is a relaxing fishing game where you explore serene lakes, rivers, and oceans. Catch rare fish, upgrade your gear and reel in legendary catches - all with your loyal companion by your side."
+  },
+  {
+    "appid": 949600,
+    "name": "Intergalactic Fishing",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=949600&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/949600/",
+    "captured_at": "2026-10-14T21:59:47.707012+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Apr 21, 2020"
+    },
+    "developers": [
+      "Boat Anchor Games"
+    ],
+    "publishers": [
+      "Boat Anchor Games"
+    ],
+    "short_description": "Intergalactic Fishing is a fishing RPG that features procedurally generated content and graphics. Travel to lakes all over the universe and catch unique fish, explore uncharted lakes and sell data, complete quests, upgrade your gear, compete in fishing tournaments, design your own lures, and more!"
+  },
+  {
+    "appid": 1477790,
+    "name": "Luna's Fishing Garden",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1477790&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1477790/",
+    "captured_at": "2026-10-14T21:59:47.707528+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Jun 16, 2021"
+    },
+    "developers": [
+      "Coldwild Games",
+      "illufinch"
+    ],
+    "publishers": [
+      "Coldwild Games"
+    ],
+    "short_description": "Luna's Fishing Garden is a short, cozy fishing and building game. Catch fish, trade it in and create the garden of your dreams by planting new trees, placing water objects and bringing animals to the archipelago."
+  },
+  {
+    "appid": 1781030,
+    "name": "Fishing Paradiso",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1781030&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1781030/",
+    "captured_at": "2026-10-14T21:59:47.691217+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Jun 1, 2022"
+    },
+    "developers": [
+      "Odencat"
+    ],
+    "publishers": [
+      "Odencat"
+    ],
+    "short_description": "Embark on a relaxing tropical adventure in this cozy fishing RPG! Explore wondrous locations and befriend a charming cast of characters on your quest to become a master angler and discover the true meaning of paradise!"
+  },
+  {
+    "appid": 1361400,
+    "name": "Moonglow Bay",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1361400&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1361400/",
+    "captured_at": "2026-10-14T21:59:47.706504+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Oct 26, 2021"
+    },
+    "developers": [
+      "Bunnyhug"
+    ],
+    "publishers": [
+      "Coatsink"
+    ],
+    "short_description": "Embark on a journey as a rookie angler in Moonglow Bay, fulfilling your partner's final wish. Team up with friends, family, and neighbours to hone your fishing skills, nourish relationships, and restore a remote town's fractured community in this slice-of-life fishing RPG!"
+  },
+  {
+    "appid": 413150,
+    "name": "Stardew Valley",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=413150&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/413150/",
+    "captured_at": "2026-10-14T21:59:47.794503+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Feb 26, 2016"
+    },
+    "developers": [
+      "ConcernedApe"
+    ],
+    "publishers": [
+      "ConcernedApe"
+    ],
+    "short_description": "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home?"
+  },
+  {
+    "appid": 1172620,
+    "name": "Sea of Thieves: 2026 Edition",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1172620&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1172620/",
+    "captured_at": "2026-10-14T21:59:47.840731+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Jun 3, 2020"
+    },
+    "developers": [
+      "Rare Ltd"
+    ],
+    "publishers": [
+      "Xbox Game Studios"
+    ],
+    "short_description": "Sea of Thieves is a smash-hit pirate adventure game, offering the quintessential pirate experience of plundering lost treasures, intense battles, vanquishing sea monsters and more. Dive in with this revised edition of the game, which includes access to digital bonus media."
+  },
+  {
+    "appid": 1174180,
+    "name": "Red Dead Redemption 2",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1174180&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1174180/",
+    "captured_at": "2026-10-14T21:59:48.113052+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Dec 5, 2019"
+    },
+    "developers": [
+      "Rockstar Games"
+    ],
+    "publishers": [
+      "Rockstar Games"
+    ],
+    "short_description": "Arthur Morgan and the Van der Linde Gang are outlaws on the run. With federal agents and bounty hunters massing on their heels, the gang must rob, steal, and fight their way across the rugged heartland in order to survive."
+  },
+  {
+    "appid": 972660,
+    "name": "Spiritfarer®: Farewell Edition",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=972660&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/972660/",
+    "captured_at": "2026-10-14T21:59:48.160803+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Aug 18, 2020"
+    },
+    "developers": [
+      "Thunder Lotus"
+    ],
+    "publishers": [
+      "Thunder Lotus"
+    ],
+    "short_description": "Spiritfarer® is a cozy management game about dying. As ferrymaster to the deceased, build a boat to explore the world, care for your spirit friends, and release them into the afterlife. The Spiritfarer Farewell Edition includes the heartwarming base game and three major content updates."
+  },
+  {
+    "appid": 275850,
+    "name": "No Man's Sky",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=275850&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/275850/",
+    "captured_at": "2026-10-14T21:59:48.025426+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Aug 12, 2016"
+    },
+    "developers": [
+      "Hello Games"
+    ],
+    "publishers": [
+      "Hello Games"
+    ],
+    "short_description": "No Man's Sky is a game about exploration and survival in an infinite procedurally generated universe."
+  },
+  {
+    "appid": 105600,
+    "name": "Terraria",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=105600&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/105600/",
+    "captured_at": "2026-10-14T21:59:48.128300+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "May 16, 2011"
+    },
+    "developers": [
+      "Re-Logic"
+    ],
+    "publishers": [
+      "Re-Logic"
+    ],
+    "short_description": "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. Four Pack also available!"
+  },
+  {
+    "appid": 1401590,
+    "name": "Disney Dreamlight Valley",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1401590&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1401590/",
+    "captured_at": "2026-10-14T21:59:48.194980+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Dec 5, 2023"
+    },
+    "developers": [
+      "Gameloft"
+    ],
+    "publishers": [
+      "Gameloft"
+    ],
+    "short_description": "Relax in a cozy world filled with the magic of Disney and Pixar! Discover rich stories and build the perfect Valley alongside more than 50 heroes and villains in this life-sim adventure game."
+  },
+  {
+    "appid": 637650,
+    "name": "FINAL FANTASY XV WINDOWS EDITION",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=637650&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/637650/",
+    "captured_at": "2026-10-14T21:59:48.210864+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Mar 6, 2018"
+    },
+    "developers": [
+      "Square Enix"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "short_description": "Take the journey, now in ultimate quality. Boasting a wealth of bonus content and supporting ultra high-resolution graphical options and HDR 10, you can now enjoy the beautiful and carefully-crafted experience of FINAL FANTASY XV like never before."
+  },
+  {
+    "appid": 39210,
+    "name": "FINAL FANTASY XIV Online",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=39210&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/39210/",
+    "captured_at": "2026-10-14T21:59:48.325980+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Feb 18, 2014"
+    },
+    "developers": [
+      "Square Enix"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "short_description": "Join over 30 million adventurers worldwide and take part in an epic and ever-changing FINAL FANTASY. Experience an unforgettable story, exhilarating battles, and a myriad of captivating environments to explore."
+  },
+  {
+    "appid": 230410,
+    "name": "Warframe",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=230410&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/230410/",
+    "captured_at": "2026-10-14T21:59:48.450616+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Mar 25, 2013"
+    },
+    "developers": [
+      "Digital Extremes"
+    ],
+    "publishers": [
+      "Digital Extremes"
+    ],
+    "short_description": "Awaken as an unstoppable warrior and battle alongside your friends in this story-driven free-to-play online action game"
+  },
+  {
+    "appid": 1145360,
+    "name": "Hades",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1145360&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1145360/",
+    "captured_at": "2026-10-14T21:59:48.435382+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Sep 17, 2020"
+    },
+    "developers": [
+      "Supergiant Games"
+    ],
+    "publishers": [
+      "Supergiant Games"
+    ],
+    "short_description": "Defy the god of the dead as you hack and slash out of the Underworld in this rogue-like dungeon crawler from the creators of Bastion, Transistor, and Pyre."
+  },
+  {
+    "appid": 1158160,
+    "name": "Coral Island",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1158160&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1158160/",
+    "captured_at": "2026-10-14T21:59:48.535804+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Nov 14, 2023"
+    },
+    "developers": [
+      "Stairway Games"
+    ],
+    "publishers": [
+      "Balor Games"
+    ],
+    "short_description": "Coral Island is a vibrant, laid-back farm sim reimagined with multiplayer! Experience enchanting island life at your own pace: farm with friends, nurture animals, build relationships, hang out with a diverse cast of characters, and dive into the magical Merfolk Kingdom."
+  },
+  {
+    "appid": 1055540,
+    "name": "A Short Hike",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1055540&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1055540/",
+    "captured_at": "2026-10-14T21:59:48.851949+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Jul 30, 2019"
+    },
+    "developers": [
+      "adamgryu"
+    ],
+    "publishers": [
+      "adamgryu"
+    ],
+    "short_description": "Hike, climb, and soar through the peaceful mountainside landscapes of Hawk Peak Provincial Park as you make your way to the summit."
+  },
+  {
+    "appid": 1621690,
+    "name": "Core Keeper",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1621690&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1621690/",
+    "captured_at": "2026-10-14T21:59:48.550608+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Aug 27, 2024"
+    },
+    "developers": [
+      "Pugstorm"
+    ],
+    "publishers": [
+      "Fireshine Games",
+      "bilibili"
+    ],
+    "short_description": "Explore a vast cavern of creatures, relics and resources in a mining sandbox adventure for 1-8 players. Mine, build, fight, craft and farm to unravel the mystery of the ancient Core."
+  },
+  {
+    "appid": 4753960,
+    "name": "Meow Squad: Incremental Fishing",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=4753960&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/4753960/",
+    "captured_at": "2026-10-14T21:59:48.964192+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Sep 23, 2026"
+    },
+    "developers": [
+      "Happy Universe Studios"
+    ],
+    "publishers": [
+      "Happy Universe Studios"
+    ],
+    "short_description": "30 Seconds a Round, Easy to Pick Up! This relaxing, addictive fishing-themed incremental game combines incremental fishing with arcade-style boss battles. Across five seas, catch fish, train your meow squad, and challenge mysterious Overlords beneath the waves!"
+  },
+  {
+    "appid": 4249770,
+    "name": "Captain Whiskers: Incremental Seas",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=4249770&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/4249770/",
+    "captured_at": "2026-10-14T21:59:48.835693+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Feb 10, 2026"
+    },
+    "developers": [
+      "Happy Universe Studios"
+    ],
+    "publishers": [
+      "Happy Universe Studios"
+    ],
+    "short_description": "5 minutes to get started, play anytime! This is a relaxing fishing-themed incremental game. You will join the Cat Captains to explore global fishing grounds, catch fish, and collect resources. Every rewarding voyage will have you shouting, &quot;One more round!&quot;"
+  },
+  {
+    "appid": 4601160,
+    "name": "Just Keep Fishing",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=4601160&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/4601160/",
+    "captured_at": "2026-10-14T21:59:48.716656+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Aug 27, 2026"
+    },
+    "developers": [
+      " Set Sail Games"
+    ],
+    "publishers": [
+      "Aarimous and Thornity"
+    ],
+    "short_description": "A short incremental game about catching a lot of fish🎣"
+  },
+  {
+    "appid": 5206820,
+    "name": "猫猫爱钓鱼 Cat Fishing",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=5206820&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/5206820/",
+    "captured_at": "2026-10-14T21:59:48.882780+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Sep 24, 2026"
+    },
+    "developers": [
+      "棱镜工作室"
+    ],
+    "publishers": [
+      "棱镜工作室"
+    ],
+    "short_description": "&quot;Cat Fishing&quot; is a relaxing idle fishing game. Keep casting your line to reel in all kinds of items, collect gear, and upgrade your stats — this fishing spot is yours to rule!"
+  },
+  {
+    "appid": 4126480,
+    "name": "Fishing Inc",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=4126480&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/4126480/",
+    "captured_at": "2026-10-14T21:59:48.866950+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Apr 14, 2026"
+    },
+    "developers": [
+      "BigBonk Studio"
+    ],
+    "publishers": [
+      "BigBonk Studio"
+    ],
+    "short_description": "Fishing Inc is a cozy incremental fishing game! Catch fish, earn cash, and unlock powerful skills. Master new ponds, fill your Fish Log with Legendary catches, and become the ultimate angler!"
+  },
+  {
+    "appid": 4515550,
+    "name": "Desktop Pet: DonEatFish",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=4515550&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/4515550/",
+    "captured_at": "2026-10-14T21:59:49.290815+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Sep 6, 2026"
+    },
+    "developers": [
+      "Steeped Sky Studio"
+    ],
+    "publishers": [
+      "Steeped Sky Studio"
+    ],
+    "short_description": "A cozy cat on your desktop while you goof off. Idle fish, crack chests, dress up—turn your desk corner into a wholesome little nook. Come adopt an adorable kitty. Some antivirus software may falsely flag this game as a virus. If that bothers you, please don't download it. Thank you."
+  },
+  {
+    "appid": 2725560,
+    "name": "Idle Fishing",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=2725560&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/2725560/",
+    "captured_at": "2026-10-14T21:59:49.211992+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "May 24, 2024"
+    },
+    "developers": [
+      "AO Games"
+    ],
+    "publishers": [
+      "AO Games"
+    ],
+    "short_description": "Relax and catch fish in beautiful environments while your crew works for you, even offline. Hire crewmates, collect pets, sail ever-bigger boats, and uncover layer after layer of progression. Simple to start, surprisingly deep."
+  },
+  {
+    "appid": 1264250,
+    "name": "Fishing: North Atlantic - Enhanced Edition",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=1264250&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/1264250/",
+    "captured_at": "2026-10-14T21:59:49.199528+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Oct 16, 2020"
+    },
+    "developers": [
+      "Misc Games"
+    ],
+    "publishers": [
+      "Misc Games"
+    ],
+    "short_description": "Commercial fishing in North Atlantic! Discover majestic world of Canadian Nova Scotia while admiring the vast diversity of ocean life. Search for the ocean gold with upgradable fishing boats and various fishing gear as you progress in your fisherman career."
+  },
+  {
+    "appid": 501080,
+    "name": "Fishing: Barents Sea",
+    "source_url": "https://store.steampowered.com/api/appdetails?appids=501080&l=english&cc=us",
+    "store_url": "https://store.steampowered.com/app/501080/",
+    "captured_at": "2026-10-14T21:59:49.219135+08:00",
+    "release_date": {
+      "coming_soon": false,
+      "date": "Feb 7, 2018"
+    },
+    "developers": [
+      "Misc Games"
+    ],
+    "publishers": [
+      "Misc Games"
+    ],
+    "short_description": "Commercial fishing on the Barents Sea! Take the helm of your very own fishing boat in Fishing: Barents Sea and explore the vastness of the Barents Sea in search for the best fishing zones. Start out small and earn officially licensed Scanmar Equipment and the officially licensed Hermes trawler."
+  }
+]

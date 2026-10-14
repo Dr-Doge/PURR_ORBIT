@@ -1,0 +1,42 @@
+[
+  {
+    "source_id": "S41",
+    "title": "Core Keeper 1.0.0 Full Launch Update Patch Notes",
+    "date": "2024-08-27",
+    "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5875595438705775228",
+    "api_url": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=1621690&count=300&maxlength=0&feeds=steam_community_announcements",
+    "research_paraphrase": "移除旧钓鱼小游戏；与旧状态相关的统计调整。"
+  },
+  {
+    "source_id": "S42",
+    "title": "Core Keeper - 1.0.0.10 Post-Launch Stability Patch",
+    "date": "2024-09-25",
+    "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/6339469370177903827",
+    "api_url": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=1621690&count=300&maxlength=0&feeds=steam_community_announcements",
+    "research_paraphrase": "设置增加Legacy fishing minigame开关，可启用旧小游戏。"
+  },
+  {
+    "source_id": "S43",
+    "title": "Maldives Update Tweaks for Smoother Fights",
+    "date": "2025-10-29",
+    "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1814942955104014",
+    "api_url": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=380600&count=300&maxlength=0&feeds=steam_community_announcements",
+    "research_paraphrase": "收线时用大幅垂直提竿帮助保持张力。"
+  },
+  {
+    "source_id": "S44",
+    "title": "Release Note 5.0.0: Ocean Update",
+    "date": "2024-06-05",
+    "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/5746109972545475232",
+    "api_url": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=380600&count=300&maxlength=0&feeds=steam_community_announcements",
+    "research_paraphrase": "海钓更新重做Pull and Reel，加入自由出线等系统。"
+  },
+  {
+    "source_id": "S45",
+    "title": "Cast n Chill Demo v2 is Live",
+    "date": "2025-05-29",
+    "url": "https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1800991756309203",
+    "api_url": "https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3483740&count=150&maxlength=0&feeds=steam_community_announcements",
+    "research_paraphrase": "Demo v2改线控制、鱼会疲劳，并允许试探而未咬钩。"
+  }
+]
