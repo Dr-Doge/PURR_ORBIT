@@ -1,0 +1,169 @@
+{
+  "title": "Purr Orbit grooming demo asset kit v1",
+  "date": "2026-10-15",
+  "method": "built-in image_gen artwork; Godot scene composition for exact viewport export",
+  "logical_canvas": [
+    1920,
+    1080
+  ],
+  "assets": [
+    {
+      "id": "background",
+      "file": "background_leather.png",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-ef458931-77a7-4fd8-8b77-6ec4135c66a5.png",
+      "transparent_requested": false,
+      "grid": [
+        1,
+        1
+      ],
+      "prompt": "Use case: ui-mockup asset. Generate a SINGLE standalone 16:9 landscape game BACKGROUND texture, exact canvas 1920 by 1080 if possible. Reference image supplies material and visual style ONLY. Extract the fixed brown leather grooming table design into ONE full-screen frame. Same warm chestnut brown padded leather, subtle leather grain, soft pseudo-3D bevel at the outside, tidy stitched seam around perimeter. Table seen from almost overhead, very slight tilt. Large uncluttered flat central working surface, darker thin edge and corner softness. Keep the center evenly lit so overlaid cartoon cats and dark dirt are readable. Unified painterly/cel-shaded game art, not photographic leather. Background must contain NO cats, NO paws, NO dirt, NO comb, NO particles, NO cursor, NO HUD, NO stars, NO progress bar, NO coin, NO lettering, NO comic panels. One fixed reusable tabletop covering the entire frame; no other room scene. Opaque background.",
+      "references": [
+        "C:/Users/ruohaojing/Desktop/爽开/玩法方案讨论/2026-10-14_美容店交互效果图/三花猫_通体梳毛四格.png"
+      ]
+    },
+    {
+      "id": "calico_clean",
+      "file": "calico_clean.png",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-2c31b27a-a767-4a3d-81fc-285e03ca7029.png",
+      "transparent_requested": true,
+      "grid": [
+        1,
+        1
+      ],
+      "prompt": "Use case: game sprite asset / identity-preserve. Using the supplied calico only as CHARACTER DESIGN reference, generate ONE complete clean calico cat on genuinely TRANSPARENT background, RGBA. Full body facing left, four feet planted and visible, curved upright tail, exact recognizable orange/white/dark-gray pattern, thick dark-brown rounded contours, pink ears, tiny black eyes, simple mouth. Match original flat illustrated chunky paper-cut 2D style with broad color blocks and restrained soft shading. Neutral relaxed expression, smooth clean coat. Whole cat fully inside canvas, no clipped ears/tail/feet, about 80% of landscape width, enough transparent padding. Do not add a platform or cast shadow, texture backdrop, UI, cursor, grooming tool, dirt, fleas, knots, glow or text. Single pose, not a sprite sheet. Landscape 16:9 logical asset frame, fixed side view suitable for placing on a leather grooming table. Keep the body silhouette stable for future exact aligned overlay edits.",
+      "references": [
+        "C:/Users/ruohaojing/Documents/WXWork/1688855188862276/Cache/Image/2026-10/企业微信截图_17919860557490.png"
+      ]
+    },
+    {
+      "id": "robot_clean",
+      "file": "robot_clean.png",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-adafae14-5f43-4dcc-8854-549bb74e47f9.png",
+      "transparent_requested": true,
+      "grid": [
+        1,
+        1
+      ],
+      "prompt": "Use case: game sprite asset / identity-preserve. Create ONE complete clean ROBOT CAT as a genuinely TRANSPARENT RGBA game sprite. The reference is identity and flat outlined 2D art style: red oval shell and head, large round white eyes with dark pupils, golden hinged lower jaw, triangular red/gold ears, beige/golden belly hatch, red vertical vents, four golden segmented legs and broad feet, curved golden tail with red ball tip. Full side view facing left, all body parts fully in frame, about 80% of landscape width with generous transparent padding. Neutral comically alert expression. Preserve these structures and proportions; clean surface, subtle enamel sheen but NO floating sparkle objects. Thick warm dark contours and simple broad cel-shaded color areas to match calico art. No background, no table, no cast shadow, no grime, no cloth, no cursor, no UI, no letters, no collage. One flat sprite in a landscape 16:9 logical frame, suitable as unchanged base under a wipeable oil overlay.",
+      "references": [
+        "C:/Users/ruohaojing/Documents/WXWork/1688855188862276/Cache/Image/2026-10/企业微信截图_17919860605395.png"
+      ]
+    },
+    {
+      "id": "dirt_atlas",
+      "file": "dirt_atlas.png",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-0f765ffb-5424-4733-962c-e831dd11e33d.png",
+      "transparent_requested": true,
+      "grid": [
+        4,
+        2
+      ],
+      "prompt": "Use case: stylized game sprite atlas. Generate ONE genuinely transparent RGBA atlas arranged as EXACT 4 columns x 2 rows, EIGHT separate sprites, equally sized grid cells with generous transparent gutters. Each sprite centered inside its own cell, no touching other cells, no grid lines, no labels, NO checkerboard background. Flat cartoon illustration with thick warm dark outlines, restrained shading matching the supplied cat art. THIS atlas contains ONLY removable dirt overlays, no cats, no tools, no background. Row1 left to right: 1 broad soft-edged dusty gray-brown smudge with partly translucent irregular edges; 2 tangled beige/orange fur knot tuft with clearly twisted strands; 3 small crumpled paper/lint trash clump with leaf fragment; 4 tiny stylized brown flea with six short legs, clear silhouette. Row2 left to right: 5 broad greasy dark brown-black oil smear with semi-transparent edges; 6 dark greasy fingerprint cluster; 7 dusty charcoal soot patch; 8 a small sticky dark tar blob. Large readable clean silhouettes, object identities obvious. Avoid cast shadows, numbers, background rectangles. Oil sprites should not contain a robot outline. Dust sprite should not include calico coat colors painted as a cat. These are separate alpha-layer objects that the engine places and clips inside a cat body, not a baked full dirty cat illustration.",
+      "references": [
+        "C:/Users/ruohaojing/Documents/WXWork/1688855188862276/Cache/Image/2026-10/企业微信截图_17919860557490.png",
+        "C:/Users/ruohaojing/Documents/WXWork/1688855188862276/Cache/Image/2026-10/企业微信截图_17919860605395.png"
+      ]
+    },
+    {
+      "id": "effects_atlas",
+      "file": "effects_atlas.png",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-9339e947-f352-477b-acc1-0671b14598d5.png",
+      "transparent_requested": true,
+      "grid": [
+        4,
+        2
+      ],
+      "prompt": "Use case: game particles sprite atlas. ONE transparent RGBA image arranged in EXACT 4 columns x 2 rows, eight evenly separated centered particle sprites, ample transparent cell padding, no labels or grid lines. Match the simple thick contour cartoon cat illustration style. Row1: small loose white fur tuft; orange fur tuft; dark-gray fur tuft; pale brown powder-puff dust burst with airy semi-transparent edge. Row2: three tiny brown dirt chips as one small particle sprite; a small dark oil fleck/splash; a single curved IVORY WHITE nail-tip clipping with a flat cut base and sharp tip, no pink flesh; a small golden four-point cleaning sparkle. Each one fully contained in its own cell. No cats, tools, paw, panel background, table, text, glowing full-screen effect or premade game screenshot. These small fragments will fly away from cleaning contact and nail cuts, and need actual transparency between particles.",
+      "references": [
+        "C:/Users/ruohaojing/Documents/WXWork/1688855188862276/Cache/Image/2026-10/企业微信截图_17919860557490.png",
+        "C:/Users/ruohaojing/Documents/WXWork/1688855188862276/Cache/Image/2026-10/企业微信截图_17919860605395.png"
+      ]
+    },
+    {
+      "id": "tools_atlas",
+      "file": "tools_atlas.png",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-7568828e-db1f-4f04-895c-8cb48e86d84d.png",
+      "transparent_requested": true,
+      "grid": [
+        2,
+        2
+      ],
+      "prompt": "Use case: game tool sprites atlas. ONE transparent RGBA 2x2 sprite atlas: exactly FOUR evenly separated centered objects, no labels or cell borders. Matching blue metal/cartoon linework from reference game style. Top-left: pale-blue metal grooming comb, teeth on lower edge, handle clearly visible, full object. Top-right: folded sky-blue soft wiping cloth, slight fabric crease, simple outlined shape. Bottom-left: small pet nail clipper with silver jaws and blue rounded handles, jaws opening forward-left. Bottom-right: gold coin with simple cat paw embossed, readable clean dark outline. Every object fully within its equal-sized cell, generous transparent padding, no cursor baked in, no mouse arrow, no hands, no shadow background, no HUD, no progress bars. Single clean standalone asset atlas for four tool/feedback sprites. Real transparent alpha.",
+      "references": [
+        "C:/Users/ruohaojing/Desktop/爽开/玩法方案讨论/2026-10-14_美容店交互效果图/三花猫_通体梳毛四格.png"
+      ]
+    },
+    {
+      "id": "paw_base",
+      "file": "calico_paw_base.png",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-5589f567-443f-4d20-9b5f-d55c84637d7d.png",
+      "transparent_requested": true,
+      "grid": [
+        1,
+        1
+      ],
+      "prompt": "Use case: game sprite / nail service base layer. Generate ONE isolated calico cat forepaw close-up on genuinely transparent background. Match reference calico chunky soft outlined 2D art, ivory-white paw with orange and charcoal wrist color patches. Paw points UPWARD, wrist extends from lower edge but is fully inside canvas with transparent margin. Four large rounded toes spread across the top, each toe readable. IMPORTANT: NO visible claws or fingernails at all, no pink quick, no guidelines, no nails cut or fragments. This is the reusable paw base; separate claw sprites will be overlaid by the engine. Large subject occupies 80% canvas with uncut outer silhouette, neutral static pose. No table, background, clipper, human hand, cursor, UI, caption or collage. Flat illustrated sprite consistent with full-body calico.",
+      "references": [
+        "C:/Users/ruohaojing/Documents/WXWork/1688855188862276/Cache/Image/2026-10/企业微信截图_17919860557490.png"
+      ]
+    },
+    {
+      "id": "calico_states",
+      "file": "calico_states.png",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-75b63960-7a6f-4ca3-a097-24dccc647a1f.png",
+      "transparent_requested": true,
+      "grid": [
+        2,
+        2
+      ],
+      "prompt": "Use case: game character state atlas / identity preserve.\nCreate ONE genuinely transparent RGBA 2x2 atlas, four equal cells with ample padding and NO borders/labels. The supplied CLEAN CALICO image is the exact identity, pose and proportions reference. In EACH cell repeat the SAME whole left-facing calico, same scale, calico markings, limb positions, tail, foot baseline and silhouette. No table, shadows, tools, particle effects or UI.\nTop-left: original neutral clean state, identical relaxed dot eyes.\nTop-right: satisfied clean state, change ONLY eyes into closed happy arcs and small pleased smile; body/feet/tail/patches unchanged.\nBottom-left: brief discomfort clean state, change ONLY eyes to squeezed angled eyes and a small open startled mouth; body stays stable, no wounds, no symbols.\nBottom-right: dirty baseline state, SAME neutral pose with gray-brown dusty grime overlay, visible fur knot on back and lint on rump; do not enlarge or change skeleton or natural coat patch shapes.\nAll four characters must be in the same locked side-view pose and must fit wholly inside their equal grid cells. The goal is state switching, not movement animation. Thick dark-brown clean illustration contours, simple broad shading exactly as reference. Every surrounding pixel transparent; no checker pattern painted into image.",
+      "references": [
+        "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-2c31b27a-a767-4a3d-81fc-285e03ca7029.png"
+      ]
+    },
+    {
+      "id": "robot_states",
+      "file": "robot_states.png",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-abf52738-c9ff-42d0-983e-f14381bde658.png",
+      "transparent_requested": true,
+      "grid": [
+        2,
+        2
+      ],
+      "prompt": "Use case: game character state atlas / identity preserve. ONE transparent RGBA 2x2 atlas with four equal cells and transparent gutters, no labels or borders. Repeat the EXACT same red-and-gold robot cat from the source in identical full-body left-facing pose, size, proportions, bolt locations, eye positions, vent openings, four leg placements and tail curvature, shared foot baseline. No backdrop/table/UI/cursor or loose decorative particles.\nTop-left neutral clean state, source wide round eyes.\nTop-right satisfied polished state, ONLY eyelids/pupils convey contentment, restrained clean enamel highlights; preserve all body outlines.\nBottom-left discomfort state, ONLY eyes narrow and mouth small startled opening; no damage, no sparks, no loose parts.\nBottom-right dirty state, same neutral robot covered with localized dark oily smears and fingerprints over its unchanged shell. Red/gold base still visible.\nFlat thick warm dark contours and broad cel shading, as source, no 3D robot render. Four state sprites aligned for switching, not four different robot designs. Real transparent alpha outside every sprite, no visible background color.",
+      "references": [
+        "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-adafae14-5f43-4dcc-8854-549bb74e47f9.png"
+      ],
+      "correction_prompt": "Precise game sprite atlas correction. Keep the supplied FOUR robot cats, same 2x2 layout, canvas proportions, exact poses, their size, all red/gold structures, all other cells and true alpha transparency.\nChange ONLY the TOP-RIGHT HAPPY robot's dirty brown smears on its red neck/front torso: erase these accidental stains and restore smooth clean red enamel exactly like top-left neutral state. Top-right is the CLEAN happy state and must have NO grime anywhere on it.\nBottom-right must remain the dirty reference state. Bottom-left discomfort and top-left neutral remain unchanged. Preserve genuine fully transparent background around all sprites; no platform, glow halo, backdrop or labels. Keep all feet and tail tips inside their respective cells."
+    },
+    {
+      "id": "claw_atlas",
+      "file": "claw_states.png",
+      "source": "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-6cbdf534-1bce-4d2c-bf6c-bf5d79464d7c.png",
+      "transparent_requested": true,
+      "grid": [
+        2,
+        2
+      ],
+      "prompt": "Use case: game nail-trimming component atlas. Generate ONE genuinely transparent RGBA 2x2 atlas of FOUR isolated upright cartoon claw sprites, equally spaced/cell-centered, same fixed lower ROOT anchor and scale in all cells, no grid lines or captions. Style: ivory white curved cat claw, dark brown outline, simple soft shading matching reference calico. A clearly visible PINK quick is INSIDE the lower third of each claw, not a paw pad. NO paw, hand, background or tool.\nTop-left LONG UNTRIMMED claw: full sharp white curved tip, pink root well below tip.\nTop-right SHALLOW CUT claw: a short piece of distal white tip removed, blunt cut edge, still too long, root unchanged.\nBottom-left PERFECT CUT claw: shortened blunt white tip, small white safety margin above pink quick, pink root fully intact.\nBottom-right TOO DEEP claw: blunt cut edge at upper boundary of pink quick, makes risk legible, but NO blood, torn tissue or injury gore.\nEvery root starts at same cell-relative point so engine can anchor components above separate paw. Claw length changes only at the tip. All clipped-tip fragments are omitted here because particle atlas supplies them. Keep all four fully visible with transparent padding, no horizontal guidelines baked into sprites; engine draws those dynamically.",
+      "references": [
+        "C:/Users/ruohaojing/Documents/WXWork/1688855188862276/Cache/Image/2026-10/企业微信截图_17919860557490.png"
+      ]
+    },
+    {
+      "id": "background_16_9",
+      "file": "background_1920x1080.png",
+      "source": "C:/Users/ruohaojing/Desktop/爽开/毛球满屋/reports/grooming_art_20261015/background_1920x1080.png",
+      "transparent_requested": false,
+      "grid": [
+        1,
+        1
+      ],
+      "producer": "Godot 4.7.1 SubViewport 1920x1080",
+      "prompt": "Engine layout export of generated background only; no semantic image edits.",
+      "references": [
+        "C:\\Users\\ruohaojing\\.codex\\generated_images\\01a08427-12a3-7b51-a5a6-1f637e888929\\exec-ef458931-77a7-4fd8-8b77-6ec4135c66a5.png"
+      ]
+    }
+  ]
+}

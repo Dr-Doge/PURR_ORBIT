@@ -1,0 +1,997 @@
+{
+  "logical_canvas": [
+    1920,
+    1080
+  ],
+  "images": {
+    "background": {
+      "file": "background_leather.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alpha_range": null,
+      "sha256": "65bca3c0a00b49f354ee2f380d7774c26f24be36cb5f3d4886d57957b56b9229",
+      "grid": [
+        1,
+        1
+      ]
+    },
+    "calico_clean": {
+      "file": "calico_clean.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "dbf499a64a7811dffe9cdd46fd2ffee1654db502a218b435d683289a7014f739",
+      "grid": [
+        1,
+        1
+      ]
+    },
+    "robot_clean": {
+      "file": "robot_clean.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "a238fde2bf7bd67dc7b2cc4a9a8ec603c1ad60552bc7fd34cf940792b06571dd",
+      "grid": [
+        1,
+        1
+      ]
+    },
+    "dirt_atlas": {
+      "file": "dirt_atlas.png",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "8afdaed0d5ac3ffdad96e23ff0f9a1e9b03cd51e752b70bdfa82733dcd0636e3",
+      "grid": [
+        4,
+        2
+      ]
+    },
+    "effects_atlas": {
+      "file": "effects_atlas.png",
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "16daaabf46351894ef5ff95c942ec4abc8a227731a43eeee293d6378fa719b9d",
+      "grid": [
+        4,
+        2
+      ]
+    },
+    "tools_atlas": {
+      "file": "tools_atlas.png",
+      "size": [
+        1671,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "8c8f6b8ee79ee0c1a4cff5b27c2facf2ad672bd2a8ceb7feb194c6a1637823b3",
+      "grid": [
+        2,
+        2
+      ]
+    },
+    "paw_base": {
+      "file": "calico_paw_base.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "04f44cabe38eeb44066ea5f269940ac522468c3af6eadb4f45637d8c55c877cb",
+      "grid": [
+        1,
+        1
+      ]
+    },
+    "calico_states": {
+      "file": "calico_states.png",
+      "size": [
+        1432,
+        1098
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "b21d2116639428aaa7fe00c24b04b76542e7afee4326e27cd1263c551c2226e6",
+      "grid": [
+        2,
+        2
+      ]
+    },
+    "robot_states": {
+      "file": "robot_states.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        254
+      ],
+      "sha256": "f31612ff13203d68c0d539766f849d25441186ff96b4305a90a10c8d8bf95178",
+      "grid": [
+        2,
+        2
+      ]
+    },
+    "claw_atlas": {
+      "file": "claw_states.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "sha256": "2266d8f4db56a6db432d72e254b7af88b2d53f8ecf1e0f98ebf48eacad5254c4",
+      "grid": [
+        2,
+        2
+      ]
+    },
+    "background_16_9": {
+      "file": "background_1920x1080.png",
+      "size": [
+        1920,
+        1080
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "sha256": "d62d7351a72fe5b82610c69da22fb0c671b2cd14bd3847ed5afae7316e2ce0df",
+      "grid": [
+        1,
+        1
+      ]
+    }
+  },
+  "sprites": {
+    "background": {
+      "file": "background_leather.png",
+      "region": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "alpha_bbox_local": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "root_anchor_local": [
+        836.0,
+        941
+      ],
+      "atlas_resource": "resources/background.tres"
+    },
+    "calico_clean": {
+      "file": "calico_clean.png",
+      "region": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "alpha_bbox_local": [
+        237,
+        104,
+        1403,
+        843
+      ],
+      "root_anchor_local": [
+        820.0,
+        843
+      ],
+      "atlas_resource": "resources/calico_clean.tres"
+    },
+    "robot_clean": {
+      "file": "robot_clean.png",
+      "region": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "alpha_bbox_local": [
+        201,
+        24,
+        1494,
+        916
+      ],
+      "root_anchor_local": [
+        847.5,
+        916
+      ],
+      "atlas_resource": "resources/robot_clean.tres"
+    },
+    "dust": {
+      "file": "dirt_atlas.png",
+      "region": [
+        0,
+        0,
+        443,
+        443
+      ],
+      "alpha_bbox_local": [
+        66,
+        112,
+        443,
+        412
+      ],
+      "root_anchor_local": [
+        254.5,
+        412
+      ],
+      "atlas_resource": "resources/dust.tres"
+    },
+    "knot": {
+      "file": "dirt_atlas.png",
+      "region": [
+        443,
+        0,
+        444,
+        443
+      ],
+      "alpha_bbox_local": [
+        0,
+        111,
+        434,
+        413
+      ],
+      "root_anchor_local": [
+        217.0,
+        413
+      ],
+      "atlas_resource": "resources/knot.tres"
+    },
+    "trash": {
+      "file": "dirt_atlas.png",
+      "region": [
+        887,
+        0,
+        443,
+        443
+      ],
+      "alpha_bbox_local": [
+        97,
+        169,
+        404,
+        396
+      ],
+      "root_anchor_local": [
+        250.5,
+        396
+      ],
+      "atlas_resource": "resources/trash.tres"
+    },
+    "flea": {
+      "file": "dirt_atlas.png",
+      "region": [
+        1330,
+        0,
+        444,
+        443
+      ],
+      "alpha_bbox_local": [
+        94,
+        196,
+        333,
+        387
+      ],
+      "root_anchor_local": [
+        213.5,
+        387
+      ],
+      "atlas_resource": "resources/flea.tres"
+    },
+    "oil": {
+      "file": "dirt_atlas.png",
+      "region": [
+        0,
+        443,
+        443,
+        444
+      ],
+      "alpha_bbox_local": [
+        56,
+        78,
+        443,
+        356
+      ],
+      "root_anchor_local": [
+        249.5,
+        356
+      ],
+      "atlas_resource": "resources/oil.tres"
+    },
+    "fingerprints": {
+      "file": "dirt_atlas.png",
+      "region": [
+        443,
+        443,
+        444,
+        444
+      ],
+      "alpha_bbox_local": [
+        0,
+        43,
+        422,
+        369
+      ],
+      "root_anchor_local": [
+        211.0,
+        369
+      ],
+      "atlas_resource": "resources/fingerprints.tres"
+    },
+    "soot": {
+      "file": "dirt_atlas.png",
+      "region": [
+        887,
+        443,
+        443,
+        444
+      ],
+      "alpha_bbox_local": [
+        62,
+        58,
+        418,
+        364
+      ],
+      "root_anchor_local": [
+        240.0,
+        364
+      ],
+      "atlas_resource": "resources/soot.tres"
+    },
+    "tar": {
+      "file": "dirt_atlas.png",
+      "region": [
+        1330,
+        443,
+        444,
+        444
+      ],
+      "alpha_bbox_local": [
+        98,
+        116,
+        356,
+        329
+      ],
+      "root_anchor_local": [
+        227.0,
+        329
+      ],
+      "atlas_resource": "resources/tar.tres"
+    },
+    "fur_white": {
+      "file": "effects_atlas.png",
+      "region": [
+        0,
+        0,
+        443,
+        443
+      ],
+      "alpha_bbox_local": [
+        127,
+        137,
+        359,
+        409
+      ],
+      "root_anchor_local": [
+        243.0,
+        409
+      ],
+      "atlas_resource": "resources/fur_white.tres"
+    },
+    "fur_orange": {
+      "file": "effects_atlas.png",
+      "region": [
+        443,
+        0,
+        444,
+        443
+      ],
+      "alpha_bbox_local": [
+        93,
+        143,
+        363,
+        403
+      ],
+      "root_anchor_local": [
+        228.0,
+        403
+      ],
+      "atlas_resource": "resources/fur_orange.tres"
+    },
+    "fur_gray": {
+      "file": "effects_atlas.png",
+      "region": [
+        887,
+        0,
+        443,
+        443
+      ],
+      "alpha_bbox_local": [
+        104,
+        148,
+        355,
+        393
+      ],
+      "root_anchor_local": [
+        229.5,
+        393
+      ],
+      "atlas_resource": "resources/fur_gray.tres"
+    },
+    "dust_puff": {
+      "file": "effects_atlas.png",
+      "region": [
+        1330,
+        0,
+        444,
+        443
+      ],
+      "alpha_bbox_local": [
+        54,
+        117,
+        377,
+        427
+      ],
+      "root_anchor_local": [
+        215.5,
+        427
+      ],
+      "atlas_resource": "resources/dust_puff.tres"
+    },
+    "dirt_chips": {
+      "file": "effects_atlas.png",
+      "region": [
+        0,
+        443,
+        443,
+        444
+      ],
+      "alpha_bbox_local": [
+        149,
+        126,
+        316,
+        321
+      ],
+      "root_anchor_local": [
+        232.5,
+        321
+      ],
+      "atlas_resource": "resources/dirt_chips.tres"
+    },
+    "oil_fleck": {
+      "file": "effects_atlas.png",
+      "region": [
+        443,
+        443,
+        444,
+        444
+      ],
+      "alpha_bbox_local": [
+        146,
+        149,
+        310,
+        330
+      ],
+      "root_anchor_local": [
+        228.0,
+        330
+      ],
+      "atlas_resource": "resources/oil_fleck.tres"
+    },
+    "nail_tip": {
+      "file": "effects_atlas.png",
+      "region": [
+        887,
+        443,
+        443,
+        444
+      ],
+      "alpha_bbox_local": [
+        138,
+        127,
+        307,
+        329
+      ],
+      "root_anchor_local": [
+        222.5,
+        329
+      ],
+      "atlas_resource": "resources/nail_tip.tres"
+    },
+    "sparkle": {
+      "file": "effects_atlas.png",
+      "region": [
+        1330,
+        443,
+        444,
+        444
+      ],
+      "alpha_bbox_local": [
+        108,
+        105,
+        297,
+        320
+      ],
+      "root_anchor_local": [
+        202.5,
+        320
+      ],
+      "atlas_resource": "resources/sparkle.tres"
+    },
+    "comb": {
+      "file": "tools_atlas.png",
+      "region": [
+        0,
+        0,
+        835,
+        470
+      ],
+      "alpha_bbox_local": [
+        174,
+        60,
+        759,
+        458
+      ],
+      "root_anchor_local": [
+        466.5,
+        458
+      ],
+      "atlas_resource": "resources/comb.tres"
+    },
+    "cloth": {
+      "file": "tools_atlas.png",
+      "region": [
+        835,
+        0,
+        836,
+        470
+      ],
+      "alpha_bbox_local": [
+        145,
+        53,
+        667,
+        459
+      ],
+      "root_anchor_local": [
+        406.0,
+        459
+      ],
+      "atlas_resource": "resources/cloth.tres"
+    },
+    "clipper": {
+      "file": "tools_atlas.png",
+      "region": [
+        0,
+        470,
+        835,
+        471
+      ],
+      "alpha_bbox_local": [
+        183,
+        27,
+        714,
+        414
+      ],
+      "root_anchor_local": [
+        448.5,
+        414
+      ],
+      "atlas_resource": "resources/clipper.tres"
+    },
+    "coin": {
+      "file": "tools_atlas.png",
+      "region": [
+        835,
+        470,
+        836,
+        471
+      ],
+      "alpha_bbox_local": [
+        202,
+        41,
+        567,
+        410
+      ],
+      "root_anchor_local": [
+        384.5,
+        410
+      ],
+      "atlas_resource": "resources/coin.tres"
+    },
+    "paw_base": {
+      "file": "calico_paw_base.png",
+      "region": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "alpha_bbox_local": [
+        151,
+        134,
+        1103,
+        1254
+      ],
+      "root_anchor_local": [
+        627.0,
+        1254
+      ],
+      "atlas_resource": "resources/paw_base.tres"
+    },
+    "calico_neutral": {
+      "file": "calico_states.png",
+      "region": [
+        0,
+        0,
+        716,
+        549
+      ],
+      "alpha_bbox_local": [
+        21,
+        50,
+        706,
+        499
+      ],
+      "root_anchor_local": [
+        363.5,
+        499
+      ],
+      "atlas_resource": "resources/calico_neutral.tres"
+    },
+    "calico_happy": {
+      "file": "calico_states.png",
+      "region": [
+        716,
+        0,
+        716,
+        549
+      ],
+      "alpha_bbox_local": [
+        20,
+        51,
+        704,
+        499
+      ],
+      "root_anchor_local": [
+        362.0,
+        499
+      ],
+      "atlas_resource": "resources/calico_happy.tres"
+    },
+    "calico_discomfort": {
+      "file": "calico_states.png",
+      "region": [
+        0,
+        549,
+        716,
+        549
+      ],
+      "alpha_bbox_local": [
+        20,
+        46,
+        706,
+        495
+      ],
+      "root_anchor_local": [
+        363.0,
+        495
+      ],
+      "atlas_resource": "resources/calico_discomfort.tres"
+    },
+    "calico_dirty_reference": {
+      "file": "calico_states.png",
+      "region": [
+        716,
+        549,
+        716,
+        549
+      ],
+      "alpha_bbox_local": [
+        21,
+        46,
+        705,
+        494
+      ],
+      "root_anchor_local": [
+        363.0,
+        494
+      ],
+      "atlas_resource": "resources/calico_dirty_reference.tres"
+    },
+    "robot_neutral": {
+      "file": "robot_states.png",
+      "region": [
+        0,
+        0,
+        768,
+        512
+      ],
+      "alpha_bbox_local": [
+        80,
+        12,
+        768,
+        499
+      ],
+      "root_anchor_local": [
+        424.0,
+        499
+      ],
+      "atlas_resource": "resources/robot_neutral.tres"
+    },
+    "robot_happy": {
+      "file": "robot_states.png",
+      "region": [
+        768,
+        0,
+        768,
+        512
+      ],
+      "alpha_bbox_local": [
+        0,
+        12,
+        737,
+        499
+      ],
+      "root_anchor_local": [
+        368.5,
+        499
+      ],
+      "atlas_resource": "resources/robot_happy.tres"
+    },
+    "robot_discomfort": {
+      "file": "robot_states.png",
+      "region": [
+        0,
+        512,
+        768,
+        512
+      ],
+      "alpha_bbox_local": [
+        76,
+        4,
+        768,
+        490
+      ],
+      "root_anchor_local": [
+        422.0,
+        490
+      ],
+      "atlas_resource": "resources/robot_discomfort.tres"
+    },
+    "robot_dirty_reference": {
+      "file": "robot_states.png",
+      "region": [
+        768,
+        512,
+        768,
+        512
+      ],
+      "alpha_bbox_local": [
+        0,
+        4,
+        745,
+        490
+      ],
+      "root_anchor_local": [
+        372.5,
+        490
+      ],
+      "atlas_resource": "resources/robot_dirty_reference.tres"
+    },
+    "claw_long": {
+      "file": "claw_states.png",
+      "region": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "alpha_bbox_local": [
+        208,
+        64,
+        597,
+        613
+      ],
+      "root_anchor_local": [
+        402.5,
+        613
+      ],
+      "atlas_resource": "resources/claw_long.tres"
+    },
+    "claw_shallow": {
+      "file": "claw_states.png",
+      "region": [
+        627,
+        0,
+        627,
+        627
+      ],
+      "alpha_bbox_local": [
+        157,
+        195,
+        434,
+        615
+      ],
+      "root_anchor_local": [
+        295.5,
+        615
+      ],
+      "atlas_resource": "resources/claw_shallow.tres"
+    },
+    "claw_perfect": {
+      "file": "claw_states.png",
+      "region": [
+        0,
+        627,
+        627,
+        627
+      ],
+      "alpha_bbox_local": [
+        235,
+        170,
+        477,
+        514
+      ],
+      "root_anchor_local": [
+        356.0,
+        514
+      ],
+      "atlas_resource": "resources/claw_perfect.tres"
+    },
+    "claw_deep": {
+      "file": "claw_states.png",
+      "region": [
+        627,
+        627,
+        627,
+        627
+      ],
+      "alpha_bbox_local": [
+        196,
+        248,
+        434,
+        514
+      ],
+      "root_anchor_local": [
+        315.0,
+        514
+      ],
+      "atlas_resource": "resources/claw_deep.tres"
+    },
+    "background_16_9": {
+      "file": "background_1920x1080.png",
+      "region": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "alpha_bbox_local": [
+        0,
+        0,
+        1920,
+        1080
+      ],
+      "root_anchor_local": [
+        960.0,
+        1080
+      ],
+      "atlas_resource": "resources/background_16_9.tres"
+    }
+  },
+  "checks": [
+    {
+      "id": "background",
+      "image_readable": true,
+      "alpha_checked": false
+    },
+    {
+      "id": "calico_clean",
+      "image_readable": true,
+      "alpha_checked": true
+    },
+    {
+      "id": "robot_clean",
+      "image_readable": true,
+      "alpha_checked": true
+    },
+    {
+      "id": "dirt_atlas",
+      "image_readable": true,
+      "alpha_checked": true
+    },
+    {
+      "id": "effects_atlas",
+      "image_readable": true,
+      "alpha_checked": true
+    },
+    {
+      "id": "tools_atlas",
+      "image_readable": true,
+      "alpha_checked": true
+    },
+    {
+      "id": "paw_base",
+      "image_readable": true,
+      "alpha_checked": true
+    },
+    {
+      "id": "calico_states",
+      "image_readable": true,
+      "alpha_checked": true
+    },
+    {
+      "id": "robot_states",
+      "image_readable": true,
+      "alpha_checked": true
+    },
+    {
+      "id": "claw_atlas",
+      "image_readable": true,
+      "alpha_checked": true
+    },
+    {
+      "id": "background_16_9",
+      "image_readable": true,
+      "alpha_checked": true
+    }
+  ],
+  "limits": [
+    "Native source PNGs retain generated dimensions; scenes use a precise 1920x1080 logical viewport.",
+    "AI states are not pixel-identical. Keep neutral base during cleaning; normalize visible bounds for reaction previews.",
+    "Dirty-reference atlas cells are not interactive dirt masks. Use independent dirt sprites and model-owned masks.",
+    "Root anchors are alpha-bounds hints, not manually approved final anatomical anchors."
+  ]
+}
