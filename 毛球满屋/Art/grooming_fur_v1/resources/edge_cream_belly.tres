@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://Art/grooming_fur_v1/contour_tufts.png" id="1"]
+
+[resource]
+atlas = ExtResource("1")
+region = Rect2(436, 547, 538, 259)
+filter_clip = true

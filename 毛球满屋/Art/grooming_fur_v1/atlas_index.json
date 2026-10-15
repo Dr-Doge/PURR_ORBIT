@@ -1,0 +1,715 @@
+{
+  "status": "candidate art; not integrated into Demo",
+  "method": "built-in imagegen; PNGs unmodified",
+  "alpha_component_threshold": 16,
+  "sprites": {
+    "cat_clean": {
+      "file": "cat_clean.png",
+      "region": [
+        84,
+        20,
+        1568,
+        911
+      ],
+      "role": "base",
+      "resource": "resources/cat_clean.tres",
+      "anchor": "center"
+    },
+    "gray_ruffle": {
+      "file": "body_tufts.png",
+      "region": [
+        40,
+        150,
+        286,
+        257
+      ],
+      "role": "body_patch",
+      "resource": "resources/gray_ruffle.tres",
+      "anchor": "center"
+    },
+    "gray_wide": {
+      "file": "body_tufts.png",
+      "region": [
+        360,
+        149,
+        380,
+        259
+      ],
+      "role": "body_patch",
+      "resource": "resources/gray_wide.tres",
+      "anchor": "center"
+    },
+    "gray_fold": {
+      "file": "body_tufts.png",
+      "region": [
+        759,
+        91,
+        294,
+        312
+      ],
+      "role": "body_patch",
+      "resource": "resources/gray_fold.tres",
+      "anchor": "center"
+    },
+    "gray_cross": {
+      "file": "body_tufts.png",
+      "region": [
+        1072,
+        138,
+        366,
+        248
+      ],
+      "role": "body_patch",
+      "resource": "resources/gray_cross.tres",
+      "anchor": "center"
+    },
+    "cream_ruffle": {
+      "file": "body_tufts.png",
+      "region": [
+        40,
+        476,
+        287,
+        233
+      ],
+      "role": "body_patch",
+      "resource": "resources/cream_ruffle.tres",
+      "anchor": "center"
+    },
+    "cream_wide": {
+      "file": "body_tufts.png",
+      "region": [
+        359,
+        456,
+        389,
+        266
+      ],
+      "role": "body_patch",
+      "resource": "resources/cream_wide.tres",
+      "anchor": "center"
+    },
+    "cream_fold": {
+      "file": "body_tufts.png",
+      "region": [
+        769,
+        414,
+        291,
+        310
+      ],
+      "role": "body_patch",
+      "resource": "resources/cream_fold.tres",
+      "anchor": "center"
+    },
+    "cream_cross": {
+      "file": "body_tufts.png",
+      "region": [
+        1074,
+        469,
+        361,
+        246
+      ],
+      "role": "body_patch",
+      "resource": "resources/cream_cross.tres",
+      "anchor": "center"
+    },
+    "mixed_ruffle": {
+      "file": "body_tufts.png",
+      "region": [
+        41,
+        761,
+        295,
+        250
+      ],
+      "role": "body_patch",
+      "resource": "resources/mixed_ruffle.tres",
+      "anchor": "center"
+    },
+    "mixed_wide": {
+      "file": "body_tufts.png",
+      "region": [
+        360,
+        754,
+        385,
+        267
+      ],
+      "role": "body_patch",
+      "resource": "resources/mixed_wide.tres",
+      "anchor": "center"
+    },
+    "mixed_fold": {
+      "file": "body_tufts.png",
+      "region": [
+        778,
+        733,
+        286,
+        282
+      ],
+      "role": "body_patch",
+      "resource": "resources/mixed_fold.tres",
+      "anchor": "center"
+    },
+    "mixed_cross": {
+      "file": "body_tufts.png",
+      "region": [
+        1079,
+        766,
+        357,
+        240
+      ],
+      "role": "body_patch",
+      "resource": "resources/mixed_cross.tres",
+      "anchor": "center"
+    },
+    "edge_gray_shoulder": {
+      "file": "contour_tufts.png",
+      "region": [
+        39,
+        93,
+        409,
+        311
+      ],
+      "role": "contour_overlay",
+      "resource": "resources/edge_gray_shoulder.tres",
+      "anchor": "attach edge inward; outer hair tips outward"
+    },
+    "edge_gray_back": {
+      "file": "contour_tufts.png",
+      "region": [
+        429,
+        97,
+        548,
+        318
+      ],
+      "role": "contour_overlay",
+      "resource": "resources/edge_gray_back.tres",
+      "anchor": "attach edge inward; outer hair tips outward"
+    },
+    "edge_gray_flank": {
+      "file": "contour_tufts.png",
+      "region": [
+        938,
+        119,
+        521,
+        312
+      ],
+      "role": "contour_overlay",
+      "resource": "resources/edge_gray_flank.tres",
+      "anchor": "attach edge inward; outer hair tips outward"
+    },
+    "edge_gray_tail": {
+      "file": "contour_tufts.png",
+      "region": [
+        1402,
+        48,
+        348,
+        398
+      ],
+      "role": "contour_overlay",
+      "resource": "resources/edge_gray_tail.tres",
+      "anchor": "attach edge inward; outer hair tips outward"
+    },
+    "edge_cream_cheek": {
+      "file": "contour_tufts.png",
+      "region": [
+        12,
+        501,
+        428,
+        324
+      ],
+      "role": "contour_overlay",
+      "resource": "resources/edge_cream_cheek.tres",
+      "anchor": "attach edge inward; outer hair tips outward"
+    },
+    "edge_cream_belly": {
+      "file": "contour_tufts.png",
+      "region": [
+        436,
+        547,
+        538,
+        259
+      ],
+      "role": "contour_overlay",
+      "resource": "resources/edge_cream_belly.tres",
+      "anchor": "attach edge inward; outer hair tips outward"
+    },
+    "edge_cream_leg": {
+      "file": "contour_tufts.png",
+      "region": [
+        986,
+        565,
+        458,
+        246
+      ],
+      "role": "contour_overlay",
+      "resource": "resources/edge_cream_leg.tres",
+      "anchor": "attach edge inward; outer hair tips outward"
+    },
+    "edge_cream_tail": {
+      "file": "contour_tufts.png",
+      "region": [
+        1484,
+        501,
+        279,
+        321
+      ],
+      "role": "contour_overlay",
+      "resource": "resources/edge_cream_tail.tres",
+      "anchor": "attach edge inward; outer hair tips outward"
+    },
+    "knot_gray": {
+      "file": "specials.png",
+      "region": [
+        72,
+        105,
+        456,
+        391
+      ],
+      "role": "special",
+      "resource": "resources/knot_gray.tres",
+      "anchor": "center"
+    },
+    "knot_cream": {
+      "file": "specials.png",
+      "region": [
+        585,
+        132,
+        424,
+        380
+      ],
+      "role": "special",
+      "resource": "resources/knot_cream.tres",
+      "anchor": "center"
+    },
+    "flea_idle": {
+      "file": "specials.png",
+      "region": [
+        1077,
+        168,
+        382,
+        316
+      ],
+      "role": "special",
+      "resource": "resources/flea_idle.tres",
+      "anchor": "center"
+    },
+    "dust_gray": {
+      "file": "specials.png",
+      "region": [
+        84,
+        647,
+        399,
+        261
+      ],
+      "role": "special",
+      "resource": "resources/dust_gray.tres",
+      "anchor": "center"
+    },
+    "dust_cream": {
+      "file": "specials.png",
+      "region": [
+        592,
+        654,
+        424,
+        274
+      ],
+      "role": "special",
+      "resource": "resources/dust_cream.tres",
+      "anchor": "center"
+    },
+    "flea_hop": {
+      "file": "specials.png",
+      "region": [
+        1097,
+        584,
+        389,
+        327
+      ],
+      "role": "special",
+      "resource": "resources/flea_hop.tres",
+      "anchor": "center"
+    },
+    "fall_gray_peel": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        53,
+        127,
+        351,
+        307
+      ],
+      "role": "visual_only",
+      "resource": "resources/fall_gray_peel.tres",
+      "anchor": "center"
+    },
+    "fall_gray_curl": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        483,
+        65,
+        382,
+        363
+      ],
+      "role": "visual_only",
+      "resource": "resources/fall_gray_curl.tres",
+      "anchor": "center"
+    },
+    "fall_mixed_peel": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        940,
+        66,
+        379,
+        372
+      ],
+      "role": "visual_only",
+      "resource": "resources/fall_mixed_peel.tres",
+      "anchor": "center"
+    },
+    "fall_gray_wisps": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        1362,
+        126,
+        357,
+        284
+      ],
+      "role": "visual_only",
+      "resource": "resources/fall_gray_wisps.tres",
+      "anchor": "center"
+    },
+    "fall_cream_peel": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        53,
+        515,
+        351,
+        307
+      ],
+      "role": "visual_only",
+      "resource": "resources/fall_cream_peel.tres",
+      "anchor": "center"
+    },
+    "fall_cream_curl": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        481,
+        479,
+        389,
+        358
+      ],
+      "role": "visual_only",
+      "resource": "resources/fall_cream_curl.tres",
+      "anchor": "center"
+    },
+    "fall_mixed_flip": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        934,
+        477,
+        395,
+        357
+      ],
+      "role": "visual_only",
+      "resource": "resources/fall_mixed_flip.tres",
+      "anchor": "center"
+    },
+    "fall_cream_wisps": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        1382,
+        520,
+        341,
+        291
+      ],
+      "role": "visual_only",
+      "resource": "resources/fall_cream_wisps.tres",
+      "anchor": "center"
+    }
+  },
+  "files": {
+    "cat_clean.png": {
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "transparent_pixels": 560062,
+      "opaque_pixels": 2289,
+      "detected_islands": 1,
+      "sprite_count": 1,
+      "main_colors": [
+        [
+          248,
+          240,
+          232
+        ],
+        [
+          176,
+          152,
+          144
+        ],
+        [
+          40,
+          8,
+          0
+        ],
+        [
+          128,
+          112,
+          104
+        ],
+        [
+          176,
+          160,
+          144
+        ],
+        [
+          120,
+          112,
+          104
+        ],
+        [
+          168,
+          152,
+          144
+        ],
+        [
+          224,
+          208,
+          200
+        ]
+      ]
+    },
+    "body_tufts.png": {
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "transparent_pixels": 700035,
+      "opaque_pixels": 4158,
+      "detected_islands": 12,
+      "sprite_count": 12,
+      "main_colors": [
+        [
+          168,
+          152,
+          136
+        ],
+        [
+          248,
+          240,
+          224
+        ],
+        [
+          248,
+          240,
+          232
+        ],
+        [
+          168,
+          152,
+          144
+        ],
+        [
+          216,
+          200,
+          192
+        ],
+        [
+          216,
+          208,
+          192
+        ],
+        [
+          136,
+          120,
+          112
+        ],
+        [
+          208,
+          192,
+          184
+        ]
+      ]
+    },
+    "contour_tufts.png": {
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "transparent_pixels": 967357,
+      "opaque_pixels": 3988,
+      "detected_islands": 8,
+      "sprite_count": 8,
+      "main_colors": [
+        [
+          248,
+          240,
+          232
+        ],
+        [
+          176,
+          152,
+          144
+        ],
+        [
+          232,
+          216,
+          200
+        ],
+        [
+          248,
+          240,
+          224
+        ],
+        [
+          176,
+          160,
+          144
+        ],
+        [
+          48,
+          8,
+          0
+        ],
+        [
+          128,
+          112,
+          104
+        ],
+        [
+          56,
+          8,
+          0
+        ]
+      ]
+    },
+    "specials.png": {
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        254
+      ],
+      "transparent_pixels": 1111849,
+      "opaque_pixels": 0,
+      "detected_islands": 20,
+      "sprite_count": 6,
+      "main_colors": [
+        [
+          48,
+          8,
+          0
+        ],
+        [
+          248,
+          248,
+          232
+        ],
+        [
+          184,
+          160,
+          144
+        ],
+        [
+          80,
+          40,
+          24
+        ],
+        [
+          248,
+          240,
+          224
+        ],
+        [
+          56,
+          8,
+          0
+        ],
+        [
+          184,
+          168,
+          152
+        ],
+        [
+          248,
+          240,
+          232
+        ]
+      ]
+    },
+    "fur_fall_fx.png": {
+      "size": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "transparent_pixels": 999204,
+      "opaque_pixels": 1105,
+      "detected_islands": 12,
+      "sprite_count": 8,
+      "main_colors": [
+        [
+          248,
+          240,
+          224
+        ],
+        [
+          176,
+          160,
+          144
+        ],
+        [
+          136,
+          120,
+          112
+        ],
+        [
+          224,
+          208,
+          192
+        ],
+        [
+          176,
+          160,
+          152
+        ],
+        [
+          224,
+          208,
+          200
+        ],
+        [
+          216,
+          200,
+          192
+        ],
+        [
+          176,
+          152,
+          144
+        ]
+      ]
+    }
+  },
+  "sprite_count": 35
+}
