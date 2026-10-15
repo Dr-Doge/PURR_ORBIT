@@ -1,5 +1,6 @@
 extends "res://scripts/prototype_grooming/model.gd"
 const FurAssets=preload("res://scripts/prototype_grooming_fur/assets.gd")
+const Tool=preload("res://scripts/prototype_grooming_fur/tool_geometry.gd")
 const PATCH_SIZE=Vector2(175,138)
 const EDGE_RADIUS=5
 const FLEA_CLICKS=3
@@ -118,20 +119,21 @@ func click_at(at: Vector2) -> Dictionary:
   break
  return result
 
-func stroke(a: Vector2,b: Vector2,dt: float) -> Dictionary:
+func stroke(a: Vector2,b: Vector2,dt: float,measured_speed: float=-1.0) -> Dictionary:
  if not fur_ready or kind=="robot":return super.stroke(a,b,dt)
  var result: Dictionary={"changed":0,"pain":false,"particle":"fall_gray_peel","point":b}
  if paused or stage!="cleaning" or dt<=0 or a.distance_to(b)<.05:return result
- var delta: Vector2=b-a;var speed: float=delta.length()/dt/body_rect.size.x
+ var delta: Vector2=b-a
+ var speed: float=measured_speed if measured_speed>=0 else delta.length()/dt
  var forward: bool=delta.x/delta.length()>=C.COMB_DIRECTION_COS
  if not forward:comb_armed=false
  elif (a.x-body_rect.position.x)/body_rect.size.x<=C.COMB_START_X:comb_armed=true
- var area:=Rect2(a,Vector2.ZERO).expand(b).grow(C.BRUSH_RADIUS)
+ var area:=Rect2(a,Vector2.ZERO).expand(b).grow(Tool.EDGE_LENGTH*.5)
  var touched: bool=false
  for obj in objects:
   if obj.done or obj.rule=="flea" or not area.intersects(obj.rect) or not object_contact(obj,a,b):continue
   touched=true
-  if speed>C.MAX_SPEED:continue
+  if speed>Tool.SPEED_LIMIT:continue
   if obj.rule=="dust":
    if absf(delta.y)/delta.length()<.70:hint("灰尘上下轻扫 ↕");continue
    var dir: float=signf(delta.y)
@@ -146,13 +148,37 @@ func stroke(a: Vector2,b: Vector2,dt: float) -> Dictionary:
   if not forward or not comb_armed:hint("从头侧开始，轻柔向尾巴梳 →");continue
   if obj.rule=="edge":result.changed+=erase_segment(obj,a,b,1.0,true);continue
   if obj.rule=="knot":
-   if speed>C.KNOT_SPEED:hint("打结处更慢地向右梳 →");continue
-   obj.travel+=covered_length(a,b,obj.rect.get_center(),C.BRUSH_RADIUS)
-   if obj.travel<obj.rect.size.x*.70:continue
+   if speed>Tool.KNOT_SPEED_LIMIT:hint("打结处慢梳 · 不超过500像素/秒 →");continue
+   obj.travel+=Tool.covered_length(a,b,obj.rect.get_center())
+   if obj.travel<Tool.EDGE_HALF_WIDTH*1.8:continue
   # Whole-patch removal: the moving brush must cross the patch's core.
-  if covered_length(a,b,obj.rect.get_center(),C.BRUSH_RADIUS)<=0:continue
+  if Tool.covered_length(a,b,obj.rect.get_center())<=0:continue
   clear_object(obj);result.changed+=obj.initial
   result.particle="fall_cream_peel" if obj.type.begins_with("cream") or obj.type=="knot_cream" else "fall_gray_peel"
- if touched and speed>C.MAX_SPEED:result.pain=pain("太快了，轻一点 · 评价 -5")
+ if touched and speed>Tool.SPEED_LIMIT:result.pain=pain("超过1200像素/秒 · 轻一点 · 评价 -5")
  if result.changed>0:check_clean_finished()
  return result
+
+func object_contact(obj: Dictionary,a: Vector2,b: Vector2) -> bool:
+ if not fur_ready or kind=="robot":return super.object_contact(obj,a,b)
+ for y in range(C.OBJECT_GRID):
+  for x in range(C.OBJECT_GRID):
+   if obj.left[y*C.OBJECT_GRID+x]<=0:continue
+   var p: Vector2=obj.rect.position+obj.rect.size*Vector2((x+.5)/C.OBJECT_GRID,(y+.5)/C.OBJECT_GRID)
+   if Tool.covered_length(a,b,p)>0:return true
+ return false
+
+func erase_segment(obj: Dictionary,a: Vector2,b: Vector2,resistance: float,one_pass: bool=false) -> int:
+ if not fur_ready or kind=="robot":return super.erase_segment(obj,a,b,resistance,one_pass)
+ var changed: int=0
+ for y in range(C.OBJECT_GRID):
+  for x in range(C.OBJECT_GRID):
+   var i: int=y*C.OBJECT_GRID+x
+   if obj.left[i]<=0:continue
+   var p: Vector2=obj.rect.position+obj.rect.size*Vector2((x+.5)/C.OBJECT_GRID,(y+.5)/C.OBJECT_GRID)
+   if Tool.covered_length(a,b,p)<=0:continue
+   obj.sum-=obj.left[i];obj.left[i]=0;obj.mask.set_pixel(x,y,Color(0,0,0,1));changed+=1
+ if changed>0:
+  obj.version+=1
+  if obj.sum/obj.initial<=C.FINISH_TOLERANCE:clear_object(obj)
+ return changed

@@ -1,6 +1,7 @@
 extends Control
 const Model=preload("res://scripts/prototype_grooming_fur/model.gd")
 const C=preload("res://scripts/prototype_grooming/config.gd")
+const Tool=preload("res://scripts/prototype_grooming_fur/tool_geometry.gd")
 var model=Model.new()
 @onready var view: Control=$ServiceView
 @onready var title_label: Label=$HUD/Top/Title
@@ -22,6 +23,12 @@ var nail_points:=PackedVector2Array()
 var sound_enabled: bool=true
 var sound_player: AudioStreamPlayer
 var sounds: Dictionary={}
+var pending_paths: Array=[]
+var speed_history: Array=[]
+var grooming_speed: float=0.0
+var previous_screen: Vector2=Vector2.ZERO
+var frame_stamp: int=0
+var frame_delta: float=1.0/60.0
 
 func _ready() -> void:
  view.game=self;view.attach(model)
@@ -59,6 +66,7 @@ func set_sound(value: bool) -> void:sound_enabled=value;clear_input()
 
 func clear_input() -> void:
  dragging=false;previous_tick=0;nail_points=PackedVector2Array()
+ pending_paths.clear();speed_history.clear();grooming_speed=0.0
  if is_instance_valid(view):view.trail=PackedVector2Array()
 
 func jump_order(index: int,nail_practice: bool=false) -> void:
@@ -86,6 +94,11 @@ func surface_input(event: InputEvent) -> void:
    if nail_points.is_empty() or nail_points[-1].distance_to(point)>1.0:nail_points.append(point)
    view.trail=nail_points;view.queue_redraw();return
   if model.stage!="cleaning":clear_input();return
+  if model.kind=="calico":
+   var logical: Vector2=view.to_logical(event.position)
+   pending_paths.append({"a":previous,"b":point,"distance":previous_screen.distance_to(logical)})
+   previous=point;previous_screen=logical
+   return
   var stamp: int=Time.get_ticks_usec()
   var dt: float=float(stamp-previous_tick)/1000000.0
   if dt>0.3 or dt<=0.0001:
@@ -101,11 +114,14 @@ func surface_input(event: InputEvent) -> void:
    if model.stage not in ["cleaning","nails"]:return
    dragging=true;previous=view.model_point(event.position);model.begin_gesture(previous);previous_tick=Time.get_ticks_usec()
    view.mouse=view.to_logical(event.position)
+   pending_paths.clear();speed_history.clear();grooming_speed=0.0;previous_screen=view.mouse
    if model.stage=="nails":nail_points=PackedVector2Array([previous]);view.trail=nail_points
    elif model.kind=="calico":
     var click: Dictionary=model.click_at(previous)
     if click.changed>0:play_sound("cut");view.burst(click.particle,view.mouse,2)
   else:
+   if dragging and model.kind=="calico" and model.stage=="cleaning":
+    flush_grooming(maxf(frame_delta,float(Time.get_ticks_usec()-frame_stamp)/1000000.0))
    if dragging and model.stage=="nails":
     nail_points.append(view.model_point(event.position))
     var result: Dictionary=model.cut_gesture(nail_points)
@@ -117,6 +133,9 @@ func _process(dt: float) -> void:
  if not is_instance_valid(view):return
  var hover: Control=get_viewport().gui_get_hovered_control()
  if dragging and hover!=null and hover!=view:clear_input()
+ if dragging and not paused and model.kind=="calico" and model.stage=="cleaning":flush_grooming(dt)
+ frame_stamp=Time.get_ticks_usec()
+ frame_delta=maxf(dt,.001)
  model.tick(dt)
  if model.version!=previous_version or model.stage!=previous_stage:
   clear_input();previous_version=model.version;previous_stage=model.stage
@@ -125,6 +144,32 @@ func _process(dt: float) -> void:
  if not paused:view.animate(dt)
  else:view.sync()
  update_ui()
+
+func measure_speed(distance: float,dt: float) -> float:
+ var elapsed: float=maxf(dt,.001)
+ speed_history.append({"time":elapsed,"distance":distance})
+ var time: float=0.0;var length: float=0.0
+ for sample in speed_history:time+=sample.time;length+=sample.distance
+ while time>Tool.SPEED_WINDOW and speed_history.size()>1:
+  var first: Dictionary=speed_history[0];var excess: float=time-Tool.SPEED_WINDOW
+  if first.time<=excess:
+   time-=first.time;length-=first.distance;speed_history.pop_front()
+  else:
+   var ratio: float=excess/first.time
+   length-=first.distance*ratio;first.distance*=1.0-ratio;first.time-=excess;time-=excess
+ grooming_speed=length/maxf(time,.001)
+ return grooming_speed
+
+func flush_grooming(dt: float) -> void:
+ var length: float=0.0
+ for path in pending_paths:length+=path.distance
+ var speed: float=measure_speed(length,dt)
+ for path in pending_paths:
+  var result: Dictionary=model.stroke(path.a,path.b,maxf(.0001,dt*path.distance/maxf(length,.0001)),speed)
+  if result.pain:play_sound("pain")
+  elif result.changed>0 and model.now-last_particle>.04:
+   view.burst(result.particle,view.mouse,2);last_particle=model.now;play_sound("brush")
+ pending_paths.clear()
 
 func update_ui() -> void:
  title_label.text="毛球计划  ·  "+model.title

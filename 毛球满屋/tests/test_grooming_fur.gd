@@ -1,6 +1,6 @@
 extends SceneTree
 const M=preload("res://scripts/prototype_grooming_fur/model.gd")
-const OUT="res://reports/grooming_fur_20261015/"
+const OUT="res://reports/grooming_fur_fix_20261015/"
 var checks: int=0
 var failures: Array=[]
 func check(ok: bool,label: String) -> void:

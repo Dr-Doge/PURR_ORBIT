@@ -1,6 +1,7 @@
 extends Control
 const C=preload("res://scripts/prototype_grooming/config.gd")
-const CleaningShader=preload("res://scripts/prototype_grooming/cleaning.gdshader")
+const CleaningShader=preload("res://scripts/prototype_grooming_fur/coat_cleaning.gdshader")
+const Tool=preload("res://scripts/prototype_grooming_fur/tool_geometry.gd")
 var game: Control
 var model: RefCounted
 var subject: Node2D
@@ -32,7 +33,7 @@ func _ready() -> void:
  for i in range(4):
   var sprite:=Sprite2D.new();sprite.centered=false;claw_root.add_child(sprite);claw_sprites.append(sprite)
  tool=Sprite2D.new();tool.name="ToolCursor";add_child(tool);tool.z_index=20
- foreground=Node2D.new();foreground.name="InteractionGuides";foreground.set_script(preload("res://scripts/prototype_grooming/foreground.gd"));foreground.view=self;foreground.z_index=10;add_child(foreground)
+ foreground=Node2D.new();foreground.name="InteractionGuides";foreground.set_script(preload("res://scripts/prototype_grooming/foreground.gd"));foreground.view=self;foreground.z_index=30;add_child(foreground)
  for i in range(C.PARTICLE_LIMIT):
   var sprite:=Sprite2D.new();sprite.visible=false;sprite.z_index=25;add_child(sprite)
   particles.append({"sprite":sprite,"left":0.0,"total":C.PARTICLE_TIME,"velocity":Vector2.ZERO})
@@ -63,6 +64,9 @@ func sync() -> void:
    var material:=ShaderMaterial.new();material.shader=CleaningShader
    material.set_shader_parameter("remaining_mask",mask_texture)
    material.set_shader_parameter("body_mask",body_texture)
+   material.set_shader_parameter("coat_map",model.assets.texture(model.kind+"_clean"))
+   material.set_shader_parameter("match_coat",model.kind=="calico" and obj.rule in ["patch","edge","knot"])
+   material.set_shader_parameter("preserve_outline",obj.rule in ["edge","knot"])
    if obj.rule=="edge":
     var white:=Image.create(2,2,false,Image.FORMAT_RGBA8);white.fill(Color.WHITE)
     material.set_shader_parameter("body_mask",ImageTexture.create_from_image(white))
@@ -108,6 +112,11 @@ func sync() -> void:
  var tool_width: float=140.0 if nails_visible else 130.0
  tool.scale=Vector2.ONE*(tool_width/tool.texture.get_width())*(size/C.CANVAS)
  tool.position=(mouse+Vector2(40,-35))*size/C.CANVAS
+ tool.rotation=0.0
+ if not nails_visible and model.kind=="calico":
+  tool.rotation=Tool.rotation_angle()
+  tool.scale=Vector2.ONE*Tool.texture_scale()*(size/C.CANVAS)
+  tool.position=(mouse+Tool.center_offset(Vector2(tool.texture.get_size())))*(size/C.CANVAS)
  var shake:=Vector2.ZERO
  if model.reaction>0.0:shake=Vector2(sin(model.now*85.0)*6.0,cos(model.now*71.0)*3.0)
  actor_transform=Transform2D(0.0,shake)
@@ -135,7 +144,7 @@ func burst(name: String,at: Vector2,count: int=3) -> void:
  for p in particles:
   if count<=0:break
   if p.left>0.0:continue
-  var sprite: Sprite2D=p.sprite;sprite.texture=model.assets.texture(name)
+  var sprite: Sprite2D=p.sprite;sprite.texture=model.assets.texture(name);sprite.material=null
   var width: float=randf_range(22,42)
   sprite.scale=Vector2.ONE*(width/sprite.texture.get_width())*(size/C.CANVAS)
   sprite.position=at*(size/C.CANVAS);sprite.rotation=randf_range(-1,1);sprite.modulate=Color.WHITE;sprite.visible=true
@@ -173,7 +182,15 @@ func draw_foreground(canvas: Node2D) -> void:
    var at: Vector2=actor_transform*(obj.rect.position+Vector2(0,-12))
    canvas.draw_style_box(label_style(),Rect2(at-Vector2(7,23),Vector2(150,34)))
    canvas.draw_string(ThemeDB.fallback_font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,22,Color(.28,.17,.08))
-  if game!=null and game.dragging:canvas.draw_arc(mouse,C.BRUSH_RADIUS,0,TAU,32,Color(1,1,1,.35),2,true)
+  if model.kind=="calico":
+   var points: PackedVector2Array=Tool.edge_points(mouse)
+   var color:=Color(.35,1.0,.95,.95)
+   if game!=null and game.grooming_speed>Tool.SPEED_LIMIT:color=Color(1,.25,.15)
+   canvas.draw_line(points[0],points[1],color,3,true)
+   for p in points:canvas.draw_line(p-Vector2(6,0),p+Vector2(6,0),color,2,true)
+   if game!=null and game.dragging:
+    canvas.draw_string(ThemeDB.fallback_font,mouse+Vector2(35,95),"速度 %d / 1200 px/s"%game.grooming_speed,HORIZONTAL_ALIGNMENT_LEFT,-1,21,color)
+  elif game!=null and game.dragging:canvas.draw_arc(mouse,C.BRUSH_RADIUS,0,TAU,32,Color(1,1,1,.35),2,true)
  if model.stage=="nails":
   for nail in model.nails:
    if nail.done:continue
@@ -195,6 +212,9 @@ func detach_patch(obj: Dictionary) -> void:
   if p.left>0:continue
   var sprite: Sprite2D=p.sprite
   sprite.texture=model.assets.texture(obj.type);sprite.scale=obj.rect.size/Vector2(sprite.texture.get_size())*(size/C.CANVAS)
+  var material: ShaderMaterial=object_sprites[obj.id].sprite.material.duplicate()
+  var white:=Image.create(2,2,false,Image.FORMAT_RGBA8);white.fill(Color.WHITE)
+  material.set_shader_parameter("remaining_mask",ImageTexture.create_from_image(white));sprite.material=material
   sprite.position=obj.rect.get_center()*(size/C.CANVAS);sprite.rotation=0.0;sprite.modulate=Color.WHITE;sprite.visible=true
   p.left=.45;p.total=.45;p.velocity=Vector2(90,-160)
   break

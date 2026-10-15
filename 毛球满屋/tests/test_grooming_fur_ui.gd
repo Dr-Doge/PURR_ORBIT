@@ -1,5 +1,5 @@
 extends SceneTree
-const OUT="res://reports/grooming_fur_20261015/"
+const OUT="res://reports/grooming_fur_fix_20261015/"
 var vp: SubViewport
 var game: Control
 var checks: int=0
@@ -23,8 +23,11 @@ func swipe(a: Vector2,b: Vector2,speed: float) -> void:
  var previous: Vector2=a
  for i in range(1,steps+1):
   var p: Vector2=a.lerp(b,float(i)/steps)
-  game.previous_tick=Time.get_ticks_usec()-int(previous.distance_to(p)/game.model.body_rect.size.x/speed*1000000)
-  input_at(p);previous=p
+  var interval: float=previous.distance_to(p)/game.model.body_rect.size.x/speed
+  game.previous_tick=Time.get_ticks_usec()-int(interval*1000000)
+  input_at(p)
+  if game.model.kind=="calico":game.flush_grooming(interval)
+  previous=p
  input_at(b,2);await process_frame
 func obj(rule: String) -> Dictionary:
  for o in game.model.objects:
