@@ -30,8 +30,10 @@ var body_valid: PackedByteArray
 var version: int=0
 var claw_image: Image
 var claw_scale: float
+var claw_anchor_x: float
 var quick_height: float
 var claw_spans: Array=[]
+var comb_armed: bool=false
 
 func _init() -> void:
  prepare_claw()
@@ -52,6 +54,8 @@ func prepare_claw() -> void:
     first_pink=mini(first_pink,y)
   claw_spans.append(Vector2i(lo,hi))
  quick_height=(claw_image.get_height()-first_pink)*claw_scale
+ var root_span: Vector2i=claw_spans[int(claw_image.get_height()*0.94)]
+ claw_anchor_x=(root_span.x+root_span.y+1)*0.5
 
 func start_order(index: int, nail_practice: bool=false) -> void:
  serial+=1;version+=1;gesture+=1
@@ -60,16 +64,16 @@ func start_order(index: int, nail_practice: bool=false) -> void:
  needs_nails=order_index==2 or nail_practice
  base_pay=C.ORDER_PAY[order_index]
  stage="arrival";stage_left=C.ARRIVAL_TIME
- objects=[];nails=[]
+ objects=[];nails=[];comb_armed=false
  body_rect=assets.body_rect(kind)
  build_body_mask()
  for i in range(C.ORDINARY_POINTS.size()):
-  var type: String="dust" if kind=="calico" else ["oil","fingerprints","soot"][i%3]
-  add_object(type,"normal",C.ORDINARY_POINTS[i],Vector2(240,210))
- add_object("knot" if kind=="calico" else "soot","slow",Vector2(0.69,0.43),Vector2(145,145))
- add_object("trash" if kind=="calico" else "tar","sticky",Vector2(0.81,0.63),Vector2(165,145))
+  var type: String="dust" if kind=="calico" else ["oil","fingerprints"][i%2]
+  add_object(type,"normal" if kind=="calico" else "wipe",C.ORDINARY_POINTS[i],Vector2(240,210))
+ add_object("knot" if kind=="calico" else "soot","slow" if kind=="calico" else "vertical",Vector2(0.69,0.43),Vector2(145,145))
+ add_object("trash" if kind=="calico" else "tar","lift" if kind=="calico" else "horizontal",Vector2(0.81,0.63),Vector2(165,145))
  for i in range(4): nails.append({"id":i,"root":C.CLAW_ROOTS[i],"height":C.CLAW_HEIGHT,"done":false,"result":"","cuts":0})
- note="按住左键，慢慢梳理；毛结放慢，垃圾来回刷" if kind=="calico" else "按住左键擦拭；积灰放慢，油块来回擦"
+ note="从头侧向尾巴轻梳 →；毛结更慢，垃圾向上轻挑" if kind=="calico" else "可快速来回擦；积灰上下擦，油块左右擦"
  note_left=3.0
  if nail_practice:
   objects=[];stage="nails";stage_left=0.0;title="三花猫 · 修甲练习";base_pay=100
@@ -122,7 +126,11 @@ func tick(dt: float) -> void:
   "reward":stage="departure";stage_left=C.DEPARTURE_TIME
   "departure":start_order(order_index+1)
 
-func begin_gesture() -> void:gesture+=1
+func begin_gesture(at: Vector2=Vector2(INF,INF)) -> void:
+ gesture+=1
+ comb_armed=is_finite(at.x) and (at.x-body_rect.position.x)/body_rect.size.x<=C.COMB_START_X
+ for obj in objects:
+  if obj.rule=="lift":obj.travel=0.0
 
 func hint(text: String) -> void:
  note=text;note_left=1.2
@@ -146,24 +154,37 @@ func stroke(a: Vector2,b: Vector2,dt: float) -> Dictionary:
  var result: Dictionary={"changed":0,"pain":false,"particle":"fur_white" if kind=="calico" else "oil_fleck","point":b}
  if paused or stage!="cleaning" or dt<=0.0 or a.distance_to(b)<0.05:return result
  var speed: float=a.distance_to(b)/dt/body_rect.size.x
+ var delta: Vector2=b-a
+ var forward: bool=delta.x/delta.length()>=C.COMB_DIRECTION_COS
+ if kind=="calico":
+  if not forward:comb_armed=false
+  elif (a.x-body_rect.position.x)/body_rect.size.x<=C.COMB_START_X:comb_armed=true
  var area:=Rect2(a,Vector2.ZERO).expand(b).grow(C.BRUSH_RADIUS)
  var touched: bool=false
  for obj in objects:
   if obj.done or not area.intersects(obj.rect):continue
   if not object_contact(obj,a,b):continue
   touched=true
-  if speed>C.MAX_SPEED:continue
+  if kind=="calico" and speed>C.MAX_SPEED:continue
+  if obj.rule=="lift":
+   if speed<=C.LIFT_SPEED and -delta.y/delta.length()>=C.COMB_DIRECTION_COS:
+    obj.travel+=minf(-delta.y,obj.rect.size.y)
+    if obj.travel>=obj.rect.size.y*C.STICKY_TRAVEL:
+     clear_object(obj);result.changed+=obj.initial;hint("垃圾轻轻挑掉了！")
+   else:obj.travel=0.0;hint("垃圾要按住向上轻挑 ↑")
+   continue
+  if kind=="calico" and (not forward or not comb_armed):
+   hint("先回到头侧，再轻轻向尾巴梳 →");continue
   if obj.rule=="slow" and speed>C.KNOT_SPEED:
-   hint("毛结要慢慢梳" if kind=="calico" else "积灰要慢慢擦")
+   hint("毛结要更慢地顺毛梳 →")
    continue
-  if obj.rule=="sticky":
-   result.changed+=sticky_stroke(obj,a,b)
+  if obj.rule in ["vertical","horizontal"]:
+   result.changed+=robot_scrub(obj,a,b)
    continue
-  var resistance: float=C.KNOT_RESISTANCE if obj.rule=="slow" else C.NORMAL_RESISTANCE
-  var changed: int=erase_segment(obj,a,b,resistance)
+  var changed: int=erase_segment(obj,a,b,C.ROBOT_RESISTANCE,kind=="calico")
   result.changed+=changed
   if changed>0 and obj.rule=="slow":hint("毛结正在松开" if kind=="calico" else "积灰正在清除")
- if touched and speed>C.MAX_SPEED:result.pain=pain("太快了！顾客不舒服 · 评价 -5")
+ if kind=="calico" and touched and speed>C.MAX_SPEED:result.pain=pain("太快了！轻轻顺毛梳 · 评价 -5")
  if result.changed>0:check_clean_finished()
  return result
 
@@ -176,7 +197,7 @@ func object_contact(obj: Dictionary,a: Vector2,b: Vector2) -> bool:
    if covered_length(a,b,p,C.BRUSH_RADIUS)>0.0:return true
  return false
 
-func erase_segment(obj: Dictionary,a: Vector2,b: Vector2,resistance: float) -> int:
+func erase_segment(obj: Dictionary,a: Vector2,b: Vector2,resistance: float,one_pass: bool=false) -> int:
  var changed: int=0;var rect: Rect2=obj.rect
  for y in range(C.OBJECT_GRID):
   for x in range(C.OBJECT_GRID):
@@ -185,7 +206,7 @@ func erase_segment(obj: Dictionary,a: Vector2,b: Vector2,resistance: float) -> i
    var p: Vector2=rect.position+rect.size*Vector2((x+0.5)/C.OBJECT_GRID,(y+0.5)/C.OBJECT_GRID)
    var travel: float=covered_length(a,b,p,C.BRUSH_RADIUS)
    if travel<=0.0:continue
-   var value: float=maxf(0.0,previous-travel/(C.BRUSH_RADIUS*1.3*resistance))
+   var value: float=0.0 if one_pass else maxf(0.0,previous-travel/(C.BRUSH_RADIUS*1.3*resistance))
    obj.left[i]=value;obj.sum-=previous-value;obj.mask.set_pixel(x,y,Color(value,0,0,1));changed+=1
  if changed>0:
   obj.version+=1
@@ -196,21 +217,31 @@ func clear_object(obj: Dictionary) -> void:
  obj.done=true;obj.sum=0.0;obj.mask.fill(Color(0,0,0,1));obj.version+=1
  obj.left.fill(0.0)
 
-func sticky_stroke(obj: Dictionary,a: Vector2,b: Vector2) -> int:
+func robot_scrub(obj: Dictionary,a: Vector2,b: Vector2) -> int:
  var delta: Vector2=b-a
- if obj.axis==-1:obj.axis=0 if absf(delta.x)>=absf(delta.y) else 1
+ obj.axis=1 if obj.rule=="vertical" else 0
  var motion: float=delta.x if obj.axis==0 else delta.y
+ if absf(motion)/delta.length()<C.COMB_DIRECTION_COS:
+  hint("积灰要上下擦 ↕" if obj.axis==1 else "油块要左右擦 ↔");return 0
  if absf(motion)<0.1:return 0
  var direction: float=signf(motion)
- if obj.last_pass_dir==direction and obj.last_pass_gesture==gesture:return 0
+ if obj.last_pass_dir==direction:return 0
  if obj.dir!=direction:obj.travel=0.0;obj.dir=direction
  var width: float=obj.rect.size.x if obj.axis==0 else obj.rect.size.y
  obj.travel+=minf(absf(motion),width)
  if obj.travel<width*C.STICKY_TRAVEL:return 0
  obj.travel=0.0;obj.passes+=1;obj.last_pass_dir=direction;obj.last_pass_gesture=gesture;obj.version+=1
- if obj.passes>=C.STICKY_PASSES:
-  clear_object(obj);hint("粘附物清掉了！");return obj.initial
- hint("松动了，反方向再刷一次！")
+ var required: int=C.ROBOT_SOOT_PASSES if obj.axis==1 else C.ROBOT_TAR_PASSES
+ if obj.passes>=required:
+  clear_object(obj);hint("顽固污渍清掉了！");return obj.initial
+ var value: float=1.0-float(obj.passes)/required
+ for i in range(obj.left.size()):
+  if obj.left[i]>0:obj.left[i]=minf(obj.left[i],value)
+ obj.sum=0.0
+ for y in range(C.OBJECT_GRID):
+  for x in range(C.OBJECT_GRID):
+   var remaining: float=obj.left[y*C.OBJECT_GRID+x];obj.sum+=remaining;obj.mask.set_pixel(x,y,Color(remaining,0,0,1))
+ hint("换个方向，再擦一次！")
  return 1
 
 func cleaning_progress() -> float:
@@ -218,7 +249,6 @@ func cleaning_progress() -> float:
  var done: float=0.0
  for obj in objects:
   if obj.done:done+=1.0
-  elif obj.rule=="sticky":done+=0.45*float(obj.passes)/C.STICKY_PASSES
   else:done+=1.0-obj.sum/obj.initial
  return done/objects.size()
 
@@ -233,7 +263,7 @@ func nail_edges(nail: Dictionary,height: float) -> Vector2:
  var y: int=clampi(int(claw_image.get_height()-height/claw_scale),0,claw_image.get_height()-1)
  var span: Vector2i=claw_spans[y]
  if span.y<span.x:return Vector2(INF,INF)
- var left: float=nail.root.x-claw_image.get_width()*claw_scale/2.0
+ var left: float=nail.root.x-claw_anchor_x*claw_scale
  return Vector2(left+span.x*claw_scale,left+(span.y+1)*claw_scale)
 
 func perfect_height() -> float:return quick_height+C.NAIL_BAND_WIDTH/2.0

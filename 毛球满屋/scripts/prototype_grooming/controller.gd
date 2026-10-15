@@ -99,7 +99,7 @@ func surface_input(event: InputEvent) -> void:
   if paused:return
   if event.pressed:
    if model.stage not in ["cleaning","nails"]:return
-   dragging=true;model.begin_gesture();previous=view.model_point(event.position);previous_tick=Time.get_ticks_usec()
+   dragging=true;previous=view.model_point(event.position);model.begin_gesture(previous);previous_tick=Time.get_ticks_usec()
    view.mouse=view.to_logical(event.position)
    if model.stage=="nails":nail_points=PackedVector2Array([previous]);view.trail=nail_points
   else:
@@ -135,7 +135,7 @@ func update_ui() -> void:
  requirements.text=("✓" if cleaning_done else "○")+(" 梳理" if model.kind=="calico" else " 擦拭")
  if model.needs_nails:requirements.text+="    %s 修甲 %d/4"%["✓" if cut==4 else "○",cut]
  progress.value=float(cut)/4.0*100.0 if model.stage=="nails" else model.cleaning_progress()*100.0
- var default_hint: String="按住左键拖动清洁；黄色标记处放慢或来回刷"
+ var default_hint: String="从头侧向尾巴轻梳 →；毛结更慢，垃圾向上轻挑" if model.kind=="calico" else "可快速反复擦；积灰上下擦 ↕，油块左右擦 ↔"
  if model.stage=="nails":default_hint="按住左键，从指甲一侧横向划到另一侧；绿色区间最合适"
  if model.stage=="arrival":default_hint="下一位顾客正在入座"
  if model.stage=="to_nails":default_hint="全身护理完成，切换到猫爪"

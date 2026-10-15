@@ -26,6 +26,7 @@ func _ready() -> void:
  base=Sprite2D.new();base.name="CleanSubject";subject.add_child(base)
  dirt=Node2D.new();dirt.name="RemovableDirt";subject.add_child(dirt)
  claw_root=Node2D.new();claw_root.name="Claws";subject.add_child(claw_root)
+ subject.move_child(claw_root,0)
  for i in range(4):
   var sprite:=Sprite2D.new();sprite.centered=false;claw_root.add_child(sprite);claw_sprites.append(sprite)
  tool=Sprite2D.new();tool.name="ToolCursor";add_child(tool);tool.z_index=20
@@ -76,7 +77,7 @@ func sync() -> void:
  elif model.stage in ["reward","departure"]:
   name=model.kind+"_happy" if model.score>=75 else model.kind+"_discomfort"
  base.texture=model.assets.texture(name)
- var box: Rect2=Rect2(490,235,930,785) if nails_visible else C.BODY_BOX
+ var box: Rect2=C.PAW_BOX if nails_visible else C.BODY_BOX
  var factor: float=minf(box.size.x/base.texture.get_width(),box.size.y/base.texture.get_height())
  var drawn: Vector2=Vector2(base.texture.get_size())*factor
  var rect: Rect2=model.body_rect if not nails_visible and model.stage not in ["reward","departure"] else Rect2(box.position+Vector2((box.size.x-drawn.x)/2.0,box.size.y-drawn.y),drawn)
@@ -86,13 +87,13 @@ func sync() -> void:
   entry.sprite.visible=not obj.done
   if entry.version!=obj.version:
    entry.texture.update(obj.mask);entry.version=obj.version
-   entry.sprite.material.set_shader_parameter("loosen",0.8 if obj.rule=="sticky" and obj.passes>0 else 1.0)
+   entry.sprite.material.set_shader_parameter("loosen",1.0)
  for i in range(4):
   var nail: Dictionary=model.nails[i];var sprite: Sprite2D=claw_sprites[i]
   sprite.texture=model.assets.texture("claw_long");sprite.region_enabled=true
   var y: float=maxf(0.0,sprite.texture.get_height()-nail.height/model.claw_scale)
   sprite.region_rect=Rect2(0,y,sprite.texture.get_width(),sprite.texture.get_height()-y)
-  sprite.position=nail.root-Vector2(sprite.texture.get_width()*model.claw_scale/2.0,nail.height)
+  sprite.position=nail.root-Vector2(model.claw_anchor_x*model.claw_scale,nail.height)
   sprite.scale=Vector2.ONE*model.claw_scale
   sprite.modulate=Color(1,0.85,0.85) if nail.result=="deep" else Color.WHITE
  tool.texture=model.assets.texture("clipper" if nails_visible else ("comb" if model.kind=="calico" else "cloth"))
@@ -152,14 +153,22 @@ func draw_foreground(canvas: Node2D) -> void:
  canvas.draw_set_transform(Vector2.ZERO,0.0,size/C.CANVAS)
  if model.stage=="cleaning":
   for obj in model.objects:
-   if obj.done or obj.rule=="normal":continue
+   if obj.done or obj.rule in ["normal","wipe"]:continue
    var at: Vector2=actor_transform*(obj.rect.position+Vector2(0,-12))
-   var text: String="慢慢梳" if model.kind=="calico" else "慢慢擦"
-   if obj.rule=="sticky":text="来回刷 %d/%d"%[obj.passes,C.STICKY_PASSES]
+   var text: String="更慢顺梳 →"
+   if obj.rule=="lift":text="向上轻挑 ↑"
+   elif obj.rule=="vertical":text="上下擦 %d/%d"%[obj.passes,C.ROBOT_SOOT_PASSES]
+   elif obj.rule=="horizontal":text="左右擦 %d/%d"%[obj.passes,C.ROBOT_TAR_PASSES]
    canvas.draw_style_box(label_style(),Rect2(at-Vector2(7,23),Vector2(150,34)))
    canvas.draw_string(ThemeDB.fallback_font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,24,Color(0.28,0.17,0.08))
   if game!=null and game.dragging:
    canvas.draw_arc(mouse,C.BRUSH_RADIUS,0,TAU,32,Color(1,1,1,0.35),2.0,true)
+  if model.kind=="calico":
+   var left: Vector2=model.body_rect.position+model.body_rect.size*Vector2(0.23,0.96)
+   var right: Vector2=model.body_rect.position+model.body_rect.size*Vector2(0.92,0.96)
+   canvas.draw_line(left,right,Color(1,0.85,0.4,0.8),4,true)
+   canvas.draw_line(right,right+Vector2(-20,-10),Color(1,0.85,0.4,0.8),4,true)
+   canvas.draw_string(ThemeDB.fallback_font,left+Vector2(0,-12),"头侧开始，向尾梳理",HORIZONTAL_ALIGNMENT_LEFT,-1,23,Color(1,0.9,0.65))
  if model.stage=="nails":
   for nail in model.nails:
    if nail.done:continue

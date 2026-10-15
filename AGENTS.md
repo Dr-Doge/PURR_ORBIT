@@ -247,3 +247,7 @@ IMP-20260929-001已完成：main／3D／测试场景均实例化scenes/ui/develo
 ## 2026-10-15最新｜双猫美容可玩场景
 
 用户明确授权后创建毛球满屋/scenes/prototype_grooming/main.tscn，F6运行。独立prototype_grooming模型、输入与Shader：三花梳理／机器擦拭／组合修甲三单循环，真实局部清理、切深、评价、自动发钱。保留素材预览、正式3D入口与旧测试，不读写存档。当前参数17第29.2／29.3，18的IMP-20261014-001：D01—D07完成，D08待真人／录屏。34新模型＋40GUI＋125原模型＝199项通过，reports/prototype_grooming_20261014；GUI批量路径为脚本输入与受控时间，不是真人手感证据。没有新EXE，最终音效／动画与长期经营未验证。
+
+## 2026-10-15美容v2
+
+IMP-20261015-001已完成：普通猫轻柔头→尾一刷清洁，毛结更慢、垃圾上挑；机器猫快速重复擦拭，积灰上下3次、油块左右4次。指甲在爪后、210px、按四趾重新定位及根部中心对齐，粉红可见。实际参数17第29.4；25模型＋9GUI通过，reports/grooming_v2_20261015。当前复测run_grooming_demo.ps1转至test_grooming_v2*.gd；旧v1脚本／199项为a6848aa9历史。v2执行文件builds/PurrOrbit_Grooming_20261015_v2/PurrOrbit_Grooming.exe，0.27.0.19；导出成功，未启动EXE验证。用户现有export_presets.cfg改动不属于本轮，保留勿覆盖。
