@@ -1,0 +1,127 @@
+{
+ "measured_quick_height": 117.304189435337,
+ "parameters": {
+  "ARRIVAL_TIME": 0.45,
+  "BODY_BOX": [
+   160.0,
+   155.0,
+   1600.0,
+   780.0
+  ],
+  "BODY_GRID": [
+   256,
+   128
+  ],
+  "BRUSH_RADIUS": 48.0,
+  "CANVAS": [
+   1920.0,
+   1080.0
+  ],
+  "CLAW_HEIGHT": 280.0,
+  "CLAW_ROOTS": [
+   [
+    655.0,
+    595.0
+   ],
+   [
+    855.0,
+    444.0
+   ],
+   [
+    1070.0,
+    444.0
+   ],
+   [
+    1260.0,
+    595.0
+   ]
+  ],
+  "DEEP_COST": 20,
+  "DEPARTURE_TIME": 0.35,
+  "FINISH_TOLERANCE": 0.015,
+  "KNOT_RESISTANCE": 1.55,
+  "KNOT_SPEED": 0.35,
+  "MAX_SPEED": 1.0,
+  "NAIL_ANGLE_TOLERANCE": 48.0,
+  "NAIL_BAND_WIDTH": 42.0,
+  "NAIL_TRANSITION": 0.55,
+  "NORMAL_RESISTANCE": 1.0,
+  "OBJECT_GRID": 32,
+  "ORDER_KINDS": [
+   "calico",
+   "robot",
+   "calico"
+  ],
+  "ORDER_NAMES": [
+   "三花猫 · 全身梳理",
+   "机器猫 · 机体擦拭",
+   "三花猫 · 梳理＋修甲"
+  ],
+  "ORDER_PAY": [
+   100,
+   120,
+   150
+  ],
+  "ORDINARY_POINTS": [
+   [
+    0.430000007152557,
+    0.490000009536743
+   ],
+   [
+    0.540000021457672,
+    0.469999998807907
+   ],
+   [
+    0.660000026226044,
+    0.490000009536743
+   ],
+   [
+    0.779999971389771,
+    0.529999971389771
+   ],
+   [
+    0.870000004768372,
+    0.629999995231628
+   ],
+   [
+    0.430000007152557,
+    0.670000016689301
+   ],
+   [
+    0.550000011920929,
+    0.660000026226044
+   ],
+   [
+    0.670000016689301,
+    0.670000016689301
+   ],
+   [
+    0.790000021457672,
+    0.720000028610229
+   ],
+   [
+    0.540000021457672,
+    0.839999973773956
+   ],
+   [
+    0.699999988079071,
+    0.819999992847443
+   ],
+   [
+    0.829999983310699,
+    0.839999973773956
+   ]
+  ],
+  "PAIN_COST": 5,
+  "PAIN_INTERVAL": 0.75,
+  "PARTICLE_LIMIT": 64,
+  "PARTICLE_TIME": 0.45,
+  "REWARD_TIME": 1.15,
+  "STICKY_PASSES": 2,
+  "STICKY_TRAVEL": 0.6
+ },
+ "payment_formula": "round(base*(0.25+0.75*score/100))",
+ "save": "memory only",
+ "source": "res://scripts/prototype_grooming/config.gd",
+ "status": "prototype trial values, not final tuning"
+}

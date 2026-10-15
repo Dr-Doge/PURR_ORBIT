@@ -1,0 +1,25 @@
+{
+ "checks": 40,
+ "display_server": "Windows",
+ "failures": [],
+ "input": "SubViewport GUI InputEventMouseButton/MouseMotion; first stroke real clock, repeat strokes controlled event timestamps",
+ "rendering_method": "gl_compatibility",
+ "screenshots": [
+  "calico_dirty_1440x810.png",
+  "calico_partial_1440x810.png",
+  "calico_pain_1440x810.png",
+  "calico_paid_1440x810.png",
+  "robot_dirty_1440x810.png",
+  "robot_paid_1440x810.png",
+  "nails_before_1440x810.png",
+  "nail_shallow_1440x810.png",
+  "nail_deep_1440x810.png",
+  "nails_paid_1440x810.png",
+  "nails_before_1920x1080.png",
+  "nail_one_done_1920x1080.png",
+  "robot_dirty_1920x1080.png",
+  "robot_partial_1920x1080.png"
+ ],
+ "served": 3,
+ "wallet": 348
+}

@@ -1,0 +1,7 @@
+{
+  "engine": "4.7.1.stable.official.a13da4feb",
+  "renderer": "gl_compatibility",
+  "exit_code": 0,
+  "frames": 120,
+  "scene": "res://scenes/prototype_grooming/main.tscn"
+}
