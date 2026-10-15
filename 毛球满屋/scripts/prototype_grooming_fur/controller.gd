@@ -39,6 +39,7 @@ func _ready() -> void:
  $HUD/Top/Retry.pressed.connect(retry_order)
  $HUD/Top/Pause.pressed.connect(toggle_pause)
  $HUD/Top/Sound.toggled.connect(set_sound)
+ $HUD/Top/Size.pressed.connect(toggle_cat_size)
  $HUD/PausePanel/VBox/Continue.pressed.connect(toggle_pause)
  sound_player=AudioStreamPlayer.new();sound_player.volume_db=-18;add_child(sound_player)
  for name in ["brush","cut","pain","reward"]:sounds[name]=make_sound(name)
@@ -73,6 +74,10 @@ func jump_order(index: int,nail_practice: bool=false) -> void:
  clear_input();paused=false;model.paused=false;pause_panel.hide();model.start_order(index,nail_practice);view.sync();update_ui()
 
 func retry_order() -> void:jump_order(model.order_index,model.title.contains("练习"))
+
+func toggle_cat_size() -> void:
+ model.next_cat_scale=.5 if model.cat_scale==1 else 1.0
+ jump_order(model.order_index,model.title.contains("练习"))
 
 func toggle_pause() -> void:
  clear_input();paused=not paused;model.paused=paused;pause_panel.visible=paused;update_ui()
@@ -172,6 +177,7 @@ func flush_grooming(dt: float) -> void:
  pending_paths.clear()
 
 func update_ui() -> void:
+ $HUD/Top/Size.text="尺寸：大猫" if model.cat_scale==1 else "尺寸：小猫"
  title_label.text="毛球计划  ·  "+model.title
  resource_label.text="金钱  %d   ｜已服务 %d"%[model.wallet,model.served]
  quality_label.text="评价 %d / 100"%model.score
@@ -183,7 +189,7 @@ func update_ui() -> void:
  requirements.text=("✓" if cleaning_done else "○")+(" 梳理" if model.kind=="calico" else " 擦拭")
  if model.needs_nails:requirements.text+="    %s 修甲 %d/4"%["✓" if cut==4 else "○",cut]
  progress.value=float(cut)/4.0*100.0 if model.stage=="nails" else model.cleaning_progress()*100.0
- var default_hint: String="轻柔向右梳 →；毛结更慢，灰尘上下扫，跳蚤点三下" if model.kind=="calico" else "可快速反复擦；积灰上下擦 ↕，油块左右擦 ↔"
+ var default_hint: String="向右顺梳 →，尾部也可向上 ↑；毛结慢梳，灰尘上下扫，跳蚤点三下" if model.kind=="calico" else "可快速反复擦；积灰上下擦 ↕，油块左右擦 ↔"
  if model.stage=="nails":default_hint="按住左键，从指甲一侧横向划到另一侧；绿色区间最合适"
  if model.stage=="arrival":default_hint="下一位顾客正在入座"
  if model.stage=="to_nails":default_hint="全身护理完成，切换到猫爪"

@@ -13,7 +13,10 @@ static func rotation_angle() -> float:
  return PI/2.0-(TOOTH_LAST-TOOTH_FIRST).angle()
 static func texture_scale() -> float:return EDGE_LENGTH/TOOTH_FIRST.distance_to(TOOTH_LAST)
 static func center_offset(texture_size: Vector2) -> Vector2:
- return -(((TOOTH_FIRST+TOOTH_LAST)*.5-texture_size*.5)*texture_scale()).rotated(rotation_angle())
+ return -project_texture_point((TOOTH_FIRST+TOOTH_LAST)*.5,texture_size)
+static func project_texture_point(point: Vector2,texture_size: Vector2) -> Vector2:
+ # Keep the head up and handle down, but face the teeth right (stroke direction).
+ return ((point-texture_size*.5)*texture_scale()).rotated(rotation_angle())*Vector2(-1,1)
 static func edge_points(at: Vector2) -> PackedVector2Array:
  return PackedVector2Array([at-Vector2(0,EDGE_LENGTH*.5),at+Vector2(0,EDGE_LENGTH*.5)])
 

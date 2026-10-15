@@ -17,7 +17,7 @@ void fragment() {
    float light=dot(ink.rgb,vec3(0.299,0.587,0.114));
    if (!(preserve_outline && light<0.18)) {
     // Keep hairlock relief, but not the atlas's incompatible grey/white pigment.
-    float relief=clamp(1.0+(light-0.65)*0.16,0.92,1.04);
+    float relief=clamp(0.87+(light-0.65)*0.28,0.74,0.94);
     ink.rgb=coat.rgb*relief;
    }
   }

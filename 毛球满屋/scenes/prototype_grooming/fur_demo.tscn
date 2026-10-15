@@ -163,6 +163,14 @@ offset_bottom = 82.0
 button_pressed = true
 text = "声音"
 
+[node name="Size" type="Button" parent="HUD/Top"]
+offset_left = 835.0
+offset_top = 48.0
+offset_right = 960.0
+offset_bottom = 82.0
+text = "尺寸：大猫"
+tooltip_text = "切换当前顾客为原尺寸／半尺寸，重新开始当前护理；保留钱包"
+
 [node name="Bottom" type="Panel" parent="HUD"]
 layout_mode = 1
 anchor_top = 1.0

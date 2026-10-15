@@ -3,7 +3,7 @@ $ErrorActionPreference='Stop'
 $furWorkspace=Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $furProject=Join-Path $furWorkspace '毛球满屋'
 $furEngine=Join-Path $furWorkspace '.tools/godot-4.7.1/Godot_v4.7.1-stable_win64_console.exe'
-$furReport=Join-Path $furProject 'reports/grooming_fur_fix_20261015'
+$furReport=Join-Path $furProject 'reports/grooming_fur_sizes_20261015'
 New-Item -ItemType Directory -Force -Path $furReport | Out-Null
 $furModelOutput=& $furEngine --headless --path $furProject --script res://tests/test_grooming_fur.gd 2>&1
 $furModelOutput | Set-Content -LiteralPath (Join-Path $furReport 'model_stdout.txt') -Encoding utf8
@@ -18,6 +18,11 @@ if (-not $ModelOnly) {
  if (-not $furProcess.WaitForExit(60000)) {$furProcess.Kill();throw 'Tooth edge checks timed out.'}
  $furOutput=Get-Content -LiteralPath (Join-Path $furReport 'tool_stdout.txt') -Raw
  $furErrors=Get-Content -LiteralPath (Join-Path $furReport 'tool_stderr.txt') -Raw
- if ($furProcess.ExitCode -ne 0 -or $furErrors -match 'SCRIPT ERROR|ERROR:' -or $furOutput -notmatch '33 checks; 0 failures') {throw 'Tooth edge/colour/speed checks failed; see report.'}
+ if ($furProcess.ExitCode -ne 0 -or $furErrors -match 'SCRIPT ERROR|ERROR:' -or $furOutput -notmatch '34 checks; 0 failures') {throw 'Tooth edge/colour/speed checks failed; see report.'}
+ $furProcess=Start-Process -FilePath $furEngine -ArgumentList @('--path',('"'+$furProject+'"'),'--rendering-method','gl_compatibility','--script','res://tests/test_grooming_fur_sizes.gd') -WindowStyle Hidden -RedirectStandardOutput (Join-Path $furReport 'sizes_stdout.txt') -RedirectStandardError (Join-Path $furReport 'sizes_stderr.txt') -PassThru
+ if (-not $furProcess.WaitForExit(60000)) {$furProcess.Kill();throw 'Cat size/tail checks timed out.'}
+ $furOutput=Get-Content -LiteralPath (Join-Path $furReport 'sizes_stdout.txt') -Raw
+ $furErrors=Get-Content -LiteralPath (Join-Path $furReport 'sizes_stderr.txt') -Raw
+ if ($furProcess.ExitCode -ne 0 -or $furErrors -match 'SCRIPT ERROR|ERROR:' -or $furOutput -notmatch '48 checks; 0 failures') {throw 'Cat size/tail checks failed; see report.'}
 }
 Write-Output 'Fur Demo checks passed.'

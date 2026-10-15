@@ -3,6 +3,7 @@ const FUR_ROOT="res://Art/grooming_fur_v1/"
 const ENV_ROOT="res://Art/grooming_environment_v1/"
 var fur_index: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(FUR_ROOT+"atlas_index.json"))
 var environment_index: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(ENV_ROOT+"manifest.json"))
+var subject_scale: float=1.0
 
 func image(name: String) -> Image:
  var key: String="cat_clean" if name.begins_with("calico_") else name
@@ -34,5 +35,5 @@ func body_rect(cat_kind: String) -> Rect2:
  var raw: Image=image(cat_kind+"_clean")
  var box:=Rect2(100,105,1720,870)
  var factor: float=minf(box.size.x/raw.get_width(),box.size.y/raw.get_height())
- var drawn:=Vector2(raw.get_size())*factor
+ var drawn:=Vector2(raw.get_size())*factor*subject_scale
  return Rect2(box.position+Vector2((box.size.x-drawn.x)/2.0,box.size.y-drawn.y),drawn)

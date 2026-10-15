@@ -2,24 +2,31 @@ extends "res://scripts/prototype_grooming/model.gd"
 const FurAssets=preload("res://scripts/prototype_grooming_fur/assets.gd")
 const Tool=preload("res://scripts/prototype_grooming_fur/tool_geometry.gd")
 const PATCH_SIZE=Vector2(175,138)
+const PATCH_STEP=Vector2(110,76)
 const EDGE_RADIUS=5
 const FLEA_CLICKS=3
 const DUST_PASSES=2
 var fur_ready: bool=false
 var edge_mask: Image
+var cat_scale: float=1.0
+var next_cat_scale: float=0.0
 
 func _init() -> void:
  super()
  assets=FurAssets.new();claw_spans=[];prepare_claw();fur_ready=true;start_order(0)
 
 func start_order(index: int,nail_practice: bool=false) -> void:
+ if fur_ready:
+  cat_scale=.5 if index%3==2 else 1.0
+  if next_cat_scale>0:cat_scale=next_cat_scale;next_cat_scale=0
+  assets.subject_scale=cat_scale
  super.start_order(index,nail_practice)
  if not fur_ready:return
  if kind=="calico":
-  title="灰白猫 · 分层梳理" if order_index==0 else "灰白猫 · 梳理＋修甲"
+  title=("大灰白猫" if cat_scale==1 else "小灰白猫")+(" · 分层梳理" if order_index==0 else " · 梳理＋修甲")
   if nail_practice:title="灰白猫 · 修甲练习";return
   objects=[];build_fur_objects()
-  note="按住轻柔向右梳：毛块整片脱落；轮廓局部擦除。跳蚤点三下。"
+  note="向右顺梳，尾巴也可向上梳；毛块整片脱落，轮廓局部擦除。跳蚤点三下。"
   note_left=4.0
 
 func build_body_mask() -> void:
@@ -55,15 +62,17 @@ func coat_at(uv: Vector2) -> String:
 func build_fur_objects() -> void:
  var variants: Array=["ruffle","wide","fold","cross"]
  var count: int=0
- for row in range(5):
-  for column in range(7):
-   var uv:=Vector2(0.37+column*0.071+(0.018 if row%2 else 0.0),0.40+row*0.087)
+ for row in range(ceili(body_rect.size.y/PATCH_STEP.y)):
+  for column in range(ceili(body_rect.size.x/PATCH_STEP.x)):
+   var local:=Vector2((column+.5)*PATCH_STEP.x+(25 if row%2 else 0),(row+.5)*PATCH_STEP.y)
+   var uv: Vector2=local/body_rect.size
+   var body_zone: bool=uv.x>=.37 and uv.x<=.83 and uv.y>=.40 and uv.y<=.79
+   var head_zone: bool=uv.x>=.17 and uv.x<=.38 and uv.y>=.23 and uv.y<=.33
+   var tail_zone: bool=uv.x>=.83 and uv.y>=.10 and uv.y<=.62
+   if not (body_zone or head_zone or tail_zone):continue
    if not body_hit(uv):continue
    var type: String=coat_at(uv)+"_"+str(variants[count%4])
    add_object(type,"patch",uv,PATCH_SIZE);count+=1
- # No face stickers. Head hair and raised tail use the same matching palette.
- for uv in [Vector2(0.22,0.27),Vector2(0.30,0.32),Vector2(0.87,0.18),Vector2(0.92,0.37)]:
-  if body_hit(uv):add_object(coat_at(uv)+"_fold","patch",uv,PATCH_SIZE)
  for item in [
   ["edge_gray_back",Vector2(.55,.365),Vector2(390,170)],
   ["edge_gray_back",Vector2(.70,.43),Vector2(340,170)],
@@ -72,13 +81,30 @@ func build_fur_objects() -> void:
   ["edge_cream_belly",Vector2(.47,.83),Vector2(350,180)],
   ["edge_cream_belly",Vector2(.68,.83),Vector2(330,180)],
   ["edge_gray_tail",Vector2(.93,.47),Vector2(220,210)]]:
-  add_outline(item[0],item[1],item[2])
+  add_outline(item[0],item[1],item[2]*cat_scale)
  add_object("knot_gray","knot",Vector2(.56,.47),Vector2(150,135))
- add_object("knot_cream","knot",Vector2(.48,.72),Vector2(150,135))
+ if cat_scale==1:add_object("knot_cream","knot",Vector2(.48,.72),Vector2(150,135))
  add_object("dust_gray","dust",Vector2(.75,.53),Vector2(145,110))
- add_object("dust_cream","dust",Vector2(.66,.75),Vector2(145,110))
+ if cat_scale==1:add_object("dust_cream","dust",Vector2(.66,.75),Vector2(145,110))
  add_object("flea_idle","flea",Vector2(.72,.40),Vector2(92,78))
  objects[-1].home=objects[-1].rect.position
+
+func add_object(type: String,rule: String,center: Vector2,drawn: Vector2) -> void:
+ super.add_object(type,rule,center,drawn)
+ if not fur_ready or kind!="calico" or rule!="patch" or objects.is_empty():return
+ var obj: Dictionary=objects[-1]
+ if obj.type!=type or obj.rule!=rule:return
+ # Fixed-size patches extend proportionally farther on a small cat. Protect
+ # facial features and ear interiors rather than painting across them.
+ for y in range(C.OBJECT_GRID):
+  for x in range(C.OBJECT_GRID):
+   var i: int=y*C.OBJECT_GRID+x
+   if obj.left[i]<=0:continue
+   var at: Vector2=obj.rect.position+obj.rect.size*Vector2((x+.5)/C.OBJECT_GRID,(y+.5)/C.OBJECT_GRID)
+   var uv: Vector2=(at-body_rect.position)/body_rect.size
+   if (uv.x<.37 and uv.y>.37) or (uv.x<.42 and uv.y<.19):
+    obj.sum-=obj.left[i];obj.initial-=1;obj.left[i]=0;obj.mask.set_pixel(x,y,Color(0,0,0,1))
+ if obj.initial==0:objects.pop_back()
 
 func add_outline(type: String,uv: Vector2,drawn: Vector2) -> void:
  var index: int=objects.size()
@@ -126,8 +152,6 @@ func stroke(a: Vector2,b: Vector2,dt: float,measured_speed: float=-1.0) -> Dicti
  var delta: Vector2=b-a
  var speed: float=measured_speed if measured_speed>=0 else delta.length()/dt
  var forward: bool=delta.x/delta.length()>=C.COMB_DIRECTION_COS
- if not forward:comb_armed=false
- elif (a.x-body_rect.position.x)/body_rect.size.x<=C.COMB_START_X:comb_armed=true
  var area:=Rect2(a,Vector2.ZERO).expand(b).grow(Tool.EDGE_LENGTH*.5)
  var touched: bool=false
  for obj in objects:
@@ -145,14 +169,18 @@ func stroke(a: Vector2,b: Vector2,dt: float,measured_speed: float=-1.0) -> Dicti
     hint("灰尘 %d/%d · 换向再扫"%[obj.passes,DUST_PASSES])
     if obj.passes>=DUST_PASSES:clear_object(obj)
    continue
-  if not forward or not comb_armed:hint("从头侧开始，轻柔向尾巴梳 →");continue
+  var on_tail: bool=(obj.rect.get_center().x-body_rect.position.x)/body_rect.size.x>=.83
+  var tail_up: bool=on_tail and -delta.y/delta.length()>=C.COMB_DIRECTION_COS
+  if not forward and not tail_up:
+   hint("尾巴向右／向上轻梳 → ↑" if on_tail else "沿毛流轻柔向右梳 →");continue
+  if on_tail:hint("尾巴可直接向右／向上轻梳 → ↑")
   if obj.rule=="edge":result.changed+=erase_segment(obj,a,b,1.0,true);continue
   if obj.rule=="knot":
    if speed>Tool.KNOT_SPEED_LIMIT:hint("打结处慢梳 · 不超过500像素/秒 →");continue
    obj.travel+=Tool.covered_length(a,b,obj.rect.get_center())
    if obj.travel<Tool.EDGE_HALF_WIDTH*1.8:continue
-  # Whole-patch removal: the moving brush must cross the patch's core.
-  if Tool.covered_length(a,b,obj.rect.get_center())<=0:continue
+  # Any visibly occupied part brushed by the teeth is actionable. Requiring
+  # a transparent rectangle centre made narrow tail patches unreachable.
   clear_object(obj);result.changed+=obj.initial
   result.particle="fall_cream_peel" if obj.type.begins_with("cream") or obj.type=="knot_cream" else "fall_gray_peel"
  if touched and speed>Tool.SPEED_LIMIT:result.pain=pain("超过1200像素/秒 · 轻一点 · 评价 -5")

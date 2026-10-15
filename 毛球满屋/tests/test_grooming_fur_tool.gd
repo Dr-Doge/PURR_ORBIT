@@ -1,7 +1,7 @@
 extends SceneTree
 const Tool=preload("res://scripts/prototype_grooming_fur/tool_geometry.gd")
 const Model=preload("res://scripts/prototype_grooming_fur/model.gd")
-const OUT="res://reports/grooming_fur_fix_20261015/"
+const OUT="res://reports/grooming_fur_sizes_20261015/"
 var checks: int=0
 var failures: Array=[]
 func check(ok: bool,label: String) -> void:
@@ -15,11 +15,13 @@ func run() -> void:
  check(Tool.covered_length(origin,origin+Vector2(0,20),origin+Vector2(20,10))==0,"handle-side pixels are outside narrow tooth band")
  check(Tool.covered_length(origin,origin,origin)==0,"stationary teeth do not clean")
  var center: Vector2=origin+Tool.center_offset(Vector2(585,398))
- var first: Vector2=center+((Tool.TOOTH_FIRST-Vector2(585,398)*.5)*Tool.texture_scale()).rotated(Tool.rotation_angle())
- var last: Vector2=center+((Tool.TOOTH_LAST-Vector2(585,398)*.5)*Tool.texture_scale()).rotated(Tool.rotation_angle())
+ var first: Vector2=center+Tool.project_texture_point(Tool.TOOTH_FIRST,Vector2(585,398))
+ var last: Vector2=center+Tool.project_texture_point(Tool.TOOTH_LAST,Vector2(585,398))
  check(first.distance_to(Tool.edge_points(origin)[0])<.01 and last.distance_to(Tool.edge_points(origin)[1])<.01,"rendered tooth tips and hit line share exact endpoints")
- var handle: Vector2=center+((Vector2(510,75)-Vector2(585,398)*.5)*Tool.texture_scale()).rotated(Tool.rotation_angle())
+ var handle: Vector2=center+Tool.project_texture_point(Vector2(510,75),Vector2(585,398))
  check(handle.y>last.y,"comb head up and handle down")
+ var back: Vector2=center+Tool.project_texture_point(Vector2(290,180),Vector2(585,398))
+ check(back.x<origin.x,"teeth face right, ahead of the comb back")
  for uv in [Vector2(.42,.42),Vector2(.58,.74),Vector2(.76,.70)]:
   var m=Model.new();m.tick(1)
   var target: Dictionary={};var best: float=INF
@@ -63,7 +65,7 @@ func run() -> void:
     error+=delta;maximum=maxf(maximum,delta);count+=1
  var average: float=error/maxi(1,count)
  check(count>200,"colour comparison samples many actual visible fur pixels")
- check(average<.045,"fur pigment closely matches underlying coat including grey/white boundaries")
+ check(average>.035 and average<.16,"fur follows underlying pigment but has readable moderate contrast")
  game.view.dirt.show();game.view.foreground.show();game.view.tool.show();game.set_process(true)
  game.speed_history.clear()
  for i in range(15):check(absf(game.measure_speed(15.0,1.0/60.0)-900.0)<1,"stable 900 px/s independent of OS event intervals "+str(i))

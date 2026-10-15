@@ -1,0 +1,17 @@
+{
+ "cat_bounds": [
+  211.284301757813,
+  105.0,
+  1497.43139648438,
+  870.0
+ ],
+ "checks": 30,
+ "failures": [],
+ "object_counts": {
+  "dust": 2,
+  "edge": 6,
+  "flea": 1,
+  "knot": 2,
+  "patch": 39
+ }
+}

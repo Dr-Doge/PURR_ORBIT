@@ -113,8 +113,9 @@ func sync() -> void:
  tool.scale=Vector2.ONE*(tool_width/tool.texture.get_width())*(size/C.CANVAS)
  tool.position=(mouse+Vector2(40,-35))*size/C.CANVAS
  tool.rotation=0.0
+ tool.flip_h=false
  if not nails_visible and model.kind=="calico":
-  tool.rotation=Tool.rotation_angle()
+  tool.rotation=-Tool.rotation_angle();tool.flip_h=true
   tool.scale=Vector2.ONE*Tool.texture_scale()*(size/C.CANVAS)
   tool.position=(mouse+Tool.center_offset(Vector2(tool.texture.get_size())))*(size/C.CANVAS)
  var shake:=Vector2.ZERO
@@ -172,6 +173,7 @@ func draw_foreground(canvas: Node2D) -> void:
  if model==null:return
  canvas.draw_set_transform(Vector2.ZERO,0.0,size/C.CANVAS)
  if model.stage=="cleaning":
+  var label_row: int=0
   for obj in model.objects:
    if obj.done or obj.rule in ["patch","edge","normal","wipe"]:continue
    var text: String="慢慢顺梳 →"
@@ -180,6 +182,9 @@ func draw_foreground(canvas: Node2D) -> void:
    elif obj.rule=="vertical":text="上下擦 %d/3"%obj.passes
    elif obj.rule=="horizontal":text="左右擦 %d/4"%obj.passes
    var at: Vector2=actor_transform*(obj.rect.position+Vector2(0,-12))
+   if model.cat_scale==.5:
+    at=Vector2(model.body_rect.end.x+30,model.body_rect.position.y+80+label_row*55);label_row+=1
+    canvas.draw_line(at-Vector2(10,8),actor_transform*obj.rect.get_center(),Color(1,.85,.45,.5),1.5,true)
    canvas.draw_style_box(label_style(),Rect2(at-Vector2(7,23),Vector2(150,34)))
    canvas.draw_string(ThemeDB.fallback_font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,22,Color(.28,.17,.08))
   if model.kind=="calico":

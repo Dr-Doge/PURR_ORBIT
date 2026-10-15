@@ -1,5 +1,5 @@
 extends SceneTree
-const OUT="res://reports/grooming_fur_fix_20261015/"
+const OUT="res://reports/grooming_fur_sizes_20261015/"
 var vp: SubViewport
 var game: Control
 var checks: int=0
@@ -60,10 +60,14 @@ func run() -> void:
    p=o2.rect.get_center();await swipe(p-Vector2(0,80),p+Vector2(0,80),.18);await swipe(p+Vector2(0,80),p-Vector2(0,80),.18)
  for round_index in range(3):
   for y in range(125,975,26):
-   if m.stage!="cleaning":break
+   if m.stage!="cleaning" or m.served>0:break
    await swipe(Vector2(165,y),Vector2(1755,y),.18)
-  if m.stage!="cleaning":break
- check(m.settled and m.wallet==100,"full grey cat order completed by GUI and paid once")
+  if m.stage!="cleaning" or m.served>0:break
+ var remaining: Array=[]
+ for item in m.objects:
+  if not item.done:remaining.append([item.id,item.rule,item.sum,str(item.rect)])
+ if m.served!=1 or m.wallet!=100:print("GUI ORDER DIAGNOSTIC: ",m.stage," score=",m.score," wallet=",m.wallet," remaining=",remaining)
+ check(m.served==1 and m.wallet==100,"full grey cat order completed by GUI and paid once")
  await create_timer(.48).timeout
  await snapshot("03_clean_reward")
  game.jump_order(1);await create_timer(.55).timeout

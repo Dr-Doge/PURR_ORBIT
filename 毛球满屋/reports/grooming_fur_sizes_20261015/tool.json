@@ -1,0 +1,10 @@
+{
+ "average_colour_error": 0.123050920440896,
+ "checks": 34,
+ "colour_samples": 963,
+ "edge_half_width": 6.0,
+ "edge_length": 110.0,
+ "failures": [],
+ "maximum_colour_error": 0.258823543787003,
+ "speed_limit": 1200.0
+}
