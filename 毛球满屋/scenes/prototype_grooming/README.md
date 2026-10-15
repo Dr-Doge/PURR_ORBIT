@@ -30,3 +30,8 @@
 修甲指甲移到爪子后层、台面前层，四根按各趾尖重新定位。缩小至210逻辑像素、按甲根轮廓中心对齐，保留露出的粉红血线；切线判定与新位置同步。
 
 可玩入口仍为main.tscn（F6）。25项模型＋9项GUI／像素检查通过，新证据reports/grooming_v2_20261015；旧199项为v1历史证据，不能代替本轮检查。已重新导出builds/PurrOrbit_Grooming_20261015_v2/PurrOrbit_Grooming.exe（0.27.0.19），未启动EXE验证。
+
+
+## 分层毛发新场景
+
+新版另建[fur_demo.tscn](fur_demo.tscn)，按F6。完整操作与限制见[FUR_DEMO.md](FUR_DEMO.md)。main.tscn仍保留v2规则；新的房间／台面、灰白猫逐片脱落和轮廓擦除只在新场景中使用。

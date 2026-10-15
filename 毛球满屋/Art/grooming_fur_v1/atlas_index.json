@@ -1,5 +1,5 @@
 {
-  "status": "candidate art; not integrated into Demo",
+  "status": "candidate art integrated into scenes/prototype_grooming/fur_demo.tscn",
   "method": "built-in imagegen; PNGs unmodified",
   "alpha_component_threshold": 16,
   "sprites": {

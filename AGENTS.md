@@ -251,3 +251,10 @@ IMP-20260929-001已完成：main／3D／测试场景均实例化scenes/ui/develo
 ## 2026-10-15美容v2
 
 IMP-20261015-001已完成：普通猫轻柔头→尾一刷清洁，毛结更慢、垃圾上挑；机器猫快速重复擦拭，积灰上下3次、油块左右4次。指甲在爪后、210px、按四趾重新定位及根部中心对齐，粉红可见。实际参数17第29.4；25模型＋9GUI通过，reports/grooming_v2_20261015。当前复测run_grooming_demo.ps1转至test_grooming_v2*.gd；旧v1脚本／199项为a6848aa9历史。v2执行文件builds/PurrOrbit_Grooming_20261015_v2/PurrOrbit_Grooming.exe，0.27.0.19；导出成功，未启动EXE验证。用户现有export_presets.cfg改动不属于本轮，保留勿覆盖。
+
+
+## 2026-10-15最新｜独立分层毛发美容Demo
+
+2026-10-15最新：新增独立灰白猫分层美容场景scenes/prototype_grooming/fur_demo.tscn（F6）。房间＋皮面金属台、身躯毛片整片脱落、轮廓局部擦除、慢毛结／上下扫尘／点跳蚤、机器擦拭与修甲已可操作。参数17第29.5，任务18的IMP-20261015-002；30模型＋15GUI通过，报告reports/grooming_fur_20261015。仅该原型采用，旧main.tscn与正式入口保留，无新EXE，真人手感待验证。
+
+美术Art/grooming_environment_v1/为无猫无台房间、透明皮面金属台、灰白四趾猫爪；grooming_fur_v1为已接入素材。新模型继承v2订单／修甲／结算，代码scripts/prototype_grooming_fur/，纯内存。近景可见框约78%宽／81%高，不称为实际像素面积80%；所有新增特殊需求数值为试玩选择。测试入口tests/run_grooming_fur.ps1，原v2模型25项和正式模型125项复测通过。用户原export_presets.cfg及已有两个构建目录不属于此任务，保留。

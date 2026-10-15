@@ -1,0 +1,56 @@
+{
+  "room_background": {
+    "file": "room_background.png",
+    "size": [
+      1672,
+      941
+    ],
+    "visible_region": [
+      0,
+      0,
+      1672,
+      941
+    ],
+    "alpha_range": [
+      255,
+      255
+    ],
+    "sha256": "d40e78cac29bbd89a12904d76b7516b417259e0f35c979ab094806a9b1b38357"
+  },
+  "grooming_table": {
+    "file": "grooming_table.png",
+    "size": [
+      1672,
+      941
+    ],
+    "visible_region": [
+      14,
+      119,
+      1657,
+      883
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "sha256": "be04726ed0472cf13f7795a9f608a4fa308bbbd4195bd148abdae9ff3b23ec3a"
+  },
+  "grey_paw": {
+    "file": "grey_paw.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "visible_region": [
+      151,
+      133,
+      1103,
+      1254
+    ],
+    "alpha_range": [
+      0,
+      255
+    ],
+    "sha256": "65dc7ec8c2a160cb15ebe516885c90e0b3dc08679571a8111424e87f0c512d86"
+  }
+}

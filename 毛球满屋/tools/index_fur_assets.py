@@ -32,7 +32,7 @@ def components(alpha, width, height):
 
 def main():
  (ROOT/'resources').mkdir(exist_ok=True)
- manifest={'status':'candidate art; not integrated into Demo','method':'built-in imagegen; PNGs unmodified','alpha_component_threshold':16,'sprites':{},'files':{}}
+ manifest={'status':'candidate art integrated into scenes/prototype_grooming/fur_demo.tscn','method':'built-in imagegen; PNGs unmodified','alpha_component_threshold':16,'sprites':{},'files':{}}
  for file,(cols,rows,names,role) in SHEETS.items():
   im=Image.open(ROOT/file).convert('RGBA');width,height=im.size
   alpha=im.getchannel('A').tobytes()

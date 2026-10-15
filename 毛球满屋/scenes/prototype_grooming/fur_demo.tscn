@@ -1,0 +1,231 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/prototype_grooming_fur/controller.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/prototype_grooming_fur/service_view.gd" id="2"]
+[ext_resource type="Texture2D" path="res://Art/grooming_environment_v1/room_background.png" id="3"]
+[ext_resource type="Texture2D" path="res://Art/grooming_environment_v1/grooming_table.png" id="4"]
+[ext_resource type="Texture2D" path="res://Art/grooming_fur_v1/resources/cat_clean.tres" id="5"]
+
+[sub_resource type="StyleBoxFlat" id="Panel"]
+bg_color = Color(0.12,0.075,0.055,0.91)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_left = 14
+corner_radius_bottom_right = 14
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+
+[node name="FurGroomingDemo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="EditorPreview" type="Control" parent="."]
+mouse_filter = 2
+
+[node name="Room" type="TextureRect" parent="EditorPreview"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+texture = ExtResource("3")
+expand_mode = 1
+
+[node name="Table" type="TextureRect" parent="EditorPreview"]
+offset_left = -100.0
+offset_top = 550.0
+offset_right = 2020.0
+offset_bottom = 1743.0
+mouse_filter = 2
+texture = ExtResource("4")
+expand_mode = 1
+
+[node name="GreyCat" type="TextureRect" parent="EditorPreview"]
+offset_left = 211.2843
+offset_top = 105.0
+offset_right = 1708.7157
+offset_bottom = 975.0
+mouse_filter = 2
+texture = ExtResource("5")
+expand_mode = 1
+
+[node name="ServiceView" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Top" type="Panel" parent="HUD"]
+layout_mode = 1
+anchor_right = 1.0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = -14.0
+offset_bottom = 104.0
+theme_override_styles/panel = SubResource("Panel")
+
+[node name="Title" type="Label" parent="HUD/Top"]
+offset_left = 18.0
+offset_top = 10.0
+offset_right = 500.0
+offset_bottom = 36.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "毛球计划 · 美容服务"
+
+[node name="Money" type="Label" parent="HUD/Top"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_top = 8.0
+offset_right = -18.0
+offset_bottom = 36.0
+mouse_filter = 2
+horizontal_alignment = 2
+text = "金钱 0"
+
+[node name="Quality" type="Label" parent="HUD/Top"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -190.0
+offset_top = 52.0
+offset_right = -18.0
+offset_bottom = 78.0
+mouse_filter = 2
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 20
+text = "评价 100 / 100"
+
+[node name="Calico" type="Button" parent="HUD/Top"]
+offset_left = 18.0
+offset_top = 48.0
+offset_right = 140.0
+offset_bottom = 82.0
+text = "灰白猫示范"
+
+[node name="Robot" type="Button" parent="HUD/Top"]
+offset_left = 150.0
+offset_top = 48.0
+offset_right = 274.0
+offset_bottom = 82.0
+text = "机器猫示范"
+
+[node name="Full" type="Button" parent="HUD/Top"]
+offset_left = 284.0
+offset_top = 48.0
+offset_right = 408.0
+offset_bottom = 82.0
+text = "全套服务"
+
+[node name="Nails" type="Button" parent="HUD/Top"]
+offset_left = 418.0
+offset_top = 48.0
+offset_right = 534.0
+offset_bottom = 82.0
+text = "修甲练习"
+
+[node name="Retry" type="Button" parent="HUD/Top"]
+offset_left = 544.0
+offset_top = 48.0
+offset_right = 642.0
+offset_bottom = 82.0
+text = "重试本单"
+
+[node name="Pause" type="Button" parent="HUD/Top"]
+offset_left = 652.0
+offset_top = 48.0
+offset_right = 727.0
+offset_bottom = 82.0
+text = "暂停"
+
+[node name="Sound" type="CheckButton" parent="HUD/Top"]
+offset_left = 735.0
+offset_top = 48.0
+offset_right = 820.0
+offset_bottom = 82.0
+button_pressed = true
+text = "声音"
+
+[node name="Bottom" type="Panel" parent="HUD"]
+layout_mode = 1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -98.0
+offset_right = -14.0
+offset_bottom = -12.0
+theme_override_styles/panel = SubResource("Panel")
+
+[node name="Requirements" type="Label" parent="HUD/Bottom"]
+offset_left = 18.0
+offset_top = 10.0
+offset_right = 430.0
+offset_bottom = 36.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="Hint" type="Label" parent="HUD/Bottom"]
+offset_left = 18.0
+offset_top = 44.0
+anchor_right = 1.0
+offset_right = -18.0
+offset_bottom = 73.0
+mouse_filter = 2
+text = "按住左键，拖动工具清洁"
+
+[node name="Progress" type="ProgressBar" parent="HUD/Bottom"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -370.0
+offset_top = 12.0
+offset_right = -18.0
+offset_bottom = 32.0
+mouse_filter = 2
+show_percentage = true
+
+[node name="PausePanel" type="PanelContainer" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -100.0
+offset_right = 190.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("Panel")
+
+[node name="VBox" type="VBoxContainer" parent="HUD/PausePanel"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Text" type="Label" parent="HUD/PausePanel/VBox"]
+layout_mode = 2
+text = "已暂停\n所有服务进度保留"
+horizontal_alignment = 1
+
+[node name="Continue" type="Button" parent="HUD/PausePanel/VBox"]
+layout_mode = 2
+text = "继续服务  /  Esc"

@@ -219,3 +219,8 @@ Godot4.7.1打开scenes/prototype_grooming/main.tscn按F6。按住左键拖动清
 修甲指甲移到爪子后层、台面前层，四根按各趾尖重新定位。缩小至210逻辑像素、按甲根轮廓中心对齐，保留露出的粉红血线；切线判定与新位置同步。
 
 可玩入口仍为main.tscn（F6）。25项模型＋9项GUI／像素检查通过，新证据reports/grooming_v2_20261015；旧199项为v1历史证据，不能代替本轮检查。已重新导出builds/PurrOrbit_Grooming_20261015_v2/PurrOrbit_Grooming.exe（0.27.0.19），未启动EXE验证。
+
+
+## 新独立美容场景
+
+2026-10-15最新：新增独立灰白猫分层美容场景scenes/prototype_grooming/fur_demo.tscn（F6）。房间＋皮面金属台、身躯毛片整片脱落、轮廓局部擦除、慢毛结／上下扫尘／点跳蚤、机器擦拭与修甲已可操作。参数17第29.5，任务18的IMP-20261015-002；30模型＋15GUI通过，报告reports/grooming_fur_20261015。仅该原型采用，旧main.tscn与正式入口保留，无新EXE，真人手感待验证。

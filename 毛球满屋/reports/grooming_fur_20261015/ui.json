@@ -1,0 +1,15 @@
+{
+ "checks": 15,
+ "failures": [],
+ "input": "real SubViewport mouse events, controlled timestamps for batch sweeps",
+ "sizes": [
+  [
+   1920,
+   1080
+  ],
+  [
+   1440,
+   810
+  ]
+ ]
+}
