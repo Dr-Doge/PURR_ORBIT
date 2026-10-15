@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-15",
+  "scope": "本地美容舱室美术预览；仅日志及附件上传，工程源码未随本报告同步",
+  "sha256": {
+    "scenes\\Concept Whitebox.tscn": "42a459de28b2470ee355de596bb9f1fa610807c00fd05aba7d24c2b6f6fa5403",
+    "scripts\\art_airlock.gd": "a25059fa3ffaf01419b0494d769365f5cf774eddcbf23d0087c53cdf46aee152",
+    "scripts\\concept_edge_pan.gd": "344a382c8a033437d03f0326752fd14bd50edbc08be1bde8d3662a7d88174e0c",
+    "Asset\\Modular\\window_sky.gdshader": "a6159481e7ff207029a2efd305bfa8c088b52fed1fa8330ac4cedeabf75600cc",
+    "Asset\\Decor\\Worktable_01.png": "37631ffb125d92ac5e99bb3b7f90491f180243c8488ee4856cfc3ec016448abe",
+    "Asset\\Cats\\01_NormalCat.png": "edc5776419636b7453c4019d00d6cab7323966949e438b151235cdd639a72465"
+  }
+}
