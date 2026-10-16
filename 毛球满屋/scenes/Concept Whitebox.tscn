@@ -1,118 +1,39 @@
 [gd_scene format=3 uid="uid://dpb88576e37nh"]
 
+[ext_resource type="PackedScene" path="res://scenes/props_2d/CatPreview.tscn" id="17_woch1"]
+[ext_resource type="Texture2D" uid="uid://bwkvn1ki3rlib" path="res://Asset/Modular/WallTop_BackPipe_01.png" id="18_5e5qa"]
+[ext_resource type="Texture2D" uid="uid://e521mg7u1owi" path="res://Asset/Decor/Decor_Planter_Front_01.png" id="19_qw82p"]
+[ext_resource type="Texture2D" uid="uid://bjxs8v37sauoh" path="res://Asset/Decor/Decor_FurPile_Front_01.png" id="21_rl7mj"]
+[ext_resource type="PackedScene" uid="uid://bw4geo0vtjup8" path="res://scenes/props_2d/ArtAirlock.tscn" id="ArtAirlock"]
+[ext_resource type="Shader" uid="uid://cxrsr77hs6xhf" path="res://Asset/Cables/cable_art.gdshader" id="CableShader"]
+[ext_resource type="Texture2D" uid="uid://bbwstbvm1i5lo" path="res://Asset/Cables/Cable_01_Smooth.png" id="CableTex0"]
+[ext_resource type="Texture2D" uid="uid://ixj0puwcji52" path="res://Asset/Cables/Cable_02_Bundle.png" id="CableTex1"]
+[ext_resource type="Texture2D" uid="uid://coveaytw1y7e7" path="res://Asset/Cables/Cable_03_Corrugated.png" id="CableTex2"]
+[ext_resource type="Texture2D" uid="uid://brk2ddhg4kmr7" path="res://Asset/Cats/01_NormalCat.png" id="Closeup_NormalCat"]
+[ext_resource type="Texture2D" uid="uid://cqsvsn6h2bkhr" path="res://Asset/Decor/Worktable_01.png" id="Closeup_Worktable"]
 [ext_resource type="Texture2D" uid="uid://c7iycj27ixwen" path="res://Asset/Wall_Column_01.png" id="ColumnTexture"]
-[ext_resource type="Texture2D" uid="uid://dkl4po4u6ffnf" path="res://Asset/Floor_01.png" id="FloorTexture"]
-[ext_resource type="Texture2D" uid="uid://fajmsk6t2i1q" path="res://Asset/Wall_Base_01.png" id="WallTexture"]
-
-[sub_resource type="StandardMaterial3D" id="FloorSurface"]
-cull_mode = 2
-albedo_texture = ExtResource("FloorTexture")
-metallic_specular = 0.05
-roughness = 0.95
-texture_filter = 4
-
-[sub_resource type="QuadMesh" id="Quad1"]
-size = Vector2(14.5, 10.5)
-
-[sub_resource type="StandardMaterial3D" id="SideSurface"]
-cull_mode = 2
-albedo_texture = ExtResource("WallTexture")
-metallic_specular = 0.05
-roughness = 0.95
-uv1_scale = Vector3(2, 1, 1)
-texture_filter = 4
-
-[sub_resource type="QuadMesh" id="Quad2"]
-size = Vector2(10, 3.4)
-
-[sub_resource type="StandardMaterial3D" id="WallSection8"]
-cull_mode = 2
-albedo_texture = ExtResource("WallTexture")
-metallic_specular = 0.05
-roughness = 0.95
-uv1_scale = Vector3(0.23571429, 1, 1)
-texture_filter = 4
-
-[sub_resource type="QuadMesh" id="Quad3"]
-size = Vector2(1.1, 3.4)
-
-[sub_resource type="StandardMaterial3D" id="WallSection9"]
-cull_mode = 2
-albedo_texture = ExtResource("WallTexture")
-metallic_specular = 0.05
-roughness = 0.95
-uv1_scale = Vector3(1.3285714, 1, 1)
-uv1_offset = Vector3(0.8357143, 0, 0)
-texture_filter = 4
-
-[sub_resource type="QuadMesh" id="Quad4"]
-size = Vector2(6.2, 3.4)
-
-[sub_resource type="StandardMaterial3D" id="WallSection10"]
-cull_mode = 2
-albedo_texture = ExtResource("WallTexture")
-metallic_specular = 0.05
-roughness = 0.95
-uv1_scale = Vector3(0.23571429, 1, 1)
-uv1_offset = Vector3(2.7642858, 0, 0)
-texture_filter = 4
-
-[sub_resource type="StandardMaterial3D" id="WallSection12"]
-cull_mode = 2
-albedo_texture = ExtResource("WallTexture")
-metallic_specular = 0.05
-roughness = 0.95
-uv1_scale = Vector3(0.6, 0.45588234, 1)
-uv1_offset = Vector3(0.23571429, 0.5441176, 0)
-texture_filter = 4
-
-[sub_resource type="QuadMesh" id="Quad5"]
-size = Vector2(2.8, 1.55)
-
-[sub_resource type="StandardMaterial3D" id="WallSection13"]
-cull_mode = 2
-albedo_texture = ExtResource("WallTexture")
-metallic_specular = 0.05
-roughness = 0.95
-uv1_scale = Vector3(0.6, 0.22058824, 1)
-uv1_offset = Vector3(0.23571429, 0, 0)
-texture_filter = 4
-
-[sub_resource type="QuadMesh" id="Quad6"]
-size = Vector2(2.8, 0.75)
-
-[sub_resource type="StandardMaterial3D" id="WallSection19"]
-cull_mode = 2
-albedo_texture = ExtResource("WallTexture")
-metallic_specular = 0.05
-roughness = 0.95
-uv1_scale = Vector3(0.6, 0.45588234, 1)
-uv1_offset = Vector3(2.1642857, 0.5441176, 0)
-texture_filter = 4
-
-[sub_resource type="StandardMaterial3D" id="WallSection20"]
-cull_mode = 2
-albedo_texture = ExtResource("WallTexture")
-metallic_specular = 0.05
-roughness = 0.95
-uv1_scale = Vector3(0.6, 0.22058824, 1)
-uv1_offset = Vector3(2.1642857, 0, 0)
-texture_filter = 4
-
-[sub_resource type="StandardMaterial3D" id="ColumnSurface"]
-transparency = 2
-alpha_scissor_threshold = 0.4
-alpha_antialiasing_mode = 0
-cull_mode = 2
-albedo_texture = ExtResource("ColumnTexture")
-metallic_specular = 0.05
-roughness = 0.95
-uv1_scale = Vector3(0.221519, 0.91681737, 1)
-uv1_offset = Vector3(0.39029536, 0.042796865, 0)
-texture_filter = 4
-
-[sub_resource type="QuadMesh" id="ColumnQuad"]
-size = Vector2(0.49, 3.55)
+[ext_resource type="Texture2D" uid="uid://cbga10sxer47u" path="res://Asset/Airlock/Floor_01.png" id="CU_Door_Floor"]
+[ext_resource type="Texture2D" uid="uid://ckkbj11ffevmh" path="res://Asset/Airlock/Frame_02.png" id="CU_Door_Frame"]
+[ext_resource type="Texture2D" uid="uid://cx43bug1tr4or" path="res://Asset/Lights/WallLight_03_Small.png" id="CU_Door_LockLight"]
+[ext_resource type="Shader" uid="uid://dm6ts5ur4gs5m" path="res://Asset/Airlock/airlock_art.gdshader" id="CU_Door_Shader"]
+[ext_resource type="Texture2D" uid="uid://c7lotxu0cvh7b" path="res://Asset/Modular/Wall_Plain_01.png" id="CU_Door_SideWall"]
+[ext_resource type="Texture2D" uid="uid://sg4tixadvb8b" path="res://Asset/Universe_Earth_Outlined_01.jpg" id="CU_Door_Sky"]
+[ext_resource type="Script" uid="uid://chifi76l8olap" path="res://scripts/concept_edge_pan.gd" id="EdgePanScript"]
+[ext_resource type="Texture2D" uid="uid://dncuah2c27udk" path="res://Asset/Modular/Window_Glass_Reflection_01.png" id="GlassReflection"]
+[ext_resource type="Texture2D" uid="uid://cywntwlsuhv1c" path="res://Asset/Lights/WallLight_01_Framed.png" id="Light_01_Framed"]
+[ext_resource type="Texture2D" uid="uid://yd0fe6kibfcl" path="res://Asset/Lights/WallLight_02_Triple.png" id="Light_02_Triple"]
+[ext_resource type="Texture2D" uid="uid://djsn17ltd4tuj" path="res://Asset/Modular/Floor_Border_01.png" id="ModBorder"]
+[ext_resource type="Texture2D" uid="uid://dry8rsr6dt58u" path="res://Asset/Modular/Pipe_Straight_01.png" id="ModPipe"]
+[ext_resource type="Texture2D" uid="uid://c1ohtkqxmysbf" path="res://Asset/Modular/Floor_Tile_01.png" id="ModTile"]
+[ext_resource type="Texture2D" uid="uid://vcdb58fqebm8" path="res://Asset/Modular/Wall_Window_02.png" id="NewWindowTexture"]
+[ext_resource type="Texture2D" uid="uid://dvf0petqxtj8w" path="res://Asset/Modular/PerspectiveProps/01_Frame_Oblique_03.png" id="TrialFrameTex"]
+[ext_resource type="Texture2D" uid="uid://dq85dkxrebtln" path="res://Asset/Modular/PerspectiveProps/02_Pipe_Oblique_03.png" id="TrialPipeTex"]
+[ext_resource type="Texture2D" uid="uid://b264jdbi107eg" path="res://Asset/Modular/PerspectiveProps/03_Vent_Oblique_03.png" id="TrialVentTex"]
+[ext_resource type="Shader" uid="uid://cop53j001qwf" path="res://Asset/Lights/wall_light.gdshader" id="WallLightShader"]
+[ext_resource type="PackedScene" path="res://scenes/props_2d/Frame.tscn" id="WBFrame"]
+[ext_resource type="PackedScene" path="res://scenes/props_2d/Pipe.tscn" id="WBPipe"]
+[ext_resource type="PackedScene" path="res://scenes/props_2d/Vent.tscn" id="WBVent"]
+[ext_resource type="Shader" uid="uid://dxe2p4ts7lkl0" path="res://Asset/Modular/window_sky.gdshader" id="WindowSkyShader"]
 
 [sub_resource type="StandardMaterial3D" id="Lamp"]
 albedo_color = Color(1, 0.96, 0.87, 1)
@@ -149,131 +70,1173 @@ shader_parameter/strength = 0.3
 shader_parameter/inner_radius = 0.45
 shader_parameter/outer_radius = 1.4
 
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_0_0"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.5, 0.5, 1)
+uv1_offset = Vector3(0.5, 0.5, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_0_0"]
+size = Vector2(1.25, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_0_1"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(1, 0.5, 1)
+uv1_offset = Vector3(0, 0.5, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_0_1"]
+size = Vector2(2.5, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_0_2"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(1, 0.5, 1)
+uv1_offset = Vector3(0, 0.5, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_0_2"]
+size = Vector2(2.5, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_0_3"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(1, 0.5, 1)
+uv1_offset = Vector3(0, 0.5, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_0_3"]
+size = Vector2(2.5, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_0_4"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(1, 0.5, 1)
+uv1_offset = Vector3(0, 0.5, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_0_4"]
+size = Vector2(2.5, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_0_5"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(1, 0.5, 1)
+uv1_offset = Vector3(0, 0.5, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_0_5"]
+size = Vector2(2.5, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_0_6"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(1, 0.5, 1)
+uv1_offset = Vector3(0, 0.5, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_0_6"]
+size = Vector2(2.5, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_0_7"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.5, 0.5, 1)
+uv1_offset = Vector3(0, 0.5, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_0_7"]
+size = Vector2(1.25, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_1_0"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.5, 1, 1)
+uv1_offset = Vector3(0.5, 0, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_1_0"]
+size = Vector2(1.25, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_1_1"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_1_1"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_1_2"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_1_2"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_1_3"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_1_3"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_1_4"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_1_4"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_1_5"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_1_5"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_1_6"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_1_6"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_1_7"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.5, 1, 1)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_1_7"]
+size = Vector2(1.25, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_2_0"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.5, 1, 1)
+uv1_offset = Vector3(0.5, 0, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_2_0"]
+size = Vector2(1.25, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_2_1"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_2_1"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_2_2"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_2_2"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_2_3"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_2_3"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_2_4"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_2_4"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_2_5"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_2_5"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_2_6"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_2_6"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_2_7"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.5, 1, 1)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_2_7"]
+size = Vector2(1.25, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_3_0"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.5, 1, 1)
+uv1_offset = Vector3(0.5, 0, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_3_0"]
+size = Vector2(1.25, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_3_1"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_3_1"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_3_2"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_3_2"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_3_3"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_3_3"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_3_4"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_3_4"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_3_5"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_3_5"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_3_6"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_3_6"]
+size = Vector2(2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_3_7"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.5, 1, 1)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_3_7"]
+size = Vector2(1.25, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_4_0"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.5, 0.5, 1)
+uv1_offset = Vector3(0.5, 0, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_4_0"]
+size = Vector2(1.25, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_4_1"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(1, 0.5, 1)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_4_1"]
+size = Vector2(2.5, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_4_2"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(1, 0.5, 1)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_4_2"]
+size = Vector2(2.5, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_4_3"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(1, 0.5, 1)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_4_3"]
+size = Vector2(2.5, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_4_4"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(1, 0.5, 1)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_4_4"]
+size = Vector2(2.5, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_4_5"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(1, 0.5, 1)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_4_5"]
+size = Vector2(2.5, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_4_6"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(1, 0.5, 1)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_4_6"]
+size = Vector2(2.5, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="Mat_HalfGrid_4_7"]
+cull_mode = 2
+albedo_texture = ExtResource("ModTile")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.5, 0.5, 1)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="Mesh_HalfGrid_4_7"]
+size = Vector2(1.25, 1.25)
+
+[sub_resource type="StandardMaterial3D" id="ModBorderMaterial"]
+transparency = 2
+alpha_scissor_threshold = 0.4
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("ModBorder")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.97605896, 0.20303868, 1)
+uv1_offset = Vector3(0.011970534, 0.38121548, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="QuadMesh_woch1"]
+size = Vector2(2.5, 1.2178578)
+
+[sub_resource type="QuadMesh" id="ModQuad36"]
+size = Vector2(2.5, 0.35)
+
+[sub_resource type="QuadMesh" id="QuadMesh_5e5qa"]
+size = Vector2(2.5, 1.2178578)
+
+[sub_resource type="QuadMesh" id="ModQuad38"]
+size = Vector2(2.5, 0.35)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7ejkx"]
+size = Vector2(2.5, 1.2178578)
+
+[sub_resource type="QuadMesh" id="ModQuad40"]
+size = Vector2(2.5, 0.35)
+
+[sub_resource type="QuadMesh" id="QuadMesh_qw82p"]
+size = Vector2(2.5, 1.2178578)
+
+[sub_resource type="QuadMesh" id="ModQuad42"]
+size = Vector2(2.5, 0.35)
+
+[sub_resource type="QuadMesh" id="QuadMesh_36w18"]
+size = Vector2(2.5, 1.2178578)
+
+[sub_resource type="QuadMesh" id="ModQuad44"]
+size = Vector2(2.5, 0.35)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rl7mj"]
+size = Vector2(2.5, 1.2178578)
+
+[sub_resource type="QuadMesh" id="ModQuad46"]
+size = Vector2(2.5, 0.35)
+
+[sub_resource type="QuadMesh" id="ModQuad49"]
+size = Vector2(2.5, 0.35)
+
+[sub_resource type="QuadMesh" id="ModQuad51"]
+size = Vector2(2.5, 0.35)
+
+[sub_resource type="QuadMesh" id="ModQuad53"]
+size = Vector2(2.5, 0.35)
+
+[sub_resource type="QuadMesh" id="ModQuad55"]
+size = Vector2(2.5, 0.35)
+
 [sub_resource type="StandardMaterial3D" id="WallTopSurface"]
 cull_mode = 2
 albedo_color = Color(0.46, 0.39, 0.31, 1)
 metallic_specular = 0.05
 roughness = 0.95
 
-[sub_resource type="QuadMesh" id="SideTopQuad"]
-size = Vector2(0.5, 10)
+[sub_resource type="QuadMesh" id="QuadMesh_d3cba"]
+size = Vector2(1.217858, 0.35)
 
-[sub_resource type="QuadMesh" id="BackTopQuad"]
-size = Vector2(15, 0.5)
+[sub_resource type="QuadMesh" id="QuadMesh_cd8ys"]
+size = Vector2(2.5, 1.2178578)
+
+[sub_resource type="StandardMaterial3D" id="WallAspectMaterial6"]
+cull_mode = 2
+albedo_texture = ExtResource("CU_Door_SideWall")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.48421636, 1, 1)
+uv1_offset = Vector3(1.5204394, 0, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="QuadMesh_4si6l"]
+size = Vector2(1.3124056, 4.131858)
+
+[sub_resource type="StandardMaterial3D" id="WallAspectMaterial7"]
+cull_mode = 2
+albedo_texture = ExtResource("CU_Door_SideWall")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.48421636, 1, 1)
+uv1_offset = Vector3(2.0046558, 0, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="QuadMesh_pvr7u"]
+size = Vector2(1.3124056, 4.131858)
+
+[sub_resource type="ShaderMaterial" id="NewWindowSurface"]
+render_priority = 0
+shader = ExtResource("WindowSkyShader")
+shader_parameter/wall_texture = ExtResource("NewWindowTexture")
+shader_parameter/universe_texture = ExtResource("CU_Door_Sky")
+shader_parameter/mirror_uv = false
+shader_parameter/wall_uv_scale = Vector2(1, 1)
+shader_parameter/glass_region = Vector4(0, 0, 1, 1)
+shader_parameter/glass_texture = ExtResource("GlassReflection")
+shader_parameter/glass_strength = 0.12
+shader_parameter/glass_edge_strength = 0.09
+
+[sub_resource type="QuadMesh" id="NewWindowMesh"]
+size = Vector2(5.35, 4.131858)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_woch1"]
+render_priority = 0
+shader = ExtResource("WindowSkyShader")
+shader_parameter/wall_texture = ExtResource("NewWindowTexture")
+shader_parameter/universe_texture = ExtResource("CU_Door_Sky")
+shader_parameter/mirror_uv = true
+shader_parameter/wall_uv_scale = Vector2(1, 1)
+shader_parameter/glass_region = Vector4(0, 0, 1, 1)
+shader_parameter/glass_texture = ExtResource("GlassReflection")
+shader_parameter/glass_strength = 0.12
+shader_parameter/glass_edge_strength = 0.09
+
+[sub_resource type="ShaderMaterial" id="SymmetricWindowLeftMat"]
+render_priority = 0
+shader = ExtResource("WindowSkyShader")
+shader_parameter/wall_texture = ExtResource("NewWindowTexture")
+shader_parameter/universe_texture = ExtResource("CU_Door_Sky")
+shader_parameter/mirror_uv = false
+shader_parameter/wall_uv_scale = Vector2(0.5, 1)
+shader_parameter/glass_region = Vector4(0, 0, 0.5, 1)
+shader_parameter/glass_texture = ExtResource("GlassReflection")
+shader_parameter/glass_strength = 0.12
+shader_parameter/glass_edge_strength = 0.09
+
+[sub_resource type="QuadMesh" id="SymmetricWindowHalfMesh"]
+size = Vector2(2.675, 4.131858)
+
+[sub_resource type="ShaderMaterial" id="SymmetricWindowRightMat"]
+render_priority = 0
+shader = ExtResource("WindowSkyShader")
+shader_parameter/wall_texture = ExtResource("NewWindowTexture")
+shader_parameter/universe_texture = ExtResource("CU_Door_Sky")
+shader_parameter/mirror_uv = true
+shader_parameter/wall_uv_scale = Vector2(0.5, 1)
+shader_parameter/glass_region = Vector4(0.5, 0, 0.5, 1)
+shader_parameter/glass_texture = ExtResource("GlassReflection")
+shader_parameter/glass_strength = 0.12
+shader_parameter/glass_edge_strength = 0.09
+
+[sub_resource type="StandardMaterial3D" id="WallAspectMaterial14"]
+cull_mode = 2
+albedo_texture = ExtResource("CU_Door_SideWall")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.55200666, 1, 1)
+uv1_offset = Vector3(1.5204394, 0, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="QuadMesh_r7etk"]
+size = Vector2(3.7178578, 4.131858)
+
+[sub_resource type="StandardMaterial3D" id="WallAspectMaterial15"]
+cull_mode = 2
+albedo_texture = ExtResource("CU_Door_SideWall")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.48421636, 1, 1)
+uv1_offset = Vector3(1.036223, 0, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="ModQuad76"]
+size = Vector2(2.5, 4.131858)
+
+[sub_resource type="StandardMaterial3D" id="WallAspectMaterial16"]
+cull_mode = 2
+albedo_texture = ExtResource("CU_Door_SideWall")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.48421636, 1, 1)
+uv1_offset = Vector3(0.55200666, 0, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="ModQuad77"]
+size = Vector2(2.5, 4.131858)
+
+[sub_resource type="StandardMaterial3D" id="WallAspectMaterial17"]
+cull_mode = 2
+albedo_texture = ExtResource("CU_Door_SideWall")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.55200666, 1, 1)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="ModQuad78"]
+size = Vector2(2.85, 4.131858)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5e5qa"]
+cull_mode = 2
+albedo_texture = ExtResource("CU_Door_SideWall")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(-0.55200666, 1, 1)
+uv1_offset = Vector3(2.072446, 0, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="QuadMesh_d7aok"]
+size = Vector2(3.7178578, 4.131858)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ejkx"]
+cull_mode = 2
+albedo_texture = ExtResource("CU_Door_SideWall")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(-0.48421636, 1, 1)
+uv1_offset = Vector3(1.5204394, 0, 0)
+texture_filter = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pos0p"]
+cull_mode = 2
+albedo_texture = ExtResource("CU_Door_SideWall")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(-0.48421636, 1, 1)
+uv1_offset = Vector3(1.036223, 0, 0)
+texture_filter = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qw82p"]
+cull_mode = 2
+albedo_texture = ExtResource("CU_Door_SideWall")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(-0.55200666, 1, 1)
+uv1_offset = Vector3(0.55200666, 0, 0)
+texture_filter = 4
+
+[sub_resource type="StandardMaterial3D" id="ColumnSurface"]
+transparency = 2
+alpha_scissor_threshold = 0.4
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("ColumnTexture")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.221519, 0.91681737, 1)
+uv1_offset = Vector3(0.39029536, 0.042796865, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="ModQuad84"]
+size = Vector2(0.78, 4.3)
+
+[sub_resource type="QuadMesh" id="QuadMesh_pos0p"]
+size = Vector2(20.725035, 0.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7p3f5"]
+size = Vector2(0.5, 11.567858)
+
+[sub_resource type="QuadMesh" id="QuadMesh_a15oy"]
+size = Vector2(0.5, 11.567858)
+
+[sub_resource type="StandardMaterial3D" id="ModPipeMaterial"]
+transparency = 2
+alpha_scissor_threshold = 0.4
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("ModPipe")
+metallic_specular = 0.05
+roughness = 0.95
+uv1_scale = Vector3(0.94198895, 0.22513813, 1)
+uv1_offset = Vector3(0.029005526, 0.38812155, 0)
+texture_filter = 4
+
+[sub_resource type="QuadMesh" id="ModQuad93"]
+size = Vector2(3.631858, 0.23)
+
+[sub_resource type="QuadMesh" id="ModQuad94"]
+size = Vector2(3.631858, 0.23)
+
+[sub_resource type="QuadMesh" id="ModQuad95"]
+size = Vector2(1.4, 0.18)
+
+[sub_resource type="QuadMesh" id="ModQuad96"]
+size = Vector2(1.4, 0.18)
+
+[sub_resource type="QuadMesh" id="ModQuad97"]
+size = Vector2(3.631858, 0.23)
+
+[sub_resource type="QuadMesh" id="ModQuad98"]
+size = Vector2(3.631858, 0.23)
+
+[sub_resource type="QuadMesh" id="ModQuad99"]
+size = Vector2(1.4, 0.18)
+
+[sub_resource type="QuadMesh" id="ModQuad100"]
+size = Vector2(1.4, 0.18)
+
+[sub_resource type="QuadMesh" id="ModQuad101"]
+size = Vector2(0.9, 4.3)
+
+[sub_resource type="QuadMesh" id="ModQuad105"]
+size = Vector2(0.9, 4.3)
+
+[sub_resource type="StandardMaterial3D" id="TrialFrame"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("TrialFrameTex")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.40722656, 0.9765625, 1)
+uv1_offset = Vector3(0.33789063, 0.01171875, 0)
+texture_filter = 4
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="TrialLeftFrameQuad"]
+size = Vector2(1.1954, 4.3)
+
+[sub_resource type="StandardMaterial3D" id="TrialFrameMirror"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("TrialFrameTex")
+metallic_specular = 0.0
+uv1_scale = Vector3(-0.40722656, 0.9765625, 1)
+uv1_offset = Vector3(0.7451172, 0.01171875, 0)
+texture_filter = 4
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="TrialRightFrameQuad"]
+size = Vector2(1.1954, 4.3)
+
+[sub_resource type="StandardMaterial3D" id="TrialPipe"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("TrialPipeTex")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.84548825, 0.9366632, 1)
+uv1_offset = Vector3(0.11742892, 0.024716787, 0)
+texture_filter = 4
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="TrialLeftCornerPipeQuad"]
+size = Vector2(1.4101155, 3.75)
+
+[sub_resource type="StandardMaterial3D" id="TrialPipeMirror"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("TrialPipeTex")
+metallic_specular = 0.0
+uv1_scale = Vector3(-0.84548825, 0.9366632, 1)
+uv1_offset = Vector3(0.9629172, 0.024716787, 0)
+texture_filter = 4
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="TrialRightCornerPipeQuad"]
+size = Vector2(1.4101155, 3.75)
+
+[sub_resource type="StandardMaterial3D" id="TrialVent"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("TrialVentTex")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.8755981, 0.9035088, 1)
+uv1_offset = Vector3(0.06539075, 0.057416268, 0)
+texture_filter = 4
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="TrialLeftVentQuad"]
+size = Vector2(1.5021182, 1.55)
+
+[sub_resource type="StandardMaterial3D" id="TrialVentMirror"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("TrialVentTex")
+metallic_specular = 0.0
+uv1_scale = Vector3(-0.8755981, 0.9035088, 1)
+uv1_offset = Vector3(0.94098884, 0.057416268, 0)
+texture_filter = 4
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="TrialRightVentQuad"]
+size = Vector2(1.5021182, 1.55)
+
+[sub_resource type="Shader" id="Shader_7ejkx"]
+code = "shader_type spatial;
+render_mode cull_disabled, specular_disabled;
+uniform sampler2D art: source_color, filter_linear_mipmap_anisotropic, repeat_disable;
+uniform vec4 region;
+uniform bool top=false;
+void fragment(){
+ vec2 uv=top ? vec2(UV.y,UV.x) : UV;
+ uv.x=fract(uv.x*2.0);
+ vec4 c=texture(art,region.xy+uv*region.zw);
+ if(c.a<0.4) discard;
+ ALBEDO=c.rgb; ROUGHNESS=0.95;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pos0p"]
+render_priority = 0
+shader = SubResource("Shader_7ejkx")
+shader_parameter/art = ExtResource("ModBorder")
+shader_parameter/region = Vector4(0.011970534, 0.38121548, 0.97605896, 0.20303868)
+shader_parameter/top = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_oovbv"]
+size = Vector2(0.68, 11.567858)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qw82p"]
+render_priority = 0
+shader = SubResource("Shader_7ejkx")
+shader_parameter/art = ExtResource("ModBorder")
+shader_parameter/region = Vector4(0.011970534, 0.38121548, 0.97605896, 0.20303868)
+shader_parameter/top = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_2vmy4"]
+size = Vector2(11.567858, 0.375)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36w18"]
+render_priority = 0
+shader = SubResource("Shader_7ejkx")
+shader_parameter/art = ExtResource("ModBorder")
+shader_parameter/region = Vector4(0.011970534, 0.38121548, 0.97605896, 0.20303868)
+shader_parameter/top = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_pj0m2"]
+size = Vector2(0.68, 11.567858)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rl7mj"]
+render_priority = 0
+shader = SubResource("Shader_7ejkx")
+shader_parameter/art = ExtResource("ModBorder")
+shader_parameter/region = Vector4(0.011970534, 0.38121548, 0.97605896, 0.20303868)
+shader_parameter/top = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_if2jb"]
+size = Vector2(11.567858, 0.375)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7va4m"]
+transparency = 2
+alpha_scissor_threshold = 0.4
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("18_5e5qa")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.9410681, 0.22237569, 1)
+uv1_offset = Vector3(0.02946593, 0.38950276, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_o2tgq"]
+size = Vector2(5.0712585, 0.39826694)
+
+[sub_resource type="QuadMesh" id="QuadMesh_6ww3g"]
+size = Vector2(5.0712585, 0.39826694)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ql1k2"]
+size = Vector2(5.0712585, 0.39826694)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3ymje"]
+size = Vector2(5.0712585, 0.39826694)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_arwmu"]
+transparency = 2
+alpha_scissor_threshold = 0.85
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("19_qw82p")
+metallic_specular = 0.0
+uv1_scale = Vector3(0.8601997, 0.8716577, 1)
+uv1_offset = Vector3(0.06990014, 0.045454547, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_r7wpm"]
+size = Vector2(2.651227, 2.15)
+
+[sub_resource type="Shader" id="Shader_qw82p"]
+code = "shader_type spatial;
+render_mode cull_disabled, specular_disabled;
+uniform sampler2D art:source_color,filter_linear_mipmap_anisotropic,repeat_disable;
+uniform vec4 region;
+void fragment(){
+ vec4 c=texture(art,region.xy+UV*region.zw);
+ if(c.a<0.85) discard;
+ NORMAL=normalize((VIEW_MATRIX*vec4(0.0,0.0,1.0,0.0)).xyz);
+ ALBEDO=c.rgb; ROUGHNESS=1.0;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7va4m"]
+render_priority = 0
+shader = SubResource("Shader_qw82p")
+shader_parameter/art = ExtResource("21_rl7mj")
+shader_parameter/region = Vector4(0.13338089, 0.2023173, 0.77888733, 0.6131907)
+
+[sub_resource type="QuadMesh" id="QuadMesh_6blpm"]
+size = Vector2(0.8729651, 0.55)
+
+[sub_resource type="Shader" id="Shader_4si6l"]
+code = "shader_type spatial;
+render_mode cull_disabled, specular_disabled;
+uniform sampler2D art:source_color,filter_linear_mipmap_anisotropic,repeat_disable;
+uniform vec4 region;
+void fragment(){
+ vec4 c=texture(art,region.xy+UV*region.zw);
+ if(c.a<0.85) discard;
+ NORMAL=normalize((VIEW_MATRIX*vec4(0.0,0.0,1.0,0.0)).xyz);
+ ALBEDO=c.rgb; ROUGHNESS=1.0;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pvr7u"]
+render_priority = 0
+shader = SubResource("Shader_4si6l")
+shader_parameter/art = ExtResource("21_rl7mj")
+shader_parameter/region = Vector4(0.13338089, 0.2023173, 0.77888733, 0.6131907)
+
+[sub_resource type="Shader" id="Shader_oovbv"]
+code = "shader_type spatial;
+render_mode cull_disabled, specular_disabled;
+uniform sampler2D art:source_color,filter_linear_mipmap_anisotropic,repeat_disable;
+uniform vec4 region;
+void fragment(){
+ vec4 c=texture(art,region.xy+UV*region.zw);
+ if(c.a<0.85) discard;
+ NORMAL=normalize((VIEW_MATRIX*vec4(0.0,0.0,1.0,0.0)).xyz);
+ ALBEDO=c.rgb; ROUGHNESS=1.0;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cb76q"]
+render_priority = 0
+shader = SubResource("Shader_oovbv")
+shader_parameter/art = ExtResource("21_rl7mj")
+shader_parameter/region = Vector4(0.13338089, 0.2023173, 0.77888733, 0.6131907)
+
+[sub_resource type="Shader" id="Shader_r7etk"]
+code = "shader_type spatial;
+render_mode cull_disabled, specular_disabled;
+uniform sampler2D art:source_color,filter_linear_mipmap_anisotropic,repeat_disable;
+uniform vec4 region;
+void fragment(){
+ vec4 c=texture(art,region.xy+UV*region.zw);
+ if(c.a<0.85) discard;
+ NORMAL=normalize((VIEW_MATRIX*vec4(0.0,0.0,1.0,0.0)).xyz);
+ ALBEDO=c.rgb; ROUGHNESS=1.0;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d7aok"]
+render_priority = 0
+shader = SubResource("Shader_r7etk")
+shader_parameter/art = ExtResource("21_rl7mj")
+shader_parameter/region = Vector4(0.13338089, 0.2023173, 0.77888733, 0.6131907)
+
+[sub_resource type="ShaderMaterial" id="LightMat_01_Framed"]
+render_priority = 0
+shader = ExtResource("WallLightShader")
+shader_parameter/art = ExtResource("Light_01_Framed")
+shader_parameter/region = Vector4(0.03314917, 0.25414366, 0.9323204, 0.45441988)
+
+[sub_resource type="QuadMesh" id="LightMesh_01_Framed"]
+size = Vector2(1.8, 0.36)
+
+[sub_resource type="ShaderMaterial" id="LightMat_02_Triple"]
+render_priority = 0
+shader = ExtResource("WallLightShader")
+shader_parameter/art = ExtResource("Light_02_Triple")
+shader_parameter/region = Vector4(0.16615854, 0.16263554, 0.66387194, 0.66388655)
+
+[sub_resource type="QuadMesh" id="LightMesh_02_Triple"]
+size = Vector2(0.65, 0.6)
+
+[sub_resource type="ShaderMaterial" id="LightMat_03_Small"]
+render_priority = 0
+shader = ExtResource("WallLightShader")
+shader_parameter/art = ExtResource("CU_Door_LockLight")
+shader_parameter/region = Vector4(0.25138122, 0.14088398, 0.5, 0.73526704)
+
+[sub_resource type="QuadMesh" id="LightMesh_03_Small"]
+size = Vector2(0.2, 0.6)
+
+[sub_resource type="ShaderMaterial" id="CableMat0"]
+render_priority = 0
+shader = ExtResource("CableShader")
+shader_parameter/art = ExtResource("CableTex0")
+shader_parameter/region = Vector4(0.013528748, 0.19165727, 0.9735062, 0.626832)
+
+[sub_resource type="QuadMesh" id="CableMesh0"]
+size = Vector2(3.5, 1.1268095)
+
+[sub_resource type="ShaderMaterial" id="CableMat1"]
+render_priority = 0
+shader = ExtResource("CableShader")
+shader_parameter/art = ExtResource("CableTex1")
+shader_parameter/region = Vector4(0.012102874, 0.16771753, 0.97579426, 0.66960907)
+
+[sub_resource type="QuadMesh" id="CableMesh1"]
+size = Vector2(3.5, 0.96046513)
+
+[sub_resource type="ShaderMaterial" id="CableMat2"]
+render_priority = 0
+shader = ExtResource("CableShader")
+shader_parameter/art = ExtResource("CableTex2")
+shader_parameter/region = Vector4(0.019588146, 0.13544303, 0.9608237, 0.7506329)
+
+[sub_resource type="QuadMesh" id="CableMesh2"]
+size = Vector2(3.5, 1.0849451)
+
+[sub_resource type="ShaderMaterial" id="Closeup_Mat_VestibuleFloor"]
+render_priority = 0
+shader = ExtResource("CU_Door_Shader")
+shader_parameter/art = ExtResource("CU_Door_Floor")
+shader_parameter/region = Vector4(0, 0, 1, 1)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/opening_bounds = Vector4(0, 0, 0, 0)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = false
+shader_parameter/clip_ready = false
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Closeup_Mesh_VestibuleFloor"]
+size = Vector2(3.04, 3)
+
+[sub_resource type="ShaderMaterial" id="Closeup_Mat_LeftInnerWall"]
+render_priority = 0
+shader = ExtResource("CU_Door_Shader")
+shader_parameter/art = ExtResource("CU_Door_SideWall")
+shader_parameter/region = Vector4(0, 0, 1, 1)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/opening_bounds = Vector4(0, 0, 0, 0)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = false
+shader_parameter/clip_ready = false
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Closeup_Mesh_LeftInnerWall"]
+size = Vector2(3, 3.45)
+
+[sub_resource type="ShaderMaterial" id="Mirrored_RightInnerWall_material_override"]
+render_priority = 0
+shader = ExtResource("CU_Door_Shader")
+shader_parameter/art = ExtResource("CU_Door_SideWall")
+shader_parameter/region = Vector4(0, 0, 1, 1)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = true
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/opening_bounds = Vector4(0, 0, 0, 0)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = false
+shader_parameter/clip_ready = false
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Mirrored_RightInnerWall_mesh"]
+size = Vector2(3, 3.45)
+
+[sub_resource type="ShaderMaterial" id="Mirrored_Right_2_material_override"]
+render_priority = 0
+shader = SubResource("Shader_7ejkx")
+shader_parameter/art = ExtResource("ModBorder")
+shader_parameter/region = Vector4(0.011970534, 0.38121548, 0.97605896, 0.20303868)
+shader_parameter/top = true
+
+[sub_resource type="QuadMesh" id="Mirrored_Right_2_mesh"]
+size = Vector2(0.3197514, 1.4597952)
+
+[sub_resource type="QuadMesh" id="CU_LeftTop"]
+size = Vector2(0.55, 4.479197)
+
+[sub_resource type="QuadMesh" id="CU_LeftInnerSide"]
+size = Vector2(4.479197, 0.45)
+
+[sub_resource type="ShaderMaterial" id="Mirrored_RightTop_material_override"]
+render_priority = 0
+shader = SubResource("Shader_7ejkx")
+shader_parameter/art = ExtResource("ModBorder")
+shader_parameter/region = Vector4(0.011970534, 0.38121548, 0.97605896, 0.20303868)
+shader_parameter/top = true
+
+[sub_resource type="QuadMesh" id="Mirrored_RightTop_mesh"]
+size = Vector2(0.55, 4.479197)
+
+[sub_resource type="ShaderMaterial" id="Mirrored_RightInnerSide_material_override"]
+render_priority = 0
+shader = SubResource("Shader_7ejkx")
+shader_parameter/art = ExtResource("ModBorder")
+shader_parameter/region = Vector4(0.011970534, 0.38121548, 0.97605896, 0.20303868)
+shader_parameter/top = false
+
+[sub_resource type="QuadMesh" id="Mirrored_RightInnerSide_mesh"]
+size = Vector2(4.479197, 0.45)
+
+[sub_resource type="ShaderMaterial" id="CU_Door_Mat_Frame"]
+render_priority = 0
+shader = ExtResource("CU_Door_Shader")
+shader_parameter/art = ExtResource("CU_Door_Frame")
+shader_parameter/region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/opening_bounds = Vector4(0, 0, 0, 0)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = false
+shader_parameter/clip_ready = false
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="CU_Door_Mesh_Frame"]
+size = Vector2(3.7754126, 4.131858)
 
 [node name="ConceptWhitebox" type="Node3D" unique_id=1437642635]
-
-[node name="01_Floor" type="Node3D" parent="." unique_id=1249776992]
-
-[node name="FloorCard" type="MeshInstance3D" parent="01_Floor" unique_id=1058298252]
-transform = Transform3D(0.9653568, 0, 0, 0, 2.936103e-07, 1, 0, -0.9353134, 3.1391647e-07, 0, 0, 0)
-material_override = SubResource("FloorSurface")
-cast_shadow = 0
-mesh = SubResource("Quad1")
-
-[node name="FloorCard2" type="MeshInstance3D" parent="01_Floor" unique_id=1669112010]
-transform = Transform3D(0.9653568, 0, 0, 0, 2.936103e-07, 1, 0, -0.9353134, 3.1391647e-07, 0, -0.05905533, 0.200315)
-material_override = SubResource("FloorSurface")
-cast_shadow = 0
-mesh = SubResource("Quad1")
-
-[node name="02_SideWalls" type="Node3D" parent="." unique_id=1855936448]
-transform = Transform3D(1, 0, 0, 0, 1.5882353, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="LeftWallCard" type="MeshInstance3D" parent="02_SideWalls" unique_id=1261296804]
-transform = Transform3D(3.1391647e-07, 0, 1, 0, 0.77553785, 0, -1, 0, 3.1391647e-07, -7, 1.2867079, 0)
-material_override = SubResource("SideSurface")
-cast_shadow = 2
-mesh = SubResource("Quad2")
-
-[node name="RightWallCard" type="MeshInstance3D" parent="02_SideWalls" unique_id=1175696603]
-transform = Transform3D(3.1391647e-07, 0, -1, 0, 0.77553785, 0, 1, 0, 3.1391647e-07, 7, 1.2867079, 0)
-material_override = SubResource("SideSurface")
-cast_shadow = 2
-mesh = SubResource("Quad2")
-
-[node name="03_BackWall_Windows" type="Node3D" parent="." unique_id=375781598]
-transform = Transform3D(1, 0, 0, 0, 1.5882353, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="WallCard_1" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=1167723157]
-transform = Transform3D(1, 0, 0, 0, 0.77553785, 0, 0, 0, 1, -6.45, 1.2867079, -5)
-material_override = SubResource("WallSection8")
-cast_shadow = 2
-mesh = SubResource("Quad3")
-
-[node name="WallCard_2" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=682066756]
-transform = Transform3D(1, 0, 0, 0, 0.77553785, 0, 0, 0, 1, 0, 1.2867079, -5)
-material_override = SubResource("WallSection9")
-cast_shadow = 2
-mesh = SubResource("Quad4")
-
-[node name="WallCard_3" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=968462795]
-transform = Transform3D(1, 0, 0, 0, 0.77553785, 0, 0, 0, 1, 6.45, 1.2867079, -5)
-material_override = SubResource("WallSection10")
-cast_shadow = 2
-mesh = SubResource("Quad3")
-
-[node name="LeftWindow" type="Node3D" parent="03_BackWall_Windows" unique_id=697155918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -5)
-
-[node name="LowerWallCard" type="MeshInstance3D" parent="03_BackWall_Windows/LeftWindow" unique_id=98941234]
-transform = Transform3D(1, 0, 0, 0, 0.77553785, 0, 0, 0, 1, 0, 0.56933516, 0)
-material_override = SubResource("WallSection12")
-cast_shadow = 2
-mesh = SubResource("Quad5")
-
-[node name="UpperWallCard" type="MeshInstance3D" parent="03_BackWall_Windows/LeftWindow" unique_id=1318953453]
-transform = Transform3D(1, 0, 0, 0, 0.77553785, 0, 0, 0, 1, 0, 2.3142955, 0)
-material_override = SubResource("WallSection13")
-cast_shadow = 2
-mesh = SubResource("Quad6")
-
-[node name="RightWindow" type="Node3D" parent="03_BackWall_Windows" unique_id=357253189]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -5)
-
-[node name="LowerWallCard" type="MeshInstance3D" parent="03_BackWall_Windows/RightWindow" unique_id=649623384]
-transform = Transform3D(1, 0, 0, 0, 0.77553785, 0, 0, 0, 1, 0, 0.56933516, 0)
-material_override = SubResource("WallSection19")
-cast_shadow = 2
-mesh = SubResource("Quad5")
-
-[node name="UpperWallCard" type="MeshInstance3D" parent="03_BackWall_Windows/RightWindow" unique_id=662471395]
-transform = Transform3D(1, 0, 0, 0, 0.77553785, 0, 0, 0, 1, 0, 2.3142955, 0)
-material_override = SubResource("WallSection20")
-cast_shadow = 2
-mesh = SubResource("Quad6")
 
 [node name="04_RecoveryEntrance" type="Node3D" parent="." unique_id=503325945]
 transform = Transform3D(1, 0, 0, 0, 1.6, 0, 0, 0, 1, 0, 0, -4.975)
 
 [node name="10_WallDecoration" type="Node3D" parent="." unique_id=1787604234]
-
-[node name="11_ForegroundCards" type="Node3D" parent="." unique_id=1200836157]
-transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="RightFrameCard2" type="MeshInstance3D" parent="11_ForegroundCards" unique_id=178226865]
-transform = Transform3D(1.5, 0, 0, 0, 1.0680954, 0, 0, 0, 1, 2.5579257, 1.9172004, -4.8246517)
-material_override = SubResource("ColumnSurface")
-cast_shadow = 2
-mesh = SubResource("ColumnQuad")
-
-[node name="RightFrameCard3" type="MeshInstance3D" parent="11_ForegroundCards" unique_id=1041712912]
-transform = Transform3D(1.5, 0, 0, 0, 1.0680954, 0, 0, 0, 1, -2.5882845, 1.9172004, -4.8246517)
-material_override = SubResource("ColumnSurface")
-cast_shadow = 2
-mesh = SubResource("ColumnQuad")
-
-[node name="RightFrameCard4" type="MeshInstance3D" parent="11_ForegroundCards" unique_id=587288335]
-transform = Transform3D(1.9751216, 0, 0, 0, 1.0680954, 0, 0, 0, 1, -6.7733374, 1.9172004, -5.0319343)
-material_override = SubResource("ColumnSurface")
-cast_shadow = 2
-mesh = SubResource("ColumnQuad")
-
-[node name="RightFrameCard5" type="MeshInstance3D" parent="11_ForegroundCards" unique_id=1850703005]
-transform = Transform3D(1.9751216, 0, 0, 0, 1.0680954, 0, 0, 0, 1, 6.763157, 1.9172004, -5.0319343)
-material_override = SubResource("ColumnSurface")
-cast_shadow = 2
-mesh = SubResource("ColumnQuad")
 
 [node name="Lighting" type="Node3D" parent="." unique_id=1657443086]
 
@@ -284,11 +1247,71 @@ material_override = SubResource("Lamp")
 cast_shadow = 0
 mesh = SubResource("Quad13")
 
-[node name="BackWarm_0" type="OmniLight3D" parent="Lighting" unique_id=1120805713]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 2.85, -4.12)
+[node name="BackWarm_1" type="OmniLight3D" parent="Lighting" unique_id=2014112042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.867864, 3.8999977, -8.796326)
 light_color = Color(1, 0.81, 0.58, 1)
-light_energy = 0.28
-omni_range = 4.8
+light_energy = 0.7
+omni_range = 1.7
+
+[node name="BackWarm_5" type="OmniLight3D" parent="Lighting" unique_id=1931672279]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038422585, 3.8999977, -8.796326)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.7
+omni_range = 1.7
+
+[node name="BackWarm_9" type="OmniLight3D" parent="Lighting" unique_id=987837608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038422585, 2.0520124, -8.796326)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.7
+omni_range = 1.7
+
+[node name="BackWarm_8" type="OmniLight3D" parent="Lighting" unique_id=1306274632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111809865, 3.1177387, -11.2224)
+light_color = Color(0.99999946, 0.87974036, 0.73622376, 1)
+light_energy = 2.0
+omni_range = 5.26
+
+[node name="BackWarm_2" type="OmniLight3D" parent="Lighting" unique_id=570632315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7829127, 1.1368306, -8.852663)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.7
+omni_range = 1.7
+
+[node name="BackWarm_10" type="OmniLight3D" parent="Lighting" unique_id=1184856031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.851689, 1.1368306, 1.8974376)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.7
+omni_range = 1.7
+
+[node name="BackWarm_11" type="OmniLight3D" parent="Lighting" unique_id=1748885284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9037814, 1.1368306, 1.8974376)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.7
+omni_range = 1.7
+
+[node name="BackWarm_4" type="OmniLight3D" parent="Lighting" unique_id=1058041220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7878652, 1.9337764, -7.839838)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.7
+omni_range = 1.7
+
+[node name="BackWarm_3" type="OmniLight3D" parent="Lighting" unique_id=1009232099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.769852, 2.5524817, -2.3593278)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.45
+omni_range = 4.0
+
+[node name="BackWarm_6" type="OmniLight3D" parent="Lighting" unique_id=606445330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.644112, 2.5524817, -7.486861)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.45
+omni_range = 1.7
+
+[node name="BackWarm_7" type="OmniLight3D" parent="Lighting" unique_id=1580962577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.186906, 3.3775856, -5.0539207)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.2
+omni_range = 0.8
 
 [node name="BackLamp_1" type="MeshInstance3D" parent="Lighting" unique_id=150168638]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.08, -4.78)
@@ -297,12 +1320,6 @@ material_override = SubResource("Lamp")
 cast_shadow = 0
 mesh = SubResource("Quad13")
 
-[node name="BackWarm_1" type="OmniLight3D" parent="Lighting" unique_id=1483803603]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85, -4.12)
-light_color = Color(1, 0.81, 0.58, 1)
-light_energy = 0.28
-omni_range = 4.8
-
 [node name="BackLamp_2" type="MeshInstance3D" parent="Lighting" unique_id=896209423]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 3.08, -4.78)
 visible = false
@@ -310,34 +1327,84 @@ material_override = SubResource("Lamp")
 cast_shadow = 0
 mesh = SubResource("Quad13")
 
-[node name="BackWarm_2" type="OmniLight3D" parent="Lighting" unique_id=1373049144]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 2.85, -4.12)
-light_color = Color(1, 0.81, 0.58, 1)
-light_energy = 0.28
-omni_range = 4.8
-
 [node name="WarmKey" type="OmniLight3D" parent="Lighting" unique_id=1119398162]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06591678, 3.9237185, 1.7030554)
-light_color = Color(0.9999996, 0.85916024, 0.6734494, 1)
-light_energy = 3.158
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06591678, 3.600483, -0.5118835)
+light_color = Color(1, 0.7921569, 0.5882353, 1)
+light_energy = 4.0
 light_size = 0.6
+light_specular = 0.0
 shadow_enabled = true
 shadow_bias = 0.035
 shadow_normal_bias = 0.25
-shadow_blur = 2.0
+shadow_blur = 7.592
 omni_range = 11.596
-omni_attenuation = 1.752
+omni_attenuation = 1.7
 
 [node name="SoftFill" type="DirectionalLight3D" parent="Lighting" unique_id=1749882361]
 transform = Transform3D(0.2133017, 0.25091264, -0.22154516, 0, 0.32800743, 1.0244118, 0.094968036, -0.563559, 0.49759856, 0, 0, 0)
 light_color = Color(0.91, 0.95, 1, 1)
 light_energy = 0.0
 
+[node name="FrontSoftFill" type="DirectionalLight3D" parent="Lighting" unique_id=1560654724]
+transform = Transform3D(1, 0, 0, 0, 0.9971901, 0.07491267, 0, -0.07491267, 0.9971901, 0, 0.30618596, 6.661136)
+light_color = Color(1, 0.96, 0.9, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_cull_mask = 524288
+
+[node name="BackWarm_1_Right" type="OmniLight3D" parent="Lighting" unique_id=876633001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.867864, 3.8999977, -8.796326)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.7
+omni_range = 1.7
+
+[node name="BackWarm_1_Right2" type="OmniLight3D" parent="Lighting" unique_id=127751208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.784115, 3.7661595, -8.594122)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.7
+omni_range = 1.7
+
+[node name="BackWarm_1_Right3" type="OmniLight3D" parent="Lighting" unique_id=1767066599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.694524, 3.7661595, -8.594122)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.7
+omni_range = 1.7
+
+[node name="BackWarm_2_Right" type="OmniLight3D" parent="Lighting" unique_id=376333219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7829127, 1.1368306, -8.852663)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.7
+omni_range = 1.7
+
+[node name="BackWarm_4_Right" type="OmniLight3D" parent="Lighting" unique_id=588971035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4198024, 1.9337764, -7.839838)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.7
+omni_range = 1.7
+
+[node name="BackWarm_3_Right" type="OmniLight3D" parent="Lighting" unique_id=50960520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.769852, 2.5524817, -2.3593278)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.45
+omni_range = 4.0
+
+[node name="BackWarm_6_Right" type="OmniLight3D" parent="Lighting" unique_id=662128350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.644112, 2.5524817, -7.486861)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.45
+omni_range = 1.7
+
+[node name="BackWarm_7_Right" type="OmniLight3D" parent="Lighting" unique_id=1022690797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.186906, 3.3775856, -5.0539207)
+light_color = Color(1, 0.81, 0.58, 1)
+light_energy = 0.2
+omni_range = 0.8
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=859715654]
 environment = SubResource("Environment")
 
 [node name="GameCamera" type="Camera3D" parent="." unique_id=776181218]
-transform = Transform3D(1, 0, 0, 0, 0.99948037, 0.032233484, 0, -0.032233484, 0.99948037, -9.536743e-07, 13.195523, 20.795734)
+transform = Transform3D(1, 0, 0, 0, 0.9997291, -0.023277987, 0, 0.023277987, 0.9997291, 0.8470535, 12.328462, 18.777296)
 keep_aspect = 0
 projection = 2
 current = true
@@ -345,6 +1412,11 @@ size = 0.84
 frustum_offset = Vector2(0, -0.54)
 near = 1.0
 far = 100.0
+script = ExtResource("EdgePanScript")
+edge_fraction = 0.33333334
+min_x = -2.2
+max_x = 2.2
+closeup_camera_path = NodePath("../CloseupCamera")
 
 [node name="CameraEffects" type="CanvasLayer" parent="GameCamera" unique_id=1853146980]
 layer = 10
@@ -358,22 +1430,1067 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="12_WallTopCards" type="Node3D" parent="." unique_id=1930096353]
+[node name="01_Floor" type="Node3D" parent="." unique_id=890620249]
 
-[node name="LeftTopCard" type="MeshInstance3D" parent="12_WallTopCards" unique_id=371101591]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.25, 4.131858, 0)
+[node name="Corner_R1_C1" type="MeshInstance3D" parent="01_Floor" unique_id=657381094]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -8.125, 0, -7.575)
+material_override = SubResource("Mat_HalfGrid_0_0")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_0_0")
+
+[node name="Half_R1_C2" type="MeshInstance3D" parent="01_Floor" unique_id=77714811]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -6.25, 0, -7.575)
+material_override = SubResource("Mat_HalfGrid_0_1")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_0_1")
+
+[node name="Half_R1_C3" type="MeshInstance3D" parent="01_Floor" unique_id=983901850]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -3.75, 0, -7.575)
+material_override = SubResource("Mat_HalfGrid_0_2")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_0_2")
+
+[node name="Half_R1_C4" type="MeshInstance3D" parent="01_Floor" unique_id=2092806090]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -1.25, 0, -7.575)
+material_override = SubResource("Mat_HalfGrid_0_3")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_0_3")
+
+[node name="Half_R1_C5" type="MeshInstance3D" parent="01_Floor" unique_id=86314402]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 1.25, 0, -7.575)
+material_override = SubResource("Mat_HalfGrid_0_4")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_0_4")
+
+[node name="Half_R1_C6" type="MeshInstance3D" parent="01_Floor" unique_id=520598184]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 3.75, 0, -7.575)
+material_override = SubResource("Mat_HalfGrid_0_5")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_0_5")
+
+[node name="Half_R1_C7" type="MeshInstance3D" parent="01_Floor" unique_id=798275027]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 6.25, 0, -7.575)
+material_override = SubResource("Mat_HalfGrid_0_6")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_0_6")
+
+[node name="Corner_R1_C8" type="MeshInstance3D" parent="01_Floor" unique_id=2021773011]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 8.125, 0, -7.575)
+material_override = SubResource("Mat_HalfGrid_0_7")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_0_7")
+
+[node name="Half_R2_C1" type="MeshInstance3D" parent="01_Floor" unique_id=2012026013]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -8.125, 0, -5.7)
+material_override = SubResource("Mat_HalfGrid_1_0")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_1_0")
+
+[node name="Full_R2_C2" type="MeshInstance3D" parent="01_Floor" unique_id=894477519]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -6.25, 0, -5.7)
+material_override = SubResource("Mat_HalfGrid_1_1")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_1_1")
+
+[node name="Full_R2_C3" type="MeshInstance3D" parent="01_Floor" unique_id=1448894647]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -3.75, 0, -5.7)
+material_override = SubResource("Mat_HalfGrid_1_2")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_1_2")
+
+[node name="Full_R2_C4" type="MeshInstance3D" parent="01_Floor" unique_id=1999503025]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -1.25, 0, -5.7)
+material_override = SubResource("Mat_HalfGrid_1_3")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_1_3")
+
+[node name="Full_R2_C5" type="MeshInstance3D" parent="01_Floor" unique_id=461503133]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 1.25, 0, -5.7)
+material_override = SubResource("Mat_HalfGrid_1_4")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_1_4")
+
+[node name="Full_R2_C6" type="MeshInstance3D" parent="01_Floor" unique_id=135203306]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 3.75, 0, -5.7)
+material_override = SubResource("Mat_HalfGrid_1_5")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_1_5")
+
+[node name="Full_R2_C7" type="MeshInstance3D" parent="01_Floor" unique_id=1664016684]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 6.25, 0, -5.7)
+material_override = SubResource("Mat_HalfGrid_1_6")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_1_6")
+
+[node name="Half_R2_C8" type="MeshInstance3D" parent="01_Floor" unique_id=56789805]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 8.125, 0, -5.7)
+material_override = SubResource("Mat_HalfGrid_1_7")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_1_7")
+
+[node name="Half_R3_C1" type="MeshInstance3D" parent="01_Floor" unique_id=183900036]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -8.125, 0, -3.2)
+material_override = SubResource("Mat_HalfGrid_2_0")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_2_0")
+
+[node name="Full_R3_C2" type="MeshInstance3D" parent="01_Floor" unique_id=760865374]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -6.25, 0, -3.2)
+material_override = SubResource("Mat_HalfGrid_2_1")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_2_1")
+
+[node name="Full_R3_C3" type="MeshInstance3D" parent="01_Floor" unique_id=711788142]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -3.75, 0, -3.2)
+material_override = SubResource("Mat_HalfGrid_2_2")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_2_2")
+
+[node name="Full_R3_C4" type="MeshInstance3D" parent="01_Floor" unique_id=1112866108]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -1.25, 0, -3.2)
+material_override = SubResource("Mat_HalfGrid_2_3")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_2_3")
+
+[node name="Full_R3_C5" type="MeshInstance3D" parent="01_Floor" unique_id=898087952]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 1.25, 0, -3.2)
+material_override = SubResource("Mat_HalfGrid_2_4")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_2_4")
+
+[node name="Full_R3_C6" type="MeshInstance3D" parent="01_Floor" unique_id=1668843665]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 3.75, 0, -3.2)
+material_override = SubResource("Mat_HalfGrid_2_5")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_2_5")
+
+[node name="Full_R3_C7" type="MeshInstance3D" parent="01_Floor" unique_id=366592764]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 6.25, 0, -3.2)
+material_override = SubResource("Mat_HalfGrid_2_6")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_2_6")
+
+[node name="Half_R3_C8" type="MeshInstance3D" parent="01_Floor" unique_id=1355244424]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 8.125, 0, -3.2)
+material_override = SubResource("Mat_HalfGrid_2_7")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_2_7")
+
+[node name="Half_R4_C1" type="MeshInstance3D" parent="01_Floor" unique_id=2087552685]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -8.125, 0, -0.7)
+material_override = SubResource("Mat_HalfGrid_3_0")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_3_0")
+
+[node name="Full_R4_C2" type="MeshInstance3D" parent="01_Floor" unique_id=1909257965]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -6.25, 0, -0.7)
+material_override = SubResource("Mat_HalfGrid_3_1")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_3_1")
+
+[node name="Full_R4_C3" type="MeshInstance3D" parent="01_Floor" unique_id=1828111859]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -3.75, 0, -0.7)
+material_override = SubResource("Mat_HalfGrid_3_2")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_3_2")
+
+[node name="Full_R4_C4" type="MeshInstance3D" parent="01_Floor" unique_id=1612709252]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -1.25, 0, -0.7)
+material_override = SubResource("Mat_HalfGrid_3_3")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_3_3")
+
+[node name="Full_R4_C5" type="MeshInstance3D" parent="01_Floor" unique_id=1972788613]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 1.25, 0, -0.7)
+material_override = SubResource("Mat_HalfGrid_3_4")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_3_4")
+
+[node name="Full_R4_C6" type="MeshInstance3D" parent="01_Floor" unique_id=2053103061]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 3.75, 0, -0.7)
+material_override = SubResource("Mat_HalfGrid_3_5")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_3_5")
+
+[node name="Full_R4_C7" type="MeshInstance3D" parent="01_Floor" unique_id=113698541]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 6.25, 0, -0.7)
+material_override = SubResource("Mat_HalfGrid_3_6")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_3_6")
+
+[node name="Half_R4_C8" type="MeshInstance3D" parent="01_Floor" unique_id=1764059595]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 8.125, 0, -0.7)
+material_override = SubResource("Mat_HalfGrid_3_7")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_3_7")
+
+[node name="Corner_R5_C1" type="MeshInstance3D" parent="01_Floor" unique_id=1533365342]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -8.125, 0, 1.175)
+material_override = SubResource("Mat_HalfGrid_4_0")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_4_0")
+
+[node name="Half_R5_C2" type="MeshInstance3D" parent="01_Floor" unique_id=1386733472]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -6.25, 0, 1.175)
+material_override = SubResource("Mat_HalfGrid_4_1")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_4_1")
+
+[node name="Half_R5_C3" type="MeshInstance3D" parent="01_Floor" unique_id=209458153]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -3.75, 0, 1.175)
+material_override = SubResource("Mat_HalfGrid_4_2")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_4_2")
+
+[node name="Half_R5_C4" type="MeshInstance3D" parent="01_Floor" unique_id=1361187206]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -1.25, 0, 1.175)
+material_override = SubResource("Mat_HalfGrid_4_3")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_4_3")
+
+[node name="Half_R5_C5" type="MeshInstance3D" parent="01_Floor" unique_id=134697828]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 1.25, 0, 1.175)
+material_override = SubResource("Mat_HalfGrid_4_4")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_4_4")
+
+[node name="Half_R5_C6" type="MeshInstance3D" parent="01_Floor" unique_id=355294682]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 3.75, 0, 1.175)
+material_override = SubResource("Mat_HalfGrid_4_5")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_4_5")
+
+[node name="Half_R5_C7" type="MeshInstance3D" parent="01_Floor" unique_id=2007183500]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 6.25, 0, 1.175)
+material_override = SubResource("Mat_HalfGrid_4_6")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_4_6")
+
+[node name="Corner_R5_C8" type="MeshInstance3D" parent="01_Floor" unique_id=2049532585]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 8.125, 0, 1.175)
+material_override = SubResource("Mat_HalfGrid_4_7")
+cast_shadow = 0
+mesh = SubResource("Mesh_HalfGrid_4_7")
+
+[node name="01_FloorBorder" type="Node3D" parent="." unique_id=957215536]
+
+[node name="Back_2" type="MeshInstance3D" parent="01_FloorBorder" unique_id=381113871]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.5, 0.006, -8.8089285)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_woch1")
+
+[node name="Back_9" type="MeshInstance3D" parent="01_FloorBorder" unique_id=1849072726]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -9.993955, 0.006, -8.8089285)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_woch1")
+
+[node name="Front_2" type="MeshInstance3D" parent="01_FloorBorder" unique_id=1019687955]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.5, 0.006, 1.975)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad36")
+
+[node name="Back_3" type="MeshInstance3D" parent="01_FloorBorder" unique_id=233739426]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -5, 0.006, -8.8089285)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_5e5qa")
+
+[node name="Front_3" type="MeshInstance3D" parent="01_FloorBorder" unique_id=1294075509]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -5, 0.006, 1.975)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad38")
+
+[node name="Back_4" type="MeshInstance3D" parent="01_FloorBorder" unique_id=1614707944]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.5, 0.006, -8.8089285)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_7ejkx")
+
+[node name="Front_4" type="MeshInstance3D" parent="01_FloorBorder" unique_id=1229948486]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.5, 0.006, 1.975)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad40")
+
+[node name="Back_5" type="MeshInstance3D" parent="01_FloorBorder" unique_id=1474866549]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.006, -8.8089285)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_qw82p")
+
+[node name="Front_5" type="MeshInstance3D" parent="01_FloorBorder" unique_id=2005885968]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.006, 1.975)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad42")
+
+[node name="Back_6" type="MeshInstance3D" parent="01_FloorBorder" unique_id=770407076]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0.006, -8.8089285)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_36w18")
+
+[node name="Front_6" type="MeshInstance3D" parent="01_FloorBorder" unique_id=1595392118]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5, 0.006, 1.975)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad44")
+
+[node name="Back_7" type="MeshInstance3D" parent="01_FloorBorder" unique_id=876497122]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5, 0.006, -8.8089285)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_rl7mj")
+
+[node name="Front_7" type="MeshInstance3D" parent="01_FloorBorder" unique_id=454481272]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5, 0.006, 1.975)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad46")
+
+[node name="Left_1" type="MeshInstance3D" parent="01_FloorBorder" unique_id=497391309]
+transform = Transform3D(-4.3711392e-08, -3.479594, 0, -4.3711392e-08, 6.6484095e-15, 1, -1.0000001, 1.5209788e-07, -4.371139e-08, -9.3289795, 0.006, -6.95)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad49")
+
+[node name="Left_2" type="MeshInstance3D" parent="01_FloorBorder" unique_id=1309401685]
+transform = Transform3D(-4.3711392e-08, -3.479594, 0, -4.3711392e-08, 6.6484095e-15, 1, -1.0000001, 1.5209788e-07, -4.371139e-08, -9.3289795, 0.006, -4.45)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad51")
+
+[node name="Left_3" type="MeshInstance3D" parent="01_FloorBorder" unique_id=1896005798]
+transform = Transform3D(-4.3711392e-08, -3.479594, 0, -4.3711392e-08, 6.6484095e-15, 1, -1.0000001, 1.5209788e-07, -4.371139e-08, -9.3289795, 0.006, -1.95)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad53")
+
+[node name="Left_4" type="MeshInstance3D" parent="01_FloorBorder" unique_id=361048562]
+transform = Transform3D(-4.3711392e-08, -3.479594, 0, -4.3711392e-08, 6.6484095e-15, 1, -1.0000001, 1.5209788e-07, -4.371139e-08, -9.3289795, 0.006, 0.54999995)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad55")
+
+[node name="Corner_-10.175_1.975" type="MeshInstance3D" parent="01_FloorBorder" unique_id=387545075]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -9.32898, 0.007, 1.975)
+material_override = SubResource("WallTopSurface")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_d3cba")
+
+[node name="Right_1" type="MeshInstance3D" parent="01_FloorBorder" unique_id=24900036]
+transform = Transform3D(4.3711392e-08, 3.479594, 0, -4.3711392e-08, 6.6484095e-15, 1, -1.0000001, 1.5209788e-07, -4.371139e-08, 9.3289795, 0.006, -6.95)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad49")
+
+[node name="Right_2" type="MeshInstance3D" parent="01_FloorBorder" unique_id=589138716]
+transform = Transform3D(4.3711392e-08, 3.479594, 0, -4.3711392e-08, 6.6484095e-15, 1, -1.0000001, 1.5209788e-07, -4.371139e-08, 9.3289795, 0.006, -4.45)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad51")
+
+[node name="Right_3" type="MeshInstance3D" parent="01_FloorBorder" unique_id=185793904]
+transform = Transform3D(4.3711392e-08, 3.479594, 0, -4.3711392e-08, 6.6484095e-15, 1, -1.0000001, 1.5209788e-07, -4.371139e-08, 9.3289795, 0.006, -1.95)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad53")
+
+[node name="Right_4" type="MeshInstance3D" parent="01_FloorBorder" unique_id=157282429]
+transform = Transform3D(4.3711392e-08, 3.479594, 0, -4.3711392e-08, 6.6484095e-15, 1, -1.0000001, 1.5209788e-07, -4.371139e-08, 9.3289795, 0.006, 0.54999995)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad55")
+
+[node name="RightCorner_17" type="MeshInstance3D" parent="01_FloorBorder" unique_id=3155965]
+transform = Transform3D(-1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.32898, 0.007, 1.975)
+material_override = SubResource("WallTopSurface")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_d3cba")
+
+[node name="Back_8" type="MeshInstance3D" parent="01_FloorBorder" unique_id=973710758]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.5, 0.006, -8.8089285)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_cd8ys")
+
+[node name="Back_10" type="MeshInstance3D" parent="01_FloorBorder" unique_id=1006778201]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.97289, 0.006, -8.8089285)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_cd8ys")
+
+[node name="Front_8" type="MeshInstance3D" parent="01_FloorBorder" unique_id=1116027820]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.5, 0.006, 1.975)
+material_override = SubResource("ModBorderMaterial")
+cast_shadow = 0
+mesh = SubResource("ModQuad46")
+
+[node name="03_BackWall_Windows" type="Node3D" parent="." unique_id=1531024349]
+
+[node name="WallBay_4" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=180894829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.543909, 2.065929, -9.417858)
+material_override = SubResource("WallAspectMaterial6")
+cast_shadow = 2
+mesh = SubResource("QuadMesh_4si6l")
+
+[node name="WallBay_5" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=1877864110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.543909, 2.065929, -9.417858)
+material_override = SubResource("WallAspectMaterial7")
+cast_shadow = 2
+mesh = SubResource("QuadMesh_pvr7u")
+
+[node name="LeftWindowModule" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=660847030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8751116, 2.065929, -9.417858)
+material_override = SubResource("NewWindowSurface")
+cast_shadow = 0
+mesh = SubResource("NewWindowMesh")
+
+[node name="RightWindowModule" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=1157629806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8751116, 2.065929, -9.417858)
+material_override = SubResource("ShaderMaterial_woch1")
+cast_shadow = 0
+mesh = SubResource("NewWindowMesh")
+
+[node name="LeftOuterWall" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=969152820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.206314, 2.065929, -9.417858)
+material_override = SubResource("WallAspectMaterial6")
+cast_shadow = 2
+mesh = SubResource("QuadMesh_4si6l")
+
+[node name="RightOuterWall" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=487456525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.206314, 2.065929, -9.417858)
+material_override = SubResource("WallAspectMaterial7")
+cast_shadow = 2
+mesh = SubResource("QuadMesh_pvr7u")
+
+[node name="LeftWindowModule3_LeftHalf" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=764716677]
+transform = Transform3D(0.7745159, 0, 0, 0, 1.0954849, 0, 0, 0, 1, -1.0864744, 2.2889593, -12.463177)
+material_override = SubResource("SymmetricWindowLeftMat")
+cast_shadow = 0
+mesh = SubResource("SymmetricWindowHalfMesh")
+
+[node name="LeftWindowModule3_RightHalf" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=447192082]
+transform = Transform3D(0.7745159, 0, 0, 0, 1.0954849, 0, 0, 0, 1, 0.9853556, 2.2889593, -12.463177)
+material_override = SubResource("SymmetricWindowRightMat")
+cast_shadow = 0
+mesh = SubResource("SymmetricWindowHalfMesh")
+
+[node name="LeftWindowModule2_LeftHalf" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=881219495]
+transform = Transform3D(1.0397412, 0, 0, 0, 1.1055375, 0, 0, 0, 1, -41.40274, 2.3398194, -12.51301)
+material_override = SubResource("SymmetricWindowLeftMat")
+cast_shadow = 0
+mesh = SubResource("SymmetricWindowHalfMesh")
+
+[node name="LeftWindowModule2_RightHalf" type="MeshInstance3D" parent="03_BackWall_Windows" unique_id=756585378]
+transform = Transform3D(1.0397412, 0, 0, 0, 1.1055375, 0, 0, 0, 1, -38.62143, 2.3398194, -12.51301)
+material_override = SubResource("SymmetricWindowRightMat")
+cast_shadow = 0
+mesh = SubResource("SymmetricWindowHalfMesh")
+
+[node name="02_SideWalls" type="Node3D" parent="." unique_id=817347869]
+
+[node name="LeftWallBay_1" type="MeshInstance3D" parent="02_SideWalls" unique_id=409221830]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.862517, 2.065929, -7.558929)
+material_override = SubResource("WallAspectMaterial14")
+cast_shadow = 2
+mesh = SubResource("QuadMesh_r7etk")
+
+[node name="LeftWallBay_2" type="MeshInstance3D" parent="02_SideWalls" unique_id=687157171]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.862517, 2.065929, -4.45)
+material_override = SubResource("WallAspectMaterial15")
+cast_shadow = 2
+mesh = SubResource("ModQuad76")
+
+[node name="LeftWallBay_3" type="MeshInstance3D" parent="02_SideWalls" unique_id=1119614077]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.862517, 2.065929, -1.95)
+material_override = SubResource("WallAspectMaterial16")
+cast_shadow = 2
+mesh = SubResource("ModQuad77")
+
+[node name="LeftWallBay_4" type="MeshInstance3D" parent="02_SideWalls" unique_id=644693415]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.862517, 2.065929, 0.725)
+material_override = SubResource("WallAspectMaterial17")
+cast_shadow = 2
+mesh = SubResource("ModQuad78")
+
+[node name="RightWallBay_1" type="MeshInstance3D" parent="02_SideWalls" unique_id=277494474]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.862517, 2.065929, -7.558929)
+material_override = SubResource("StandardMaterial3D_5e5qa")
+cast_shadow = 2
+mesh = SubResource("QuadMesh_d7aok")
+
+[node name="RightWallBay_2" type="MeshInstance3D" parent="02_SideWalls" unique_id=1377848679]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.862517, 2.065929, -4.45)
+material_override = SubResource("StandardMaterial3D_7ejkx")
+cast_shadow = 2
+mesh = SubResource("ModQuad76")
+
+[node name="RightWallBay_3" type="MeshInstance3D" parent="02_SideWalls" unique_id=1020501926]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.862517, 2.065929, -1.95)
+material_override = SubResource("StandardMaterial3D_pos0p")
+cast_shadow = 2
+mesh = SubResource("ModQuad77")
+
+[node name="RightWallBay_4" type="MeshInstance3D" parent="02_SideWalls" unique_id=1226075935]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.862517, 2.065929, 0.725)
+material_override = SubResource("StandardMaterial3D_qw82p")
+cast_shadow = 2
+mesh = SubResource("ModQuad78")
+
+[node name="11_Columns" type="Node3D" parent="." unique_id=1152478987]
+
+[node name="BackJoint_1" type="MeshInstance3D" parent="11_Columns" unique_id=42020080]
+transform = Transform3D(1.1017275, 0, 0, 0, 1.1017275, 0, 0, 0, 1.1017275, -2.6417322, 2.35496, -8.531978)
+material_override = SubResource("ColumnSurface")
+cast_shadow = 2
+mesh = SubResource("ModQuad84")
+
+[node name="BackJoint_3" type="MeshInstance3D" parent="11_Columns" unique_id=1897333298]
+transform = Transform3D(1.3060191, 0, 0, 0, 1.2395521, 0, 0, 0, 1.1017275, -43.47805, 2.4486117, -8.002647)
+material_override = SubResource("ColumnSurface")
+cast_shadow = 2
+mesh = SubResource("ModQuad84")
+
+[node name="BackJoint_2" type="MeshInstance3D" parent="11_Columns" unique_id=85060099]
+transform = Transform3D(1.1017275, 0, 0, 0, 1.1017275, 0, 0, 0, 1.1017275, 2.5223436, 2.35496, -8.531978)
+material_override = SubResource("ColumnSurface")
+cast_shadow = 2
+mesh = SubResource("ModQuad84")
+
+[node name="12_WallTopCards" type="Node3D" parent="." unique_id=1426852783]
+
+[node name="BackTop" type="MeshInstance3D" parent="12_WallTopCards" unique_id=347298893]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.131858, -9.667858)
 material_override = SubResource("WallTopSurface")
 cast_shadow = 2
-mesh = SubResource("SideTopQuad")
+mesh = SubResource("QuadMesh_pos0p")
 
-[node name="RightTopCard" type="MeshInstance3D" parent="12_WallTopCards" unique_id=1043851115]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.25, 4.131858, 0)
+[node name="LeftTop" type="MeshInstance3D" parent="12_WallTopCards" unique_id=1112875887]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -10.112517, 4.131858, -3.633929)
 material_override = SubResource("WallTopSurface")
 cast_shadow = 2
-mesh = SubResource("SideTopQuad")
+mesh = SubResource("QuadMesh_7p3f5")
 
-[node name="BackTopCard" type="MeshInstance3D" parent="12_WallTopCards" unique_id=1682085786]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.131858, -5.25)
+[node name="RightTop" type="MeshInstance3D" parent="12_WallTopCards" unique_id=968129633]
+transform = Transform3D(-1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 10.112517, 4.131858, -3.633929)
 material_override = SubResource("WallTopSurface")
 cast_shadow = 2
-mesh = SubResource("BackTopQuad")
+mesh = SubResource("QuadMesh_a15oy")
+
+[node name="13_PipeConnections" type="Node3D" parent="." unique_id=1800548083]
+visible = false
+
+[node name="LeftCornerVerticalFront" type="MeshInstance3D" parent="13_PipeConnections" unique_id=930799880]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -10.285, 1.815929, -8.47)
+material_override = SubResource("ModPipeMaterial")
+cast_shadow = 2
+mesh = SubResource("ModQuad93")
+
+[node name="LeftCornerVerticalSide" type="MeshInstance3D" parent="13_PipeConnections" unique_id=31966129]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, -10.285, 1.815929, -8.44)
+material_override = SubResource("ModPipeMaterial")
+cast_shadow = 2
+mesh = SubResource("ModQuad94")
+
+[node name="LeftTopRun0" type="MeshInstance3D" parent="13_PipeConnections" unique_id=1085258237]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.285, 3.781858, -7.4)
+material_override = SubResource("ModPipeMaterial")
+cast_shadow = 2
+mesh = SubResource("ModQuad95")
+
+[node name="LeftTopRun1" type="MeshInstance3D" parent="13_PipeConnections" unique_id=1202662095]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.285, 3.781858, 1)
+material_override = SubResource("ModPipeMaterial")
+cast_shadow = 2
+mesh = SubResource("ModQuad96")
+
+[node name="RightCornerVerticalFront" type="MeshInstance3D" parent="13_PipeConnections" unique_id=1602833262]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 10.285, 1.815929, -8.47)
+material_override = SubResource("ModPipeMaterial")
+cast_shadow = 2
+mesh = SubResource("ModQuad97")
+
+[node name="RightCornerVerticalSide" type="MeshInstance3D" parent="13_PipeConnections" unique_id=1397202555]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 10.285, 1.815929, -8.44)
+material_override = SubResource("ModPipeMaterial")
+cast_shadow = 2
+mesh = SubResource("ModQuad98")
+
+[node name="RightTopRun0" type="MeshInstance3D" parent="13_PipeConnections" unique_id=1591500925]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.285, 3.781858, -7.4)
+material_override = SubResource("ModPipeMaterial")
+cast_shadow = 2
+mesh = SubResource("ModQuad99")
+
+[node name="RightTopRun1" type="MeshInstance3D" parent="13_PipeConnections" unique_id=769719207]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.285, 3.781858, 1)
+material_override = SubResource("ModPipeMaterial")
+cast_shadow = 2
+mesh = SubResource("ModQuad100")
+
+[node name="14_ForegroundFrames" type="Node3D" parent="." unique_id=672086969]
+visible = false
+
+[node name="LeftPost" type="MeshInstance3D" parent="14_ForegroundFrames" unique_id=1029262421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.545616, 2.15, 2.21)
+material_override = SubResource("ColumnSurface")
+cast_shadow = 2
+mesh = SubResource("ModQuad101")
+
+[node name="RightPost" type="MeshInstance3D" parent="14_ForegroundFrames" unique_id=767602885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.619667, 2.15, 2.21)
+material_override = SubResource("ColumnSurface")
+cast_shadow = 2
+mesh = SubResource("ModQuad105")
+
+[node name="15_PerspectiveProps_Trial" type="Node3D" parent="." unique_id=1083507241]
+visible = false
+
+[node name="LeftFrame" type="MeshInstance3D" parent="15_PerspectiveProps_Trial" unique_id=306541420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.05, 2.15, 2.24)
+material_override = SubResource("TrialFrame")
+cast_shadow = 0
+mesh = SubResource("TrialLeftFrameQuad")
+
+[node name="RightFrame" type="MeshInstance3D" parent="15_PerspectiveProps_Trial" unique_id=1839405698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.05, 2.15, 2.24)
+material_override = SubResource("TrialFrameMirror")
+cast_shadow = 0
+mesh = SubResource("TrialRightFrameQuad")
+
+[node name="LeftCornerPipe" type="MeshInstance3D" parent="15_PerspectiveProps_Trial" unique_id=1594743386]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.16, 1.9, -7.1)
+material_override = SubResource("TrialPipe")
+cast_shadow = 0
+mesh = SubResource("TrialLeftCornerPipeQuad")
+
+[node name="RightCornerPipe" type="MeshInstance3D" parent="15_PerspectiveProps_Trial" unique_id=423791686]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.16, 1.9, -7.1)
+material_override = SubResource("TrialPipeMirror")
+cast_shadow = 0
+mesh = SubResource("TrialRightCornerPipeQuad")
+
+[node name="LeftVent" type="MeshInstance3D" parent="15_PerspectiveProps_Trial" unique_id=1301135928]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.16, 2.35, -3.75)
+material_override = SubResource("TrialVent")
+cast_shadow = 0
+mesh = SubResource("TrialLeftVentQuad")
+
+[node name="RightVent" type="MeshInstance3D" parent="15_PerspectiveProps_Trial" unique_id=501038379]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.16, 2.35, -3.75)
+material_override = SubResource("TrialVentMirror")
+cast_shadow = 0
+mesh = SubResource("TrialRightVentQuad")
+
+[node name="16_Props_2D" type="Node3D" parent="." unique_id=1386231443]
+
+[node name="LeftFrame" parent="16_Props_2D" unique_id=1882325002 instance=ExtResource("WBFrame")]
+transform = Transform3D(1.1664274, 0, 0, 0, 1.1664274, 0, 0, 0, 1.1664274, -8.9091, 0, 2.4208002)
+
+[node name="LeftVent" parent="16_Props_2D" unique_id=866122834 instance=ExtResource("WBVent")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.862517, 3.2211804, -6.205203)
+
+[node name="LeftPipe1" parent="16_Props_2D" unique_id=378665434 instance=ExtResource("WBPipe")]
+transform = Transform3D(0.8944142, 0, 0, 0, 1, 0, 0, 0, 1, -9.537889, 0, -8.431172)
+
+[node name="LeftPipe2" parent="16_Props_2D" unique_id=1179136942 instance=ExtResource("WBPipe")]
+transform = Transform3D(0.8944142, 0, 0, 0, 1, 0, 0, 0, 1, -9.517808, 0, -2.7873669)
+
+[node name="RightFrame" parent="16_Props_2D" unique_id=44347389 instance=ExtResource("WBFrame")]
+transform = Transform3D(-1.1664274, 0, 0, 0, 1.1664274, 0, 0, 0, 1.1664274, 8.910669, 0, 2.4208002)
+
+[node name="RightVent" parent="16_Props_2D" unique_id=1607023493 instance=ExtResource("WBVent")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 9.862517, 3.2211804, -6.205203)
+
+[node name="RightPipe1" parent="16_Props_2D" unique_id=1791758881 instance=ExtResource("WBPipe")]
+transform = Transform3D(-0.8944142, 0, 0, 0, 1, 0, 0, 0, 1, 9.5109825, 0, -8.431172)
+
+[node name="RightPipe2" parent="16_Props_2D" unique_id=2048844363 instance=ExtResource("WBPipe")]
+transform = Transform3D(-0.8944142, 0, 0, 0, 1, 0, 0, 0, 1, 9.499382, 0, -2.7873669)
+
+[node name="17_CatPreview" parent="." unique_id=1365565979 instance=ExtResource("17_woch1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026775122, -1.2666368)
+
+[node name="18_WallTopPipes" type="Node3D" parent="." unique_id=1443363223]
+
+[node name="LeftTopPipe" type="Node3D" parent="18_WallTopPipes" unique_id=1174629427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.112517, 4.2518578, -3.633929)
+
+[node name="Top" type="MeshInstance3D" parent="18_WallTopPipes/LeftTopPipe" unique_id=1117395751]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.215, 0)
+material_override = SubResource("ShaderMaterial_pos0p")
+mesh = SubResource("QuadMesh_oovbv")
+
+[node name="InnerSide" type="MeshInstance3D" parent="18_WallTopPipes/LeftTopPipe" unique_id=852851708]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.34, 0.027500004, 0)
+material_override = SubResource("ShaderMaterial_qw82p")
+mesh = SubResource("QuadMesh_2vmy4")
+
+[node name="RightTopPipe" type="Node3D" parent="18_WallTopPipes" unique_id=350188338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.112517, 4.2518578, -3.633929)
+
+[node name="Top" type="MeshInstance3D" parent="18_WallTopPipes/RightTopPipe" unique_id=616768338]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.215, 0)
+material_override = SubResource("ShaderMaterial_36w18")
+mesh = SubResource("QuadMesh_pj0m2")
+
+[node name="InnerSide" type="MeshInstance3D" parent="18_WallTopPipes/RightTopPipe" unique_id=1603884763]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.34, 0.027500004, 0)
+material_override = SubResource("ShaderMaterial_rl7mj")
+mesh = SubResource("QuadMesh_if2jb")
+
+[node name="BackPipeModules" type="Node3D" parent="18_WallTopPipes" unique_id=1580971726]
+
+[node name="Module_01" type="MeshInstance3D" parent="18_WallTopPipes/BackPipeModules" unique_id=972072735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.584388, 4.3927245, -9.3928585)
+material_override = SubResource("StandardMaterial3D_7va4m")
+mesh = SubResource("QuadMesh_o2tgq")
+
+[node name="Module_05" type="MeshInstance3D" parent="18_WallTopPipes/BackPipeModules" unique_id=646893605]
+transform = Transform3D(-4.3711392e-08, -1.0000001, 0, 1.0000001, -4.3711392e-08, 0, 0, 0, 1, -9.599934, 1.9185302, -9.411817)
+material_override = SubResource("StandardMaterial3D_7va4m")
+mesh = SubResource("QuadMesh_o2tgq")
+
+[node name="Module_06" type="MeshInstance3D" parent="18_WallTopPipes/BackPipeModules" unique_id=899158985]
+transform = Transform3D(-4.3711392e-08, -1.0000001, 0, 1.0000001, -4.3711392e-08, 0, 0, 0, 1, 9.626619, 1.9185302, -9.411817)
+material_override = SubResource("StandardMaterial3D_7va4m")
+mesh = SubResource("QuadMesh_o2tgq")
+
+[node name="Module_02" type="MeshInstance3D" parent="18_WallTopPipes/BackPipeModules" unique_id=1925680210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5281293, 4.3927245, -9.3928585)
+material_override = SubResource("StandardMaterial3D_7va4m")
+mesh = SubResource("QuadMesh_6ww3g")
+
+[node name="Module_03" type="MeshInstance3D" parent="18_WallTopPipes/BackPipeModules" unique_id=417532428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5281293, 4.3927245, -9.3928585)
+material_override = SubResource("StandardMaterial3D_7va4m")
+mesh = SubResource("QuadMesh_ql1k2")
+
+[node name="Module_04" type="MeshInstance3D" parent="18_WallTopPipes/BackPipeModules" unique_id=1148194907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.584388, 4.3927245, -9.3928585)
+material_override = SubResource("StandardMaterial3D_7va4m")
+mesh = SubResource("QuadMesh_3ymje")
+
+[node name="19_Decor" type="Node3D" parent="." unique_id=952642918]
+
+[node name="Planter2" type="MeshInstance3D" parent="19_Decor" unique_id=96233668]
+transform = Transform3D(0.51967597, 0, 0, 0, 0.51967597, 0, 0, 0, 0.51967597, -4.926921, 0.55368054, -8.572432)
+material_override = SubResource("StandardMaterial3D_arwmu")
+mesh = SubResource("QuadMesh_r7wpm")
+
+[node name="Planter4" type="MeshInstance3D" parent="19_Decor" unique_id=229220449]
+transform = Transform3D(0.36997086, 0, 0, 0, 0.51967597, 0, 0, 0, 0.51967597, -42.214344, 0.6153196, -11.777448)
+material_override = SubResource("StandardMaterial3D_arwmu")
+mesh = SubResource("QuadMesh_r7wpm")
+
+[node name="Planter3" type="MeshInstance3D" parent="19_Decor" unique_id=1784417109]
+transform = Transform3D(0.51967597, 0, 0, 0, 0.51967597, 0, 0, 0, 0.51967597, 6.9255295, 0.55368054, -8.572432)
+material_override = SubResource("StandardMaterial3D_arwmu")
+mesh = SubResource("QuadMesh_r7wpm")
+
+[node name="FurPile" type="MeshInstance3D" parent="19_Decor" unique_id=995733036]
+transform = Transform3D(0.9103217, 0, 0, 0, 0.77097213, 0, 0, 0, 1, 7.505558, 0.21016148, -1.4)
+layers = 524289
+material_override = SubResource("ShaderMaterial_7va4m")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_6blpm")
+
+[node name="FurPile5" type="MeshInstance3D" parent="19_Decor" unique_id=1452795744]
+transform = Transform3D(0.9103217, 0, 0, 0, 0.77097213, 0, 0, 0, 1, 4.5859904, 0.19362772, 0.15605795)
+layers = 524289
+material_override = SubResource("ShaderMaterial_pvr7u")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_6blpm")
+
+[node name="FurPile2" type="MeshInstance3D" parent="19_Decor" unique_id=922105232]
+transform = Transform3D(0.9103217, 0, 0, 0, 0.77097213, 0, 0, 0, 1, -6.812627, 0.21016148, -8.256113)
+layers = 524289
+material_override = SubResource("ShaderMaterial_cb76q")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_6blpm")
+
+[node name="FurPile3" type="MeshInstance3D" parent="19_Decor" unique_id=1987756474]
+transform = Transform3D(0.9103217, 0, 0, 0, 0.77097213, 0, 0, 0, 1, -3.2931597, 0.21016148, -3.4983397)
+layers = 524289
+material_override = SubResource("ShaderMaterial_d7aok")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_6blpm")
+
+[node name="20_WallLights" type="Node3D" parent="." unique_id=1239723282]
+
+[node name="Light_01_Framed" type="MeshInstance3D" parent="20_WallLights" unique_id=617300443]
+transform = Transform3D(0.54098195, 0, 0, 0, -2.3647072e-08, -0.54098195, 0, 0.54098195, -2.3647072e-08, -4.867729, 0.024740696, 1.9686375)
+material_override = SubResource("LightMat_01_Framed")
+cast_shadow = 0
+mesh = SubResource("LightMesh_01_Framed")
+
+[node name="Light_01_Framed3" type="MeshInstance3D" parent="20_WallLights" unique_id=98998803]
+transform = Transform3D(0.54098195, 0, 0, 0, -2.3647072e-08, -0.54098195, 0, 0.54098195, -2.3647072e-08, 5.0115623, 0.024740696, 1.9686375)
+material_override = SubResource("LightMat_01_Framed")
+cast_shadow = 0
+mesh = SubResource("LightMesh_01_Framed")
+
+[node name="Light_01_Framed2" type="MeshInstance3D" parent="20_WallLights" unique_id=1411003051]
+transform = Transform3D(0.5409819, 0, 0, 0, 0.5409819, 0, 0, 0, 0.5409819, -0.019288301, 4.053277, -9.413959)
+material_override = SubResource("LightMat_01_Framed")
+cast_shadow = 0
+mesh = SubResource("LightMesh_01_Framed")
+
+[node name="Light_01_Framed4" type="MeshInstance3D" parent="20_WallLights" unique_id=1135653712]
+transform = Transform3D(0.5409819, 0, 0, 0, 0.5409819, 0, 0, 0, 0.5409819, -5.821501, 3.991022, -9.413959)
+material_override = SubResource("LightMat_01_Framed")
+cast_shadow = 0
+mesh = SubResource("LightMesh_01_Framed")
+
+[node name="Light_02_Triple" type="MeshInstance3D" parent="20_WallLights" unique_id=1860466656]
+transform = Transform3D(0.84471184, 0, 0, 0, 0.81526434, 0, 0, 0, 1, -7.91846, 0.9772767, -9.413866)
+material_override = SubResource("LightMat_02_Triple")
+cast_shadow = 0
+mesh = SubResource("LightMesh_02_Triple")
+
+[node name="Light_02_Triple4" type="MeshInstance3D" parent="20_WallLights" unique_id=1604148330]
+transform = Transform3D(-4.5629577e-08, 0, 0.99999994, 0, 1.098485, 0, -1.043883, 0, -4.3711385e-08, -42.68547, 1.2227474, -10.387139)
+material_override = SubResource("LightMat_02_Triple")
+cast_shadow = 0
+mesh = SubResource("LightMesh_02_Triple")
+
+[node name="Light_02_Triple5" type="MeshInstance3D" parent="20_WallLights" unique_id=2039814280]
+transform = Transform3D(-4.5629577e-08, 0, 0.99999994, 0, 1.098485, 0, -1.043883, 0, -4.3711385e-08, -37.308277, 1.2227474, -10.387139)
+material_override = SubResource("LightMat_02_Triple")
+cast_shadow = 0
+mesh = SubResource("LightMesh_02_Triple")
+
+[node name="Light_02_Triple2" type="MeshInstance3D" parent="20_WallLights" unique_id=624776048]
+transform = Transform3D(-3.6923527e-08, 0, 1, 0, 0.81526434, 0, -0.84471184, 0, -4.371139e-08, -9.775679, 0.9772767, -2.3236778)
+material_override = SubResource("LightMat_02_Triple")
+cast_shadow = 0
+mesh = SubResource("LightMesh_02_Triple")
+
+[node name="Light_02_Triple3" type="MeshInstance3D" parent="20_WallLights" unique_id=1524173064]
+transform = Transform3D(-3.6923527e-08, 0, 1, 0, 0.81526434, 0, -0.84471184, 0, -4.371139e-08, -9.775679, 0.9772767, -2.3236778)
+material_override = SubResource("LightMat_02_Triple")
+cast_shadow = 0
+mesh = SubResource("LightMesh_02_Triple")
+
+[node name="Light_03_Small" type="MeshInstance3D" parent="20_WallLights" unique_id=1235064352]
+transform = Transform3D(1.2898899, 0, 0, 0, 0.8662395, 0, 0, 0, 1, -2.6853747, 1.8368373, -8.525728)
+material_override = SubResource("LightMat_03_Small")
+cast_shadow = 0
+mesh = SubResource("LightMesh_03_Small")
+
+[node name="Light_01_Framed_Right" type="MeshInstance3D" parent="20_WallLights" unique_id=127948958]
+transform = Transform3D(0.5409819, 0, 0, 0, 0.5409819, 0, 0, 0, 0.5409819, 5.85, 4.0032454, -9.413959)
+material_override = SubResource("LightMat_01_Framed")
+cast_shadow = 0
+mesh = SubResource("LightMesh_01_Framed")
+
+[node name="Light_02_Triple_Right" type="MeshInstance3D" parent="20_WallLights" unique_id=1589894495]
+transform = Transform3D(0.84471184, 0, 0, 0, 0.81526434, 0, 0, 0, 1, 7.91846, 0.9772767, -9.413866)
+material_override = SubResource("LightMat_02_Triple")
+cast_shadow = 0
+mesh = SubResource("LightMesh_02_Triple")
+
+[node name="Light_02_Triple2_Right" type="MeshInstance3D" parent="20_WallLights" unique_id=1208768760]
+transform = Transform3D(-3.6923527e-08, 0, -1, 0, 0.81526434, 0, 0.84471184, 0, -4.371139e-08, 9.775679, 0.9772767, -2.3236778)
+material_override = SubResource("LightMat_02_Triple")
+cast_shadow = 0
+mesh = SubResource("LightMesh_02_Triple")
+
+[node name="Light_03_Small_Right" type="MeshInstance3D" parent="20_WallLights" unique_id=1503835636]
+transform = Transform3D(1.2898899, 0, 0, 0, 0.8662395, 0, 0, 0, 1, 2.4847095, 1.8368373, -8.525728)
+material_override = SubResource("LightMat_03_Small")
+cast_shadow = 0
+mesh = SubResource("LightMesh_03_Small")
+
+[node name="21_ArtAirlock" parent="." unique_id=1401553321 instance=ExtResource("ArtAirlock")]
+transform = Transform3D(1.3421335, 0, 0, 0, 1.3093847, 0, 0, 0, 1, -0.05380726, -0.65688777, -9.474395)
+cinematic_controlled = true
+
+[node name="22_Cables" type="Node3D" parent="." unique_id=761706167]
+
+[node name="Cable_01_Smooth" type="MeshInstance3D" parent="22_Cables" unique_id=1955615213]
+transform = Transform3D(0.6011632, 0, 0, 0, 0.62627137, 0, 0, 0, 0.9339652, 2.745207, 7.343926, 0.68220043)
+material_override = SubResource("CableMat0")
+cast_shadow = 0
+mesh = SubResource("CableMesh0")
+
+[node name="Cable_01_Smooth2" type="MeshInstance3D" parent="22_Cables" unique_id=907312924]
+transform = Transform3D(0.6011632, 0, 0, 0, 0.62627137, 0, 0, 0, 0.9339652, 8.533906, 7.343926, 1.143765)
+material_override = SubResource("CableMat0")
+cast_shadow = 0
+mesh = SubResource("CableMesh0")
+
+[node name="Cable_02_Bundle" type="MeshInstance3D" parent="22_Cables" unique_id=1984035809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.480996, 8.536522, 5.3482366)
+material_override = SubResource("CableMat1")
+cast_shadow = 0
+mesh = SubResource("CableMesh1")
+
+[node name="Cable_02_Bundle3" type="MeshInstance3D" parent="22_Cables" unique_id=1135071193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.657934, 7.174143, -0.19902039)
+material_override = SubResource("CableMat1")
+cast_shadow = 0
+mesh = SubResource("CableMesh1")
+
+[node name="Cable_02_Bundle4" type="MeshInstance3D" parent="22_Cables" unique_id=1110483254]
+transform = Transform3D(0.78214854, 0, 0, 0, 0.80439407, 0, 0, 0, 1, -7.6774106, 0.6040876, -9.273833)
+material_override = SubResource("CableMat1")
+cast_shadow = 0
+mesh = SubResource("CableMesh1")
+
+[node name="Cable_02_Bundle2" type="MeshInstance3D" parent="22_Cables" unique_id=121926785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7074356, 7.4700785, 1.655405)
+material_override = SubResource("CableMat1")
+cast_shadow = 0
+mesh = SubResource("CableMesh1")
+
+[node name="Cable_03_Corrugated" type="MeshInstance3D" parent="22_Cables" unique_id=1839440948]
+transform = Transform3D(0.7167258, 0, 0, 0, 0.6693243, 0, 0, 0, 1, 8.440177, 3.9430811, -9.3977995)
+material_override = SubResource("CableMat2")
+cast_shadow = 0
+mesh = SubResource("CableMesh2")
+
+[node name="Cable_03_Corrugated2" type="MeshInstance3D" parent="22_Cables" unique_id=716360150]
+transform = Transform3D(0.7167258, 0, 0, 0, 0.6693243, 0, 0, 0, 1, 1.0692902, 3.8418431, -9.79808)
+material_override = SubResource("CableMat2")
+cast_shadow = 0
+mesh = SubResource("CableMesh2")
+
+[node name="23_CloseupChamber" type="Node3D" parent="." unique_id=1320356098]
+transform = Transform3D(1.3421335, 0, 0, 0, 1.3093847, 0, 0, 0, 1, -40, -0.65688777, -9.474395)
+metadata/description = "门后舱室独立编辑副本，主镜头左侧范围外；选中后按F定位。"
+
+[node name="VestibuleFloor" type="MeshInstance3D" parent="23_CloseupChamber" unique_id=560885337]
+transform = Transform3D(1.3720453, 0, 0, 0, -7.059683e-08, 1, 0, -1.6150674, -4.371139e-08, -0.032571793, 0.53140426, -0.6768131)
+material_override = SubResource("Closeup_Mat_VestibuleFloor")
+cast_shadow = 0
+mesh = SubResource("Closeup_Mesh_VestibuleFloor")
+
+[node name="LeftInnerWall" type="MeshInstance3D" parent="23_CloseupChamber" unique_id=1236233855]
+transform = Transform3D(-6.526396e-08, 0, 1, 0, 1, 0, -1.4930655, 0, -4.371139e-08, -2.0251389, 2.3009691, -0.7684269)
+material_override = SubResource("Closeup_Mat_LeftInnerWall")
+cast_shadow = 0
+mesh = SubResource("Closeup_Mesh_LeftInnerWall")
+
+[node name="RightInnerWall" type="MeshInstance3D" parent="23_CloseupChamber" unique_id=1289342324]
+transform = Transform3D(-6.526396e-08, 0, -1, 0, 1, 0, 1.4930655, 0, -4.371139e-08, 2.0081272, 2.3009691, -0.7684269)
+material_override = SubResource("Mirrored_RightInnerWall_material_override")
+cast_shadow = 0
+mesh = SubResource("Mirrored_RightInnerWall_mesh")
+
+[node name="InteriorSoftLight" type="OmniLight3D" parent="23_CloseupChamber" unique_id=196422098]
+transform = Transform3D(0.7450824, 0, 0, 0, 0.7637175, 0, 0, 0, 1, 0, 3.1936183, -1.8542585)
+light_color = Color(1, 0.89, 0.72, 1)
+light_energy = 2.03
+omni_range = 12.0
+
+[node name="InteriorSoftLight3" type="OmniLight3D" parent="23_CloseupChamber" unique_id=347607587]
+transform = Transform3D(0.7450824, 0, 0, 0, 0.7637175, 0, 0, 0, 1, 0, 2.5959935, 0.8872957)
+light_color = Color(0.99999994, 0.9528852, 0.88153034, 1)
+omni_range = 3.5
+
+[node name="InteriorSoftLight2" type="OmniLight3D" parent="23_CloseupChamber" unique_id=1006280456]
+transform = Transform3D(0.7450824, 0, 0, 0, 0.7637175, 0, 0, 0, 1, -1.7515736, 1.3669293, -0.97714424)
+light_color = Color(1, 0.89, 0.72, 1)
+light_energy = 0.45
+omni_range = 3.0
+
+[node name="FloorBorder" type="Node3D" parent="23_CloseupChamber" unique_id=726273199]
+
+[node name="Right_2" type="MeshInstance3D" parent="23_CloseupChamber/FloorBorder" unique_id=1679364164]
+transform = Transform3D(1.071998, 0, 0, 0, 0, -1, 0, 4.383625, 0, 1.8541641, 0.52, -0.77930546)
+material_override = SubResource("Mirrored_Right_2_material_override")
+cast_shadow = 0
+mesh = SubResource("Mirrored_Right_2_mesh")
+
+[node name="Right_3" type="MeshInstance3D" parent="23_CloseupChamber/FloorBorder" unique_id=287268290]
+transform = Transform3D(1.071998, 0, 0, 0, 0, -1, 0, 4.383625, 0, -1.87644, 0.52, -0.77930546)
+material_override = SubResource("Mirrored_Right_2_material_override")
+cast_shadow = 0
+mesh = SubResource("Mirrored_Right_2_mesh")
+
+[node name="WallTopPipes" type="Node3D" parent="23_CloseupChamber" unique_id=919526007]
+
+[node name="LeftTop" type="MeshInstance3D" parent="23_CloseupChamber/WallTopPipes" unique_id=229454835]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -2.6368675, 4.2945786, -0.7684269)
+material_override = SubResource("ShaderMaterial_pos0p")
+cast_shadow = 0
+mesh = SubResource("CU_LeftTop")
+
+[node name="LeftInnerSide" type="MeshInstance3D" parent="23_CloseupChamber/WallTopPipes" unique_id=1697520480]
+transform = Transform3D(0, 0, 1, 0, 0.53200626, 0, -1, 0, 0, -2.361866, 4.195, -0.7684269)
+material_override = SubResource("ShaderMaterial_qw82p")
+cast_shadow = 0
+mesh = SubResource("CU_LeftInnerSide")
+
+[node name="RightTop" type="MeshInstance3D" parent="23_CloseupChamber/WallTopPipes" unique_id=2009015142]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.6368675, 4.2945786, -0.7684269)
+material_override = SubResource("Mirrored_RightTop_material_override")
+cast_shadow = 0
+mesh = SubResource("Mirrored_RightTop_mesh")
+
+[node name="RightInnerSide" type="MeshInstance3D" parent="23_CloseupChamber/WallTopPipes" unique_id=1496299341]
+transform = Transform3D(0, 0, -1, 0, 0.53200626, 0, 1, 0, 0, 2.361866, 4.195, -0.7684269)
+material_override = SubResource("Mirrored_RightInnerSide_material_override")
+cast_shadow = 0
+mesh = SubResource("Mirrored_RightInnerSide_mesh")
+
+[node name="InteriorSoftLight_Right" type="OmniLight3D" parent="23_CloseupChamber" unique_id=1636461171]
+transform = Transform3D(0.7450824, 0, 0, 0, 0.7637175, 0, 0, 0, 1, 1.7345619, 1.3669293, -0.97714424)
+light_color = Color(1, 0.89, 0.72, 1)
+light_energy = 0.45
+omni_range = 3.0
+
+[node name="DoorModule" type="Node3D" parent="23_CloseupChamber" unique_id=1599052169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.48)
+
+[node name="Frame" type="MeshInstance3D" parent="23_CloseupChamber/DoorModule" unique_id=1765799069]
+transform = Transform3D(1.3468766, 0, 0, 0, 1.2406733, 0, 0, 0, 1.1237264, -0.0138168335, 12.146668, 0.0589118)
+material_override = SubResource("CU_Door_Mat_Frame")
+cast_shadow = 0
+mesh = SubResource("CU_Door_Mesh_Frame")
+
+[node name="TopLeaf" type="Node3D" parent="23_CloseupChamber/DoorModule" unique_id=764706676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015137981, 2.7593582, 0.025)
+
+[node name="BottomLeaf" type="Node3D" parent="23_CloseupChamber/DoorModule" unique_id=2113429376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015137981, 1.3116876, 0.025)
+
+[node name="LockMount" type="Node3D" parent="23_CloseupChamber/DoorModule" unique_id=2025173450]
+transform = Transform3D(0.9755994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="LockRotor" type="Node3D" parent="23_CloseupChamber/DoorModule/LockMount" unique_id=719749014]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.0015137981, 2.035523, 0.085)
+
+[node name="01_NormalCat" type="Sprite3D" parent="23_CloseupChamber" unique_id=1878962804]
+transform = Transform3D(0.67147416, 0, 0, 0, 0.6804567, 0, 0, 0, 1, 0, 2.0439572, -0.4237032)
+pixel_size = 0.0016949069
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.4
+texture = ExtResource("Closeup_NormalCat")
+metadata/description = "01 普通猫，原图透明背景，独立可编辑的静态图片面片。"
+
+[node name="Worktable" type="Sprite3D" parent="23_CloseupChamber" unique_id=425795797]
+transform = Transform3D(0.88458395, 0, 0, 0, 1.3761967, 0, 0, 0, 3.5488036, 0, 0.8271887, -0.4937029)
+pixel_size = 0.00185
+shaded = true
+alpha_cut = 1
+alpha_scissor_threshold = 0.4
+texture = ExtResource("Closeup_Worktable")
+metadata/description = "去底操作台面片：褐色台面、深灰框架、加高中柱。"
+
+[node name="CloseupCamera" type="Camera3D" parent="." unique_id=1251312204]
+transform = Transform3D(1, 0, 0, 0, 0.99940854, 0.03438884, 0, -0.03438884, 0.99940854, -40.04454, 4.3160014, -1.804955)
+keep_aspect = 0
+projection = 2
+size = 0.7
+frustum_offset = Vector2(0, -0.225)
+near = 1.0
+far = 100.0
+metadata/description = "左侧舱室特写相机；选中后开启预览。沿用主相机透视，独立编辑位置。"

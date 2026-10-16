@@ -1,0 +1,324 @@
+[gd_scene format=3 uid="uid://bw4geo0vtjup8"]
+
+[ext_resource type="Texture2D" uid="uid://cbga10sxer47u" path="res://Asset/Airlock/Floor_01.png" id="Floor"]
+[ext_resource type="Texture2D" uid="uid://ckkbj11ffevmh" path="res://Asset/Airlock/Frame_02.png" id="Frame"]
+[ext_resource type="Texture2D" uid="uid://duc2jy32sngbj" path="res://Asset/Airlock/Leaf_Upper_06.png" id="Leaf"]
+[ext_resource type="Texture2D" uid="uid://xq08lvuwucnj" path="res://Asset/Airlock/Lock_Full_04.png" id="Lock"]
+[ext_resource type="Texture2D" uid="uid://cx43bug1tr4or" path="res://Asset/Lights/WallLight_03_Small.png" id="LockLight"]
+[ext_resource type="Texture2D" uid="uid://dnt33p3rpna4o" path="res://Asset/Airlock/Rear_01.png" id="Rear"]
+[ext_resource type="Script" uid="uid://da5s3lmv58myg" path="res://scripts/art_airlock.gd" id="Script"]
+[ext_resource type="Shader" uid="uid://dm6ts5ur4gs5m" path="res://Asset/Airlock/airlock_art.gdshader" id="Shader"]
+[ext_resource type="Texture2D" uid="uid://c7lotxu0cvh7b" path="res://Asset/Modular/Wall_Plain_01.png" id="SideWall"]
+[ext_resource type="Texture2D" uid="uid://sg4tixadvb8b" path="res://Asset/Universe_Earth_Outlined_01.jpg" id="Sky"]
+[ext_resource type="Shader" uid="uid://cd1wlaatwry1e" path="res://Asset/Airlock/rear_window.gdshader" id="SkyShader"]
+
+[sub_resource type="ShaderMaterial" id="Mat_Frame"]
+render_priority = 0
+shader = ExtResource("Shader")
+shader_parameter/art = ExtResource("Frame")
+shader_parameter/region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/opening_bounds = Vector4(0, 0, 0, 0)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = false
+shader_parameter/clip_ready = false
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Mesh_Frame"]
+size = Vector2(3.7754126, 4.131858)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kk0kp"]
+render_priority = 0
+shader = ExtResource("Shader")
+shader_parameter/art = ExtResource("Leaf")
+shader_parameter/region = Vector4(0.01667696, 0.08032956, 0.96541077, 0.8238929)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = true
+shader_parameter/frame_mask = ExtResource("Frame")
+shader_parameter/opening_bounds = Vector4(-1.3942081, 0.58785224, 1.3911805, 3.4831934)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = true
+shader_parameter/clip_ready = true
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Mesh_TopImage"]
+size = Vector2(2.8253884, 1.4676706)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8enb"]
+render_priority = 0
+shader = ExtResource("Shader")
+shader_parameter/art = ExtResource("Leaf")
+shader_parameter/region = Vector4(0.01667696, 0.08032956, 0.96541077, 0.8238929)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = true
+shader_parameter/fill_leaf = true
+shader_parameter/frame_mask = ExtResource("Frame")
+shader_parameter/opening_bounds = Vector4(-1.3942081, 0.58785224, 1.3911805, 3.4831934)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = true
+shader_parameter/clip_ready = true
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Mesh_BottomImage"]
+size = Vector2(2.8253884, 1.4676706)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v2ff0"]
+render_priority = 0
+shader = ExtResource("Shader")
+shader_parameter/art = ExtResource("Lock")
+shader_parameter/region = Vector4(0.034290273, 0.035885166, 0.930622, 0.4633174)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/frame_mask = ExtResource("Frame")
+shader_parameter/opening_bounds = Vector4(-1.3942081, 0.58785224, 1.3911805, 3.4831934)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = true
+shader_parameter/clip_ready = true
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Mesh_UpperHalf"]
+size = Vector2(1.1, 0.55)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7d5t0"]
+render_priority = 0
+shader = ExtResource("Shader")
+shader_parameter/art = ExtResource("LockLight")
+shader_parameter/region = Vector4(0.25138122, 0.14088398, 0.5, 0.73526704)
+shader_parameter/lamp_emission = 1.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/frame_mask = ExtResource("Frame")
+shader_parameter/opening_bounds = Vector4(-1.3942081, 0.58785224, 1.3911805, 3.4831934)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = true
+shader_parameter/clip_ready = true
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Mesh_LockLight"]
+size = Vector2(0.105, 0.315)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g3qdl"]
+render_priority = 0
+shader = ExtResource("Shader")
+shader_parameter/art = ExtResource("Lock")
+shader_parameter/region = Vector4(0.034290273, 0.49920255, 0.930622, 0.4633174)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/frame_mask = ExtResource("Frame")
+shader_parameter/opening_bounds = Vector4(-1.3942081, 0.58785224, 1.3911805, 3.4831934)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = true
+shader_parameter/clip_ready = true
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Mesh_LowerHalf"]
+size = Vector2(1.1, 0.55)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h4wc3"]
+render_priority = 0
+shader = ExtResource("Shader")
+shader_parameter/art = ExtResource("LockLight")
+shader_parameter/region = Vector4(0.25138122, 0.14088398, 0.5, 0.73526704)
+shader_parameter/lamp_emission = 1.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/frame_mask = ExtResource("Frame")
+shader_parameter/opening_bounds = Vector4(-1.3942081, 0.58785224, 1.3911805, 3.4831934)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = true
+shader_parameter/clip_ready = true
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="ShaderMaterial" id="Mat_VestibuleFloor"]
+render_priority = 0
+shader = ExtResource("Shader")
+shader_parameter/art = ExtResource("Floor")
+shader_parameter/region = Vector4(0, 0, 1, 1)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/opening_bounds = Vector4(0, 0, 0, 0)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = false
+shader_parameter/clip_ready = false
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Mesh_VestibuleFloor"]
+size = Vector2(3.04, 3)
+
+[sub_resource type="ShaderMaterial" id="Mat_LeftInnerWall"]
+render_priority = 0
+shader = ExtResource("Shader")
+shader_parameter/art = ExtResource("SideWall")
+shader_parameter/region = Vector4(0, 0, 1, 1)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/opening_bounds = Vector4(0, 0, 0, 0)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = false
+shader_parameter/clip_ready = false
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Mesh_LeftInnerWall"]
+size = Vector2(3, 3.45)
+
+[sub_resource type="ShaderMaterial" id="Mat_RightInnerWall"]
+render_priority = 0
+shader = ExtResource("Shader")
+shader_parameter/art = ExtResource("SideWall")
+shader_parameter/region = Vector4(0, 0, 1, 1)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/opening_bounds = Vector4(0, 0, 0, 0)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = false
+shader_parameter/clip_ready = false
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Mesh_RightInnerWall"]
+size = Vector2(3, 3.45)
+
+[sub_resource type="ShaderMaterial" id="Mat_Ceiling"]
+render_priority = 0
+shader = ExtResource("Shader")
+shader_parameter/art = ExtResource("SideWall")
+shader_parameter/region = Vector4(0, 0, 1, 1)
+shader_parameter/lamp_emission = 0.0
+shader_parameter/mirror = false
+shader_parameter/flip_y = false
+shader_parameter/fill_leaf = false
+shader_parameter/opening_bounds = Vector4(0, 0, 0, 0)
+shader_parameter/frame_region = Vector4(0.0031897926, 0.011961723, 0.99441785, 0.9752791)
+shader_parameter/sliding = false
+shader_parameter/clip_ready = false
+shader_parameter/portal_inverse = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/portal_half_width = 1.52
+
+[sub_resource type="QuadMesh" id="Mesh_Ceiling"]
+size = Vector2(3.04, 3)
+
+[sub_resource type="ShaderMaterial" id="RearMat"]
+render_priority = 0
+shader = ExtResource("SkyShader")
+shader_parameter/wall_texture = ExtResource("Rear")
+shader_parameter/universe_texture = ExtResource("Sky")
+
+[sub_resource type="QuadMesh" id="RearMesh"]
+size = Vector2(3.14, 3.5)
+
+[node name="ArtAirlock" type="Node3D" unique_id=1547203734]
+script = ExtResource("Script")
+
+[node name="Frame" type="MeshInstance3D" parent="." unique_id=109271582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.065929, 0.06)
+material_override = SubResource("Mat_Frame")
+cast_shadow = 0
+mesh = SubResource("Mesh_Frame")
+
+[node name="TopLeaf" type="Node3D" parent="." unique_id=1049622717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015137981, 2.7593582, 0.025)
+
+[node name="TopImage" type="MeshInstance3D" parent="TopLeaf" unique_id=746541769]
+material_override = SubResource("ShaderMaterial_kk0kp")
+cast_shadow = 0
+mesh = SubResource("Mesh_TopImage")
+
+[node name="BottomLeaf" type="Node3D" parent="." unique_id=800351091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015137981, 1.3116876, 0.025)
+
+[node name="BottomImage" type="MeshInstance3D" parent="BottomLeaf" unique_id=1832824725]
+material_override = SubResource("ShaderMaterial_d8enb")
+cast_shadow = 0
+mesh = SubResource("Mesh_BottomImage")
+
+[node name="LockMount" type="Node3D" parent="." unique_id=1985443653]
+
+[node name="LockRotor" type="Node3D" parent="LockMount" unique_id=190493069]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.0015137981, 2.035523, 0.085)
+
+[node name="UpperHalf" type="MeshInstance3D" parent="LockMount/LockRotor" unique_id=321078304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275, 0)
+material_override = SubResource("ShaderMaterial_v2ff0")
+cast_shadow = 0
+mesh = SubResource("Mesh_UpperHalf")
+
+[node name="LeftIndicator" type="MeshInstance3D" parent="LockMount/LockRotor/UpperHalf" unique_id=1091469239]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -0.18021409, 0.0024984255)
+material_override = SubResource("ShaderMaterial_7d5t0")
+cast_shadow = 0
+mesh = SubResource("Mesh_LockLight")
+
+[node name="LowerHalf" type="MeshInstance3D" parent="LockMount/LockRotor" unique_id=815307110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.275, 0)
+material_override = SubResource("ShaderMaterial_g3qdl")
+cast_shadow = 0
+mesh = SubResource("Mesh_LowerHalf")
+
+[node name="RightIndicator" type="MeshInstance3D" parent="LockMount/LockRotor/LowerHalf" unique_id=1355896203]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.18198456, 0.015000001)
+material_override = SubResource("ShaderMaterial_h4wc3")
+cast_shadow = 0
+mesh = SubResource("Mesh_LockLight")
+
+[node name="VestibuleFloor" type="MeshInstance3D" parent="." unique_id=1445789225]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.52, -1.5)
+material_override = SubResource("Mat_VestibuleFloor")
+cast_shadow = 0
+mesh = SubResource("Mesh_VestibuleFloor")
+
+[node name="LeftInnerWall" type="MeshInstance3D" parent="." unique_id=1176234692]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.52, 2.245, -1.5)
+material_override = SubResource("Mat_LeftInnerWall")
+cast_shadow = 0
+mesh = SubResource("Mesh_LeftInnerWall")
+
+[node name="RightInnerWall" type="MeshInstance3D" parent="." unique_id=1511916847]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.52, 2.245, -1.5)
+material_override = SubResource("Mat_RightInnerWall")
+cast_shadow = 0
+mesh = SubResource("Mesh_RightInnerWall")
+
+[node name="Ceiling" type="MeshInstance3D" parent="." unique_id=1008076736]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3.97, -1.5)
+material_override = SubResource("Mat_Ceiling")
+cast_shadow = 0
+mesh = SubResource("Mesh_Ceiling")
+
+[node name="RearWall" type="MeshInstance3D" parent="." unique_id=1257442547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.245, -3)
+material_override = SubResource("RearMat")
+cast_shadow = 0
+mesh = SubResource("RearMesh")
+
+[node name="InteriorSoftLight" type="OmniLight3D" parent="." unique_id=740065256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9, -1.5)
+light_color = Color(1, 0.89, 0.72, 1)
+light_energy = 0.45
+omni_range = 3.0

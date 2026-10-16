@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://Asset/Modular/WhiteboxDerived/Vent_Whitebox_v01.png" id="1_hnn2g"]
+
+[sub_resource type="Shader" id="Shader_vayri"]
+code = "shader_type spatial;
+render_mode cull_disabled;
+uniform sampler2D art : source_color, filter_linear_mipmap_anisotropic, repeat_disable;
+uniform vec4 region;
+void fragment(){
+ vec4 c=texture(art,region.xy+UV*region.zw);
+ if(c.a<0.85) discard;
+ NORMAL=normalize((VIEW_MATRIX*vec4(0.0,0.0,1.0,0.0)).xyz); ALBEDO=c.rgb; ROUGHNESS=1.0; SPECULAR=0.0; EMISSION=c.rgb*0.08;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s4g63"]
+render_priority = 0
+shader = SubResource("Shader_vayri")
+shader_parameter/art = ExtResource("1_hnn2g")
+shader_parameter/region = Vector4(0.36064592, 0.11702128, 0.2673445, 0.7670213)
+
+[sub_resource type="QuadMesh" id="QuadMesh_r8tf8"]
+size = Vector2(1.0849514, 1.75)
+
+[node name="Vent" type="Node3D" unique_id=1607023493]
+
+[node name="Image2D" type="MeshInstance3D" parent="." unique_id=1246496259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48, 0, 0.77)
+material_override = SubResource("ShaderMaterial_s4g63")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_r8tf8")

@@ -1,0 +1,704 @@
+{
+  "date": "2026-10-16",
+  "entry": "毛球满屋/scenes/Concept Whitebox.tscn",
+  "engine": "Godot 4.7.1",
+  "files": [
+    {
+      "path": "毛球满屋/scenes/Concept Whitebox.tscn",
+      "bytes": 101804,
+      "sha256": "1c4c1b49f85a0f7296624826543dde091a48634cfd5c12b03b821f38f9eb18c2",
+      "git_blob_oid": "552333ea17bc5b28cd37770d7f0bb56dcd3e1e09"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/window_sky.gdshader",
+      "bytes": 2602,
+      "sha256": "a6159481e7ff207029a2efd305bfa8c088b52fed1fa8330ac4cedeabf75600cc",
+      "git_blob_oid": "4d3d07efaa6d36fe51ea32dbba16cbffe838c9c0"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/window_sky.gdshader.uid",
+      "bytes": 20,
+      "sha256": "fb84731dade08d1b6d7287d65ac723a409a252dc6de3e964967ce979c1ce7bc2",
+      "git_blob_oid": "bef47cc58a905209fb15f926570c4b3378eea208"
+    },
+    {
+      "path": "毛球满屋/scenes/props_2d/Vent.tscn",
+      "bytes": 1195,
+      "sha256": "9c1d97ab35f732e8ac8c4a646ec97b69b7d077d923673549356ab42fc1f3f30f",
+      "git_blob_oid": "e08a0277182005bd8d9b804cedca640d33bb62a8"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/WhiteboxDerived/Vent_Whitebox_v01.png",
+      "bytes": 446657,
+      "sha256": "cb5a3cb5190cfd130e5c61b0cb7b6e22dc7b54c98cb16e0e183ee12b7e4b392f",
+      "git_blob_oid": "4f0cb61c50c8e1d19736ec8c53a60151c0f99ec9"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/WhiteboxDerived/Vent_Whitebox_v01.png.import",
+      "bytes": 1033,
+      "sha256": "e5cb7fda56d29651aa5b07f8943e43e849ffe73e63916835ad3d2c938242a10c",
+      "git_blob_oid": "25850ece3a3a356a4bef0becb097a19d97f3c420"
+    },
+    {
+      "path": "毛球满屋/scenes/props_2d/Pipe.tscn",
+      "bytes": 1197,
+      "sha256": "ebea8e5d824d2b2eb7ba1739c19e41049a1ef264edf7fdd12fbfee84be24fca3",
+      "git_blob_oid": "5fdd0b6c65af31a148ec941c9d8f232dc69d304f"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/WhiteboxDerived/Pipe_Whitebox_v01.png",
+      "bytes": 259770,
+      "sha256": "666a2d790a6d06fcbc2a33b978f760ead58467ec93409839d6eff7f21ab01d88",
+      "git_blob_oid": "4c8c8b4dc09507ae62606141998e9019464c1e9b"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/WhiteboxDerived/Pipe_Whitebox_v01.png.import",
+      "bytes": 1033,
+      "sha256": "118b95cf60c5f8079774dc113c96c6862b4031be54c766f1b14863f17704a66e",
+      "git_blob_oid": "349058ea840fec61a5a47612ce522c78dcbbc36e"
+    },
+    {
+      "path": "毛球满屋/scenes/props_2d/Frame.tscn",
+      "bytes": 1199,
+      "sha256": "ee0488d5b1d2fd89d684b6b4279d19b2582a5497462f93c7296eccf52bf9118e",
+      "git_blob_oid": "f6f00dd1515fb467c7e816b73aa54d2cbc33ea50"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/WhiteboxDerived/Frame_Whitebox_v01.png",
+      "bytes": 1044850,
+      "sha256": "ac049864aa186e0cffd2469dd43d0f670a68618309f113df55bfd62a8ac98c17",
+      "git_blob_oid": "ae38cfc3eaade8689aaa28df8075ec27ef3cbc4d"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/WhiteboxDerived/Frame_Whitebox_v01.png.import",
+      "bytes": 1035,
+      "sha256": "2f7ff3b9907323280292d357776bf8b68bf86cf87c98ef035bf8455b5bb4af64",
+      "git_blob_oid": "a5ef5d6381af235fbbc8eda30e43754710b9ead8"
+    },
+    {
+      "path": "毛球满屋/Asset/Lights/wall_light.gdshader",
+      "bytes": 496,
+      "sha256": "2d58c0f04acf42f0e5aef7bb4bcd1f368a5b5231da1403b3968c84de739359d3",
+      "git_blob_oid": "5d01373ef0f903e7bcb635cf816d236cf8f60d2e"
+    },
+    {
+      "path": "毛球满屋/Asset/Lights/wall_light.gdshader.uid",
+      "bytes": 19,
+      "sha256": "ec2db47ec85e26b62a76ae835d4da81ca270964bf53ca5b423490a45825d1eae",
+      "git_blob_oid": "90588b3881fb83a74f6d3f611c2bf9a25a7e6d78"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/PerspectiveProps/03_Vent_Oblique_03.png",
+      "bytes": 1503783,
+      "sha256": "ae4514c5246b0ca97b86b23679bf638ab1977d9de2980bf69c10a434df365700",
+      "git_blob_oid": "e0503bafa2b763804266881c596f225b1d598d9c"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/PerspectiveProps/03_Vent_Oblique_03.png.import",
+      "bytes": 1037,
+      "sha256": "7c7c6474d28ad75b94810a0877be9ebb7010db8cc64279b68b0032c7c6c42da7",
+      "git_blob_oid": "5c72c044f0e39b016ae6b288a07205f5bcdfbba1"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/PerspectiveProps/02_Pipe_Oblique_03.png",
+      "bytes": 905373,
+      "sha256": "97a8e3d487cfd99516b39b4b4716b6389126422316bf906b1e6260310a952c13",
+      "git_blob_oid": "fa4f6b8b91e7cfd175b6e07ec1959d1b800b7958"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/PerspectiveProps/02_Pipe_Oblique_03.png.import",
+      "bytes": 1037,
+      "sha256": "424abfc10b8db10151d935077a3996873975735148b6ca263aaf726468c6bbc5",
+      "git_blob_oid": "e973498b57c1b7e3851e77222897ca98a9b8a640"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/PerspectiveProps/01_Frame_Oblique_03.png",
+      "bytes": 979685,
+      "sha256": "a94f19fb8bf3aa43105ed27aa3cd636e12366f0f986bc8c54245972a3e686803",
+      "git_blob_oid": "dbc4eb4e582dec0087989a29c26281d9ea392644"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/PerspectiveProps/01_Frame_Oblique_03.png.import",
+      "bytes": 1040,
+      "sha256": "a8cbc127c1798d3814d39a8d627474e652129022b444b3a60a39be2624dcfbe9",
+      "git_blob_oid": "470b592510f8b47d23690b65f2cd01d8d1f66cbb"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/Wall_Window_02.png",
+      "bytes": 1294206,
+      "sha256": "fafcd7c5da0e0b032d95bd3fda4bd6e52f085e1540ded4a64109fbdda6a28cff",
+      "git_blob_oid": "a74fc5ad37aaedddee2e9586a728ebbe3cd117c7"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/Wall_Window_02.png.import",
+      "bytes": 1007,
+      "sha256": "7ab51b769e4c1384d2e55996e3e4f56c12cd80b43816b621623959164c2b5529",
+      "git_blob_oid": "6f9fd31cc2a1033158bf32d1c29e8635332305e9"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/Floor_Tile_01.png",
+      "bytes": 1170496,
+      "sha256": "3e5886a3b9dd36d4b4407b8f389a7c1d63ad93d885312aad8683aa5c991ce442",
+      "git_blob_oid": "a4fb614666ecee58793ad961a60b919da9049cd3"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/Floor_Tile_01.png.import",
+      "bytes": 1005,
+      "sha256": "e7abbebea644b85ae2b9e6d5ae910d34e3465617852fd5c8150e61fca638997d",
+      "git_blob_oid": "d90baf4b2c4e740eefc3b452fbf5d4fb993345f2"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/Pipe_Straight_01.png",
+      "bytes": 346448,
+      "sha256": "d81f5a4ae2638b17506f502a4c6f1919b4c8d2f6f914ed7009a606274701b858",
+      "git_blob_oid": "2f47e5ddf9aa1f1ef69cf2b7b47fabe70c2d059b"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/Pipe_Straight_01.png.import",
+      "bytes": 1014,
+      "sha256": "a7121080002d4161c76c1f615e6d135c02e739d27ce482a0ff6027090ba25b25",
+      "git_blob_oid": "b99baae294c5f140ed7f4c963eb2d7296287bbae"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/Floor_Border_01.png",
+      "bytes": 353054,
+      "sha256": "62b085d3f03c6b41aed6d99969329c4f53180fb01ecfb5983bb0d1b6f39f44e8",
+      "git_blob_oid": "6736a36f9aaf0e478a1e70236dd4f878c5927749"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/Floor_Border_01.png.import",
+      "bytes": 1011,
+      "sha256": "b475d7fce2fbbe5f50ea2c783dcad5a2dc50c201daa787a587edb124e3c75730",
+      "git_blob_oid": "83aef366853f0abc7de8f65a37365177cce60b6e"
+    },
+    {
+      "path": "毛球满屋/Asset/Lights/WallLight_02_Triple.png",
+      "bytes": 835449,
+      "sha256": "7ae64107ea147a45dec01e454601d5ef425990be48e03addfa0d62f0d0da7854",
+      "git_blob_oid": "76997af3c95554c5009efacc9e9dc78fbd9fe851"
+    },
+    {
+      "path": "毛球满屋/Asset/Lights/WallLight_02_Triple.png.import",
+      "bytes": 1021,
+      "sha256": "38fb96af0059e3d364d0c9f6bd2c788161b3d48fdf0dd9996d4d9b259280f799",
+      "git_blob_oid": "d5d10c880df47fcda9c9b918c6d67d348fa09b46"
+    },
+    {
+      "path": "毛球满屋/Asset/Lights/WallLight_01_Framed.png",
+      "bytes": 819488,
+      "sha256": "a632c7d8157eef5b316b228f6c24789c6d7de44bf83e784d783dcfa122781968",
+      "git_blob_oid": "37c2b740c7079d04481d7b32866e98c15215d3e5"
+    },
+    {
+      "path": "毛球满屋/Asset/Lights/WallLight_01_Framed.png.import",
+      "bytes": 1022,
+      "sha256": "16ba57cced3a8450b50425d01d9337ed0e78d5ac384f5338782af4054f5f1c31",
+      "git_blob_oid": "f3326480a2bcd7ef6e7873c2040f787551989fbe"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/Window_Glass_Reflection_01.png",
+      "bytes": 314108,
+      "sha256": "b4c3ed5520c4b940c9c0d5a10141d7af7445e62f650bc9d3e83d3d3f7cd9014a",
+      "git_blob_oid": "6a8f77f1b2bde8820569dde5e4d894b836e53822"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/Window_Glass_Reflection_01.png.import",
+      "bytes": 1044,
+      "sha256": "bd9f14873efb49566a93b8a04b5afe2cb081f513fc886e025995f0923305840c",
+      "git_blob_oid": "5fbec7be44d773314e6c5cd01a81b5b7b2e1fa7d"
+    },
+    {
+      "path": "毛球满屋/scripts/concept_edge_pan.gd",
+      "bytes": 9108,
+      "sha256": "344a382c8a033437d03f0326752fd14bd50edbc08be1bde8d3662a7d88174e0c",
+      "git_blob_oid": "32c189edfc1203e32b88301224ccdd3a4c50e9c7"
+    },
+    {
+      "path": "毛球满屋/scripts/concept_edge_pan.gd.uid",
+      "bytes": 20,
+      "sha256": "97143d0bd6d29b4701fd66c3c8e9dd5f7ddb4ff304850decfab297bdd0edf458",
+      "git_blob_oid": "b530d1ecf67a0a5c255eff4a6e7a9bf8d328ec1d"
+    },
+    {
+      "path": "毛球满屋/Asset/Universe_Earth_Outlined_01.jpg",
+      "bytes": 239587,
+      "sha256": "971eee80cf5147f60bf2f55b75bc5adca9919f238d2a76fcd951493f0db4a513",
+      "git_blob_oid": "c9569fb7bb8b0d163df7345b28b69812c6cf9c10"
+    },
+    {
+      "path": "毛球满屋/Asset/Universe_Earth_Outlined_01.jpg.import",
+      "bytes": 1035,
+      "sha256": "3febb16296620683cbaa9de40e1236fa267dcd050eefc38cf24ada5330eac128",
+      "git_blob_oid": "0d930ea238ee94cf826151bcbe6276b76ace7e5d"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/Wall_Plain_01.png",
+      "bytes": 1295938,
+      "sha256": "a8ec8aea838e552cb2f0007900407472e1396d34e3d5d7af0f959f558ce21bc5",
+      "git_blob_oid": "5ed412d4a567efb4a51ce84cf9020ef9d99639f5"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/Wall_Plain_01.png.import",
+      "bytes": 1005,
+      "sha256": "a40c1ec4d3367fbccb600405b4201c141b42cbccd753fee61b9d7ec68d517306",
+      "git_blob_oid": "a45df522908c7d8ae289bacf29498012b970df52"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/airlock_art.gdshader",
+      "bytes": 1385,
+      "sha256": "2d2c01bbc21f4a5e8d0c4daadaceb923097b5316f88a701d7df5a99932655c8d",
+      "git_blob_oid": "08f8b06fb7b043ecaf5790919bb14663701633b6"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/airlock_art.gdshader.uid",
+      "bytes": 20,
+      "sha256": "1ff4715c3445b46fbe45b05eba485143b49538b55a354e10ea5306e3cc32197b",
+      "git_blob_oid": "5eb06f8c25b8b21f2fdf6b793d3ade5dbab6f813"
+    },
+    {
+      "path": "毛球满屋/Asset/Lights/WallLight_03_Small.png",
+      "bytes": 650755,
+      "sha256": "656115bf4161c419768219d869f969fcf643162b3667e64e3d24ee58cca46d52",
+      "git_blob_oid": "013d59dcf53855553e9e1678da64322f734e02e4"
+    },
+    {
+      "path": "毛球满屋/Asset/Lights/WallLight_03_Small.png.import",
+      "bytes": 1019,
+      "sha256": "b643b5d06420ec30d689a0183e9aff2b085b2e76c4569dbf11829c86e055d55a",
+      "git_blob_oid": "6c6893e2abc9c8dbc442c515b8ec386cd7539bdc"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/Frame_02.png",
+      "bytes": 853113,
+      "sha256": "e24006f759ee741596fd3298c4b9e0b5beb199d8bbb4d43f1f4e356300e4284d",
+      "git_blob_oid": "a2e315fc691c416fed65da7c21fea60f3e1123b3"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/Frame_02.png.import",
+      "bytes": 990,
+      "sha256": "55512984adf690daaea776978c6d24aab274865001409a30858a54d348c5322d",
+      "git_blob_oid": "c5472cac4fdf268fb8ade3e7632181b5261a8055"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/Floor_01.png",
+      "bytes": 1469930,
+      "sha256": "60efbdbde89db32e15f940aacd04f1fc67a4927b28ee1fb8482ebc6103ab87e3",
+      "git_blob_oid": "b0cbf6d1afe4b7ddb60dc71f11b72b9d1be719b9"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/Floor_01.png.import",
+      "bytes": 990,
+      "sha256": "261f90d1e5920c228c98fbdd78a1472c63252d7e5b4c18e6a318b4ca022424ec",
+      "git_blob_oid": "5a81529006b3612abbd05729c353dc9b4d36605b"
+    },
+    {
+      "path": "毛球满屋/Asset/Wall_Column_01.png",
+      "bytes": 418835,
+      "sha256": "a2f9f70f8c6a0e6f9ff5ed186851c524a90ac0a6b09ec65d74875678c4cca686",
+      "git_blob_oid": "36c4714d8fc1661eb3b9d57dc83c7dda3baf2f66"
+    },
+    {
+      "path": "毛球满屋/Asset/Wall_Column_01.png.import",
+      "bytes": 1000,
+      "sha256": "0e6248a55461a27efbe0e362177d853b6dfdf8dfabed978dc2ff09bbfc822e60",
+      "git_blob_oid": "946e80296dc3c3197881e7504ef3c29b03a4986c"
+    },
+    {
+      "path": "毛球满屋/Asset/Decor/Worktable_01.png",
+      "bytes": 731547,
+      "sha256": "37631ffb125d92ac5e99bb3b7f90491f180243c8488ee4856cfc3ec016448abe",
+      "git_blob_oid": "42049e5da0d006651f99b49ba10b4ef46a5e7cf0"
+    },
+    {
+      "path": "毛球满屋/Asset/Decor/Worktable_01.png.import",
+      "bytes": 1000,
+      "sha256": "151692d49d2dbffb6c017c86d10333172b72afe00698eb5d82c3feba5c5111b3",
+      "git_blob_oid": "38560e6e928117f1ff5ed00467035800933a13e0"
+    },
+    {
+      "path": "毛球满屋/Asset/Cats/01_NormalCat.png",
+      "bytes": 853150,
+      "sha256": "edc5776419636b7453c4019d00d6cab7323966949e438b151235cdd639a72465",
+      "git_blob_oid": "abb6281b7676a70c7a5bec701d61d80d82e55d08"
+    },
+    {
+      "path": "毛球满屋/Asset/Cats/01_NormalCat.png.import",
+      "bytes": 999,
+      "sha256": "556c70e39c6ce4eb6192e6ff54e6d5bbb97b8609b2f14ead4628371f930f3e8a",
+      "git_blob_oid": "d281ac0ac007e15930779dba01690901308b8e1d"
+    },
+    {
+      "path": "毛球满屋/Asset/Cables/Cable_03_Corrugated.png",
+      "bytes": 653292,
+      "sha256": "490983106820dfe71a5dd3c922790c1b928e7837bc86cbe8692cc1fff94e27af",
+      "git_blob_oid": "b0732eba6d4ddd44fbfe275e5e94c2bb8af4f480"
+    },
+    {
+      "path": "毛球满屋/Asset/Cables/Cable_03_Corrugated.png.import",
+      "bytes": 1022,
+      "sha256": "0b08cea31f7430837f21371ee0dff5a1e485802bdb2d39481e9f69d188445679",
+      "git_blob_oid": "e8e86c6d1b23e11986476ceebabf3b8927619385"
+    },
+    {
+      "path": "毛球满屋/Asset/Cables/Cable_02_Bundle.png",
+      "bytes": 717439,
+      "sha256": "cd87d721fd3a0985082a40a4dda3836d1b42c0d83f47a65a78527717efde6e34",
+      "git_blob_oid": "c3fbfbded19d59fabc64b6a1bf1b08f4f8abb33b"
+    },
+    {
+      "path": "毛球满屋/Asset/Cables/Cable_02_Bundle.png.import",
+      "bytes": 1009,
+      "sha256": "a5883d2be6955eee316dd4d6c44779161c7330576da4b10e252b1f5e27cbb243",
+      "git_blob_oid": "f57f07060ff14d8ffdb5265ff82539df70e8efde"
+    },
+    {
+      "path": "毛球满屋/Asset/Cables/Cable_01_Smooth.png",
+      "bytes": 456025,
+      "sha256": "079fd99b28951b9d7fd6940d78e443c708f83a4a9eb2eaec4c98f95097872c19",
+      "git_blob_oid": "db7bd1721292cb350f2cb422e61415e8f36c9c09"
+    },
+    {
+      "path": "毛球满屋/Asset/Cables/Cable_01_Smooth.png.import",
+      "bytes": 1010,
+      "sha256": "ff7b8afb16f34796976452d408799f96f0e4edd01146dea52def3b3ad90fbb93",
+      "git_blob_oid": "932c5db25627855a976668a62189a090efbf8fa8"
+    },
+    {
+      "path": "毛球满屋/Asset/Cables/cable_art.gdshader",
+      "bytes": 323,
+      "sha256": "08b7fbdb4ec5c3df622a6c0fa3e3b9ca6b1f9800a16d153c2430a27467f8a30e",
+      "git_blob_oid": "7fd6b5734e8914af720232aa0f3967b3c5452243"
+    },
+    {
+      "path": "毛球满屋/Asset/Cables/cable_art.gdshader.uid",
+      "bytes": 20,
+      "sha256": "e77b0b1cd1ea2152c59e98885bcbda170f10ae52ac7bc39f0f61a1605a9f0f7c",
+      "git_blob_oid": "cb89a33202883303be061aa8e9f130a364619ebb"
+    },
+    {
+      "path": "毛球满屋/scenes/props_2d/ArtAirlock.tscn",
+      "bytes": 14748,
+      "sha256": "da5da25bf1a760f55b4ce7818ba608096e387551bda13f20a9e326d9c8f31f32",
+      "git_blob_oid": "ff3762ab1842970bba5c88f7a0d8b0dffe9a09ee"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/rear_window.gdshader",
+      "bytes": 933,
+      "sha256": "d50325b669024fb9c112fbf3a83e28bbb31bb72bff0bbcf3f546ab95af3a8df9",
+      "git_blob_oid": "55abb48054981c95d0b11da01b0bd1fa13284eef"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/rear_window.gdshader.uid",
+      "bytes": 20,
+      "sha256": "1c6d8234c666e90a09834cb005526705aac8eec4655bbff110874f51fc8ab158",
+      "git_blob_oid": "357b673909b46593e2c5494a61d7cc641ab17b7c"
+    },
+    {
+      "path": "毛球满屋/scripts/art_airlock.gd",
+      "bytes": 3804,
+      "sha256": "a25059fa3ffaf01419b0494d769365f5cf774eddcbf23d0087c53cdf46aee152",
+      "git_blob_oid": "0986b1f567318492544ef0ab84bda5167181662f"
+    },
+    {
+      "path": "毛球满屋/scripts/art_airlock.gd.uid",
+      "bytes": 20,
+      "sha256": "9f7108ff291b76e9c1c85606d6ab325849b7d358606b205a033a118f62d0a63f",
+      "git_blob_oid": "5dd72375e59f419397d498005f29459001d4b3fb"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/Rear_01.png",
+      "bytes": 1244750,
+      "sha256": "5b40ddf9c01e0dd7f6a0d64d04db6cd4836e26c99d6db87a94f83abfc581e86b",
+      "git_blob_oid": "0bbfce0999a22c709a34012b43befbe7ea860510"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/Rear_01.png.import",
+      "bytes": 987,
+      "sha256": "c285ad9d58eb248d765ed327ebb461a5e8e7943b2f540ecacaebdc8f87ecb273",
+      "git_blob_oid": "5330269c4a8e43a99ef4104e750bc336f8cd04bc"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/Lock_Full_04.png",
+      "bytes": 1446078,
+      "sha256": "cdbf0c881f2c95a3048bc15ca69999f0585d84e509c0a5ead9faeab0796b07d1",
+      "git_blob_oid": "c6c9ed916cea9ad0dc1a507248f658fa67b1a41d"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/Lock_Full_04.png.import",
+      "bytes": 1001,
+      "sha256": "330ac0a186e35bfff9fab61e2b78aba32edc3d740ffbc9808cf1a934433c2f86",
+      "git_blob_oid": "6927048e80859dc7282e2c5cf9768b7cab081c6f"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/Leaf_Upper_06.png",
+      "bytes": 1534683,
+      "sha256": "901484cf47f29d19a306b1d80a0f8605605c55988aa9126230aee571475cb5d7",
+      "git_blob_oid": "c543333a811f964212890db8c890b58af249b8d1"
+    },
+    {
+      "path": "毛球满屋/Asset/Airlock/Leaf_Upper_06.png.import",
+      "bytes": 1005,
+      "sha256": "60d158d3c11b0c5c219c7eb3849d06270459ee22461deda3816381f1dcd95152",
+      "git_blob_oid": "5446f60904a71ee4b0b147371bd2e972c3235a25"
+    },
+    {
+      "path": "毛球满屋/Asset/Decor/Decor_FurPile_Front_01.png",
+      "bytes": 797952,
+      "sha256": "4877429a2ef01fa1755634e09d70da7f33bf4a81de88aa410dafa486d1f90357",
+      "git_blob_oid": "57237d9ad834d86ec8cfa864729cd8a051e2ad32"
+    },
+    {
+      "path": "毛球满屋/Asset/Decor/Decor_FurPile_Front_01.png.import",
+      "bytes": 1030,
+      "sha256": "81a17a997430373483c2d32edee0a8f663a3306b7b29bf4c6277f3fe7b137ec8",
+      "git_blob_oid": "240ebae5950ed1fc56e28a86726ecc46d6148990"
+    },
+    {
+      "path": "毛球满屋/Asset/Decor/Decor_Planter_Front_01.png",
+      "bytes": 1327928,
+      "sha256": "808842ce702527373d5a88d96ee2a14b9210be81c7bc04527e9b0dc3c9cddfad",
+      "git_blob_oid": "c086819d15ab1d2d85a1c367302c3b503595e9f2"
+    },
+    {
+      "path": "毛球满屋/Asset/Decor/Decor_Planter_Front_01.png.import",
+      "bytes": 1029,
+      "sha256": "e210e90d40a957dd59498ff8a78ebd2b2a918b29c21fae4a15aa112640bca4fa",
+      "git_blob_oid": "fbc6d55bf0573a79fd4f116cbb19604bc6616a33"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/WallTop_BackPipe_01.png",
+      "bytes": 429436,
+      "sha256": "f821cd9e2168d2ea58e1e19f179ab4d6f768266a9910f5849da42a04c203fcdf",
+      "git_blob_oid": "d959e26a5f3ee647350ac305ba0066eede005c85"
+    },
+    {
+      "path": "毛球满屋/Asset/Modular/WallTop_BackPipe_01.png.import",
+      "bytes": 1023,
+      "sha256": "0e6fddf8dcbfa405eaefde93512652aa1b3ad9456263b708ad6f711d1f51d813",
+      "git_blob_oid": "63b38bb9f9d84a5c6507af657de495805ed24b49"
+    },
+    {
+      "path": "毛球满屋/scenes/props_2d/CatPreview.tscn",
+      "bytes": 40294,
+      "sha256": "47a7d7898e0ad4b401d8c40420f1c88caf32ff804c60f3b893c1f449ed637529",
+      "git_blob_oid": "eb49b271ccbea85a9e24ab8e2aa704981cb134bc"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-上方 · 前进.png",
+      "bytes": 238556,
+      "sha256": "2df02ebba3b40cf77089bb3ad7be3daac7599cbabe0213d9b5240f9e9e6405e8",
+      "git_blob_oid": "96ea4d78b43d37347446f3b49ce7c47a0efc0b24"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-上方 · 前进.png.import",
+      "bytes": 994,
+      "sha256": "99775ef436ccc66278d5e6e0c6db0693d3615911add1ba71b9a71e4a07a4bd90",
+      "git_blob_oid": "c82f28ad5b2ad67542bd8fbf67faddd81d439c74"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-下方 · 前进.png",
+      "bytes": 221005,
+      "sha256": "8c2ffc79e54df35aa56d5ca019d0a32183e88ff76f43771c323d7fd16116d451",
+      "git_blob_oid": "6fee28e1da1060a076d7d96152098204940993c2"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-下方 · 前进.png.import",
+      "bytes": 993,
+      "sha256": "7564b83756a81589b03480c962f7f1fea17031bcd7ce31b1406ffd1b7e4720d2",
+      "git_blob_oid": "052ccc0032e0406d05a8e44825336f19dea4a78c"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-侧面 · 前进.png",
+      "bytes": 291549,
+      "sha256": "a09add4ce6a3eaa78d3a1a05aae4730bbe5566cfe9d5f8af64363b53bfb17178",
+      "git_blob_oid": "5f02ed5e44ba6cca497b809d72527736623abca2"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-侧面 · 前进.png.import",
+      "bytes": 994,
+      "sha256": "1ddf3f872bbb5bf2f661e703e83863e9b8f99922af82b170b637ba47dc148746",
+      "git_blob_oid": "f2ad9f4a159480455cee18b6f513c3f2295ac6c1"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-侧面 · 产毛.png",
+      "bytes": 301031,
+      "sha256": "edfb101441489e00d23b571bd2325fb6e0f43e9bc239b79600f5fbef93a2884b",
+      "git_blob_oid": "da12458a5fd39cf7cb29d3f6149956689c905041"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-侧面 · 产毛.png.import",
+      "bytes": 992,
+      "sha256": "d4fd66e6834d5cc3b49773913c86a74e933f1defed0825c4a316859d2620553d",
+      "git_blob_oid": "70a14cfb877f63ed617109c2643afdf0c1a1e454"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-侧面 · 被抚摸.png",
+      "bytes": 425229,
+      "sha256": "4ab17b952ed035852d9478d6fbf51cfb6ed6bbc746ee1597963a703806364a32",
+      "git_blob_oid": "ac7a82b71d9166e79a713817cef8e8dd80890f9b"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-侧面 · 被抚摸.png.import",
+      "bytes": 1002,
+      "sha256": "7490a352cbd269c1a36750d0ee7c0bf22a2004ac21a00f917811aef661274148",
+      "git_blob_oid": "c1fc46a47cf84b7ba0ce867e63a9c70f3418a849"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-上方 · 待机.png",
+      "bytes": 480153,
+      "sha256": "90b1844c713a52703255cb8c05c14a7b1c3c76c25ab1ff70d6ae7d91756ebe71",
+      "git_blob_oid": "7c9e9a7def6df60e9d1d8840e18d4620dc12b07d"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-上方 · 待机.png.import",
+      "bytes": 993,
+      "sha256": "53ab31cc6945aaea399b9f48f4c0546df8928b6cefbf9c51c3d77c7b9b60d21c",
+      "git_blob_oid": "5ee276b8312f653b641fd2a87aa06ecaff54f7ff"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-下方 · 待机.png",
+      "bytes": 453642,
+      "sha256": "049604a2378a5a55d204f877c7ccf04f0bf6b5250245e9eb19555fb5991c34d5",
+      "git_blob_oid": "a033465178b2082ad98872d648181dc396c79021"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-下方 · 待机.png.import",
+      "bytes": 994,
+      "sha256": "5be4655728a1c42b78a0d8d469d5fbb2c6ee59e972de68fc3985d7eb2edce7e3",
+      "git_blob_oid": "2e0b034a5e663a745c1a144cf7bdbf3db240ea20"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-侧面 · 待机.png",
+      "bytes": 570792,
+      "sha256": "b75f626026441b953fd742a436ef746d15c8b3fdee4030a9dc489903a948236b",
+      "git_blob_oid": "997bebf0f74264f2d0fca82ee1d2f8ecfa49875d"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-侧面 · 待机.png.import",
+      "bytes": 994,
+      "sha256": "1e7fc7eff1ff7ab608c5aea91facfd54f0a975259d6d4e651cafac22a6d18ffb",
+      "git_blob_oid": "6f1534bfb4752bb88b8c8fed74986e2dbdef132e"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-侧面.休息.png",
+      "bytes": 1200162,
+      "sha256": "2178ad9cccaef3eab13d4727424685ba242b49d949f4ae8b7736afe5d4d473d9",
+      "git_blob_oid": "d1fdb544d82ac2a9b862f87294fed96780e0e2da"
+    },
+    {
+      "path": "毛球满屋/Art/Cat2new/静电猫-侧面.休息.png.import",
+      "bytes": 985,
+      "sha256": "8d01be01e929e16d516e650a7a5705d7e29ebbdb60c84164c304c99ba34a98cd",
+      "git_blob_oid": "0108da640f8f14b5373a0cab1e854e7d5723fa6a"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-上方 · 前进.png",
+      "bytes": 69404,
+      "sha256": "eed87202c9f11c225623ae2ae4be80a64f858d7dfc5c29b9641375cf62d33dc4",
+      "git_blob_oid": "d1abe76c16aee0b13c720ec05b83505895c16214"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-上方 · 前进.png.import",
+      "bytes": 1000,
+      "sha256": "efa14f46286b57f2274d31ca8bb2457768c9c329cbb5977919d1692bca821cdb",
+      "git_blob_oid": "b4d52b40496de16bfb009d8cbe4c1a0d0f578c32"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-下方 · 前进.png",
+      "bytes": 65750,
+      "sha256": "5309fc9427b6446375a0fd5dfcdb8b24dca36933c5ee69be0d0a8eb1196b71af",
+      "git_blob_oid": "b1f538bd5f8bac0010776732e29d65a65c52101a"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-下方 · 前进.png.import",
+      "bytes": 1001,
+      "sha256": "445e5c1a8c39665a28970dbfadd0bd79a822af9ce3608f7ee695e4c091dd92f5",
+      "git_blob_oid": "9d8f7fab2fea96a1b0465b20308fcd3a79595512"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 前进.png",
+      "bytes": 66838,
+      "sha256": "fb7c7f676a10ecdef3492cb54969ef74fd33b7f125b2e078b96552467735a151",
+      "git_blob_oid": "85d3b99b2bac6b86e05bc21b56d9a60391b89f4c"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 前进.png.import",
+      "bytes": 1000,
+      "sha256": "5f797d4cb8281314c23a6a9948fbff08e43965651e9e9b0139712e75403479f0",
+      "git_blob_oid": "2c14a843aff30e41636ccf52918239002f5eaedf"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 产毛.png",
+      "bytes": 33616,
+      "sha256": "7b0937d24826d1ec508d0b67c2f12e2437a92b855ba9694f809f147d98b794ee",
+      "git_blob_oid": "5b5af4a632f3710e8742f425eaff1432b26454d6"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 产毛.png.import",
+      "bytes": 1001,
+      "sha256": "46388cd96f93ac5f81f5e22667f07b5bee01f05cadcee159ce62e5e37c3dd1c3",
+      "git_blob_oid": "f11a071227ce0c9a5a9eecc24f39cf446d51f498"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 被抚摸.png",
+      "bytes": 33146,
+      "sha256": "7626d11493978ad89e48a293aff7c40825937dc6e175e50dad0456c536427c02",
+      "git_blob_oid": "6226d456f04e02476ad24bbcd5a2746300176ec8"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 被抚摸.png.import",
+      "bytes": 1009,
+      "sha256": "a7fa6b18f56dee7b4fa78a59c3b4e33fff13abd379f2005b168ba88749f46206",
+      "git_blob_oid": "3e634212e4ca7927047fc330c6ed11d4bf6f647e"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-上方 · 待机.png",
+      "bytes": 153058,
+      "sha256": "b0ab9c015735128ac007d651cdc3c9d3707b294709fe08d47d701f0617e9b741",
+      "git_blob_oid": "4dc0ab20c8f623f87af6355e7e18f25703a69bc1"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-上方 · 待机.png.import",
+      "bytes": 1001,
+      "sha256": "35f7347c36aae268d3d79f655dae0b81b30bfc3cfc9db326f0e7df7fb8b7733e",
+      "git_blob_oid": "bd284f4eea76df7ef6847326cb93436e9f28311b"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-下方 · 待机.png",
+      "bytes": 131687,
+      "sha256": "3a7d92dbdd7436c235bc5af9854975493c0a42729258d49c18e66cfa7667808c",
+      "git_blob_oid": "fc3aef1e5125e9a88717f3e28fa9b2462e3d12b2"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-下方 · 待机.png.import",
+      "bytes": 1001,
+      "sha256": "a8bef291046ae261c2e07c04b67b30f08c013fc9bfce060e3046a993c0a6b063",
+      "git_blob_oid": "d9f4b2b0358bfa4c493bd5db8d720f8288ffa50f"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 待机.png",
+      "bytes": 58149,
+      "sha256": "a70d4b3e9132e5eacef70890312f6fdcdcd509150718cd86a3b3fdbc5cee5d20",
+      "git_blob_oid": "2145615e7e5569c273a4f1ba129b9efa7187c8ad"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 待机.png.import",
+      "bytes": 1049,
+      "sha256": "cd6e8923a82298cd2fa1b93484620f049ea7282a2061217bae7e736ce506d439",
+      "git_blob_oid": "668a7ae18ba2c00d57a5018f2600732a62540b8f"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 坐下舔爪.png",
+      "bytes": 235324,
+      "sha256": "24858f12f6d05faf19916076929803e6610702692050e4a0d8b798eac5758ac5",
+      "git_blob_oid": "8c4abf32b64fcbb337e63b3c9e2d047d06cc020e"
+    },
+    {
+      "path": "毛球满屋/Art/cat1new2/三花猫 1-侧面 · 坐下舔爪.png.import",
+      "bytes": 1019,
+      "sha256": "136cea7d0b822e9f935e492410e536793ced3df5ab1cb31e6be60f8a9980765e",
+      "git_blob_oid": "83b56b21944b05bef4a4581b79e14da232f619aa"
+    }
+  ],
+  "hash_note": "sha256/bytes为同步时文件原始字节；文本换行可能随Git检出策略变化，核对仓库版本优先使用git_blob_oid。"
+}

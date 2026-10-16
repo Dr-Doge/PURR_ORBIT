@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://Asset/Modular/WhiteboxDerived/Frame_Whitebox_v01.png" id="1_o8sdl"]
+
+[sub_resource type="Shader" id="Shader_vayri"]
+code = "shader_type spatial;
+render_mode cull_disabled;
+uniform sampler2D art : source_color, filter_linear_mipmap_anisotropic, repeat_disable;
+uniform vec4 region;
+void fragment(){
+ vec4 c=texture(art,region.xy+UV*region.zw);
+ if(c.a<0.85) discard;
+ NORMAL=normalize((VIEW_MATRIX*vec4(0.0,0.0,1.0,0.0)).xyz); ALBEDO=c.rgb; ROUGHNESS=1.0; SPECULAR=0.0; EMISSION=c.rgb*0.08;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6g1k7"]
+render_priority = 0
+shader = SubResource("Shader_vayri")
+shader_parameter/art = ExtResource("1_o8sdl")
+shader_parameter/region = Vector4(0.3359375, 0.072916664, 0.33789063, 0.83203125)
+
+[sub_resource type="QuadMesh" id="QuadMesh_2xcyc"]
+size = Vector2(1.2318467, 4.55)
+
+[node name="Frame" type="Node3D" unique_id=44347389]
+
+[node name="Image2D" type="MeshInstance3D" parent="." unique_id=383549041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 2.275, 0.03)
+material_override = SubResource("ShaderMaterial_6g1k7")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_2xcyc")
