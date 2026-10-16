@@ -1,0 +1,29 @@
+{
+  "alpha_check": {
+    "double_alpha_error": 0.0572116857042743,
+    "samples": 75,
+    "single_alpha_error": 0.0123885330433647
+  },
+  "checks": 26,
+  "failures": [],
+  "input": "SubViewport real mouse/keyboard events, controlled simulation time, not a human playtest",
+  "screenshots": [
+    "res://reports/grooming_robot_random_20261016/01_initial_1920_seed6101604_841.png",
+    "res://reports/grooming_robot_random_20261016/02_partial_1920_1529.png",
+    "res://reports/grooming_robot_random_20261016/03_completed_1920_2379.png",
+    "res://reports/grooming_robot_random_20261016/04_initial_1440_2927.png",
+    "res://reports/grooming_robot_random_20261016/05_partial_1440_3252.png",
+    "res://reports/grooming_robot_random_20261016/06_completed_1440_3977.png",
+    "res://reports/grooming_robot_random_20261016/07_new_random_1440_4296.png"
+  ],
+  "sizes": [
+    [
+      1920,
+      1080
+    ],
+    [
+      1440,
+      810
+    ]
+  ]
+}

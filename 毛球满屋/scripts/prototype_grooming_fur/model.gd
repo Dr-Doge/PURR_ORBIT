@@ -2,14 +2,18 @@ extends "res://scripts/prototype_grooming/model.gd"
 const FurAssets=preload("res://scripts/prototype_grooming_fur/assets.gd")
 const Tool=preload("res://scripts/prototype_grooming_fur/tool_geometry.gd")
 const PATCH_SIZE=Vector2(96,72)
-const PATCH_STEP=Vector2(88,58)
-const EDGE_PASSES=4
+const PATCH_STEP=Vector2(64,43)
+const EDGE_PASSES=1
 const PATCH_ANGLE_LIMIT=6.0
+const OUTLINE_INK_OFFSET=4.0
+const Comfort=preload("res://scripts/prototype_grooming_fur/comfort.gd")
+var comfort=Comfort.new()
 const FLEA_CLICKS=3
 const DUST_PASSES=2
 var fur_ready: bool=false
 var cat_scale: float=1.0
 var next_cat_scale: float=0.0
+var outline_profiles: Dictionary={}
 
 func _init() -> void:
  super()
@@ -21,12 +25,13 @@ func start_order(index: int,nail_practice: bool=false) -> void:
   if next_cat_scale>0:cat_scale=next_cat_scale;next_cat_scale=0
   assets.subject_scale=cat_scale
  super.start_order(index,nail_practice)
+ comfort.reset()
  if not fur_ready:return
  if kind=="calico":
   title=("大灰白猫" if cat_scale==1 else "小灰白猫")+(" · 分层梳理" if order_index==0 else " · 梳理＋修甲")
   if nail_practice:title="灰白猫 · 修甲练习";return
   objects=[];build_fur_objects()
-  note="向右顺梳，尾巴也可向上梳；毛块整片脱落，轮廓来回梳四趟后整片脱落。跳蚤点三下。"
+  note="按住左键激活梳子，从左向右梳 →；身体和轮廓毛一梳脱落。毛结慢梳，灰尘上下扫，跳蚤点三下。"
   note_left=4.0
 
 func build_body_mask() -> void:
@@ -47,10 +52,11 @@ func coat_at(uv: Vector2) -> String:
  return "cream" if p.r>0.82 and p.g>0.79 and p.b>0.72 else "gray"
 
 # Service zones exclude the entire head, ears and paws, not only facial marks.
+var service_body=PackedVector2Array([Vector2(.44,.38),Vector2(.53,.33),Vector2(.74,.40),Vector2(.85,.51),Vector2(.86,.73),Vector2(.77,.83),Vector2(.47,.83),Vector2(.44,.70)])
+var service_tail=PackedVector2Array([Vector2(.835,.08),Vector2(.945,.025),Vector2(.995,.20),Vector2(.985,.53),Vector2(.90,.66),Vector2(.835,.55)])
 func service_zone(uv: Vector2) -> bool:
- var body:=PackedVector2Array([Vector2(.44,.38),Vector2(.53,.33),Vector2(.74,.40),Vector2(.85,.51),Vector2(.86,.73),Vector2(.77,.83),Vector2(.47,.83),Vector2(.44,.70)])
- var tail:=PackedVector2Array([Vector2(.835,.08),Vector2(.945,.025),Vector2(.995,.20),Vector2(.985,.53),Vector2(.90,.66),Vector2(.835,.55)])
- return Geometry2D.is_point_in_polygon(uv,body) or Geometry2D.is_point_in_polygon(uv,tail)
+ if uv.x<.44 or uv.x>1.0 or uv.y<.025 or uv.y>.83:return false
+ return Geometry2D.is_point_in_polygon(uv,service_body) or Geometry2D.is_point_in_polygon(uv,service_tail)
 
 func sample_point(obj: Dictionary,x: int,y: int) -> Vector2:
  var offset: Vector2=obj.rect.size*(Vector2((x+.5)/C.OBJECT_GRID,(y+.5)/C.OBJECT_GRID)-Vector2(.5,.5))
@@ -67,32 +73,48 @@ func patch_fits(type: String,uv: Vector2,angle: float) -> bool:
    if not service_zone(at) or not body_hit(at):return false
  return true
 
+func module_angle(type: String,tail: bool) -> float:
+ var angle: float=-12.0
+ if type.ends_with("ruffle"):angle=-48.0
+ elif type.ends_with("fold"):angle=78.0
+ return deg_to_rad(angle+(-66.0 if tail else 0.0))
+
 func build_fur_objects() -> void:
- var count: int=0
+ var rng:=RandomNumberGenerator.new();rng.seed=6101602+int(cat_scale*100)+order_index
+ var variants: Array=["ruffle","wide","fold","cross"]
  for row in range(ceili(body_rect.size.y/PATCH_STEP.y)):
   for column in range(ceili(body_rect.size.x/PATCH_STEP.x)):
-   var local:=Vector2((column+.5)*PATCH_STEP.x+(22 if row%2 else 0),(row+.5)*PATCH_STEP.y)
+   var local:=Vector2((column+.5)*PATCH_STEP.x+(32 if row%2 else 0),(row+.5)*PATCH_STEP.y)+Vector2(rng.randf_range(-8,8),rng.randf_range(-5,5))
    var uv: Vector2=local/body_rect.size
    if not service_zone(uv) or not body_hit(uv):continue
-   # Same rightward hairlock shape. Tail hair follows the raised tail upward.
    var tail: bool=uv.x>=.835
-   var angle: float=deg_to_rad((-78.0 if tail else -12.0)+float((row+column)%3-1)*PATCH_ANGLE_LIMIT)
-   var type: String=coat_at(uv)+"_wide"
-   if not patch_fits(type,uv,angle):continue
-   add_full_object(type,"patch",uv,PATCH_SIZE,angle);count+=1
- # Follow the actual silhouette rather than cropping large strips into a thin mask.
+   var coat: String=coat_at(uv)
+   if coat_at(uv-Vector2(.022,0))!=coat_at(uv+Vector2(.022,0)):coat="mixed"
+   var first: int=rng.randi_range(0,3)
+   for attempt in range(4):
+    var type: String=coat+"_"+variants[(first+attempt)%4]
+    var angle: float=module_angle(type,tail)+deg_to_rad(rng.randf_range(-PATCH_ANGLE_LIMIT,PATCH_ANGLE_LIMIT))
+    if not patch_fits(type,uv,angle):continue
+    add_full_object(type,"patch",uv,PATCH_SIZE,angle);break
+ # Overlapping full-size locks cover the clean outline, never skinny cropped strips.
+ for i in range(7):
+  var x: float=.51+i*.048
+  var uv: Vector2=boundary_at_x(x,.30,.65,false)
+  var type: String=["edge_gray_back","edge_gray_shoulder","edge_gray_flank"][i%3]
+  add_outline(type,uv,Vector2(175,88)*maxf(.65,cat_scale),Vector2.UP)
+ for i in range(6):
+  var x: float=.57+i*.034
+  var type: String=["edge_cream_belly","edge_cream_leg","edge_cream_cheek"][i%3]
+  add_outline(type,boundary_at_x(x,.66,1.0,true),Vector2(170,84)*maxf(.65,cat_scale),Vector2.DOWN)
  for i in range(5):
-  var x: float=.50+i*.064
-  add_outline("edge_gray_back",boundary_at_x(x,.30,.65,false),Vector2(142,60)*maxf(.75,cat_scale),deg_to_rad(-8+i*3))
+  var y: float=.15+i*.095
+  var type: String=["edge_gray_flank","edge_gray_back","edge_gray_shoulder"][i%3]
+  add_outline(type,boundary_at_y(y,.84,.999,true),Vector2(145,80)*maxf(.65,cat_scale),Vector2.RIGHT)
  for i in range(4):
-  var x: float=.51+i*.070
-  add_outline("edge_cream_belly",boundary_at_x(x,.66,.865,true),Vector2(136,58)*maxf(.75,cat_scale),deg_to_rad(-6+i*3))
- for i in range(3):
-  var y: float=.22+i*.135
-  add_outline("edge_gray_flank",boundary_at_y(y,.84,.999,true),Vector2(130,58)*maxf(.75,cat_scale),deg_to_rad(-78+i*4))
- for i in range(2):
-  var y: float=.29+i*.16
-  add_outline("edge_gray_back",boundary_at_y(y,.81,.94,false),Vector2(112,54)*maxf(.75,cat_scale),deg_to_rad(-82+i*6))
+  var y: float=.22+i*.095
+  add_outline("edge_gray_back" if i%2==0 else "edge_cream_belly",boundary_at_y(y,.81,.94,false),Vector2(135,76)*maxf(.65,cat_scale),Vector2.LEFT)
+ var cap_uv: Vector2=boundary_at_x(.875,.02,.22,false)
+ add_outline("edge_cream_tail",cap_uv,Vector2(135,90)*maxf(.65,cat_scale),Vector2.UP)
  add_object("knot_gray","knot",Vector2(.56,.47),Vector2(110,100))
  if cat_scale==1:add_object("knot_cream","knot",Vector2(.48,.72),Vector2(110,100))
  add_object("dust_gray","dust",Vector2(.75,.53),Vector2(115,85))
@@ -134,32 +156,109 @@ func add_full_object(type: String,rule: String,center: Vector2,drawn: Vector2,an
  if count==0:return
  objects.append({"id":objects.size(),"type":type,"rule":rule,"rect":Rect2(body_rect.position+body_rect.size*center-drawn*.5,drawn),"draw_angle":angle,"mask":mask,"left":left,"initial":count,"sum":float(count),"version":0,"done":false,"passes":0,"travel":0.0,"dir":0.0,"axis":-1,"last_pass_dir":0.0,"last_pass_gesture":-1})
 
-func add_outline(type: String,uv: Vector2,drawn: Vector2,angle: float=0.0) -> void:
- add_full_object(type,"edge",uv,drawn,angle)
+func outline_profile(type: String) -> Dictionary:
+ if outline_profiles.has(type):return outline_profiles[type]
+ # Source art has an inked outer edge and a soft, uninked inner seam.
+ # Profile direction is in the unrotated sprite's coordinates, never the
+ # required mouse movement direction. Curled tail art has its ink on the right.
+ var outward: Vector2=Vector2.RIGHT if type.ends_with("tail") else Vector2.UP
+ if type.ends_with("shoulder"):outward=Vector2(-.30,-1).normalized()
+ elif type.ends_with("cheek"):outward=Vector2(-.50,-1).normalized()
+ var raw: Image=assets.image(type)
+ var ink: Array=[];var peak: float=-INF
+ for y in range(64):
+  for x in range(64):
+   var color: Color=raw.get_pixel(int((x+.5)/64*raw.get_width()),int((y+.5)/64*raw.get_height()))
+   if color.a<.65 or maxf(color.r,maxf(color.g,color.b))>.27:continue
+   var local:=Vector2((x+.5)/64-.5,(y+.5)/64-.5)
+   peak=maxf(peak,local.dot(outward));ink.append(local)
+ var anchor:=Vector2.ZERO;var n: int=0
+ for local in ink:
+  if local.dot(outward)>=peak-.13:anchor+=local;n+=1
+ if n>0:anchor/=float(n)
+ else:anchor=outward*.35
+ var profile: Dictionary={"outward":outward,"anchor":anchor}
+ outline_profiles[type]=profile;return profile
+
+func contour_normal(uv: Vector2,fallback: Vector2) -> Vector2:
+ var raw: Image=assets.image("calico_clean")
+ var normal:=Vector2.ZERO
+ # Average a local alpha neighbourhood, avoiding a jagged single-pixel tangent.
+ var radius: float=26.0*cat_scale
+ for i in range(32):
+  var direction:=Vector2.from_angle(TAU*i/32.0)
+  var at: Vector2=uv+direction*radius/body_rect.size
+  var alpha: float=0.0
+  if at.x>=0 and at.x<1 and at.y>=0 and at.y<1:
+   alpha=raw.get_pixel(int(at.x*raw.get_width()),int(at.y*raw.get_height())).a
+  normal+=direction*(1.0-alpha)
+ if normal.length()<.5 or normal.normalized().dot(fallback)<.20:return fallback
+ return normal.normalized()
+
+func add_outline(type: String,uv: Vector2,drawn: Vector2,fallback: Vector2) -> void:
+ uv=snap_to_contour(uv,fallback)
+ var profile: Dictionary=outline_profile(type)
+ var normal: Vector2=contour_normal(uv,fallback)
+ var source_out: Vector2=(profile.outward*drawn).normalized()
+ var angle: float=normal.angle()-source_out.angle()
+ var boundary: Vector2=body_rect.position+body_rect.size*uv
+ # Anchor the outer ink at the real boundary, with most of the sprite inside.
+ var center: Vector2=boundary+normal*(OUTLINE_INK_OFFSET*cat_scale)-(profile.anchor*drawn).rotated(angle)
+ # On concave belly/paw joins, a tangent alone can bridge empty background.
+ # Reduce the whole source sprite until most coloured hair actually covers cat.
+ var overlap: float=outline_body_overlap(type,center,drawn,angle)
+ for attempt in range(8):
+  if overlap>=.65:break
+  drawn*=.86
+  center=boundary+normal*(OUTLINE_INK_OFFSET*cat_scale)-(profile.anchor*drawn).rotated(angle)
+  overlap=outline_body_overlap(type,center,drawn,angle)
+ add_full_object(type,"edge",(center-body_rect.position)/body_rect.size,drawn,angle)
+ objects[-1].outline_normal=normal
+ objects[-1].outline_boundary=boundary
+ objects[-1].outline_anchor=profile.anchor
+ objects[-1].outline_outward=source_out
+ objects[-1].outline_overlap=overlap
+
+func outline_body_overlap(type: String,center: Vector2,drawn: Vector2,angle: float) -> float:
+ var source: Image=assets.image(type)
+ var body: Image=assets.image("calico_clean")
+ var visible: int=0;var inside: int=0
+ for y in range(24):
+  for x in range(24):
+   if source.get_pixel(int((x+.5)/24*source.get_width()),int((y+.5)/24*source.get_height())).a<.6:continue
+   visible+=1
+   var local:=drawn*(Vector2((x+.5)/24,(y+.5)/24)-Vector2(.5,.5))
+   var at: Vector2=(center+local.rotated(angle)-body_rect.position)/body_rect.size
+   if at.x>=0 and at.x<1 and at.y>=0 and at.y<1 and body.get_pixel(int(at.x*body.get_width()),int(at.y*body.get_height())).a>.15:inside+=1
+ return float(inside)/maxi(1,visible)
+
+func snap_to_contour(uv: Vector2,outward: Vector2) -> Vector2:
+ var raw: Image=assets.image("calico_clean")
+ var dimensions:=Vector2(raw.get_size())
+ var origin:=Vector2i(uv*dimensions)
+ var radius:=Vector2i(dimensions*.14)
+ var step:=Vector2i(outward*2.0)
+ var closest: Vector2=uv;var best: float=INF
+ # The old limited scan could stop inside the coat at the end of its window.
+ # Project that estimate onto a genuine opaque-to-transparent outer boundary.
+ for y in range(maxi(0,origin.y-radius.y),mini(raw.get_height(),origin.y+radius.y),2):
+  for x in range(maxi(0,origin.x-radius.x),mini(raw.get_width(),origin.x+radius.x),2):
+   if raw.get_pixel(x,y).a<.6:continue
+   var neighbour:=Vector2i(x,y)+step
+   if neighbour.x>=0 and neighbour.y>=0 and neighbour.x<raw.get_width() and neighbour.y<raw.get_height() and raw.get_pixelv(neighbour).a>.2:continue
+   var candidate:=Vector2(x,y)/dimensions
+   var distance: float=((candidate-uv)*body_rect.size).length_squared()
+   if distance<best:best=distance;closest=candidate
+ return closest
 
 func outline_stroke(obj: Dictionary,a: Vector2,b: Vector2) -> int:
- var delta: Vector2=b-a
- var tail: bool=(obj.rect.get_center().x-body_rect.position.x)/body_rect.size.x>=.83
- var axis: int=1 if tail and absf(delta.y)>absf(delta.x) else 0
- if absf(delta[axis])/delta.length()<.70:return 0
- var direction: float=signf(delta[axis])
- if obj.axis<0:obj.axis=axis
- elif obj.axis!=axis:return 0
- if obj.last_pass_dir==direction:return 0
- if obj.dir!=direction:obj.travel=0.0;obj.dir=direction
- var extent: float=obj.rect.size[axis]*.5
- var center: float=obj.rect.get_center()[axis]
- var lo: float=maxf(minf(a[axis],b[axis]),center-extent)
- var hi: float=minf(maxf(a[axis],b[axis]),center+extent)
- # Count only travel through this lock; not the rest of a long background stroke.
- obj.travel+=maxf(0.0,hi-lo)
- # Real travel, independent of mouse event count. Tiny oscillations never count.
- var threshold: float=maxf(24.0,obj.rect.size[axis]*.40)
- if obj.travel<threshold:return 0
- obj.passes+=1;obj.travel=0.0;obj.last_pass_dir=direction;obj.version+=1
- hint("轮廓毛 %d/%d · 来回轻梳 ↔"%[obj.passes,EDGE_PASSES])
- if obj.passes>=EDGE_PASSES:clear_object(obj)
+ if (b-a).normalized().x<C.COMB_DIRECTION_COS:return 0
+ obj.passes=1;clear_object(obj)
  return 1
+
+func begin_gesture(at: Vector2=Vector2(INF,INF)) -> void:
+ super.begin_gesture(at)
+ if fur_ready and kind=="calico":comb_armed=true
 
 func cleaning_progress() -> float:
  if not fur_ready or kind!="calico":return super.cleaning_progress()
@@ -173,6 +272,7 @@ func cleaning_progress() -> float:
 
 func tick(dt: float) -> void:
  super.tick(dt)
+ if not paused:comfort.recover(dt,now)
  if not fur_ready or paused or kind!="calico" or stage!="cleaning":return
  for obj in objects:
   if obj.rule=="flea" and not obj.done:
@@ -192,16 +292,26 @@ func click_at(at: Vector2) -> Dictionary:
 func stroke(a: Vector2,b: Vector2,dt: float,measured_speed: float=-1.0) -> Dictionary:
  if not fur_ready or kind=="robot":return super.stroke(a,b,dt)
  var result: Dictionary={"changed":0,"pain":false,"particle":"fall_gray_peel","point":b}
- if paused or stage!="cleaning" or dt<=0 or a.distance_to(b)<.05:return result
+ if paused or stage!="cleaning" or dt<=0 or a.distance_to(b)<.05 or comfort.recoil_left>0:return result
  var delta: Vector2=b-a
  var speed: float=measured_speed if measured_speed>=0 else delta.length()/dt
  var forward: bool=delta.x/delta.length()>=C.COMB_DIRECTION_COS
  var area:=Rect2(a,Vector2.ZERO).expand(b).grow(Tool.EDGE_LENGTH*.5)
- var touched: bool=false
+ var risk: float=0.0
+ var risk_exposure: float=0.0;var risk_strength: float=0.0
  for obj in objects:
   if obj.done or obj.rule=="flea" or not area.intersects(obj.rect.grow(maxf(obj.rect.size.x,obj.rect.size.y)*.25)) or not object_contact(obj,a,b):continue
-  touched=true
-  if speed>Tool.SPEED_LIMIT:continue
+  var strength: float=0.0
+  if speed>Comfort.EXTREME_SPEED:strength=1.4
+  var local_pull: bool=obj.rect.grow(12).has_point(a) and obj.rect.grow(12).has_point(b)
+  if obj.rule=="knot" and local_pull:
+   if speed>Comfort.KNOT_STALL_SPEED:strength=maxf(strength,1.1)
+   if not forward and speed>Tool.KNOT_SPEED_LIMIT:strength=maxf(strength,1.35)
+  if strength>0:
+   var exposure: float=dt*contact_fraction(obj,a,b)
+   if exposure*strength>risk:
+    risk=exposure*strength;risk_exposure=exposure;risk_strength=strength
+  if speed>Comfort.EXTREME_SPEED:hint("梳子有阻力 · 放慢或松手，不会立刻扣评");continue
   if obj.rule=="dust":
    if absf(delta.y)/delta.length()<.70:hint("灰尘上下轻扫 ↕");continue
    var dir: float=signf(delta.y)
@@ -214,23 +324,52 @@ func stroke(a: Vector2,b: Vector2,dt: float,measured_speed: float=-1.0) -> Dicti
     if obj.passes>=DUST_PASSES:clear_object(obj)
    continue
   if obj.rule=="edge":
+   if not forward:hint("梳子已激活 · 轮廓也要从左向右梳 →")
    result.changed+=outline_stroke(obj,a,b);continue
-  var on_tail: bool=(obj.rect.get_center().x-body_rect.position.x)/body_rect.size.x>=.83
-  var tail_up: bool=on_tail and -delta.y/delta.length()>=C.COMB_DIRECTION_COS
-  if not forward and not tail_up:
-   hint("尾巴向右／向上轻梳 → ↑" if on_tail else "沿毛流轻柔向右梳 →");continue
-  if on_tail:hint("尾巴可直接向右／向上轻梳 → ↑")
+  if not forward:
+   hint("梳子已激活 · 请从左向右梳 →");continue
   if obj.rule=="knot":
-   if speed>Tool.KNOT_SPEED_LIMIT:hint("打结处慢梳 · 不超过500像素/秒 →");continue
+   if speed>Tool.KNOT_SPEED_LIMIT:hint("这里打结了 · 慢顺梳即可，停手可放松");continue
    obj.travel+=Tool.covered_length(a,b,obj.rect.get_center())
    if obj.travel<Tool.EDGE_HALF_WIDTH*1.8:continue
   # Any visibly occupied part brushed by the teeth is actionable. Requiring
   # a transparent rectangle centre made narrow tail patches unreachable.
   clear_object(obj);result.changed+=obj.initial
   result.particle="fall_cream_peel" if obj.type.begins_with("cream") or obj.type=="knot_cream" else "fall_gray_peel"
- if touched and speed>Tool.SPEED_LIMIT:result.pain=pain("超过1200像素/秒 · 轻一点 · 评价 -5")
+ if risk>0.0:
+  if comfort.strain(risk_exposure,risk_strength,now):result.pain=pain("持续硬拉弄疼了 · 松手缓一下 · 评价 -3",Comfort.PAIN_COST,true)
+  elif comfort.load>=Comfort.ALERT:hint("快弄疼了！停一下或改为轻梳")
+  elif comfort.load>=Comfort.WARNING:hint("猫开始不舒服 · 慢梳或松手会恢复")
  if result.changed>0:check_clean_finished()
  return result
+
+func contact_fraction(obj: Dictionary,a: Vector2,b: Vector2) -> float:
+ var lo: float=1.0;var hi: float=0.0
+ for y in range(C.OBJECT_GRID):
+  for x in range(C.OBJECT_GRID):
+   if obj.left[y*C.OBJECT_GRID+x]<=0:continue
+   var span: Vector2=Tool.coverage_interval(a,b,sample_point(obj,x,y))
+   if span.y>span.x:lo=minf(lo,span.x);hi=maxf(hi,span.y)
+ return maxf(0.0,hi-lo)
+
+func build_edge_cover() -> Image:
+ var cover:=Image.create(512,256,false,Image.FORMAT_RGBA8);cover.fill(Color(0,0,0,1))
+ # Diagnostic footprint for coverage checks. It never alters the base ink
+ # or the lock alpha; actual coverage is ordinary sprite compositing.
+ for obj in objects:
+  if obj.rule!="edge" or obj.done:continue
+  var radius: float=obj.rect.size.length()*.5+18.0
+  var center_uv: Vector2=(obj.rect.get_center()-body_rect.position)/body_rect.size
+  var low:=Vector2i(maxi(0,int((center_uv.x-radius/body_rect.size.x)*512)),maxi(0,int((center_uv.y-radius/body_rect.size.y)*256)))
+  var high:=Vector2i(mini(512,ceili((center_uv.x+radius/body_rect.size.x)*512)),mini(256,ceili((center_uv.y+radius/body_rect.size.y)*256)))
+  for y in range(low.y,high.y):
+   for x in range(low.x,high.x):
+    var point: Vector2=body_rect.position+body_rect.size*Vector2((x+.5)/512,(y+.5)/256)
+    var local: Vector2=(point-obj.rect.get_center()).rotated(-obj.draw_angle)
+    var edge: float=maxf(absf(local.x)-obj.rect.size.x*.5,absf(local.y)-obj.rect.size.y*.5)
+    var amount: float=clampf((18.0-edge)/8.0,0,1)
+    if amount>cover.get_pixel(x,y).r:cover.set_pixel(x,y,Color(amount,0,0,1))
+ return cover
 
 func object_contact(obj: Dictionary,a: Vector2,b: Vector2) -> bool:
  if not fur_ready or kind=="robot":return super.object_contact(obj,a,b)

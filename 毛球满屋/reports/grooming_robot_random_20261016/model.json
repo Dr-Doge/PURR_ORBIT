@@ -1,0 +1,735 @@
+{
+  "checks": 362,
+  "completed_seeds": [
+    6101604,
+    6101605,
+    6101610,
+    6101620,
+    6101640,
+    6101679
+  ],
+  "default_seed": 6101604,
+  "failures": [],
+  "seed_samples": [
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101600
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 12,
+      "requested_stubborn": 2,
+      "seed": 6101601
+    },
+    {
+      "actual_normal": 10,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 10,
+      "requested_stubborn": 3,
+      "seed": 6101602
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101603
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 12,
+      "requested_stubborn": 2,
+      "seed": 6101604
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 2,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101605
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 2,
+      "seed": 6101606
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 2,
+      "requested_normal": 14,
+      "requested_stubborn": 3,
+      "seed": 6101607
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 14,
+      "requested_stubborn": 2,
+      "seed": 6101608
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 14,
+      "requested_stubborn": 2,
+      "seed": 6101609
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101610
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101611
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 14,
+      "requested_stubborn": 2,
+      "seed": 6101612
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 4,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101613
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 8,
+      "requested_stubborn": 2,
+      "seed": 6101614
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 8,
+      "requested_stubborn": 3,
+      "seed": 6101615
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 8,
+      "requested_stubborn": 2,
+      "seed": 6101616
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101617
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101618
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 14,
+      "requested_stubborn": 2,
+      "seed": 6101619
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101620
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 2,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101621
+    },
+    {
+      "actual_normal": 10,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 10,
+      "requested_stubborn": 2,
+      "seed": 6101622
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 2,
+      "seed": 6101623
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 8,
+      "requested_stubborn": 2,
+      "seed": 6101624
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101625
+    },
+    {
+      "actual_normal": 10,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 10,
+      "requested_stubborn": 2,
+      "seed": 6101626
+    },
+    {
+      "actual_normal": 10,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 10,
+      "requested_stubborn": 3,
+      "seed": 6101627
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101628
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101629
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101630
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101631
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101632
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101633
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 8,
+      "requested_stubborn": 3,
+      "seed": 6101634
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 4,
+      "requested_normal": 14,
+      "requested_stubborn": 3,
+      "seed": 6101635
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101636
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 13,
+      "requested_stubborn": 2,
+      "seed": 6101637
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101638
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101639
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101640
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 8,
+      "requested_stubborn": 2,
+      "seed": 6101641
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101642
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 13,
+      "requested_stubborn": 2,
+      "seed": 6101643
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 3,
+      "dropped": 1,
+      "fallback": 0,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101644
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 13,
+      "requested_stubborn": 2,
+      "seed": 6101645
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 2,
+      "seed": 6101646
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 3,
+      "requested_normal": 14,
+      "requested_stubborn": 3,
+      "seed": 6101647
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101648
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 8,
+      "requested_stubborn": 3,
+      "seed": 6101649
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101650
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101651
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 14,
+      "requested_stubborn": 2,
+      "seed": 6101652
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101653
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 13,
+      "requested_stubborn": 2,
+      "seed": 6101654
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 2,
+      "seed": 6101655
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101656
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101657
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 12,
+      "requested_stubborn": 2,
+      "seed": 6101658
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101659
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 13,
+      "requested_stubborn": 2,
+      "seed": 6101660
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101661
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101662
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 8,
+      "requested_stubborn": 3,
+      "seed": 6101663
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 13,
+      "requested_stubborn": 2,
+      "seed": 6101664
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101665
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 14,
+      "requested_stubborn": 3,
+      "seed": 6101666
+    },
+    {
+      "actual_normal": 10,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 10,
+      "requested_stubborn": 2,
+      "seed": 6101667
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 12,
+      "requested_stubborn": 3,
+      "seed": 6101668
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 12,
+      "requested_stubborn": 3,
+      "seed": 6101669
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101670
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 14,
+      "requested_stubborn": 2,
+      "seed": 6101671
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101672
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101673
+    },
+    {
+      "actual_normal": 10,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 10,
+      "requested_stubborn": 3,
+      "seed": 6101674
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101675
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 2,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 12,
+      "requested_stubborn": 2,
+      "seed": 6101676
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 8,
+      "requested_stubborn": 3,
+      "seed": 6101677
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 1,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101678
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 3,
+      "dropped": 0,
+      "fallback": 0,
+      "requested_normal": 14,
+      "requested_stubborn": 3,
+      "seed": 6101679
+    }
+  ]
+}

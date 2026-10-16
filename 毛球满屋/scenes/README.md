@@ -58,3 +58,8 @@ main.gd绑定静态HUD／菜单；room.gd同步模型与Cats／Facilities／Work
 2026-09-28第三次同步（005）：正式room_3d与独立test_room/test_actors均已改引用cat1new2；静态卡片重新刷新。图集压缩时先解压CPU副本再裁切，保持固定脚底锚点。旧cat1new/cat1new1已由组员删除，历史Git中可追溯；不得恢复活动资源对它们的引用。
 
 2026-09-29开发菜单：main、3D scene、测试场景均有持久化DeveloperDrawer实例。打开ui/developer_drawer.tscn编辑Tab、Panel、Header、Feedback与Scroll；命令列表由developer_tools.COMMANDS生成，菜单脚本developer_drawer.gd负责绑定。数字开发键已取消，悬停最左侧按钮看提示、点击展开。
+
+
+## 2026-10-16独立机器猫入口
+
+打开`prototype_grooming/robot_random_demo.tscn`按F6，测试随机污垢。根节点service_polygon为可编辑的机身UV区域；运行时唯一ID对象与污垢mask由独立模型生成，HUD为保存节点。操作见同目录ROBOT_RANDOM_DEMO.md。尚未接回fur_demo双猫切单；正式F5入口不变。

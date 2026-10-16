@@ -4,6 +4,37 @@ const ENV_ROOT="res://Art/grooming_environment_v1/"
 var fur_index: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(FUR_ROOT+"atlas_index.json"))
 var environment_index: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(ENV_ROOT+"manifest.json"))
 var subject_scale: float=1.0
+var pigment: ImageTexture
+
+func coat_reference() -> Texture2D:
+ if pigment!=null:return pigment
+ # Runtime-only pigment field. Keep source PNG untouched; exclude its black
+ # outline from colour matching and smoothly extend nearby actual fur colours.
+ var field: Image=image("calico_clean").duplicate()
+ field.resize(256,128,Image.INTERPOLATE_BILINEAR)
+ var known:=PackedByteArray();known.resize(256*128)
+ for y in range(128):
+  for x in range(256):
+   var p: Color=field.get_pixel(x,y)
+   var valid: bool=p.a>.75 and maxf(p.r,maxf(p.g,p.b))>.46
+   known[y*256+x]=int(valid);p.a=float(valid);field.set_pixel(x,y,p)
+ for iteration in range(24):
+  var next: Image=field.duplicate();var next_known: PackedByteArray=known.duplicate();var changed: int=0
+  for y in range(128):
+   for x in range(256):
+    if known[y*256+x]:continue
+    var color:=Color(0,0,0,0);var count: int=0
+    for dy in range(-1,2):
+     for dx in range(-1,2):
+      var at:=Vector2i(x+dx,y+dy)
+      if at.x<0 or at.y<0 or at.x>=256 or at.y>=128 or known[at.y*256+at.x]==0:continue
+      color+=field.get_pixelv(at);count+=1
+    if count>0:
+     color/=float(count);color.a=1;next.set_pixel(x,y,color);next_known[y*256+x]=1;changed+=1
+  field=next;known=next_known
+  if changed==0:break
+ pigment=ImageTexture.create_from_image(field)
+ return pigment
 
 func image(name: String) -> Image:
  var key: String="cat_clean" if name.begins_with("calico_") else name

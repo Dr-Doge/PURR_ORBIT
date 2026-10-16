@@ -1,0 +1,11 @@
+{
+ "checks": 66,
+ "failures": [],
+ "large_patch_count": 82,
+ "patch_size": [
+  96,
+  72
+ ],
+ "small_patch_count": 16,
+ "tail_patch_tests": 48
+}

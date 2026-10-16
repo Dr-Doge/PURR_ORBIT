@@ -1,5 +1,5 @@
 extends SceneTree
-const OUT="res://reports/grooming_fur_service_20261016/"
+const OUT="res://reports/grooming_fur_activation_20261016/"
 var vp: SubViewport
 var game: Control
 var checks: int=0

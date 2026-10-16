@@ -64,7 +64,8 @@ func sync() -> void:
    var material:=ShaderMaterial.new();material.shader=CleaningShader
    material.set_shader_parameter("remaining_mask",mask_texture)
    material.set_shader_parameter("body_mask",body_texture)
-   material.set_shader_parameter("coat_map",model.assets.texture(model.kind+"_clean"))
+   material.set_shader_parameter("coat_map",model.assets.coat_reference() if model.kind=="calico" else model.assets.texture(model.kind+"_clean"))
+   material.set_shader_parameter("body_dimensions",model.body_rect.size)
    material.set_shader_parameter("match_coat",model.kind=="calico" and obj.rule in ["patch","edge","knot"])
    material.set_shader_parameter("preserve_outline",obj.rule in ["edge","knot"])
    if model.kind=="calico":
@@ -89,6 +90,7 @@ func sync() -> void:
  elif model.stage in ["reward","departure"]:
   name=model.kind+"_happy" if model.score>=75 else model.kind+"_discomfort"
  base.texture=model.assets.texture(name)
+ base.material=null
  var box: Rect2=C.PAW_BOX if nails_visible else C.BODY_BOX
  var factor: float=minf(box.size.x/base.texture.get_width(),box.size.y/base.texture.get_height())
  var drawn: Vector2=Vector2(base.texture.get_size())*factor
@@ -118,9 +120,12 @@ func sync() -> void:
  tool.rotation=0.0
  tool.flip_h=false
  if not nails_visible and model.kind=="calico":
+  var active: bool=game!=null and game.dragging and not model.paused
   tool.rotation=-Tool.rotation_angle();tool.flip_h=true
   tool.scale=Vector2.ONE*Tool.texture_scale()*(size/C.CANVAS)
-  tool.position=(mouse+Tool.center_offset(Vector2(tool.texture.get_size())))*(size/C.CANVAS)
+  var offset: Vector2=Tool.center_offset(Vector2(tool.texture.get_size()))
+  if not active:tool.rotation+=Tool.IDLE_TILT;offset=offset.rotated(Tool.IDLE_TILT)+Tool.IDLE_LIFT
+  tool.position=(mouse+offset)*(size/C.CANVAS)
  var shake:=Vector2.ZERO
  if model.reaction>0.0:shake=Vector2(sin(model.now*85.0)*6.0,cos(model.now*71.0)*3.0)
  actor_transform=Transform2D(0.0,shake)
@@ -193,15 +198,20 @@ func draw_foreground(canvas: Node2D) -> void:
   if model.kind=="calico":
    for obj in model.objects:
     if obj.rule=="edge" and not obj.done and obj.rect.grow(20).has_point(mouse):
-     canvas.draw_string(ThemeDB.fallback_font,mouse+Vector2(30,-65),"轮廓来回梳 %d/%d"%[obj.passes,model.EDGE_PASSES],HORIZONTAL_ALIGNMENT_LEFT,-1,23,Color(1,.9,.65))
+     canvas.draw_string(ThemeDB.fallback_font,mouse+Vector2(30,-65),"轮廓毛 · 向右一梳脱落 →",HORIZONTAL_ALIGNMENT_LEFT,-1,23,Color(1,.9,.65))
      break
    var points: PackedVector2Array=Tool.edge_points(mouse)
-   var color:=Color(.35,1.0,.95,.95)
-   if game!=null and game.grooming_speed>Tool.SPEED_LIMIT:color=Color(1,.25,.15)
-   canvas.draw_line(points[0],points[1],color,3,true)
-   for p in points:canvas.draw_line(p-Vector2(6,0),p+Vector2(6,0),color,2,true)
-   if game!=null and game.dragging:
-    canvas.draw_string(ThemeDB.fallback_font,mouse+Vector2(35,95),"速度 %d / 1200 px/s"%game.grooming_speed,HORIZONTAL_ALIGNMENT_LEFT,-1,21,color)
+   var active: bool=game!=null and game.dragging
+   var color:=Color(.35,1.0,.95,.95) if active else Color(.8,.85,.9,.55)
+   if model.comfort.load>=model.Comfort.ALERT:color=Color(1,.35,.2)
+   elif model.comfort.load>=model.Comfort.WARNING:color=Color(1,.8,.25)
+   if active:
+    canvas.draw_line(points[0],points[1],color,3,true)
+    for p in points:canvas.draw_line(p-Vector2(6,0),p+Vector2(6,0),color,2,true)
+   canvas.draw_string(ThemeDB.fallback_font,mouse+Vector2(35,95),"已激活 · 向右轻梳 →" if active else "已抬起 · 按住左键开始",HORIZONTAL_ALIGNMENT_LEFT,-1,21,color)
+   if model.comfort.load>.02:
+    canvas.draw_rect(Rect2(mouse+Vector2(30,110),Vector2(130,8)),Color(.15,.10,.07,.7))
+    canvas.draw_rect(Rect2(mouse+Vector2(30,110),Vector2(130*model.comfort.load,8)),color)
   elif game!=null and game.dragging:canvas.draw_arc(mouse,C.BRUSH_RADIUS,0,TAU,32,Color(1,1,1,.35),2,true)
  if model.stage=="nails":
   for nail in model.nails:

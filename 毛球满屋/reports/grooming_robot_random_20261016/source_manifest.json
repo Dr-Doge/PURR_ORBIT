@@ -1,0 +1,86 @@
+{
+  "source_head": "f1045b8200b2835fae826b15bbeb15f38a300d45",
+  "uncommitted": true,
+  "files": [
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/assets.gd",
+      "sha256": "4c5508008d56f14fceae7140f67f4b97079c02db9a4f39cdcbcf1f9bd9958cdb"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/config.gd",
+      "sha256": "004bf935e445aa7842a80e3dc9ec8df7d66d9a675f095a2d3369804ac4145293"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/controller.gd",
+      "sha256": "ba86f433b1ce0d6f7410d8cc8658aeb8a98aec69a1d3e1fba85803f9efd97f2b"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/dirt.gdshader",
+      "sha256": "17f7fa6951db9ce97b9b245fab9069d5fb6cc837f544c0b2a56e8cad806e1841"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/generator.gd",
+      "sha256": "cb81524f34925463197a20d854b11f51d2936e5270d5bc93df083148301abc39"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/model.gd",
+      "sha256": "4dc89cf5eac59c476f99ea1f95e0b144bd417e352abe6332f4e3b3f7c06a161b"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/service_view.gd",
+      "sha256": "6db7602381ce1d2facde35df72a46129735e01427da6fab4e6244a363dfe1f73"
+    },
+    {
+      "path": "毛球满屋/scenes/prototype_grooming/robot_random_demo.tscn",
+      "sha256": "2f701c55a4514a84f29cd4089764d67db6238e0f806c31526b7d44f80876a241"
+    },
+    {
+      "path": "毛球满屋/tests/test_grooming_robot_random.gd",
+      "sha256": "bcd41d637a90bfd6090c06c2e1e2e4fb46b8fc46c2f0c531e382a7e88562121f"
+    },
+    {
+      "path": "毛球满屋/tests/test_grooming_robot_random_ui.gd",
+      "sha256": "236c0cfcc618587989401e4745004e73e0eb9428a26025d48e8cb15b3866351f"
+    },
+    {
+      "path": "毛球满屋/tests/run_grooming_robot_random.ps1",
+      "sha256": "5c78cb267b1ebcfe551f06635cbf3d04c4427081b4f95bfa6db8a375cd05be63"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/assets.gd.uid",
+      "sha256": "fab3a52c9f3f02718f4737ef7bd213f5052f6259815e672cc1cca2f9f9f3415a"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/config.gd.uid",
+      "sha256": "0aa6a2f4b91fc5074093846b1d8895040f170b2e9429bb8ee20bff135a376073"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/controller.gd.uid",
+      "sha256": "9c1ad5313e15178fec1455fcad2fff46f0aa2132e9dc0d37aa22fc41ced1e5af"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/dirt.gdshader.uid",
+      "sha256": "38493b571761dca6c3786b16fcc25ec552fa1565e73fa23bc2afe0e17ba62efe"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/generator.gd.uid",
+      "sha256": "fcdbf8717a8545e9258e9bec79429086dedf4708e847ffe65180f28fb8f252ad"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/model.gd.uid",
+      "sha256": "5f50c9bf2a4500943ae54630531dae7c983ded846888af73bd848edcf1aff5d1"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/service_view.gd.uid",
+      "sha256": "aafdc896f3ad7109cbae39592bba07e8aa11cff388fdb8684b49d2fe02f8f05c"
+    },
+    {
+      "path": "毛球满屋/tests/test_grooming_robot_random.gd.uid",
+      "sha256": "54bc97cf9893406fbf80f319ae7dac132cfcc200acbe4a21d0012beff0c65bbd"
+    },
+    {
+      "path": "毛球满屋/tests/test_grooming_robot_random_ui.gd.uid",
+      "sha256": "74ba8c80760279cdc3ff762a746db090477e926f4dbbdde92fe65c4e1151d8c1"
+    }
+  ]
+}

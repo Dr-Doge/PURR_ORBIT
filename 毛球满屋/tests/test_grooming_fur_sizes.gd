@@ -1,6 +1,6 @@
 extends SceneTree
 const M=preload("res://scripts/prototype_grooming_fur/model.gd")
-const OUT="res://reports/grooming_fur_service_20261016/"
+const OUT="res://reports/grooming_fur_feedback_20261016/"
 var checks: int=0
 var failures: Array=[]
 func check(ok: bool,label: String) -> void:
@@ -18,7 +18,8 @@ func point(obj: Dictionary) -> Vector2:
  for y in range(32):
   for x in range(32):
    if obj.left[y*32+x]<=0:continue
-   var p: Vector2=obj.rect.position+obj.rect.size*Vector2((x+.5)/32.0,(y+.5)/32.0)
+   var offset: Vector2=obj.rect.size*(Vector2((x+.5)/32.0,(y+.5)/32.0)-Vector2(.5,.5))
+   var p: Vector2=obj.rect.get_center()+offset.rotated(obj.get("draw_angle",0.0))
    var d: float=p.distance_squared_to(obj.rect.get_center())
    if d<distance:distance=d;best=p
  return best

@@ -1,0 +1,443 @@
+{
+  "version": "0.27.0.20",
+  "name": "毛球计划 · 机器猫随机污渍测试版",
+  "source_head": "f1045b8200b2835fae826b15bbeb15f38a300d45",
+  "uncommitted_workspace": true,
+  "entry": "res://scenes/prototype_grooming/robot_random_demo.tscn",
+  "embedded_pck": true,
+  "source_files": [
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/assets.gd",
+      "sha256": "4c5508008d56f14fceae7140f67f4b97079c02db9a4f39cdcbcf1f9bd9958cdb"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/assets.gd.uid",
+      "sha256": "fab3a52c9f3f02718f4737ef7bd213f5052f6259815e672cc1cca2f9f9f3415a"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/config.gd",
+      "sha256": "04f3e1ad4dae04b72c75eb696d072f118583aa58cde48ac25ec8fd23c2ecd993"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/config.gd.uid",
+      "sha256": "0aa6a2f4b91fc5074093846b1d8895040f170b2e9429bb8ee20bff135a376073"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/controller.gd",
+      "sha256": "ba86f433b1ce0d6f7410d8cc8658aeb8a98aec69a1d3e1fba85803f9efd97f2b"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/controller.gd.uid",
+      "sha256": "9c1ad5313e15178fec1455fcad2fff46f0aa2132e9dc0d37aa22fc41ced1e5af"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/dirt.gdshader",
+      "sha256": "17f7fa6951db9ce97b9b245fab9069d5fb6cc837f544c0b2a56e8cad806e1841"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/dirt.gdshader.uid",
+      "sha256": "38493b571761dca6c3786b16fcc25ec552fa1565e73fa23bc2afe0e17ba62efe"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/generator.gd",
+      "sha256": "46b4c0d27403d7ac304ec51bdf29dfa6e79851672ceea09d073de826707723d7"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/generator.gd.uid",
+      "sha256": "fcdbf8717a8545e9258e9bec79429086dedf4708e847ffe65180f28fb8f252ad"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/model.gd",
+      "sha256": "4dc89cf5eac59c476f99ea1f95e0b144bd417e352abe6332f4e3b3f7c06a161b"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/model.gd.uid",
+      "sha256": "5f50c9bf2a4500943ae54630531dae7c983ded846888af73bd848edcf1aff5d1"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/service_view.gd",
+      "sha256": "6db7602381ce1d2facde35df72a46129735e01427da6fab4e6244a363dfe1f73"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming_robot/service_view.gd.uid",
+      "sha256": "aafdc896f3ad7109cbae39592bba07e8aa11cff388fdb8684b49d2fe02f8f05c"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/art_preview.gd",
+      "sha256": "30d4cc6948cdf3b2a3c03c44f4206a16939473fe02996675d868ef8c1c6073ae"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/art_preview.gd.uid",
+      "sha256": "c2e826967e3c29e0d83c03bfee67b9b828a99f41409f8074d566ef66430226a5"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/assets.gd",
+      "sha256": "91d2f7e9f2cf2bb8b3f6f0907e17aa546ad7e7ed1dffc90f908da708d097c7c9"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/assets.gd.uid",
+      "sha256": "af610cc984a0914448b893aa6b369c3eb2bab4ca1856e56fca960db456555ed0"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/cleaning.gdshader",
+      "sha256": "0cedd39f0f4d7e873932f13ef8565cd7ec24d50b9a8d4276499033fc6b5ee82b"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/cleaning.gdshader.uid",
+      "sha256": "3c7892085dd837105a5e7af83759c1886ab9c3a90914ee5e01e2df9f98ee2564"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/config.gd",
+      "sha256": "48146c66b9b55c4f3f5446bb1a66f45cfaaccc7bfff235d3905db2b13959d911"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/config.gd.uid",
+      "sha256": "5c4291496b537e4b0143c9f74d664c5f6b5a9cc8b8d259012308bfc0f18fb977"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/controller.gd",
+      "sha256": "f03085fbbb91604e7fde31f0fc5551c09fed9d2e275e7c9affcd8e5a63e90349"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/controller.gd.uid",
+      "sha256": "b2d9c76a4b2b5a1503d02f60c7c58baa5b5d28f787e0aca09e7b58ab8f31f82a"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/foreground.gd",
+      "sha256": "2b4ec72dba72724c2698a30f44a6217e9f2066e6a415df842d0bb69cf72890b4"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/foreground.gd.uid",
+      "sha256": "b09e80ca3d26c28d46d87d62c5f99e7feb909d64e672c0efff6624d6a5c577be"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/model.gd",
+      "sha256": "522d2fa441e708b5e7bb2b4ab47ef2a99fb5f3b83fba9cd1ad13b0e3e5fb3376"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/model.gd.uid",
+      "sha256": "7ea2379e7c824630043c1e05b38bf892a38dac902ef57decf72f665c5806001c"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/service_view.gd",
+      "sha256": "1deb376cb5ed90ec4f04f290ff8063c63c01462416d751a440070e97c3cc2313"
+    },
+    {
+      "path": "毛球满屋/scripts/prototype_grooming/service_view.gd.uid",
+      "sha256": "c48dcd2d2886f459250d9e977494c32aa46a2b6ee61fc81b78689436747ea866"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/asset_manifest.json",
+      "sha256": "765f44deb26359059cca6fc10f1a9623d3acf2e0435b66f799d66b14d331ef36"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/atlas_index.json",
+      "sha256": "9789b5d89a3d299648f64ddb123ac471a36e8eb84286894a5601c53dd2d85725"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/background_1920x1080.png",
+      "sha256": "d62d7351a72fe5b82610c69da22fb0c671b2cd14bd3847ed5afae7316e2ce0df"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/background_1920x1080.png.import",
+      "sha256": "1c3071fcc27b5d66b17618a51d523650fa1c09f56814960f8c87c69755356b7e"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/background_leather.png",
+      "sha256": "65bca3c0a00b49f354ee2f380d7774c26f24be36cb5f3d4886d57957b56b9229"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/background_leather.png.import",
+      "sha256": "ddd7b3e073f2f7686656292b37e2c76951121bfbc26d6a677f269254a277778e"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/calico_clean.png",
+      "sha256": "dbf499a64a7811dffe9cdd46fd2ffee1654db502a218b435d683289a7014f739"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/calico_clean.png.import",
+      "sha256": "5ffab34664046a843887d1e24976fe3da8710cbdd560f1571796872e1022eb9a"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/calico_paw_base.png",
+      "sha256": "04f44cabe38eeb44066ea5f269940ac522468c3af6eadb4f45637d8c55c877cb"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/calico_paw_base.png.import",
+      "sha256": "a5e23e6410e73b5aab7b18ebca9e3d2ccd064d33a2dc8812bad2c71ead90314a"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/calico_states.png",
+      "sha256": "b21d2116639428aaa7fe00c24b04b76542e7afee4326e27cd1263c551c2226e6"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/calico_states.png.import",
+      "sha256": "c1753933f1b468b997fab3986be8410645ac95093563e91697967837d555d1d6"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/claw_states.png",
+      "sha256": "2266d8f4db56a6db432d72e254b7af88b2d53f8ecf1e0f98ebf48eacad5254c4"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/claw_states.png.import",
+      "sha256": "4ba4a68199bfe321a72729b7e2d1a7b2117e7ffb45e607961133fece85968f08"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/dirt_atlas.png",
+      "sha256": "8afdaed0d5ac3ffdad96e23ff0f9a1e9b03cd51e752b70bdfa82733dcd0636e3"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/dirt_atlas.png.import",
+      "sha256": "f331b55c201e269c288f4c1e7def141fc50c0a5f5038aa5dd452ce96275f7f80"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/effects_atlas.png",
+      "sha256": "16daaabf46351894ef5ff95c942ec4abc8a227731a43eeee293d6378fa719b9d"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/effects_atlas.png.import",
+      "sha256": "d5d14a0663d766e9d63a3752b742292238eb28f199ca0caaf97a708df4e8910d"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/robot_clean.png",
+      "sha256": "a238fde2bf7bd67dc7b2cc4a9a8ec603c1ad60552bc7fd34cf940792b06571dd"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/robot_clean.png.import",
+      "sha256": "1f18415e782505b8731193b3f67da762fc4239230c3f28089f0fa18668345c90"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/robot_states.png",
+      "sha256": "f31612ff13203d68c0d539766f849d25441186ff96b4305a90a10c8d8bf95178"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/robot_states.png.import",
+      "sha256": "9817306c93a7c33eb0f94041599879434172b1c2977f573afdb57ba9a7e264c3"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/tools_atlas.png",
+      "sha256": "8c8f6b8ee79ee0c1a4cff5b27c2facf2ad672bd2a8ceb7feb194c6a1637823b3"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/tools_atlas.png.import",
+      "sha256": "73d4182b8fc0742b62b11e4c5e64d2b1849433bd147d1fdcdfe4566647dc7ffb"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/background.tres",
+      "sha256": "b5217903bf0c002e3aa07558f358bd129474969d34befd3e83fa0fe9bdad832b"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/background_16_9.tres",
+      "sha256": "32a3f3af8572f41b2f64b3514e88d3a4f8e919c9ac39fbb4aa1f7d0366efb849"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/calico_clean.tres",
+      "sha256": "391136a7fa3319016fc0f89daf740febe4544e5a641f54d9af04c3dfbb445b8e"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/calico_dirty_reference.tres",
+      "sha256": "6186e04023e6a9da75751b4dce01f79872ebce2773d7c4ab6355bf46e5cf1c8b"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/calico_discomfort.tres",
+      "sha256": "7fcb1004d06ee87d3a21bae17469c061f9314d9e440ef784e49ea4e4946de7b9"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/calico_happy.tres",
+      "sha256": "65abafa64b4bba793c07c13068368f33b2c2c730a1eb249125b8ca57d72e2e72"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/calico_neutral.tres",
+      "sha256": "842fe0dc3f3eb816eeb836c84ceaefed0d5648437134050ec85951fd3341a33b"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/claw_deep.tres",
+      "sha256": "1a5077fc1b422136e92c0b7d52998cf0d37e70904a9eda826ddbe7323b79c65f"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/claw_long.tres",
+      "sha256": "b12ff667ffac5e759cf86f0c8f3c00cb823b0b83c83561e31d0eb69a75849286"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/claw_perfect.tres",
+      "sha256": "5a2a49fb593685983f040d674c2b99731be6eaa7757038b4f9111d155239bb0e"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/claw_shallow.tres",
+      "sha256": "1aede5c44b808a73aa940e5b2d4409f0c7d5ee49317dfc11f72aa6394ab4de46"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/clipper.tres",
+      "sha256": "fee72e9cba63daaa1885bfdd93c7d757cc0150003fbacdb42e95081d50148b65"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/cloth.tres",
+      "sha256": "18966546fd1ee9031c038a395950f03bb730f7ce1d19edde11de6bc8935f711e"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/coin.tres",
+      "sha256": "51ac55da0d63a3afbe8c8dfd315ebcbdf10365a5f6899da6c2a7e15fd2f8cdec"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/comb.tres",
+      "sha256": "06133e10d6d8c0960522f1375e99778f74d873bf7440d384d2e333329c90e033"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/dirt_chips.tres",
+      "sha256": "ea2f6a63fa41d5a4fa79dd94f6d0cbb73ee6b73ff03208dc9cfaadda9e253915"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/dust.tres",
+      "sha256": "bb55c3e23b1decc11d47d849c62a5475b89b2e64bafba6746fd50868eacd71e7"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/dust_puff.tres",
+      "sha256": "c0ad8c8c130c4c2cbb7d442e989f2390040a8407191d2ed2630fb60374738be4"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/fingerprints.tres",
+      "sha256": "bc1d2c51392a45ba80748beaa34a9722b79412bb1d21c5de0fa454f5ea4240d6"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/flea.tres",
+      "sha256": "b5ea04fea91a81c683786561ccd20c656c1fbd78515bcf99e8d6604890dbd0e7"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/fur_gray.tres",
+      "sha256": "9ebf02d539bf027c61e2d63a678da4726f5992ab868094dd0e176d588d07e16c"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/fur_orange.tres",
+      "sha256": "5dd7639204c221905efa6a6a64407aa59fdafb090a760b265fe3489bbfe25ffd"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/fur_white.tres",
+      "sha256": "e3ef8e4d7e3e4d765a2a12084fbe0f04403f4e29da97752eaacd3be4438230de"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/knot.tres",
+      "sha256": "a0f26aab51101d2d7fcb53c96b4ab943f4d424f5368afcc3bbec553c69346284"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/nail_tip.tres",
+      "sha256": "01e8dc8b5e2f72567c6c9e7a95816ded372db51acf0e41430c2bb78bb42051aa"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/oil.tres",
+      "sha256": "993f5a33ded169487719d0340443723a1044cc160d48cb265ad3ef8cc7ee997c"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/oil_fleck.tres",
+      "sha256": "d545ea70e701c73a0c7907e86c82edddc62dc56deac05fa34f39be8ec55b082d"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/paw_base.tres",
+      "sha256": "8108da315dee9ea79fba440cfae2e600a91d4b25525c9a577583fb6f29d4fbad"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/robot_clean.tres",
+      "sha256": "3f4efba9eb1e765b14d2273f868a9a38f61124523f854e3b76563fe100eda78e"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/robot_dirty_reference.tres",
+      "sha256": "bc26cd691378a0797da4c79f31a6c73223324dbfe82123e91259232ae773674c"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/robot_discomfort.tres",
+      "sha256": "cbedf50e12207ea48524bb1e3748aeb977aeff7d15f7087beb980de458f4a1ab"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/robot_happy.tres",
+      "sha256": "e9ee7df7ea4c6107412ad6e9498289f494bb5844dc411f84a41f0e870d1df909"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/robot_neutral.tres",
+      "sha256": "71509d989b8d092c4483178a960eb4791ae1bb1c640502bd322f2a0836ffd672"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/soot.tres",
+      "sha256": "6cd9c55c8e8dbe40c04c7a151e9db4973008f9b83c74a00872bfbe95950d7ef6"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/sparkle.tres",
+      "sha256": "1b223c5513edab9c2a5dcf33623c309151a5c2a09232438117745ddd25bff99e"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/tar.tres",
+      "sha256": "12eff65caa42991344df583108ee73384753c389dbb5b1968553d5aeca224302"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_demo_v1/resources/trash.tres",
+      "sha256": "7c74d30adaeacca194405ab8b5fc210a019b44d6d8684eb84bee5e831c919999"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_environment_v1/grey_paw.png",
+      "sha256": "65dc7ec8c2a160cb15ebe516885c90e0b3dc08679571a8111424e87f0c512d86"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_environment_v1/grey_paw.png.import",
+      "sha256": "1f84bc5a70a2b57d9efbfabd49d5f11bb16ad065de436589d64c21be9f91656a"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_environment_v1/grooming_table.png",
+      "sha256": "be04726ed0472cf13f7795a9f608a4fa308bbbd4195bd148abdae9ff3b23ec3a"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_environment_v1/grooming_table.png.import",
+      "sha256": "289537fb15fd40a41548d9bc825fd4c668a0e9862663340780d3a55b05033920"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_environment_v1/manifest.json",
+      "sha256": "3ce821d82ec3fe0146b89acf5172391ce675a127fa5cb03f92f186d0b78e0be5"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_environment_v1/room_background.png",
+      "sha256": "d40e78cac29bbd89a12904d76b7516b417259e0f35c979ab094806a9b1b38357"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_environment_v1/room_background.png.import",
+      "sha256": "5ebdeb0b9a33c2ca64c967da3ff62393ee5b1d8eba06d29ceac4d7736c3e83b3"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_environment_v1/resources/grey_paw.tres",
+      "sha256": "87fa21ed3b3a8702eb4dc8a7c0f1f3e2deef467d933d4478a14915e5653e1605"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_environment_v1/resources/grooming_table.tres",
+      "sha256": "03027986c810db54d715bb7a9d4424c2439ac83d0a2a34028217a80d5a748827"
+    },
+    {
+      "path": "毛球满屋/Art/grooming_environment_v1/resources/room_background.tres",
+      "sha256": "f7b36c8e09989ebee749b7d8387a471b5b721e1e37c14e8bc32e72fcc68daaea"
+    },
+    {
+      "path": "毛球满屋/scenes/prototype_grooming/robot_random_demo.tscn",
+      "sha256": "2f701c55a4514a84f29cd4089764d67db6238e0f806c31526b7d44f80876a241"
+    },
+    {
+      "path": "毛球满屋/project.godot",
+      "sha256": "b6f1a3f71f77ddeaba30e9528b6304d9e9a794790be8776871f709717f3a8051"
+    },
+    {
+      "path": "毛球满屋/export_presets.cfg",
+      "sha256": "d938a6ee3e1a7bc4b0aaf20ab670ca129cac7693b3789d689823a27727555106"
+    }
+  ],
+  "build_only_overrides": [
+    "test startup scene",
+    "Chinese product name and window title",
+    "version metadata",
+    "separate user directory"
+  ],
+  "engine": "4.7.1.stable.official.a13da4feb",
+  "bytes": 121649456,
+  "sha256": "17ab24d1bbd04eaf7e878e7c7e898eed0f01de5706f729638b432305a82b18c0",
+  "source_unchanged": true,
+  "import_exit_code": 0,
+  "export_exit_code": 0,
+  "exe_graphics_startup_exit_code": 0,
+  "packed_resource_check_exit_code": 0,
+  "packed_checks": 14,
+  "custom_user_directory": "PurrOrbitRobotTest20261016",
+  "save_behavior": "内存测试会话，退出后重置"
+}

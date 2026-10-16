@@ -1,0 +1,187 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/prototype_grooming_robot/controller.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/prototype_grooming_robot/service_view.gd" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="Panel"]
+bg_color = Color(0.12,0.075,0.055,0.91)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_left = 14
+corner_radius_bottom_right = 14
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+
+[node name="RobotRandomGroomingDemo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="ServiceView" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Top" type="Panel" parent="HUD"]
+layout_mode = 1
+anchor_right = 1.0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = -14.0
+offset_bottom = 104.0
+theme_override_styles/panel = SubResource("Panel")
+
+[node name="Title" type="Label" parent="HUD/Top"]
+offset_left = 18.0
+offset_top = 10.0
+offset_right = 500.0
+offset_bottom = 36.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "毛球计划 · 美容服务"
+
+[node name="Money" type="Label" parent="HUD/Top"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_top = 8.0
+offset_right = -18.0
+offset_bottom = 36.0
+mouse_filter = 2
+horizontal_alignment = 2
+text = "金钱 0"
+
+[node name="Details" type="Label" parent="HUD/Top"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -660.0
+offset_top = 52.0
+offset_right = -18.0
+offset_bottom = 78.0
+mouse_filter = 2
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 16
+text = "本单seed"
+
+[node name="New" type="Button" parent="HUD/Top"]
+offset_left = 18.0
+offset_top = 48.0
+offset_right = 160.0
+offset_bottom = 82.0
+text = "新随机订单"
+
+[node name="Retry" type="Button" parent="HUD/Top"]
+offset_left = 172.0
+offset_top = 48.0
+offset_right = 302.0
+offset_bottom = 82.0
+text = "重试本单"
+
+[node name="Seed" type="LineEdit" parent="HUD/Top"]
+offset_left = 320.0
+offset_top = 48.0
+offset_right = 485.0
+offset_bottom = 82.0
+placeholder_text = "开发seed"
+max_length = 10
+text = "6101604"
+
+[node name="Reproduce" type="Button" parent="HUD/Top"]
+offset_left = 497.0
+offset_top = 48.0
+offset_right = 623.0
+offset_bottom = 82.0
+text = "按seed复现"
+
+[node name="Pause" type="Button" parent="HUD/Top"]
+offset_left = 635.0
+offset_top = 48.0
+offset_right = 710.0
+offset_bottom = 82.0
+text = "暂停"
+
+[node name="Bottom" type="Panel" parent="HUD"]
+layout_mode = 1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -98.0
+offset_right = -14.0
+offset_bottom = -12.0
+theme_override_styles/panel = SubResource("Panel")
+
+[node name="Requirements" type="Label" parent="HUD/Bottom"]
+offset_left = 18.0
+offset_top = 10.0
+offset_right = 430.0
+offset_bottom = 36.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 20
+
+[node name="Hint" type="Label" parent="HUD/Bottom"]
+offset_left = 18.0
+offset_top = 44.0
+anchor_right = 1.0
+offset_right = -18.0
+offset_bottom = 73.0
+mouse_filter = 2
+text = "按住左键，拖动工具清洁"
+
+[node name="Progress" type="ProgressBar" parent="HUD/Bottom"]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -370.0
+offset_top = 12.0
+offset_right = -18.0
+offset_bottom = 32.0
+mouse_filter = 2
+show_percentage = true
+
+[node name="PausePanel" type="PanelContainer" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -660.0
+offset_top = -100.0
+offset_right = 190.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("Panel")
+
+[node name="VBox" type="VBoxContainer" parent="HUD/PausePanel"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Text" type="Label" parent="HUD/PausePanel/VBox"]
+layout_mode = 2
+text = "已暂停\n所有服务进度保留"
+horizontal_alignment = 1
+
+[node name="Continue" type="Button" parent="HUD/PausePanel/VBox"]
+layout_mode = 2
+text = "继续服务  /  Esc"

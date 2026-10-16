@@ -1,0 +1,16 @@
+{
+ "checks": 689,
+ "failures": [],
+ "layouts": [
+  {
+   "edges": 23,
+   "max_outward_pixels": 14.4068832397461,
+   "scale": 1.0
+  },
+  {
+   "edges": 23,
+   "max_outward_pixels": 8.76445960998535,
+   "scale": 0.5
+  }
+ ]
+}

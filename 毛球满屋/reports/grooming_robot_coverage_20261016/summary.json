@@ -1,0 +1,21 @@
+{
+  "checks": 629,
+  "seeds": 80,
+  "normal_range": [
+    8,
+    14
+  ],
+  "stubborn_range": [
+    2,
+    3
+  ],
+  "dropped": 1,
+  "fallback": 265,
+  "minimum_size_fallback": 180,
+  "zone_coverage": true,
+  "alpha": {
+    "double_alpha_error": 0.0806928731583887,
+    "samples": 75,
+    "single_alpha_error": 0.0139603549821509
+  }
+}

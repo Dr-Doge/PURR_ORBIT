@@ -1,0 +1,49 @@
+{
+ "checks": 33,
+ "contour_concealed": 973,
+ "contour_tested": 1211,
+ "failures": [],
+ "layouts": [
+  {
+   "edge_types": [
+    "edge_gray_back",
+    "edge_gray_shoulder",
+    "edge_gray_flank",
+    "edge_cream_belly",
+    "edge_cream_leg",
+    "edge_cream_cheek",
+    "edge_cream_tail"
+   ],
+   "overlapping": 82,
+   "patches": 82,
+   "scale": 1.0,
+   "variants": [
+    "ruffle",
+    "fold",
+    "cross",
+    "wide"
+   ]
+  },
+  {
+   "edge_types": [
+    "edge_gray_back",
+    "edge_gray_shoulder",
+    "edge_gray_flank",
+    "edge_cream_belly",
+    "edge_cream_leg",
+    "edge_cream_cheek",
+    "edge_cream_tail"
+   ],
+   "overlapping": 16,
+   "patches": 16,
+   "scale": 0.5,
+   "variants": [
+    "ruffle",
+    "cross",
+    "fold",
+    "wide"
+   ]
+  }
+ ],
+ "restored_changed_pixels": 0
+}

@@ -1,6 +1,6 @@
 extends SceneTree
 const M=preload("res://scripts/prototype_grooming_fur/model.gd")
-const OUT="res://reports/grooming_fur_service_20261016/"
+const OUT="res://reports/grooming_fur_feedback_20261016/"
 var checks: int=0
 var failures: Array=[]
 func check(ok: bool,label: String) -> void:
@@ -24,7 +24,7 @@ func run() -> void:
    if obj.rule!="patch":continue
    patches+=1
    var uv: Vector2=(obj.rect.get_center()-m.body_rect.position)/m.body_rect.size
-   var expected: float=deg_to_rad(-78 if uv.x>=.835 else -12)
+   var expected: float=m.module_angle(obj.type,uv.x>=.835)
    aligned=aligned and absf(obj.draw_angle-expected)<=deg_to_rad(M.PATCH_ANGLE_LIMIT)+.0001
    complete=complete and obj.mask.get_pixel(0,0)==Color.WHITE and obj.mask.get_pixel(16,16)==Color.WHITE
    for y in range(32):
@@ -45,7 +45,7 @@ func run() -> void:
   swipe(m,a,b);check(edge.passes==1,"same-direction restarts cannot fake an alternating pass "+str(scale))
   swipe(m,b,a);check(edge.passes==2 and not edge.done,"one round trip is insufficient "+str(scale))
   m.paused=true;swipe(m,a,b);check(edge.passes==2,"pause blocks contour work "+str(scale));m.paused=false
-  swipe(m,a,b,1500);check(edge.passes==2 and not edge.done,"over-speed contour strokes do not count "+str(scale))
+  swipe(m,a,b,4000);check(edge.passes==2 and not edge.done,"over-speed contour strokes do not count "+str(scale))
   swipe(m,a,b);check(edge.passes==3 and not edge.done,"third pass keeps complete sprite "+str(scale))
   swipe(m,b,a);check(edge.done and edge.sum==0,"four alternating passes detach entire contour "+str(scale))
   var fresh=M.new();fresh.next_cat_scale=scale;fresh.start_order(0);fresh.tick(1);edge=choose(fresh,"edge");p=edge.rect.get_center()

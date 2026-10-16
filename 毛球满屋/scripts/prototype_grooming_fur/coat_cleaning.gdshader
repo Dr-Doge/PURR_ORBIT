@@ -4,6 +4,7 @@ uniform sampler2D body_mask : filter_nearest, repeat_disable;
 uniform sampler2D coat_map : source_color, filter_linear, repeat_disable;
 uniform vec4 region_in_body;
 uniform float patch_angle = 0.0;
+uniform vec2 body_dimensions = vec2(1568.0,911.0);
 uniform bool match_coat = false;
 uniform bool complete_sprite = false;
 uniform bool preserve_outline = false;
@@ -16,7 +17,7 @@ void fragment() {
  vec4 ink=texture(TEXTURE,UV)*vertex_tint;
  vec2 offset=(UV-vec2(0.5))*region_in_body.zw;
  // Rotate in logical pixels before converting back to body UV (non-square cat).
- vec2 body_pixels=vec2(textureSize(coat_map,0));
+ vec2 body_pixels=body_dimensions;
  offset*=body_pixels;
  float c=cos(patch_angle),s=sin(patch_angle);
  offset=vec2(c*offset.x-s*offset.y,s*offset.x+c*offset.y)/body_pixels;

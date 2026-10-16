@@ -1,0 +1,7 @@
+{
+  "checks": 14,
+  "entry": "res://scenes/prototype_grooming/robot_random_demo.tscn",
+  "failures": [],
+  "note": "Pack resource/graphics smoke, not a rerun of 629 gameplay assertions",
+  "window_title": "毛球计划 · 机器猫随机污渍测试版（大污渍·顽固增强）"
+}

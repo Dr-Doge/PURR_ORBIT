@@ -1,6 +1,6 @@
 extends SceneTree
 const M=preload("res://scripts/prototype_grooming_fur/model.gd")
-const OUT="res://reports/grooming_fur_service_20261016/"
+const OUT="res://reports/grooming_fur_activation_20261016/"
 var checks: int=0
 var failures: Array=[]
 func check(ok: bool,label: String) -> void:
@@ -37,19 +37,19 @@ func run() -> void:
  var o: Dictionary=find(m,"patch");var p: Vector2=o.rect.get_center();var original: float=o.sum
  stroke(m,p+Vector2(60,0),p-Vector2(60,0))
  check(o.sum==original and not o.done,"reverse normal brushing cannot clear patch")
- stroke(m,p-Vector2(60,0),p+Vector2(60,0),2.0)
- check(o.sum==original and m.score==95,"rough brushing penalizes rating and preserves patch")
+ stroke(m,p-Vector2(60,0),p+Vector2(60,0),3.0)
+ check(o.sum==original and m.score==100,"short extreme stroke stalls with grace instead of immediate penalty")
  stroke(m,p-Vector2(60,0),p+Vector2(60,0))
  check(o.done and o.sum==0 and o.left.count(0.0)==o.left.size(),"valid brush removes entire patch, not part of it")
  o=find(m,"edge");var before: float=o.sum;p=Vector2.ZERO
  for y in range(32):
   for x in range(32):
    if o.left[y*32+x]>0:
-    p=o.rect.position+o.rect.size*Vector2((x+.5)/32,(y+.5)/32);break
+    p=m.sample_point(o,x,y);break
   if p!=Vector2.ZERO:break
- # Scan a short slice across the first edge; masks must retain unbrushed pixels.
+ # Contour now shares the body's single rightward-stroke rule.
  stroke(m,p-Vector2(10,0),p+Vector2(10,0))
- check(o.sum==before and not o.done,"short contour stroke keeps complete hairlock instead of erasing")
+ check(o.done and o.sum==0,"short correct contour stroke detaches the whole hairlock")
  o=find(m,"knot");p=o.rect.get_center();before=o.sum
  stroke(m,p-Vector2(90,0),p+Vector2(90,0),.4)
  check(o.sum==before,"tangle rejects normal fast pace")
@@ -74,7 +74,7 @@ func run() -> void:
  var unfinished: Array=[]
  for obj in m.objects:
   if not obj.done:unfinished.append([obj.id,obj.rule,obj.sum])
- check(m.stage=="reward" and m.wallet==96,"all fur tasks complete and rating scales immediate payout "+str(unfinished))
+ check(m.stage=="reward" and m.wallet==100,"all fur tasks complete and rating scales immediate payout "+str(unfinished))
  var money: int=m.wallet;m.settle();check(m.wallet==money,"same order cannot pay twice")
  m.start_order(1);m.tick(1);o=m.objects[1];p=o.rect.get_center();before=o.sum
  stroke(m,p-Vector2(80,0),p+Vector2(80,0),4)

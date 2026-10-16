@@ -1,0 +1,42 @@
+[
+  {
+    "path": "毛球满屋/scripts/prototype_grooming/model.gd",
+    "unchanged_from_head_normalized_eol": true,
+    "sha256": "522d2fa441e708b5e7bb2b4ab47ef2a99fb5f3b83fba9cd1ad13b0e3e5fb3376"
+  },
+  {
+    "path": "毛球满屋/scripts/prototype_grooming/service_view.gd",
+    "unchanged_from_head_normalized_eol": true,
+    "sha256": "1deb376cb5ed90ec4f04f290ff8063c63c01462416d751a440070e97c3cc2313"
+  },
+  {
+    "path": "毛球满屋/scripts/prototype_grooming/config.gd",
+    "unchanged_from_head_normalized_eol": true,
+    "sha256": "48146c66b9b55c4f3f5446bb1a66f45cfaaccc7bfff235d3905db2b13959d911"
+  },
+  {
+    "path": "毛球满屋/scripts/prototype_grooming/assets.gd",
+    "unchanged_from_head_normalized_eol": true,
+    "sha256": "91d2f7e9f2cf2bb8b3f6f0907e17aa546ad7e7ed1dffc90f908da708d097c7c9"
+  },
+  {
+    "path": "毛球满屋/project.godot",
+    "unchanged_from_head_normalized_eol": true,
+    "sha256": "b6f1a3f71f77ddeaba30e9528b6304d9e9a794790be8776871f709717f3a8051"
+  },
+  {
+    "path": "毛球满屋/export_presets.cfg",
+    "unchanged_from_head_normalized_eol": true,
+    "sha256": "d938a6ee3e1a7bc4b0aaf20ab670ca129cac7693b3789d689823a27727555106"
+  },
+  {
+    "path": "毛球满屋/scenes/3D scene.tscn",
+    "unchanged_from_head_normalized_eol": true,
+    "sha256": "ce35084bd529c9091bb73ba5eb98fe5ab0a1f738443536e2f9c36fb293743b13"
+  },
+  {
+    "path": "毛球满屋/scenes/prototype_grooming/main.tscn",
+    "unchanged_from_head_normalized_eol": true,
+    "sha256": "6140877f16f19b594f879f7c6f1de1245dd35c642105dbc2170afbdd65fc8c26"
+  }
+]

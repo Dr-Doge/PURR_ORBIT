@@ -1,0 +1,2255 @@
+{
+  "checks": 603,
+  "completed_seeds": [
+    6101604,
+    6101605,
+    6101610,
+    6101620,
+    6101640,
+    6101679
+  ],
+  "default_seed": 6101604,
+  "failures": [],
+  "seed_samples": [
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.379999995231628,
+        0.548971951007843,
+        0.788774609565735,
+        0.702499985694885
+      ],
+      "dropped": 1,
+      "fallback": 3,
+      "minimum_size_fallback": 3,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101600,
+      "visible_extent": [
+        0.328799962997437,
+        0.479581147432327,
+        0.881174743175507,
+        0.766483306884766
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 1,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.400000005960464,
+        0.510893046855927,
+        0.830555498600006,
+        0.719034016132355
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 2,
+      "requested_normal": 12,
+      "requested_stubborn": 2,
+      "seed": 6101601,
+      "visible_extent": [
+        0.334492981433868,
+        0.440613985061646,
+        0.881490886211395,
+        0.771927177906036
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 3,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 10,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.4030641913414,
+        0.497500002384186,
+        0.797516644001007,
+        0.705599427223206
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 2,
+      "requested_normal": 10,
+      "requested_stubborn": 3,
+      "seed": 6101602,
+      "visible_extent": [
+        0.341629445552826,
+        0.435819000005722,
+        0.880886912345886,
+        0.762671947479248
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.380070596933365,
+        0.517505288124084,
+        0.844999969005585,
+        0.704063057899475
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 2,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101603,
+      "visible_extent": [
+        0.311062753200531,
+        0.450124949216843,
+        0.902095556259155,
+        0.773658752441406
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.367440670728683,
+        0.497500002384186,
+        0.821897864341736,
+        0.701666653156281
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 2,
+      "requested_normal": 12,
+      "requested_stubborn": 2,
+      "seed": 6101604,
+      "visible_extent": [
+        0.308522015810013,
+        0.444186478853226,
+        0.891680121421814,
+        0.758296728134155
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.400000005960464,
+        0.497500002384186,
+        0.793785452842712,
+        0.701666653156281
+      ],
+      "dropped": 0,
+      "fallback": 4,
+      "minimum_size_fallback": 3,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101605,
+      "visible_extent": [
+        0.348800003528595,
+        0.440166473388672,
+        0.87756484746933,
+        0.773549616336823
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.360000014305115,
+        0.526404678821564,
+        0.789200901985168,
+        0.726653099060059
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 2,
+      "requested_normal": 9,
+      "requested_stubborn": 2,
+      "seed": 6101606,
+      "visible_extent": [
+        0.308800011873245,
+        0.438653379678726,
+        0.859010219573975,
+        0.788565039634705
+      ],
+      "zones": {
+        "back": 3,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.494955837726593,
+        0.844999969005585,
+        0.701666653156281
+      ],
+      "dropped": 0,
+      "fallback": 6,
+      "minimum_size_fallback": 4,
+      "requested_normal": 14,
+      "requested_stubborn": 3,
+      "seed": 6101607,
+      "visible_extent": [
+        0.308800011873245,
+        0.431641429662704,
+        0.895957350730896,
+        0.756582140922546
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 4,
+        "hind": 2,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.3878553211689,
+        0.49882909655571,
+        0.844999969005585,
+        0.720815539360046
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 1,
+      "requested_normal": 14,
+      "requested_stubborn": 2,
+      "seed": 6101608,
+      "visible_extent": [
+        0.331104189157486,
+        0.440154999494553,
+        0.895957350730896,
+        0.786230802536011
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 4,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.388131856918335,
+        0.504872858524323,
+        0.844999969005585,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 4,
+      "minimum_size_fallback": 3,
+      "requested_normal": 14,
+      "requested_stubborn": 2,
+      "seed": 6101609,
+      "visible_extent": [
+        0.333735644817352,
+        0.436842799186707,
+        0.895957350730896,
+        0.781630039215088
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 4,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.409635424613953,
+        0.525979816913605,
+        0.816110968589783,
+        0.706328570842743
+      ],
+      "dropped": 0,
+      "fallback": 4,
+      "minimum_size_fallback": 3,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101610,
+      "visible_extent": [
+        0.349755764007568,
+        0.434056788682938,
+        0.889140486717224,
+        0.775566577911377
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 3,
+        "hind": 3,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.389763176441193,
+        0.514499068260193,
+        0.816111028194427,
+        0.717569172382355
+      ],
+      "dropped": 0,
+      "fallback": 1,
+      "minimum_size_fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101611,
+      "visible_extent": [
+        0.329575508832932,
+        0.444001793861389,
+        0.87075012922287,
+        0.788251936435699
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 3,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.382976621389389,
+        0.496474266052246,
+        0.801638603210449,
+        0.716554820537567
+      ],
+      "dropped": 0,
+      "fallback": 5,
+      "minimum_size_fallback": 4,
+      "requested_normal": 14,
+      "requested_stubborn": 2,
+      "seed": 6101612,
+      "visible_extent": [
+        0.328999996185303,
+        0.438662827014923,
+        0.881090342998505,
+        0.775941669940948
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 3,
+        "hind": 1,
+        "shoulder": 6
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.512698650360107,
+        0.802236616611481,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 6,
+      "minimum_size_fallback": 5,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101613,
+      "visible_extent": [
+        0.308800011873245,
+        0.456396996974945,
+        0.889489352703094,
+        0.782523036003113
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 1,
+        "shoulder": 7
+      }
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.419999986886978,
+        0.505071878433228,
+        0.788571357727051,
+        0.708972632884979
+      ],
+      "dropped": 0,
+      "fallback": 1,
+      "minimum_size_fallback": 1,
+      "requested_normal": 8,
+      "requested_stubborn": 2,
+      "seed": 6101614,
+      "visible_extent": [
+        0.368799984455109,
+        0.442021906375885,
+        0.877140522003174,
+        0.775865316390991
+      ],
+      "zones": {
+        "back": 3,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.379999995231628,
+        0.497500002384186,
+        0.78722220659256,
+        0.72626918554306
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 3,
+      "requested_normal": 8,
+      "requested_stubborn": 3,
+      "seed": 6101615,
+      "visible_extent": [
+        0.328799962997437,
+        0.440166473388672,
+        0.862631678581238,
+        0.780859470367432
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 2,
+        "hind": 1,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.360000014305115,
+        0.502768218517303,
+        0.834432661533356,
+        0.692487299442291
+      ],
+      "dropped": 0,
+      "fallback": 1,
+      "minimum_size_fallback": 1,
+      "requested_normal": 8,
+      "requested_stubborn": 2,
+      "seed": 6101616,
+      "visible_extent": [
+        0.308800011873245,
+        0.440384149551392,
+        0.889704883098602,
+        0.754731357097626
+      ],
+      "zones": {
+        "back": 3,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.37250342965126,
+        0.539951205253601,
+        0.830555498600006,
+        0.726312100887299
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 1,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101617,
+      "visible_extent": [
+        0.305950611829758,
+        0.458592176437378,
+        0.903791308403015,
+        0.786944448947906
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.398710399866104,
+        0.507155776023865,
+        0.846736788749695,
+        0.714920341968536
+      ],
+      "dropped": 0,
+      "fallback": 0,
+      "minimum_size_fallback": 0,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101618,
+      "visible_extent": [
+        0.342591464519501,
+        0.432414591312408,
+        0.90410977602005,
+        0.784022688865662
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 3,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.360000014305115,
+        0.506454169750214,
+        0.810058414936066,
+        0.707335293292999
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 1,
+      "requested_normal": 14,
+      "requested_stubborn": 2,
+      "seed": 6101619,
+      "visible_extent": [
+        0.293231546878815,
+        0.431079834699631,
+        0.874900639057159,
+        0.769586324691772
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 3,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.398698270320892,
+        0.544554471969604,
+        0.794309794902802,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 1,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101620,
+      "visible_extent": [
+        0.333307772874832,
+        0.448019593954086,
+        0.867824852466583,
+        0.777546405792236
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.497500002384186,
+        0.808620095252991,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 5,
+      "minimum_size_fallback": 3,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101621,
+      "visible_extent": [
+        0.308800011873245,
+        0.431252032518387,
+        0.873651206493378,
+        0.781630039215088
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 1,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 10,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.379999995231628,
+        0.497091710567474,
+        0.801833271980286,
+        0.701287746429443
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 2,
+      "requested_normal": 10,
+      "requested_stubborn": 2,
+      "seed": 6101622,
+      "visible_extent": [
+        0.328799962997437,
+        0.436833292245865,
+        0.882969558238983,
+        0.764455378055573
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.422145515680313,
+        0.511031150817871,
+        0.788564741611481,
+        0.727948784828186
+      ],
+      "dropped": 0,
+      "fallback": 1,
+      "minimum_size_fallback": 1,
+      "requested_normal": 9,
+      "requested_stubborn": 2,
+      "seed": 6101623,
+      "visible_extent": [
+        0.36568009853363,
+        0.446536988019943,
+        0.869254350662231,
+        0.790173649787903
+      ],
+      "zones": {
+        "back": 3,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.421232730150223,
+        0.535382211208344,
+        0.830555498600006,
+        0.706221997737885
+      ],
+      "dropped": 0,
+      "fallback": 1,
+      "minimum_size_fallback": 0,
+      "requested_normal": 8,
+      "requested_stubborn": 2,
+      "seed": 6101624,
+      "visible_extent": [
+        0.359764069318771,
+        0.470664829015732,
+        0.884123563766479,
+        0.771897315979004
+      ],
+      "zones": {
+        "back": 3,
+        "belly": 2,
+        "hind": 3,
+        "shoulder": 2
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.531224727630615,
+        0.833807766437531,
+        0.71271950006485
+      ],
+      "dropped": 0,
+      "fallback": 1,
+      "minimum_size_fallback": 1,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101625,
+      "visible_extent": [
+        0.308800011873245,
+        0.44746196269989,
+        0.890089154243469,
+        0.778566777706146
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 3,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 10,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.379999995231628,
+        0.530477225780487,
+        0.78722220659256,
+        0.719548046588898
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 2,
+      "requested_normal": 10,
+      "requested_stubborn": 2,
+      "seed": 6101626,
+      "visible_extent": [
+        0.328799962997437,
+        0.448129236698151,
+        0.88093888759613,
+        0.779691874980927
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 1,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 10,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.508084356784821,
+        0.844999969005585,
+        0.71697199344635
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 3,
+      "requested_normal": 10,
+      "requested_stubborn": 3,
+      "seed": 6101627,
+      "visible_extent": [
+        0.308800011873245,
+        0.44826352596283,
+        0.895957350730896,
+        0.779203176498413
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.400995463132858,
+        0.497500002384186,
+        0.78722220659256,
+        0.717983067035675
+      ],
+      "dropped": 0,
+      "fallback": 5,
+      "minimum_size_fallback": 3,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101628,
+      "visible_extent": [
+        0.338264137506485,
+        0.43631774187088,
+        0.879172742366791,
+        0.771440625190735
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 1,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.509217739105225,
+        0.816111028194427,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 1,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101629,
+      "visible_extent": [
+        0.308800011873245,
+        0.444979190826416,
+        0.881413340568542,
+        0.789843022823334
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 3,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.497500002384186,
+        0.793546736240387,
+        0.715147376060486
+      ],
+      "dropped": 0,
+      "fallback": 4,
+      "minimum_size_fallback": 3,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101630,
+      "visible_extent": [
+        0.308800011873245,
+        0.440166473388672,
+        0.883506059646606,
+        0.777587532997131
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 4,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.412659853696823,
+        0.497500002384186,
+        0.830555498600006,
+        0.718045949935913
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 2,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101631,
+      "visible_extent": [
+        0.34327894449234,
+        0.444186478853226,
+        0.883228182792664,
+        0.776447594165802
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.508246779441834,
+        0.790062606334686,
+        0.725481867790222
+      ],
+      "dropped": 0,
+      "fallback": 4,
+      "minimum_size_fallback": 3,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101632,
+      "visible_extent": [
+        0.308800011873245,
+        0.436820805072784,
+        0.879475891590118,
+        0.790006816387177
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 3,
+        "hind": 1,
+        "shoulder": 6
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.401181280612946,
+        0.538759171962738,
+        0.80889904499054,
+        0.720877230167389
+      ],
+      "dropped": 0,
+      "fallback": 1,
+      "minimum_size_fallback": 1,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101633,
+      "visible_extent": [
+        0.333774030208588,
+        0.463553100824356,
+        0.868500173091888,
+        0.794913291931152
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.404299706220627,
+        0.532957553863525,
+        0.80312705039978,
+        0.717705965042114
+      ],
+      "dropped": 0,
+      "fallback": 1,
+      "minimum_size_fallback": 1,
+      "requested_normal": 8,
+      "requested_stubborn": 3,
+      "seed": 6101634,
+      "visible_extent": [
+        0.332886070013046,
+        0.439687639474869,
+        0.863312602043152,
+        0.781791150569916
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.372304677963257,
+        0.497500002384186,
+        0.78722220659256,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 5,
+      "minimum_size_fallback": 4,
+      "requested_normal": 14,
+      "requested_stubborn": 3,
+      "seed": 6101635,
+      "visible_extent": [
+        0.313700348138809,
+        0.433175981044769,
+        0.870545625686646,
+        0.781630039215088
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 6
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.404764652252197,
+        0.506063163280487,
+        0.78722220659256,
+        0.707114338874817
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 1,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101636,
+      "visible_extent": [
+        0.353439331054688,
+        0.432668745517731,
+        0.873076021671295,
+        0.760530173778534
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.376559674739838,
+        0.513314425945282,
+        0.801127910614014,
+        0.725538611412048
+      ],
+      "dropped": 0,
+      "fallback": 4,
+      "minimum_size_fallback": 3,
+      "requested_normal": 13,
+      "requested_stubborn": 2,
+      "seed": 6101637,
+      "visible_extent": [
+        0.319579422473907,
+        0.452536761760712,
+        0.882428348064423,
+        0.789370894432068
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 6
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.38318133354187,
+        0.498071432113647,
+        0.78722220659256,
+        0.702499985694885
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 2,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101638,
+      "visible_extent": [
+        0.328145056962967,
+        0.435685634613037,
+        0.88040018081665,
+        0.77404510974884
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.379999995231628,
+        0.497500002384186,
+        0.784629821777344,
+        0.731666624546051
+      ],
+      "dropped": 0,
+      "fallback": 8,
+      "minimum_size_fallback": 7,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101639,
+      "visible_extent": [
+        0.328799962997437,
+        0.438713937997818,
+        0.874014973640442,
+        0.794482588768005
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 7,
+        "hind": 1,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.357300996780396,
+        0.529867649078369,
+        0.78722220659256,
+        0.716640949249268
+      ],
+      "dropped": 0,
+      "fallback": 5,
+      "minimum_size_fallback": 3,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101640,
+      "visible_extent": [
+        0.293891549110413,
+        0.446932256221771,
+        0.878728747367859,
+        0.773649871349335
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 1,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.431630998849869,
+        0.5084587931633,
+        0.78722220659256,
+        0.710366129875183
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 2,
+      "requested_normal": 8,
+      "requested_stubborn": 2,
+      "seed": 6101641,
+      "visible_extent": [
+        0.360362470149994,
+        0.444487899541855,
+        0.870669782161713,
+        0.773349463939667
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 2
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.381978929042816,
+        0.503629863262177,
+        0.794489860534668,
+        0.704732477664948
+      ],
+      "dropped": 0,
+      "fallback": 1,
+      "minimum_size_fallback": 1,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101642,
+      "visible_extent": [
+        0.325004696846008,
+        0.441724926233292,
+        0.872975051403046,
+        0.770340979099274
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.360000014305115,
+        0.548723101615906,
+        0.801666676998138,
+        0.713692963123322
+      ],
+      "dropped": 0,
+      "fallback": 5,
+      "minimum_size_fallback": 2,
+      "requested_normal": 13,
+      "requested_stubborn": 2,
+      "seed": 6101643,
+      "visible_extent": [
+        0.308800011873245,
+        0.459526151418686,
+        0.873048722743988,
+        0.780180811882019
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 6
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.522500097751617,
+        0.78722220659256,
+        0.73010516166687
+      ],
+      "dropped": 0,
+      "fallback": 7,
+      "minimum_size_fallback": 4,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101644,
+      "visible_extent": [
+        0.308800011873245,
+        0.44752448797226,
+        0.877297043800354,
+        0.793375492095947
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 5,
+        "hind": 1,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.360000014305115,
+        0.497500002384186,
+        0.850911021232605,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 6,
+      "minimum_size_fallback": 5,
+      "requested_normal": 13,
+      "requested_stubborn": 2,
+      "seed": 6101645,
+      "visible_extent": [
+        0.308800011873245,
+        0.43545338511467,
+        0.904810070991516,
+        0.782330513000488
+      ],
+      "zones": {
+        "back": 7,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.381509870290756,
+        0.548018515110016,
+        0.8012974858284,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 3,
+      "requested_normal": 9,
+      "requested_stubborn": 2,
+      "seed": 6101646,
+      "visible_extent": [
+        0.312703251838684,
+        0.47356966137886,
+        0.887275516986847,
+        0.781630039215088
+      ],
+      "zones": {
+        "back": 3,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.348173975944519,
+        0.526699006557465,
+        0.855742275714874,
+        0.712556779384613
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 2,
+      "requested_normal": 14,
+      "requested_stubborn": 3,
+      "seed": 6101647,
+      "visible_extent": [
+        0.295169830322266,
+        0.451572388410568,
+        0.909942209720612,
+        0.790211379528046
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 3,
+        "hind": 4,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.419999986886978,
+        0.500181198120117,
+        0.844999969005585,
+        0.703131258487701
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 1,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101648,
+      "visible_extent": [
+        0.34955570101738,
+        0.432969689369202,
+        0.895957350730896,
+        0.76915842294693
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 3,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.379999995231628,
+        0.518527865409851,
+        0.844999969005585,
+        0.73084568977356
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 1,
+      "requested_normal": 8,
+      "requested_stubborn": 3,
+      "seed": 6101649,
+      "visible_extent": [
+        0.328495562076569,
+        0.454735666513443,
+        0.904774367809296,
+        0.787774801254272
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 3,
+        "shoulder": 2
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.502867162227631,
+        0.78722220659256,
+        0.720213890075684
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 1,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101650,
+      "visible_extent": [
+        0.308800011873245,
+        0.440319240093231,
+        0.868870556354523,
+        0.776130259037018
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.400000005960464,
+        0.526301681995392,
+        0.804349184036255,
+        0.701557755470276
+      ],
+      "dropped": 0,
+      "fallback": 1,
+      "minimum_size_fallback": 1,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101651,
+      "visible_extent": [
+        0.348800003528595,
+        0.458891689777374,
+        0.884364008903503,
+        0.767233669757843
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.376399099826813,
+        0.497500002384186,
+        0.816111028194427,
+        0.708227217197418
+      ],
+      "dropped": 0,
+      "fallback": 5,
+      "minimum_size_fallback": 2,
+      "requested_normal": 14,
+      "requested_stubborn": 2,
+      "seed": 6101652,
+      "visible_extent": [
+        0.313853412866592,
+        0.439429342746735,
+        0.88120299577713,
+        0.771047055721283
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 3,
+        "hind": 3,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.368400454521179,
+        0.519540727138519,
+        0.797615945339203,
+        0.726616024971008
+      ],
+      "dropped": 0,
+      "fallback": 1,
+      "minimum_size_fallback": 1,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101653,
+      "visible_extent": [
+        0.305160313844681,
+        0.446963876485825,
+        0.877197206020355,
+        0.785535514354706
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.360000014305115,
+        0.497500002384186,
+        0.78722220659256,
+        0.702499985694885
+      ],
+      "dropped": 0,
+      "fallback": 6,
+      "minimum_size_fallback": 3,
+      "requested_normal": 13,
+      "requested_stubborn": 2,
+      "seed": 6101654,
+      "visible_extent": [
+        0.308800011873245,
+        0.440166473388672,
+        0.881191432476044,
+        0.775141417980194
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.419354110956192,
+        0.546639263629913,
+        0.795169174671173,
+        0.702880859375
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 1,
+      "requested_normal": 9,
+      "requested_stubborn": 2,
+      "seed": 6101655,
+      "visible_extent": [
+        0.354006350040436,
+        0.481478154659271,
+        0.883021712303162,
+        0.778124153614044
+      ],
+      "zones": {
+        "back": 3,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.418807655572891,
+        0.522500097751617,
+        0.801666676998138,
+        0.702499985694885
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 2,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101656,
+      "visible_extent": [
+        0.364410102367401,
+        0.445586681365967,
+        0.870801150798798,
+        0.761463105678558
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 3,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.516042828559875,
+        0.795269429683685,
+        0.728814959526062
+      ],
+      "dropped": 0,
+      "fallback": 4,
+      "minimum_size_fallback": 3,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101657,
+      "visible_extent": [
+        0.308800011873245,
+        0.447417140007019,
+        0.878642201423645,
+        0.787441194057465
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 1,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.396691620349884,
+        0.492237448692322,
+        0.798759877681732,
+        0.721946895122528
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 2,
+      "requested_normal": 12,
+      "requested_stubborn": 2,
+      "seed": 6101658,
+      "visible_extent": [
+        0.33145460486412,
+        0.433038234710693,
+        0.8763627409935,
+        0.779892802238464
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.386362344026566,
+        0.497500002384186,
+        0.79050087928772,
+        0.699940323829651
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 3,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101659,
+      "visible_extent": [
+        0.318946212530136,
+        0.444186478853226,
+        0.867803633213043,
+        0.764900147914886
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 4,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.360000014305115,
+        0.497500002384186,
+        0.830555498600006,
+        0.714199602603912
+      ],
+      "dropped": 0,
+      "fallback": 5,
+      "minimum_size_fallback": 1,
+      "requested_normal": 13,
+      "requested_stubborn": 2,
+      "seed": 6101660,
+      "visible_extent": [
+        0.292720884084702,
+        0.430442929267883,
+        0.891961336135864,
+        0.777950644493103
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 3,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.519048273563385,
+        0.78722220659256,
+        0.717710912227631
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 2,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101661,
+      "visible_extent": [
+        0.308800011873245,
+        0.4442058801651,
+        0.868926584720612,
+        0.777130007743835
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 6
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.398403853178024,
+        0.512392103672028,
+        0.78722220659256,
+        0.72872918844223
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 1,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101662,
+      "visible_extent": [
+        0.330259084701538,
+        0.439460694789886,
+        0.876466333866119,
+        0.781547725200653
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.372514754533768,
+        0.537370562553406,
+        0.78722220659256,
+        0.702499985694885
+      ],
+      "dropped": 0,
+      "fallback": 4,
+      "minimum_size_fallback": 1,
+      "requested_normal": 8,
+      "requested_stubborn": 3,
+      "seed": 6101663,
+      "visible_extent": [
+        0.309607028961182,
+        0.440993309020996,
+        0.88201367855072,
+        0.76354044675827
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.360000014305115,
+        0.497500002384186,
+        0.814106225967407,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 4,
+      "minimum_size_fallback": 3,
+      "requested_normal": 13,
+      "requested_stubborn": 2,
+      "seed": 6101664,
+      "visible_extent": [
+        0.308800011873245,
+        0.440166473388672,
+        0.874194324016571,
+        0.781630039215088
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.497500002384186,
+        0.791638612747192,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 5,
+      "minimum_size_fallback": 3,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101665,
+      "visible_extent": [
+        0.308800011873245,
+        0.430140316486359,
+        0.880695641040802,
+        0.780755043029785
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.367751955986023,
+        0.514215886592865,
+        0.797804534435272,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 4,
+      "minimum_size_fallback": 4,
+      "requested_normal": 14,
+      "requested_stubborn": 3,
+      "seed": 6101666,
+      "visible_extent": [
+        0.316040396690369,
+        0.441859304904938,
+        0.877284228801727,
+        0.781630039215088
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 6
+      }
+    },
+    {
+      "actual_normal": 10,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.379999995231628,
+        0.511419773101807,
+        0.784178733825684,
+        0.71459287405014
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 2,
+      "requested_normal": 10,
+      "requested_stubborn": 2,
+      "seed": 6101667,
+      "visible_extent": [
+        0.328799962997437,
+        0.455464094877243,
+        0.877748012542725,
+        0.786332845687866
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 1,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.39044451713562,
+        0.522522449493408,
+        0.830555498600006,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 2,
+      "requested_normal": 12,
+      "requested_stubborn": 3,
+      "seed": 6101668,
+      "visible_extent": [
+        0.32587131857872,
+        0.450808078050613,
+        0.889194905757904,
+        0.777546405792236
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.381647408008575,
+        0.497500002384186,
+        0.78722220659256,
+        0.708333313465118
+      ],
+      "dropped": 0,
+      "fallback": 6,
+      "minimum_size_fallback": 4,
+      "requested_normal": 12,
+      "requested_stubborn": 3,
+      "seed": 6101669,
+      "visible_extent": [
+        0.329348027706146,
+        0.440166473388672,
+        0.860240399837494,
+        0.78112119436264
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 5,
+        "hind": 2,
+        "shoulder": 3
+      }
+    },
+    {
+      "actual_normal": 9,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.379999995231628,
+        0.497500002384186,
+        0.78722220659256,
+        0.718407511711121
+      ],
+      "dropped": 0,
+      "fallback": 5,
+      "minimum_size_fallback": 3,
+      "requested_normal": 9,
+      "requested_stubborn": 3,
+      "seed": 6101670,
+      "visible_extent": [
+        0.328799962997437,
+        0.443644762039185,
+        0.865378737449646,
+        0.78129780292511
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.400000005960464,
+        0.497500002384186,
+        0.830555498600006,
+        0.725000023841858
+      ],
+      "dropped": 0,
+      "fallback": 5,
+      "minimum_size_fallback": 3,
+      "requested_normal": 14,
+      "requested_stubborn": 2,
+      "seed": 6101671,
+      "visible_extent": [
+        0.348800003528595,
+        0.440166473388672,
+        0.891162633895874,
+        0.781630039215088
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 3,
+        "hind": 3,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.354932129383087,
+        0.497500002384186,
+        0.78722220659256,
+        0.702232182025909
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 3,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101672,
+      "visible_extent": [
+        0.302036225795746,
+        0.444186478853226,
+        0.860251724720001,
+        0.781615674495697
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 1,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 13,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.497500002384186,
+        0.805892407894135,
+        0.707900941371918
+      ],
+      "dropped": 0,
+      "fallback": 4,
+      "minimum_size_fallback": 3,
+      "requested_normal": 13,
+      "requested_stubborn": 3,
+      "seed": 6101673,
+      "visible_extent": [
+        0.308800011873245,
+        0.431818187236786,
+        0.868484020233154,
+        0.769329011440277
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 10,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.508930206298828,
+        0.798251152038574,
+        0.698797702789307
+      ],
+      "dropped": 0,
+      "fallback": 2,
+      "minimum_size_fallback": 1,
+      "requested_normal": 10,
+      "requested_stubborn": 3,
+      "seed": 6101674,
+      "visible_extent": [
+        0.308800011873245,
+        0.445068389177322,
+        0.876054525375366,
+        0.772366106510162
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 2,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.360000014305115,
+        0.532338559627533,
+        0.793418288230896,
+        0.722777485847473
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 1,
+      "requested_normal": 11,
+      "requested_stubborn": 2,
+      "seed": 6101675,
+      "visible_extent": [
+        0.301109999418259,
+        0.474662482738495,
+        0.885938167572021,
+        0.779693126678467
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 12,
+      "actual_stubborn": 2,
+      "center_extent": [
+        0.379999995231628,
+        0.512597680091858,
+        0.787920296192169,
+        0.700091958045959
+      ],
+      "dropped": 0,
+      "fallback": 4,
+      "minimum_size_fallback": 3,
+      "requested_normal": 12,
+      "requested_stubborn": 2,
+      "seed": 6101676,
+      "visible_extent": [
+        0.328799962997437,
+        0.440843403339386,
+        0.881234765052795,
+        0.764819264411926
+      ],
+      "zones": {
+        "back": 4,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 5
+      }
+    },
+    {
+      "actual_normal": 8,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.408419281244278,
+        0.555292308330536,
+        0.78722220659256,
+        0.715569972991943
+      ],
+      "dropped": 0,
+      "fallback": 5,
+      "minimum_size_fallback": 3,
+      "requested_normal": 8,
+      "requested_stubborn": 3,
+      "seed": 6101677,
+      "visible_extent": [
+        0.356505334377289,
+        0.438258111476898,
+        0.869489431381226,
+        0.776271343231201
+      ],
+      "zones": {
+        "back": 2,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 11,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.400000005960464,
+        0.508919358253479,
+        0.78722220659256,
+        0.711166739463806
+      ],
+      "dropped": 0,
+      "fallback": 3,
+      "minimum_size_fallback": 2,
+      "requested_normal": 11,
+      "requested_stubborn": 3,
+      "seed": 6101678,
+      "visible_extent": [
+        0.348800003528595,
+        0.441286981105804,
+        0.873362362384796,
+        0.782672345638275
+      ],
+      "zones": {
+        "back": 5,
+        "belly": 3,
+        "hind": 2,
+        "shoulder": 4
+      }
+    },
+    {
+      "actual_normal": 14,
+      "actual_stubborn": 3,
+      "center_extent": [
+        0.360000014305115,
+        0.51913994550705,
+        0.78722220659256,
+        0.731666624546051
+      ],
+      "dropped": 0,
+      "fallback": 7,
+      "minimum_size_fallback": 5,
+      "requested_normal": 14,
+      "requested_stubborn": 3,
+      "seed": 6101679,
+      "visible_extent": [
+        0.308800011873245,
+        0.44587442278862,
+        0.880468428134918,
+        0.788296699523926
+      ],
+      "zones": {
+        "back": 6,
+        "belly": 5,
+        "hind": 1,
+        "shoulder": 5
+      }
+    }
+  ]
+}

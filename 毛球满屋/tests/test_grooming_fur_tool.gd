@@ -1,7 +1,7 @@
 extends SceneTree
 const Tool=preload("res://scripts/prototype_grooming_fur/tool_geometry.gd")
 const Model=preload("res://scripts/prototype_grooming_fur/model.gd")
-const OUT="res://reports/grooming_fur_service_20261016/"
+const OUT="res://reports/grooming_fur_activation_20261016/"
 var checks: int=0
 var failures: Array=[]
 func check(ok: bool,label: String) -> void:
@@ -37,7 +37,7 @@ func run() -> void:
  check(target.done and m.score==100,"exactly 1200 px/s is allowed")
  m.start_order(0);m.tick(1);target=m.objects[0];p=target.rect.get_center()
  m.begin_gesture(p-Vector2(30,0));m.stroke(p-Vector2(30,0),p+Vector2(30,0),60.0/1500.0)
- check(not target.done and m.score==95,"above threshold with real tooth contact causes one penalty")
+ check(target.done and m.score==100,"ordinary fur at 1500 px/s no longer causes instant pain")
  var vp:=SubViewport.new();vp.size=Vector2i(1920,1080);vp.render_target_update_mode=SubViewport.UPDATE_ALWAYS;root.add_child(vp)
  var game=load("res://scenes/prototype_grooming/fur_demo.tscn").instantiate();vp.add_child(game);await create_timer(.6).timeout
  game.set_process(false)
@@ -84,6 +84,6 @@ func run() -> void:
  game.flush_grooming(1.0/60.0)
  check(absf(game.grooming_speed-900)<1,"reaction movement is excluded from speed calculation")
  DirAccess.make_dir_recursive_absolute(OUT)
- FileAccess.open(OUT+"tool.json",FileAccess.WRITE).store_string(JSON.stringify({"checks":checks,"failures":failures,"colour_samples":count,"average_colour_error":average,"maximum_colour_error":maximum,"speed_limit":Tool.SPEED_LIMIT,"edge_length":Tool.EDGE_LENGTH,"edge_half_width":Tool.EDGE_HALF_WIDTH}," "))
+ FileAccess.open(OUT+"tool.json",FileAccess.WRITE).store_string(JSON.stringify({"checks":checks,"failures":failures,"colour_samples":count,"average_colour_error":average,"maximum_colour_error":maximum,"extreme_speed":Model.Comfort.EXTREME_SPEED,"instant_speed_penalty":false,"edge_length":Tool.EDGE_LENGTH,"edge_half_width":Tool.EDGE_HALF_WIDTH}," "))
  print("FUR TOOL: ",checks," checks; ",failures.size()," failures")
  game.queue_free();vp.queue_free();await process_frame;quit(0 if failures.is_empty() else 1)

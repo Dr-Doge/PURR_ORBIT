@@ -189,7 +189,7 @@ func update_ui() -> void:
  requirements.text=("✓" if cleaning_done else "○")+(" 梳理" if model.kind=="calico" else " 擦拭")
  if model.needs_nails:requirements.text+="    %s 修甲 %d/4"%["✓" if cut==4 else "○",cut]
  progress.value=float(cut)/4.0*100.0 if model.stage=="nails" else model.cleaning_progress()*100.0
- var default_hint: String="向右顺梳 →，尾部也可向上 ↑；毛结慢梳，灰尘上下扫，跳蚤点三下" if model.kind=="calico" else "可快速反复擦；积灰上下擦 ↕，油块左右擦 ↔"
+ var default_hint: String="按住左键激活，身体／尾巴／轮廓均向右一梳脱落 →；毛结慢梳，灰尘上下扫，跳蚤点三下" if model.kind=="calico" else "可快速反复擦；积灰上下擦 ↕，油块左右擦 ↔"
  if model.stage=="nails":default_hint="按住左键，从指甲一侧横向划到另一侧；绿色区间最合适"
  if model.stage=="arrival":default_hint="下一位顾客正在入座"
  if model.stage=="to_nails":default_hint="全身护理完成，切换到猫爪"
