@@ -1,7 +1,7 @@
 extends SceneTree
 const Tool=preload("res://scripts/prototype_grooming_fur/tool_geometry.gd")
 const Model=preload("res://scripts/prototype_grooming_fur/model.gd")
-const OUT="res://reports/grooming_fur_sizes_20261015/"
+const OUT="res://reports/grooming_fur_service_20261016/"
 var checks: int=0
 var failures: Array=[]
 func check(ok: bool,label: String) -> void:

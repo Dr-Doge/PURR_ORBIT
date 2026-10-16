@@ -1,6 +1,6 @@
 extends SceneTree
 const M=preload("res://scripts/prototype_grooming_fur/model.gd")
-const OUT="res://reports/grooming_fur_sizes_20261015/"
+const OUT="res://reports/grooming_fur_service_20261016/"
 var checks: int=0
 var failures: Array=[]
 func check(ok: bool,label: String) -> void:
@@ -38,6 +38,7 @@ func finish(m: RefCounted) -> void:
   elif obj.rule=="edge":
    for y in range(int(obj.rect.position.y),int(obj.rect.end.y)+10,16):
     swipe(m,Vector2(obj.rect.position.x-8,y),Vector2(obj.rect.end.x+8,y))
+    swipe(m,Vector2(obj.rect.end.x+8,y),Vector2(obj.rect.position.x-8,y))
 func _initialize() -> void:call_deferred("run")
 func run() -> void:
  DirAccess.make_dir_recursive_absolute(OUT)
@@ -48,8 +49,8 @@ func run() -> void:
  var all_fixed: bool=true
  for m in [big,small]:
   for obj in m.objects:
-   if obj.rule=="patch" and obj.rect.size!=Vector2(175,138):all_fixed=false
- check(all_fixed,"patches stay 175x138 on both cat sizes")
+   if obj.rule=="patch" and obj.rect.size!=M.PATCH_SIZE:all_fixed=false
+ check(all_fixed,"patches stay 96x72 on both cat sizes")
  var tail_tests: int=0
  for scale in [1.0,.5]:
   var template=make(scale)
@@ -62,11 +63,12 @@ func run() -> void:
     check(target.done and m.score==100,"local tail patch accepts right/up without head start "+str(scale)+"/"+str(obj.id)+"/"+str(axis));tail_tests+=1
   var m=make(scale);var tail: Dictionary={}
   for obj in m.objects:
-   if obj.type=="edge_gray_tail":tail=obj
+   if obj.rule=="edge" and (obj.rect.get_center().x-m.body_rect.position.x)/m.body_rect.size.x>=.83:tail=obj
   check(not tail.is_empty(),"tail outline exists at size "+str(scale))
   for y in range(int(tail.rect.position.y),int(tail.rect.end.y)+10,12):
    swipe(m,Vector2(tail.rect.position.x-8,y),Vector2(tail.rect.end.x+8,y))
-  check(tail.done,"tail outline erases locally at size "+str(scale))
+   swipe(m,Vector2(tail.rect.end.x+8,y),Vector2(tail.rect.position.x-8,y))
+  check(tail.done,"tail outline detaches after alternating brushing at size "+str(scale))
  check(tail_tests>=4,"both tail variants contain tested visible patches")
  finish(big);finish(small)
  check(big.settled and big.wallet==100,"big cat finishes using local object strokes")
@@ -91,7 +93,7 @@ func run() -> void:
  for obj in game.model.objects:
   if obj.rule!="patch":continue
   var sprite: Sprite2D=game.view.object_sprites[obj.id].sprite
-  if not (Vector2(sprite.texture.get_size())*sprite.scale).is_equal_approx(Vector2(175,138)):all_fixed=false
+  if not (Vector2(sprite.texture.get_size())*sprite.scale).is_equal_approx(M.PATCH_SIZE):all_fixed=false
  check(all_fixed,"rendered small-cat patches retain full logical size")
  await process_frame;await RenderingServer.frame_post_draw;vp.get_texture().get_image().save_png(OUT+"09_small_cat.png")
  # Local tail operation through real GUI mouse input, with controlled frame time.
@@ -105,6 +107,6 @@ func run() -> void:
  e=InputEventMouseButton.new();e.button_index=MOUSE_BUTTON_LEFT;e.position=at+Vector2(12,0);e.pressed=false;vp.push_input(e,true);await process_frame
  check(tail.done and game.model.score==100,"real GUI locally brushes small cat tail without penalty")
  await process_frame;await RenderingServer.frame_post_draw;vp.get_texture().get_image().save_png(OUT+"10_small_tail_brushed.png")
- FileAccess.open(OUT+"sizes.json",FileAccess.WRITE).store_string(JSON.stringify({"checks":checks,"failures":failures,"large_patch_count":count(big,"patch"),"small_patch_count":count(small,"patch"),"patch_size":[175,138],"tail_patch_tests":tail_tests}," "))
+ FileAccess.open(OUT+"sizes.json",FileAccess.WRITE).store_string(JSON.stringify({"checks":checks,"failures":failures,"large_patch_count":count(big,"patch"),"small_patch_count":count(small,"patch"),"patch_size":[96,72],"tail_patch_tests":tail_tests}," "))
  print("FUR SIZES: ",checks," checks; ",failures.size()," failures")
  game.queue_free();vp.queue_free();await process_frame;quit(0 if failures.is_empty() else 1)

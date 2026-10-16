@@ -34,4 +34,4 @@
 
 ## 分层毛发新场景
 
-新版另建[fur_demo.tscn](fur_demo.tscn)，按F6。完整操作与限制见[FUR_DEMO.md](FUR_DEMO.md)。main.tscn仍保留v2规则；新的房间／台面、灰白猫逐片脱落和轮廓擦除只在新场景中使用。
+新版另建[fur_demo.tscn](fur_demo.tscn)，按F6。完整操作与限制见[FUR_DEMO.md](FUR_DEMO.md)。main.tscn仍保留v2规则；新的房间／台面、灰白猫逐片脱落和轮廓往返梳理只在新场景中使用。

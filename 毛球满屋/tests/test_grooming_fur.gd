@@ -1,6 +1,6 @@
 extends SceneTree
 const M=preload("res://scripts/prototype_grooming_fur/model.gd")
-const OUT="res://reports/grooming_fur_sizes_20261015/"
+const OUT="res://reports/grooming_fur_service_20261016/"
 var checks: int=0
 var failures: Array=[]
 func check(ok: bool,label: String) -> void:
@@ -23,6 +23,7 @@ func finish_cat(m: RefCounted) -> void:
  for cycle in range(4):
   for y in range(int(m.body_rect.position.y),int(m.body_rect.end.y)+20,24):
    stroke(m,Vector2(m.body_rect.position.x-60,y),Vector2(m.body_rect.end.x+60,y))
+   stroke(m,Vector2(m.body_rect.end.x+60,y),Vector2(m.body_rect.position.x-60,y))
 func _initialize() -> void:call_deferred("run")
 func run() -> void:
  var m=M.new();m.tick(1)
@@ -31,7 +32,7 @@ func run() -> void:
  var counts: Dictionary={}
  for obj in m.objects:counts[obj.rule]=counts.get(obj.rule,0)+1
  check(counts.get("patch",0)>=30,"body contains repeated modular fur patches")
- check(counts.get("edge",0)>=4,"erasable silhouette segments exist")
+ check(counts.get("edge",0)>=4,"complete outline hairlocks exist")
  check(counts.get("knot",0)==2 and counts.get("dust",0)==2 and counts.get("flea",0)==1,"three distinct special demands")
  var o: Dictionary=find(m,"patch");var p: Vector2=o.rect.get_center();var original: float=o.sum
  stroke(m,p+Vector2(60,0),p-Vector2(60,0))
@@ -48,7 +49,7 @@ func run() -> void:
   if p!=Vector2.ZERO:break
  # Scan a short slice across the first edge; masks must retain unbrushed pixels.
  stroke(m,p-Vector2(10,0),p+Vector2(10,0))
- check(o.sum<before and o.sum>0 and not o.done,"outline uses partial erasure instead of whole-patch removal")
+ check(o.sum==before and not o.done,"short contour stroke keeps complete hairlock instead of erasing")
  o=find(m,"knot");p=o.rect.get_center();before=o.sum
  stroke(m,p-Vector2(90,0),p+Vector2(90,0),.4)
  check(o.sum==before,"tangle rejects normal fast pace")

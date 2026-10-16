@@ -1,0 +1,14 @@
+{
+  "baseline_commit": "11723f5bae7c42e539dd3ae2027dee8e2e9b87e3",
+  "engine": "4.7.1.stable.official.a13da4feb",
+  "checks": 154,
+  "failures": 0,
+  "source_sha256": {
+    "毛球满屋/scripts/prototype_grooming_fur/assets.gd": "ce76ec2ff5a6d3ed800a5752aea9519cace4911b5ab34aedde2d885db5e24589",
+    "毛球满屋/scripts/prototype_grooming_fur/controller.gd": "6270963d1cf0da5cda91ee2554659225623d76416dd5f30a32807d3d1f013610",
+    "毛球满屋/scripts/prototype_grooming_fur/model.gd": "2f36b0e2965777912af7ac52a0822469c003001ac4eefa8079439e192390c18e",
+    "毛球满屋/scripts/prototype_grooming_fur/service_view.gd": "29676d6cb0c5329142ca5f8af7048f4e0b8a7bded132e92924cd1f69793b57f7",
+    "毛球满屋/scripts/prototype_grooming_fur/tool_geometry.gd": "2a06e6c38e30e444c59197c3ab8c02708628e2ff8cfc2129e6704b21fcde4f5b",
+    "毛球满屋/scripts/prototype_grooming_fur/coat_cleaning.gdshader": "27b9db3577cf610898071c73f32bff7ad6a1090086811da94bb0db6c9ea66502"
+  }
+}

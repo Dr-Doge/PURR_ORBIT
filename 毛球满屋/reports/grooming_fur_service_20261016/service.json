@@ -1,0 +1,18 @@
+{
+ "checks": 33,
+ "failures": [],
+ "layout": [
+  {
+   "outlines": 14,
+   "patches": 42,
+   "scale": 1.0
+  },
+  {
+   "outlines": 14,
+   "patches": 9,
+   "scale": 0.5
+  }
+ ],
+ "lost_opaque_pixels": 0,
+ "source_opaque_pixels": 14249
+}

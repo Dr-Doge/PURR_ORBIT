@@ -1,5 +1,5 @@
 extends SceneTree
-const OUT="res://reports/grooming_fur_sizes_20261015/"
+const OUT="res://reports/grooming_fur_service_20261016/"
 var vp: SubViewport
 var game: Control
 var checks: int=0
@@ -62,6 +62,7 @@ func run() -> void:
   for y in range(125,975,26):
    if m.stage!="cleaning" or m.served>0:break
    await swipe(Vector2(165,y),Vector2(1755,y),.18)
+   if m.stage=="cleaning":await swipe(Vector2(1755,y),Vector2(165,y),.18)
   if m.stage!="cleaning" or m.served>0:break
  var remaining: Array=[]
  for item in m.objects:

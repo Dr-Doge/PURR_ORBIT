@@ -67,12 +67,15 @@ func sync() -> void:
    material.set_shader_parameter("coat_map",model.assets.texture(model.kind+"_clean"))
    material.set_shader_parameter("match_coat",model.kind=="calico" and obj.rule in ["patch","edge","knot"])
    material.set_shader_parameter("preserve_outline",obj.rule in ["edge","knot"])
-   if obj.rule=="edge":
+   if model.kind=="calico":
     var white:=Image.create(2,2,false,Image.FORMAT_RGBA8);white.fill(Color.WHITE)
     material.set_shader_parameter("body_mask",ImageTexture.create_from_image(white))
    var uv: Vector2=(obj.rect.position-model.body_rect.position)/model.body_rect.size
    var uv_size: Vector2=obj.rect.size/model.body_rect.size
    material.set_shader_parameter("region_in_body",Vector4(uv.x,uv.y,uv_size.x,uv_size.y))
+   material.set_shader_parameter("patch_angle",obj.get("draw_angle",0.0))
+   material.set_shader_parameter("complete_sprite",model.kind=="calico")
+   sprite.rotation=obj.get("draw_angle",0.0)
    sprite.material=material;sprite.position=obj.rect.get_center();sprite.scale=obj.rect.size/Vector2(sprite.texture.get_size())
    dirt.add_child(sprite)
    object_sprites[obj.id]={"sprite":sprite,"texture":mask_texture,"version":-1}
@@ -93,7 +96,7 @@ func sync() -> void:
  base.position=rect.get_center();base.scale=rect.size/Vector2(base.texture.get_size())
  for obj in model.objects:
   var entry: Dictionary=object_sprites[obj.id]
-  if entry.sprite.visible and obj.done and obj.rule in ["patch","knot"]:detach_patch(obj)
+  if entry.sprite.visible and obj.done and obj.rule in ["patch","edge","knot"]:detach_patch(obj)
   entry.sprite.position=obj.rect.get_center()
   entry.sprite.visible=not obj.done
   if entry.version!=obj.version:
@@ -188,6 +191,10 @@ func draw_foreground(canvas: Node2D) -> void:
    canvas.draw_style_box(label_style(),Rect2(at-Vector2(7,23),Vector2(150,34)))
    canvas.draw_string(ThemeDB.fallback_font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,22,Color(.28,.17,.08))
   if model.kind=="calico":
+   for obj in model.objects:
+    if obj.rule=="edge" and not obj.done and obj.rect.grow(20).has_point(mouse):
+     canvas.draw_string(ThemeDB.fallback_font,mouse+Vector2(30,-65),"轮廓来回梳 %d/%d"%[obj.passes,model.EDGE_PASSES],HORIZONTAL_ALIGNMENT_LEFT,-1,23,Color(1,.9,.65))
+     break
    var points: PackedVector2Array=Tool.edge_points(mouse)
    var color:=Color(.35,1.0,.95,.95)
    if game!=null and game.grooming_speed>Tool.SPEED_LIMIT:color=Color(1,.25,.15)
@@ -220,7 +227,7 @@ func detach_patch(obj: Dictionary) -> void:
   var material: ShaderMaterial=object_sprites[obj.id].sprite.material.duplicate()
   var white:=Image.create(2,2,false,Image.FORMAT_RGBA8);white.fill(Color.WHITE)
   material.set_shader_parameter("remaining_mask",ImageTexture.create_from_image(white));sprite.material=material
-  sprite.position=obj.rect.get_center()*(size/C.CANVAS);sprite.rotation=0.0;sprite.modulate=Color.WHITE;sprite.visible=true
+  sprite.position=obj.rect.get_center()*(size/C.CANVAS);sprite.rotation=obj.get("draw_angle",0.0);sprite.modulate=Color.WHITE;sprite.visible=true
   p.left=.45;p.total=.45;p.velocity=Vector2(90,-160)
   break
 
