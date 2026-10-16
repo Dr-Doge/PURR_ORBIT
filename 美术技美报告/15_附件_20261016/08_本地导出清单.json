@@ -1,0 +1,245 @@
+{
+  "scope": "本地项目文件，清单不代表这些资源已随报告提交或接入场景",
+  "files": [
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/01_普通猫乱毛_朝上待机.png",
+      "bytes": 996029,
+      "sha256": "0d369f41cb6b4a594bba4c97d5bfc1ed45dff6e540f49a8bd161ec47e128f21b"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/01_普通猫乱毛_朝上行走.png",
+      "bytes": 517376,
+      "sha256": "c6edab6ab42bca1cf7973bdd5bca7e7b0996a820f929291d839dbf08694eed7e"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/01_普通猫乱毛_朝下待机.png",
+      "bytes": 740145,
+      "sha256": "9b9b1d64afacebb92b887e7189cb41238bdee9da70065c42ac183bbebad29c2b"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/01_普通猫乱毛_朝下行走.png",
+      "bytes": 427048,
+      "sha256": "b545592fc49c80a5c7a6babba5c6c9bdad7c2a09a2f6e1980421bc485961c790"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/01_普通猫乱毛_朝左待机.png",
+      "bytes": 677930,
+      "sha256": "417ebd9dfd1278eb8c17b396a70dbf845235c883decf673a136c369efcf7f00f"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/01_普通猫乱毛_朝左行走.png",
+      "bytes": 447400,
+      "sha256": "fc946d7551043da28be9c774d84ca61de9e991f01cf3c4df931a56166084543d"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/原视频/01_普通猫乱毛_朝上待机.mp4",
+      "bytes": 1357412,
+      "sha256": "7ba94df1d2b51f561a9f9d196044df2cd1c3a464643c503a6bf2ace413686e46"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/原视频/01_普通猫乱毛_朝上行走.mp4",
+      "bytes": 1518912,
+      "sha256": "f11c4c306af3fe5a12331cbebb32a0bfbfbb535523446b10507041079edd0218"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/原视频/01_普通猫乱毛_朝下待机.mp4",
+      "bytes": 1298500,
+      "sha256": "1c43fe8fd00816035e54e8ff8c2dcb8d06f67376f3f9e65e1eb132caf6bde0f2"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/原视频/01_普通猫乱毛_朝下行走.mp4",
+      "bytes": 1388706,
+      "sha256": "f7908351a2582fc7f0421224d5ef689618209466a1411020961bbf95d3f662e8"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/原视频/01_普通猫乱毛_朝左待机.mp4",
+      "bytes": 1290375,
+      "sha256": "27812e6366e1cd5943c4180023e01b7c4add63ad2b3bf9a7f91d48958cd55c46"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/原视频/01_普通猫乱毛_朝左行走.mp4",
+      "bytes": 1574226,
+      "sha256": "8f288f4d93c4d14a4dec3a1c7c896a1321dddefca3fc1e566e904fc330a3631e"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/预览/01_普通猫乱毛_朝上待机.gif",
+      "bytes": 512306,
+      "sha256": "9dd2dceca3db7de49f876961702294e06fa7ca3102e9bf936f70e202c87a457e"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/预览/01_普通猫乱毛_朝上行走.gif",
+      "bytes": 262878,
+      "sha256": "4af7a60cc226c7eaaa7190cddaeee525ccb709b70480fb09e891348bd2633704"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/预览/01_普通猫乱毛_朝下待机.gif",
+      "bytes": 362835,
+      "sha256": "81946c20c50b4d0aa510f299a51756122033f5917b0de81590099707e0525ede"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/预览/01_普通猫乱毛_朝下行走.gif",
+      "bytes": 208005,
+      "sha256": "62e36a4e41d25d1dcc216ae31988eb10d95079f8e2e410461989aa295eb237f2"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/预览/01_普通猫乱毛_朝左待机.gif",
+      "bytes": 341878,
+      "sha256": "269b7e0c9139d4d01297c9e65b94df4adefcb0fd3f1585486b460b1c39de4cef"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/乱毛/预览/01_普通猫乱毛_朝左行走.gif",
+      "bytes": 223049,
+      "sha256": "033cbca2787fa96a592f87041657a85e51d42956d13fa7a9a20918e22f291a82"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/01_普通猫_朝上待机.png",
+      "bytes": 905070,
+      "sha256": "28f7bde795b2bbc7f40502856e4adce9de26c855968b1f4622068e4682a1a833"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/01_普通猫_朝上行走.png",
+      "bytes": 507377,
+      "sha256": "426cdfe733482229be9bbcb5f53e74fce64e1618cf75c03ec77a9d194f418097"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/01_普通猫_朝下待机.png",
+      "bytes": 677592,
+      "sha256": "2994417848fde9f986d29757aa8e6e3978756ebde0422f0e19552affada4e4b7"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/01_普通猫_朝下行走.png",
+      "bytes": 392297,
+      "sha256": "d3cdfd629eb558f40d88afa484f0f2023cdacdfa8d891ceb73f4cf3248735036"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/01_普通猫_朝左待机.png",
+      "bytes": 631510,
+      "sha256": "64be512dd26db50a92b9e9d280eba065855f44b4f06673c5b3a580f08ddc0a56"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/01_普通猫_朝左行走.png",
+      "bytes": 385836,
+      "sha256": "d567ee7fab9926c5e8d448797460ca29c8b8ab44f16a4dbf8d3f2e514d468aba"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/原视频/01_普通猫_朝上待机.mp4",
+      "bytes": 1159983,
+      "sha256": "c2aad82f2683e706b7cb31c39c46968312bb2f7dd158b676fb89346f0b657ecf"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/原视频/01_普通猫_朝上行走.mp4",
+      "bytes": 1381014,
+      "sha256": "d0a258784fa78eb8e8dc08210fa4398c5f38c762a5f890cb65c438ba407787c8"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/原视频/01_普通猫_朝下待机.mp4",
+      "bytes": 1340668,
+      "sha256": "81cde440bc4891541687be15033802fd118857fde428c9ac3b72b3d744fbeefe"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/原视频/01_普通猫_朝下行走.mp4",
+      "bytes": 1435278,
+      "sha256": "b372663923c1f7c0bf41746a6f114e03d5858023a221eb89d3b617a0047852c6"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/原视频/01_普通猫_朝左待机.mp4",
+      "bytes": 1255826,
+      "sha256": "f9fecdac6d4b5cab94dcf32eb76d907da74656b60a4d68d765aa38a75bbaf334"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/原视频/01_普通猫_朝左行走.mp4",
+      "bytes": 1497201,
+      "sha256": "aa868feb0d4044a100ffbb7a70932ce3f6686faf5a93d4b3f83bfbfce0d7083f"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/预览/01_普通猫_朝上待机.gif",
+      "bytes": 465980,
+      "sha256": "1a8b620cee1bed10f8d788f729bd237a24081f8881a9b26f08c67aa26e3d8b51"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/预览/01_普通猫_朝上行走.gif",
+      "bytes": 255968,
+      "sha256": "b66ec16f766ad0647a5fe96fe4caf97319aba38368f7be2f9910b124dd04caa2"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/预览/01_普通猫_朝下待机.gif",
+      "bytes": 323685,
+      "sha256": "035cf689e4c1239caa06734e47320ec2328c062badd3bc9cab076a20d77e4489"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/预览/01_普通猫_朝下行走.gif",
+      "bytes": 187518,
+      "sha256": "092f24e36a5471339d349e971484790466290f2ea54af210012f5d6ea103d4c3"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/预览/01_普通猫_朝左待机.gif",
+      "bytes": 330776,
+      "sha256": "52831912048c865ef2fe4e2d5b93669b1d2091dcd7ebf945a1460a41ebc645cb"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/01_普通猫/正常/预览/01_普通猫_朝左行走.gif",
+      "bytes": 196457,
+      "sha256": "f4eac121fd65b0f9bb7d39995b24d6955160a3edf7f753ece97395d40f67ce97"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/09_机械猫/旧化/09_机械猫旧化_朝左待机.png",
+      "bytes": 682427,
+      "sha256": "8acc7a94275677973f76872ec22eed8202bdaacb3a6abac8c73da2f4e84498d0"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/09_机械猫/旧化/09_机械猫旧化_朝左行走.png",
+      "bytes": 654812,
+      "sha256": "b95aae7c20be4a27b0821e5077eb3d30af79ca7998474ee1d99030d87830e0f8"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/09_机械猫/旧化/原视频/09_机械猫旧化_朝左待机.mp4",
+      "bytes": 1348143,
+      "sha256": "226c8b09380db9aab457ab44a6969d93748f0e344697a01e60ad010b0d9fb3f3"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/09_机械猫/旧化/原视频/09_机械猫旧化_朝左行走.mp4",
+      "bytes": 1463441,
+      "sha256": "69c635b232bf5b52d861373918626aeb9a29c91400534eb94592d6c8ae12ec81"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/09_机械猫/旧化/预览/09_机械猫旧化_朝左待机.gif",
+      "bytes": 300035,
+      "sha256": "a0e1a4defb00e790edfdbc8caf26fa107619596125417ab6163c13241d636fc1"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/09_机械猫/旧化/预览/09_机械猫旧化_朝左行走.gif",
+      "bytes": 286689,
+      "sha256": "d27836b94f244018c417bc96cadb97e4e0b689026349be474d4238b152ea60e4"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/09_机械猫/正常/09_机械猫_朝左待机.png",
+      "bytes": 737413,
+      "sha256": "9c0e9e1f6a7ee3a253f6051672be2fe782b8de161e0f1eeb4eeeba0d27c9a01c"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/09_机械猫/正常/09_机械猫_朝左行走.png",
+      "bytes": 701982,
+      "sha256": "ffe09b81b79ae7253ff31d5503ac0c35c48d533b5a0ba4d8ccc9a5728f38dfe2"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/09_机械猫/正常/原视频/09_机械猫_朝左待机.mp4",
+      "bytes": 1270781,
+      "sha256": "b50a3d02e137e10ad8bb9236e6ee1de9bbf66b291a2f45f51bf04049e21df3ee"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/09_机械猫/正常/原视频/09_机械猫_朝左行走.mp4",
+      "bytes": 1483689,
+      "sha256": "6a18dd9e96cb1a7ae9b2d618d5ef320abed707b0106f5f07926fd4c2fee320b8"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/09_机械猫/正常/预览/09_机械猫_朝左待机.gif",
+      "bytes": 333684,
+      "sha256": "8dbf2faf42142f5065c3297e0ac0a175b608d97cd1fdb356478ab5cc98a1603d"
+    },
+    {
+      "path": "毛球满屋/Asset/Cat animation/09_机械猫/正常/预览/09_机械猫_朝左行走.gif",
+      "bytes": 313110,
+      "sha256": "701a76236f70832b1393ba2a850b7e28fc75ab142ad385878ce428e45eb94d05"
+    }
+  ]
+}
