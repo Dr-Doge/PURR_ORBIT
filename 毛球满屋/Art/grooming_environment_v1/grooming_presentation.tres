@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/prototype_grooming_fur/presentation_profile.gd" id="1"]
+[ext_resource type="Texture2D" path="res://Art/grooming_environment_v1/room_background.png" id="2"]
+[ext_resource type="Texture2D" path="res://Art/grooming_environment_v1/grooming_table.png" id="3"]
+[ext_resource type="Texture2D" path="res://Art/grooming_fur_v1/resources/cat_clean.tres" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/prototype_grooming/轮廓毛发摆放.tscn" id="5"]
+
+[resource]
+script = ExtResource("1")
+room_texture = ExtResource("2")
+table_texture = ExtResource("3")
+cat_texture = ExtResource("4")
+outline_layout = ExtResource("5")

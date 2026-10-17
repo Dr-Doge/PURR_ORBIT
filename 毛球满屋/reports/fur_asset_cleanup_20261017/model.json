@@ -1,0 +1,73 @@
+{
+ "checks": 4213,
+ "failures": [],
+ "layouts": [
+  {
+   "coverage": {
+    "body": [
+     1086,
+     1106
+    ],
+    "chest": [
+     520,
+     537
+    ],
+    "tail": [
+     698,
+     703
+    ]
+   },
+   "edges": 52,
+   "manual_foot_overlaps": [
+    "大猫摆放区/可编辑轮廓/躯干/毛条_327_edge_gray_back",
+    "大猫摆放区/可编辑轮廓/躯干/毛条_327_edge_gray_back3"
+   ],
+   "outline_regions": {
+    "body": 18,
+    "chest": 5,
+    "tail": 29
+   },
+   "patches": 337,
+   "regions": {
+    "body": 188,
+    "chest": 84,
+    "tail": 117
+   },
+   "scale": 1.0
+  },
+  {
+   "coverage": {
+    "body": [
+     1056,
+     1106
+    ],
+    "chest": [
+     510,
+     537
+    ],
+    "tail": [
+     685,
+     703
+    ]
+   },
+   "edges": 52,
+   "manual_foot_overlaps": [
+    "小猫摆放区/可编辑轮廓/躯干/毛条_083_edge_gray_back",
+    "小猫摆放区/可编辑轮廓/躯干/毛条_083_edge_gray_back2",
+    "小猫摆放区/可编辑轮廓/躯干/毛条_083_edge_gray_back3"
+   ],
+   "outline_regions": {
+    "body": 18,
+    "chest": 6,
+    "tail": 28
+   },
+   "patches": 76,
+   "regions": {
+    "body": 55,
+    "chest": 26,
+    "tail": 47
+   },
+   "scale": 0.5
+  }
+ ]
+}

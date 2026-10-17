@@ -1,0 +1,26 @@
+[
+  {
+    "Path": "C:\\Users\\ruohaojing\\Desktop\\爽开\\毛球满屋\\scripts\\prototype_grooming_fur\\brush_config.gd",
+    "Hash": "5D263F2BAD4E9398E14156DB0E2F799D273331F27CDF5BC34152F23BF54C30DE"
+  },
+  {
+    "Path": "C:\\Users\\ruohaojing\\Desktop\\爽开\\毛球满屋\\scripts\\prototype_grooming_fur\\model.gd",
+    "Hash": "985FA75856B3B3F6DED51BFA1E5342285DB67BF01A0247776B6A82DA7E7A5619"
+  },
+  {
+    "Path": "C:\\Users\\ruohaojing\\Desktop\\爽开\\毛球满屋\\scripts\\prototype_grooming_fur\\controller.gd",
+    "Hash": "F17B736BF3F9596092AD0E1DB289B2B1FD6FC4BAB05E7ECA26FF2D5731692483"
+  },
+  {
+    "Path": "C:\\Users\\ruohaojing\\Desktop\\爽开\\毛球满屋\\scripts\\prototype_grooming_fur\\service_view.gd",
+    "Hash": "6A27DEB8DA576130D3C1DD8151A75F3CA39324E2917B9356BDB075071796F708"
+  },
+  {
+    "Path": "C:\\Users\\ruohaojing\\Desktop\\爽开\\毛球满屋\\scripts\\prototype_grooming_fur\\coat_cleaning.gdshader",
+    "Hash": "8472E06FDC69234776EE7FC1AB06CBD037F7AA363362533391C28D90208634EB"
+  },
+  {
+    "Path": "C:\\Users\\ruohaojing\\Desktop\\爽开\\毛球满屋\\scenes\\prototype_grooming\\fur_demo.tscn",
+    "Hash": "9A42EF541922CA5CD1DBC425F62E0F9F77440BF21C38401EFC83A59E2DB05C25"
+  }
+]

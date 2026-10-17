@@ -1526,3 +1526,187 @@ IMP-20261016-005已实装。用户确认扩大污渍、覆盖整个身躯而非�
 | GROOM-ROBOT-DIRT-RESISTANCE | 顽固soot=8、tar=10有效单程，替代4／5，约4／5次往返；每单程行程、自由多方向、渐隐与抗微抖规则不变。普通耐擦3.0及48px作用范围不变 |
 
 代码scripts/prototype_grooming_robot/{config,generator}.gd，配置导出reports/grooming_robot_coverage_20261016/config.json。603模型＋26双尺寸输入／图片＝629项通过；80seed每单4区域，实际8—14普通／2—3顽固；所有尺寸超过旧上限1.25倍，旧4／5次不能清完顽固。可见范围均达到x<.39／>.85、y<.52／>.74。6模型及2GUI整单唯一付120，GPU透明度仍正确。详细报告同目录README；旧004证据保留，精确参数与真人手感待校准。无新EXE，未提交／push。
+
+### 29.13 2026-10-17初始猫纯梳毛、拉扯回弹与慢落毛发（交互沿用，落毛参数已由29.14替代）
+
+IMP-20261017-001，覆盖独立fur_demo普通猫29.10.1及29.9相关玩法／反馈。用户确认只保留梳毛、两遍才梳下、随工具拉扯并回弹、最后一遍恢复原样时脱落、粒子更大更少且慢落慢淡出。本节不修改正式经营或机器猫参数。
+
+| 参数ID | 当前运行值／状态 |
+|---|---|
+| GROOM-FUR-SCOPE | 只出现灰白初始猫的身躯／轮廓普通毛片；撤下毛结、灰尘、跳蚤、修甲、机器猫切单和疼痛／评分交互。原素材、旧场景、机器猫独立场景保留 |
+| GROOM-FUR-PASSES | 两遍，用户要求；一次连续正向行程只计一遍，鼠标事件数不计遍数，透明空隙不拆遍。松手或反向返回后允许下一遍 |
+| GROOM-FUR-PASS-TRAVEL | 有效接触行程≥12逻辑像素算一遍；纯按下／静止、3px微抖及重复起按不能代替行程。试玩选择，替代最初测试22px门槛 |
+| GROOM-FUR-DIRECTION | 继续屏幕左→右，方向cos≥0.7；反向不计遍，返回无处罚；没有速度疼痛或特殊对象限速 |
+| GROOM-FUR-TUG | 每向右移动1px增加0.45px拉扯，最大18px；Shader固定左侧，自由侧随右向拉伸，旋转素材按屏幕右向变形。落毛片与原图颜色不变，原PNG不改 |
+| GROOM-FUR-RETURN | 0.08s无有效移动、离开或松手后回弹；时长0.28s，smoothstep式恢复。最后一遍达到后进入不可重复计数的待脱落状态，恢复量到0才整片隐藏并生成落毛片，不能先扣掉一半Alpha |
+| GROOM-FUR-PROGRESS | 首遍显示半完成；最后回弹中最高按该片95%计，实际脱落才100%。当前进度仅梳毛，完成留在台面，可手动重新梳理 |
+| GROOM-FUR-PARTICLE-POOL | 32槽位（旧64）；完整毛片与松散毛团共享。槽位满时不追加特效，不阻塞清理 |
+| GROOM-FUR-PARTICLE-BURST | 每次最多1团，最短0.14s间隔；松散毛团宽68—90px，替代旧22—42px的小片飞散。掉落的完整毛片仍保持原尺寸与配色 |
+| GROOM-FUR-PARTICLE-FALL | 初始向下22—32px/s，重力10px/s²、最大55px/s；横漂≤6px/s，缓慢转动0.05rad/s。取消旧向上抛射和260px/s²重力 |
+| GROOM-FUR-PARTICLE-FADE | 寿命3.2s（旧0.45s）；前0.9s保持Alpha=1，剩余2.3s渐隐，不因完成后自动切单提前清空 |
+| GROOM-FUR-PAUSE | 暂停冻结回弹、待脱落、毛发下落；松手／失焦保留已梳遍数，恢复后继续；重试／同种大小切换重新生成本次毛片 |
+| GROOM-FUR-COMPLETION | 完成仅展示计数及可重试状态，不自动切至其他猫／修甲；保留基类内存结算兼容，不引入升级经济或读取正式存档 |
+
+只有两遍和反馈方向是用户指定，12px、18px、0.28s、重力／透明度等精确值均为试玩选择。原尺寸1／半尺寸0.5、普通毛片96×72、大82／小16、各23轮廓、现有毛色与轮廓内外朝向保持。
+
+运行配置唯一代码入口scripts/prototype_grooming_fur/brush_config.gd；model.gd负责独立行程、恢复与延迟完成，coat_cleaning.gdshader负责实际形变，controller／service_view负责纯梳毛UI和慢落。F6仍scenes/prototype_grooming/fur_demo.tscn。
+
+1031模型＋38双尺寸GUI／GPU＝1069项通过，报告reports/grooming_fur_tug_20261017。GPU两分辨率各1949个Alpha变化像素，恢复后原图字节相同；实际毛片0.75秒约下落20—30px、Alpha约0.95。旧grooming、机器猫独立实现和项目／导出配置共33文件哈希不变。真人手感待验，旧EXE不含本轮修改，未build／提交／push。
+
+### 29.14 2026-10-17落毛提速、透明化与12种随机素材（数量限制由29.15替代，其余沿用）
+
+IMP-20261017-002，覆盖29.13的四项PARTICLE参数。两遍、拉扯／回弹时序、方向、布局与猫大小继续29.13；不改机器猫或正式经营。用户确认适当提速、减少遮挡、切分参考图并随机多样化，以下精确参数均为试玩选择。
+
+| 参数ID | 当前运行值／状态 |
+|---|---|
+| GROOM-FUR-PARTICLE-POOL | 总16槽：完整脱落毛最多6片，松散毛最多10片；旧共享32槽已替代。满额只省略额外特效，不改变原片完成／隐藏 |
+| GROOM-FUR-PARTICLE-BURST | 每次仍最多1片，间隔0.20s；松散毛55%选小碎毛、45%选毛簇，再随机选该色组的3种形状，避免相邻同图。毛簇宽48—76px，小碎毛26—44px |
+| GROOM-FUR-PARTICLE-FALL | 向下初速68—88px/s，重力26px/s²，限速130px/s；横漂±10px/s。相对旧22—32初速适当增加，仍不向上喷射／快速砸落；坐标均为1920×1080逻辑像素 |
+| GROOM-FUR-PARTICLE-FADE | 完整脱落毛Alpha=.38，松散毛=.65；源透明度保留，乘一次效果透明度。寿命2.2s、前0.2s保持基础Alpha，随后2s渐隐；不得淡出时恢复Alpha=1 |
+| GROOM-FUR-PARTICLE-VARIANTS | 用户图与现有fur_fall_fx.png哈希一致；12个完整透明区域：灰／乳白各3毛簇＋3碎毛。独立索引fall_variants.json及12份AtlasTexture，不修改源PNG、不捆绑三碎毛 |
+| GROOM-FUR-PARTICLE-ORIENTATION | 松散毛初始随机-π至π、可左右翻转；每片独立±.45rad/s轻微转动。完整毛片起始维持原贴片朝向／尺寸／取色，只随机漂移和轻转，不突然翻面 |
+
+配置仍scripts/prototype_grooming_fur/brush_config.gd；assets.gd读切片，service_view.gd独立FX随机发生器／分组上限／基础Alpha×淡出，controller沿配置发射。当前F6为scenes/prototype_grooming/fur_demo.tscn，源图及原有8项图集索引不改。
+
+1031模型＋714双尺寸真实输入／GUI／GPU＝1745项通过，20图见reports/grooming_fur_fall_variants_20261017。0.75秒实际落毛约64—69px（旧24px），Alpha约.224—.226；全部12素材参加随机采样，58档角度／46档尺寸；密集效果上限6＋10及到期清除通过。机器猫、旧基类和正式项目／导出共33文件哈希未变；真人观感待验，无新EXE／提交／push。
+
+### 29.15 2026-10-17逐片脱落对应逐片下坠（当前数量规则）
+
+IMP-20261017-003，用户要求恢复“梳下多少就掉多少”，保留29.14透明度。替代完整落片最多6和总16的硬限制；其余下落速度、轻转、尺寸、随机碎毛、两遍与回弹继续29.13／29.14。
+
+| 参数ID | 当前运行值／状态 |
+|---|---|
+| GROOM-FUR-PARTICLE-CONSERVATION | 每片普通身体或轮廓毛完成最后回弹后，生成唯一的对应完整落毛片，再隐藏附着原片。重复sync不重复生成；不因已有落片较多而省略 |
+| GROOM-FUR-PARTICLE-POOL | 初始16个可复用槽是预分配量，不是上限。没有空槽时扩展池；不挤掉或复用尚在下落的毛片，重试及过期后复用闲槽 |
+| GROOM-FUR-PARTICLE-BOUNDS | 只受当前有限服务对象数与额外松散毛数量约束；大猫最多105对应片＋10松散、小猫39＋10。跨重试先清旧效果，池保留高水位复用，不跨订单累计活动效果 |
+| GROOM-FUR-PARTICLE-ALPHA | 完整对应落片继续Alpha=.38、松散毛=.65，2.2s渐隐；速度和随机碎毛仍29.14，不通过恢复不透明度来强调脱落 |
+| GROOM-FUR-PARTICLE-LOOSE-LIMIT | 额外随机碎毛仍最多10、每次1片／间隔0.20s；额外颗粒不替代完整对应落片 |
+
+配置brush_config.gd取消DETACHED_LIMIT，总量改PARTICLE_INITIAL_POOL；service_view.gd的available_particle按需扩容，detach_patch不截断。记录source_id用于验证对应关系；不修改猫毛计遍与回弹时序，不改机器猫／正式入口。具体Alpha、速度和时长仍是试玩选择。
+
+1031模型＋742双尺寸真实输入／GUI／GPU＝1773项通过，24图见reports/grooming_fur_fall_conservation_20261017。大猫105片／小猫39片同时对应脱落，无漏片或重复；密集松散毛不挤占对应落片。旧002报告保留历史。当前需F6运行fur_demo.tscn，无新EXE／提交／push，真人观感待验。
+
+### 29.16 2026-10-17平台升降与连续顾客（流程沿用，到顶曲线由29.17替代）
+
+IMP-20261017-004已实装，覆盖29.13中“完成留在台面、按按钮重新梳理”和原0.45s淡入。用户确认平台载猫上升、停顶惯性、完成下降离屏、自动重置下一只猫，并检查未来移植接口；具体时间、像素和曲线是试玩选择。29.13两遍／回弹与29.14／29.15落毛保持。
+
+| 参数ID | 当前运行值／边界 |
+|---|---|
+| GROOM-PLATFORM-CYCLE | arrival→cleaning→reward→departure→arrival；默认无限连续同种灰白猫，不新增猫种／经营／正式存档。完成计数和原型累计钱包保留，顾客serial＋1，毛块／手势重置 |
+| GROOM-PLATFORM-TRAVEL | 1200逻辑px，从画面下方升入／降出；逻辑画布1920×1080。到完全离屏才换猫，背景和HUD固定 |
+| GROOM-PLATFORM-RISE | 1.15s；前78%时长按三次缓出上升；末22%用于停顶缓冲；不可梳理直到停稳 |
+| GROOM-PLATFORM-INERTIA | 平台小缓冲幅度参数5px、猫惯性参数16px，均按衰减正弦只在到顶末段播放，实际偏移小于参数峰值；结束严格归0 |
+| GROOM-PLATFORM-HOLD | 完成反馈0.55s，显示已完成及落毛，不弹结算窗口、不需要按按钮 |
+| GROOM-PLATFORM-LOWER | 0.85s二次加速下降，平台、猫、附着毛、阴影和活动落毛共用父变换；下一只上升1.15s。完成至下只可梳约2.55s |
+| GROOM-PLATFORM-INPUT | 只有cleaning接受手势；转场／换顾客／暂停／失焦清输入。转场中按住不会自动给新猫开始梳理；暂停冻结升降、惯性、回弹与落毛 |
+| GROOM-PLATFORM-SIZE | 原尺寸／半尺寸按钮只选择下一只，不重置正在服务的猫。不再有Calico／Retry重开按钮 |
+| GROOM-PLATFORM-PRESENTATION | 根节点presentation Resource配置房间、台面、猫纹理、table_rect／cat_fit_rect、服务区UV、名字；更换时清除CPU／GPU纹理与毛色缓存。无效配置拒绝 |
+| GROOM-PLATFORM-HOST | queue_customer排队profile／size，离屏后应用；automatic_cycle=false时在完成反馈等待宿主release_customer。prepared／ready／completed／departed信号与serial提供接入边界，不代表正式结算已接入 |
+
+配置brush_config.gd，状态机model.gd；ServiceView/PlatformRoot/Table为持久节点，service_view及platform_shadow负责共用变换；controller保留独立输入／HUD，presentation_profile与grooming_presentation.tres负责美术／UV配置。
+
+1069模型＋758双尺寸真实输入／GUI／GPU＝1827项通过，30图见reports/grooming_platform_cycle_20261017。包括连服务3只、阶段输入／暂停、下一猫预选、同源平台父节点、独立图集、逐片落毛、GPU回弹及替换300×200不同宽高比纹理／拒绝无效profile。旧报告保留。尚未移植正式主游戏，轮廓布点、梳齿元数据和新毛色仍需随美术校准，详见scenes/prototype_grooming/PORTING_GUIDE.md；无新EXE／提交／push。
+
+### 29.17 2026-10-17到顶惯性衔接与松散毛替代落片（当前运行值）
+
+IMP-20261017-005，用户确认到达最高处即衔接惯性，并将梳下的毛换成粒子图集美术，尺寸接近原贴片。004自动升降／顾客流程、003逐片对应和002透明度继续有效。
+
+| 参数ID | 当前运行值／边界 |
+|---|---|
+| GROOM-PLATFORM-RISE-JOIN | 总升入仍1.15s；前72%（0.828s）三次缓出升至最高点0，随后平台固定0。取消原5px平台正负反弹，不和猫播放两套反弹 |
+| GROOM-PLATFORM-INERTIA | 到顶同一时点立即进入猫惯性，剩余28%（0.322s）；u为末段进度，cat_inertia=-9×16u²(1−u)² px。开始／结束位置和速度均0，中段最多9px向上轻浮后回落，无等待或突然速度跳变 |
+| GROOM-FUR-DETACHED-ART | 每个完成毛片仍唯一对应一份落毛，但使用fall_variants图集，不再复制带粗描边／取色Shader的原附着贴片。根据gray／cream色组随机选毛簇或碎毛，紧邻不重复 |
+| GROOM-FUR-DETACHED-SIZE | 原rect两轴×随机0.90—1.10为目标框，新素材等比完整容纳；有一边接近原片尺寸，另一边不超目标框。不以最长边强行放大导致窄轮廓掉下大圆块、不裁碎素材 |
+| GROOM-FUR-DETACHED-ORIENTATION | 初始沿来源draw_angle＋随机±0.65rad，可随机左右翻转；继续原轻转／下落速度。起点仍为原毛片中心，保留source_id，不让新图造成漏片／重复 |
+| GROOM-FUR-DETACHED-ALPHA | Alpha=.38、2.2s寿命／渐隐保持；额外小颗粒Alpha=.65、最多10保持。两遍回弹后才换成大松散毛下落，附着阶段不改 |
+
+精确比例、像素及随机角度为试玩选择。代码brush_config、model.update_platform_pose、service_view.choose_fall_variant／detach_patch；原PNG、图集12切片与机器猫保持。移植指南已同步新落毛语义，不将“来源对应”误解为必须使用同一texture。
+
+1073模型＋1052双尺寸实际输入／GUI／GPU＝2125项通过，30图见reports/grooming_platform_refinement_20261017；接续无位置跳变／速度突跳、平台到顶固定，逐片数量与新素材／尺寸验证通过，旧004报告保留。F6仍fur_demo.tscn，无新EXE／提交／push，真人观感待验。
+
+### 29.18 2026-10-17胸前／躯干／尾服务区与切线轮廓（当前布局）
+
+IMP-20261017-006。按用户圈图增加胸前、扩充躯干和尾部；轮廓分区沿描边平行，偏角不得超过15°，不覆盖足部。005升降／落毛、两遍回弹保持；参数以下为当前试玩布局，不是所有未来猫体型的通用解剖规则。
+
+| 参数ID | 当前规则／运行值 |
+|---|---|
+| GROOM-FUR-SERVICE-REGIONS | profile.service_chest／service_body／service_tail三块UV多边形，明确排除头脸、耳朵及独立paw_exclusions。具体UV以presentation_profile.gd为唯一代码入口，后续换猫在Resource中校准 |
+| GROOM-FUR-MODULE-SIZE | 身躯毛块仍96×72逻辑px，两种猫相同，不随猫缩小；密铺基础步长46×32、隔行偏移23，位置扰动±4／±3px，混用4种来源形态 |
+| GROOM-FUR-COVERAGE-FILL | 按23×16补位网格检查5个探点，只有现有可见毛片未覆盖的服务点才加完整模块；不裁碎源图。容许14逻辑px自然接缝延伸，但不得落到脚爪，中心仍须在服务区 |
+| GROOM-FUR-RIM-PATHS | chest_left／body_back／body_belly／tail_rim四条引导路线，胸／躯干／尾分区。每约54×猫比例px取锚，沿真实Alpha边界校正；锚点过远（>60×猫比例）或重复（<25×猫比例）跳过 |
+| GROOM-FUR-RIM-TANGENT | 仅用横向细长gray_back／gray_flank／cream_belly／cream_leg。长轴严格平行局部Alpha轮廓切线，黑边向外、软侧向内，当前无额外随机角度，几何偏角0°，满足≤15°；不复用之前以斜向黑边法线旋转导致长轴偏移的规则 |
+| GROOM-FUR-RIM-SIZE | 初始140×54×猫比例，完整毛条按需×0.86缩小，最多8次；重叠猫体至少65%、必须避脚且长边不低于55×猫比例，否则不放。不切割成碎片填脚边 |
+| GROOM-FUR-PAW-SAFE | 独立四脚UV排除区；所有可见采样点在静止与向右最大18px拉扯的保守范围内均不得覆盖脚爪。不能只排除中心而让毛条尖端压住脚 |
+| GROOM-FUR-LAYOUT-CURRENT | 大猫337身躯毛片＋43轮廓＝380；小猫76＋51＝127。胸／躯干／尾总对象分别85／178／117与26／53／48。小猫轮廓略多来自避脚后的完整缩放与更短可用段，不是总工作量更多 |
+
+布局代码model的build_fur_objects／fill_service_gaps／add_outline，model.apply_presentation同步三服务区、脚爪排除和路线；profile是可替换资源。80px空间索引用于覆盖探点，不更改互动判定或毛色。原素材、贴片完整性、两遍／回弹、平台和随机落毛保持；固定23条轮廓与旧82／16身躯数量由本节替代。
+
+4227模型＋1778双尺寸实际输入／GUI／GPU＝6005项检查通过，30图及布局数据见reports/grooming_regions_20261017。96×56可见Alpha探点：大胸97.39%、躯干98.10%、尾99.86%；小胸95.72%、躯干94.67%、尾98.01%，保留美术透明缝隙，不把区域覆盖写成逐像素100%。足部、长轴切线和全部模块两遍完成检查通过，正式入口／机器猫保持。真人观感待验，无新EXE／提交／push。
+
+### 29.19 2026-10-17轮廓手工摆放编辑入口（非运行参数）
+
+IMP-20261017-007，编辑入口已完成，用户手摆和运行接入尚未完成。场景 `scenes/prototype_grooming/轮廓毛发摆放.tscn`；操作说明同目录 `轮廓摆放说明.md`。此处只记录编辑坐标及交接格式，不改变29.18的可玩自动布局，也不改变两遍、回弹、落毛或连续服务的参数。
+
+| 编辑配置 | 当前值／读取方式 |
+|---|---|
+| 基准逻辑画布 | 每只猫独立1920×1080 |
+| 大猫摆放区 | 位置(0,0)，cat_scale=1；body_rect=(211.2843,105,1497.4314,870) |
+| 小猫摆放区 | 编辑画布右移(2240,0)，cat_scale=.5；局部body_rect=(585.6422,540,748.7157,435) |
+| 大猫初始快照 | 337片身躯参考锁定，43片轮廓可编辑 |
+| 小猫初始快照 | 76片身躯参考锁定，51片轮廓可编辑 |
+| 轮廓素材区 | 下方(0,1260)，8份独立AtlasTexture，只有复制参考作用 |
+| 可编辑层级 | 各摆放区/可编辑轮廓/胸前、躯干、尾部/Sprite2D |
+| 几何记录 | 节点Position、Rotation、Scale、flip、实际可见性；区与分区保持不动 |
+| 资源记录 | texture.resource_path为准；旧asset_key/source_id仅初始参考 |
+| 唯一身份 | 完整相对NodePath；复制节点后运行ID需重新分配 |
+| 区域身份 | 父分区service_region，不由旧复制节点元数据覆盖 |
+| 颜色预览 | editor_outline_piece.gd仅更新独立Shader材质，按目标区body_rect匹配；不修改几何 |
+| 自动生成保护 | create_outline_placement.gd发现目标存在即退出2；禁止重新生成覆盖手摆 |
+| 接入边界 | 用户保存确认后再读取布局；参考身躯、素材、标签和辅助线不作为轮廓收割对象 |
+
+491项保存／重开、复制、坐标、颜色材质及双猫实际渲染检查通过；证据reports/outline_placement_20261017。用户最终排布仍需脚爪、黑边朝外、切线≤15°、工具命中和两遍回弹／逐片落毛验收。手工结果以实际.tscn为准，snapshot.json不能替代。机器猫／正式入口／正式档不改，无新EXE或push。
+### 29.20 2026-10-17手工轮廓下层显示与实机功能化（当前轮廓）
+
+IMP-20261017-008。用户已完成007摆放并授权接入：读取实际手工场景，不重新吸附、缩小或自动纠偏。此节替代29.18的程序轮廓和29.19“尚未接入”；29.18身躯配置、29.13—29.17交互／反馈继续保留。
+
+| 配置 | 当前运行值／规则 |
+|---|---|
+| 可玩入口 | scenes/prototype_grooming/fur_demo.tscn，F6 |
+| 手工来源 | scenes/prototype_grooming/轮廓毛发摆放.tscn |
+| 显式选择 | presentation_profile.outline_layout；当前grooming_presentation.tres指定手工场景，空值才回退程序轮廓 |
+| 层级 | 整洁底图0、轮廓1、身躯普通毛2；编辑器及运行一致，均相对猫／平台 |
+| 大猫 | 337身躯＋52手工轮廓＝389；胸前5／躯干18／尾部29片轮廓 |
+| 小猫 | 76身躯＋52手工轮廓＝128；胸前6／躯干18／尾部28片轮廓 |
+| 额外接纳 | 素材区7片复制件已在大猫背部工作区；仅重新设置父组，保持global_transform和实际Texture |
+| 坐标 | 以每只猫摆放区为基准；小猫编辑偏移2240px不进入实机；参考body_rect转对应运行逻辑坐标 |
+| 手工身份 | 完整相对NodePath与真实texture.resource_path，父组service_region；每次生成重编运行ID，不复用复制source_id |
+| 可见性 | 隐藏毛条或其父组不进入运行对象；素材原件、标签、参考身躯及辅助线不作为收割对象 |
+| 纹理与判定 | 真实AtlasTexture裁剪图像转局部UV运行纹理；透明区不计接触，保留完整源图、不裁掉手工几何 |
+| 收割 | 与身躯相同，两遍左→右有效行程；第一遍恢复但保留，最后回弹结束才脱落；12px／18px／.28s原值保持 |
+| 落毛／转场 | 每片唯一对应随机松散落毛，Alpha=.38及速度保持；下一只重新读取手工布局，暂停和预选大小保持 |
+| 继续编辑 | 保存.tscn后停止并重启F6；运行不执行编辑脚本，不热覆盖用户场景 |
+
+8764项自动检查通过：4213模型、1806双尺寸实际输入／GUI／GPU、2204手工变换／层级专项、541编辑保存重开。报告reports/authored_outline_20261017，准确来源手工原文件备份user_handoff_original.txt（不用.tscn后缀，避免重复UID导入）。不把重复回归项当独立功能数量。
+
+美术边界：手摆结果原位保留，不保证沿用旧程序0°切线及全足部避让。采样发现大猫2片、小猫3片与原脚爪禁区重叠（含拉扯），路径见model.json；需真人美术复核，未擅自移动、缩小、裁掉或停用。这不妨碍全部对象完成两遍梳理。机器猫、正式入口／存档及原图不改，用户另有动画变更保持，无新EXE／push。
+### 29.21 2026-10-17裁剪邻图碎角与统一着色（当前素材处理）
+
+IMP-20261017-009。用户要求去掉裁剪框混入的邻近毛片／悬浮碎角，轮廓颜色与透明度处理同普通毛片。29.20手摆布局、下层顺序、29.13—29.17操作／落毛／升降保持；本节只覆盖素材提取和外观规则。
+
+| 参数／入口 | 当前值／行为 |
+|---|---|
+| 素材范围 | 12身躯＋8轮廓，共20份；不改12种落毛粒子 |
+| 提取方式 | Alpha>32/255的最大8连通主体，保留原有1px低Alpha抗锯齿柔边，剔除其余独立邻图／碎点 |
+| 主体保证 | 保留像素的RGB和Alpha不变，剔除像素RGBA置0；不把柔边硬化，也不向外扩张主体 |
+| 清理量 | gray shoulder341、back1782、flank5221、tail4493，合计11837个较高Alpha邻图像素；其他素材清低Alpha背景碎噪 |
+| 画布／锚点 | 各素材沿用原裁剪框宽高；中心和资源文件名不变，不改手摆Position／Rotation／Scale |
+| 资源存储 | resources/*.tres仍为AtlasTexture，改引用isolated_patches/*.res的整个同尺寸画布；原图集PNG不写入 |
+| 来源记录 | isolated_patches.json及asset_manifest.json；atlas_index.json.region保留为原图来源，不作当前直接矩形提取入口 |
+| 编辑／实机 | 通过同一资源读取；assets.image及运行接触遮罩也使用去碎角后的Alpha，不留下不可见碰撞 |
+| RGB处理 | 普通毛与轮廓均为coat.rgb×clamp(.87+(light−.65)×.28,.74,.94)；取消轮廓近黑描边绕过染色 |
+| Alpha处理 | 两类同一sourceAlpha×vertexAlpha×remaining_mask×valid×loosen；calico complete_sprite=true，loosen=1，保留原柔边，不额外压低轮廓Alpha |
+| 几何读取 | 当前手工场景的锁定身躯参考也一同读取，避免更干净的Alpha触发重新铺排；空outline_layout仍允许程序铺排 |
+| 数量／层级 | 大337＋52＝389、小76＋52＝128；轮廓1＜身躯2＜工具等表现层，整洁底图0 |
+| 共享缓存 | 每个实际纹理资源只上传一次，换顾客复用；配置替换清理缓存，保留正确资产身份 |
+
+8888项自动检查通过：665素材与GPU外观、4213模型、1806双尺寸真实输入／GUI／GPU、2204手摆变换／层级。20份各仅一连续主体，主像素RGBA不变；相同素材的普通／轮廓材质实际GPU RGBA逐字节一致，17920可见像素中5043保留软Alpha。证据reports/fur_asset_cleanup_20261017；原PNG哈希、用户场景与变换保持。两遍、回弹后脱落、逐片松散毛和连续服务通过，真人观感待验；008原脚爪复核项不擅自纠偏。机器猫／正式主游戏／存档不改，无新EXE／push。

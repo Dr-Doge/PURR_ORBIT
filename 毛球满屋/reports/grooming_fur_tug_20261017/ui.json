@@ -1,0 +1,20 @@
+{
+ "checks": 38,
+ "failures": [],
+ "metrics": [
+  {
+   "alpha_after": 0.949167549610138,
+   "alpha_initial": 1.0,
+   "deformed_pixels": 1949,
+   "fall_075s": 24.0452575683594,
+   "viewport": "(1920, 1080)"
+  },
+  {
+   "alpha_after": 0.951036810874939,
+   "alpha_initial": 1.0,
+   "deformed_pixels": 1949,
+   "fall_075s": 24.1396484375,
+   "viewport": "(1440, 810)"
+  }
+ ]
+}

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://scripts/prototype_grooming_fur/controller.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/prototype_grooming_fur/service_view.gd" id="2"]
 [ext_resource type="Texture2D" path="res://Art/grooming_environment_v1/room_background.png" id="3"]
 [ext_resource type="Texture2D" path="res://Art/grooming_environment_v1/grooming_table.png" id="4"]
 [ext_resource type="Texture2D" path="res://Art/grooming_fur_v1/resources/cat_clean.tres" id="5"]
+[ext_resource type="Resource" path="res://Art/grooming_environment_v1/grooming_presentation.tres" id="6"]
 
 [sub_resource type="StyleBoxFlat" id="Panel"]
 bg_color = Color(0.12,0.075,0.055,0.91)
@@ -25,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
+presentation = ExtResource("6")
 
 [node name="EditorPreview" type="Control" parent="."]
 mouse_filter = 2
@@ -63,6 +65,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2")
 
+[node name="PlatformRoot" type="Node2D" parent="ServiceView"]
+
+[node name="Table" type="Sprite2D" parent="ServiceView/PlatformRoot"]
+texture = ExtResource("4")
+
 [node name="HUD" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -88,7 +95,7 @@ offset_right = 500.0
 offset_bottom = 36.0
 mouse_filter = 2
 theme_override_font_sizes/font_size = 22
-text = "毛球计划 · 美容服务"
+text = "毛球计划 · 初始猫纯梳毛"
 
 [node name="Money" type="Label" parent="HUD/Top"]
 anchor_left = 1.0
@@ -99,77 +106,42 @@ offset_right = -18.0
 offset_bottom = 36.0
 mouse_filter = 2
 horizontal_alignment = 2
-text = "金钱 0"
+text = "完成 0 次"
 
-[node name="Quality" type="Label" parent="HUD/Top"]
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -190.0
-offset_top = 52.0
-offset_right = -18.0
-offset_bottom = 78.0
-mouse_filter = 2
-horizontal_alignment = 2
-theme_override_font_sizes/font_size = 20
-text = "评价 100 / 100"
 
-[node name="Calico" type="Button" parent="HUD/Top"]
+[node name="Continuous" type="Label" parent="HUD/Top"]
 offset_left = 18.0
 offset_top = 48.0
-offset_right = 140.0
+offset_right = 282.0
 offset_bottom = 82.0
-text = "灰白猫示范"
+text = "连续服务 · 自动升降换猫"
+mouse_filter = 2
 
-[node name="Robot" type="Button" parent="HUD/Top"]
-offset_left = 150.0
-offset_top = 48.0
-offset_right = 274.0
-offset_bottom = 82.0
-text = "机器猫示范"
 
-[node name="Full" type="Button" parent="HUD/Top"]
-offset_left = 284.0
-offset_top = 48.0
-offset_right = 408.0
-offset_bottom = 82.0
-text = "全套服务"
 
-[node name="Nails" type="Button" parent="HUD/Top"]
-offset_left = 418.0
-offset_top = 48.0
-offset_right = 534.0
-offset_bottom = 82.0
-text = "修甲练习"
-
-[node name="Retry" type="Button" parent="HUD/Top"]
-offset_left = 544.0
-offset_top = 48.0
-offset_right = 642.0
-offset_bottom = 82.0
-text = "重试本单"
 
 [node name="Pause" type="Button" parent="HUD/Top"]
-offset_left = 652.0
+offset_left = 292.0
 offset_top = 48.0
-offset_right = 727.0
+offset_right = 367.0
 offset_bottom = 82.0
 text = "暂停"
 
 [node name="Sound" type="CheckButton" parent="HUD/Top"]
-offset_left = 735.0
+offset_left = 377.0
 offset_top = 48.0
-offset_right = 820.0
+offset_right = 465.0
 offset_bottom = 82.0
 button_pressed = true
 text = "声音"
 
 [node name="Size" type="Button" parent="HUD/Top"]
-offset_left = 835.0
+offset_left = 478.0
 offset_top = 48.0
-offset_right = 960.0
+offset_right = 603.0
 offset_bottom = 82.0
 text = "尺寸：大猫"
-tooltip_text = "切换当前顾客为原尺寸／半尺寸，重新开始当前护理；保留钱包"
+tooltip_text = "仅选择下一只猫的原尺寸／半尺寸；当前猫与进度不重置"
 
 [node name="Bottom" type="Panel" parent="HUD"]
 layout_mode = 1
@@ -231,9 +203,9 @@ theme_override_constants/separation = 24
 
 [node name="Text" type="Label" parent="HUD/PausePanel/VBox"]
 layout_mode = 2
-text = "已暂停\n所有服务进度保留"
+text = "已暂停\n梳毛和回弹进度保留"
 horizontal_alignment = 1
 
 [node name="Continue" type="Button" parent="HUD/PausePanel/VBox"]
 layout_mode = 2
-text = "继续服务  /  Esc"
+text = "继续梳毛  /  Esc"

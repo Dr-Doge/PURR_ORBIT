@@ -1,0 +1,26 @@
+{
+  "checks": 2204,
+  "failures": [],
+  "layouts": [
+    {
+      "authored_outline_count": 52,
+      "body_count": 337,
+      "scale": 1.0,
+      "total": 389
+    },
+    {
+      "authored_outline_count": 52,
+      "body_count": 76,
+      "scale": 0.5,
+      "total": 128
+    },
+    {
+      "gpu_layer_difference_probes": 6601,
+      "scale": 1.0
+    },
+    {
+      "gpu_layer_difference_probes": 1324,
+      "scale": 0.5
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "assets": [
+    {
+      "asset": "cream_cross",
+      "canvas": [
+        361.0,
+        246.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "cream_fold",
+      "canvas": [
+        291.0,
+        310.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "cream_ruffle",
+      "canvas": [
+        287.0,
+        233.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "cream_wide",
+      "canvas": [
+        389.0,
+        266.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "edge_cream_belly",
+      "canvas": [
+        538.0,
+        259.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "edge_cream_cheek",
+      "canvas": [
+        428.0,
+        324.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "edge_cream_leg",
+      "canvas": [
+        458.0,
+        246.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "edge_cream_tail",
+      "canvas": [
+        279.0,
+        321.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "edge_gray_back",
+      "canvas": [
+        548.0,
+        318.0
+      ],
+      "opaque_removed": 1782.0
+    },
+    {
+      "asset": "edge_gray_flank",
+      "canvas": [
+        521.0,
+        312.0
+      ],
+      "opaque_removed": 5221.0
+    },
+    {
+      "asset": "edge_gray_shoulder",
+      "canvas": [
+        409.0,
+        311.0
+      ],
+      "opaque_removed": 341.0
+    },
+    {
+      "asset": "edge_gray_tail",
+      "canvas": [
+        348.0,
+        398.0
+      ],
+      "opaque_removed": 4493.0
+    },
+    {
+      "asset": "gray_cross",
+      "canvas": [
+        366.0,
+        248.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "gray_fold",
+      "canvas": [
+        294.0,
+        312.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "gray_ruffle",
+      "canvas": [
+        286.0,
+        257.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "gray_wide",
+      "canvas": [
+        380.0,
+        259.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "mixed_cross",
+      "canvas": [
+        357.0,
+        240.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "mixed_fold",
+      "canvas": [
+        286.0,
+        282.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "mixed_ruffle",
+      "canvas": [
+        295.0,
+        250.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "asset": "mixed_wide",
+      "canvas": [
+        385.0,
+        267.0
+      ],
+      "opaque_removed": 0.0
+    },
+    {
+      "darkest_visible_channel": 0.282352954149246,
+      "gpu_same_material": true,
+      "soft_alpha_pixels": 5043,
+      "visible_pixels": 17920
+    }
+  ],
+  "checks": 665,
+  "failures": []
+}

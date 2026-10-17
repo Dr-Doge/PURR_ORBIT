@@ -1,0 +1,137 @@
+{
+  "source_sha256": "0f84cd60e1c6ac40ed6bbda0e86988624f7c7415ee5bcd332ed5929a3feff252",
+  "sprites": {
+    "fall_variant_gray_1": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        56,
+        129,
+        345,
+        303
+      ],
+      "palette": "gray",
+      "role": "clump"
+    },
+    "fall_variant_gray_2": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        485,
+        67,
+        378,
+        358
+      ],
+      "palette": "gray",
+      "role": "clump"
+    },
+    "fall_variant_gray_3": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        943,
+        68,
+        374,
+        368
+      ],
+      "palette": "gray",
+      "role": "clump"
+    },
+    "fall_variant_gray_4": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        1364,
+        128,
+        213,
+        221
+      ],
+      "palette": "gray",
+      "role": "shard"
+    },
+    "fall_variant_gray_5": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        1564,
+        278,
+        91,
+        130
+      ],
+      "palette": "gray",
+      "role": "shard"
+    },
+    "fall_variant_gray_6": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        1612,
+        150,
+        105,
+        146
+      ],
+      "palette": "gray",
+      "role": "shard"
+    },
+    "fall_variant_cream_1": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        56,
+        518,
+        345,
+        302
+      ],
+      "palette": "cream",
+      "role": "clump"
+    },
+    "fall_variant_cream_2": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        483,
+        481,
+        385,
+        354
+      ],
+      "palette": "cream",
+      "role": "clump"
+    },
+    "fall_variant_cream_3": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        936,
+        479,
+        391,
+        353
+      ],
+      "palette": "cream",
+      "role": "clump"
+    },
+    "fall_variant_cream_4": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        1385,
+        522,
+        206,
+        221
+      ],
+      "palette": "cream",
+      "role": "shard"
+    },
+    "fall_variant_cream_5": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        1578,
+        681,
+        87,
+        128
+      ],
+      "palette": "cream",
+      "role": "shard"
+    },
+    "fall_variant_cream_6": {
+      "file": "fur_fall_fx.png",
+      "region": [
+        1629,
+        547,
+        92,
+        138
+      ],
+      "palette": "cream",
+      "role": "shard"
+    }
+  }
+}

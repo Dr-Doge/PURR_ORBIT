@@ -1,0 +1,54 @@
+{
+ "checks": 714,
+ "failures": [],
+ "metrics": [
+  {
+   "alpha_after": 0.225050762295723,
+   "alpha_initial": 0.36873522400856,
+   "angle_count": 58,
+   "capped_fall_075s": 67.096923828125,
+   "deformed_pixels": 1949,
+   "fall_075s": 69.285888671875,
+   "variants": [
+    "fall_variant_gray_5",
+    "fall_variant_gray_4",
+    "fall_variant_gray_2",
+    "fall_variant_gray_6",
+    "fall_variant_gray_1",
+    "fall_variant_gray_3",
+    "fall_variant_cream_6",
+    "fall_variant_cream_5",
+    "fall_variant_cream_4",
+    "fall_variant_cream_3",
+    "fall_variant_cream_1",
+    "fall_variant_cream_2"
+   ],
+   "viewport": "(1920, 1080)",
+   "width_count": 46
+  },
+  {
+   "alpha_after": 0.224866271018982,
+   "alpha_initial": 0.368553757667542,
+   "angle_count": 58,
+   "capped_fall_075s": 67.0969441731771,
+   "deformed_pixels": 1949,
+   "fall_075s": 64.1459350585938,
+   "variants": [
+    "fall_variant_gray_4",
+    "fall_variant_gray_5",
+    "fall_variant_gray_2",
+    "fall_variant_gray_6",
+    "fall_variant_gray_1",
+    "fall_variant_gray_3",
+    "fall_variant_cream_6",
+    "fall_variant_cream_5",
+    "fall_variant_cream_4",
+    "fall_variant_cream_3",
+    "fall_variant_cream_1",
+    "fall_variant_cream_2"
+   ],
+   "viewport": "(1440, 810)",
+   "width_count": 46
+  }
+ ]
+}

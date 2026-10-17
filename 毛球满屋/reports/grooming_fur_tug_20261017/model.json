@@ -1,0 +1,16 @@
+{
+ "checks": 1031,
+ "failures": [],
+ "layouts": [
+  {
+   "edges": 23,
+   "patches": 82,
+   "scale": 1.0
+  },
+  {
+   "edges": 23,
+   "patches": 16,
+   "scale": 0.5
+  }
+ ]
+}

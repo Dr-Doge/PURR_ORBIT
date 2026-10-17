@@ -1,0 +1,440 @@
+{
+  "canvas_preserved": true,
+  "core_alpha": 32,
+  "method": "largest 8-connected alpha core plus one-pixel existing soft fringe",
+  "source_sha256": {
+    "body_tufts.png": "4c18a2a1dfb112f8fc7516057d094aba754d9cc2c85eb11348675ac5bb03b3cf",
+    "contour_tufts.png": "85b57aa7e9c9dff51dce128a3b717f8477fc668beb13b78930884269fe379724"
+  },
+  "sprites": {
+    "cream_cross": {
+      "canvas": [
+        361,
+        246
+      ],
+      "core_pixels": 41217,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/cream_cross.res",
+      "original_components": [
+        41217
+      ],
+      "original_file": "body_tufts.png",
+      "original_region": [
+        1074.0,
+        469.0,
+        361.0,
+        246.0
+      ],
+      "removed_any": 24133,
+      "removed_visible": 0,
+      "resource": "resources/cream_cross.tres"
+    },
+    "cream_fold": {
+      "canvas": [
+        291,
+        310
+      ],
+      "core_pixels": 46487,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/cream_fold.res",
+      "original_components": [
+        46487
+      ],
+      "original_file": "body_tufts.png",
+      "original_region": [
+        769.0,
+        414.0,
+        291.0,
+        310.0
+      ],
+      "removed_any": 27821,
+      "removed_visible": 0,
+      "resource": "resources/cream_fold.tres"
+    },
+    "cream_ruffle": {
+      "canvas": [
+        287,
+        233
+      ],
+      "core_pixels": 38584,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/cream_ruffle.res",
+      "original_components": [
+        38584
+      ],
+      "original_file": "body_tufts.png",
+      "original_region": [
+        40.0,
+        476.0,
+        287.0,
+        233.0
+      ],
+      "removed_any": 17673,
+      "removed_visible": 0,
+      "resource": "resources/cream_ruffle.tres"
+    },
+    "cream_wide": {
+      "canvas": [
+        389,
+        266
+      ],
+      "core_pixels": 58179,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/cream_wide.res",
+      "original_components": [
+        58179
+      ],
+      "original_file": "body_tufts.png",
+      "original_region": [
+        359.0,
+        456.0,
+        389.0,
+        266.0
+      ],
+      "removed_any": 29249,
+      "removed_visible": 0,
+      "resource": "resources/cream_wide.tres"
+    },
+    "edge_cream_belly": {
+      "canvas": [
+        538,
+        259
+      ],
+      "core_pixels": 63668,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/edge_cream_belly.res",
+      "original_components": [
+        63668
+      ],
+      "original_file": "contour_tufts.png",
+      "original_region": [
+        436.0,
+        547.0,
+        538.0,
+        259.0
+      ],
+      "removed_any": 5486,
+      "removed_visible": 0,
+      "resource": "resources/edge_cream_belly.tres"
+    },
+    "edge_cream_cheek": {
+      "canvas": [
+        428,
+        324
+      ],
+      "core_pixels": 73497,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/edge_cream_cheek.res",
+      "original_components": [
+        73497
+      ],
+      "original_file": "contour_tufts.png",
+      "original_region": [
+        12.0,
+        501.0,
+        428.0,
+        324.0
+      ],
+      "removed_any": 4476,
+      "removed_visible": 0,
+      "resource": "resources/edge_cream_cheek.tres"
+    },
+    "edge_cream_leg": {
+      "canvas": [
+        458,
+        246
+      ],
+      "core_pixels": 52992,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/edge_cream_leg.res",
+      "original_components": [
+        52992
+      ],
+      "original_file": "contour_tufts.png",
+      "original_region": [
+        986.0,
+        565.0,
+        458.0,
+        246.0
+      ],
+      "removed_any": 5537,
+      "removed_visible": 0,
+      "resource": "resources/edge_cream_leg.tres"
+    },
+    "edge_cream_tail": {
+      "canvas": [
+        279,
+        321
+      ],
+      "core_pixels": 55004,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/edge_cream_tail.res",
+      "original_components": [
+        55004
+      ],
+      "original_file": "contour_tufts.png",
+      "original_region": [
+        1484.0,
+        501.0,
+        279.0,
+        321.0
+      ],
+      "removed_any": 2737,
+      "removed_visible": 0,
+      "resource": "resources/edge_cream_tail.tres"
+    },
+    "edge_gray_back": {
+      "canvas": [
+        548,
+        318
+      ],
+      "core_pixels": 87061,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/edge_gray_back.res",
+      "original_components": [
+        87061,
+        1471,
+        187,
+        124
+      ],
+      "original_file": "contour_tufts.png",
+      "original_region": [
+        429.0,
+        97.0,
+        548.0,
+        318.0
+      ],
+      "removed_any": 6681,
+      "removed_visible": 1782,
+      "resource": "resources/edge_gray_back.tres"
+    },
+    "edge_gray_flank": {
+      "canvas": [
+        521,
+        312
+      ],
+      "core_pixels": 80690,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/edge_gray_flank.res",
+      "original_components": [
+        80690,
+        4033,
+        1031,
+        122,
+        35
+      ],
+      "original_file": "contour_tufts.png",
+      "original_region": [
+        938.0,
+        119.0,
+        521.0,
+        312.0
+      ],
+      "removed_any": 9715,
+      "removed_visible": 5221,
+      "resource": "resources/edge_gray_flank.tres"
+    },
+    "edge_gray_shoulder": {
+      "canvas": [
+        409,
+        311
+      ],
+      "core_pixels": 63477,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/edge_gray_shoulder.res",
+      "original_components": [
+        63477,
+        341
+      ],
+      "original_file": "contour_tufts.png",
+      "original_region": [
+        39.0,
+        93.0,
+        409.0,
+        311.0
+      ],
+      "removed_any": 4839,
+      "removed_visible": 341,
+      "resource": "resources/edge_gray_shoulder.tres"
+    },
+    "edge_gray_tail": {
+      "canvas": [
+        348,
+        398
+      ],
+      "core_pixels": 79075,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/edge_gray_tail.res",
+      "original_components": [
+        79075,
+        4493
+      ],
+      "original_file": "contour_tufts.png",
+      "original_region": [
+        1402.0,
+        48.0,
+        348.0,
+        398.0
+      ],
+      "removed_any": 8406,
+      "removed_visible": 4493,
+      "resource": "resources/edge_gray_tail.tres"
+    },
+    "gray_cross": {
+      "canvas": [
+        366,
+        248
+      ],
+      "core_pixels": 43573,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/gray_cross.res",
+      "original_components": [
+        43573
+      ],
+      "original_file": "body_tufts.png",
+      "original_region": [
+        1072.0,
+        138.0,
+        366.0,
+        248.0
+      ],
+      "removed_any": 11066,
+      "removed_visible": 0,
+      "resource": "resources/gray_cross.tres"
+    },
+    "gray_fold": {
+      "canvas": [
+        294,
+        312
+      ],
+      "core_pixels": 46515,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/gray_fold.res",
+      "original_components": [
+        46515
+      ],
+      "original_file": "body_tufts.png",
+      "original_region": [
+        759.0,
+        91.0,
+        294.0,
+        312.0
+      ],
+      "removed_any": 7257,
+      "removed_visible": 0,
+      "resource": "resources/gray_fold.tres"
+    },
+    "gray_ruffle": {
+      "canvas": [
+        286,
+        257
+      ],
+      "core_pixels": 39592,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/gray_ruffle.res",
+      "original_components": [
+        39592
+      ],
+      "original_file": "body_tufts.png",
+      "original_region": [
+        40.0,
+        150.0,
+        286.0,
+        257.0
+      ],
+      "removed_any": 10045,
+      "removed_visible": 0,
+      "resource": "resources/gray_ruffle.tres"
+    },
+    "gray_wide": {
+      "canvas": [
+        380,
+        259
+      ],
+      "core_pixels": 55274,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/gray_wide.res",
+      "original_components": [
+        55274
+      ],
+      "original_file": "body_tufts.png",
+      "original_region": [
+        360.0,
+        149.0,
+        380.0,
+        259.0
+      ],
+      "removed_any": 12941,
+      "removed_visible": 0,
+      "resource": "resources/gray_wide.tres"
+    },
+    "mixed_cross": {
+      "canvas": [
+        357,
+        240
+      ],
+      "core_pixels": 40117,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/mixed_cross.res",
+      "original_components": [
+        40117
+      ],
+      "original_file": "body_tufts.png",
+      "original_region": [
+        1079.0,
+        766.0,
+        357.0,
+        240.0
+      ],
+      "removed_any": 15821,
+      "removed_visible": 0,
+      "resource": "resources/mixed_cross.tres"
+    },
+    "mixed_fold": {
+      "canvas": [
+        286,
+        282
+      ],
+      "core_pixels": 43548,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/mixed_fold.res",
+      "original_components": [
+        43548
+      ],
+      "original_file": "body_tufts.png",
+      "original_region": [
+        778.0,
+        733.0,
+        286.0,
+        282.0
+      ],
+      "removed_any": 14627,
+      "removed_visible": 0,
+      "resource": "resources/mixed_fold.tres"
+    },
+    "mixed_ruffle": {
+      "canvas": [
+        295,
+        250
+      ],
+      "core_pixels": 41368,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/mixed_ruffle.res",
+      "original_components": [
+        41368
+      ],
+      "original_file": "body_tufts.png",
+      "original_region": [
+        41.0,
+        761.0,
+        295.0,
+        250.0
+      ],
+      "removed_any": 7213,
+      "removed_visible": 0,
+      "resource": "resources/mixed_ruffle.tres"
+    },
+    "mixed_wide": {
+      "canvas": [
+        385,
+        267
+      ],
+      "core_pixels": 57050,
+      "isolated_texture": "res://Art/grooming_fur_v1/isolated_patches/mixed_wide.res",
+      "original_components": [
+        57050
+      ],
+      "original_file": "body_tufts.png",
+      "original_region": [
+        360.0,
+        754.0,
+        385.0,
+        267.0
+      ],
+      "removed_any": 13130,
+      "removed_visible": 0,
+      "resource": "resources/mixed_wide.tres"
+    }
+  }
+}

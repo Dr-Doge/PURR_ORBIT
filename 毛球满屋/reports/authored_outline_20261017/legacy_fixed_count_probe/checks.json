@@ -1,0 +1,10 @@
+{
+  "checks": 539,
+  "failures": [
+    "94 editable contour pieces",
+    "large has 43 contours",
+    "small has 51 contours",
+    "duplicated contour survives reopen"
+  ],
+  "runtime_imported": false
+}

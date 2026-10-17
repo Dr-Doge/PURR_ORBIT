@@ -1,0 +1,58 @@
+{
+ "checks": 742,
+ "failures": [],
+ "metrics": [
+  {
+   "alpha_after": 0.224754169583321,
+   "alpha_initial": 0.368441671133041,
+   "angle_count": 58,
+   "capped_fall_075s": 67.096923828125,
+   "conserved_0.5": 39,
+   "conserved_1.0": 105,
+   "deformed_pixels": 1949,
+   "fall_075s": 69.1087799072266,
+   "variants": [
+    "fall_variant_gray_5",
+    "fall_variant_gray_4",
+    "fall_variant_gray_2",
+    "fall_variant_gray_6",
+    "fall_variant_gray_1",
+    "fall_variant_gray_3",
+    "fall_variant_cream_6",
+    "fall_variant_cream_5",
+    "fall_variant_cream_4",
+    "fall_variant_cream_3",
+    "fall_variant_cream_1",
+    "fall_variant_cream_2"
+   ],
+   "viewport": "(1920, 1080)",
+   "width_count": 46
+  },
+  {
+   "alpha_after": 0.224478349089623,
+   "alpha_initial": 0.367801487445831,
+   "angle_count": 58,
+   "capped_fall_075s": 67.0969441731771,
+   "conserved_0.5": 39,
+   "conserved_1.0": 105,
+   "deformed_pixels": 1949,
+   "fall_075s": 70.1834309895833,
+   "variants": [
+    "fall_variant_gray_4",
+    "fall_variant_gray_5",
+    "fall_variant_gray_2",
+    "fall_variant_gray_6",
+    "fall_variant_gray_1",
+    "fall_variant_gray_3",
+    "fall_variant_cream_6",
+    "fall_variant_cream_5",
+    "fall_variant_cream_4",
+    "fall_variant_cream_3",
+    "fall_variant_cream_1",
+    "fall_variant_cream_2"
+   ],
+   "viewport": "(1440, 810)",
+   "width_count": 46
+  }
+ ]
+}

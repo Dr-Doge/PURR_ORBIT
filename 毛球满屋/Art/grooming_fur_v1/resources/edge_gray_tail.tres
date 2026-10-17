@@ -1,8 +1,8 @@
 [gd_resource type="AtlasTexture" load_steps=2 format=3]
 
-[ext_resource type="Texture2D" path="res://Art/grooming_fur_v1/contour_tufts.png" id="1"]
+[ext_resource type="Texture2D" path="res://Art/grooming_fur_v1/isolated_patches/edge_gray_tail.res" id="1"]
 
 [resource]
 atlas = ExtResource("1")
-region = Rect2(1402, 48, 348, 398)
+region = Rect2(0, 0, 348.0, 398.0)
 filter_clip = true

@@ -1,0 +1,64 @@
+{
+ "checks": 4227,
+ "failures": [],
+ "layouts": [
+  {
+   "coverage": {
+    "body": [
+     1085,
+     1106
+    ],
+    "chest": [
+     523,
+     537
+    ],
+    "tail": [
+     702,
+     703
+    ]
+   },
+   "edges": 43,
+   "outline_regions": {
+    "body": 8,
+    "chest": 6,
+    "tail": 29
+   },
+   "patches": 337,
+   "regions": {
+    "body": 178,
+    "chest": 85,
+    "tail": 117
+   },
+   "scale": 1.0
+  },
+  {
+   "coverage": {
+    "body": [
+     1047,
+     1106
+    ],
+    "chest": [
+     514,
+     537
+    ],
+    "tail": [
+     689,
+     703
+    ]
+   },
+   "edges": 51,
+   "outline_regions": {
+    "body": 16,
+    "chest": 6,
+    "tail": 29
+   },
+   "patches": 76,
+   "regions": {
+    "body": 53,
+    "chest": 26,
+    "tail": 48
+   },
+   "scale": 0.5
+  }
+ ]
+}
